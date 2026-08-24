@@ -1,159 +1,1189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sub-3:15:00 to Sub-3:00:00 Master Periodization Blueprint</title>
-<style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; color: #333; max-width: 1200px; margin: 0 auto; padding: 20px; background-color: #f7f9fa; }
-    h1, h2, h3 { color: #1a2b4c; }
-    h1 { border-bottom: 2px solid #1a2b4c; padding-bottom: 10px; margin-bottom: 20px; font-size: 24px; }
-    h2 { font-size: 20px; margin-top: 30px; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
-    h3 { font-size: 16px; margin-top: 15px; margin-bottom: 5px; color: #2c3e50; }
-    .meta-box { background-color: #fff; border-left: 4px solid #1a2b4c; padding: 15px; margin-bottom: 25px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 10px; font-size: 14px; }
-    table { width: 100%; border-collapse: collapse; margin-top: 15px; margin-bottom: 25px; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-radius: 4px; overflow: hidden; }
-    th, td { padding: 10px 12px; text-align: left; font-size: 13px; border-bottom: 1px solid #eef2f5; vertical-align: top; }
-    th { background-color: #1a2b4c; color: #fff; font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; }
-    tr:hover { background-color: #fcfdfe; }
-    .week-header { background-color: #eaedf1; font-weight: bold; color: #1a2b4c; font-size: 14px; }
-    .rest { color: #7f8c8d; font-style: italic; background-color: #fafbfc; }
-    .quality { background-color: #fff9e6; border-left: 3px solid #f1c40f; }
-    .long-run { background-color: #eef9ff; border-left: 3px solid #3498db; font-weight: 500; }
-    .race { background-color: #ffeef2; border-left: 3px solid #e74c3c; font-weight: bold; }
-    .strength { color: #27ae60; font-weight: 600; display: block; margin-top: 4px; font-size: 11px; }
-    .pace-tag { display: inline-block; padding: 2px 6px; font-size: 11px; font-weight: 600; border-radius: 3px; margin-bottom: 4px; }
-    .tag-z2 { background-color: #e2f0d9; color: #385723; }
-    .tag-mp { background-color: #fce4d6; color: #c65911; }
-    .tag-lt { background-color: #fff2cc; color: #7f6000; }
-    .tag-vo2 { background-color: #e1edf7; color: #1f4e78; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Sub-3:15 to Sub-3:00 Master Periodization Blueprint</title>
+  <style>
+    :root {
+      --bg-primary: #0b1120;
+      --bg-surface: #1e293b;
+      --bg-card: #24334a;
+      --bg-card-alt: #162032;
+      --accent: #38bdf8;
+      --accent-warn: #fb7185;
+      --accent-green: #34d399;
+      --accent-gold: #fbbf24;
+      --accent-purple: #c084fc;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --border-focus: #475569;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.42;
+      padding: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header {
+      background: linear-gradient(135deg, #1e293b 0%, #0b1120 100%);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 8px;
+      margin-top: 8px;
+      font-size: 0.78rem;
+    }
+    .meta-item {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 8px 10px;
+      border-radius: 6px;
+      border-left: 3px solid var(--accent);
+      color: var(--text-muted);
+    }
+    .meta-item strong {
+      color: var(--text-main);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .section-banner {
+      background: linear-gradient(90deg, #1e3a8a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin: 16px 0 8px 0;
+      border-left: 4px solid var(--accent);
+      text-transform: uppercase;
+    }
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 850px) {
+      .two-col-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .card h2 {
+      font-size: 0.88rem;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 4px;
+    }
+    .card h3 {
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin: 6px 0 3px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.76rem;
+      margin: 4px 0 8px 0;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background-color: var(--bg-card-alt);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+    }
+    .pace-tag {
+      display: inline-block;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .tag-vo2 { background: rgba(192, 132, 252, 0.2); color: var(--accent-purple); border: 1px solid var(--accent-purple); }
+    .tag-lt { background: rgba(251, 191, 36, 0.2); color: var(--accent-gold); border: 1px solid var(--accent-gold); }
+    .tag-mp { background: rgba(56, 189, 248, 0.2); color: var(--accent); border: 1px solid var(--accent); }
+    .tag-z2 { background: rgba(52, 211, 153, 0.2); color: var(--accent-green); border: 1px solid var(--accent-green); }
+    .tag-rest { background: rgba(148, 163, 184, 0.2); color: var(--text-muted); border: 1px solid var(--text-muted); }
+    .tag-rehab { background: rgba(251, 113, 133, 0.2); color: var(--accent-warn); border: 1px solid var(--accent-warn); }
+
+    .protocols-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    @media (max-width: 768px) {
+      .protocols-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .protocol-box {
+      background: var(--bg-card);
+      border-radius: 6px;
+      padding: 8px;
+      font-size: 0.74rem;
+      border-left: 3px solid var(--accent);
+    }
+    .protocol-box h4 {
+      color: #ffffff;
+      font-size: 0.78rem;
+      margin-bottom: 4px;
+    }
+    .protocol-box ul {
+      list-style-position: inside;
+      padding-left: 2px;
+    }
+    .protocol-box li {
+      margin-bottom: 3px;
+      color: var(--text-main);
+    }
+
+    .alert-box {
+      background: rgba(251, 113, 133, 0.08);
+      border: 1px solid var(--accent-warn);
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin-bottom: 10px;
+      font-size: 0.74rem;
+    }
+    .alert-box strong {
+      color: var(--accent-warn);
+    }
+
+    .week-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 10px;
+      break-inside: avoid;
+    }
+    .week-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 4px;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .week-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .week-badge {
+      font-size: 0.68rem;
+      background: var(--accent-gold);
+      color: #000;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .day-row {
+      background-color: var(--bg-card);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 6px 8px;
+      margin-bottom: 5px;
+      font-size: 0.75rem;
+    }
+    .day-row.quality { border-left-color: var(--accent-gold); }
+    .day-row.long { border-left-color: var(--accent); }
+    .day-row.rest { border-left-color: var(--text-muted); }
+    .day-row.rehab { border-left-color: var(--accent-warn); }
+    .day-row.race { border-left-color: #ef4444; background-color: rgba(239, 68, 68, 0.08); }
+
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+      font-weight: 700;
+    }
+    .day-header .name { color: #ffffff; }
+    .day-header .type { font-size: 0.7rem; color: var(--accent-gold); }
+    .day-desc { color: var(--text-main); }
+    .day-notes {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+      font-style: italic;
+    }
+    .strength-tag {
+      color: var(--accent-green);
+      font-weight: 600;
+      display: block;
+      margin-top: 3px;
+      font-size: 0.72rem;
+    }
+    ul.bullet-list {
+      list-style-type: square;
+      padding-left: 14px;
+      font-size: 0.74rem;
+      color: var(--text-main);
+    }
+    ul.bullet-list li {
+      margin-bottom: 4px;
+    }
+  </style>
 </head>
 <body>
 
-<h1>Sub-3:15 to Sub-3:00 Master Periodization Blueprint</h1>
-
-<div class="meta-box">
-    <strong>Target Events:</strong> Primary: BMW Dallas Marathon (Dec 13, 2026) | Goal: 3:14:30<br>
-    Ultra Track: Cowtown 50K (Feb 28, 2027) | Sub-3:00 Velocity Track
+  <header>
+    <h1>Sub-3:15 to Sub-3:00 Master Periodization Blueprint</h1>
     <div class="meta-grid">
-        <div><strong>Work Schedule:</strong> 07:15 AM–05:30 PM (M–F)</div>
-        <div><strong>Sunday Constraint:</strong> Absolute Zero Availability</div>
-        <div><strong>Apartment Gear:</strong> 35 & 53 lb KBs, Loop Bands, Pull-Up Bar</div>
-        <div><strong>Transit:</strong> Trinity Trails Transit (3.0 km each way)</div>
+      <div class="meta-item">
+        <strong>Primary &amp; Ultra Targets</strong>
+        BMW Dallas Marathon: Dec 13, 2026 (Sub-3:15:00 / 4:36/km)<br>
+        Cowtown 50K Ultra: Feb 28, 2027 (Sub-3:00 Velocity Track)
+      </div>
+      <div class="meta-item">
+        <strong>Non-Negotiable Temporal Constraints</strong>
+        Workday: 07:15 AM–05:30 PM (M–F) | Weekday Runs: &le;60 min (05:15–06:15 AM)<br>
+        Saturdays: Long Run Window (&le;3 hrs) | Sundays &amp; Mondays: System Rest / Active Rehab
+      </div>
+      <div class="meta-item">
+        <strong>Apartment Gear &amp; Transit Standard</strong>
+        35 lb &amp; 53 lb KBs, Loop Bands, Pull-Up Bar, Door Anchor<br>
+        Trinity Trails Transit: 3.0 km out / 3.0 km back warm-up &amp; cool-down
+      </div>
+      <div class="meta-item">
+        <strong>Orthopedic &amp; Biomechanical Guardrails</strong>
+        Right 3rd/4th intermetatarsal bursitis protocol (Teardrop pad, wide toe-box)<br>
+        Flat-foot PM lifting: zero loaded toe hyperextension
+      </div>
     </div>
-</div>
+  </header>
 
-<h3>Pace Continuum Reference Table</h3>
-<table>
-    <thead>
-        <tr>
+  <div class="alert-box">
+    <strong>⚠️ MASTER REHAB &amp; DECOMPRESSION RULES (RIGHT 3rd/4th TOES):</strong><br>
+    1. <strong>Zero Barefoot Steps:</strong> Wear supportive recovery footwear inside the apartment 100% of the time.<br>
+    2. <strong>Metatarsal Pad Positioning:</strong> Affix teardrop gel pad immediately <em>proximal</em> (behind) the 2nd–4th metatarsal heads to elevate and spread transverse arch bones.<br>
+    3. <strong>Open-Forefoot Lacing:</strong> Thread laces straight across or skip bottom two eyelets to eliminate forefoot transverse compression.<br>
+    4. <strong>Flat-Foot Lifting:</strong> Drive all resistance strictly through heels/midfoot; avoid calf raise drop-sets or lunges onto hyper-extended ball-of-foot.
+  </div>
+
+  <div class="section-banner">Pace Continuum &amp; Strength Protocols</div>
+  <div class="two-col-grid">
+    <div class="card">
+      <h2>Pace Continuum &amp; Adaptations</h2>
+      <table>
+        <thead>
+          <tr>
             <th>Modality</th>
-            <th>Sub-3:15 Target Pace</th>
-            <th>Sub-3:00 Target Pace</th>
-            <th>Primary Adaptation Focus</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
+            <th>Sub-3:15 Target</th>
+            <th>Sub-3:00 Target</th>
+            <th>Primary Objective</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
             <td><span class="pace-tag tag-z2">Zone 2 Base</span></td>
-            <td>5:26–5:54/km (8:45–9:30/mi) [Train Low Base: 5:50–6:10/km]</td>
+            <td>5:26–5:54/km (8:45–9:30/mi)</td>
             <td>5:00–5:25/km (8:03–8:43/mi)</td>
-            <td>Mitochondrial volume & fat oxidation signaling</td>
-        </tr>
-        <tr>
+            <td>Mitochondrial mass &amp; fat oxidation</td>
+          </tr>
+          <tr>
+            <td><span class="pace-tag tag-z2">Train Low Base</span></td>
+            <td>5:50–6:10/km (9:23–9:55/mi)</td>
+            <td>5:20–5:35/km (8:35–8:59/mi)</td>
+            <td>Substrate efficiency &amp; tissue flush</td>
+          </tr>
+          <tr>
             <td><span class="pace-tag tag-mp">Marathon (MP)</span></td>
             <td>4:36–4:37/km (7:25–7:26/mi)</td>
             <td>4:15–4:16/km (6:50–6:52/mi)</td>
-            <td>Glycogen conservation & race-specific economy</td>
-        </tr>
-        <tr>
+            <td>Glycogen economy at race speed</td>
+          </tr>
+          <tr>
             <td><span class="pace-tag tag-lt">Lactate Threshold</span></td>
             <td>4:15–4:18/km (6:50–6:55/mi)</td>
             <td>3:55–4:00/km (6:18–6:26/mi)</td>
-            <td>Lactate clearance rate & hydrogen ion buffering</td>
-        </tr>
-        <tr>
-            <td><span class="pace-tag tag-vo2">VO2 Max Intervals</span></td>
+            <td>Lactate clearance &amp; H+ buffering</td>
+          </tr>
+          <tr>
+            <td><span class="pace-tag tag-vo2">VO2 Max Track</span></td>
             <td>3:53–3:56/km (6:15–6:20/mi)</td>
             <td>3:35–3:45/km (5:46–6:02/mi)</td>
-            <td>Cardiac stroke volume & neuromuscular recruitment</td>
-        </tr>
-    </tbody>
-</table>
+            <td>Stroke volume &amp; motor recruitment</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size: 0.7rem; color: var(--text-muted);">
+        <strong>12-Hour AMPK–mTOR Separation:</strong> AM Runs activate metabolic enzymes &rarr; 10.5h Workday buffer &rarr; 06:00 PM Lifts trigger myofibrillar synthesis without cross-pathway inhibition.
+      </p>
+    </div>
 
-<h3>Apartment Bedroom Strength Protocols</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Split A: Lower & Tendons (Tue PM)</th>
-            <th>Split B: Upper & Lats (Thu PM)</th>
-            <th>Split C: Unilateral & Durability (Sat PM)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                - Deficit Bulgarian Squats: 4x8/leg (53 lb KB, 3s down)<br>
-                - Single-Leg KB RDLs: 4x6-8/leg (53 lb KB)<br>
-                - Banded Spanish Squats: 3x45s hold<br>
-                - Single-Leg Deficit Calf Raises: 4x12-15/leg (35 lb KB)
-            </td>
-            <td>
-                - Strict Dead-Hang Pull-Ups: 4x6-8<br>
-                - Standing KB Strict Press: 3x8-10/arm (35 lb KB)<br>
-                - Band-Resisted Push-Ups: 3x12-15 (3s down)<br>
-                - Doorway Banded Face-Pulls: 3x15-20
-            </td>
-            <td>
-                - Offset KB Step-Back Lunges: 3x12/leg (53 lb KB)<br>
-                - Seated Wall Soleus Holds: 3x45s (53 lb KB)<br>
-                - Hanging Knee-to-Elbows: 3x12-15<br>
-                - Heavy RKC Planks: 3x30s max tension
-            </td>
-        </tr>
-    </tbody>
-</table>
+    <div class="card">
+      <h2>Flat-Foot Bedroom Strength Protocols</h2>
+      <div class="protocols-grid">
+        <div class="protocol-box">
+          <h4>Split A: Lower &amp; Tendons (Tue)</h4>
+          <ul>
+            <li>• Box Goblet Squats: 4x8 (53 lb KB, heels flat)</li>
+            <li>• Single-Leg RDLs: 4x8/leg (53 lb KB, flat right foot)</li>
+            <li>• Banded Spanish Squats: 3x45s (Patellar armor)</li>
+            <li>• Flat-Foot Wall Sits: 3x45s (Heel drive)</li>
+          </ul>
+        </div>
+        <div class="protocol-box">
+          <h4>Split B: Upper &amp; Lats (Thu)</h4>
+          <ul>
+            <li>• Strict Dead-Hang Pull-Ups: 4x6–8 (Doorway bar)</li>
+            <li>• Standing KB Strict Press: 3x8–10/arm (35 lb KB)</li>
+            <li>• Banded Floor Push-Ups: 3x12–15 (3s tempo)</li>
+            <li>• Flat CM Jumps: 3x5 (Soft flat landings)</li>
+          </ul>
+        </div>
+        <div class="protocol-box">
+          <h4>Split C: Core &amp; Trunk (Sat)</h4>
+          <ul>
+            <li>• Offset Step-Back Lunges: 3x10/leg (35 lb KB)</li>
+            <li>• Hanging Knee Raises: 3x12–15 (Decompressed)</li>
+            <li>• Shin-Supported RKC Planks: 3x30s max tension</li>
+            <li>• Banded Pallof Press: 3x12/side</li>
+          </ul>
+        </div>
+      </div>
+      <p style="font-size: 0.7rem; color: var(--accent-warn); margin-top: 6px;">
+        *Zero loaded toe hyperextension during strength blocks. Always push flat through midfoot/heel.
+      </p>
+    </div>
+  </div>
 
-<h2>Phase 1: Base Volume & Hypertrophy (Weeks 1–4)</h2>
-<table>
-    <thead>
-        <tr>
-            <th style="width: 14%;">Monday</th>
-            <th style="width: 14%;">Tuesday</th>
-            <th style="width: 14%;">Wednesday</th>
-            <th style="width: 14%;">Thursday</th>
-            <th style="width: 14%;">Friday</th>
-            <th style="width: 14%;">Saturday</th>
-            <th style="width: 14%;">Sunday</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!-- WEEK 1 -->
-        <tr class="week-header"><td colspan="7">Week 1 (Aug 24–Aug 30, 2026) | Total Target Volume: 59.5 km (37.0 mi)</td></tr>
-        <tr>
-            <td class="rest"><strong>AM: Full Rest</strong><br><br><strong>PM:</strong> 06:00 PM Mat mobility, foam roll & hip openers.</td>
-            <td class="quality"><span class="pace-tag tag-vo2">VO2 Intervals</span><br><strong>05:15 AM:</strong> 10.0 km<br>[3km out + 6x400m track @ 3:56/km w/ 90s jog + 3km back]<br><span class="strength">06:00 PM: Split A</span></td>
-            <td><span class="pace-tag tag-z2">Zone 2 Base</span><br><strong>05:15 AM:</strong> 10.5 km<br>[3km out + 4.5km Trinity @ 5:35/km + 3km back]<br><br><span class="rest">PM: Rest</span></td>
-            <td class="quality"><span class="pace-tag tag-lt">Tempo</span><br><strong>05:15 AM:</strong> 11.6 km<br>[3km out + 5.6km Tempo @ 4:18/km + 3km back]<br><span class="strength">06:00 PM: Split B</span></td>
-            <td><span class="pace-tag tag-z2">Easy Base</span><br><strong>05:15 AM:</strong> 8.4 km<br>[3km out + 2.4km trail @ 5:45/km + 3km back]<br><br><span class="rest">PM: Rest</span></td>
-            <td class="long-run"><span class="pace-tag tag-z2">KEY LONG RUN</span><br><strong>06:00 AM:</strong> 13.2 km<br>[3km out + 7.2km Trinity @ 5:29/km + 3km back]<br><span class="strength">05:15 PM: Split C</span></td>
-            <td class="rest"><strong>SYSTEM REST</strong><br><br>Absolute zero running.<br>Full structural & hormonal recovery.</td>
-        </tr>
-        <!-- WEEK 2 -->
-        <tr class="week-header"><td colspan="7">Week 2 (Aug 31–Sep 06, 2026) | Total Target Volume: 65.2 km (40.5 mi)</td></tr>
-        <tr>
-            <td class="rest"><strong>AM: Full Rest</strong><br><br><strong>PM:</strong> 06:00 PM Banded hip flexor & adductor work.</td>
-            <td class="quality"><span class="pace-tag tag-vo2">VO2 Intervals</span><br><strong>05:15 AM:</strong> 11.3 km<br>[3km out + 5x800m @ 3:56/km w/ 2m jog + 3km back]<br><span class="strength">06:00 PM: Split A</span></td>
-            <td><span class="pace-tag tag-z2">Zone 2 Base</span><br><strong>05:15 AM:</strong> 10.5 km<br>[3km out + 4.5km trail @ 5:29/km + 3km back]<br><br><span class="rest">PM: Rest</span></td>
-            <td class="quality"><span class="pace-tag tag-lt">Threshold</span><br><strong>05:10 AM:</strong> 12.9 km<br>[3km out + 6.9km LT @ 4:16/km + 3km back]<br><span class="strength">06:00 PM: Split B</span></td>
-            <td><span class="pace-tag tag-z2">Easy Base</span><br><strong>05:15 AM:</strong> 8.4 km<br>[3km out + 2.4km trail @ 5:42/km + 3km back]<br><br><span class="rest">PM: Rest</span></td>
-            <td class="long-run"><span class="pace-tag tag-z2">KEY LONG RUN</span><br><strong>06:00 AM:</strong> 16.4 km<br>[3km out + 10.4km progressive down to 4:55/km + 3km back]<br><span class="strength">05:15 PM: Split C</span></td>
-            <td class="rest"><strong>SYSTEM REST</strong><br><br>Absolute zero running.<br>Full structural & hormonal recovery.</td>
-        </tr>
-        <!-- WEEK 3 -->
-        <tr class="week-header"><td colspan="7">Week 3 (Sep 07–Sep 13, 2026) | Total Target Volume: 69.2 km (43.0 mi)</td></tr>
-        <tr>
-            <td class="rest"><strong>AM: Full Rest</strong><br><br><strong>PM:</strong> 06:00 PM Deep tissue foam rolling.</td>
-            <td class="quality"><span class="pace-tag tag-lt">LT Intervals</span><br><strong>05:10 AM:</strong> 12.9 km<br>[3km out + 4x1600m @ LT 4:15/km w/ 90s jog + 3km back]<br><span class="strength">06:00 PM: Split A</span></td>
-            <td><span class="pace-tag tag-z2">Zone 2 Base</span><br><strong>05:15 AM:</strong> 11.6 km<br>[3km out + 5.6km trail @ 5:29/km + 3km back]<br><br><span class="rest">PM: Rest</span></td>
+  <!-- PHASE 1 -->
+  <div class="section-banner">Phase 1: Base Volume &amp; Hypertrophy (Weeks 1–4)</div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 1 (Aug 24–Aug 30, 2026)</span>
+      <span class="week-badge">59.5 km Total (37.0 mi)</span>
+    </div>
+    <div class="day-row rehab">
+      <div class="day-header"><span class="name">Monday, Aug 24</span><span class="type">REST &amp; FOOT REHAB</span></div>
+      <div class="day-desc">Zero running. 3 sets x 10 Short Foot doming, 15 Toe Yoga reps, 10 wide digit splays. Massage intermetatarsal web spaces.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Aug 25</span><span class="type">VO2 TRACK + SPLIT A</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 10.0 km [3.0 km out + 6x400m track @ 3:56/km w/ 90s jog + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Home Split A (53 lb KB Box Squats, Pull-Ups, RDLs).</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Aug 26</span><span class="type">ZONE 2 FASTED BASE</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 10.5 km Zone 2 [3.0 km out + 4.5 km Trinity Trails @ 5:35/km + 3.0 km back]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Thursday, Aug 27</span><span class="type">TEMPO + SPLIT B</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 10.6 km [3.0 km out + 4.6 km Tempo @ 4:18/km + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Home Split B (Strict Pull-Ups, 35 lb KB Strict Press, Floor Push-Ups).</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Friday, Aug 28</span><span class="type">EASY AEROBIC FLUSH</span></div>
+      <div class="day-desc">05:15 AM–06:05 AM (50 min) | 8.4 km Easy Base [3.0 km out + 2.4 km trail @ 5:45/km + 3.0 km back]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row long">
+      <div class="day-header"><span class="name">Saturday, Aug 29</span><span class="type">KEY OVERLOAD LONG RUN</span></div>
+      <div class="day-desc">06:00 AM–07:45 AM (105 min) | 16.8 km [3.0 km out + 10.8 km progressive @ 5:29/km + 3.0 km back]. Verify teardrop pad positioning.</div>
+      <span class="strength-tag">05:15 PM: Home Split C (Shin Planks, Pallof Press, Hanging Knee Raises).</span>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Aug 30</span><span class="type">FULL SYSTEM REST</span></div>
+      <div class="day-desc">Absolute zero running. Full structural regeneration, sleep banking, and detailed weekly nutrition meal prep.</div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 2 (Aug 31–Sep 06, 2026)</span>
+      <span class="week-badge">65.2 km Total (40.5 mi)</span>
+    </div>
+    <div class="day-row rehab">
+      <div class="day-header"><span class="name">Monday, Aug 31</span><span class="type">REST &amp; FOOT REHAB</span></div>
+      <div class="day-desc">Zero running. 3 sets x 10 Short Foot doming, 15 Toe Yoga reps, banded adductor/hip flexor mobility.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Sep 01</span><span class="type">VO2 TRACK + SPLIT A</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 10.5 km [3.0 km out + 5x800m @ 3:56/km w/ 90s jog + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Home Split A (Box Squats, Single-Leg Flat RDLs).</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Sep 02</span><span class="type">ZONE 2 FASTED BASE</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 10.5 km Zone 2 [3.0 km out + 4.5 km trail @ 5:29/km + 3.0 km back]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Thursday, Sep 03</span><span class="type">THRESHOLD + SPLIT B</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.0 km [3.0 km out + 5.0 km LT @ 4:16/km + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Home Split B (Pull-Ups, 35 lb Presses, Flat CM Jumps).</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Friday, Sep 04</span><span class="type">EASY AEROBIC FLUSH</span></div>
+      <div class="day-desc">05:15 AM–06:05 AM (50 min) | 8.4 km Easy Base [3.0 km out + 2.4 km trail @ 5:42/km + 3.0 km back]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row long">
+      <div class="day-header"><span class="name">Saturday, Sep 05</span><span class="type">KEY OVERLOAD LONG RUN</span></div>
+      <div class="day-desc">06:00 AM–08:00 AM (120 min) | 21.6 km [3.0 km out + 15.6 km progressive down to 4:55/km + 3.0 km back].</div>
+      <span class="strength-tag">05:15 PM: Home Split C (Shin Planks, Hanging Knee Raises).</span>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Sep 06</span><span class="type">FULL SYSTEM REST</span></div>
+      <div class="day-desc">Absolute zero running. Full structural and cellular recovery window.</div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 3 (Sep 07–Sep 13, 2026)</span>
+      <span class="week-badge">69.2 km Total (43.0 mi)</span>
+    </div>
+    <div class="day-row rehab">
+      <div class="day-header"><span class="name">Monday, Sep 07</span><span class="type">REST &amp; FOOT REHAB</span></div>
+      <div class="day-desc">Zero running. Active foot decompression, deep tissue foam rolling, and calf flush.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Sep 08</span><span class="type">LT INTERVALS + SPLIT A</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.0 km [3.0 km out + 4x1600m @ LT 4:15/km w/ 75s jog + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Home Split A (53 lb KB Squats, Banded Spanish Squats).</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Sep 09</span><span class="type">ZONE 2 FASTED BASE</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 10.6 km Zone 2 [3.0 km out + 4.6 km trail @ 5:29/km + 3.0 km back]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Thursday, Sep 10</span><span class="type">AEROBIC TEMPO + SPLIT B</span></div>
+      <div class="day-desc">05:15 AM–06:12 AM (57 min) | 10.0 km [3.0 km out + 4.0 km trail @ 5:35/km + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Home Split B (Pull-Ups, Push-Ups, Banded Face-Pulls).</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Friday, Sep 11</span><span class="type">EASY AEROBIC FLUSH</span></div>
+      <div class="day-desc">05:15 AM–06:05 AM (50 min) | 8.4 km Recovery [3.0 km out + 2.4 km trail @ 5:45/km + 3.0 km back]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row long">
+      <div class="day-header"><span class="name">Saturday, Sep 12</span><span class="type">KEY OVERLOAD LONG RUN</span></div>
+      <div class="day-desc">06:00 AM–08:25 AM (145 min) | 25.2 km [3.0 km out + 19.2 km progressive closing final 3.2 km @ 4:58/km + 3.0 km back].</div>
+      <span class="strength-tag">05:15 PM: Home Split C (Shin Planks, Unilateral Core).</span>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Sep 13</span><span class="type">FULL SYSTEM REST</span></div>
+      <div class="day-desc">Absolute zero running. Full cellular, hormonal, and connective tissue restoration.</div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 4: Scheduled Deload 1 (Sep 14–Sep 20, 2026)</span>
+      <span class="week-badge" style="background:#38bdf8; color:#000;">52.3 km (32.5 mi) DELOAD</span>
+    </div>
+    <div class="day-row rehab">
+      <div class="day-header"><span class="name">Monday, Sep 14</span><span class="type">REST &amp; FOOT REHAB</span></div>
+      <div class="day-desc">Zero running. Core &amp; Hip mobility, foot intrinsic doming.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Sep 15</span><span class="type">DELOAD INTERVALS + SPLIT A</span></div>
+      <div class="day-desc">05:15 AM–06:12 AM (57 min) | 10.0 km [3.0 km out + 4x800m @ 3:59/km + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Split A Deload (2 sets only, focus on movement quality).</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Sep 16</span><span class="type">ZONE 2 FASTED BASE</span></div>
+      <div class="day-desc">05:15 AM–06:05 AM (50 min) | 8.4 km Zone 2 [3.0 km out + 2.4 km trail @ 5:45/km + 3.0 km back]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Thursday, Sep 17</span><span class="type">MP TEMPO + SPLIT B</span></div>
+      <div class="day-desc">05:15 AM–06:12 AM (57 min) | 10.0 km [3.0 km out + 4.0 km MP 4:36/km + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Split B Deload (2 sets bodyweight / bands).</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Friday, Sep 18</span><span class="type">EASY AEROBIC BASE</span></div>
+      <div class="day-desc">05:15 AM–05:55 AM (40 min) | 6.8 km Easy Base [3.0 km out + 0.8 km trail + 3.0 km back]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row long">
+      <div class="day-header"><span class="name">Saturday, Sep 19</span><span class="type">DELOAD OVERLOAD LONG RUN</span></div>
+      <div class="day-desc">06:00 AM–07:35 AM (95 min) | 17.1 km [3.0 km out + 11.1 km trail @ 5:29–5:45/km + 3.0 km back].</div>
+      <span class="strength-tag">05:15 PM: Split C Deload (Light core maintenance).</span>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Sep 20</span><span class="type">FULL SYSTEM REST</span></div>
+      <div class="day-desc">Absolute zero running. Full joint, tendon, and glycogen recharge.</div>
+    </div>
+  </div>
+
+  <!-- PHASE 2 -->
+  <div class="section-banner">Phase 2: Strength &amp; Threshold (Weeks 5–8)</div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 5 (Sep 21–Sep 27, 2026)</span>
+      <span class="week-badge">74.8 km Total (46.5 mi)</span>
+    </div>
+    <div class="day-row rehab">
+      <div class="day-header"><span class="name">Monday, Sep 21</span><span class="type">REST &amp; FOOT REHAB</span></div>
+      <div class="day-desc">Zero running. Active foot restoration, toe splays, and hip pre-hab.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Sep 22</span><span class="type">VO2 TRACK + SPLIT A</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.0 km [3.0 km out + 5x1000m @ 3:55/km w/ 2m jog + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Home Split A (53 lb Box Squats, RDLs).</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Sep 23</span><span class="type">ZONE 2 FASTED BASE</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 10.8 km Zone 2 [3.0 km out + 4.8 km trail @ 5:26/km + 3.0 km back]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Thursday, Sep 24</span><span class="type">THRESHOLD + SPLIT B</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.2 km [3.0 km out + 5.2 km LT @ 4:16/km + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Home Split B (Pull-Ups, KB Presses, Flat CM Jumps).</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Friday, Sep 25</span><span class="type">PRE-RACE SHAKEOUT</span></div>
+      <div class="day-desc">05:15 AM–05:55 AM (40 min) | 6.8 km Shakeout + 4x20s neuromuscular strides. Complete PM Rest.</div>
+    </div>
+    <div class="day-row race">
+      <div class="day-header"><span class="name">Saturday, Sep 26</span><span class="type">OKTOBERFEST 5K + EXTENSION OVERLOAD</span></div>
+      <div class="day-desc">06:30 AM–09:30 AM | 27.0 km Total [1.6 km warm-up + <strong>Fort Worth Oktoberfest 5K @ 19:30</strong> + 1.6 km cool + 18.8 km steady Zone 2 cruise @ 5:23/km].</div>
+      <span class="strength-tag">05:15 PM: Home Split C.</span>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Sep 27</span><span class="type">FULL SYSTEM REST</span></div>
+      <div class="day-desc">Absolute zero running. Full systemic recovery and deep glycogen restoration.</div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 6 (Sep 28–Oct 04, 2026)</span>
+      <span class="week-badge">77.2 km Total (48.0 mi)</span>
+    </div>
+    <div class="day-row rehab">
+      <div class="day-header"><span class="name">Monday, Sep 28</span><span class="type">REST &amp; FOOT REHAB</span></div>
+      <div class="day-desc">Zero running. Deep tissue foam rolling, foot intrinsics, and adductor stretches.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Sep 29</span><span class="type">VO2 TRACK + SPLIT A</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.0 km [3.0 km out + 4x1200m @ 3:55/km w/ 2.5m jog + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Home Split A.</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Sep 30</span><span class="type">ZONE 2 FASTED BASE</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 10.8 km Zone 2 [3.0 km out + 4.8 km trail @ 5:26/km + 3.0 km back]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Thursday, Oct 01</span><span class="type">THRESHOLD + SPLIT B</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.4 km [3.0 km out + 5.4 km LT @ 4:15/km + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Home Split B.</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Friday, Oct 02</span><span class="type">PRE-RACE SHAKEOUT</span></div>
+      <div class="day-desc">05:15 AM–05:55 AM (40 min) | 6.8 km Easy Shakeout. Complete PM Rest.</div>
+    </div>
+    <div class="day-row race">
+      <div class="day-header"><span class="name">Saturday, Oct 03</span><span class="type">RAHR 5K + EXTENSION OVERLOAD</span></div>
+      <div class="day-desc">06:30 AM–09:30 AM | 29.2 km Total [1.6 km warm-up + <strong>Rahr Brewing Oktoberfest 5K</strong> + 1.6 km cool + 21.0 km endurance run closing 6.4 km @ MP 4:36/km].</div>
+      <span class="strength-tag">05:15 PM: Home Split C.</span>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Oct 04</span><span class="type">FULL SYSTEM REST</span></div>
+      <div class="day-desc">Absolute zero running. Full structural regeneration.</div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 7 (Oct 05–Oct 11, 2026)</span>
+      <span class="week-badge">84.5 km Total (52.5 mi)</span>
+    </div>
+    <div class="day-row rehab">
+      <div class="day-header"><span class="name">Monday, Oct 05</span><span class="type">REST &amp; FOOT REHAB</span></div>
+      <div class="day-desc">Zero running. Foot intrinsic doming, mobility, and core.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Oct 06</span><span class="type">VO2 TRACK + SPLIT A</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.2 km [3.0 km out + 5x1000m @ 3:55/km w/ 2m jog + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Home Split A.</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Oct 07</span><span class="type">ZONE 2 FASTED BASE</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.0 km Zone 2 [3.0 km out + 5.0 km trail @ 5:26/km + 3.0 km back]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Thursday, Oct 08</span><span class="type">CONTINUOUS LT + SPLIT B</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.5 km [3.0 km out + 5.5 km continuous LT @ 4:16/km + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Home Split B.</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Friday, Oct 09</span><span class="type">ZONE 2 AEROBIC FLUSH</span></div>
+      <div class="day-desc">05:15 AM–06:12 AM (57 min) | 10.0 km Zone 2 [3.0 km out/back + 4.0 km trail @ 5:35/km]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row long">
+      <div class="day-header"><span class="name">Saturday, Oct 10</span><span class="type">KEY OVERLOAD LONG RUN</span></div>
+      <div class="day-desc">06:00 AM–08:45 AM (165 min) | 33.8 km Dallas Simulation [3.0 km out + 19.8 km @ 5:23/km + 8.0 km @ MP 4:36/km + 3.0 km back].</div>
+      <span class="strength-tag">05:15 PM: Home Split C.</span>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Oct 11</span><span class="type">FULL SYSTEM REST</span></div>
+      <div class="day-desc">Absolute zero running. Full cellular, hormonal, and tissue recovery.</div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 8: Scheduled Deload 2 &amp; 15K Tune-Up (Oct 12–Oct 18, 2026)</span>
+      <span class="week-badge" style="background:#38bdf8; color:#000;">62.8 km (39.0 mi) DELOAD</span>
+    </div>
+    <div class="day-row rehab">
+      <div class="day-header"><span class="name">Monday, Oct 12</span><span class="type">REST &amp; FOOT REHAB</span></div>
+      <div class="day-desc">Zero running. Mobility, hip pre-hab, and foot intrinsic doming.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Oct 13</span><span class="type">DELOAD INTERVALS + SPLIT A</span></div>
+      <div class="day-desc">05:15 AM–06:12 AM (57 min) | 10.0 km [3.0 km out + 4x800m @ 3:56/km + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Split A Deload (2 sets only).</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Oct 14</span><span class="type">ZONE 2 FASTED BASE</span></div>
+      <div class="day-desc">05:15 AM–06:05 AM (50 min) | 8.4 km Zone 2 [3.0 km out/back + trail @ 5:35/km]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Thursday, Oct 15</span><span class="type">MP TEMPO + SPLIT B</span></div>
+      <div class="day-desc">05:15 AM–06:12 AM (57 min) | 10.0 km [3.0 km out + 4.0 km MP 4:36/km + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Split B Deload.</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Friday, Oct 16</span><span class="type">PRE-RACE SHAKEOUT</span></div>
+      <div class="day-desc">05:15 AM–05:50 AM (35 min) | 5.6 km Shakeout + strides. Complete PM Rest.</div>
+    </div>
+    <div class="day-row race">
+      <div class="day-header"><span class="name">Saturday, Oct 17</span><span class="type">BIG TEXAS 15K + EXTENSION</span></div>
+      <div class="day-desc">06:30 AM–08:45 AM | 21.8 km Total [1.6 km warm-up + <strong>Big Texas Run 15K @ 4:30–4:36/km</strong> + 1.6 km cool + 3.6 km easy flush].</div>
+      <span class="strength-tag">05:15 PM: Mobility &amp; soft tissue only.</span>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Oct 18</span><span class="type">FULL SYSTEM REST</span></div>
+      <div class="day-desc">Absolute zero running. Complete rest and restoration.</div>
+    </div>
+  </div>
+
+  <!-- PHASE 3 -->
+  <div class="section-banner">Phase 3: Peak Specificity &amp; Realization (Weeks 9–12)</div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 9 (Oct 19–Oct 25, 2026)</span>
+      <span class="week-badge">90.9 km Total (56.5 mi)</span>
+    </div>
+    <div class="day-row rehab">
+      <div class="day-header"><span class="name">Monday, Oct 19</span><span class="type">REST &amp; FOOT REHAB</span></div>
+      <div class="day-desc">Zero running. Core/Trunk stability, toe yoga, and metatarsal tissue massage.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Oct 20</span><span class="type">VO2 TRACK + SPLIT A</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.5 km [3.0 km out + 6x1000m @ 3:53/km w/ 2m jog + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Home Split A (53 lb Box Squats, RDLs).</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Oct 21</span><span class="type">ZONE 2 FASTED BASE</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.2 km Zone 2 [3.0 km out + 5.2 km trail @ 5:23/km + 3.0 km back]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Thursday, Oct 22</span><span class="type">THRESHOLD + SPLIT B</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.8 km [3.0 km out + 5.8 km LT @ 4:15/km + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Home Split B.</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Friday, Oct 23</span><span class="type">AEROBIC FLUSH</span></div>
+      <div class="day-desc">05:15 AM–06:12 AM (57 min) | 10.0 km Zone 2 Recovery [3.0 km out/back + trail @ 5:35/km]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row long">
+      <div class="day-header"><span class="name">Saturday, Oct 24</span><span class="type">KEY OVERLOAD LONG RUN</span></div>
+      <div class="day-desc">06:00 AM–08:50 AM (170 min) | 35.4 km Progressive [3.0 km out + 16.6 km @ 5:20/km + 12.8 km @ MP 4:36/km + 3.0 km back].</div>
+      <span class="strength-tag">05:15 PM: Home Split C.</span>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Oct 25</span><span class="type">FULL SYSTEM REST</span></div>
+      <div class="day-desc">Absolute zero running. Full systemic recovery.</div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 10 (Oct 26–Nov 01, 2026)</span>
+      <span class="week-badge">94.1 km Total (58.5 mi)</span>
+    </div>
+    <div class="day-row rehab">
+      <div class="day-header"><span class="name">Monday, Oct 26</span><span class="type">REST &amp; FOOT REHAB</span></div>
+      <div class="day-desc">Zero running. Foam rolling, foot decompression, and mobility.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Oct 27</span><span class="type">VO2 TRACK + SPLIT A</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.5 km [3.0 km out + 5x1200m @ 3:53/km w/ 2m jog + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Banded Spanish Squats &amp; Core.</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Oct 28</span><span class="type">ZONE 2 FASTED BASE</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.4 km Zone 2 [3.0 km out + 5.4 km trail @ 5:20/km + 3.0 km back]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Thursday, Oct 29</span><span class="type">THRESHOLD + SPLIT B</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.8 km [3.0 km out + 5.8 km LT @ 4:15/km + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Home Split B (Pull-Ups &amp; Bands).</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Friday, Oct 30</span><span class="type">AEROBIC FLUSH</span></div>
+      <div class="day-desc">05:15 AM–06:12 AM (57 min) | 10.0 km Zone 2 [3.0 km out/back + trail @ 5:35/km]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row long">
+      <div class="day-header"><span class="name">Saturday, Oct 31</span><span class="type">KEY OVERLOAD LONG RUN</span></div>
+      <div class="day-desc">06:00 AM–08:55 AM (175 min) | 36.1 km Simulation [3.0 km out + 10.8 km @ 5:17/km + 19.3 km locked @ MP 4:36/km + 3.0 km back].</div>
+      <span class="strength-tag">04:30 PM: Heavy KB Split C (53 lb KB Offset Lunges &amp; Wall Sits).</span>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Nov 01</span><span class="type">FULL SYSTEM REST</span></div>
+      <div class="day-desc">Absolute zero running. Full structural and cellular recovery.</div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 11: Half Simulation Overload (Nov 02–Nov 08, 2026)</span>
+      <span class="week-badge" style="background:#ef4444; color:#fff;">99.8 km PEAK VOLUME</span>
+    </div>
+    <div class="day-row rehab">
+      <div class="day-header"><span class="name">Monday, Nov 02</span><span class="type">REST &amp; FOOT REHAB</span></div>
+      <div class="day-desc">Zero running. Active mobility and metatarsal tissue spreading.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Nov 03</span><span class="type">VO2 TRACK + SPLIT A</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.6 km [3.0 km out + 6x1000m @ 3:55/km w/ 90s jog + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Banded Isometrics &amp; Mat Core.</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Nov 04</span><span class="type">ZONE 2 FASTED BASE</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.5 km Zone 2 [3.0 km out + 5.5 km trail @ 5:20/km + 3.0 km back]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Thursday, Nov 05</span><span class="type">THRESHOLD + SPLIT B</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.8 km [3.0 km out + 5.8 km LT @ 4:15/km + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Home Split B.</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Friday, Nov 06</span><span class="type">ZONE 2 FLUSH</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.2 km Zone 2 [3.0 km out + 5.2 km trail @ 5:26/km + 3.0 km back]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row long">
+      <div class="day-header"><span class="name">Saturday, Nov 07</span><span class="type">PEAK OVERLOAD LONG RUN</span></div>
+      <div class="day-desc">06:00 AM–09:00 AM (180 min) | 37.5 km Total [3.0 km out + 10.4 km @ 5:20/km + 21.1 km Half Marathon Simulation locked @ MP 4:36/km + 3.0 km back].</div>
+      <span class="strength-tag">05:15 PM: Light Bodyweight Split C.</span>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Nov 08</span><span class="type">FULL SYSTEM REST</span></div>
+      <div class="day-desc">Absolute zero running. Full physiological recovery.</div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 12: Peak Volume &amp; Overload (Nov 09–Nov 15, 2026)</span>
+      <span class="week-badge">97.4 km Total (60.5 mi)</span>
+    </div>
+    <div class="day-row rehab">
+      <div class="day-header"><span class="name">Monday, Nov 09</span><span class="type">REST &amp; FOOT REHAB</span></div>
+      <div class="day-desc">Zero running. Soft tissue massage, foot intrinsics, and passive mobility.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Nov 10</span><span class="type">LT INTERVALS + SPLIT A</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.5 km [3.0 km out + 4x1600m @ LT 4:13/km w/ 75s jog + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Banded Spanish Squats &amp; Core.</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Nov 11</span><span class="type">ZONE 2 FASTED BASE</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.4 km Zone 2 [3.0 km out + 5.4 km trail @ 5:23/km + 3.0 km back]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Thursday, Nov 12</span><span class="type">MP TEMPO + SPLIT B</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.5 km [3.0 km out + 5.5 km MP @ 4:36/km + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Home Split B.</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Friday, Nov 13</span><span class="type">AEROBIC FLUSH</span></div>
+      <div class="day-desc">05:15 AM–06:12 AM (57 min) | 10.0 km Zone 2 Recovery [3.0 km out/back + trail @ 5:42/km]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row long">
+      <div class="day-header"><span class="name">Saturday, Nov 14</span><span class="type">FINAL 22-MILE PEAK OVERLOAD RUN</span></div>
+      <div class="day-desc">06:00 AM–08:55 AM (175 min) | 35.7 km [3.0 km out + 16.9 km @ 5:17–5:26/km + 12.8 km locked @ MP 4:36/km + 3.0 km back].</div>
+      <span class="strength-tag">04:30 PM: Final Peak KB Overload Split C.</span>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Nov 15</span><span class="type">FULL SYSTEM REST</span></div>
+      <div class="day-desc">Absolute zero running. Full structural and cellular recovery. Transition to Mujika Taper.</div>
+    </div>
+  </div>
+
+  <!-- PHASE 4 -->
+  <div class="section-banner">Phase 4: Mujika Precompetition Taper (Weeks 13–16)</div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 13: Taper Phase 1 &amp; San Diego Travel (Nov 16–Nov 22, 2026)</span>
+      <span class="week-badge" style="background:#38bdf8; color:#000;">71.0 km (44.1 mi)</span>
+    </div>
+    <div class="day-row rehab">
+      <div class="day-header"><span class="name">Monday, Nov 16</span><span class="type">REST &amp; FOOT REHAB</span></div>
+      <div class="day-desc">Zero running. Active foot decompression, toe yoga, and core stability.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Nov 17</span><span class="type">TAPER TRACK + SPLIT A</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 11.2 km [3.0 km out + 4x1000m @ 3:53/km w/ 2m jog + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Split A (2 sets, 35 lb KB only).</span>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Wednesday, Nov 18</span><span class="type">SAN DIEGO TRAVEL</span></div>
+      <div class="day-desc">Complete Rest Day / Flight to San Diego. Active terminal walking only. Hydration target: 1.5 Gal water + electrolytes.</div>
+    </div>
+    <div class="day-row rehab">
+      <div class="day-header"><span class="name">Thursday, Nov 19</span><span class="type">HOTEL BODYWEIGHT PROTOCOL</span></div>
+      <div class="day-desc">06:00 PM–06:30 PM (30 min): 3 rounds (15 Push-ups + 20 Air Squats + 45s Wall Sit + 15 Glute Bridges + 45s Plank). Zero running.</div>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Friday, Nov 20</span><span class="type">SAN DIEGO RETURN</span></div>
+      <div class="day-desc">Complete Rest Day / Travel Return to Fort Worth. Leg elevation 30 mins upon arrival.</div>
+    </div>
+    <div class="day-row long">
+      <div class="day-header"><span class="name">Saturday, Nov 21</span><span class="type">TAPER OVERLOAD LONG RUN</span></div>
+      <div class="day-desc">06:00 AM–08:15 AM (135 min) | 26.1 km [3.0 km out + 13.7 km @ 5:23/km + 6.4 km @ MP 4:36/km + 3.0 km back].</div>
+      <span class="strength-tag">05:15 PM: Bodyweight Split C.</span>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Nov 22</span><span class="type">FULL SYSTEM REST</span></div>
+      <div class="day-desc">Absolute zero running. Full joint and neural recovery.</div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 14: Taper Phase 2 (-25% Vol) (Nov 23–Nov 29, 2026)</span>
+      <span class="week-badge">58.7 km Total (36.5 mi)</span>
+    </div>
+    <div class="day-row rehab">
+      <div class="day-header"><span class="name">Monday, Nov 23</span><span class="type">REST &amp; FOOT REHAB</span></div>
+      <div class="day-desc">Zero running. Hip/Glute activation and foot intrinsic doming.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Nov 24</span><span class="type">LT TAPER INTERVALS + SPLIT A</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 10.5 km [3.0 km out + 3x1600m @ LT 4:15/km + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Split A (Banded &amp; 35 lb KB).</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Nov 25</span><span class="type">ZONE 2 RECOVERY</span></div>
+      <div class="day-desc">05:15 AM–06:05 AM (50 min) | 8.4 km Zone 2 [3.0 km out/back + trail @ 5:35/km]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row race">
+      <div class="day-header"><span class="name">Thursday, Nov 26</span><span class="type">TURKEY TROT 10K RACE SIMULATION</span></div>
+      <div class="day-desc">06:45 AM–08:00 AM | 13.2 km Total [1.6 km warm-up + <strong>Fort Worth YMCA Turkey Trot 10K locked @ MP 4:36/km</strong> + 1.6 km cool]. Evening Rest.</div>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Friday, Nov 27</span><span class="type">EASY BASE</span></div>
+      <div class="day-desc">05:15 AM–05:55 AM (40 min) | 6.8 km Zone 2 Easy Base. Complete PM Rest.</div>
+    </div>
+    <div class="day-row long">
+      <div class="day-header"><span class="name">Saturday, Nov 28</span><span class="type">TAPER LONG RUN</span></div>
+      <div class="day-desc">06:00 AM–07:45 AM (105 min) | 19.8 km [3.0 km out + 13.8 km trail @ 5:26/km + 3.0 km back].</div>
+      <span class="strength-tag">05:15 PM: Split B (Light bands only).</span>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Nov 29</span><span class="type">FULL SYSTEM REST</span></div>
+      <div class="day-desc">Absolute zero running. Full systemic recovery.</div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 15: Taper Phase 3 (-40% Vol) (Nov 30–Dec 06, 2026)</span>
+      <span class="week-badge">38.6 km Total (24.0 mi)</span>
+    </div>
+    <div class="day-row rehab">
+      <div class="day-header"><span class="name">Monday, Nov 30</span><span class="type">REST &amp; FOOT REHAB</span></div>
+      <div class="day-desc">Zero running. Mobility, soft tissue massage, and foot decompression.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Dec 01</span><span class="type">SHORT MP QUALITY</span></div>
+      <div class="day-desc">05:15 AM–06:05 AM (50 min) | 8.8 km [3.0 km out + 2x1600m @ MP 4:36/km w/ 2m walk + 3.0 km back].</div>
+      <span class="strength-tag">06:00 PM: Split C (Mobility only; zero heavy lifting).</span>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Dec 02</span><span class="type">ZONE 2 EASY FLUSH</span></div>
+      <div class="day-desc">05:15 AM–06:00 AM (45 min) | 7.4 km Zone 2 [3.0 km out/back + trail @ 5:35/km]. Complete PM Rest.</div>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Thursday, Dec 03</span><span class="type">COMPLETE REST</span></div>
+      <div class="day-desc">Complete Rest (AM &amp; PM)—Full joint and connective tissue restoration.</div>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Friday, Dec 04</span><span class="type">ZONE 2 RECOVERY + STRIDES</span></div>
+      <div class="day-desc">05:15 AM–05:55 AM (40 min) | 6.8 km Zone 2 Recovery + 3x20s light strides. Complete PM Rest.</div>
+    </div>
+    <div class="day-row long">
+      <div class="day-header"><span class="name">Saturday, Dec 05</span><span class="type">TAPER LONG RUN</span></div>
+      <div class="day-desc">06:00 AM–07:15 AM (75 min) | 13.6 km [3.0 km out + 7.6 km trail @ 5:26/km + 3.0 km back]. Leg elevation PM.</div>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Dec 06</span><span class="type">FULL SYSTEM REST</span></div>
+      <div class="day-desc">Absolute zero running. Full systemic rest. Transition to Race Week.</div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 16: BMW Dallas Race Week (Dec 07–Dec 13, 2026)</span>
+      <span class="week-badge" style="background:#ef4444; color:#fff;">55.4 km (34.4 mi) INC RACE</span>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Monday, Dec 07</span><span class="type">COMPLETE REST</span></div>
+      <div class="day-desc">Zero training load. Check metatarsal gel pad positioning inside race shoes. Baseline carbs: 4.5 g/kg.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Dec 08</span><span class="type">NEUROMUSCULAR PRIME</span></div>
+      <div class="day-desc">05:15 AM–05:50 AM (35 min) | 5.8 km [2.0 km out + 3x400m @ MP 4:36/km w/ 2m walk + 2.0 km back]. Evening Complete Rest.</div>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Wednesday, Dec 09</span><span class="type">COMPLETE REST &amp; MOBILITY</span></div>
+      <div class="day-desc">Zero running. 15-min light foot and hip mobility at 07:30 PM.</div>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Thursday, Dec 10</span><span class="type">CARB LOAD DAY 1 + SHAKEOUT</span></div>
+      <div class="day-desc">05:15 AM–05:45 AM (30 min) | 4.4 km Easy Neighborhood Jog + 3x15s Strides. Daily Carbs: 8.0–9.0 g/kg | Water: 1.5 Gal + Electrolytes.</div>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Friday, Dec 11</span><span class="type">CARB LOAD DAY 2</span></div>
+      <div class="day-desc">Complete Rest (Zero running). Daily Carbs: 8.0–9.0 g/kg | Leg elevation 30 mins twice daily.</div>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Saturday, Dec 12</span><span class="type">RACE EVE PRIME</span></div>
+      <div class="day-desc">07:00 AM–07:20 AM (20 min) | 3.0 km Light Jog + 2x20s strides. Carbs: 6.0 g/kg | Sips to thirst | Sleep by 09:30 PM.</div>
+    </div>
+    <div class="day-row race">
+      <div class="day-header"><span class="name">Sunday, Dec 13</span><span class="type">🎯 TARGET PEAK: BMW DALLAS MARATHON</span></div>
+      <div class="day-desc">
+        <strong>04:30 AM:</strong> 150g fast carbs (Bagel + honey + banana) + 500mg sodium.<br>
+        <strong>07:00 AM–10:15 AM: BMW DALLAS MARATHON</strong> (Lock pacing @ 4:36–4:37/km [7:25–7:26/mi] | 42.2 km | <strong>Target Finish: 3:14:30</strong>).<br>
+        <em>Foot Setup: Teardrop gel pad secured behind 2nd–4th metatarsals; open forefoot lace format.</em>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 5 -->
+  <div class="section-banner">Phase 5: Post-Marathon Recovery &amp; Ultra Transition (Weeks 17–19)</div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 17: Post-Marathon Structural Recovery (Dec 14–Dec 20, 2026)</span>
+      <span class="week-badge" style="background:#34d399; color:#000;">ACTIVE FLUSH</span>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Mon–Wed (Dec 14–16)</span><span class="type">COMPLETE PASSIVE HEALING</span></div>
+      <div class="day-desc">Zero running. Hot/cold contrast baths, foam rolling, and high protein/healthy fat nutrition.</div>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Thu–Fri (Dec 17–18)</span><span class="type">AEROBIC SPIN / WALK</span></div>
+      <div class="day-desc">20-minute light Zone 1 spin or flat neighborhood walk + gentle foot intrinsics.</div>
+    </div>
+    <div class="day-row race">
+      <div class="day-header"><span class="name">Saturday, Dec 19</span><span class="type">A CHARLIE BROWN CHRISTMAS 5K</span></div>
+      <div class="day-desc">08:00 AM–08:45 AM | 5.0 km Fun Run (Dallas, TX) — Active recovery jog, zero race effort.</div>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Dec 20</span><span class="type">FULL SYSTEM REST</span></div>
+      <div class="day-desc">Complete Rest. Begin transition to Cowtown 50K Ultra base track.</div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 18: Sub-3:00 Velocity Transition (Dec 21–Dec 27, 2026)</span>
+      <span class="week-badge">40.0 km Total (24.8 mi)</span>
+    </div>
+    <div class="day-row rehab">
+      <div class="day-header"><span class="name">Monday, Dec 21</span><span class="type">REST &amp; FOOT REHAB</span></div>
+      <div class="day-desc">Zero running. Foot intrinsic stabilization routines.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Dec 22</span><span class="type">SUB-3:00 LT INTERVALS</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 8.0 km Total [Includes 4x1000m @ new LT pace 3:45–3:55/km]. PM: Flat Split A.</div>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Dec 23</span><span class="type">SUB-3:00 BASE RUN</span></div>
+      <div class="day-desc">05:15 AM–06:00 AM (45 min) | 6.0 km Train Low base run @ 5:20–5:35/km. PM: Foot drills.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Thursday, Dec 24</span><span class="type">SUB-3:00 TEMPO</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 8.0 km Total [Includes 4.0 km @ Sub-3:00 MP 4:15–4:16/km]. PM: Flat Split B.</div>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Friday, Dec 25</span><span class="type">AEROBIC FLUSH</span></div>
+      <div class="day-desc">05:15 AM–05:55 AM (40 min) | 5.0 km Easy Zone 2 @ 5:00–5:15/km. PM: Core focus.</div>
+    </div>
+    <div class="day-row long">
+      <div class="day-header"><span class="name">Saturday, Dec 26</span><span class="type">ULTRA BASE LONG RUN</span></div>
+      <div class="day-desc">06:00 AM–07:30 AM (90 min) | 14.0 km Base Long Run @ steady pace. Track metatarsal comfort. PM: Split C.</div>
+    </div>
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Dec 27</span><span class="type">FULL SYSTEM REST</span></div>
+      <div class="day-desc">Complete Rest. Deep systemic adaptation.</div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 19: Sub-3:00 Year-End Block (Dec 28–Dec 31, 2026)</span>
+      <span class="week-badge">45.0 km Total (28.0 mi)</span>
+    </div>
+    <div class="day-row rehab">
+      <div class="day-header"><span class="name">Monday, Dec 28</span><span class="type">REST &amp; FOOT REHAB</span></div>
+      <div class="day-desc">Zero running. Foot intrinsic doming and toe splays.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Dec 29</span><span class="type">SUB-3:00 LT INTERVALS</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 8.0 km Total [Includes 4x1000m @ LT 3:45–3:55/km]. PM: Flat Split A.</div>
+    </div>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Dec 30</span><span class="type">SUB-3:00 BASE RUN</span></div>
+      <div class="day-desc">05:15 AM–06:00 AM (45 min) | 6.0 km Train Low base run @ 5:20–5:35/km. PM: Foot drills.</div>
+    </div>
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Thursday, Dec 31</span><span class="type">SUB-3:00 TEMPO &amp; YEAR-END WRAP</span></div>
+      <div class="day-desc">05:15 AM–06:15 AM (60 min) | 8.0 km Total [Includes 5.0 km @ Sub-3:00 MP 4:15–4:16/km]. PM: Flat Split B.</div>
+    </div>
+  </div>
+
+  <!-- APPENDIX -->
+  <div class="section-banner">Appendix: Nutrition, Macros &amp; Masters Best Practices</div>
+
+  <div class="two-col-grid">
+    <div class="card">
+      <h2>1. Dynamic Macro Periodization</h2>
+      <h3>High Loading Days (Tuesdays / Thursdays / Saturdays)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Nutrient</th>
+            <th>Target (per kg)</th>
+            <th>Daily Intake (142–155 lbs)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Calories</strong></td><td>Maintenance / Surplus</td><td>2,400–2,800 kcal</td></tr>
+          <tr><td><strong>Carbohydrates</strong></td><td>5.0–7.0 g/kg</td><td>320–440 g</td></tr>
+          <tr><td><strong>Protein</strong></td><td>1.8–2.0 g/kg</td><td>115–140 g</td></tr>
+          <tr><td><strong>Healthy Fats</strong></td><td>1.0 g/kg</td><td>65–70 g</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Low Loading &amp; Rest Days (Mondays / Wednesdays / Fridays / Sundays)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Nutrient</th>
+            <th>Target (per kg)</th>
+            <th>Daily Intake (142–155 lbs)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Calories</strong></td><td>Controlled Deficit</td><td>1,700–1,900 kcal</td></tr>
+          <tr><td><strong>Carbohydrates</strong></td><td>2.0–3.0 g/kg</td><td>130–190 g</td></tr>
+          <tr><td><strong>Protein</strong></td><td>2.2 g/kg (Muscle Sparing)</td><td>140–155 g</td></tr>
+          <tr><td><strong>Healthy Fats</strong></td><td>0.8 g/kg</td><td>50–55 g</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>2. Weight &amp; Body Composition Trajectory</h2>
+      <p style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px;">
+        Linear, lean-mass protected fat loss targeted specifically for race-day power-to-weight optimization:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Phase Target</th>
+            <th>Target Weight</th>
+            <th>Caloric Strategy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Current Baseline (Aug 24)</strong></td><td>155.0 lbs</td><td>Establish baseline logging</td></tr>
+          <tr><td><strong>End of Month 1 (Sep 21)</strong></td><td>151.7 lbs</td><td>-350 kcal on low/rest days</td></tr>
+          <tr><td><strong>End of Month 2 (Oct 19)</strong></td><td>148.4 lbs</td><td>Peri-workout carb fueling</td></tr>
+          <tr><td><strong>End of Month 3 (Nov 16)</strong></td><td>145.1 lbs</td><td>High protein across peak volume</td></tr>
+          <tr><td><strong>Race Week (Dec 13)</strong></td><td>142.0 lbs</td><td>Fully glycogen-loaded racing mass</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size: 0.68rem; color: var(--accent-green); margin-top: 4px;">
+        • Controlled rate of ~0.82 lbs/week protects endocrine axis and preserves myofibrillar power.
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>3. Fort Worth Healthy Fat Sourcing &amp; Masters Pro Hacks</h2>
+    <div class="two-col-grid">
+      <div>
+        <h3>Fort Worth Sourcing Guide</h3>
+        <ul class="bullet-list">
+          <li><strong>Coffee Shop Snacks:</strong> 2 Hard-boiled eggs (~10g fat, 12g pro) or avocado sourdough toast (ask for olive oil, skip sugary glazes).</li>
+          <li><strong>Natural Grocers (Fort Worth):</strong> Sprouted pumpkin seeds (magnesium/zinc), bulk raw walnuts/macadamias, and tinned wild sardines in olive oil (12g+ EPA/DHA for tendon sheath inflammation).</li>
+          <li><strong>Target (Good &amp; Gather):</strong> Single-serve guacamole tubs (80–100 kcal portion control) and pasture-raised Grade A large eggs.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Masters Running Hacks (40+ Physiology)</h3>
+        <ul class="bullet-list">
+          <li><strong>Tendon Pre-Hab:</strong> Execute isometric Spanish squats or wall soleus holds 45 min before speed sessions to induce tendon stress-relaxation.</li>
+          <li><strong>Cold Weather Transitions (Oct 23+):</strong> Keep morning warm-ups indoors with 5 minutes of jumping jacks and dynamic leg swings before hitting the 05:15 AM trail.</li>
+          <li><strong>Sleep Hygiene:</strong> Zero high-intensity training after 06:30 PM to keep nighttime cortisol low and maximize slow-wave sleep hormone release.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
