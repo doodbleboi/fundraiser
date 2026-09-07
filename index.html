@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Sub-3:15 to Sub-3:00 Master Periodization Blueprint</title>
+  <title>Sub-3:15 to Sub-3:00 Master Periodization &amp; Lifestyle Transformation Blueprint (2026–2027)</title>
   <style>
     :root {
       --bg-primary: #ffffff;
@@ -18,7 +18,35 @@
       --accent-green: #15803d;
       --accent-red: #b91c1c;
       --accent-purple: #7e22ce;
+      --accent-stein: #d97706;
+      --card-highlight: #fffdfa;
+      --card-long: #f0f9ff;
+      --card-rehab: #f0fdf4;
+      --card-race: #fef2f2;
     }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-primary: #0b0f19;
+        --bg-surface: #131b2e;
+        --bg-card: #1e293b;
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --border: #334155;
+        --border-dark: #64748b;
+        --accent-blue: #38bdf8;
+        --accent-gold: #fbbf24;
+        --accent-green: #4ade80;
+        --accent-red: #f87171;
+        --accent-purple: #c084fc;
+        --accent-stein: #f59e0b;
+        --card-highlight: #1e293b;
+        --card-long: #172554;
+        --card-rehab: #064e3b;
+        --card-race: #450a0a;
+      }
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -33,10 +61,10 @@
       padding: 8px;
       max-width: 1000px;
       margin: 0 auto;
-      font-size: 14px;
+      font-size: 13.5px;
     }
     header {
-      background: #f1f5f9;
+      background: var(--bg-surface);
       border: 2px solid var(--border-dark);
       border-radius: 8px;
       padding: 12px;
@@ -45,12 +73,31 @@
     h1 {
       font-size: 1.25rem;
       font-weight: 900;
-      color: #0f172a;
+      color: var(--text-main);
       text-transform: uppercase;
       letter-spacing: 0.5px;
       margin-bottom: 6px;
       text-align: center;
       line-height: 1.2;
+    }
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      justify-content: center;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border);
+    }
+    .quick-nav a {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
     }
     .meta-grid {
       display: grid;
@@ -60,7 +107,7 @@
       font-size: 0.85rem;
     }
     .meta-item {
-      background: #ffffff;
+      background: var(--bg-card);
       padding: 8px 10px;
       border-radius: 6px;
       border-left: 4px solid var(--accent-blue);
@@ -84,6 +131,7 @@
       letter-spacing: 0.5px;
       margin: 16px 0 8px 0;
       text-transform: uppercase;
+      border: 1px solid var(--border);
     }
     .card {
       background-color: var(--bg-surface);
@@ -94,31 +142,37 @@
     }
     .card h2 {
       font-size: 0.95rem;
-      color: #0f172a;
+      color: var(--text-main);
       text-transform: uppercase;
       margin-bottom: 6px;
       border-bottom: 2px solid var(--border);
       padding-bottom: 4px;
       font-weight: 800;
     }
+    .card h3 {
+      font-size: 0.85rem;
+      color: var(--accent-blue);
+      margin: 8px 0 3px 0;
+      font-weight: 700;
+    }
     table {
       width: 100%;
       border-collapse: collapse;
       font-size: 0.82rem;
       margin: 6px 0 10px 0;
-      background: #ffffff;
+      background: var(--bg-card);
     }
     th, td {
       border: 1px solid var(--border);
-      padding: 8px 8px;
+      padding: 6px 8px;
       text-align: left;
       vertical-align: top;
     }
     th {
-      background-color: #e2e8f0;
-      color: #0f172a;
+      background-color: var(--bg-surface);
+      color: var(--text-main);
       font-weight: 800;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
     }
     .pace-tag {
@@ -135,7 +189,7 @@
     .tag-z2 { background: #dcfce7; color: var(--accent-green); border: 1px solid var(--accent-green); }
 
     .protocol-box {
-      background: #ffffff;
+      background: var(--bg-card);
       border-radius: 6px;
       padding: 8px;
       font-size: 0.82rem;
@@ -144,7 +198,7 @@
       margin-bottom: 6px;
     }
     .protocol-box h4 {
-      color: #0f172a;
+      color: var(--text-main);
       font-size: 0.85rem;
       margin-bottom: 4px;
       font-weight: 700;
@@ -179,12 +233,12 @@
     .week-title {
       font-size: 0.95rem;
       font-weight: 800;
-      color: #0f172a;
+      color: var(--text-main);
     }
     .week-badge {
       font-size: 0.75rem;
-      background: #e2e8f0;
-      color: #0f172a;
+      background: var(--bg-card);
+      color: var(--text-main);
       padding: 2px 8px;
       border-radius: 4px;
       font-weight: 800;
@@ -198,1032 +252,834 @@
       border-radius: 6px;
       padding: 8px 10px;
       margin-bottom: 6px;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
     }
-    .day-row.quality { border-left-color: var(--accent-gold); background-color: #fffdfa; }
-    .day-row.long { border-left-color: var(--accent-blue); background-color: #f0f9ff; }
-    .day-row.rest { border-left-color: var(--text-muted); background-color: #f8fafc; }
-    .day-row.race { border-left-color: var(--accent-red); background-color: #fef2f2; }
+    .day-row.quality { border-left-color: var(--accent-gold); background-color: var(--card-highlight); }
+    .day-row.long { border-left-color: var(--accent-blue); background-color: var(--card-long); }
+    .day-row.rest { border-left-color: var(--text-muted); background-color: var(--bg-surface); }
+    .day-row.race { border-left-color: var(--accent-red); background-color: var(--card-race); }
+    .day-row.club { border-left-color: var(--accent-purple); background-color: #faf5ff; }
 
     .day-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
       font-weight: 800;
     }
-    .day-header .name { color: #0f172a; font-size: 0.88rem; }
-    .day-header .type { font-size: 0.78rem; color: var(--accent-gold); }
-    .day-desc { color: #0f172a; }
-    .day-notes {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-top: 3px;
-      font-style: italic;
-    }
-    .strength-tag {
-      color: var(--accent-green);
-      font-weight: 700;
-      display: block;
-      margin-top: 4px;
-      font-size: 0.82rem;
-    }
-    .cal-target {
-      color: #b45309;
-      font-weight: 800;
-      font-size: 0.76rem;
-      margin-left: 4px;
-    }
-    ul.bullet-list {
-      list-style-type: square;
-      padding-left: 16px;
-      font-size: 0.82rem;
-      color: var(--text-main);
-    }
-    ul.bullet-list li {
-      margin-bottom: 5px;
-    }
+    .day-header .name { color: var(--text-main); font-size: 0.88rem; }
+    .day-header .type { font-size: 0.76rem; color: var(--accent-gold); }
+    .timeline { list-style: none; padding-left: 0; }
+    .timeline li { margin-bottom: 3px; }
+    .time-slot { font-weight: 700; color: var(--text-main); display: inline-block; min-width: 135px; }
+    .audiobook-tag { color: var(--accent-purple); font-weight: 700; }
+    .strength-tag { color: var(--accent-green); font-weight: 700; }
+    .run-tag { color: var(--accent-blue); font-weight: 700; }
+    .fin-tag { color: var(--accent-gold); font-weight: 700; }
+    .work-tag { color: #d97706; font-weight: 700; }
+    .social-tag { color: #db2777; font-weight: 700; }
+    .theatre-tag { color: #0284c7; font-weight: 700; }
+    .cal-target { color: var(--accent-gold); font-weight: 800; font-size: 0.76rem; margin-left: 4px; }
+    ul.bullet-list { list-style-type: square; padding-left: 16px; font-size: 0.82rem; color: var(--text-main); }
+    ul.bullet-list li { margin-bottom: 4px; }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Sub-3:15 to Sub-3:00 Master Periodization Blueprint</h1>
+    <h1>Sub-3:15 to Sub-3:00 Master Periodization &amp; Lifestyle Transformation Blueprint</h1>
     <div class="meta-grid">
       <div class="meta-item">
-        <strong>Target Events &amp; Official Schedule</strong>
-        Primary Target: BMW Dallas Marathon (Dec 13, 2026) | Goal: 3:14:30 (4:36/km)<br>
-        Ultra Target: The Cowtown 50K (Feb 28, 2027) | Sub-3:00 Velocity Endurance Track<br>
-        Tune-Up Races: FW Oktoberfest 5K (Sep 26) | Rahr 5K (Oct 03) | Big Texas 15K (Oct 17) | Fort Worth Half (Nov 08) | Turkey Trot 10K (Nov 26) | Charlie Brown 5K (Dec 19)
+        <strong>Target Events &amp; Certified Race Schedule</strong>
+        Primary Target: BMW Dallas Marathon (Sun, Dec 13, 2026) | Goal: 3:14:30 (4:36/km)[cite: 8]<br>
+        Ultra Track: The Cowtown 50K (Sun, Feb 28, 2027) | Sub-3:00 Velocity Track[cite: 8]<br>
+        Competitions &amp; Tune-Ups: FW Oktoberfest 5K &amp; Steinhoist (Sep 26)[cite: 1, 7] | Rahr Brewing 5K &amp; Steinhoist (Oct 03)[cite: 21] | Big Texas Run 15K (Oct 17)[cite: 21] | Fort Worth Half Marathon MP Dress Rehearsal (Nov 08)[cite: 1] | Fort Worth YMCA Turkey Trot 10K (Nov 26)[cite: 21] | A Charlie Brown Christmas 5K (Dec 19)[cite: 21]
       </div>
       <div class="meta-item">
-        <strong>Schedule Architecture &amp; Solar Rules</strong>
-        Workday: 07:15 AM–05:30 PM (M–F) | AM Indoor Strength &amp; Steinhoist: Concludes at exactly 06:30 AM sharp<br>
-        Outdoor Running Solar Law: Never outside before Civil Dawn or after Civil Dusk in Fort Worth, TX.<br>
-        Pre-DST (Weeks 1–10): Weekday runs launch post-work to conclude precisely at Civil Dusk.<br>
-        Winter Post-DST (Weeks 11–16): Civil dusk occurs at 5:50–6:02 PM CST. Weekday runs are calibrated flushes ending at dusk, with primary quality mileage safely placed during weekend daylight hours.
+        <strong>Base Coordinates, Commute &amp; Café Rotation</strong>
+        Residence: 721 W Cannon St, Fort Worth, TX 76104[cite: 1, 7]. Morning Commute: 10–20 min bicycle transit[cite: 1]. Clock in by 07:15 AM sharp[cite: 1, 3].<br>
+        Café Loop: Mon: Crude[cite: 1] | Tue: Avoca Foch/Buon Giorno/Cherry/Branch &amp; Bird/Avoca Magnolia[cite: 1] | Wed: Roots[cite: 1] | Thu: Avoca Foch/Buon Giorno/Cherry/Branch &amp; Bird/Avoca Magnolia[cite: 1] | Fri: Chill Coffee or Crude (314 S Main St Ste 110)[cite: 1].<br>
+        Midday Transition: 10:00 AM bike departure; grocery errands; workstation live at Cannon St by 10:30 AM[cite: 1].
       </div>
       <div class="meta-item">
-        <strong>Apartment Equipment Inventory</strong>
-        Gear: One 35-lb DB, Two 5-lb DBs, One 35-lb Med Ball, Loop Resistance Band, Doorway Pull-Up Bar, Grip Tool<br>
-        Transit Standard: 3.0 km out / 3.0 km back warm-up &amp; cool-down along Trinity Trails
+        <strong>Solar Architecture, Hard Boundaries &amp; Parallel Life Action</strong>
+        Morning Indoor Strength &amp; Steinhoist: Concludes at exactly 06:30 AM sharp[cite: 1].<br>
+        Weekday Evening Running: Calibrated to conclude precisely at Civil Dusk in Fort Worth, TX (no running in darkness)[cite: 1, 8].<br>
+        Winter Solar Shift (Weeks 11–16): Civil dusk tightens to 5:50–6:02 PM CST[cite: 8]. Weekdays become 20–30 min aerobic dusk flushes with primary volume placed safely on weekend daylight mornings[cite: 8].<br>
+        Parallel Life Directive: No delayed life[cite: 1]. Social titration, vocal/theatre drills, and professional sprints run simultaneously right now[cite: 1].
       </div>
+      <div class="meta-item">
+        <strong>Apartment Equipment Inventory &amp; Transit Standard</strong>
+        Equipment: One 35-lb DB, Two 5-lb DBs, One 35-lb Med Ball, Loop Resistance Bands, Doorway Pull-Up Bar, Grip Tool[cite: 8].<br>
+        Transit Run Standard: 3.0 km out / 3.0 km back warm-up &amp; cool-down along Trinity Trails[cite: 8].
+      </div>
+    </div>
+    <div class="quick-nav">
+      <a href="#behavioral">Behavioral Science</a>
+      <a href="#operational">Operational Standards</a>
+      <a href="#paces">Paces &amp; Strength</a>
+      <a href="#september">September 2026 Daily</a>
+      <a href="#fullcycle">Full 19-Week Plan</a>
+      <a href="#ledger">15-Month Ledger</a>
+      <a href="#commitments">Resource Allocations</a>
+      <a href="#horizons">Horizon Execution Guide</a>
     </div>
   </header>
 
-  <div class="section-banner">Pace Continuum &amp; Strength Protocols</div>
+  <div id="behavioral" class="section-banner">Behavioral Neurobiology: Action Without Willpower Depletion</div>
   <div class="card">
-    <h2>Pace Continuum &amp; Target Adaptations</h2>
+    <h2>Empirical Neurobiology &amp; Workplace Choice Architecture</h2>
+    <ul class="bullet-list">
+      <li><strong>1. Possible Selves &amp; Behavioral Congruence (Dr. Hazel Markus / Stanford):</strong> Motivation operates by minimizing cognitive dissonance between current action and your "feared vs. ideal future self"[cite: 1]. You are not an anxious remote worker hoping things improve; you are an endurance specialist, debt-free operator, and expressive performer executing daily prerequisite duties[cite: 1]. Action precedes identity[cite: 1].</li>
+      <li><strong>2. Dopamine Pacing, Prediction Error &amp; Unstacking (Dr. Andrew Huberman / Dr. Anna Lembke):</strong>
+        <br>&bull; <em>Dopamine Unstacking:</em> Eliminate concurrent reward stimulation[cite: 1]. Never combine caffeine + high sugar/pastries + high-tempo audio + phone scrolling[cite: 1]. This spikes dopamine 2.5x above baseline, followed immediately by an equal plunge below baseline, manifesting as afternoon brain fog and depression[cite: 1].
+        <br>&bull; <em>Friction-Attached Dopamine:</em> Intentionally attach the dopamine reward to the effort itself[cite: 1]. Verbally acknowledge completing the cold shower, finishing rep 8 of Bulgarian split squats, or formatting slides before taking a sip of plain black coffee[cite: 1].
+        <br>&bull; <em>Dopamine Reset via 10-Minute Cold Exposures/Walks:</em> Step outside at 12:30 PM for a 10-minute screenless walk to trigger visual optic flow, down-regulating amygdala activation and resetting dopamine receptors for deep afternoon focus[cite: 1].</li>
+      <li><strong>3. Choice Architecture for Workplace Procrastination (Thaler &amp; Sunstein / BJ Fogg):</strong>
+        <br>&bull; <em>The Fastpath Slide Anchor (Starts Sep 28, Onboarding Nov 19-20):</em> Executive inertia stems from viewing slide remakes as an amorphous 10-hour hurdle[cite: 1]. Anchor the prompt: "At 07:20 AM at the café desk, I will open Google Slides and format exactly 2 slides before opening email or Slack."[cite: 1]
+        <br>&bull; <em>Friction Reversal:</em> Make distraction high-friction (log out of all social accounts, phone zipped in backpack until 10:00 AM) and action zero-friction (slides deck left open as the sole pinned tab on the laptop browser the night before)[cite: 1].</li>
+      <li><strong>4. Non-Negotiable Environmental Triggers:</strong> The setting sun dictates the run start; the 06:30 AM alarm ends the lift; the 07:15 AM clock-in eliminates negotiation[cite: 1].</li>
+    </ul>
+  </div>
+
+  <div id="operational" class="section-banner">Execution Rules: What To Do, What Never To Do &amp; What Perfect Execution Looks Like</div>
+  <div class="card">
+    <h2>The Operational Standard</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.82rem; margin-bottom: 8px;">
+      <div style="background: #f0fdf4; border: 1px solid var(--accent-green); border-radius: 6px; padding: 8px;">
+        <strong style="color: var(--accent-green); display: block; margin-bottom: 4px;">DO (Non-Negotiable Catalysts):</strong>
+        <ul style="padding-left: 14px; list-style-type: square;">
+          <li>Hit the 07:20 AM Fastpath slide anchor every morning at the café desk without checking communications first[cite: 1].</li>
+          <li>Execute lateral raises with the 5-lb DBs to muscular failure with a 2-second pause at parallel[cite: 1].</li>
+          <li>Practice Micro-Conversational Titration: Ask baristas genuine questions, make brief observational small talk, and participate actively in book clubs[cite: 1].</li>
+          <li>Run 10 minutes of vocal warmups and monologue articulations weekly to build vocal resonance and projection for community theatre auditions[cite: 1].</li>
+          <li>Maintain 125–140g daily protein and drink 20 oz of electrolyte water within 10 minutes of waking[cite: 1, 8].</li>
+          <li>Pre-set all running clothes, work backpack, and shoes the night before[cite: 1].</li>
+        </ul>
+      </div>
+      <div style="background: #fef2f2; border: 1px solid var(--accent-red); border-radius: 6px; padding: 8px;">
+        <strong style="color: var(--accent-red); display: block; margin-bottom: 4px;">DO NOT (Sabotage Traps):</strong>
+        <ul style="padding-left: 14px; list-style-type: square;">
+          <li>Do NOT purchase bakery items or liquid sugar at cafés (preserves $480/month and cuts 540 empty calories daily)[cite: 4, 18].</li>
+          <li>Do NOT open email, Slack, or text threads before the 07:20 AM 2-slide Fastpath quota is met[cite: 1].</li>
+          <li>Do NOT delay living, vocal training, social contact, or dating conversations until a future debt-free date[cite: 1].</li>
+          <li>Do NOT compromise the 10:00 PM sleep curfew; sleep is the primary driver of testosterone, mood, and soft tissue repair[cite: 1, 10].</li>
+          <li>Do NOT skip the evening dusk cutoff; respect solar rhythms to protect recovery and safety[cite: 1, 8].</li>
+        </ul>
+      </div>
+    </div>
+    <div style="background: #eff6ff; border: 1px solid var(--accent-blue); border-radius: 6px; padding: 8px; font-size: 0.82rem;">
+      <strong style="color: var(--accent-blue); display: block; margin-bottom: 2px;">What Perfect Execution Looks Like:</strong>
+      Awakening without snooze alarm at 05:30 AM[cite: 1]; completing the strength circuit with crisp form by 06:30 AM[cite: 1]; rolling out on the bicycle by 06:55 AM with work bag packed[cite: 1]; clocking in at 07:15 AM with a clean black coffee[cite: 1, 18]; executing the 2-slide Fastpath sprint before email[cite: 1]; completing remote work with zero tab-switching by 05:00 PM[cite: 1]; hitting Trinity Trails so the run concludes precisely at Civil Dusk[cite: 1]; listening to 60 minutes of <em>Conclave</em> @ 2x speed[cite: 1]; eating a whole-food protein dinner[cite: 1]; executing vocal resonance drills[cite: 1]; and entering deep restorative sleep at 10:00 PM knowing every life vector moved forward today[cite: 1].
+    </div>
+  </div>
+
+  <div id="paces" class="section-banner">Pace Continuum &amp; Functional Hypertrophy Strength Protocols</div>
+  <div class="card">
+    <h2>Pace Continuum (Sub-3:15 to Sub-3:00)</h2>
     <table>
       <thead>
-        <tr>
-          <th>Modality</th>
-          <th>Sub-3:15 Target</th>
-          <th>Sub-3:00 Target</th>
-          <th>Primary Adaptation</th>
-        </tr>
+        <tr><th>Zone</th><th>Sub-3:15 Target</th><th>Sub-3:00 Target</th><th>Primary Adaptation</th></tr>
       </thead>
       <tbody>
-        <tr>
-          <td><span class="pace-tag tag-z2">Zone 2 Base</span></td>
-          <td>5:26–5:54/km (8:45–9:30/mi)</td>
-          <td>5:00–5:25/km (8:03–8:43/mi)</td>
-          <td>Mitochondrial volume &amp; lipid oxidation</td>
-        </tr>
-        <tr>
-          <td><span class="pace-tag tag-z2">Train Low Base</span></td>
-          <td>5:50–6:10/km (9:23–9:55/mi)</td>
-          <td>5:20–5:35/km (8:35–8:59/mi)</td>
-          <td>Substrate efficiency &amp; tissue flush</td>
-        </tr>
-        <tr>
-          <td><span class="pace-tag tag-mp">Marathon (MP)</span></td>
-          <td>4:36–4:37/km (7:25–7:26/mi)</td>
-          <td>4:15–4:16/km (6:50–6:52/mi)</td>
-          <td>Glycogen economy at race pace</td>
-        </tr>
-        <tr>
-          <td><span class="pace-tag tag-lt">Lactate Threshold</span></td>
-          <td>4:15–4:18/km (6:50–6:55/mi)</td>
-          <td>3:55–4:00/km (6:18–6:26/mi)</td>
-          <td>Lactate clearance &amp; systemic buffering</td>
-        </tr>
-        <tr>
-          <td><span class="pace-tag tag-vo2">VO2 Max Intervals</span></td>
-          <td>3:53–3:56/km (6:15–6:20/mi)</td>
-          <td>3:35–3:45/km (5:46–6:02/mi)</td>
-          <td>Max cardiac output &amp; motor recruitment</td>
-        </tr>
+        <tr><td><span class="pace-tag tag-z2">Zone 2 Base</span></td><td>5:26–5:54 /km (8:45–9:30 /mi)</td><td>5:00–5:25 /km (8:03–8:43 /mi)</td><td>Mitochondrial volume &amp; fat oxidation[cite: 8]</td></tr>
+        <tr><td><span class="pace-tag tag-z2">Train Low Base</span></td><td>5:50–6:10 /km (9:23–9:55 /mi)</td><td>5:20–5:35 /km (8:35–8:59 /mi)</td><td>Substrate efficiency &amp; tissue flush[cite: 8]</td></tr>
+        <tr><td><span class="pace-tag tag-mp">Marathon (MP)</span></td><td>4:36–4:37 /km (7:25–7:26 /mi)</td><td>4:15–4:16 /km (6:50–6:52 /mi)</td><td>Race pace efficiency &amp; glycogen sparing[cite: 8, 21]</td></tr>
+        <tr><td><span class="pace-tag tag-lt">Lactate Threshold</span></td><td>4:15–4:18 /km (6:50–6:55 /mi)</td><td>3:55–4:00 /km (6:18–6:26 /mi)</td><td>Lactate clearance &amp; buffering[cite: 8, 21]</td></tr>
+        <tr><td><span class="pace-tag tag-vo2">VO2 Max Track</span></td><td>3:53–3:56 /km (6:15–6:20 /mi)</td><td>3:35–3:45 /km (5:46–6:02 /mi)</td><td>Cardiac stroke volume &amp; turnover[cite: 8, 21]</td></tr>
       </tbody>
     </table>
-    <p style="font-size: 0.8rem; color: var(--text-muted);">
-      <strong>Hard Days Hard Structure:</strong> High-tension strength and high-intensity running occur on the same day, keeping dedicated recovery days completely clear of fatigue.
-    </p>
   </div>
 
   <div class="card">
-    <h2>Functional Home Strength Protocols (DB &amp; Med Ball Matched)</h2>
+    <h2>Functional Home Strength Protocols (35-lb DB, 35-lb Med Ball, 5-lb DBs, Bands &amp; Pull-Up Bar)[cite: 8]</h2>
     <div class="protocol-box">
-      <h4>Split A: Lower Body Force &amp; Tendons + Steinhoist (Tue AM — Ends 06:30 AM Sharp)</h4>
+      <h4>Split A: Lower Body Force &amp; Tendons + Steinhoist (Tue AM — Ends 06:30 AM Sharp)[cite: 1, 8]</h4>
       <ol>
-        <li>1. Full-Depth Goblet Squats: 4x8 (35 lb med ball or 35 lb DB held goblet-style; full knee flexion passing parallel)</li>
-        <li>2. Single-Leg Dumbbell RDLs: 4x8/leg (35 lb DB; deep posterior chain hip hinge loading glute-hamstring complex)</li>
-        <li>3. Loaded Standing Calf Deficit Raises: 4x15 (35 lb DB; full stretch below level into maximum plantarflexion)</li>
-        <li>4. Banded Spanish Squats: 3x45s hold (Loop band anchored behind knees; vertical torso for patellar tendon stiffness)</li>
-        <li>5. Steinhoisting Extended Holds: 3x Max duration with 5 lb DB extended parallel to floor + 3x20 reps grip tool</li>
+        <li>1. Full-Depth Goblet Squats: 4x8 (35 lb med ball or 35 lb DB held goblet-style; full knee flexion passing parallel)[cite: 8]</li>
+        <li>2. Single-Leg Dumbbell RDLs: 4x8/leg (35 lb DB; deep posterior chain hip hinge loading glute-hamstring complex)[cite: 8]</li>
+        <li>3. Loaded Standing Calf Deficit Raises: 4x15 (35 lb DB; full stretch below level into maximum plantarflexion)[cite: 1]</li>
+        <li>4. Banded Spanish Squats: 3x45s hold (Loop band anchored behind knees; vertical torso for patellar tendon stiffness)[cite: 1, 8]</li>
+        <li>5. Steinhoisting Extended Holds: 3x Max duration with 5 lb DB extended parallel to floor + 3x20 reps grip tool[cite: 8]</li>
       </ol>
     </div>
     <div class="protocol-box">
-      <h4>Split B: Plyometric Power &amp; Upper Body (Thu AM — Ends 06:30 AM Sharp)</h4>
+      <h4>Split B: Plyometric Power, Upper Force &amp; Deltoid Hypertrophy (Thu AM — Ends 06:30 AM Sharp)[cite: 1, 8]</h4>
       <ol>
-        <li>1. Explosive Countermovement Jumps (CMJs): 3x5 (Performed 100% fresh after dynamic warmup; explosive vertical triple extension)</li>
-        <li>2. Strict Dead-Hang Pull-Ups: 4x6–8 (Doorway bar; hollow-body position, full lat engagement)</li>
-        <li>3. Single-Arm DB Push Press: 3x8/arm (35 lb DB; athletic dip and drive to powerful overhead lockout)</li>
-        <li>4. Deficit Push-Ups: 3x12–15 (Hands elevated on 5 lb DB handles for full pectoral stretch)</li>
-        <li>5. Steinhoisting Scapular Wall Drill: 3x60s hold (Posterior deltoid and lower trapezius recruitment against wall)</li>
+        <li>1. Explosive Countermovement Jumps (CMJs): 3x5 (Performed 100% fresh after dynamic warmup; explosive vertical triple extension)[cite: 8]</li>
+        <li>2. Strict Dead-Hang Pull-Ups: 4x6–8 (Doorway bar; hollow-body position, full lat engagement for upper V-taper)[cite: 8]</li>
+        <li>3. Single-Arm DB Push Press: 3x8/arm (35 lb DB; athletic dip and drive to powerful overhead lockout)[cite: 1]</li>
+        <li>4. <strong>Hypertrophy Addition — DB Lateral Raise Burnout:</strong> 4x20–25 reps (Two 5 lb DBs; strict lateral plane abduction, 2-second isometric pause at shoulder height. Targets lateral deltoid head to widen the clavicular line and construct an athletic shoulder-to-waist ratio)[cite: 1]</li>
+        <li>5. Deficit Push-Ups: 3x12–15 (Hands elevated on 5 lb DB handles for full pectoral stretch)[cite: 1]</li>
+        <li>6. Steinhoisting Scapular Wall Drill: 3x60s hold (Posterior deltoid and lower trapezius recruitment against wall)[cite: 8]</li>
       </ol>
     </div>
     <div class="protocol-box">
-      <h4>Split C: Unilateral Core &amp; Trunk Stability (Sat PM or Sun PM)</h4>
+      <h4>Split C: Unilateral Core &amp; Trunk Stability (Sat PM or Sun PM)[cite: 8]</h4>
       <ol>
-        <li>1. Walking DB Lunges or Bulgarian Split Squats: 3x10/leg (35 lb DB or med ball; full unilateral drive)</li>
-        <li>2. Hanging Knee/Leg Raises: 3x12–15 (Doorway pull-up bar; decompresses spine, complete abdominal compression)</li>
-        <li>3. Full RKC Planks: 3x30s max tension (Toes and elbows digging toward center; maximal abdominal bracing)</li>
-        <li>4. Banded Pallof Press: 3x12/side (Doorway anchored band; anti-rotational core lock)</li>
+        <li>1. Walking DB Lunges or Bulgarian Split Squats: 3x10/leg (35 lb DB or med ball; full unilateral drive)[cite: 1]</li>
+        <li>2. Hanging Knee/Leg Raises: 3x12–15 (Doorway pull-up bar; decompresses spine, complete abdominal compression)[cite: 8]</li>
+        <li>3. Full RKC Planks: 3x30s max tension (Toes and elbows digging toward center; maximal abdominal bracing)[cite: 1]</li>
+        <li>4. Banded Pallof Press: 3x12/side (Doorway anchored band; anti-rotational core lock)[cite: 8]</li>
       </ol>
     </div>
-    <p style="font-size: 0.78rem; color: var(--accent-red); margin-top: 4px; font-weight: 700;">
-      *Taper Periodization Rule: In Weeks 13–15, cut volume by 50% (drop from 4 sets to 2 sets across all exercises) but keep the weight high (35 lb implement) to maintain tendon stiffness and motor recruitment into race day.
+    <p style="font-size: 0.78rem; color: var(--accent-blue); margin-top: 4px; font-weight: 700;">
+      *Physiological Rationale: Upper body pulling and lateral deltoid volume builds shoulder width and scapular endurance without adding heavy non-functional mass, stabilizing posture and arm swing mechanics during the late miles of a sub-3:15 marathon while building an athletic V-taper[cite: 8].
     </p>
   </div>
 
-  <!-- PHASE 1 -->
-  <div class="section-banner">Phase 1: Base Volume &amp; Hypertrophy (Weeks 1–4)</div>
+  <div id="september" class="section-banner">September 2026 Daily Master Schedule</div>
 
+  <!-- WEEK 1 -->
   <div class="week-card">
     <div class="week-header">
-      <span class="week-title">Week 1 (Aug 24–Aug 30, 2026)</span>
-      <span class="week-badge">59.5 km Total (37.0 mi)</span>
+      <span class="week-title">Week 1 (Sep 01–Sep 06) | Base Build</span>
+      <span class="week-badge">Focus: Routine Lock-In</span>
     </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Monday, Aug 24</span><span class="type">REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Daylight 1-2 Mile Coffee Shop Bike Spin. Full neuromuscular reset. Absolute zero running (0.0 km).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Tuesday, Aug 25</span><span class="type">SPLIT A + EVENING VO2 TRACK <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:40 AM–06:30 AM (50 min): Home Split A (Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        07:31 PM–08:26 PM (55 min) | 10.0 km [3.0 km transit out @ 5:35/km (16:45) + 6x400m @ 3:56/km (9:26) w/ 5x90s jog (7:30, 1.6 km) + 3.0 km transit back @ 5:35/km (16:45)]. Ends exactly at Civil Dusk (08:26 PM).
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Wednesday, Aug 26</span><span class="type">EVENING ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
-      <div class="day-desc">07:26 PM–08:25 PM (59 min) | 10.5 km Zone 2 [3.0 km out + 4.5 km Trinity Trails + 3.0 km back @ 5:35/km (58:38)]. Ends exactly at Civil Dusk (08:25 PM).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Thursday, Aug 27</span><span class="type">SPLIT B + EVENING TEMPO <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:40 AM–06:30 AM (50 min): Home Split B (CM Jumps First, Pull-Ups, Push Press, Deficit Push-Ups, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        07:26 PM–08:24 PM (58 min) | 11.6 km [3.0 km out @ 5:35/km (16:45) + 5.6 km Tempo @ 4:18/km (24:05) + 3.0 km back @ 5:35/km (16:45) = 57:35]. Ends exactly at Civil Dusk (08:24 PM).
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Friday, Aug 28</span><span class="type">EVENING EASY FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">07:34 PM–08:22 PM (48 min) | Easy Aerobic Flush Run (8.4 km [3.0 km out + 2.4 km trail + 3.0 km back @ 5:45/km = 48:18]). Ends exactly at Civil Dusk (08:22 PM).</div>
-    </div>
-    <div class="day-row long">
-      <div class="day-header"><span class="name">Saturday, Aug 29</span><span class="type">KEY OVERLOAD LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">06:45 AM–08:17 AM (92 min) | 16.8 km [3.0 km out @ 5:35/km (16:45) + 10.8 km trail @ 5:29/km (59:13) + 3.0 km back @ 5:35/km (16:45) = 1:32:43]. Starts after morning civil dawn (06:35 AM).<br>
-      <span class="strength-tag">05:15 PM: Home Split C (Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press).</span></div>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Sunday, Aug 30</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
-      <div class="day-desc">Absolute zero running (0.0 km). Full structural regeneration and sleep banking.</div>
-    </div>
-  </div>
 
-  <div class="week-card">
-    <div class="week-header">
-      <span class="week-title">Week 2 (Aug 31–Sep 06, 2026)</span>
-      <span class="week-badge">65.2 km Total (40.5 mi)</span>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Monday, Aug 31</span><span class="type">REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Daylight 1-2 Mile Coffee Shop Bike Spin. Absolute zero running (0.0 km).</div>
-    </div>
     <div class="day-row quality">
-      <div class="day-header"><span class="name">Tuesday, Sep 01</span><span class="type">SPLIT A + EVENING VO2 TRACK <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:40 AM–06:30 AM (50 min): Home Split A (Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        07:16 PM–08:19 PM (63 min) | 11.3 km [3.0 km out @ 5:35/km (16:45) + 5x800m @ 3:56/km (15:44, 4.0 km) w/ 4x2 min jog (8:00, 1.3 km) + 3.0 km back @ 5:35/km (16:45) = 57:14 running + drills]. Ends exactly at Civil Dusk (08:19 PM).
-      </div>
+      <div class="day-header"><span class="name">Tuesday, Sep 01</span><span class="type">VO2 TRACK + SPLIT A <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">05:30 AM–05:40 AM:</span> Wake, hydrate (20 oz water + electrolytes), dress[cite: 1].</li>
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A (Ends 06:30 AM Sharp):</span> Goblet Squats, DB RDLs, Deficit Calf Raises, Spanish Squats, Steinhoist holds[cite: 1].</li>
+        <li><span class="time-slot">06:30 AM–06:55 AM:</span> Floss, shower, brush teeth, dry off, dress in clean casual clothes, pack work bag[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bicycle commute to <strong>Avoca Coffee (Foch St)</strong>[cite: 1]. Lock bike, order black coffee/cortado ($3.50–$4.00, $0 pastry)[cite: 1, 18]. <span class="social-tag">Micro-Social:</span> Smile, make direct eye contact, ask barista how their morning started[cite: 1].</li>
+        <li><span class="time-slot">07:15 AM–10:00 AM:</span> Open laptop, clock in promptly at 07:15 AM[cite: 1]. <span class="work-tag">Fastpath Sprint:</span> Format/outline Modules 1-2 slides (07:20 AM–08:00 AM)[cite: 1]. Core deep work flight[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike commute to 721 W Cannon St (stop at Natural Grocers on 7th if pantry stock needed); setup home workstation by 10:30 AM sharp[cite: 1].</li>
+        <li><span class="time-slot">10:30 AM–05:00 PM:</span> Remote work execution (12:30 PM lunch break: protein + clean complex carbs)[cite: 1]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">05:00 PM–07:14 PM:</span> Personal transition, pre-run hydration, light carb snack[cite: 1].</li>
+        <li><span class="time-slot">07:14 PM–08:17 PM:</span> <span class="run-tag">Quality Run (63 min):</span> 11.3 km [3.0 km out + 5x800m @ 3:56/km w/ 2m jog + 3.0 km back][cite: 1]. Ends at Civil Dusk (8:17 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:17 PM–09:45 PM:</span> Post-run protein dinner, stretch, set out tomorrow's gear[cite: 1]. Screens off by 09:45 PM[cite: 1]. In bed by 10:00 PM[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row">
-      <div class="day-header"><span class="name">Wednesday, Sep 02</span><span class="type">EVENING ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
-      <div class="day-desc">07:20 PM–08:18 PM (58 min) | 10.5 km Zone 2 [3.0 km out + 4.5 km trail @ 5:29/km (24:40) + 3.0 km back @ 5:35/km (16:45) = 58:10]. Ends exactly at Civil Dusk (08:18 PM).</div>
+      <div class="day-header"><span class="name">Wednesday, Sep 02</span><span class="type">ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:00 AM–06:30 AM:</span> Foot intrinsic drills, hip mobility, spine decompression[cite: 1].</li>
+        <li><span class="time-slot">06:30 AM–06:55 AM:</span> Floss, shower, brush teeth, dry off, dress, pack laptop bag[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike commute to <strong>Roots Coffeehouse</strong>[cite: 1]. Order coffee desk lease[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">07:15 AM–10:00 AM:</span> Deep administrative work block[cite: 1]. <span class="work-tag">Fastpath Sprint:</span> Review cohort metrics[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike commute to Cannon St; live at home desk by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">10:30 AM–05:00 PM:</span> Remote work blocks (Lunch 12:30 PM–01:30 PM)[cite: 1]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">07:17 PM–08:15 PM:</span> <span class="run-tag">Zone 2 Run (58 min):</span> 10.5 km @ 5:29/km[cite: 1]. Ends at Civil Dusk (8:15 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:15 PM–10:00 PM:</span> Dinner, hydration, night wind-down[cite: 1]. In bed by 10:00 PM[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row quality">
-      <div class="day-header"><span class="name">Thursday, Sep 03</span><span class="type">SPLIT B + EVENING THRESHOLD <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:40 AM–06:30 AM (50 min): Home Split B (CM Jumps First, Pull-Ups, Push Press, Deficit Push-Ups, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        07:03 PM–08:16 PM (73 min) | 12.9 km [3.0 km out @ 5:35/km (16:45) + 6.9 km LT @ 4:16/km (29:26) + 3.0 km back @ 5:35/km (16:45) = 62:56 running + warm-up]. Ends exactly at Civil Dusk (08:16 PM).
-      </div>
+      <div class="day-header"><span class="name">Thursday, Sep 03</span><span class="type">THRESHOLD + SPLIT B <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B (Ends 06:30 AM Sharp):</span> CM Jumps First, Pull-Ups, 35 lb DB Push Press, 5 lb DB Lateral Raises (4x20), Deficit Push-Ups, Steinhoist Drill[cite: 1].</li>
+        <li><span class="time-slot">06:30 AM–06:55 AM:</span> Floss, shower, brush teeth, dry off, dress, pack bag[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike commute to <strong>Buon Giorno Coffee</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">07:15 AM–10:00 AM:</span> High-focus work block[cite: 1]. <span class="work-tag">Fastpath Sprint:</span> Re-architect slide templates[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home to Cannon St; workstation live by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">10:30 AM–05:00 PM:</span> Afternoon work flight[cite: 1]. Clock out 05:00 PM[cite: 1]. Pre-run snack at 06:30 PM[cite: 1].</li>
+        <li><span class="time-slot">07:01 PM–08:14 PM:</span> <span class="run-tag">Threshold Run (73 min):</span> 12.9 km [3.0 km out + 6.9 km LT @ 4:16/km + 3.0 km back][cite: 1]. Ends at Civil Dusk (8:14 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:14 PM–10:00 PM:</span> Dinner, foam roll legs, sleep preparation[cite: 1]. In bed by 10:00 PM[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row">
-      <div class="day-header"><span class="name">Friday, Sep 04</span><span class="type">EVENING EASY BASE <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">07:27 PM–08:15 PM (48 min) | Easy Aerobic Flush Run (8.4 km @ 5:42/km = 47:52). Ends exactly at Civil Dusk (08:15 PM).</div>
+      <div class="day-header"><span class="name">Friday, Sep 04</span><span class="type">EASY AEROBIC FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:00 AM–06:30 AM:</span> Mobility &amp; core activation[cite: 1].</li>
+        <li><span class="time-slot">06:30 AM–06:55 AM:</span> Floss, shower, brush teeth, dry off, dress, pack bag[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike commute to <strong>Chill Coffee or Crude (314 S Main St Ste 110)</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">07:15 AM–10:00 AM:</span> End-of-week sprint tasks[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Direct return bike transit down Pennsylvania/Cannon to 721 W Cannon St; home by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">10:30 AM–05:00 PM:</span> Close weekly project tickets[cite: 1]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">07:25 PM–08:13 PM:</span> <span class="run-tag">Flush Run (48 min):</span> 8.4 km @ 5:42/km[cite: 1]. Ends at Civil Dusk (8:13 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:13 PM–10:00 PM:</span> Clean recovery dinner[cite: 1]. Layout Saturday long run nutrition[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row long">
       <div class="day-header"><span class="name">Saturday, Sep 05</span><span class="type">KEY PROGRESSIVE LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">06:45 AM–08:33 AM (108 min) | 20.8 km [3.0 km out @ 5:35/km (16:45) + 14.8 km progressive down to 4:55/km (avg 5:15/km = 77:42) + 3.0 km back @ 5:20/km (16:00) = 1:50:27]. Morning sunlight run (Starts after 06:41 AM Civil Dawn).<br>
-      <span class="strength-tag">05:15 PM: Home Split C (Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press).</span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:15 AM–06:45 AM:</span> Wake, pre-run fuel (toast + honey/banana), dynamic warmup[cite: 1].</li>
+        <li><span class="time-slot">06:45 AM–08:33 AM:</span> <span class="run-tag">Long Run (108 min):</span> 20.8 km progressive down to 4:55/km[cite: 1]. Daylight start post-civil dawn (06:41 AM)[cite: 1].</li>
+        <li><span class="time-slot">08:33 AM–04:30 PM:</span> High-protein recovery meal, hydrate, personal time, grocery prep[cite: 1].</li>
+        <li><span class="time-slot">04:30 PM–05:15 PM:</span> <span class="strength-tag">Home Split C (45 min):</span> Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press[cite: 1].</li>
+        <li><span class="time-slot">05:15 PM–10:00 PM:</span> Dinner, relax, foam roll, early sleep prep[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row rest">
-      <div class="day-header"><span class="name">Sunday, Sep 06</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
-      <div class="day-desc">Absolute zero running (0.0 km). Full cellular recovery window.</div>
+      <div class="day-header"><span class="name">Sunday, Sep 06</span><span class="type">FULL SYSTEM REST &amp; FINANCIAL SNAPSHOT <span class="cal-target">[1,600 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">All Day:</span> <span class="fin-tag">Financial Snapshot:</span> Checking float confirmed ~$2,077; USAA Savings confirmed $3,586[cite: 1, 7]. Rent prioritized[cite: 1, 7]. Zero running (0.0 km)[cite: 1]. Meal prep week's lunches[cite: 1].</li>
+      </ul>
     </div>
   </div>
 
+  <!-- WEEK 2 -->
   <div class="week-card">
     <div class="week-header">
-      <span class="week-title">Week 3 (Sep 07–Sep 13, 2026)</span>
-      <span class="week-badge">69.2 km Total (43.0 mi)</span>
+      <span class="week-title">Week 2 (Sep 07–Sep 13) | Labor Day &amp; Paycheck 2</span>
+      <span class="week-badge">Focus: Tempo Progression</span>
     </div>
+
     <div class="day-row rest">
-      <div class="day-header"><span class="name">Monday, Sep 07</span><span class="type">REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Daylight 1-2 Mile Coffee Shop Bike Spin. Absolute zero running (0.0 km).</div>
+      <div class="day-header"><span class="name">Monday, Sep 07</span><span class="type">LABOR DAY HOLIDAY (NO RUN) <span class="cal-target">[1,700 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:30 AM–07:15 AM:</span> Floss, shower, brush, dress[cite: 1]. Leisure bike to <strong>Crude Craft Coffee Bar</strong>[cite: 1]. Slow cortado[cite: 1].</li>
+        <li><span class="time-slot">All Day:</span> Marked Out of Office[cite: 1, 6]. Absolute zero running (0.0 km)[cite: 1]. Deep neural restoration[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row quality">
-      <div class="day-header"><span class="name">Tuesday, Sep 08</span><span class="type">SPLIT A + EVENING LT INTERVALS <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:40 AM–06:30 AM (50 min): Home Split A (Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        06:58 PM–08:10 PM (72 min) | 12.9 km [3.0 km out @ 5:35/km (16:45) + 4x1600m @ 4:15/km (27:12, 6.4 km) w/ 3x90s jog (4:30, 0.5 km) + 3.0 km back @ 5:35/km (16:45) = 65:12 total]. Ends exactly at Civil Dusk (08:10 PM).
-      </div>
+      <div class="day-header"><span class="name">Tuesday, Sep 08</span><span class="type">SPLIT A + LT INTERVALS <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist[cite: 1].</li>
+        <li><span class="time-slot">06:30 AM–06:55 AM:</span> Groom, dress, pack backpack[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">07:15 AM–10:00 AM:</span> Deep work block[cite: 1]. <span class="work-tag">Fastpath Sprint:</span> Rebuild Module 1 slide deck graphics[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; live at desk by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">10:30 AM–05:00 PM:</span> Remote work execution[cite: 1]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">06:56 PM–08:08 PM:</span> <span class="run-tag">Quality Run (72 min):</span> 12.9 km [4x1600m LT @ 4:15/km][cite: 1]. Ends at Civil Dusk (8:08 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:08 PM–10:00 PM:</span> Dinner, hydrate, recover[cite: 1]. In bed by 10:00 PM[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row">
-      <div class="day-header"><span class="name">Wednesday, Sep 09</span><span class="type">EVENING ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
-      <div class="day-desc">07:03 PM–08:08 PM (65 min) | 11.6 km Zone 2 [3.0 km out (16:45) + 5.6 km trail @ 5:29/km (30:42) + 3.0 km back (16:45) = 64:12]. Ends exactly at Civil Dusk (08:08 PM).</div>
+      <div class="day-header"><span class="name">Wednesday, Sep 09</span><span class="type">ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:00 AM–06:30 AM:</span> Mobility &amp; soft tissue work[cite: 1].</li>
+        <li><span class="time-slot">06:30 AM–06:55 AM:</span> Floss, shower, brush, dress, pack[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike commute to Cannon St; live at home desk by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">10:30 AM–05:00 PM:</span> Work flight (Multiple 1x1 operational check-ins)[cite: 1, 6]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">07:01 PM–08:06 PM:</span> <span class="run-tag">Zone 2 Run (65 min):</span> 11.6 km @ 5:29/km[cite: 1]. Ends at Civil Dusk (8:06 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:06 PM–10:00 PM:</span> Recovery nutrition, evening stretch[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row quality">
-      <div class="day-header"><span class="name">Thursday, Sep 10</span><span class="type">SPLIT B + EVENING AEROBIC TEMPO <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:40 AM–06:30 AM (50 min): Home Split B (CM Jumps First, Pull-Ups, Push Press, Deficit Push-Ups, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        07:10 PM–08:06 PM (56 min) | 10.0 km [3.0 km out (16:45) + 4.0 km @ 5:35/km (22:20) + 3.0 km back (16:45) = 55:50]. Ends exactly at Civil Dusk (08:06 PM).
-      </div>
+      <div class="day-header"><span class="name">Thursday, Sep 10</span><span class="type">SPLIT B + AEROBIC TEMPO <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B:</span> CM Jumps First, Pull-Ups, DB Push Press, 5 lb DB Lateral Raises (4x20), Deficit Push-Ups, Steinhoist[cite: 1].</li>
+        <li><span class="time-slot">06:30 AM–06:55 AM:</span> Floss, shower, brush, dress, pack[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Branch &amp; Bird</strong>[cite: 1]. Clock in 07:15 AM[cite: 1]. <span class="social-tag">Micro-Social:</span> Greet reception/barista clearly by name[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">10:30 AM–05:00 PM:</span> Operations &amp; grant syncs[cite: 1, 6]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">07:09 PM–08:05 PM:</span> <span class="run-tag">Tempo Run (56 min):</span> 10.0 km @ 5:35/km[cite: 1]. Ends at Civil Dusk (8:05 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:05 PM–10:00 PM:</span> Dinner, foam roll, layout gear[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row">
-      <div class="day-header"><span class="name">Friday, Sep 11</span><span class="type">EVENING EASY FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">07:16 PM–08:04 PM (48 min) | Easy Aerobic Flush Run (8.4 km @ 5:45/km = 48:18). Ends exactly at Civil Dusk (08:04 PM).</div>
+      <div class="day-header"><span class="name">Friday, Sep 11</span><span class="type">EASY FLUSH + PAYCHECK #2 <span class="cal-target">[1,700 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">All Day:</span> <span class="fin-tag">Paycheck #2 Lands:</span> Net take-home ~$1,815 deposited into BofA checking[cite: 1, 5]. Confirm float safe above $1,500[cite: 1, 7].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (314 S Main St Ste 110)</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; live at desk by 10:30 AM[cite: 1]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">07:15 PM–08:03 PM:</span> <span class="run-tag">Flush Run (48 min):</span> 8.4 km @ 5:45/km[cite: 1]. Ends at Civil Dusk (8:03 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:03 PM–10:00 PM:</span> Dinner, carb load for 26.3 km morning long run[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row long">
-      <div class="day-header"><span class="name">Saturday, Sep 12</span><span class="type">KEY PROGRESSIVE LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">06:50 AM–09:08 AM (138 min) | 26.3 km [3.0 km out @ 5:35/km (16:45) + 17.1 km @ 5:20/km (1:31:12) + 3.2 km closing fast @ 4:58/km (15:53) + 3.0 km cool @ 5:35/km (16:45) = 2:20:35]. Morning daylight run.<br>
-      <span class="strength-tag">05:15 PM: Home Split C (Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press).</span></div>
+      <div class="day-header"><span class="name">Saturday, Sep 12</span><span class="type">OVERLOAD LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:50 AM–09:08 AM:</span> <span class="run-tag">Overload Long Run (138 min):</span> 26.3 km progressive (closing final 3.2 km @ 4:58/km)[cite: 1]. Daylight start[cite: 1].</li>
+        <li><span class="time-slot">04:30 PM–05:15 PM:</span> <span class="strength-tag">Home Split C:</span> Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press[cite: 1].</li>
+        <li><span class="time-slot">05:15 PM–10:00 PM:</span> High-protein recovery meal, hydrate, sleep early[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row rest">
       <div class="day-header"><span class="name">Sunday, Sep 13</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
-      <div class="day-desc">Absolute zero running (0.0 km). Full recovery and tissue restoration.</div>
+      <ul class="timeline">
+        <li><span class="time-slot">All Day:</span> Zero running (0.0 km)[cite: 1]. Meal prep for Deload Week[cite: 1]. Reset mentally[cite: 1].</li>
+      </ul>
     </div>
   </div>
 
+  <!-- WEEK 3 -->
   <div class="week-card">
     <div class="week-header">
-      <span class="week-title">Week 4: Scheduled Deload 1 (Sep 14–Sep 20, 2026)</span>
-      <span class="week-badge">52.3 km (32.5 mi) DELOAD</span>
+      <span class="week-title">Week 3 (Sep 14–Sep 20) | Scheduled Deload 1 &amp; Audiobooks Begin</span>
+      <span class="week-badge">Focus: Supercompensation</span>
     </div>
+
     <div class="day-row rest">
-      <div class="day-header"><span class="name">Monday, Sep 14</span><span class="type">REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Daylight 1-2 Mile Coffee Shop Bike Spin. Absolute zero running (0.0 km).</div>
+      <div class="day-header"><span class="name">Monday, Sep 14</span><span class="type">DELOAD REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Crude Craft Coffee Bar</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; live at desk by 10:30 AM[cite: 1]. Clock out 05:00 PM[cite: 1]. Zero running (0.0 km)[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row quality">
-      <div class="day-header"><span class="name">Tuesday, Sep 15</span><span class="type">SPLIT A DELOAD + EVENING INTERVALS <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:50 AM–06:30 AM (40 min): Split A Deload (2 sets only) + Steinhoist (Ends 06:30 AM Sharp).</span>
-        07:03 PM–08:00 PM (57 min) | 10.0 km [3.0 km out (16:45) + 4x800m @ 3:59/km (12:45, 3.2 km) w/ 3x90s jog (4:30, 0.8 km) + 3.0 km back (16:45) = 50:45 running]. Ends exactly at Civil Dusk (08:00 PM).
-      </div>
+      <div class="day-header"><span class="name">Tuesday, Sep 15</span><span class="type">DELOAD INTERVALS + BOOK 1 OPENS <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">05:50 AM–06:30 AM:</span> <span class="strength-tag">Split A Deload (40 min):</span> 2 sets only of Goblet Squats, DB RDLs, Spanish Squats, Steinhoist[cite: 1]. Ends 06:30 AM[cite: 1].</li>
+        <li><span class="time-slot">06:30 AM–06:55 AM:</span> Floss, shower, brush, dress, pack[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Avoca Coffee (Magnolia)</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">07:15 AM–10:00 AM:</span> <span class="work-tag">Fastpath Sprint:</span> Rebuild Module 2 slide deck graphics[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live by 10:30 AM[cite: 1]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">07:01 PM–07:58 PM:</span> <span class="run-tag">Deload Run (57 min):</span> 10.0 km [4x800m @ 3:59/km][cite: 1]. Ends at Civil Dusk (7:58 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:28 PM–09:28 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 1/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed[cite: 1]. (Starts 30 min post-run)[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row">
-      <div class="day-header"><span class="name">Wednesday, Sep 16</span><span class="type">EVENING ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
-      <div class="day-desc">07:10 PM–07:58 PM (48 min) | 8.4 km Zone 2 [3.0 km out + 2.4 km trail @ 5:45/km + 3.0 km back = 48:18]. Ends exactly at Civil Dusk (07:58 PM).</div>
+      <div class="day-header"><span class="name">Wednesday, Sep 16</span><span class="type">ZONE 2 DELOAD <span class="cal-target">[1,900 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; live at desk by 10:30 AM[cite: 1]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">07:09 PM–07:57 PM:</span> <span class="run-tag">Zone 2 Run (48 min):</span> 8.4 km @ 5:45/km[cite: 1]. Ends at Civil Dusk (7:57 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:27 PM–09:27 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 2/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row quality">
-      <div class="day-header"><span class="name">Thursday, Sep 17</span><span class="type">SPLIT B DELOAD + EVENING MP TEMPO <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:50 AM–06:30 AM (40 min): Split B Deload (2 sets) + Steinhoist (Ends 06:30 AM Sharp).</span>
-        07:05 PM–07:57 PM (52 min) | 10.0 km [3.0 km out (16:45) + 4.0 km MP @ 4:36/km (18:24) + 3.0 km back (16:45) = 51:54]. Ends exactly at Civil Dusk (07:57 PM).
-      </div>
+      <div class="day-header"><span class="name">Thursday, Sep 17</span><span class="type">MP TEMPO DELOAD <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">05:50 AM–06:30 AM:</span> <span class="strength-tag">Split B Deload (40 min):</span> 2 sets of Pull-Ups, Push Press, 5 lb DB Lateral Raises (3x20), Deficit Push-Ups, Steinhoist[cite: 1]. Ends 06:30 AM[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Avoca Coffee (Foch St)</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">07:15 AM–10:00 AM:</span> <span class="work-tag">Fastpath Sprint:</span> Review cohort pitch templates[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live by 10:30 AM[cite: 1]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">07:04 PM–07:56 PM:</span> <span class="run-tag">Deload Tempo (52 min):</span> 10.0 km [4.0 km @ MP 4:36/km][cite: 1]. Ends at Civil Dusk (7:56 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:26 PM–09:26 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 3/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row">
-      <div class="day-header"><span class="name">Friday, Sep 18</span><span class="type">EVENING EASY BASE <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">07:16 PM–07:55 PM (39 min) | Easy Aerobic Flush Run (6.8 km @ 5:45/km = 39:06). Ends exactly at Civil Dusk (07:55 PM).</div>
+      <div class="day-header"><span class="name">Friday, Sep 18</span><span class="type">EASY BASE DELOAD <span class="cal-target">[1,700 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (314 S Main St Ste 110)</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; live at desk by 10:30 AM[cite: 1]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">07:15 PM–07:54 PM:</span> <span class="run-tag">Flush Run (39 min):</span> 6.8 km @ 5:45/km[cite: 1]. Ends at Civil Dusk (7:54 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:24 PM–09:24 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 4/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row long">
-      <div class="day-header"><span class="name">Saturday, Sep 19</span><span class="type">DELOAD OVERLOAD LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">06:55 AM–08:28 AM (93 min) | 17.1 km [3.0 km out (16:45) + 11.1 km trail @ 5:35/km (1:01:58) + 3.0 km back (16:45) = 1:35:28]. Morning daylight run (Starts after 06:50 AM Civil Dawn).<br>
-      <span class="strength-tag">05:15 PM: Split C Deload (Light core &amp; bodyweight lunges).</span></div>
+      <div class="day-header"><span class="name">Saturday, Sep 19</span><span class="type">DELOAD LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:55 AM–08:28 AM:</span> <span class="run-tag">Deload Long Run (93 min):</span> 17.1 km @ 5:35/km[cite: 1]. Daylight morning run[cite: 1].</li>
+        <li><span class="time-slot">04:30 PM–05:15 PM:</span> <span class="strength-tag">Split C Deload:</span> Light core maintenance &amp; bodyweight lunges[cite: 1].</li>
+        <li><span class="time-slot">06:00 PM–07:00 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 5/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row rest">
       <div class="day-header"><span class="name">Sunday, Sep 20</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
-      <div class="day-desc">Absolute zero running (0.0 km). Full glycogen recharge.</div>
+      <ul class="timeline">
+        <li><span class="time-slot">07:00 PM–08:00 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 6/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed[cite: 1]. (Book 1 fully completed!)[cite: 1]. Zero running (0.0 km)[cite: 1].</li>
+      </ul>
     </div>
   </div>
 
-  <!-- PHASE 2 -->
-  <div class="section-banner">Phase 2: Strength &amp; Threshold (Weeks 5–8)</div>
-
+  <!-- WEEK 4 -->
   <div class="week-card">
     <div class="week-header">
-      <span class="week-title">Week 5 (Sep 21–Sep 27, 2026)</span>
-      <span class="week-badge">74.8 km Total (46.5 mi)</span>
+      <span class="week-title">Week 4 (Sep 21–Sep 27) | Race Week 1 &amp; Book Club</span>
+      <span class="week-badge">Focus: Oktoberfest 5K &amp; Discussion</span>
     </div>
+
     <div class="day-row rest">
-      <div class="day-header"><span class="name">Monday, Sep 21</span><span class="type">REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Daylight 1-2 Mile Coffee Shop Bike Spin. Absolute zero running (0.0 km).</div>
+      <div class="day-header"><span class="name">Monday, Sep 21</span><span class="type">REST &amp; WEIGHT CHECK <span class="cal-target">[1,700 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">All Day:</span> <span class="fin-tag">Weight Milestone:</span> Target 151.7 lbs (verify -3.3 lb drop from Aug baseline)[cite: 1]. Zero running (0.0 km)[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Crude Craft Coffee Bar</strong>[cite: 1]. Clock in 07:15 AM[cite: 1]. Home by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">07:00 PM–08:00 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 7/12):</span> 60 min listening to Book 2 review/re-listen @ 2x speed[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row quality">
-      <div class="day-header"><span class="name">Tuesday, Sep 22</span><span class="type">SPLIT A + EVENING VO2 TRACK <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:40 AM–06:30 AM (50 min): Home Split A (Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        06:36 PM–07:51 PM (75 min) | 13.2 km [3.0 km out (16:45) + 5x1000m @ 3:55/km (19:35) w/ 4x2.5 min jog (10:00, 2.2 km) + 3.0 km back (16:45) = 63:05 running]. Ends exactly at Civil Dusk (07:51 PM).
-      </div>
+      <div class="day-header"><span class="name">Tuesday, Sep 22</span><span class="type">VO2 TRACK + SPLIT A <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno Coffee</strong>[cite: 1]. Clock in 07:15 AM[cite: 1]. Home by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">06:34 PM–07:49 PM:</span> <span class="run-tag">VO2 Track (75 min):</span> 13.2 km [5x1000m @ 3:55/km][cite: 1]. Ends at Civil Dusk (7:49 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:19 PM–09:19 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 8/12):</span> 60 min listening @ 2x speed[cite: 1]. (Starts 30 min post-run)[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row">
-      <div class="day-header"><span class="name">Wednesday, Sep 23</span><span class="type">EVENING ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
-      <div class="day-desc">06:46 PM–07:49 PM (63 min) | 11.6 km Zone 2 [3.0 km out (16:45) + 5.6 km @ 5:26/km (30:26) + 3.0 km back (16:45) = 63:56]. Ends exactly at Civil Dusk (07:49 PM).</div>
+      <div class="day-header"><span class="name">Wednesday, Sep 23</span><span class="type">ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>[cite: 1]. Clock in 07:15 AM[cite: 1]. Home by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">06:45 PM–07:48 PM:</span> <span class="run-tag">Zone 2 Run (63 min):</span> 11.6 km @ 5:26/km[cite: 1]. Ends at Civil Dusk (7:48 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:18 PM–09:18 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 9/12):</span> 60 min listening @ 2x speed[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row quality">
-      <div class="day-header"><span class="name">Thursday, Sep 24</span><span class="type">SPLIT B + EVENING THRESHOLD <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:40 AM–06:30 AM (50 min): Home Split B (CM Jumps First, Pull-Ups, Push Press, Deficit Push-Ups, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        06:20 PM–07:47 PM (87 min) | 14.8 km [3.0 km out (16:45) + 8.8 km LT @ 4:16/km (37:33) + 3.0 km back (16:45) = 71:03 running]. Ends exactly at Civil Dusk (07:47 PM).
-      </div>
+      <div class="day-header"><span class="name">Thursday, Sep 24</span><span class="type">THRESHOLD + SPLIT B <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B:</span> CM Jumps First, Pull-Ups, Push Press, 5 lb DB Lateral Raises (4x20), Deficit Push-Ups, Steinhoist[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>[cite: 1]. Clock in 07:15 AM[cite: 1]. Home by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">06:19 PM–07:46 PM:</span> <span class="run-tag">Threshold Run (87 min):</span> 14.8 km [8.8 km LT @ 4:16/km][cite: 1]. Ends at Civil Dusk (7:46 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:16 PM–09:16 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 10/12):</span> 60 min listening @ 2x speed[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row">
-      <div class="day-header"><span class="name">Friday, Sep 25</span><span class="type">EVENING PRE-RACE SHAKEOUT <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">07:07 PM–07:46 PM (39 min) | Easy Aerobic Flush Run (6.8 km easy + strides = 38:30). Ends exactly at Civil Dusk (07:46 PM).</div>
+      <div class="day-header"><span class="name">Friday, Sep 25</span><span class="type">PRE-RACE SHAKEOUT + PAYCHECK #3 <span class="cal-target">[1,700 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">All Day:</span> <span class="fin-tag">Paycheck #3 Deposit (Surplus Engine):</span> ~$1,815 net lands in BofA checking[cite: 1, 5]. Hold in checking through Oct 1 rent[cite: 1, 7].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (314 S Main St Ste 110)</strong>[cite: 1]. Clock in 07:15 AM[cite: 1]. Home by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">07:06 PM–07:45 PM:</span> <span class="run-tag">Shakeout Run (39 min):</span> 6.8 km easy + strides[cite: 1]. Ends at Civil Dusk (7:45 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:15 PM–09:15 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 11/12):</span> 60 min listening @ 2x speed[cite: 1].</li>
+      </ul>
     </div>
+
     <div class="day-row race">
-      <div class="day-header"><span class="name">Saturday, Sep 26</span><span class="type">🎯 FORT WORTH OKTOBERFEST 5K <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">07:30 AM Race Start (Civil Dawn 06:55 AM) | 8.0 km Total [1.5 km warm + <strong>Fort Worth Oktoberfest 5K All-Out (~19:30, 3:54/km)</strong> + 1.5 km cool]. Long run shifted to Sunday to protect workout quality.</div>
+      <div class="day-header"><span class="name">Saturday, Sep 26</span><span class="type">🎯 OKTOBERFEST 5K + STEINHOIST <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">07:00 AM–08:30 AM:</span> Bike to race staging; 1.5 km dynamic warm-up[cite: 1].</li>
+        <li><span class="time-slot">07:45 AM–08:05 AM:</span> <span class="run-tag">Race Start:</span> Fort Worth Oktoberfest 5K[cite: 1]. Goal: <strong>19:30 (3:54/km)</strong>[cite: 1, 7]. 1.5 km cooldown[cite: 1]. (8.0 km total)[cite: 1].</li>
+        <li><span class="time-slot">02:00 PM–04:00 PM:</span> <strong>Competitive Steinhoist Contest</strong> at Dr. Jeckyll's Beer Lab[cite: 1, 7]. Execute peak isometric hold[cite: 1]. <span class="social-tag">Micro-Social:</span> Congratulate competitors, engage naturally with local community[cite: 1].</li>
+        <li><span class="time-slot">07:30 PM–08:30 PM:</span> <span class="audiobook-tag">Final Audiobook Block (Day 12/12):</span> Final 60 min listening[cite: 1]. <strong>Both books 100% completed!</strong>[cite: 1]</li>
+      </ul>
     </div>
-    <div class="day-row long">
-      <div class="day-header"><span class="name">Sunday, Sep 27</span><span class="type">RELOCATED OVERLOAD LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">07:00 AM–08:52 AM (112 min) | 20.0 km Progressive [3.0 km out + 14.0 km trail cruise @ 5:23/km + 3.0 km back]. Full morning daylight run (Civil Dawn 06:56 AM).<br>
-      <span class="strength-tag">04:30 PM: Home Split C (Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press).</span></div>
+
+    <div class="day-row club">
+      <div class="day-header"><span class="name">Sunday, Sep 27</span><span class="type">RELOCATED LONG RUN + 4TH SUNDAY BOOK CLUBS <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">07:00 AM–08:52 AM:</span> <span class="run-tag">Relocated Long Run (112 min):</span> 20.0 km Progressive [3.0 km out + 14.0 km trail @ 5:23/km + 3.0 km back][cite: 1]. Morning daylight run[cite: 1].</li>
+        <li><span class="time-slot">01:00 PM–03:00 PM:</span> <span class="audiobook-tag">Book Club #1:</span> Group discussion on <em>Conclave</em>[cite: 1]. Active, confident, articulate participation[cite: 1]. Practice diaphragmatic projection[cite: 1].</li>
+        <li><span class="time-slot">04:00 PM–04:45 PM:</span> <span class="strength-tag">Home Split C:</span> Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press[cite: 1].</li>
+        <li><span class="time-slot">06:00 PM–08:00 PM:</span> <span class="audiobook-tag">Book Club #2:</span> Second group discussion on <em>Conclave</em>[cite: 1]. Connect with peers naturally; share insights freely[cite: 1].</li>
+      </ul>
     </div>
+  </div>
+
+  <!-- WEEK 5 BRIDGE -->
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 5 Bridge (Sep 28–Sep 30) | October Transition &amp; Fastpath Launch</span>
+      <span class="week-badge">Focus: Launch Execution</span>
+    </div>
+
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Monday, Sep 28</span><span class="type">FASTPATH COHORT ONBOARDING (NO RUN) <span class="cal-target">[1,700 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Crude Craft Coffee Bar</strong>[cite: 1]. Clock in 07:15 AM[cite: 1]. Home by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">All Day:</span> <span class="work-tag">Fastpath Cohort Launch:</span> Onboarding session live[cite: 1, 6]. Absolute zero running (0.0 km)[cite: 1]. Post-5K/long run recovery[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Sep 29</span><span class="type">VO2 TRACK + SPLIT A <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Branch &amp; Bird</strong>[cite: 1]. Clock in 07:15 AM[cite: 1]. Home by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">06:26 PM–07:41 PM:</span> <span class="run-tag">VO2 Track (75 min):</span> 13.2 km [4x1200m @ 3:55/km][cite: 1]. Ends at Civil Dusk (7:41 PM)[cite: 1, 8].</li>
+      </ul>
+    </div>
+
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Sep 30</span><span class="type">ZONE 2 BASE &amp; MONTH-END AUDIT <span class="cal-target">[1,900 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>[cite: 1]. Clock in 07:15 AM[cite: 1]. Home by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">04:00 PM–05:00 PM:</span> <span class="fin-tag">Month-End Financial Audit:</span> Verify $1,000 rent set to draft Oct 1 to George Howell[cite: 1, 7]. Prepare $600 USAA savings transfer for Oct 2[cite: 1, 7].</li>
+        <li><span class="time-slot">06:29 PM–07:39 PM:</span> <span class="run-tag">Zone 2 Run (70 min):</span> 12.9 km @ 5:26/km[cite: 1]. Ends at Civil Dusk (7:39 PM)[cite: 1, 8].</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="fullcycle" class="section-banner">Full 19-Week Macrocycle Periodization (Weeks 1–19)</div>
+
+  <!-- PHASE 1 (Weeks 1-4) Overview -->
+  <div class="week-card" style="opacity: 0.85;">
+    <div class="week-header"><span class="week-title">Weeks 1–4 Overview (Aug 24–Sep 20, 2026) | Base Volume &amp; Steinhoist Foundation</span><span class="week-badge">Phase 1 Complete</span></div>
+    <p style="font-size: 0.8rem; color: var(--text-muted);">
+      Baseline volume, steinhoisting neural acclimation, and scheduled deload 1 completed per September master schedule above. Total mileage progressed cleanly from 59.5 km to 69.2 km before supercompensation deload (52.3 km)[cite: 8].
+    </p>
+  </div>
+
+  <!-- PHASE 2 (Weeks 5-8) -->
+  <div class="week-card">
+    <div class="week-header"><span class="week-title">Week 5 (Sep 21–Sep 27, 2026) | FW Oktoberfest 5K &amp; Steinhoist Peak 1</span><span class="week-badge">74.8 km Total</span></div>
+    <div class="day-row race"><div class="day-header"><span class="name">Saturday, Sep 26</span><span class="type">🍺 FW OKTOBERFEST 5K &amp; STEINHOIST</span></div><div class="day-desc">8.0 km Total [1.5 km warm + <strong>5K All-Out @ 19:30 (3:54/km)</strong> + 1.5 km cool][cite: 1, 7]. Afternoon: Fort Worth Oktoberfest Steinhoist Championship at Dr. Jeckyll's Beer Lab[cite: 1, 7].</div></div>
+    <div class="day-row long"><div class="day-header"><span class="name">Sunday, Sep 27</span><span class="type">RELOCATED PROGRESSIVE LONG RUN</span></div><div class="day-desc">07:00 AM–08:52 AM (112 min) | 20.0 km Progressive [3.0 km out + 14.0 km trail @ 5:23/km + 3.0 km back][cite: 1]. Concludes in daylight. PM: 4th Sunday Book Clubs (Conclave)[cite: 1].</div></div>
   </div>
 
   <div class="week-card">
-    <div class="week-header">
-      <span class="week-title">Week 6 (Sep 28–Oct 04, 2026)</span>
-      <span class="week-badge">77.2 km Total (48.0 mi)</span>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Monday, Sep 28</span><span class="type">REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Daylight 1-2 Mile Coffee Shop Bike Spin. Absolute zero running (0.0 km).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Tuesday, Sep 29</span><span class="type">SPLIT A + EVENING VO2 TRACK <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:40 AM–06:30 AM (50 min): Home Split A (Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        06:26 PM–07:41 PM (75 min) | 13.2 km [3.0 km out (16:45) + 4x1200m @ 3:55/km (18:48, 4.8 km) w/ 3x3 min jog (9:00, 2.4 km) + 3.0 km back (16:45) = 61:18 running]. Ends exactly at Civil Dusk (07:41 PM).
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Wednesday, Sep 30</span><span class="type">EVENING ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
-      <div class="day-desc">06:29 PM–07:39 PM (70 min) | 12.9 km Zone 2 [3.0 km out (16:45) + 6.9 km @ 5:26/km (37:30) + 3.0 km back (16:45) = 71:00]. Ends exactly at Civil Dusk (07:39 PM).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Thursday, Oct 01</span><span class="type">SPLIT B + EVENING THRESHOLD <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:40 AM–06:30 AM (50 min): Home Split B (CM Jumps First, Pull-Ups, Push Press, Deficit Push-Ups, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        06:13 PM–07:38 PM (85 min) | 14.8 km [3.0 km out (16:45) + 8.8 km LT @ 4:15/km (37:24) + 3.0 km back (16:45) = 70:54 running]. Ends exactly at Civil Dusk (07:38 PM).
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Friday, Oct 02</span><span class="type">EVENING PRE-RACE SHAKEOUT <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">06:57 PM–07:36 PM (39 min) | Easy Aerobic Flush Run (6.8 km @ 5:40/km = 38:32). Ends exactly at Civil Dusk (07:36 PM).</div>
-    </div>
-    <div class="day-row race">
-      <div class="day-header"><span class="name">Saturday, Oct 03</span><span class="type">🎯 RAHR BREWING OKTOBERFEST 5K <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">08:00 AM Race Start (Civil Dawn 07:00 AM) | 8.0 km Total [1.5 km warm + <strong>Rahr Brewing Oktoberfest 5K Tune-Up (~19:35)</strong> + 1.5 km cool]. Long run shifted to Sunday morning.</div>
-    </div>
-    <div class="day-row long">
-      <div class="day-header"><span class="name">Sunday, Oct 04</span><span class="type">RELOCATED OVERLOAD LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">07:05 AM–09:10 AM (125 min) | 22.5 km Progressive [3.0 km out + 13.1 km steady + 6.4 km @ MP 4:36/km + 3.0 km back]. Morning daylight run (Civil Dawn 07:01 AM).<br>
-      <span class="strength-tag">04:30 PM: Home Split C (Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press).</span></div>
-    </div>
+    <div class="week-header"><span class="week-title">Week 6 (Sep 28–Oct 04, 2026) | Rahr Brewing Oktoberfest 5K &amp; Steinhoist Peak 2</span><span class="week-badge">77.2 km Total</span></div>
+    <div class="day-row quality"><div class="day-header"><span class="name">Tuesday, Sep 29</span><span class="type">VO2 TRACK</span></div><div class="day-desc">06:26 PM–07:41 PM (75 min) | 13.2 km [3.0 km out + 4x1200m @ 3:55/km w/ 3m jog + 3.0 km back][cite: 1]. Ends at Civil Dusk (7:41 PM)[cite: 1, 8].</div></div>
+    <div class="day-row race"><div class="day-header"><span class="name">Saturday, Oct 03</span><span class="type">🍺 RAHR 5K + STEINHOIST CHAMPIONSHIP</span></div><div class="day-desc">8.0 km Total [1.5 km warm + <strong>Rahr Brewing Oktoberfest 5K Tune-Up (~19:35)</strong> + 1.5 km cool]. Afternoon: Final 2026 Competitive Steinhoist Peak. Long run moved to Sunday.</div></div>
+    <div class="day-row long"><div class="day-header"><span class="name">Sunday, Oct 04</span><span class="type">RELOCATED OVERLOAD LONG RUN</span></div><div class="day-desc">07:05 AM–09:10 AM (125 min) | 22.5 km Progressive [3.0 km out + 13.1 km steady + 6.4 km @ MP 4:36/km + 3.0 km back]. Morning daylight run. PM: Split C.</div></div>
   </div>
 
   <div class="week-card">
-    <div class="week-header">
-      <span class="week-title">Week 7 (Oct 05–Oct 11, 2026)</span>
-      <span class="week-badge">84.5 km Total (52.5 mi)</span>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Monday, Oct 05</span><span class="type">REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Daylight 1-2 Mile Coffee Shop Bike Spin. Absolute zero running (0.0 km).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Tuesday, Oct 06</span><span class="type">SPLIT A + EVENING VO2 TRACK <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:40 AM–06:30 AM (50 min): Home Split A (Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        06:12 PM–07:32 PM (80 min) | 14.8 km [3.0 km out (16:45) + 5x1000m @ 3:55/km (19:35) w/ 4x3 min walk/jog (12:00, 2.8 km) + 3.0 km back (16:45) = 65:05 running]. Ends exactly at Civil Dusk (07:32 PM).
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Wednesday, Oct 07</span><span class="type">EVENING ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
-      <div class="day-desc">06:20 PM–07:31 PM (71 min) | 12.9 km Zone 2 [12.9 km @ 5:26/km average = 70:05]. Ends exactly at Civil Dusk (07:31 PM).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Thursday, Oct 08</span><span class="type">SPLIT B + EVENING CONTINUOUS LT <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:40 AM–06:30 AM (50 min): Home Split B (CM Jumps First, Pull-Ups, Push Press, Deficit Push-Ups, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        06:02 PM–07:30 PM (88 min) | 16.4 km [3.0 km out (16:45) + 10.4 km continuous LT @ 4:16/km (44:22) + 3.0 km back (16:45) = 77:52 running]. Ends exactly at Civil Dusk (07:30 PM).
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Friday, Oct 09</span><span class="type">EVENING ZONE 2 FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">06:32 PM–07:28 PM (56 min) | Easy Aerobic Flush Run (10.0 km @ 5:35/km = 55:50). Ends exactly at Civil Dusk (07:28 PM).</div>
-    </div>
-    <div class="day-row long">
-      <div class="day-header"><span class="name">Saturday, Oct 10</span><span class="type">KEY DALLAS SIMULATION LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">07:05 AM–09:53 AM (168 min) | 30.4 km Dallas Simulation [3.0 km out @ 5:35/km (16:45) + 16.4 km @ 5:23/km (1:28:19) + 8.0 km locked @ MP 4:36/km (36:48) + 3.0 km back @ 5:35/km (16:45) = 2:38:37]. Morning daylight run (Civil Dawn 07:05 AM).<br>
-      <span class="strength-tag">05:15 PM: Home Split C (Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press).</span></div>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Sunday, Oct 11</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
-      <div class="day-desc">Absolute zero running (0.0 km). Full cellular recovery.</div>
-    </div>
+    <div class="week-header"><span class="week-title">Week 7 (Oct 05–Oct 11, 2026) | Pure Threshold Volume Peak</span><span class="week-badge">84.5 km Total</span></div>
+    <div class="day-row quality"><div class="day-header"><span class="name">Tuesday, Oct 06</span><span class="type">VO2 TRACK</span></div><div class="day-desc">06:12 PM–07:32 PM (80 min) | 14.8 km [3.0 km out + 5x1000m @ 3:55/km w/ 4x3m walk/jog + 3.0 km back]. Ends at Civil Dusk (7:32 PM).</div></div>
+    <div class="day-row quality"><div class="day-header"><span class="name">Thursday, Oct 08</span><span class="type">CONTINUOUS LT THRESHOLD</span></div><div class="day-desc">06:02 PM–07:30 PM (88 min) | 16.4 km [3.0 km out + 10.4 km continuous LT @ 4:16/km + 3.0 km back]. Ends at Civil Dusk (7:30 PM).</div></div>
+    <div class="day-row long"><div class="day-header"><span class="name">Saturday, Oct 10</span><span class="type">KEY DALLAS SIMULATION LONG RUN</span></div><div class="day-desc">07:05 AM–09:53 AM (168 min) | 30.4 km Dallas Simulation [3.0 km out + 16.4 km @ 5:23/km + 8.0 km @ MP 4:36/km + 3.0 km back]. Daylight start.</div></div>
   </div>
 
   <div class="week-card">
-    <div class="week-header">
-      <span class="week-title">Week 8: Scheduled Deload 2 &amp; 15K Tune-Up (Oct 12–Oct 18, 2026)</span>
-      <span class="week-badge">62.8 km (39.0 mi) DELOAD</span>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Monday, Oct 12</span><span class="type">REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Daylight 1-2 Mile Coffee Shop Bike Spin. Absolute zero running (0.0 km).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Tuesday, Oct 13</span><span class="type">SPLIT A DELOAD + EVENING INTERVALS <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:50 AM–06:30 AM (40 min): Split A Deload (2 sets only) + Steinhoist (Ends 06:30 AM Sharp).</span>
-        06:31 PM–07:24 PM (53 min) | 10.0 km [3.0 km out (16:45) + 4x800m @ 3:56/km (12:35, 3.2 km) w/ 3x90s jog (4:30, 0.8 km) + 3.0 km back (16:45) = 50:35]. Ends exactly at Civil Dusk (07:24 PM).
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Wednesday, Oct 14</span><span class="type">EVENING ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
-      <div class="day-desc">06:36 PM–07:23 PM (47 min) | 8.4 km Zone 2 [8.4 km @ 5:35/km = 46:54]. Ends exactly at Civil Dusk (07:23 PM).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Thursday, Oct 15</span><span class="type">SPLIT B DELOAD + EVENING MP TEMPO <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:50 AM–06:30 AM (40 min): Split B Deload (2 sets) + Steinhoist (Ends 06:30 AM Sharp).</span>
-        06:30 PM–07:22 PM (52 min) | 10.0 km [3.0 km out (16:45) + 4.0 km MP @ 4:36/km (18:24) + 3.0 km back (16:45) = 51:54]. Ends exactly at Civil Dusk (07:22 PM).
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Friday, Oct 16</span><span class="type">EVENING PRE-RACE SHAKEOUT <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">06:48 PM–07:20 PM (32 min) | Easy Aerobic Flush Run (5.6 km @ 5:40/km = 31:44). Ends exactly at Civil Dusk (07:20 PM).</div>
-    </div>
-    <div class="day-row race">
-      <div class="day-header"><span class="name">Saturday, Oct 17</span><span class="type">🎯 BIG TEXAS RUN 15K RACE <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">07:30 AM Race Start (Civil Dawn 07:10 AM) | 18.0 km Total [1.5 km warm + <strong>Big Texas 15K Aerobic Threshold Race (~4:25/km = 1:06:15)</strong> + 1.5 km cool]. This race acts as your weekend long stimulus.<br>
-      <span class="strength-tag">04:30 PM: Mobility &amp; soft tissue core restoration.</span></div>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Sunday, Oct 18</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
-      <div class="day-desc">Absolute zero running (0.0 km). Full recovery post-15K race.</div>
-    </div>
+    <div class="week-header"><span class="week-title">Week 8 (Oct 12–Oct 18, 2026) | Scheduled Deload 2 &amp; Big Texas 15K</span><span class="week-badge">62.8 km (39.0 mi) DELOAD</span></div>
+    <div class="day-row quality"><div class="day-header"><span class="name">Tuesday, Oct 13</span><span class="type">DELOAD INTERVALS</span></div><div class="day-desc">06:31 PM–07:24 PM (53 min) | 10.0 km [3.0 km out + 4x800m @ 3:56/km + 3.0 km back]. Ends at Civil Dusk (7:24 PM).</div></div>
+    <div class="day-row race"><div class="day-header"><span class="name">Saturday, Oct 17</span><span class="type">🎯 BIG TEXAS RUN 15K RACE</span></div><div class="day-desc">07:30 AM Race Start | 18.0 km Total [1.5 km warm + <strong>Big Texas 15K Aerobic Threshold Race (~4:25/km = 1:06:15)</strong> + 1.5 km cool]. Primary weekend stimulus. Sunday is 100% full rest.</div></div>
   </div>
 
-  <!-- PHASE 3 -->
-  <div class="section-banner">Phase 3: Peak Specificity &amp; Realization (Weeks 9–12)</div>
-
+  <!-- PHASE 3 (Weeks 9-12) -->
   <div class="week-card">
-    <div class="week-header">
-      <span class="week-title">Week 9 (Oct 19–Oct 25, 2026)</span>
-      <span class="week-badge">90.9 km Total (56.5 mi)</span>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Monday, Oct 19</span><span class="type">REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Daylight 1-2 Mile Coffee Shop Bike Spin. Absolute zero running (0.0 km).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Tuesday, Oct 20</span><span class="type">SPLIT A + EVENING VO2 TRACK <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:40 AM–06:30 AM (50 min): Home Split A (Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        05:56 PM–07:16 PM (80 min) | 14.8 km [3.0 km out (16:45) + 6x1000m @ 3:53/km (23:18) w/ 5x2.5 min jog (12:30, 2.8 km) + 3.0 km back (16:45) = 69:18 running]. Ends exactly at Civil Dusk (07:16 PM).
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Wednesday, Oct 21</span><span class="type">EVENING ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
-      <div class="day-desc">06:05 PM–07:15 PM (70 min) | 12.9 km Zone 2 [12.9 km @ 5:23/km = 69:27]. Ends exactly at Civil Dusk (07:15 PM).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Thursday, Oct 22</span><span class="type">SPLIT B + EVENING THRESHOLD <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:40 AM–06:30 AM (50 min): Home Split B (CM Jumps First, Pull-Ups, Push Press, Deficit Push-Ups, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        05:39 PM–07:14 PM (95 min) | 18.0 km [3.0 km out (16:45) + 12.0 km LT @ 4:15/km (51:00) + 3.0 km back (16:45) = 84:30 running]. Starts right after work to end exactly at Civil Dusk (07:14 PM).
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Friday, Oct 23</span><span class="type">EVENING ZONE 2 FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">06:15 PM–07:12 PM (57 min) | Easy Aerobic Flush Run (10.0 km @ 5:35/km = 55:50). Ends exactly at Civil Dusk (07:12 PM).</div>
-    </div>
-    <div class="day-row long">
-      <div class="day-header"><span class="name">Saturday, Oct 24</span><span class="type">KEY PEAK PROGRESSIVE OVERLOAD <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">07:15 AM–10:14 AM (179 min) | 35.2 km Progressive [3.0 km out @ 5:35/km (16:45) + 16.4 km @ 5:20/km (1:27:28) + 12.8 km locked @ MP 4:36/km (58:53) + 3.0 km back @ 5:35/km (16:45) = 2:59:51]. Full daylight morning run (Civil Dawn 07:15 AM).<br>
-      <span class="strength-tag">05:15 PM: Home Split C (Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press).</span></div>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Sunday, Oct 25</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
-      <div class="day-desc">Absolute zero running (0.0 km). Full systemic recovery.</div>
-    </div>
+    <div class="week-header"><span class="week-title">Week 9 (Oct 19–Oct 25, 2026) | Peak Specificity 1</span><span class="week-badge">90.9 km Total</span></div>
+    <div class="day-row quality"><div class="day-header"><span class="name">Tuesday, Oct 20</span><span class="type">VO2 TRACK</span></div><div class="day-desc">05:56 PM–07:16 PM (80 min) | 14.8 km [3.0 km out + 6x1000m @ 3:53/km + 3.0 km back]. Ends at Civil Dusk (7:16 PM).</div></div>
+    <div class="day-row quality"><div class="day-header"><span class="name">Thursday, Oct 22</span><span class="type">EXTENDED THRESHOLD</span></div><div class="day-desc">05:39 PM–07:14 PM (95 min) | 18.0 km [3.0 km out + 12.0 km LT @ 4:15/km + 3.0 km back]. Starts immediately after work; ends at Civil Dusk (7:14 PM).</div></div>
+    <div class="day-row long"><div class="day-header"><span class="name">Saturday, Oct 24</span><span class="type">KEY PEAK PROGRESSIVE OVERLOAD</span></div><div class="day-desc">07:15 AM–10:14 AM (179 min) | 35.2 km Progressive [3.0 km out + 16.4 km @ 5:20/km + 12.8 km @ MP 4:36/km + 3.0 km back]. Morning daylight run.</div></div>
   </div>
 
   <div class="week-card">
-    <div class="week-header">
-      <span class="week-title">Week 10 (Oct 26–Nov 01, 2026)</span>
-      <span class="week-badge">94.1 km Total (58.5 mi)</span>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Monday, Oct 26</span><span class="type">REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Daylight 1-2 Mile Coffee Shop Bike Spin. Absolute zero running (0.0 km).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Tuesday, Oct 27</span><span class="type">SPLIT A + EVENING VO2 TRACK <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:40 AM–06:30 AM (50 min): Home Split A (Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        05:39 PM–07:09 PM (90 min) | 16.4 km [3.0 km out (16:45) + 5x1600m @ 3:53/km (31:04, 8.0 km) w/ 4x3 min jog (12:00, 2.4 km) + 3.0 km back (16:45) = 76:34 running]. Ends exactly at Civil Dusk (07:09 PM).
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Wednesday, Oct 28</span><span class="type">EVENING ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
-      <div class="day-desc">05:51 PM–07:08 PM (77 min) | 14.8 km Zone 2 [14.8 km @ 5:20/km = 78:56]. Ends exactly at Civil Dusk (07:08 PM).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Thursday, Oct 29</span><span class="type">SPLIT B + EVENING THRESHOLD <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:40 AM–06:30 AM (50 min): Home Split B (CM Jumps First, Pull-Ups, Push Press, Deficit Push-Ups, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        05:42 PM–07:07 PM (85 min) | 18.0 km [3.0 km out (16:45) + 2x5.6 km LT @ 4:15/km (47:36, 11.2 km) w/ 4 min jog (4:00, 0.8 km) + 3.0 km back (16:45) = 85:06 running]. Ends exactly at Civil Dusk (07:07 PM).
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Friday, Oct 30</span><span class="type">EVENING ZONE 2 FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">06:10 PM–07:06 PM (56 min) | Easy Aerobic Flush Run (10.0 km @ 5:35/km = 55:50). Ends exactly at Civil Dusk (07:06 PM).</div>
-    </div>
-    <div class="day-row long">
-      <div class="day-header"><span class="name">Saturday, Oct 31</span><span class="type">KEY MARATHON SIMULATION LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">07:20 AM–10:19 AM (179 min) | 34.9 km Simulation [3.0 km out @ 5:35/km (16:45) + 9.6 km @ 5:17/km (50:43) + 19.3 km locked @ MP 4:36/km (1:28:47) + 3.0 km back @ 5:35/km (16:45) = 2:53:00]. Morning daylight run (Civil Dawn 07:20 AM).<br>
-      <span class="strength-tag">04:30 PM: Home Split C (Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press).</span></div>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Sunday, Nov 01</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
-      <div class="day-desc">Absolute zero running (0.0 km). Standard Time Shift (-1hr, Fall Back). Full systemic recovery.</div>
-    </div>
+    <div class="week-header"><span class="week-title">Week 10 (Oct 26–Nov 01, 2026) | Peak Specificity 2</span><span class="week-badge">94.1 km Total</span></div>
+    <div class="day-row quality"><div class="day-header"><span class="name">Tuesday, Oct 27</span><span class="type">VO2 TRACK</span></div><div class="day-desc">05:39 PM–07:09 PM (90 min) | 16.4 km [3.0 km out + 5x1600m @ 3:53/km + 3.0 km back]. Ends at Civil Dusk (7:09 PM).</div></div>
+    <div class="day-row quality"><div class="day-header"><span class="name">Thursday, Oct 29</span><span class="type">SPLIT LT THRESHOLD</span></div><div class="day-desc">05:42 PM–07:07 PM (85 min) | 18.0 km [3.0 km out + 2x5.6 km LT @ 4:15/km + 3.0 km back]. Ends at Civil Dusk (7:07 PM).</div></div>
+    <div class="day-row long"><div class="day-header"><span class="name">Saturday, Oct 31</span><span class="type">KEY MARATHON SIMULATION LONG RUN</span></div><div class="day-desc">07:20 AM–10:19 AM (179 min) | 34.9 km Simulation [3.0 km out + 9.6 km @ 5:17/km + 19.3 km locked @ MP 4:36/km + 3.0 km back]. Fall back 1 hr tonight (Standard Time shift).</div></div>
   </div>
 
   <div class="week-card">
-    <div class="week-header">
-      <span class="week-title">Week 11: Half Simulation Overload &amp; Race (Nov 02–Nov 08, 2026)</span>
-      <span class="week-badge">87.0 km Total (54.0 mi)</span>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Monday, Nov 02</span><span class="type">REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Daylight 1-2 Mile Coffee Shop Bike Spin. Absolute zero running (0.0 km).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Tuesday, Nov 03</span><span class="type">POST-WORK FLUSH + INDOOR SPLIT A <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        05:32 PM–06:02 PM (30 min) | 5.2 km Easy Flush Run [Trinity Trails]. Ends exactly at Civil Dusk (06:02 PM CST).<br>
-        <span class="strength-tag">06:15 PM–07:05 PM (50 min): Home Split A (Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist).</span>
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Wednesday, Nov 04</span><span class="type">POST-WORK DUSK FLUSH <span class="cal-target">[1,900 kcal]</span></span></div>
-      <div class="day-desc">05:31 PM–06:01 PM (30 min) | 5.2 km Zone 2 Base Run. Ends exactly at Civil Dusk (06:01 PM CST). Volume shifted to weekend race dress rehearsal.</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Thursday, Nov 05</span><span class="type">POST-WORK DUSK FLUSH + INDOOR SPLIT B <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        05:30 PM–06:00 PM (30 min) | 5.2 km Aerobic Flush. Ends exactly at Civil Dusk (06:00 PM CST).<br>
-        <span class="strength-tag">06:15 PM–07:05 PM (50 min): Home Split B (CM Jumps First, Pull-Ups, Push Press, Deficit Push-Ups, Steinhoist).</span>
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Friday, Nov 06</span><span class="type">COMPLETE REST &amp; PRE-RACE HYDRATION <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Absolute zero running (0.0 km). Full muscle glycogen loading for Sunday's Half Marathon.</div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Saturday, Nov 07</span><span class="type">PRE-RACE SHAKEOUT <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">07:30 AM–08:10 AM (40 min) | 6.8 km Easy Shakeout + 4x20s neuromuscular strides in morning daylight (Civil Dawn 06:27 AM).<br>
-      <span class="strength-tag">04:30 PM: Light Mobility &amp; soft tissue prep.</span></div>
-    </div>
-    <div class="day-row race">
-      <div class="day-header"><span class="name">Sunday, Nov 08</span><span class="type">🎯 FORT WORTH HALF MARATHON (MP DRESS REHEARSAL) <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">07:30 AM Race Start (Civil Dawn 06:28 AM) | 27.1 km Total [3.0 km warm + <strong>Fort Worth Half Marathon locked strictly @ MP 4:36/km (1:37:04)</strong> + 3.0 km cool]. The definitive marathon-pace simulator.</div>
-    </div>
+    <div class="week-header"><span class="week-title">Week 11 (Nov 02–Nov 08, 2026) | Fort Worth Half Marathon Dress Rehearsal</span><span class="week-badge">87.0 km Total</span></div>
+    <div class="day-row quality"><div class="day-header"><span class="name">Tuesday, Nov 03</span><span class="type">DUSK AEROBIC FLUSH + INDOOR SPLIT A</span></div><div class="day-desc">05:32 PM–06:02 PM (30 min) | 5.2 km Easy Flush Run. Ends at Civil Dusk (06:02 PM CST). 06:15 PM: Home Split A indoors.</div></div>
+    <div class="day-row"><div class="day-header"><span class="name">Saturday, Nov 07</span><span class="type">PRE-RACE SHAKEOUT</span></div><div class="day-desc">07:30 AM–08:10 AM (40 min) | 6.8 km Easy Shakeout + 4x20s neuromuscular strides in morning daylight (Civil Dawn 06:27 AM).</div></div>
+    <div class="day-row race"><div class="day-header"><span class="name">Sunday, Nov 08</span><span class="type">🎯 FORT WORTH HALF MARATHON (MP DRESS REHEARSAL)</span></div><div class="day-desc">07:30 AM Race Start (Civil Dawn 06:28 AM) | 27.1 km Total [3.0 km warm + <strong>Fort Worth Half Marathon locked strictly @ MP 4:36/km (1:37:04)</strong> + 3.0 km cool][cite: 1]. The definitive race simulator.</div></div>
   </div>
 
   <div class="week-card">
-    <div class="week-header">
-      <span class="week-title">Week 12: Peak Volume &amp; Overload (Nov 09–Nov 15, 2026)</span>
-      <span class="week-badge">97.4 km Total (60.5 mi)</span>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Monday, Nov 09</span><span class="type">REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Daylight 1-2 Mile Coffee Shop Bike Spin. Absolute zero running (0.0 km).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Tuesday, Nov 10</span><span class="type">POST-WORK DUSK FLUSH + INDOOR SPLIT A <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        05:31 PM–05:57 PM (26 min) | 4.6 km Easy Flush. Ends exactly at Civil Dusk (05:57 PM CST).<br>
-        <span class="strength-tag">06:10 PM–07:00 PM (50 min): Home Split A (Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist).</span>
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Wednesday, Nov 11</span><span class="type">POST-WORK DUSK FLUSH <span class="cal-target">[1,900 kcal]</span></span></div>
-      <div class="day-desc">05:31 PM–05:56 PM (25 min) | 4.4 km Zone 2 Base Run. Ends exactly at Civil Dusk (05:56 PM CST).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Thursday, Nov 12</span><span class="type">POST-WORK DUSK FLUSH + INDOOR SPLIT B <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        05:30 PM–05:55 PM (25 min) | 4.4 km Easy Flush. Ends exactly at Civil Dusk (05:55 PM CST).<br>
-        <span class="strength-tag">06:10 PM–07:00 PM (50 min): Home Split B (CM Jumps First, Pull-Ups, Push Press, Deficit Push-Ups, Steinhoist).</span>
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Friday, Nov 13</span><span class="type">POST-WORK RECOVERY FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">05:30 PM–05:54 PM (24 min) | 4.2 km Zone 2 Recovery. Ends exactly at Civil Dusk (05:54 PM CST).</div>
-    </div>
-    <div class="day-row long">
-      <div class="day-header"><span class="name">Saturday, Nov 14</span><span class="type">FINAL 22-MILE PEAK OVERLOAD RUN <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">07:30 AM–10:29 AM (179 min) | 33.3 km [3.0 km out @ 5:35/km (16:45) + 14.5 km @ 5:20/km (1:17:20) + 12.8 km locked @ MP 4:36/km (58:53) + 3.0 km back @ 5:35/km (16:45) = 2:49:43]. Morning sunlight run (Civil Dawn 06:33 AM).<br>
-      <span class="strength-tag">04:30 PM: Final Peak Split C (Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press).</span></div>
-    </div>
-    <div class="day-row long">
-      <div class="day-header"><span class="name">Sunday, Nov 15</span><span class="type">AEROBIC COMPENSATION RUN <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">08:00 AM–10:20 AM (140 min) | 24.5 km Zone 2 Aerobic Cruise @ 5:40/km in full morning daylight. Reclaims volume displaced by weekday dusk limits. Complete rest begins post-run. Transition to Mujika Taper.</div>
-    </div>
+    <div class="week-header"><span class="week-title">Week 12 (Nov 09–Nov 15, 2026) | Final Peak Volume Overload</span><span class="week-badge">97.4 km Total</span></div>
+    <div class="day-row long"><div class="day-header"><span class="name">Saturday, Nov 14</span><span class="type">FINAL 22-MILE PEAK OVERLOAD RUN</span></div><div class="day-desc">07:30 AM–10:29 AM (179 min) | 33.3 km [3.0 km out + 14.5 km @ 5:20/km + 12.8 km locked @ MP 4:36/km + 3.0 km back]. Full morning sunlight run (Civil Dawn 06:33 AM). 04:30 PM: Final Peak Split C.</div></div>
+    <div class="day-row long"><div class="day-header"><span class="name">Sunday, Nov 15</span><span class="type">AEROBIC COMPENSATION RUN</span></div><div class="day-desc">08:00 AM–10:20 AM (140 min) | 24.5 km Zone 2 Aerobic Cruise @ 5:40/km in daylight. Reclaims weekday volume displaced by dusk limits. Transition to Mujika Taper.</div></div>
   </div>
 
-  <!-- PHASE 4 -->
-  <div class="section-banner">Phase 4: Mujika Precompetition Taper (Weeks 13–16)</div>
-
+  <!-- PHASE 4 (Weeks 13-16 Taper) -->
   <div class="week-card">
-    <div class="week-header">
-      <span class="week-title">Week 13: Taper Phase 1 &amp; San Diego Travel (Nov 16–Nov 22, 2026)</span>
-      <span class="week-badge">71.0 km (44.1 mi)</span>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Monday, Nov 16</span><span class="type">REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Daylight 1-2 Mile Coffee Shop Bike Spin. Absolute zero running (0.0 km).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Tuesday, Nov 17</span><span class="type">SPLIT A TAPER + DUSK SHARPENER <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:45 AM–06:30 AM (45 min): Split A Taper (2 sets only: Goblet Squats, DB RDLs, Spanish Squats, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        05:30 PM–05:53 PM (23 min) | 4.0 km with 4x200m light strides. Ends exactly at Civil Dusk (05:53 PM CST).
-      </div>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Wednesday, Nov 18</span><span class="type">SAN DIEGO TRAVEL <span class="cal-target">[1,900 kcal]</span></span></div>
-      <div class="day-desc">Complete Rest Day / Flight to San Diego (0.0 km). Active terminal walking only. Hydration target: 1.5 Gal water + electrolytes.</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Thursday, Nov 19</span><span class="type">HOTEL BODYWEIGHT PROTOCOL <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">06:00 PM–06:30 PM (30 min): 3 rounds (15 Push-ups + 20 Air Squats + 45s Wall Sit + 15 Glute Bridges + 45s Plank). Zero running (0.0 km).</div>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Friday, Nov 20</span><span class="type">SAN DIEGO RETURN <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Complete Rest Day / Travel Return to Fort Worth (0.0 km). Leg elevation 30 mins upon arrival.</div>
-    </div>
-    <div class="day-row long">
-      <div class="day-header"><span class="name">Saturday, Nov 21</span><span class="type">TAPER LONG RUN / PUMPKIN SPICE 5K <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">07:30 AM–09:44 AM (134 min) | 26.1 km [3.0 km out @ 5:35/km (16:45) + 13.7 km @ 5:23/km (1:13:45) + 6.4 km @ MP 4:36/km (29:26) + 3.0 km back @ 5:35/km (16:45) = 2:16:41]. Morning daylight run (Civil Dawn 06:39 AM). Option to complete Fort Worth Pumpkin Spice 5K during the steady float.<br>
-      <span class="strength-tag">05:15 PM: Bodyweight Split C (Walking Lunges, Hanging Knee Raises, Planks).</span></div>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Sunday, Nov 22</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
-      <div class="day-desc">Absolute zero running (0.0 km). Full joint and neural recovery.</div>
-    </div>
+    <div class="week-header"><span class="week-title">Week 13 (Nov 16–Nov 22, 2026) | Mujika Taper Phase 1 &amp; San Diego Travel</span><span class="week-badge">71.0 km Total</span></div>
+    <div class="day-row rest"><div class="day-header"><span class="name">Wed–Fri (Nov 18–20)</span><span class="type">SAN DIEGO PITCH EVENT &amp; HOTEL PROTOCOL</span></div><div class="day-desc">FastPath San Diego travel. Active terminal walking; 1.5 gal water/day + electrolytes[cite: 7]. Thursday 06:00 PM: Hotel Bodyweight Protocol (push-ups, air squats, wall sits, planks). Friday PM: Return to Fort Worth.</div></div>
+    <div class="day-row long"><div class="day-header"><span class="name">Saturday, Nov 21</span><span class="type">TAPER LONG RUN / PUMPKIN SPICE 5K</span></div><div class="day-desc">07:30 AM–09:44 AM (134 min) | 26.1 km [3.0 km out + 13.7 km @ 5:23/km + 6.4 km @ MP 4:36/km + 3.0 km back]. Morning daylight run (May integrate FW Pumpkin Spice Run course into steady float).</div></div>
   </div>
 
   <div class="week-card">
-    <div class="week-header">
-      <span class="week-title">Week 14: Taper Phase 2 (-25% Vol) (Nov 23–Nov 29, 2026)</span>
-      <span class="week-badge">58.7 km Total (36.5 mi)</span>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Monday, Nov 23</span><span class="type">REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Daylight 1-2 Mile Coffee Shop Bike Spin. Absolute zero running (0.0 km).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Tuesday, Nov 24</span><span class="type">SPLIT A TAPER + DUSK SHARPENER <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:45 AM–06:30 AM (45 min): Split A Taper (2 sets: 35 lb DB Squats &amp; RDLs) + Steinhoist (Ends 06:30 AM Sharp).</span>
-        05:30 PM–05:51 PM (21 min) | 3.8 km Easy Shakeout. Ends exactly at Civil Dusk (05:51 PM CST).
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Wednesday, Nov 25</span><span class="type">POST-WORK ZONE 2 FLUSH <span class="cal-target">[1,900 kcal]</span></span></div>
-      <div class="day-desc">05:30 PM–05:51 PM (21 min) | 3.8 km Easy Run. Ends exactly at Civil Dusk (05:51 PM CST).</div>
-    </div>
-    <div class="day-row race">
-      <div class="day-header"><span class="name">Thursday, Nov 26</span><span class="type">🎯 FORT WORTH YMCA TURKEY TROT 10K <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">06:45 AM–08:00 AM | 13.2 km Total [1.6 km warm (8:56) + <strong>Fort Worth YMCA Turkey Trot 10K locked strictly @ MP 4:36/km (46:00)</strong> + 1.6 km cool (8:56) = 63:52]. Morning daylight race (Civil Dawn 06:43 AM). Evening Rest.</div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Friday, Nov 27</span><span class="type">POST-WORK EASY BASE <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">05:30 PM–05:50 PM (20 min) | 3.6 km Easy Flush Run. Ends exactly at Civil Dusk (05:50 PM CST).</div>
-    </div>
-    <div class="day-row long">
-      <div class="day-header"><span class="name">Saturday, Nov 28</span><span class="type">TAPER LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">07:35 AM–09:18 AM (103 min) | 19.0 km [3.0 km out (16:45) + 13.0 km trail @ 5:26/km (1:10:38) + 3.0 km back (16:45) = 1:44:08]. Morning daylight run (Civil Dawn 06:45 AM).<br>
-      <span class="strength-tag">05:15 PM: Split B Taper (2 sets: Pull-Ups &amp; Push-Ups).</span></div>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Sunday, Nov 29</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
-      <div class="day-desc">Absolute zero running (0.0 km). Full systemic recovery.</div>
-    </div>
+    <div class="week-header"><span class="week-title">Week 14 (Nov 23–Nov 29, 2026) | Mujika Taper Phase 2 (-25% Vol)</span><span class="week-badge">58.7 km Total</span></div>
+    <div class="day-row race"><div class="day-header"><span class="name">Thursday, Nov 26</span><span class="type">🎯 FORT WORTH YMCA TURKEY TROT 10K</span></div><div class="day-desc">06:45 AM–08:00 AM | 13.2 km Total [1.6 km warm + <strong>Fort Worth YMCA Turkey Trot 10K locked strictly @ MP 4:36/km (46:00)</strong> + 1.6 km cool]. Morning daylight race (Civil Dawn 06:43 AM). Evening Rest.</div></div>
+    <div class="day-row long"><div class="day-header"><span class="name">Saturday, Nov 28</span><span class="type">TAPER LONG RUN</span></div><div class="day-desc">07:35 AM–09:18 AM (103 min) | 19.0 km [3.0 km out + 13.0 km trail @ 5:26/km + 3.0 km back]. Daylight start post-civil dawn (06:45 AM).</div></div>
   </div>
 
   <div class="week-card">
-    <div class="week-header">
-      <span class="week-title">Week 15: Taper Phase 3 (-40% Vol) (Nov 30–Dec 06, 2026)</span>
-      <span class="week-badge">38.6 km Total (24.0 mi)</span>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Monday, Nov 30</span><span class="type">REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Daylight 1-2 Mile Coffee Shop Bike Spin. Absolute zero running (0.0 km).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Tuesday, Dec 01</span><span class="type">POST-WORK DUSK SHARPENER <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        05:30 PM–05:50 PM (20 min) | 3.6 km easy jog with 3x100m MP strides. Ends exactly at Civil Dusk (05:50 PM CST).<br>
-        <span class="strength-tag">06:15 PM: Split C (Light Mobility only; zero heavy lifting).</span>
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Wednesday, Dec 02</span><span class="type">POST-WORK ZONE 2 FLUSH <span class="cal-target">[1,900 kcal]</span></span></div>
-      <div class="day-desc">05:30 PM–05:50 PM (20 min) | 3.6 km Zone 2 Flush Run. Ends exactly at Civil Dusk (05:50 PM CST).</div>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Thursday, Dec 03</span><span class="type">COMPLETE REST <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">Complete Rest (AM &amp; PM)—Full joint and connective tissue restoration. (0.0 km run).</div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Friday, Dec 04</span><span class="type">POST-WORK RECOVERY + STRIDES <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">05:30 PM–05:50 PM (20 min) | 3.6 km Easy Shakeout + 2 strides. Ends exactly at Civil Dusk (05:50 PM CST).</div>
-    </div>
-    <div class="day-row long">
-      <div class="day-header"><span class="name">Saturday, Dec 05</span><span class="type">TAPER LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">07:40 AM–08:53 AM (73 min) | 13.4 km [3.0 km out (16:45) + 7.4 km trail @ 5:26/km (40:12) + 3.0 km back (16:45) = 1:13:42]. Morning daylight run (Civil Dawn 06:50 AM). Leg elevation PM.</div>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Sunday, Dec 06</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
-      <div class="day-desc">Absolute zero running (0.0 km). Full systemic rest. Transition to Race Week.</div>
-    </div>
+    <div class="week-header"><span class="week-title">Week 15 (Nov 30–Dec 06, 2026) | Mujika Taper Phase 3 (-40% Vol)</span><span class="week-badge">38.6 km Total</span></div>
+    <div class="day-row quality"><div class="day-header"><span class="name">Tuesday, Dec 01</span><span class="type">DUSK MP SHARPENER</span></div><div class="day-desc">05:30 PM–05:50 PM (20 min) | 3.6 km easy jog with 3x100m MP strides. Ends at Civil Dusk (05:50 PM CST). 06:15 PM: Split C (Light Mobility only).</div></div>
+    <div class="day-row long"><div class="day-header"><span class="name">Saturday, Dec 05</span><span class="type">TAPER LONG RUN</span></div><div class="day-desc">07:40 AM–08:53 AM (73 min) | 13.4 km [3.0 km out + 7.4 km trail @ 5:26/km + 3.0 km back]. Morning daylight run (Civil Dawn 06:50 AM). Leg elevation PM.</div></div>
   </div>
 
   <div class="week-card">
-    <div class="week-header">
-      <span class="week-title">Week 16: BMW Dallas Race Week (Dec 07–Dec 13, 2026)</span>
-      <span class="week-badge">55.4 km (34.4 mi) INC RACE</span>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Monday, Dec 07</span><span class="type">REST &amp; CARB LOADING <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Daylight 1-2 Mile Coffee Shop Bike Spin. Baseline carbs: 4.5 g/kg. (0.0 km run).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Tuesday, Dec 08</span><span class="type">POST-WORK NEUROMUSCULAR PRIME <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">05:30 PM–05:50 PM (20 min) | 3.6 km [Easy jog + 4x100m strides @ MP 4:36/km]. Ends exactly at Civil Dusk (05:50 PM CST). Evening Complete Rest.</div>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Wednesday, Dec 09</span><span class="type">COMPLETE REST &amp; MOBILITY <span class="cal-target">[1,900 kcal]</span></span></div>
-      <div class="day-desc">Zero running (0.0 km). 15-min light mobility at 07:30 PM.</div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Thursday, Dec 10</span><span class="type">CARB LOAD DAY 1 + SHAKEOUT <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">05:31 PM–05:51 PM (20 min) | 3.5 km Easy Neighborhood Jog. Daily Carbs: 8.0–9.0 g/kg. Ends exactly at Civil Dusk (05:51 PM CST).</div>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Friday, Dec 11</span><span class="type">CARB LOAD DAY 2 <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Complete Rest (Zero running / 0.0 km). Daily Carbs: 8.0–9.0 g/kg | Leg elevation 30 mins twice daily.</div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Saturday, Dec 12</span><span class="type">RACE EVE PRIME <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">07:45 AM–08:05 AM (20 min) | 3.5 km Light Jog + 2x20s strides. Carbs: 6.0 g/kg | Sleep by 09:30 PM. (Civil Dawn 06:55 AM).</div>
-    </div>
-    <div class="day-row race">
-      <div class="day-header"><span class="name">Sunday, Dec 13</span><span class="type">🎯 TARGET PEAK: BMW DALLAS MARATHON <span class="cal-target">[1,600 kcal + race carbs]</span></span></div>
-      <div class="day-desc">
-        <strong>04:30 AM:</strong> 150g fast carbs (Bagel + honey + banana) + 500mg sodium.<br>
-        <strong>07:00 AM–10:14:30 AM (194 min 30 sec): BMW DALLAS MARATHON</strong> (Starts 8 minutes post-Civil Dawn [06:52 AM] in natural light; lock pacing strictly @ 4:36–4:37/km [7:25–7:26/mi] | 42.195 km | <strong>Target Finish: 3:14:30</strong>).
-      </div>
-    </div>
+    <div class="week-header"><span class="week-title">Week 16 (Dec 07–Dec 13, 2026) | BMW Dallas Marathon Race Week</span><span class="week-badge">55.4 km INC RACE</span></div>
+    <div class="day-row rest"><div class="day-header"><span class="name">Thu–Fri (Dec 10–11)</span><span class="type">CARB LOAD SPRINT</span></div><div class="day-desc">Thursday: 3.5 km shakeout at 05:31 PM. Daily Carbs: 8.0–9.0 g/kg | Water: 1.5 Gal + Electrolytes. Friday: Complete Rest (0.0 km). Leg elevation 30 mins twice daily.</div></div>
+    <div class="day-row race"><div class="day-header"><span class="name">Sunday, Dec 13</span><span class="type">🎯 TARGET PEAK: BMW DALLAS MARATHON</span></div><div class="day-desc">
+      <strong>04:30 AM:</strong> 150g fast carbs (Bagel + honey + banana) + 500mg sodium.<br>
+      <strong>07:00 AM–10:14:30 AM: BMW DALLAS MARATHON</strong> (Starts 8 minutes post-Civil Dawn [06:52 AM] in natural light; lock pacing strictly @ 4:36–4:37/km [7:25–7:26/mi] | 42.195 km | <strong>Target Finish: 3:14:30</strong>).
+    </div></div>
   </div>
 
-  <!-- PHASE 5 -->
-  <div class="section-banner">Phase 5: Post-Marathon Recovery &amp; Ultra Transition (Weeks 17–19)</div>
-
+  <!-- PHASE 5 (Weeks 17-19 Post-Marathon & Ultra Transition) -->
   <div class="week-card">
-    <div class="week-header">
-      <span class="week-title">Week 17: Post-Marathon Structural Recovery (Dec 14–Dec 20, 2026)</span>
-      <span class="week-badge">5.0 km Total</span>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Monday, Dec 14</span><span class="type">REST &amp; ACTIVE FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Low-resistance bike spin in daylight. Zero running (0.0 km). Contrast baths and high protein.</div>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Tue–Wed (Dec 15–16)</span><span class="type">COMPLETE PASSIVE HEALING <span class="cal-target">[1,700–2,400 kcal]</span></span></div>
-      <div class="day-desc">Zero running (0.0 km). Passive recovery, muscle healing, and tissue remodeling.</div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Thursday, Dec 17</span><span class="type">AEROBIC SPIN / WALK <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">20-minute light Zone 1 spin or flat neighborhood walk in daylight (0.0 km run).</div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Friday, Dec 18</span><span class="type">AEROBIC FLUSH SPIN <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">20-minute light Zone 1 spin or flat walk (0.0 km run) + 1-2 Mile Coffee Shop Bike Flush in daylight. PM: Complete Rest.</div>
-    </div>
-    <div class="day-row race">
-      <div class="day-header"><span class="name">Saturday, Dec 19</span><span class="type">🎯 A CHARLIE BROWN CHRISTMAS 5K <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">08:00 AM–08:30 AM (30 min) | 5.0 km Fun Run (Dallas, TX) — Active recovery jog @ 6:00/km, zero race effort (Civil Dawn 06:59 AM).</div>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Sunday, Dec 20</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
-      <div class="day-desc">Complete Rest (0.0 km). Transition to 2027 Cowtown 50K Ultra base track.</div>
-    </div>
+    <div class="week-header"><span class="week-title">Week 17 (Dec 14–Dec 20, 2026) | Post-Marathon Structural Recovery</span><span class="week-badge">5.0 km Total</span></div>
+    <div class="day-row rest"><div class="day-header"><span class="name">Mon–Fri (Dec 14–18)</span><span class="type">PASSIVE HEALING &amp; FLUSH SPINS</span></div><div class="day-desc">Zero running. Contrast baths, high protein, and passive soft tissue repair. 20-min light Zone 1 bike spins on Thu/Fri.</div></div>
+    <div class="day-row race"><div class="day-header"><span class="name">Saturday, Dec 19</span><span class="type">🎯 A CHARLIE BROWN CHRISTMAS 5K</span></div><div class="day-desc">08:00 AM–08:30 AM (30 min) | 5.0 km Fun Run (Dallas, TX) — Active recovery jog @ 6:00/km, zero race effort (Civil Dawn 06:59 AM).</div></div>
   </div>
 
   <div class="week-card">
-    <div class="week-header">
-      <span class="week-title">Week 18: Sub-3:00 Velocity Transition (Dec 21–Dec 27, 2026)</span>
-      <span class="week-badge">40.0 km Total (24.8 mi)</span>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Monday, Dec 21</span><span class="type">REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Daylight 1-2 Mile Coffee Shop Bike Spin. Complete Rest. Zero running (0.0 km).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Tuesday, Dec 22</span><span class="type">SPLIT A + POST-WORK SUB-3:00 LT <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:45 AM–06:30 AM (45 min): Split A (Goblet Squats, DB RDLs, Spanish Squats, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        05:11 PM–05:55 PM (44 min) | 8.0 km Total [2.0 km warm @ 5:20/km (10:40) + 4x1000m @ 3:50/km (15:20, 4.0 km) w/ 3x90s jog (4:30, 0.6 km) + 1.4 km cool @ 5:20/km (7:28) = 37:58]. Ends exactly at Civil Dusk (05:55 PM CST).
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Wednesday, Dec 23</span><span class="type">POST-WORK SUB-3:00 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
-      <div class="day-desc">05:23 PM–05:55 PM (32 min) | 6.0 km Base Run @ 5:25/km (32:30). Ends exactly at Civil Dusk (05:55 PM CST).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Thursday, Dec 24</span><span class="type">SPLIT B + POST-WORK TEMPO <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:45 AM–06:30 AM (45 min): Split B (CM Jumps, Pull-Ups, Push Press, Deficit Push-Ups, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        05:17 PM–05:56 PM (39 min) | 8.0 km Total [2.0 km warm @ 5:20/km (10:40) + 4.0 km @ 4:15/km (17:00) + 2.0 km cool @ 5:20/km (10:40) = 38:20]. Ends exactly at Civil Dusk (05:56 PM CST).
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Friday, Dec 25</span><span class="type">POST-WORK AEROBIC FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">05:31 PM–05:57 PM (26 min) | Easy Aerobic Flush Run (5.0 km Easy Zone 2 @ 5:10/km = 25:50). Ends exactly at Civil Dusk (05:57 PM CST).</div>
-    </div>
-    <div class="day-row long">
-      <div class="day-header"><span class="name">Saturday, Dec 26</span><span class="type">ULTRA BASE LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">07:50 AM–09:03 AM (73 min) | 14.0 km Base Long Run @ 5:12/km steady = 1:12:48. Morning daylight run (Civil Dawn 07:03 AM).<br>
-      <span class="strength-tag">05:15 PM: Home Split C (Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press).</span></div>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Sunday, Dec 27</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
-      <div class="day-desc">Complete Rest (0.0 km). Deep systemic adaptation.</div>
-    </div>
+    <div class="week-header"><span class="week-title">Week 18 (Dec 21–Dec 27, 2026) | Sub-3:00 Velocity Transition</span><span class="week-badge">40.0 km Total</span></div>
+    <div class="day-row quality"><div class="day-header"><span class="name">Tuesday, Dec 22</span><span class="type">SUB-3:00 LT INTERVALS</span></div><div class="day-desc">05:10 PM–05:55 PM (45 min) | 8.0 km Total [Includes 4x1000m @ 3:50/km]. Ends at Civil Dusk (05:55 PM CST). 06:15 PM: Split A.</div></div>
+    <div class="day-row long"><div class="day-header"><span class="name">Saturday, Dec 26</span><span class="type">ULTRA BASE LONG RUN</span></div><div class="day-desc">07:50 AM–09:03 AM (73 min) | 14.0 km Base Long Run @ 5:12/km steady. Morning daylight run (Civil Dawn 07:03 AM).</div></div>
   </div>
 
   <div class="week-card">
-    <div class="week-header">
-      <span class="week-title">Week 19: Sub-3:00 Year-End Block (Dec 28–Dec 31, 2026)</span>
-      <span class="week-badge">45.0 km Total (28.0 mi)</span>
-    </div>
-    <div class="day-row rest">
-      <div class="day-header"><span class="name">Monday, Dec 28</span><span class="type">REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
-      <div class="day-desc">Daylight 1-2 Mile Coffee Shop Bike Spin. Complete Rest. Zero running (0.0 km).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Tuesday, Dec 29</span><span class="type">SPLIT A + POST-WORK LT INTERVALS <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:45 AM–06:30 AM (45 min): Split A (Goblet Squats, DB RDLs, Spanish Squats, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        05:15 PM–05:59 PM (44 min) | 8.0 km Total [2.0 km warm @ 5:20/km (10:40) + 4x1000m @ 3:48/km (15:12, 4.0 km) w/ 3x90s jog (4:30, 0.6 km) + 1.4 km cool (7:28) = 37:50]. Ends exactly at Civil Dusk (05:59 PM CST).
-      </div>
-    </div>
-    <div class="day-row">
-      <div class="day-header"><span class="name">Wednesday, Dec 30</span><span class="type">POST-WORK SUB-3:00 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
-      <div class="day-desc">05:28 PM–06:00 PM (32 min) | 6.0 km Base Run @ 5:20/km = 32:00. Ends exactly at Civil Dusk (06:00 PM CST).</div>
-    </div>
-    <div class="day-row quality">
-      <div class="day-header"><span class="name">Thursday, Dec 31</span><span class="type">SPLIT B + POST-WORK TEMPO &amp; WRAP <span class="cal-target">[2,400 kcal]</span></span></div>
-      <div class="day-desc">
-        <span class="strength-tag">05:45 AM–06:30 AM (45 min): Split B (CM Jumps, Pull-Ups, Push Press, Deficit Push-Ups, Steinhoist) (Ends 06:30 AM Sharp).</span>
-        05:19 PM–06:01 PM (42 min) | 8.0 km Total [1.5 km warm (7:45) + 5.0 km @ 4:15/km (21:15) + 1.5 km cool (7:45) = 36:45]. Ends exactly at Civil Dusk (06:01 PM CST).
-      </div>
-    </div>
+    <div class="week-header"><span class="week-title">Week 19 (Dec 28–Dec 31, 2026) | Sub-3:00 Year-End Block</span><span class="week-badge">45.0 km Total</span></div>
+    <div class="day-row quality"><div class="day-header"><span class="name">Tuesday, Dec 29</span><span class="type">SUB-3:00 LT INTERVALS</span></div><div class="day-desc">05:15 PM–05:59 PM (44 min) | 8.0 km Total [Includes 4x1000m @ 3:48/km]. Ends at Civil Dusk (05:59 PM CST).</div></div>
+    <div class="day-row quality"><div class="day-header"><span class="name">Thursday, Dec 31</span><span class="type">SUB-3:00 TEMPO &amp; YEAR-END WRAP</span></div><div class="day-desc">05:19 PM–06:01 PM (42 min) | 8.0 km Total [1.5 km warm + 5.0 km @ 4:15/km + 1.5 km cool]. Ends at Civil Dusk (06:01 PM CST). Enter 2027 in peak sovereign posture!</div></div>
   </div>
 
-  <!-- APPENDIX -->
-  <div class="section-banner">Appendix: Nutrition, Macros &amp; 2027 Spring Ultra Bridge</div>
-
+  <div id="ledger" class="section-banner">Appendix: Milestones, Logistics &amp; 15-Month Realization</div>
   <div class="card">
-    <h2>1. Dynamic Macro Periodization</h2>
-    <h3>High Loading Days (Tuesdays / Thursdays / Saturdays)</h3>
-    <table>
+    <h2>1. The 15-Month Strategic Target Ledger (Target: Dec 31, 2027)</h2>
+    <table style="font-size:0.8rem;">
       <thead>
         <tr>
-          <th>Nutrient</th>
-          <th>Target Level</th>
-          <th>Daily Intake Target</th>
+          <th>Category</th>
+          <th>Immediate Milestone (Fall 2026)</th>
+          <th>Medium Milestone (Mid-2027)</th>
+          <th>Hard Target (Dec 31, 2027)</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td><strong>Calories</strong></td><td>Surplus / Maintenance Fuel</td><td>2,400 kcal</td></tr>
-        <tr><td><strong>Carbohydrates</strong></td><td>Glycogen Loading</td><td>320 g</td></tr>
-        <tr><td><strong>Protein</strong></td><td>Tissue Remodeling</td><td>125 g</td></tr>
-        <tr><td><strong>Healthy Fats</strong></td><td>Hormone Support</td><td>65 g</td></tr>
-      </tbody>
-    </table>
-
-    <h3>Active Recovery &amp; Low Loading Days (Mondays / Fridays)</h3>
-    <table>
-      <thead>
         <tr>
-          <th>Nutrient</th>
-          <th>Target Level</th>
-          <th>Daily Intake Target</th>
+          <td><strong>Athletic / Mass</strong></td>
+          <td>Sub-3:14:30 at Dallas Marathon (12/13/26); weight @ 142 lbs[cite: 1, 7, 8]</td>
+          <td>Finish Cowtown 50K Ultra (02/28/27) as ultra-marathoner[cite: 1, 7]</td>
+          <td>Sub-3:00 marathon engine; maintain 140–142 lbs lean muscle mass[cite: 1, 7]</td>
         </tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>Calories</strong></td><td>Controlled Deficit</td><td>1,700 kcal</td></tr>
-        <tr><td><strong>Carbohydrates</strong></td><td>Baseline Replenishment</td><td>110 g</td></tr>
-        <tr><td><strong>Protein</strong></td><td>Muscle Sparing Focus</td><td>145 g</td></tr>
-        <tr><td><strong>Healthy Fats</strong></td><td>Lipid Support</td><td>50 g</td></tr>
-      </tbody>
-    </table>
-
-    <h3>Absolute System Rest Days (Sundays)</h3>
-    <table>
-      <thead>
         <tr>
-          <th>Nutrient</th>
-          <th>Target Level</th>
-          <th>Daily Intake Target</th>
+          <td><strong>Liquid Savings</strong></td>
+          <td>USAA Savings hits <strong>$5,500.00</strong> on Nov 2 (Medical Firewall)[cite: 1, 7]</td>
+          <td>Checking float anchored $1,500–$2,000[cite: 1, 7]; debt avalanche underway[cite: 1, 7]</td>
+          <td><strong>$11,000–$14,000 liquid emergency runway</strong> banked in USAA[cite: 1, 5]</td>
         </tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>Calories</strong></td><td>Targeted Fat-Loss Deficit</td><td>1,600 kcal</td></tr>
-        <tr><td><strong>Carbohydrates</strong></td><td>Optimized Post-Long Run Synthesis</td><td>130 g</td></tr>
-        <tr><td><strong>Protein</strong></td><td>Satiety &amp; Repair</td><td>140 g</td></tr>
-        <tr><td><strong>Healthy Fats</strong></td><td>Metabolic Support</td><td>48 g</td></tr>
+        <tr>
+          <td><strong>Consumer Debt</strong></td>
+          <td>Maintain minimums ($1,295/mo) without adding $1 of new debt[cite: 1, 7]</td>
+          <td><strong>$0.00 Credit Card Debt by June 30, 2027</strong> (Free cash flow +$1,962/mo)[cite: 1, 7]</td>
+          <td>100% consumer debt-free; Roth IRA automated at $580/month[cite: 1, 7]</td>
+        </tr>
+        <tr>
+          <td><strong>Living Space</strong></td>
+          <td>Spartan floor mat recovery during marathon/ultra blocks[cite: 1, 4]</td>
+          <td><strong>Retire floor mat (Q1 2027 accelerated):</strong> $450 hybrid queen mattress &amp; frame[cite: 1, 7]</td>
+          <td>Clean, dignified apartment; warm lighting, welcoming for romantic partner[cite: 1]</td>
+        </tr>
+        <tr>
+          <td><strong>Vehicle &amp; Safety</strong></td>
+          <td>Bicycle commuting only (0 vehicle debt, 0 insurance)[cite: 1]</td>
+          <td>Research secure 5x10 storage or gated ground-floor residence[cite: 1]</td>
+          <td>Reliable commuter transport secured (Subcompact car e.g. Fit/Yaris or locked scooter)[cite: 1]</td>
+        </tr>
+        <tr>
+          <td><strong>Career / KSAs</strong></td>
+          <td>Document current startup SOPs; master advanced Google Sheets/Zapier[cite: 1, 2]</td>
+          <td>Earn Google Project Management Certificate; resume pivot ready[cite: 1, 5]</td>
+          <td><strong>Land $75k–$85k remote Program/Operations role</strong> (triggering PSLF)[cite: 1, 5, 7]</td>
+        </tr>
+        <tr>
+          <td><strong>Dating &amp; Social</strong></td>
+          <td>Daily barista conversations &amp; active book club participation[cite: 1]</td>
+          <td>Join Fort Worth running club (e.g., Jeckylopes) or cycling group[cite: 1, 7]</td>
+          <td>Actively dating in 37–47 age bracket from a position of power and stability[cite: 1]</td>
+        </tr>
+        <tr>
+          <td><strong>Theatre &amp; Expression</strong></td>
+          <td>Join local community playhouse backstage crew / set-build container[cite: 1, 14]</td>
+          <td>Begin formal vocal resonance &amp; audition monologue preparation[cite: 1]</td>
+          <td><strong>Audition for local musical or play</strong> (Fort Worth / Arlington, TX)[cite: 1]</td>
+        </tr>
       </tbody>
     </table>
   </div>
 
+  <div id="commitments" class="section-banner">Subgoal Resource &amp; Commitment Blueprint (Path to Dec 31, 2027)</div>
   <div class="card">
-    <h2>2. Spring 2027 Ultra Transition Bridge (Cowtown 50K)</h2>
+    <h2>Financial &amp; Time Allocations Across Core Life Vectors (No Delayed Life)</h2>
     <table>
       <thead>
         <tr>
-          <th>Date</th>
-          <th>Event</th>
-          <th>Location</th>
-          <th>Strategic Purpose</th>
+          <th>Vector / Goal</th>
+          <th>Financial Capital Allocation</th>
+          <th>Weekly Time Commitment</th>
+          <th>Specific Tactical Implementation (Parallel Tracking)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Feb 06, 2027</strong></td>
-          <td>Hot Chocolate 5K</td>
-          <td>Dallas, TX</td>
-          <td>Neuromuscular speed sharpener (All-Out Effort)</td>
+          <td><strong>1. New Career Pivot ($75k–$85k)</strong></td>
+          <td>$0–$300 (Certifications, Coursera, professional resume review)[cite: 1]</td>
+          <td><strong>4 hours / week</strong> (Sat/Sun 2-hr morning blocks)[cite: 1]</td>
+          <td>Build quantified 1-page impact portfolio from startup coordinator work[cite: 1]. Target remote 501(c)(3) / university Program Manager roles qualifying for 100% tax-exempt PSLF forgiveness[cite: 1, 7].</td>
         </tr>
         <tr>
-          <td><strong>Feb 07, 2027</strong></td>
-          <td>Too Cold to Hold 10K</td>
-          <td>Dallas, TX</td>
-          <td>Back-to-back threshold stimulus (Sub-3:00 Marathon Pace Float)</td>
+          <td><strong>2. Technical KSA Building</strong></td>
+          <td>$49/mo Coursera subscription (Q1 2027 only)[cite: 1]</td>
+          <td><strong>3 hours / week</strong> (Tues/Thu evenings 8:30-10 PM)[cite: 1]</td>
+          <td>Earn Google Project Management Professional Certificate; build functional fluency in Salesforce Admin basics and automated Make/Zapier data pipelines[cite: 1].</td>
         </tr>
         <tr>
-          <td><strong>Feb 28, 2027</strong></td>
-          <td>The Cowtown 50K Ultra</td>
-          <td>Fort Worth, TX</td>
-          <td>A-Goal Ultra: Sub-3:00 Velocity Track Endurance Peak</td>
+          <td><strong>3. Low-Friction Networking</strong></td>
+          <td>$0 (Leverage existing coffee desk lease)[cite: 1]</td>
+          <td><strong>1 hour / week</strong> (Integrated into work hours)[cite: 1]</td>
+          <td>Send 1 proactive message per week to existing 5-6 person colleague group[cite: 1]. Attend local Fort Worth professional webinars and alumni networks[cite: 1].</td>
         </tr>
         <tr>
-          <td><strong>Mar 20, 2027</strong></td>
-          <td>St. Paddy's Pickle Run 5K</td>
-          <td>Mansfield, TX</td>
-          <td>Post-Ultra aerobic celebration run</td>
+          <td><strong>4. Physical Sculpting &amp; Diet</strong></td>
+          <td>$320–$380 / month (Whole food groceries: eggs, sardines, bulk chicken, avocado, rice)[cite: 1]</td>
+          <td><strong>8–10 hours / week</strong> (Running + 3 strength splits + meal prep)[cite: 1]</td>
+          <td><strong>Diet:</strong> 1.8–2.0 g/kg protein (125–140g/day), eliminate pastries (-540 kcal/day), maintain 140–142 lb racing mass[cite: 1]. <strong>Sculpting:</strong> DB Bulgarian split squats, pull-ups (lat width/V-taper), overhead press, 5 lb DB lateral raises (lateral deltoid capping for shoulder-to-waist ratio), and hanging leg raises (core compression)[cite: 1]. Minimum effective running dose prevents emaciation[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>5. High-Impact Capsule Wardrobe</strong></td>
+          <td>$400–$500 total (Allocated post-card payoff in July 2027)[cite: 1]</td>
+          <td><strong>1 hour / month</strong> (Care &amp; tailoring)[cite: 1]</td>
+          <td>Buy only after stabilizing at 142 lbs: 3 tailored Oxford button-downs, 3 heavyweight neutral tees (black/gray/navy), 2 flat-front chinos (olive/navy), 1 dark raw denim, clean white leather minimalist sneakers[cite: 1]. Fit beats label[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>6. Living Space &amp; Bed Dignity</strong></td>
+          <td>$450 total (Accelerate to early Q1 2027 surplus)[cite: 1]</td>
+          <td><strong>One-time weekend setup</strong>[cite: 1]</td>
+          <td>Retire floor mat immediately in early 2027[cite: 1]. Buy queen hybrid mattress + minimalist platform frame + 100% washed cotton sheets + 2 memory foam pillows[cite: 1]. Add dimmable warm 2700K ambient lamps and 1 snake plant[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>7. Commuter Vehicle &amp; Security</strong></td>
+          <td>$2,500–$4,000 cash (Subcompact auto e.g. Fit/Yaris or secured scooter) in Q4 2027[cite: 1]</td>
+          <td><strong>30 min / week</strong> maintenance[cite: 1]</td>
+          <td>Acquire reliable, low-maintenance transport[cite: 1]. If scooter: ground-floor indoor wheel-in or locked 5x10 storage unit with Litelok X1[cite: 1]. If subcompact auto: climate-controlled, weather-proof, and date-ready[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>8. Relationship &amp; Dating Readiness</strong></td>
+          <td>$60–$100 / month (Low-stakes coffee/tea/walk dates)[cite: 1]</td>
+          <td><strong>2–3 hours / week</strong>[cite: 1]</td>
+          <td><strong>Zero Delayed Life:</strong> Do not postpone all social connection until late 2027[cite: 1]. Execute weekly micro-conversational titration now (baristas, book club peers, trail runners)[cite: 1]. Enter active low-stakes dating in early 2027 as health, teeth, and bed are stabilized[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>9. Theatre Audition &amp; Expressive Performance</strong></td>
+          <td>$0–$100 (Sheet music, script copies, community theatre season ticket)[cite: 1]</td>
+          <td><strong>1.5 hours / week</strong> (Integrated vocal warmups &amp; monologue work)[cite: 1]</td>
+          <td><strong>Fort Worth / Arlington Stage Track:</strong> Target local community companies (e.g., Theatre Arlington, Circle Theatre, Stage West, or Artisan Center Theater)[cite: 1]. <strong>Q4 2026–Q2 2027:</strong> Volunteer for backstage crew / set strike to build peer connections and demystify the audition room[cite: 1, 14]. <strong>Q3–Q4 2027:</strong> Prepare two contrasting 16-bar vocal cuts and one 60-second contemporary comedic/dramatic monologue[cite: 1]. Attend open general auditions by Dec 31, 2027[cite: 1].</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="horizons" class="section-banner">Horizon Architecture: Time-Horizons Execution Guide</div>
+  <div class="card">
+    <h2>Multi-Horizon Milestones, Priorities &amp; Operational Hacks (Next Week &rarr; 18 Months)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Horizon</th>
+          <th>Core Priorities &amp; Hard Targets</th>
+          <th>Necessary Steps to Execute Now</th>
+          <th>Actionable Hacks, Tips &amp; Best Practices</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Next Week<br>(Sep 07–13, 2026)</strong></td>
+          <td>• Complete 4 key training blocks (Split A/B, VO2 Track, 26.3 km Long Run)[cite: 1].<br>• Fastpath slide rebuild underway (Module 1 draft)[cite: 1].<br>• Absorb Paycheck #2 without lifestyle creep[cite: 1].</td>
+          <td>• Lay out training and work gear at 09:30 PM each night[cite: 1].<br>• Pin Google Slides tab before closing laptop[cite: 1].<br>• Order strictly black coffee or cortado ($3.50–$4.00, $0 pastry)[cite: 1, 18].</td>
+          <td><strong>The 2-Slide Coffee Rule:</strong> Take zero sips of coffee until exactly two slides are formatted at the café desk[cite: 1]. Attaches dopamine to friction[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>1 Month<br>(By Oct 06, 2026)</strong></td>
+          <td>• Execute Fort Worth Oktoberfest 5K (Target 19:30) &amp; Steinhoist on Sep 26[cite: 1, 7].<br>• Complete both book club discussions on <em>Conclave</em> (Sep 27)[cite: 1].<br>• Bodyweight verified at 151.7 lbs (-3.3 lbs)[cite: 1].<br>• Pay October 1 rent ($1,000) cleanly; transfer $600 to USAA on Oct 2[cite: 1, 7].</td>
+          <td>• Listen to 60 min/night of <em>Conclave</em> at 2x speed starting Sep 15 (30 min post-run)[cite: 1].<br>• Maintain 125–140g daily protein to prevent muscle wasting[cite: 1].</td>
+          <td><strong>The Post-Run Friction Gap:</strong> Cool down and shower immediately after the run so the 30-minute transition into the audiobook requires zero willpower[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>3 Months<br>(By Dec 06, 2026)</strong></td>
+          <td>• <strong>USAA Health Firewall hits $5,500.00</strong> on Nov 2 (FREEZE account)[cite: 1, 7].<br>• Execute Fort Worth Half Marathon MP Dress Rehearsal (Nov 08; 1:37:04)[cite: 1, 8].<br>• Execute Turkey Trot 10K at MP (Nov 26; 46:00)[cite: 1, 8].<br>• Taper volume down 40% while maintaining 35 lb DB intensity[cite: 1, 8].<br>• Triage bottom right molar clinical exam via cash-discount/FQHC clinic[cite: 1, 4, 18].</td>
+          <td>• Manage San Diego FastPath pitch trip travel (Nov 16–22) with 1.5 gal water/day and hotel bodyweight circuit[cite: 1, 7].<br>• Shift weekday runs to morning astronomical dawn or post-work dusk flushes as days shorten[cite: 1, 8].</td>
+          <td><strong>The Travel Anchor:</strong> Pack resistance loop bands and running flats in your carry-on; never check essential workout equipment[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>6 Months<br>(By Mar 06, 2027)</strong></td>
+          <td>• <strong>Finish BMW Dallas Marathon in sub-3:14:30</strong> (Dec 13, 2026) at 142 lbs[cite: 1, 7, 8].<br>• <strong>Complete The Cowtown 50K Ultramarathon</strong> (Feb 28, 2027)[cite: 1, 7, 8].<br>• <strong>Retire Floor Mat:</strong> Allocate $450 from Q1 surplus for hybrid queen bed &amp; frame[cite: 1, 7].<br>• Deploy first 3 months of direct-fire debt avalanche to revolving cards[cite: 1, 7].</td>
+          <td>• Enroll in Google Project Management Professional Certificate on Coursera ($49/mo)[cite: 1].<br>• Submit volunteer application for backstage crew / set-build at Theatre Arlington or Stage West[cite: 1, 14].</td>
+          <td><strong>Floor Mat Dignity Pivot:</strong> Do not treat sleeping off the floor as a luxury reward; treat it as an athletic recovery imperative for your spine and hips[cite: 1, 4].</td>
+        </tr>
+        <tr>
+          <td><strong>12 Months<br>(By Sep 06, 2027)</strong></td>
+          <td>• <strong>$0.00 Credit Card Debt Achieved (June 30, 2027)</strong>[cite: 1, 7].<br>• Reclaim +$1,295/mo debt service; monthly surplus expands to +$1,962–$2,216/mo[cite: 1, 5, 7].<br>• Complete Nelnet IDR Recertification on July 1 (lock payment &lt;$200/mo)[cite: 1, 7].<br>• Buy capsule wardrobe tailored to 142-lb physique ($400–$500)[cite: 1].<br>• USAA Savings builds to ~$11,000+ liquid cash[cite: 1, 5, 7].</td>
+          <td>• Build 1-page quantified operations portfolio from startup coordinator work[cite: 1].<br>• Prepare two contrasting 16-bar vocal cuts and one 60-second contemporary monologue[cite: 1].<br>• Engage in active low-stakes dating loops (37–47 age range)[cite: 1].</td>
+          <td><strong>The Fit-Over-Brand Wardrobe Rule:</strong> A $25 tailored Oxford button-down on an athletic 142-lb V-taper looks exponentially better than a $200 designer shirt on an unconditioned frame[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>18 Months<br>(By Mar 06, 2028 / Horizon: Dec 31, 2027)</strong></td>
+          <td>• <strong>Land $75,000–$85,000 remote Program/Operations role</strong> at a 501(c)(3)/university (qualifying for 100% tax-free PSLF)[cite: 1, 5, 7].<br>• Acquire reliable commuter vehicle (Honda Super Cub/ADV150 with Litelok X1 or subcompact auto e.g., Fit/Yaris) in cash[cite: 1].<br>• <strong>Attend open general auditions</strong> for local musical or play in Fort Worth / Arlington[cite: 1].<br>• Maintain 140–142 lb sculpted physique, sub-3:00 marathon engine, clean apartment, and active partnership readiness[cite: 1, 7].</td>
+          <td>• Execute 5 targeted, custom-tailored applications/week in Q3–Q4 2027[cite: 1, 5].<br>• If startup terminates Dec 31, 2027 without offer, submit zero-income administrative recalculation to Nelnet immediately ($0 payment safeguard)[cite: 1, 5, 7].</td>
+          <td><strong>The Sovereign Posture:</strong> You enter late 2027 with $0 consumer debt, $11k–$14k cash reserves, a sub-3:15 marathon engine, a repaired smile, and an athletic V-taper[cite: 1, 4, 5, 7]. You are not auditioning for life; you are selecting where to deploy your value[cite: 1].</td>
         </tr>
       </tbody>
     </table>
