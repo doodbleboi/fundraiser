@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,7 @@
   <style>
     :root {
       --bg-primary: #ffffff;
-      --bg-surface: #f8fafc;
+      --bg-surface: #ffffff;
       --bg-card: #ffffff;
       --text-main: #0f172a;
       --text-muted: #475569;
@@ -19,38 +20,16 @@
       --accent-red: #b91c1c;
       --accent-purple: #7e22ce;
       --accent-stein: #d97706;
-      --card-highlight: #fffdfa;
-      --card-long: #f0f9ff;
-      --card-race: #fef2f2;
-      --card-club: #faf5ff;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg-primary: #0b0f19;
-        --bg-surface: #131b2e;
-        --bg-card: #1e293b;
-        --text-main: #f8fafc;
-        --text-muted: #94a3b8;
-        --border: #334155;
-        --border-dark: #64748b;
-        --accent-blue: #38bdf8;
-        --accent-gold: #fbbf24;
-        --accent-green: #4ade80;
-        --accent-red: #f87171;
-        --accent-purple: #c084fc;
-        --accent-stein: #f59e0b;
-        --card-highlight: #1e293b;
-        --card-long: #172554;
-        --card-race: #450a0a;
-        --card-club: #2e1065;
-      }
+      --card-highlight: #ffffff;
+      --card-long: #ffffff;
+      --card-race: #ffffff;
+      --card-club: #ffffff;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg-primary);
+      background-color: #ffffff;
       color: var(--text-main);
       line-height: 1.45;
       padding: 8px;
@@ -59,7 +38,7 @@
       font-size: 13.5px;
     }
     header {
-      background: var(--bg-surface);
+      background: #ffffff;
       border: 2px solid var(--border-dark);
       border-radius: 8px;
       padding: 12px;
@@ -83,7 +62,7 @@
       font-size: 0.84rem;
     }
     .meta-item {
-      background: var(--bg-card);
+      background: #ffffff;
       padding: 8px 10px;
       border-radius: 6px;
       border-left: 4px solid var(--accent-blue);
@@ -105,7 +84,7 @@
       text-transform: uppercase;
     }
     .card {
-      background-color: var(--bg-surface);
+      background-color: #ffffff;
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 12px;
@@ -132,23 +111,24 @@
       border-collapse: collapse;
       font-size: 0.82rem;
       margin: 6px 0 10px 0;
-      background: var(--bg-card);
+      background: #ffffff;
     }
     th, td {
       border: 1px solid var(--border);
       padding: 6px 8px;
       text-align: left;
       vertical-align: top;
+      background-color: #ffffff;
     }
     th {
-      background-color: var(--bg-surface);
       color: var(--text-main);
       font-weight: 800;
       font-size: 0.78rem;
       text-transform: uppercase;
+      border-bottom: 2px solid var(--border-dark);
     }
     .week-card {
-      background-color: var(--bg-surface);
+      background-color: #ffffff;
       border: 1.5px solid var(--border);
       border-radius: 8px;
       padding: 10px;
@@ -168,7 +148,7 @@
     .week-title { font-size: 0.92rem; font-weight: 800; color: var(--text-main); }
     .week-badge {
       font-size: 0.74rem;
-      background: var(--bg-card);
+      background: #ffffff;
       color: var(--text-main);
       padding: 2px 8px;
       border-radius: 4px;
@@ -177,7 +157,7 @@
       border: 1px solid var(--border-dark);
     }
     .day-row {
-      background-color: var(--bg-card);
+      background-color: #ffffff;
       border: 1px solid var(--border);
       border-left: 5px solid var(--accent-blue);
       border-radius: 6px;
@@ -185,11 +165,11 @@
       margin-bottom: 6px;
       font-size: 0.82rem;
     }
-    .day-row.quality { border-left-color: var(--accent-gold); background-color: var(--card-highlight); }
-    .day-row.long { border-left-color: var(--accent-blue); background-color: var(--card-long); }
+    .day-row.quality { border-left-color: var(--accent-gold); }
+    .day-row.long { border-left-color: var(--accent-blue); }
     .day-row.rest { border-left-color: var(--text-muted); }
-    .day-row.race { border-left-color: var(--accent-red); background-color: var(--card-race); }
-    .day-row.club { border-left-color: var(--accent-purple); background-color: var(--card-club); }
+    .day-row.race { border-left-color: var(--accent-red); }
+    .day-row.club { border-left-color: var(--accent-purple); }
     .day-header {
       display: flex;
       justify-content: space-between;
@@ -210,7 +190,7 @@
     .social-tag { color: #db2777; font-weight: 700; }
     .cal-target { color: var(--accent-gold); font-weight: 800; font-size: 0.74rem; margin-left: 4px; }
     .protocol-box {
-      background: var(--bg-card);
+      background: #ffffff;
       border-radius: 6px;
       padding: 8px 10px;
       font-size: 0.81rem;
@@ -242,16 +222,16 @@
     <div class="meta-grid">
       <div class="meta-item">
         <strong>Base Coordinates &amp; Commute Architecture</strong>
-        Base: 721 W Cannon St, Fort Worth, TX 76104[cite: 1, 2].<br>
-        Bicycle Commute: 10–20 min transit to rotating Fort Worth cafés[cite: 2]. Clock-in: 07:15 AM sharp[cite: 1, 2].<br>
-        Café Rotation: Mon: Crude | Tue: Buon Giorno/Cherry/Branch &amp; Bird/Avoca | Wed: Roots | Thu: Avoca/Branch &amp; Bird | Fri: Chill Coffee or Crude (Main St)[cite: 2].<br>
-        Midday Transfer: 10:00 AM departure; grocery sweep; desk live at Cannon St by 10:30 AM; clock-out 05:00 PM[cite: 2].
+        Base: 721 W Cannon St, Fort Worth, TX 76104.<br>
+        Bicycle Commute: 10–20 min transit to rotating Fort Worth cafés. Clock-in: 07:15 AM sharp.<br>
+        Café Rotation: Mon: Crude | Tue: Buon Giorno/Cherry/Branch &amp; Bird/Avoca | Wed: Roots | Thu: Avoca/Branch &amp; Bird | Fri: Chill Coffee or Crude (Main St).<br>
+        Midday Transfer: 10:00 AM departure; grocery sweep; desk live at Cannon St by 10:30 AM; clock-out 05:00 PM.
       </div>
       <div class="meta-item">
         <strong>Choice Architecture &amp; Behavioral Anchors</strong>
-        Fastpath Slide Anchor: Format exactly 2 slides at 07:20 AM before opening Slack/email (Dopamine attached to friction)[cite: 2].<br>
-        Curfew Rules: Morning strength finishes by 06:30 AM sharp[cite: 2]. Evening runs finish at Civil Dusk[cite: 1, 2]. Screens dark 09:45 PM; sleep 10:00 PM[cite: 2].<br>
-        Orthopedic Standard: Teardrop gel pad proximal to 2nd–4th metatarsals; open-forefoot lacing; flat-foot heel drive on lifts[cite: 1].
+        Fastpath Slide Anchor: Format exactly 2 slides at 07:20 AM before opening Slack/email (Dopamine attached to friction).<br>
+        Curfew Rules: Morning strength finishes by 06:30 AM sharp. Evening runs finish at Civil Dusk. Screens dark 09:45 PM; sleep 10:00 PM.<br>
+        Orthopedic Standard: Teardrop gel pad proximal to 2nd–4th metatarsals; open-forefoot lacing; flat-foot heel drive on lifts.
       </div>
     </div>
   </header>
@@ -271,33 +251,33 @@
       <tbody>
         <tr>
           <td><strong>Phase 1: Base &amp; Steinhoist Build</strong><br>(Sep 1 – Sep 20)</td>
-          <td>• Build volume: 65.2 km to 69.2 km[cite: 1]<br>• Scheduled Deload 1 (Sep 14–20): 52.3 km[cite: 1]<br>• Steinhoist DB overload progression[cite: 1]</td>
-          <td>• Caloric cycling: 2,400 kcal / 1,700 kcal[cite: 1, 2]<br>• Protein: 125–140g/day[cite: 2]<br>• Flat-foot Split A/B/C integration[cite: 1]</td>
-          <td>• Fastpath Modules 1–2 slide redesign[cite: 2]<br>• Paycheck #2 deposited ($1,815 net)[cite: 2]<br>• <em>Conclave</em> audiobook starts Sep 15[cite: 2]</td>
+          <td>• Build volume: 65.2 km to 69.2 km<br>• Scheduled Deload 1 (Sep 14–20): 52.3 km<br>• Steinhoist DB overload progression</td>
+          <td>• Caloric cycling: 2,400 kcal / 1,700 kcal<br>• Protein: 125–140g/day<br>• Flat-foot Split A/B/C integration</td>
+          <td>• Fastpath Modules 1–2 slide redesign<br>• Paycheck #2 deposited ($1,815 net)<br>• <em>Conclave</em> audiobook starts Sep 15</td>
         </tr>
         <tr>
           <td><strong>Phase 2: Competitions &amp; Build</strong><br>(Sep 21 – Oct 18)</td>
-          <td>• <strong>FW Oktoberfest 5K (Sep 26): 19:30</strong>[cite: 1, 2]<br>• <strong>Dr. Jeckyll's Steinhoist (Sep 26):</strong> Peak[cite: 2]<br>• <strong>Big Texas Run 15K (Oct 17):</strong> 4:30–4:36/km[cite: 1]</td>
-          <td>• <strong>Sep 21 Weight Check:</strong> 151.7 lbs[cite: 1, 2]<br>• Mid-Oct Weight Target: 148.4 lbs[cite: 1]<br>• 1.5 Gal/day water &amp; electrolyte flush[cite: 1]</td>
-          <td>• Oct 1 Rent ($1,000) drafted cleanly[cite: 2]<br>• USAA transfer: $600 (Oct 2)[cite: 2]<br>• Both Book Clubs complete Sep 27[cite: 2]</td>
+          <td>• <strong>FW Oktoberfest 5K (Sep 26): 19:30</strong><br>• <strong>Dr. Jeckyll's Steinhoist (Sep 26):</strong> Peak<br>• <strong>Big Texas Run 15K (Oct 17):</strong> 4:30–4:36/km</td>
+          <td>• <strong>Sep 21 Weight Check:</strong> 151.7 lbs<br>• Mid-Oct Weight Target: 148.4 lbs<br>• 1.5 Gal/day water &amp; electrolyte flush</td>
+          <td>• Oct 1 Rent ($1,000) drafted cleanly<br>• USAA transfer: $600 (Oct 2)<br>• Both Book Clubs complete Sep 27</td>
         </tr>
         <tr>
           <td><strong>Phase 3: Peak Volume Overload</strong><br>(Oct 19 – Nov 15)</td>
-          <td>• Peak weeks: 90.9 km to 99.8 km[cite: 1]<br>• 35.2 km &amp; 34.9 km progressive long runs[cite: 1]<br>• <strong>Nov 7 Peak Sim:</strong> Half Marathon @ 4:36/km[cite: 1]</td>
-          <td>• Mid-Nov Weight Target: 145.1 lbs[cite: 1]<br>• High-carb cycling on 30k+ days (320g+)[cite: 1]<br>• Weekday runs shift to twilight/early dusk[cite: 1, 2]</td>
-          <td>• <strong>USAA Hits $5,500 Firewall (Nov 2)</strong>[cite: 2]<br>• Freeze savings account; prep avalanche[cite: 2]<br>• Theatre backstage crew networking[cite: 2]</td>
+          <td>• Peak weeks: 90.9 km to 99.8 km<br>• 35.2 km &amp; 34.9 km progressive long runs<br>• <strong>Nov 7 Peak Sim:</strong> Half Marathon @ 4:36/km</td>
+          <td>• Mid-Nov Weight Target: 145.1 lbs<br>• High-carb cycling on 30k+ days (320g+)<br>• Weekday runs shift to twilight/early dusk</td>
+          <td>• <strong>USAA Hits $5,500 Firewall (Nov 2)</strong><br>• Freeze savings account; prep avalanche<br>• Theatre backstage crew networking</td>
         </tr>
         <tr>
           <td><strong>Phase 4: Mujika Taper &amp; Race</strong><br>(Nov 16 – Dec 13)</td>
-          <td>• San Diego travel: Hotel bodyweight split[cite: 1]<br>• Turkey Trot 10K (Nov 26): MP 4:36/km[cite: 1]<br>• <strong>BMW Dallas Marathon (Dec 13): Sub-3:14:30</strong>[cite: 1]</td>
-          <td>• <strong>Dec 13 Racing Mass: 142.0 lbs</strong>[cite: 1, 2]<br>• 48-hr pre-race carb load (8.0–9.0 g/kg)[cite: 1]<br>• Verify teardrop gel pad positioning[cite: 1]</td>
-          <td>• San Diego capital activation delivery[cite: 1]<br>• Deliver Fastpath partner presentations[cite: 2]<br>• Barista social titration sustained[cite: 2]</td>
+          <td>• San Diego travel: Hotel bodyweight split<br>• Turkey Trot 10K (Nov 26): MP 4:36/km<br>• <strong>BMW Dallas Marathon (Dec 13): Sub-3:14:30</strong></td>
+          <td>• <strong>Dec 13 Racing Mass: 142.0 lbs</strong><br>• 48-hr pre-race carb load (8.0–9.0 g/kg)<br>• Verify teardrop gel pad positioning</td>
+          <td>• San Diego capital activation delivery<br>• Deliver Fastpath partner presentations<br>• Barista social titration sustained</td>
         </tr>
         <tr>
           <td><strong>Phase 5: Recovery &amp; Ultra Track</strong><br>(Dec 14 – Dec 31)</td>
-          <td>• Passive healing &amp; active bike flush[cite: 1]<br>• Charlie Brown 5K (Dec 19): Recovery jog[cite: 1]<br>• Sub-3:00 transition intervals (3:45–3:55/km)[cite: 1]</td>
-          <td>• Baseline caloric stabilization<br>• Joint remodeling &amp; tendon restoration[cite: 1]<br>• Foot intrinsic doming rehabilitation[cite: 1]</td>
-          <td>• Year-end cash audit &amp; loan check[cite: 2]<br>• Enroll Google PM Certificate ($49/mo)[cite: 2]<br>• Retire floor mat for hybrid queen bed[cite: 2]</td>
+          <td>• Passive healing &amp; active bike flush<br>• Charlie Brown 5K (Dec 19): Recovery jog<br>• Sub-3:00 transition intervals (3:45–3:55/km)</td>
+          <td>• Baseline caloric stabilization<br>• Joint remodeling &amp; tendon restoration<br>• Foot intrinsic doming rehabilitation</td>
+          <td>• Year-end cash audit &amp; loan check<br>• Enroll Google PM Certificate ($49/mo)<br>• Retire floor mat for hybrid queen bed</td>
         </tr>
       </tbody>
     </table>
@@ -308,25 +288,25 @@
     <h2>Training Paces &amp; Home Strength Matrix</h2>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.81rem; margin-bottom: 8px;">
       <div>
-        <p><strong>• Zone 2 Base:</strong> 5:26–5:54 /km (8:45–9:30 /mi)[cite: 1]</p>
-        <p><strong>• Marathon Pace (MP):</strong> 4:36–4:37 /km (7:25–7:26 /mi)[cite: 1]</p>
+        <p><strong>• Zone 2 Base:</strong> 5:26–5:54 /km (8:45–9:30 /mi)</p>
+        <p><strong>• Marathon Pace (MP):</strong> 4:36–4:37 /km (7:25–7:26 /mi)</p>
       </div>
       <div>
-        <p><strong>• Lactate Threshold (LT):</strong> 4:13–4:18 /km (6:48–6:55 /mi)[cite: 1]</p>
-        <p><strong>• VO2 Max Track:</strong> 3:53–3:59 /km (6:15–6:25 /mi)[cite: 1]</p>
+        <p><strong>• Lactate Threshold (LT):</strong> 4:13–4:18 /km (6:48–6:55 /mi)</p>
+        <p><strong>• VO2 Max Track:</strong> 3:53–3:59 /km (6:15–6:25 /mi)</p>
       </div>
     </div>
     <div class="protocol-box">
-      <h4>Split A: Lower Body Force &amp; Tendons + Steinhoist (Tue AM — Ends 06:30 AM Sharp)[cite: 2]</h4>
-      <p>1. Goblet Squats: 4x8 (35 lb DB; full depth) | 2. DB RDLs: 4x8/leg (35 lb DB; flat-foot heel drive) | 3. Deficit Calf Raises: 4x15 | 4. Banded Spanish Squats: 3x45s | 5. Steinhoisting DB Holds: 3x Max hold w/ 5-lb DB[cite: 1, 2].</p>
+      <h4>Split A: Lower Body Force &amp; Tendons + Steinhoist (Tue AM — Ends 06:30 AM Sharp)</h4>
+      <p>1. Goblet Squats: 4x8 (35 lb DB; full depth) | 2. DB RDLs: 4x8/leg (35 lb DB; flat-foot heel drive) | 3. Deficit Calf Raises: 4x15 | 4. Banded Spanish Squats: 3x45s | 5. Steinhoisting DB Holds: 3x Max hold w/ 5-lb DB.</p>
     </div>
     <div class="protocol-box">
-      <h4>Split B: Plyometrics, Upper Force &amp; Deltoid Hypertrophy (Thu AM — Ends 06:30 AM Sharp)[cite: 2]</h4>
-      <p>1. Countermovement Jumps: 3x5 fresh | 2. Strict Pull-Ups: 4x6–8 | 3. Single-Arm DB Push Press: 3x8/arm (35 lb DB) | 4. <strong>DB Lateral Raise Burnout:</strong> 4x20–25 (Two 5-lb DBs, 2s pause) | 5. Deficit Push-Ups: 3x12–15 | 6. Scapular Wall Drill: 3x60s[cite: 1, 2].</p>
+      <h4>Split B: Plyometrics, Upper Force &amp; Deltoid Hypertrophy (Thu AM — Ends 06:30 AM Sharp)</h4>
+      <p>1. Countermovement Jumps: 3x5 fresh | 2. Strict Pull-Ups: 4x6–8 | 3. Single-Arm DB Push Press: 3x8/arm (35 lb DB) | 4. <strong>DB Lateral Raise Burnout:</strong> 4x20–25 (Two 5-lb DBs, 2s pause) | 5. Deficit Push-Ups: 3x12–15 | 6. Scapular Wall Drill: 3x60s.</p>
     </div>
     <div class="protocol-box">
-      <h4>Split C: Trunk Stability &amp; Core (Sat PM / Sun PM)[cite: 2]</h4>
-      <p>1. Bulgarian Split Squats: 3x10/leg | 2. Hanging Knee/Leg Raises: 3x12–15 | 3. RKC Planks: 3x30s max intra-abdominal tension | 4. Banded Pallof Press: 3x12/side[cite: 1, 2].</p>
+      <h4>Split C: Trunk Stability &amp; Core (Sat PM / Sun PM)</h4>
+      <p>1. Bulgarian Split Squats: 3x10/leg | 2. Hanging Knee/Leg Raises: 3x12–15 | 3. RKC Planks: 3x30s max intra-abdominal tension | 4. Banded Pallof Press: 3x12/side.</p>
     </div>
   </div>
 
@@ -341,61 +321,61 @@
     <div class="day-row quality">
       <div class="day-header"><span class="name">Tuesday, Sep 01</span><span class="type">VO2 TRACK + SPLIT A <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:30 AM–05:40 AM:</span> Wake, hydrate (20 oz water + electrolytes), dress[cite: 2].</li>
-        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Deficit Calf Raises, Spanish Squats, Steinhoist holds[cite: 2].</li>
-        <li><span class="time-slot">06:30 AM–06:55 AM:</span> Groom, dress, pack work bag[cite: 2].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike commute to <strong>Avoca Coffee (Foch St)</strong>; order cortado; micro-social chat with barista[cite: 2].</li>
-        <li><span class="time-slot">07:15 AM–10:00 AM:</span> Clock in 07:15 AM sharp[cite: 2]. <span class="work-tag">Fastpath Sprint:</span> Format Module 1 slides (07:20 AM–08:00 AM)[cite: 2].</li>
-        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home to 721 W Cannon St; workstation live by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">10:30 AM–05:00 PM:</span> Remote operations execution; clock out 05:00 PM[cite: 2].</li>
-        <li><span class="time-slot">07:14 PM–08:17 PM:</span> <span class="run-tag">VO2 Track (63 min):</span> 11.3 km [3.0 km out + 5x800m @ 3:56/km w/ 2m jog + 3.0 km back]. Concludes at Civil Dusk (8:17 PM)[cite: 1, 2].</li>
-        <li><span class="time-slot">08:17 PM–10:00 PM:</span> Dinner, stretch, gear prep, screens off 09:45 PM, sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:30 AM–05:40 AM:</span> Wake, hydrate (20 oz water + electrolytes), dress.</li>
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Deficit Calf Raises, Spanish Squats, Steinhoist holds.</li>
+        <li><span class="time-slot">06:30 AM–06:55 AM:</span> Groom, dress, pack work bag.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike commute to <strong>Avoca Coffee (Foch St)</strong>; order cortado; micro-social chat with barista.</li>
+        <li><span class="time-slot">07:15 AM–10:00 AM:</span> Clock in 07:15 AM sharp. <span class="work-tag">Fastpath Sprint:</span> Format Module 1 slides (07:20 AM–08:00 AM).</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home to 721 W Cannon St; workstation live by 10:30 AM.</li>
+        <li><span class="time-slot">10:30 AM–05:00 PM:</span> Remote operations execution; clock out 05:00 PM.</li>
+        <li><span class="time-slot">07:14 PM–08:17 PM:</span> <span class="run-tag">VO2 Track (63 min):</span> 11.3 km [3.0 km out + 5x800m @ 3:56/km w/ 2m jog + 3.0 km back]. Concludes at Civil Dusk (8:17 PM).</li>
+        <li><span class="time-slot">08:17 PM–10:00 PM:</span> Dinner, stretch, gear prep, screens off 09:45 PM, sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Wednesday, Sep 02</span><span class="type">ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:00 AM–06:30 AM:</span> Foot intrinsic drills (short-foot doming, toe yoga)[cite: 1, 2].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM[cite: 2].</li>
-        <li><span class="time-slot">07:15 AM–10:00 AM:</span> Admin work block; Fastpath cohort metric review[cite: 2].</li>
-        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike to Cannon St; live at home desk[cite: 2]. Clock out 05:00 PM[cite: 2].</li>
-        <li><span class="time-slot">07:17 PM–08:15 PM:</span> <span class="run-tag">Zone 2 Run (58 min):</span> 10.5 km @ 5:29/km. Concludes at Civil Dusk (8:15 PM)[cite: 1, 2].</li>
-        <li><span class="time-slot">08:15 PM–10:00 PM:</span> Recovery dinner, hydration, sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:00 AM–06:30 AM:</span> Foot intrinsic drills (short-foot doming, toe yoga).</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM.</li>
+        <li><span class="time-slot">07:15 AM–10:00 AM:</span> Admin work block; Fastpath cohort metric review.</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike to Cannon St; live at home desk. Clock out 05:00 PM.</li>
+        <li><span class="time-slot">07:17 PM–08:15 PM:</span> <span class="run-tag">Zone 2 Run (58 min):</span> 10.5 km @ 5:29/km. Concludes at Civil Dusk (8:15 PM).</li>
+        <li><span class="time-slot">08:15 PM–10:00 PM:</span> Recovery dinner, hydration, sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Thursday, Sep 03</span><span class="type">THRESHOLD + SPLIT B <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B:</span> CM Jumps, Pull-Ups, 35 lb DB Push Press, 5 lb Lateral Burnout (4x20), Deficit Push-Ups, Steinhoist[cite: 2].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno Coffee</strong>; clock in 07:15 AM[cite: 2].</li>
-        <li><span class="time-slot">07:15 AM–10:00 AM:</span> Re-architect slide templates[cite: 2]. Bike home by 10:30 AM; clock out 05:00 PM[cite: 2].</li>
-        <li><span class="time-slot">07:01 PM–08:14 PM:</span> <span class="run-tag">Threshold Run (73 min):</span> 12.9 km [3.0 km out + 6.9 km LT @ 4:16/km + 3.0 km back]. Ends at Civil Dusk (8:14 PM)[cite: 1, 2].</li>
-        <li><span class="time-slot">08:14 PM–10:00 PM:</span> Dinner, foam roll legs, sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B:</span> CM Jumps, Pull-Ups, 35 lb DB Push Press, 5 lb Lateral Burnout (4x20), Deficit Push-Ups, Steinhoist.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno Coffee</strong>; clock in 07:15 AM.</li>
+        <li><span class="time-slot">07:15 AM–10:00 AM:</span> Re-architect slide templates. Bike home by 10:30 AM; clock out 05:00 PM.</li>
+        <li><span class="time-slot">07:01 PM–08:14 PM:</span> <span class="run-tag">Threshold Run (73 min):</span> 12.9 km [3.0 km out + 6.9 km LT @ 4:16/km + 3.0 km back]. Ends at Civil Dusk (8:14 PM).</li>
+        <li><span class="time-slot">08:14 PM–10:00 PM:</span> Dinner, foam roll legs, sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Friday, Sep 04</span><span class="type">EASY AEROBIC FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:00 AM–06:30 AM:</span> Mobility &amp; core activation[cite: 2].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM[cite: 2].</li>
-        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Return transit to Cannon St; close tickets; clock out 05:00 PM[cite: 2].</li>
-        <li><span class="time-slot">07:25 PM–08:13 PM:</span> <span class="run-tag">Flush Run (48 min):</span> 8.4 km @ 5:42/km. Ends at Civil Dusk (8:13 PM)[cite: 1, 2].</li>
-        <li><span class="time-slot">08:13 PM–10:00 PM:</span> Recovery meal, set out long run gear, sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:00 AM–06:30 AM:</span> Mobility &amp; core activation.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM.</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Return transit to Cannon St; close tickets; clock out 05:00 PM.</li>
+        <li><span class="time-slot">07:25 PM–08:13 PM:</span> <span class="run-tag">Flush Run (48 min):</span> 8.4 km @ 5:42/km. Ends at Civil Dusk (8:13 PM).</li>
+        <li><span class="time-slot">08:13 PM–10:00 PM:</span> Recovery meal, set out long run gear, sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row long">
       <div class="day-header"><span class="name">Saturday, Sep 05</span><span class="type">KEY PROGRESSIVE LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:15 AM–06:45 AM:</span> Wake, toast + honey/banana, dynamic warmup[cite: 2].</li>
-        <li><span class="time-slot">06:45 AM–08:33 AM:</span> <span class="run-tag">Key Long Run (108 min):</span> 20.8 km progressive down to 4:55/km[cite: 2].</li>
-        <li><span class="time-slot">04:30 PM–05:15 PM:</span> <span class="strength-tag">Home Split C:</span> Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press[cite: 2].</li>
-        <li><span class="time-slot">05:15 PM–10:00 PM:</span> High-protein dinner, foam roll, sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:15 AM–06:45 AM:</span> Wake, toast + honey/banana, dynamic warmup.</li>
+        <li><span class="time-slot">06:45 AM–08:33 AM:</span> <span class="run-tag">Key Long Run (108 min):</span> 20.8 km progressive down to 4:55/km.</li>
+        <li><span class="time-slot">04:30 PM–05:15 PM:</span> <span class="strength-tag">Home Split C:</span> Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press.</li>
+        <li><span class="time-slot">05:15 PM–10:00 PM:</span> High-protein dinner, foam roll, sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Sunday, Sep 06</span><span class="type">FULL SYSTEM REST &amp; FINANCIAL SNAPSHOT <span class="cal-target">[1,600 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Checking float confirmed ~$2,077; USAA Savings $3,586[cite: 2]. Complete rest (0.0 km)[cite: 2]. Meal prep[cite: 1, 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> Checking float confirmed ~$2,077; USAA Savings $3,586. Complete rest (0.0 km). Meal prep. Sleep 10:00 PM.</li>
       </ul>
     </div>
   </div>
@@ -409,61 +389,61 @@
     <div class="day-row rest">
       <div class="day-header"><span class="name">Monday, Sep 07</span><span class="type">LABOR DAY HOLIDAY (NO RUN) <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">07:00 AM–08:30 AM:</span> Leisure bike to Crude Craft Coffee Bar for cortado[cite: 2]. Marked Out of Office[cite: 2].</li>
-        <li><span class="time-slot">All Day:</span> Zero running (0.0 km)[cite: 2]. Cellular &amp; nervous system restoration[cite: 1, 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">07:00 AM–08:30 AM:</span> Leisure bike to Crude Craft Coffee Bar for cortado. Marked Out of Office.</li>
+        <li><span class="time-slot">All Day:</span> Zero running (0.0 km). Cellular &amp; nervous system restoration. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Tuesday, Sep 08</span><span class="type">SPLIT A + LT INTERVALS <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist[cite: 2].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>; clock in 07:15 AM[cite: 2]. Fastpath Module 1 graphic rebuild[cite: 2].</li>
-        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live by 10:30 AM; clock out 05:00 PM[cite: 2].</li>
-        <li><span class="time-slot">06:56 PM–08:08 PM:</span> <span class="run-tag">Quality LT Run (72 min):</span> 12.9 km [4x1600m LT @ 4:15/km]. Ends at Civil Dusk (8:08 PM)[cite: 1, 2].</li>
-        <li><span class="time-slot">08:08 PM–10:00 PM:</span> Dinner, hydrate, foam roll, sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>; clock in 07:15 AM. Fastpath Module 1 graphic rebuild.</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live by 10:30 AM; clock out 05:00 PM.</li>
+        <li><span class="time-slot">06:56 PM–08:08 PM:</span> <span class="run-tag">Quality LT Run (72 min):</span> 12.9 km [4x1600m LT @ 4:15/km]. Ends at Civil Dusk (8:08 PM).</li>
+        <li><span class="time-slot">08:08 PM–10:00 PM:</span> Dinner, hydrate, foam roll, sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Wednesday, Sep 09</span><span class="type">ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:00 AM–06:30 AM:</span> Soft tissue mobility &amp; foot intrinsics[cite: 2].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM[cite: 2]. Bike home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">10:30 AM–05:00 PM:</span> Operational check-ins; clock out 05:00 PM[cite: 2].</li>
-        <li><span class="time-slot">07:01 PM–08:06 PM:</span> <span class="run-tag">Zone 2 Run (65 min):</span> 11.6 km @ 5:29/km. Ends at Civil Dusk (8:06 PM)[cite: 1, 2].</li>
-        <li><span class="time-slot">08:06 PM–10:00 PM:</span> Whole-food dinner, evening stretch, sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:00 AM–06:30 AM:</span> Soft tissue mobility &amp; foot intrinsics.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM. Bike home by 10:30 AM.</li>
+        <li><span class="time-slot">10:30 AM–05:00 PM:</span> Operational check-ins; clock out 05:00 PM.</li>
+        <li><span class="time-slot">07:01 PM–08:06 PM:</span> <span class="run-tag">Zone 2 Run (65 min):</span> 11.6 km @ 5:29/km. Ends at Civil Dusk (8:06 PM).</li>
+        <li><span class="time-slot">08:06 PM–10:00 PM:</span> Whole-food dinner, evening stretch, sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Thursday, Sep 10</span><span class="type">SPLIT B + AEROBIC TEMPO <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B:</span> CM Jumps, Pull-Ups, DB Push Press, Lateral Raises (4x20), Deficit Push-Ups, Steinhoist[cite: 2].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Branch &amp; Bird</strong>; clock in 07:15 AM[cite: 2]. Micro-social barista greeting[cite: 2].</li>
-        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live by 10:30 AM; clock out 05:00 PM[cite: 2].</li>
-        <li><span class="time-slot">07:09 PM–08:05 PM:</span> <span class="run-tag">Tempo Run (56 min):</span> 10.0 km @ 5:35/km. Ends at Civil Dusk (8:05 PM)[cite: 1, 2].</li>
-        <li><span class="time-slot">08:05 PM–10:00 PM:</span> Clean dinner, layout gear, sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B:</span> CM Jumps, Pull-Ups, DB Push Press, Lateral Raises (4x20), Deficit Push-Ups, Steinhoist.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Branch &amp; Bird</strong>; clock in 07:15 AM. Micro-social barista greeting.</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live by 10:30 AM; clock out 05:00 PM.</li>
+        <li><span class="time-slot">07:09 PM–08:05 PM:</span> <span class="run-tag">Tempo Run (56 min):</span> 10.0 km @ 5:35/km. Ends at Civil Dusk (8:05 PM).</li>
+        <li><span class="time-slot">08:05 PM–10:00 PM:</span> Clean dinner, layout gear, sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Friday, Sep 11</span><span class="type">EASY FLUSH + PAYCHECK #2 <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> <span class="fin-tag">Paycheck #2 Lands:</span> Net ~$1,815 deposited into checking; float safe &gt;$1,500[cite: 2].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">07:15 PM–08:03 PM:</span> <span class="run-tag">Flush Run (48 min):</span> 8.4 km @ 5:45/km. Ends at Civil Dusk (8:03 PM)[cite: 1, 2].</li>
-        <li><span class="time-slot">08:03 PM–10:00 PM:</span> Dinner, carb load for long run, sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> <span class="fin-tag">Paycheck #2 Lands:</span> Net ~$1,815 deposited into checking; float safe &gt;$1,500.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">07:15 PM–08:03 PM:</span> <span class="run-tag">Flush Run (48 min):</span> 8.4 km @ 5:45/km. Ends at Civil Dusk (8:03 PM).</li>
+        <li><span class="time-slot">08:03 PM–10:00 PM:</span> Dinner, carb load for long run, sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row long">
       <div class="day-header"><span class="name">Saturday, Sep 12</span><span class="type">OVERLOAD LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:50 AM–09:08 AM:</span> <span class="run-tag">Overload Long Run (138 min):</span> 26.3 km progressive (closing final 3.2 km @ 4:58/km)[cite: 2].</li>
-        <li><span class="time-slot">04:30 PM–05:15 PM:</span> <span class="strength-tag">Home Split C:</span> Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press[cite: 2].</li>
-        <li><span class="time-slot">05:15 PM–10:00 PM:</span> High-protein recovery meal, hydrate, sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:50 AM–09:08 AM:</span> <span class="run-tag">Overload Long Run (138 min):</span> 26.3 km progressive (closing final 3.2 km @ 4:58/km).</li>
+        <li><span class="time-slot">04:30 PM–05:15 PM:</span> <span class="strength-tag">Home Split C:</span> Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press.</li>
+        <li><span class="time-slot">05:15 PM–10:00 PM:</span> High-protein recovery meal, hydrate, sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Sunday, Sep 13</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km)[cite: 2]. Full joint and tendon recovery[cite: 1]. Meal prep for Deload Week[cite: 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km). Full joint and tendon recovery. Meal prep for Deload Week. Sleep 10:00 PM.</li>
       </ul>
     </div>
   </div>
@@ -477,58 +457,58 @@
     <div class="day-row rest">
       <div class="day-header"><span class="name">Monday, Sep 14</span><span class="type">DELOAD REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude Craft Coffee Bar; clock in 07:15 AM[cite: 2]. Desk live at Cannon St by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">All Day:</span> Zero running (0.0 km)[cite: 2]. Tissue decompression[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude Craft Coffee Bar; clock in 07:15 AM. Desk live at Cannon St by 10:30 AM.</li>
+        <li><span class="time-slot">All Day:</span> Zero running (0.0 km). Tissue decompression. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Tuesday, Sep 15</span><span class="type">DELOAD INTERVALS + BOOK 1 OPENS <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:50 AM–06:30 AM:</span> <span class="strength-tag">Split A Deload:</span> 2 sets only of Goblet Squats, DB RDLs, Spanish Squats, Steinhoist[cite: 2].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Avoca Coffee (Magnolia)</strong>; clock in 07:15 AM[cite: 2]. Fastpath Module 2 slide graphics[cite: 2].</li>
-        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live by 10:30 AM; clock out 05:00 PM[cite: 2].</li>
-        <li><span class="time-slot">07:01 PM–07:58 PM:</span> <span class="run-tag">Deload Run (57 min):</span> 10.0 km [4x800m @ 3:59/km]. Ends at Civil Dusk (7:58 PM)[cite: 1, 2].</li>
-        <li><span class="time-slot">08:28 PM–09:28 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 1/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed (30 min post-run)[cite: 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:50 AM–06:30 AM:</span> <span class="strength-tag">Split A Deload:</span> 2 sets only of Goblet Squats, DB RDLs, Spanish Squats, Steinhoist.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Avoca Coffee (Magnolia)</strong>; clock in 07:15 AM. Fastpath Module 2 slide graphics.</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live by 10:30 AM; clock out 05:00 PM.</li>
+        <li><span class="time-slot">07:01 PM–07:58 PM:</span> <span class="run-tag">Deload Run (57 min):</span> 10.0 km [4x800m @ 3:59/km]. Ends at Civil Dusk (7:58 PM).</li>
+        <li><span class="time-slot">08:28 PM–09:28 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 1/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed (30 min post-run). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Wednesday, Sep 16</span><span class="type">ZONE 2 DELOAD <span class="cal-target">[1,900 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">07:09 PM–07:57 PM:</span> <span class="run-tag">Zone 2 Run (48 min):</span> 8.4 km @ 5:45/km. Ends at Civil Dusk (7:57 PM)[cite: 1, 2].</li>
-        <li><span class="time-slot">08:27 PM–09:27 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 2/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed[cite: 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">07:09 PM–07:57 PM:</span> <span class="run-tag">Zone 2 Run (48 min):</span> 8.4 km @ 5:45/km. Ends at Civil Dusk (7:57 PM).</li>
+        <li><span class="time-slot">08:27 PM–09:27 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 2/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Thursday, Sep 17</span><span class="type">MP TEMPO DELOAD <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:50 AM–06:30 AM:</span> <span class="strength-tag">Split B Deload:</span> 2 sets of Pull-Ups, Push Press, Lateral Raises (3x20), Push-Ups, Steinhoist[cite: 2].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Avoca Coffee (Foch St)</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">07:04 PM–07:56 PM:</span> <span class="run-tag">Deload Tempo (52 min):</span> 10.0 km [4.0 km @ MP 4:36/km]. Ends at Civil Dusk (7:56 PM)[cite: 1, 2].</li>
-        <li><span class="time-slot">08:26 PM–09:26 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 3/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed[cite: 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:50 AM–06:30 AM:</span> <span class="strength-tag">Split B Deload:</span> 2 sets of Pull-Ups, Push Press, Lateral Raises (3x20), Push-Ups, Steinhoist.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Avoca Coffee (Foch St)</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">07:04 PM–07:56 PM:</span> <span class="run-tag">Deload Tempo (52 min):</span> 10.0 km [4.0 km @ MP 4:36/km]. Ends at Civil Dusk (7:56 PM).</li>
+        <li><span class="time-slot">08:26 PM–09:26 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 3/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Friday, Sep 18</span><span class="type">EASY BASE DELOAD <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">07:15 PM–07:54 PM:</span> <span class="run-tag">Flush Run (39 min):</span> 6.8 km @ 5:45/km. Ends at Civil Dusk (7:54 PM)[cite: 1, 2].</li>
-        <li><span class="time-slot">08:24 PM–09:24 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 4/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed[cite: 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">07:15 PM–07:54 PM:</span> <span class="run-tag">Flush Run (39 min):</span> 6.8 km @ 5:45/km. Ends at Civil Dusk (7:54 PM).</li>
+        <li><span class="time-slot">08:24 PM–09:24 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 4/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row long">
       <div class="day-header"><span class="name">Saturday, Sep 19</span><span class="type">DELOAD LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–08:28 AM:</span> <span class="run-tag">Deload Long Run (93 min):</span> 17.1 km @ 5:35/km[cite: 2].</li>
-        <li><span class="time-slot">04:30 PM–05:15 PM:</span> <span class="strength-tag">Split C Deload:</span> Light core maintenance &amp; bodyweight mobility[cite: 2].</li>
-        <li><span class="time-slot">06:00 PM–07:00 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 5/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed[cite: 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–08:28 AM:</span> <span class="run-tag">Deload Long Run (93 min):</span> 17.1 km @ 5:35/km.</li>
+        <li><span class="time-slot">04:30 PM–05:15 PM:</span> <span class="strength-tag">Split C Deload:</span> Light core maintenance &amp; bodyweight mobility.</li>
+        <li><span class="time-slot">06:00 PM–07:00 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 5/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Sunday, Sep 20</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km)[cite: 2]. Glycogen recharge[cite: 1].</li>
-        <li><span class="time-slot">07:00 PM–08:00 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 6/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed (Book 1 100% completed)[cite: 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km). Glycogen recharge.</li>
+        <li><span class="time-slot">07:00 PM–08:00 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 6/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed (Book 1 100% completed). Sleep 10:00 PM.</li>
       </ul>
     </div>
   </div>
@@ -542,62 +522,62 @@
     <div class="day-row rest">
       <div class="day-header"><span class="name">Monday, Sep 21</span><span class="type">REST &amp; WEIGHT CHECK <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> <span class="fin-tag">Weight Milestone Target:</span> 151.7 lbs (-3.3 lbs from baseline)[cite: 1, 2]. Zero running (0.0 km)[cite: 2].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude Craft Coffee Bar; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">07:00 PM–08:00 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 7/12):</span> 60 min review @ 2x speed[cite: 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> <span class="fin-tag">Weight Milestone Target:</span> 151.7 lbs (-3.3 lbs from baseline). Zero running (0.0 km).</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude Craft Coffee Bar; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">07:00 PM–08:00 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 7/12):</span> 60 min review @ 2x speed. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Tuesday, Sep 22</span><span class="type">VO2 TRACK + SPLIT A <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist primer[cite: 2].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno Coffee</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">06:34 PM–07:49 PM:</span> <span class="run-tag">VO2 Track (75 min):</span> 13.2 km [5x1000m @ 3:55/km]. Ends at Civil Dusk (7:49 PM)[cite: 1, 2].</li>
-        <li><span class="time-slot">08:19 PM–09:19 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 8/12):</span> 60 min listening @ 2x speed[cite: 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist primer.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno Coffee</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">06:34 PM–07:49 PM:</span> <span class="run-tag">VO2 Track (75 min):</span> 13.2 km [5x1000m @ 3:55/km]. Ends at Civil Dusk (7:49 PM).</li>
+        <li><span class="time-slot">08:19 PM–09:19 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 8/12):</span> 60 min listening @ 2x speed. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Wednesday, Sep 23</span><span class="type">ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">06:45 PM–07:48 PM:</span> <span class="run-tag">Zone 2 Run (63 min):</span> 11.6 km @ 5:26/km. Ends at Civil Dusk (7:48 PM)[cite: 1, 2].</li>
-        <li><span class="time-slot">08:18 PM–09:18 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 9/12):</span> 60 min listening @ 2x speed[cite: 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">06:45 PM–07:48 PM:</span> <span class="run-tag">Zone 2 Run (63 min):</span> 11.6 km @ 5:26/km. Ends at Civil Dusk (7:48 PM).</li>
+        <li><span class="time-slot">08:18 PM–09:18 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 9/12):</span> 60 min listening @ 2x speed. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Thursday, Sep 24</span><span class="type">THRESHOLD + SPLIT B <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B:</span> CM Jumps, Pull-Ups, Push Press, Lateral Raises (4x20), Push-Ups[cite: 2]. Zero deltoid strain[cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">06:19 PM–07:46 PM:</span> <span class="run-tag">Threshold Run (87 min):</span> 14.8 km [8.8 km LT @ 4:16/km]. Ends at Civil Dusk (7:46 PM)[cite: 1, 2].</li>
-        <li><span class="time-slot">08:16 PM–09:16 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 10/12):</span> 60 min listening @ 2x speed[cite: 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B:</span> CM Jumps, Pull-Ups, Push Press, Lateral Raises (4x20), Push-Ups. Zero deltoid strain.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">06:19 PM–07:46 PM:</span> <span class="run-tag">Threshold Run (87 min):</span> 14.8 km [8.8 km LT @ 4:16/km]. Ends at Civil Dusk (7:46 PM).</li>
+        <li><span class="time-slot">08:16 PM–09:16 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 10/12):</span> 60 min listening @ 2x speed. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Friday, Sep 25</span><span class="type">PRE-RACE SHAKEOUT + PAYCHECK #3 <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> <span class="fin-tag">Paycheck #3 Deposit:</span> ~$1,815 net lands in checking[cite: 2]. Hold float for rent draft[cite: 2].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">07:06 PM–07:45 PM:</span> <span class="run-tag">Shakeout Run (39 min):</span> 6.8 km easy + strides. Ends at Civil Dusk (7:45 PM)[cite: 1, 2].</li>
-        <li><span class="time-slot">08:15 PM–09:15 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 11/12):</span> 60 min listening @ 2x speed[cite: 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> <span class="fin-tag">Paycheck #3 Deposit:</span> ~$1,815 net lands in checking. Hold float for rent draft.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">07:06 PM–07:45 PM:</span> <span class="run-tag">Shakeout Run (39 min):</span> 6.8 km easy + strides. Ends at Civil Dusk (7:45 PM).</li>
+        <li><span class="time-slot">08:15 PM–09:15 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 11/12):</span> 60 min listening @ 2x speed. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row race">
       <div class="day-header"><span class="name">Saturday, Sep 26</span><span class="type">🍺 FW OKTOBERFEST 5K + STEINHOIST <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">07:00 AM–08:30 AM:</span> Bike to race staging; 1.5 km dynamic warmup[cite: 2].</li>
-        <li><span class="time-slot">07:45 AM–08:05 AM:</span> <span class="run-tag">Race:</span> <strong>Fort Worth Oktoberfest 5K @ 19:30 (3:54/km)</strong> + 1.5 km cool (8.0 km total)[cite: 2].</li>
-        <li><span class="time-slot">02:00 PM–04:00 PM:</span> 🏆 <strong>Competitive Steinhoist Contest</strong> at Dr. Jeckyll's Beer Lab; execute locked hold[cite: 2].</li>
-        <li><span class="time-slot">07:30 PM–08:30 PM:</span> <span class="audiobook-tag">Final Audiobook Block (Day 12/12):</span> Final 60 min listening. <strong>Both books 100% finished!</strong>[cite: 2]</li>
+        <li><span class="time-slot">07:00 AM–08:30 AM:</span> Bike to race staging; 1.5 km dynamic warmup.</li>
+        <li><span class="time-slot">07:45 AM–08:05 AM:</span> <span class="run-tag">Race:</span> <strong>Fort Worth Oktoberfest 5K @ 19:30 (3:54/km)</strong> + 1.5 km cool (8.0 km total).</li>
+        <li><span class="time-slot">02:00 PM–04:00 PM:</span> 🏆 <strong>Competitive Steinhoist Contest</strong> at Dr. Jeckyll's Beer Lab; execute locked hold.</li>
+        <li><span class="time-slot">07:30 PM–08:30 PM:</span> <span class="audiobook-tag">Final Audiobook Block (Day 12/12):</span> Final 60 min listening. <strong>Both books 100% finished!</strong></li>
       </ul>
     </div>
     <div class="day-row club">
       <div class="day-header"><span class="name">Sunday, Sep 27</span><span class="type">RELOCATED LONG RUN + BOOK CLUBS <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">07:00 AM–08:52 AM:</span> <span class="run-tag">Relocated Long Run (112 min):</span> 20.0 km Progressive @ 5:23/km[cite: 2].</li>
-        <li><span class="time-slot">01:00 PM–03:00 PM:</span> <span class="social-tag">Book Club #1:</span> Group discussion on <em>Conclave</em>; articulate diaphragmatic projection[cite: 2].</li>
-        <li><span class="time-slot">04:00 PM–04:45 PM:</span> <span class="strength-tag">Home Split C:</span> Bulgarian Split Squats, Hanging Leg Raises, RKC Planks[cite: 2].</li>
-        <li><span class="time-slot">06:00 PM–08:00 PM:</span> <span class="social-tag">Book Club #2:</span> Second group discussion on <em>Conclave</em>; connect with peers[cite: 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">07:00 AM–08:52 AM:</span> <span class="run-tag">Relocated Long Run (112 min):</span> 20.0 km Progressive @ 5:23/km.</li>
+        <li><span class="time-slot">01:00 PM–03:00 PM:</span> <span class="social-tag">Book Club #1:</span> Group discussion on <em>Conclave</em>; articulate diaphragmatic projection.</li>
+        <li><span class="time-slot">04:00 PM–04:45 PM:</span> <span class="strength-tag">Home Split C:</span> Bulgarian Split Squats, Hanging Leg Raises, RKC Planks.</li>
+        <li><span class="time-slot">06:00 PM–08:00 PM:</span> <span class="social-tag">Book Club #2:</span> Second group discussion on <em>Conclave</em>; connect with peers. Sleep 10:00 PM.</li>
       </ul>
     </div>
   </div>
@@ -611,54 +591,54 @@
     <div class="day-row rest">
       <div class="day-header"><span class="name">Monday, Sep 28</span><span class="type">FASTPATH COHORT ONBOARDING (NO RUN) <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">All Day:</span> Fastpath onboarding launch[cite: 2]. Complete rest (0.0 km)[cite: 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">All Day:</span> Fastpath onboarding launch. Complete rest (0.0 km). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Tuesday, Sep 29</span><span class="type">VO2 TRACK + SPLIT A <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist[cite: 2].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Branch &amp; Bird</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">06:26 PM–07:41 PM:</span> <span class="run-tag">VO2 Track (75 min):</span> 13.2 km [4x1200m @ 3:55/km]. Ends at Civil Dusk (7:41 PM)[cite: 1, 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Branch &amp; Bird</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">06:26 PM–07:41 PM:</span> <span class="run-tag">VO2 Track (75 min):</span> 13.2 km [4x1200m @ 3:55/km]. Ends at Civil Dusk (7:41 PM). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Wednesday, Sep 30</span><span class="type">ZONE 2 BASE &amp; MONTH-END AUDIT <span class="cal-target">[1,900 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">04:00 PM–05:00 PM:</span> <span class="fin-tag">Month-End Audit:</span> Verify $1,000 rent drafted Oct 1; prep $600 USAA transfer[cite: 2].</li>
-        <li><span class="time-slot">06:29 PM–07:39 PM:</span> <span class="run-tag">Zone 2 Run (70 min):</span> 12.9 km @ 5:26/km. Ends at Civil Dusk (7:39 PM)[cite: 1, 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">04:00 PM–05:00 PM:</span> <span class="fin-tag">Month-End Audit:</span> Verify $1,000 rent drafted Oct 1; prep $600 USAA transfer.</li>
+        <li><span class="time-slot">06:29 PM–07:39 PM:</span> <span class="run-tag">Zone 2 Run (70 min):</span> 12.9 km @ 5:26/km. Ends at Civil Dusk (7:39 PM). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Thursday, Oct 01</span><span class="type">THRESHOLD + SHOULDER DELOAD <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B:</span> Pull-Ups &amp; Push-Ups. Zero deltoid fatigue (Stein Peak Prep)[cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Avoca Coffee (Foch St)</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">06:05 PM–07:35 PM:</span> <span class="run-tag">Threshold Run (90 min):</span> 14.8 km [8.8 km LT @ 4:15/km]. Ends at Civil Dusk (7:35 PM)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B:</span> Pull-Ups &amp; Push-Ups. Zero deltoid fatigue (Stein Peak Prep).</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Avoca Coffee (Foch St)</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">06:05 PM–07:35 PM:</span> <span class="run-tag">Threshold Run (90 min):</span> 14.8 km [8.8 km LT @ 4:15/km]. Ends at Civil Dusk (7:35 PM). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Friday, Oct 02</span><span class="type">PRE-RACE SHAKEOUT + SAVINGS TRANSFER <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM[cite: 2]. Transfer $600 to USAA[cite: 2].</li>
-        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live; clock out 05:00 PM[cite: 2].</li>
-        <li><span class="time-slot">06:55 PM–07:35 PM:</span> <span class="run-tag">Shakeout Run (40 min):</span> 6.8 km easy + strides. Ends at Civil Dusk (7:35 PM)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM. Transfer $600 to USAA.</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live; clock out 05:00 PM.</li>
+        <li><span class="time-slot">06:55 PM–07:35 PM:</span> <span class="run-tag">Shakeout Run (40 min):</span> 6.8 km easy + strides. Ends at Civil Dusk (7:35 PM). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row race">
       <div class="day-header"><span class="name">Saturday, Oct 03</span><span class="type">🍺 RAHR 5K + FINAL STEINHOIST COMP <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:30 AM–09:00 AM:</span> <strong>Rahr Brewing Oktoberfest 5K + Cruise (150 min):</strong> 24.5 km Total [5K race + 16.3 km closing 6.4 km @ MP 4:36/km][cite: 1].</li>
-        <li><span class="time-slot">02:00 PM–04:00 PM:</span> 🏆 <strong>Rahr Brewing Steinhoisting Championship</strong> (Final 2026 Competitive Peak)[cite: 1].</li>
-        <li><span class="time-slot">05:15 PM–06:00 PM:</span> Flat Split C (Shin planks, Pallof press, hanging knee raises)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:30 AM–09:00 AM:</span> <strong>Rahr Brewing Oktoberfest 5K + Cruise (150 min):</strong> 24.5 km Total [5K race + 16.3 km closing 6.4 km @ MP 4:36/km].</li>
+        <li><span class="time-slot">02:00 PM–04:00 PM:</span> 🏆 <strong>Rahr Brewing Steinhoisting Championship</strong> (Final 2026 Competitive Peak).</li>
+        <li><span class="time-slot">05:15 PM–06:00 PM:</span> Flat Split C (Shin planks, Pallof press, hanging knee raises). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Sunday, Oct 04</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); full structural regeneration[cite: 1]. Pure marathon peak transition[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); full structural regeneration. Pure marathon peak transition. Sleep 10:00 PM.</li>
       </ul>
     </div>
   </div>
@@ -672,56 +652,56 @@
     <div class="day-row rest">
       <div class="day-header"><span class="name">Monday, Oct 05</span><span class="type">REST &amp; ACTIVE FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude Craft Coffee Bar; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">All Day:</span> Active bike flush + foot intrinsics; zero running (0.0 km)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude Craft Coffee Bar; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">All Day:</span> Active bike flush + foot intrinsics; zero running (0.0 km). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Tuesday, Oct 06</span><span class="type">VO2 TRACK + SPLIT A <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Spanish Squats, Wall Sits[cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">05:58 PM–07:28 PM:</span> <span class="run-tag">VO2 Track (90 min):</span> 14.8 km [5x1000m @ 3:55/km w/ 3m walk]. Ends at Civil Dusk (7:28 PM)[cite: 1].</li>
-        <li><span class="time-slot">07:28 PM–10:00 PM:</span> High-protein recovery dinner, foam roll, sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Spanish Squats, Wall Sits.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">05:58 PM–07:28 PM:</span> <span class="run-tag">VO2 Track (90 min):</span> 14.8 km [5x1000m @ 3:55/km w/ 3m walk]. Ends at Civil Dusk (7:28 PM).</li>
+        <li><span class="time-slot">07:28 PM–10:00 PM:</span> High-protein recovery dinner, foam roll, sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Wednesday, Oct 07</span><span class="type">ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">06:11 PM–07:26 PM:</span> <span class="run-tag">Zone 2 Run (75 min):</span> 12.9 km @ 5:26/km. Ends at Civil Dusk (7:26 PM)[cite: 1].</li>
-        <li><span class="time-slot">07:26 PM–10:00 PM:</span> Dinner, mobility, sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">06:11 PM–07:26 PM:</span> <span class="run-tag">Zone 2 Run (75 min):</span> 12.9 km @ 5:26/km. Ends at Civil Dusk (7:26 PM).</li>
+        <li><span class="time-slot">07:26 PM–10:00 PM:</span> Dinner, mobility, sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Thursday, Oct 08</span><span class="type">CONTINUOUS LT + SPLIT B <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B:</span> Strict Pull-Ups, DB Push Press, Deficit Push-Ups[cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">05:49 PM–07:24 PM:</span> <span class="run-tag">Continuous LT (95 min):</span> 16.4 km [10.4 km LT @ 4:16/km]. Ends at Civil Dusk (7:24 PM)[cite: 1].</li>
-        <li><span class="time-slot">07:24 PM–10:00 PM:</span> Protein dinner, hydration, sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B:</span> Strict Pull-Ups, DB Push Press, Deficit Push-Ups.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">05:49 PM–07:24 PM:</span> <span class="run-tag">Continuous LT (95 min):</span> 16.4 km [10.4 km LT @ 4:16/km]. Ends at Civil Dusk (7:24 PM).</li>
+        <li><span class="time-slot">07:24 PM–10:00 PM:</span> Protein dinner, hydration, sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Friday, Oct 09</span><span class="type">ZONE 2 AEROBIC FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM[cite: 2]. Paycheck #4 verified.</li>
-        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live; clock out 05:00 PM[cite: 2].</li>
-        <li><span class="time-slot">06:25 PM–07:22 PM:</span> <span class="run-tag">Aerobic Flush (57 min):</span> 10.0 km @ 5:35/km. Ends at Civil Dusk (7:22 PM)[cite: 1].</li>
-        <li><span class="time-slot">07:22 PM–10:00 PM:</span> High-carb dinner for 30.4 km run, sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM. Paycheck #4 verified.</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live; clock out 05:00 PM.</li>
+        <li><span class="time-slot">06:25 PM–07:22 PM:</span> <span class="run-tag">Aerobic Flush (57 min):</span> 10.0 km @ 5:35/km. Ends at Civil Dusk (7:22 PM).</li>
+        <li><span class="time-slot">07:22 PM–10:00 PM:</span> High-carb dinner for 30.4 km run, sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row long">
       <div class="day-header"><span class="name">Saturday, Oct 10</span><span class="type">KEY OVERLOAD LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:00 AM–07:45 AM:</span> <span class="run-tag">Key Long Run (165 min):</span> 30.4 km Dallas Simulation [16.4 km @ 5:23/km + 8.0 km @ MP 4:36/km][cite: 1].</li>
-        <li><span class="time-slot">05:15 PM–06:00 PM:</span> Flat Split C (Shin planks, Pallof press, hanging knee raises)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:00 AM–07:45 AM:</span> <span class="run-tag">Key Long Run (165 min):</span> 30.4 km Dallas Simulation [16.4 km @ 5:23/km + 8.0 km @ MP 4:36/km].</li>
+        <li><span class="time-slot">05:15 PM–06:00 PM:</span> Flat Split C (Shin planks, Pallof press, hanging knee raises). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Sunday, Oct 11</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); full cellular and connective recovery[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); full cellular and connective recovery. Sleep 10:00 PM.</li>
       </ul>
     </div>
   </div>
@@ -735,50 +715,50 @@
     <div class="day-row rest">
       <div class="day-header"><span class="name">Monday, Oct 12</span><span class="type">DELOAD REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude Craft Coffee Bar; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2]. Complete rest (0.0 km)[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude Craft Coffee Bar; clock in 07:15 AM. Home by 10:30 AM. Complete rest (0.0 km).</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Tuesday, Oct 13</span><span class="type">DELOAD INTERVALS + SPLIT A <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:50 AM–06:30 AM:</span> Split A Deload (2 sets only)[cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">06:21 PM–07:18 PM:</span> <span class="run-tag">Deload Intervals (57 min):</span> 10.0 km [4x800m @ 3:56/km]. Ends at Civil Dusk (7:18 PM)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:50 AM–06:30 AM:</span> Split A Deload (2 sets only).</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">06:21 PM–07:18 PM:</span> <span class="run-tag">Deload Intervals (57 min):</span> 10.0 km [4x800m @ 3:56/km]. Ends at Civil Dusk (7:18 PM). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Wednesday, Oct 14</span><span class="type">ZONE 2 DELOAD <span class="cal-target">[1,900 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">06:26 PM–07:16 PM:</span> <span class="run-tag">Zone 2 Run (50 min):</span> 8.4 km @ 5:35/km. Ends at Civil Dusk (7:16 PM)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">06:26 PM–07:16 PM:</span> <span class="run-tag">Zone 2 Run (50 min):</span> 8.4 km @ 5:35/km. Ends at Civil Dusk (7:16 PM). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Thursday, Oct 15</span><span class="type">MP TEMPO + SPLIT B <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:50 AM–06:30 AM:</span> Split B Deload (2 sets bodyweight/bands)[cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Avoca Coffee (Foch St)</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">06:17 PM–07:14 PM:</span> <span class="run-tag">MP Tempo (57 min):</span> 10.0 km [4.0 km MP @ 4:36/km]. Ends at Civil Dusk (7:14 PM)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:50 AM–06:30 AM:</span> Split B Deload (2 sets bodyweight/bands).</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Avoca Coffee (Foch St)</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">06:17 PM–07:14 PM:</span> <span class="run-tag">MP Tempo (57 min):</span> 10.0 km [4.0 km MP @ 4:36/km]. Ends at Civil Dusk (7:14 PM). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Friday, Oct 16</span><span class="type">PRE-RACE SHAKEOUT <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">06:37 PM–07:12 PM:</span> <span class="run-tag">Shakeout (35 min):</span> 5.6 km + strides. Ends at Civil Dusk (7:12 PM)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">06:37 PM–07:12 PM:</span> <span class="run-tag">Shakeout (35 min):</span> 5.6 km + strides. Ends at Civil Dusk (7:12 PM). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row race">
       <div class="day-header"><span class="name">Saturday, Oct 17</span><span class="type">BIG TEXAS 15K + EXTENSION <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:30 AM–08:45 AM:</span> <strong>Big Texas Run 15K + Flush:</strong> 21.8 km Total [15K @ 4:30–4:36/km + 3.6 km flush][cite: 1].</li>
-        <li><span class="time-slot">05:15 PM–05:45 PM:</span> Mobility &amp; flat-foot intrinsic recovery only[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:30 AM–08:45 AM:</span> <strong>Big Texas Run 15K + Flush:</strong> 21.8 km Total [15K @ 4:30–4:36/km + 3.6 km flush].</li>
+        <li><span class="time-slot">05:15 PM–05:45 PM:</span> Mobility &amp; flat-foot intrinsic recovery only. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Sunday, Oct 18</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); systemic recovery[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); systemic recovery. Sleep 10:00 PM.</li>
       </ul>
     </div>
   </div>
@@ -792,55 +772,55 @@
     <div class="day-row rest">
       <div class="day-header"><span class="name">Monday, Oct 19</span><span class="type">REST &amp; WEIGHT CHECK <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> <span class="fin-tag">Weight Target:</span> 148.4 lbs[cite: 1]. Active bike spin; zero running (0.0 km)[cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> <span class="fin-tag">Weight Target:</span> 148.4 lbs. Active bike spin; zero running (0.0 km).</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude; clock in 07:15 AM. Home by 10:30 AM. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Tuesday, Oct 20</span><span class="type">VO2 TRACK + SPLIT A <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Spanish Squats, Wall Sits[cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">05:39 PM–07:09 PM:</span> <span class="run-tag">VO2 Track (90 min):</span> 14.8 km [6x1000m @ 3:53/km w/ 2.5m jog]. Ends at Civil Dusk (7:09 PM)[cite: 1].</li>
-        <li><span class="time-slot">07:09 PM–10:00 PM:</span> High-protein dinner, foam roll, sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Spanish Squats, Wall Sits.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">05:39 PM–07:09 PM:</span> <span class="run-tag">VO2 Track (90 min):</span> 14.8 km [6x1000m @ 3:53/km w/ 2.5m jog]. Ends at Civil Dusk (7:09 PM).</li>
+        <li><span class="time-slot">07:09 PM–10:00 PM:</span> High-protein dinner, foam roll, sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Wednesday, Oct 21</span><span class="type">ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">05:52 PM–07:07 PM:</span> <span class="run-tag">Zone 2 Run (75 min):</span> 12.9 km @ 5:23/km. Ends at Civil Dusk (7:07 PM)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">05:52 PM–07:07 PM:</span> <span class="run-tag">Zone 2 Run (75 min):</span> 12.9 km @ 5:23/km. Ends at Civil Dusk (7:07 PM). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Thursday, Oct 22</span><span class="type">THRESHOLD + SPLIT B <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B:</span> Strict Pull-Ups, DB Push Press, Deficit Push-Ups[cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Branch &amp; Bird</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">05:25 PM–07:05 PM:</span> <span class="run-tag">Threshold Run (100 min):</span> 18.0 km [12.0 km LT @ 4:15/km]. Ends at Civil Dusk (7:05 PM)[cite: 1].</li>
-        <li><span class="time-slot">07:05 PM–10:00 PM:</span> Protein dinner, hydration, sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B:</span> Strict Pull-Ups, DB Push Press, Deficit Push-Ups.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Branch &amp; Bird</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">05:25 PM–07:05 PM:</span> <span class="run-tag">Threshold Run (100 min):</span> 18.0 km [12.0 km LT @ 4:15/km]. Ends at Civil Dusk (7:05 PM).</li>
+        <li><span class="time-slot">07:05 PM–10:00 PM:</span> Protein dinner, hydration, sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Friday, Oct 23</span><span class="type">AEROBIC FLUSH + PAYCHECK #5 <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM[cite: 2]. Paycheck #5 deposited.</li>
-        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live; clock out 05:00 PM[cite: 2].</li>
-        <li><span class="time-slot">06:06 PM–07:03 PM:</span> <span class="run-tag">Flush Run (57 min):</span> 10.0 km @ 5:35/km. Ends at Civil Dusk (7:03 PM)[cite: 1].</li>
-        <li><span class="time-slot">07:03 PM–10:00 PM:</span> High-carb dinner for 35.2 km long run, sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM. Paycheck #5 deposited.</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live; clock out 05:00 PM.</li>
+        <li><span class="time-slot">06:06 PM–07:03 PM:</span> <span class="run-tag">Flush Run (57 min):</span> 10.0 km @ 5:35/km. Ends at Civil Dusk (7:03 PM).</li>
+        <li><span class="time-slot">07:03 PM–10:00 PM:</span> High-carb dinner for 35.2 km long run, sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row long">
       <div class="day-header"><span class="name">Saturday, Oct 24</span><span class="type">KEY OVERLOAD LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">04:45 AM–08:00 AM:</span> <span class="run-tag">Key Long Run (195 min):</span> 35.2 km Progressive [19.4 km @ 5:20/km + 12.8 km @ MP 4:36/km][cite: 1].</li>
-        <li><span class="time-slot">05:15 PM–06:00 PM:</span> Flat Split C (Shin planks, Pallof press, hanging knee raises)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">04:45 AM–08:00 AM:</span> <span class="run-tag">Key Long Run (195 min):</span> 35.2 km Progressive [19.4 km @ 5:20/km + 12.8 km @ MP 4:36/km].</li>
+        <li><span class="time-slot">05:15 PM–06:00 PM:</span> Flat Split C (Shin planks, Pallof press, hanging knee raises). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Sunday, Oct 25</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); full systemic recovery[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); full systemic recovery. Sleep 10:00 PM.</li>
       </ul>
     </div>
   </div>
@@ -854,50 +834,50 @@
     <div class="day-row rest">
       <div class="day-header"><span class="name">Monday, Oct 26</span><span class="type">REST &amp; ACTIVE FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2]. Complete rest (0.0 km)[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude; clock in 07:15 AM. Home by 10:30 AM. Complete rest (0.0 km).</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Tuesday, Oct 27</span><span class="type">VO2 TRACK + SPLIT A <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Spanish Squats, Wall Sits[cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">05:25 PM–07:00 PM:</span> <span class="run-tag">VO2 Track (95 min):</span> 16.4 km [5x1600m @ 3:53/km w/ 3m jog]. Ends at Civil Dusk (7:00 PM)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Spanish Squats, Wall Sits.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">05:25 PM–07:00 PM:</span> <span class="run-tag">VO2 Track (95 min):</span> 16.4 km [5x1600m @ 3:53/km w/ 3m jog]. Ends at Civil Dusk (7:00 PM). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Wednesday, Oct 28</span><span class="type">ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">05:33 PM–06:58 PM:</span> <span class="run-tag">Zone 2 Run (85 min):</span> 14.8 km @ 5:20/km. Ends at Civil Dusk (6:58 PM)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">05:33 PM–06:58 PM:</span> <span class="run-tag">Zone 2 Run (85 min):</span> 14.8 km @ 5:20/km. Ends at Civil Dusk (6:58 PM). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Thursday, Oct 29</span><span class="type">THRESHOLD + SPLIT B <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B:</span> Strict Pull-Ups, DB Push Press, Deficit Push-Ups[cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">05:16 PM–06:56 PM:</span> <span class="run-tag">Threshold Run (100 min):</span> 18.0 km [2x5.6 km LT @ 4:15/km]. Ends at Civil Dusk (6:56 PM)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B:</span> Strict Pull-Ups, DB Push Press, Deficit Push-Ups.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">05:16 PM–06:56 PM:</span> <span class="run-tag">Threshold Run (100 min):</span> 18.0 km [2x5.6 km LT @ 4:15/km]. Ends at Civil Dusk (6:56 PM). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Friday, Oct 30</span><span class="type">AEROBIC FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">05:57 PM–06:54 PM:</span> <span class="run-tag">Aerobic Flush (57 min):</span> 10.0 km @ 5:35/km. Ends at Civil Dusk (6:54 PM)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">05:57 PM–06:54 PM:</span> <span class="run-tag">Aerobic Flush (57 min):</span> 10.0 km @ 5:35/km. Ends at Civil Dusk (6:54 PM). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row long">
       <div class="day-header"><span class="name">Saturday, Oct 31</span><span class="type">KEY OVERLOAD LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">04:45 AM–08:00 AM:</span> <span class="run-tag">Key Long Run (195 min):</span> 34.9 km Simulation [9.6 km @ 5:17/km + 19.3 km locked @ MP 4:36/km][cite: 1].</li>
-        <li><span class="time-slot">04:30 PM–05:15 PM:</span> Heavy Flat Split C (Shin planks, hanging knee raises, Pallof press)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">04:45 AM–08:00 AM:</span> <span class="run-tag">Key Long Run (195 min):</span> 34.9 km Simulation [9.6 km @ 5:17/km + 19.3 km locked @ MP 4:36/km].</li>
+        <li><span class="time-slot">04:30 PM–05:15 PM:</span> Heavy Flat Split C (Shin planks, hanging knee raises, Pallof press). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Sunday, Nov 01</span><span class="type">FULL REST &amp; CLOCKS FALL BACK <span class="cal-target">[1,600 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Clocks fall back 1 hour (Standard Time begins). Complete rest (0.0 km)[cite: 1]. Verify Nov 1 rent[cite: 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> Clocks fall back 1 hour (Standard Time begins). Complete rest (0.0 km). Verify Nov 1 rent. Sleep 10:00 PM.</li>
       </ul>
     </div>
   </div>
@@ -911,52 +891,52 @@
     <div class="day-row rest">
       <div class="day-header"><span class="name">Monday, Nov 02</span><span class="type">REST &amp; USAA FIREWALL ACHIEVED <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> 🎯 <strong>USAA Health Firewall hits $5,500.00</strong> (Account Frozen)[cite: 2]. Complete rest (0.0 km)[cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> 🎯 <strong>USAA Health Firewall hits $5,500.00</strong> (Account Frozen). Complete rest (0.0 km).</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude; clock in 07:15 AM. Home by 10:30 AM. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Tuesday, Nov 03</span><span class="type">VO2 TRACK + SPLIT A <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:00 AM–06:35 AM:</span> <span class="run-tag">VO2 Track (95 min):</span> 16.4 km [6x1200m @ 3:55/km w/ 3.5m jog][cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">06:00 PM–06:45 PM:</span> <span class="strength-tag">Flat Split A:</span> Goblet Squats, DB RDLs, Spanish Squats, Wall Sits[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:00 AM–06:35 AM:</span> <span class="run-tag">VO2 Track (95 min):</span> 16.4 km [6x1200m @ 3:55/km w/ 3.5m jog].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">06:00 PM–06:45 PM:</span> <span class="strength-tag">Flat Split A:</span> Goblet Squats, DB RDLs, Spanish Squats, Wall Sits. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Wednesday, Nov 04</span><span class="type">ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:00 AM–06:35 AM:</span> <span class="run-tag">Zone 2 Base (95 min):</span> 16.4 km @ 5:20/km[cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2]. Evening rest[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:00 AM–06:35 AM:</span> <span class="run-tag">Zone 2 Base (95 min):</span> 16.4 km @ 5:20/km.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM. Home by 10:30 AM. Evening rest. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Thursday, Nov 05</span><span class="type">THRESHOLD + SPLIT B <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">04:45 AM–06:35 AM:</span> <span class="run-tag">Threshold Run (110 min):</span> 19.6 km [2x6.4 km LT @ 4:15/km w/ 5m jog][cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">06:00 PM–06:45 PM:</span> <span class="strength-tag">Flat Split B:</span> Strict Pull-Ups, DB Push Press, Deficit Push-Ups[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">04:45 AM–06:35 AM:</span> <span class="run-tag">Threshold Run (110 min):</span> 19.6 km [2x6.4 km LT @ 4:15/km w/ 5m jog].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">06:00 PM–06:45 PM:</span> <span class="strength-tag">Flat Split B:</span> Strict Pull-Ups, DB Push Press, Deficit Push-Ups. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Friday, Nov 06</span><span class="type">ZONE 2 FLUSH + PAYCHECK #6 <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM[cite: 2]. Paycheck #6 deposited.</li>
-        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live; clock out 05:00 PM[cite: 2].</li>
-        <li><span class="time-slot">04:30 PM–05:45 PM:</span> <span class="run-tag">Zone 2 Flush (75 min):</span> 12.9 km @ 5:26/km. Concludes at dusk[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM. Paycheck #6 deposited.</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live; clock out 05:00 PM.</li>
+        <li><span class="time-slot">04:30 PM–05:45 PM:</span> <span class="run-tag">Zone 2 Flush (75 min):</span> 12.9 km @ 5:26/km. Concludes at dusk. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row long">
       <div class="day-header"><span class="name">Saturday, Nov 07</span><span class="type">PEAK OVERLOAD LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">04:45 AM–08:00 AM:</span> <span class="run-tag">Peak Long Run (195 min):</span> 34.5 km Total [7.4 km @ 5:20/km + <strong>21.1 km Half Marathon locked @ MP 4:36/km</strong>][cite: 1].</li>
-        <li><span class="time-slot">05:15 PM–06:00 PM:</span> Flat Split C (Shin planks, hanging knee raises, Pallof press)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">04:45 AM–08:00 AM:</span> <span class="run-tag">Peak Long Run (195 min):</span> 34.5 km Total [7.4 km @ 5:20/km + <strong>21.1 km Half Marathon locked @ MP 4:36/km</strong>].</li>
+        <li><span class="time-slot">05:15 PM–06:00 PM:</span> Flat Split C (Shin planks, hanging knee raises, Pallof press). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Sunday, Nov 08</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); physiological recovery[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); physiological recovery. Sleep 10:00 PM.</li>
       </ul>
     </div>
   </div>
@@ -970,51 +950,51 @@
     <div class="day-row rest">
       <div class="day-header"><span class="name">Monday, Nov 09</span><span class="type">REST &amp; ACTIVE FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2]. Complete rest (0.0 km)[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude; clock in 07:15 AM. Home by 10:30 AM. Complete rest (0.0 km).</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Tuesday, Nov 10</span><span class="type">LT INTERVALS + SPLIT A <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:00 AM–06:30 AM:</span> <span class="run-tag">LT Intervals (90 min):</span> 14.8 km [4x1600m @ LT 4:13/km w/ 90s jog][cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">06:00 PM–06:45 PM:</span> <span class="strength-tag">Flat Split A:</span> Goblet Squats, DB RDLs, Spanish Squats, Wall Sits[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:00 AM–06:30 AM:</span> <span class="run-tag">LT Intervals (90 min):</span> 14.8 km [4x1600m @ LT 4:13/km w/ 90s jog].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">06:00 PM–06:45 PM:</span> <span class="strength-tag">Flat Split A:</span> Goblet Squats, DB RDLs, Spanish Squats, Wall Sits. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Wednesday, Nov 11</span><span class="type">ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:15 AM–06:30 AM:</span> <span class="run-tag">Zone 2 Base (75 min):</span> 12.9 km @ 5:23/km[cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2]. Evening rest[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:15 AM–06:30 AM:</span> <span class="run-tag">Zone 2 Base (75 min):</span> 12.9 km @ 5:23/km.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM. Home by 10:30 AM. Evening rest. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Thursday, Nov 12</span><span class="type">MP TEMPO + SPLIT B <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">04:55 AM–06:30 AM:</span> <span class="run-tag">MP Tempo (95 min):</span> 16.4 km [10.4 km MP @ 4:36/km][cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Branch &amp; Bird</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">06:00 PM–06:45 PM:</span> <span class="strength-tag">Flat Split B:</span> Strict Pull-Ups, DB Push Press, Deficit Push-Ups[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">04:55 AM–06:30 AM:</span> <span class="run-tag">MP Tempo (95 min):</span> 16.4 km [10.4 km MP @ 4:36/km].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Branch &amp; Bird</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">06:00 PM–06:45 PM:</span> <span class="strength-tag">Flat Split B:</span> Strict Pull-Ups, DB Push Press, Deficit Push-Ups. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Friday, Nov 13</span><span class="type">AEROBIC FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">04:45 PM–05:42 PM:</span> <span class="run-tag">Aerobic Flush (57 min):</span> 10.0 km @ 5:42/km. Concludes at dusk[cite: 1].</li>
-        <li><span class="time-slot">05:42 PM–10:00 PM:</span> Carb-rich dinner for final 22-mile overload run, sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (Main St)</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">04:45 PM–05:42 PM:</span> <span class="run-tag">Aerobic Flush (57 min):</span> 10.0 km @ 5:42/km. Concludes at dusk.</li>
+        <li><span class="time-slot">05:42 PM–10:00 PM:</span> Carb-rich dinner for final 22-mile overload run, sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row long">
       <div class="day-header"><span class="name">Saturday, Nov 14</span><span class="type">FINAL 22-MILE PEAK OVERLOAD <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">04:45 AM–08:00 AM:</span> <span class="run-tag">Final Peak Run (195 min):</span> 33.3 km [14.5 km @ 5:17–5:26/km + 12.8 km locked @ MP 4:36/km][cite: 1]. Transition to Mujika Taper[cite: 1].</li>
-        <li><span class="time-slot">04:30 PM–05:15 PM:</span> Final Peak Flat Split C (Shin planks, hanging knee raises)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">04:45 AM–08:00 AM:</span> <span class="run-tag">Final Peak Run (195 min):</span> 33.3 km [14.5 km @ 5:17–5:26/km + 12.8 km locked @ MP 4:36/km]. Transition to Mujika Taper.</li>
+        <li><span class="time-slot">04:30 PM–05:15 PM:</span> Final Peak Flat Split C (Shin planks, hanging knee raises). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Sunday, Nov 15</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); cellular recovery[cite: 1]. Transition to Mujika Taper[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); cellular recovery. Transition to Mujika Taper. Sleep 10:00 PM.</li>
       </ul>
     </div>
   </div>
@@ -1028,48 +1008,48 @@
     <div class="day-row rest">
       <div class="day-header"><span class="name">Monday, Nov 16</span><span class="type">REST &amp; WEIGHT CHECK <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> <span class="fin-tag">Weight Target:</span> 145.1 lbs[cite: 1]. Pack resistance loop bands into carry-on[cite: 1, 2]. Complete rest (0.0 km)[cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> <span class="fin-tag">Weight Target:</span> 145.1 lbs. Pack resistance loop bands into carry-on. Complete rest (0.0 km).</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude; clock in 07:15 AM. Home by 10:30 AM. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Tuesday, Nov 17</span><span class="type">TAPER TRACK + SPLIT A <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:00 AM–06:15 AM:</span> <span class="run-tag">Taper Track (75 min):</span> 12.9 km [4x1000m @ 3:53/km w/ 3m jog][cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">06:00 PM–06:30 PM:</span> Split A Deload (2 sets only, Spanish squats &amp; wall sits)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:00 AM–06:15 AM:</span> <span class="run-tag">Taper Track (75 min):</span> 12.9 km [4x1000m @ 3:53/km w/ 3m jog].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">06:00 PM–06:30 PM:</span> Split A Deload (2 sets only, Spanish squats &amp; wall sits). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Wednesday, Nov 18</span><span class="type">SAN DIEGO TRAVEL (NO RUN) <span class="cal-target">[1,900 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Flight to San Diego; active terminal walking[cite: 1]. 1.5 Gal water + electrolytes flush[cite: 1, 2]. Zero running (0.0 km)[cite: 1].</li>
+        <li><span class="time-slot">All Day:</span> Flight to San Diego; active terminal walking. 1.5 Gal water + electrolytes flush. Zero running (0.0 km).</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Thursday, Nov 19</span><span class="type">HOTEL BODYWEIGHT PROTOCOL <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">07:30 AM–05:00 PM:</span> San Diego Fastpath partner presentations[cite: 2].</li>
-        <li><span class="time-slot">06:00 PM–06:30 PM:</span> <span class="strength-tag">Hotel Protocol (30 min):</span> 3 rounds (15 push-ups + 20 air squats + 45s wall sit + 15 glute bridges + 45s plank); zero running[cite: 1].</li>
+        <li><span class="time-slot">07:30 AM–05:00 PM:</span> San Diego Fastpath partner presentations.</li>
+        <li><span class="time-slot">06:00 PM–06:30 PM:</span> <span class="strength-tag">Hotel Protocol (30 min):</span> 3 rounds (15 push-ups + 20 air squats + 45s wall sit + 15 glute bridges + 45s plank); zero running.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Friday, Nov 20</span><span class="type">SAN DIEGO RETURN + PAYCHECK #7 <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Travel return to Fort Worth; leg elevation 30 mins upon arrival[cite: 1]. Paycheck #7 deposited. Zero running (0.0 km)[cite: 1].</li>
+        <li><span class="time-slot">All Day:</span> Travel return to Fort Worth; leg elevation 30 mins upon arrival. Paycheck #7 deposited. Zero running (0.0 km).</li>
       </ul>
     </div>
     <div class="day-row long">
       <div class="day-header"><span class="name">Saturday, Nov 21</span><span class="type">TAPER OVERLOAD LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:30 AM–07:45 AM:</span> <span class="run-tag">Taper Long Run (135 min):</span> 26.1 km [13.7 km @ 5:23/km + 6.4 km @ MP 4:36/km][cite: 1].</li>
-        <li><span class="time-slot">05:15 PM–05:45 PM:</span> Bodyweight Split C (Shin planks, hanging knee raises)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:30 AM–07:45 AM:</span> <span class="run-tag">Taper Long Run (135 min):</span> 26.1 km [13.7 km @ 5:23/km + 6.4 km @ MP 4:36/km].</li>
+        <li><span class="time-slot">05:15 PM–05:45 PM:</span> Bodyweight Split C (Shin planks, hanging knee raises). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Sunday, Nov 22</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); joint and neural recovery[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); joint and neural recovery. Sleep 10:00 PM.</li>
       </ul>
     </div>
   </div>
@@ -1083,49 +1063,49 @@
     <div class="day-row rest">
       <div class="day-header"><span class="name">Monday, Nov 23</span><span class="type">REST &amp; ACTIVE FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2]. Complete rest (0.0 km)[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude; clock in 07:15 AM. Home by 10:30 AM. Complete rest (0.0 km).</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Tuesday, Nov 24</span><span class="type">LT TAPER INTERVALS + SPLIT A <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:05 AM–06:15 AM:</span> <span class="run-tag">LT Taper (70 min):</span> 11.3 km [3x1600m @ LT 4:15/km][cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">06:00 PM–06:30 PM:</span> Split A (Banded &amp; light DB maintenance)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:05 AM–06:15 AM:</span> <span class="run-tag">LT Taper (70 min):</span> 11.3 km [3x1600m @ LT 4:15/km].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">06:00 PM–06:30 PM:</span> Split A (Banded &amp; light DB maintenance). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Wednesday, Nov 25</span><span class="type">ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:15 AM–06:05 AM:</span> <span class="run-tag">Zone 2 Run (50 min):</span> 8.4 km @ 5:35/km[cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2]. Evening rest[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:15 AM–06:05 AM:</span> <span class="run-tag">Zone 2 Run (50 min):</span> 8.4 km @ 5:35/km.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM. Home by 10:30 AM. Evening rest. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row race">
       <div class="day-header"><span class="name">Thursday, Nov 26</span><span class="type">🦃 TURKEY TROT 10K RACE SIMULATION <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:45 AM–08:00 AM:</span> <strong>Fort Worth YMCA Turkey Trot 10K Simulation:</strong> 13.2 km Total [1.6 km warm + <strong>10K locked @ MP 4:36/km</strong> + 1.6 km cool][cite: 1].</li>
-        <li><span class="time-slot">01:00 PM–08:00 PM:</span> Balanced family refuel; avoid overeating; evening rest[cite: 1, 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:45 AM–08:00 AM:</span> <strong>Fort Worth YMCA Turkey Trot 10K Simulation:</strong> 13.2 km Total [1.6 km warm + <strong>10K locked @ MP 4:36/km</strong> + 1.6 km cool].</li>
+        <li><span class="time-slot">01:00 PM–08:00 PM:</span> Balanced family refuel; avoid overeating; evening rest. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Friday, Nov 27</span><span class="type">EASY BASE <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:15 AM–05:55 AM:</span> <span class="run-tag">Easy Flush (40 min):</span> 6.8 km Zone 2[cite: 1].</li>
-        <li><span class="time-slot">All Day:</span> Remote work catchup; restful evening; sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:15 AM–05:55 AM:</span> <span class="run-tag">Easy Flush (40 min):</span> 6.8 km Zone 2.</li>
+        <li><span class="time-slot">All Day:</span> Remote work catchup; restful evening; sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row long">
       <div class="day-header"><span class="name">Saturday, Nov 28</span><span class="type">TAPER LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:45 AM–07:30 AM:</span> <span class="run-tag">Taper Long Run (105 min):</span> 19.0 km @ 5:26/km[cite: 1].</li>
-        <li><span class="time-slot">05:15 PM–05:45 PM:</span> Split B (Light bands only)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:45 AM–07:30 AM:</span> <span class="run-tag">Taper Long Run (105 min):</span> 19.0 km @ 5:26/km.</li>
+        <li><span class="time-slot">05:15 PM–05:45 PM:</span> Split B (Light bands only). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Sunday, Nov 29</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); systemic recovery[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); systemic recovery. Sleep 10:00 PM.</li>
       </ul>
     </div>
   </div>
@@ -1139,48 +1119,48 @@
     <div class="day-row rest">
       <div class="day-header"><span class="name">Monday, Nov 30</span><span class="type">REST &amp; ACTIVE FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude; clock in 07:15 AM[cite: 2]. Complete rest (0.0 km)[cite: 1]. Verify Dec 1 rent[cite: 2].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude; clock in 07:15 AM. Complete rest (0.0 km). Verify Dec 1 rent.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Tuesday, Dec 01</span><span class="type">SHORT MP QUALITY <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:15 AM–06:12 AM:</span> <span class="run-tag">MP Quality (57 min):</span> 10.0 km [3x1600m @ MP 4:36/km w/ 2m walk][cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2].</li>
-        <li><span class="time-slot">06:00 PM–06:30 PM:</span> Split C (Mobility only; zero heavy loading)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:15 AM–06:12 AM:</span> <span class="run-tag">MP Quality (57 min):</span> 10.0 km [3x1600m @ MP 4:36/km w/ 2m walk].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno</strong>; clock in 07:15 AM. Home by 10:30 AM.</li>
+        <li><span class="time-slot">06:00 PM–06:30 PM:</span> Split C (Mobility only; zero heavy loading). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Wednesday, Dec 02</span><span class="type">ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:15 AM–06:05 AM:</span> <span class="run-tag">Zone 2 Run (50 min):</span> 8.4 km @ 5:35/km[cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2]. Evening rest[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:15 AM–06:05 AM:</span> <span class="run-tag">Zone 2 Run (50 min):</span> 8.4 km @ 5:35/km.</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>; clock in 07:15 AM. Home by 10:30 AM. Evening rest. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Thursday, Dec 03</span><span class="type">COMPLETE REST <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Complete Rest (AM &amp; PM) — Full joint and connective tissue restoration[cite: 1].</li>
+        <li><span class="time-slot">All Day:</span> Complete Rest (AM &amp; PM) — Full joint and connective tissue restoration.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Friday, Dec 04</span><span class="type">ZONE 2 RECOVERY + PAYCHECK #8 <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:15 AM–05:55 AM:</span> <span class="run-tag">Recovery Flush (40 min):</span> 6.8 km Zone 2 + 3x20s light strides[cite: 1].</li>
-        <li><span class="time-slot">All Day:</span> Paycheck #8 deposited. Restful evening[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:15 AM–05:55 AM:</span> <span class="run-tag">Recovery Flush (40 min):</span> 6.8 km Zone 2 + 3x20s light strides.</li>
+        <li><span class="time-slot">All Day:</span> Paycheck #8 deposited. Restful evening. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row long">
       <div class="day-header"><span class="name">Saturday, Dec 05</span><span class="type">TAPER LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:00 AM–07:12 AM:</span> <span class="run-tag">Taper Long Run (72 min):</span> 13.4 km @ 5:26/km[cite: 1].</li>
-        <li><span class="time-slot">02:00 PM–04:00 PM:</span> Leg elevation; verify Dallas Marathon race pack[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:00 AM–07:12 AM:</span> <span class="run-tag">Taper Long Run (72 min):</span> 13.4 km @ 5:26/km.</li>
+        <li><span class="time-slot">02:00 PM–04:00 PM:</span> Leg elevation; verify Dallas Marathon race pack. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Sunday, Dec 06</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km)[cite: 1]. Transition to Race Week[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km). Transition to Race Week. Sleep 10:00 PM.</li>
       </ul>
     </div>
   </div>
@@ -1194,50 +1174,50 @@
     <div class="day-row rest">
       <div class="day-header"><span class="name">Monday, Dec 07</span><span class="type">REST &amp; SHOE CHECK <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Teardrop gel pad affixed behind 2nd–4th metatarsals; open lacing[cite: 1]. Baseline carbs: 4.5 g/kg[cite: 1]. Complete rest (0.0 km)[cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude; clock in 07:15 AM[cite: 2]. Home by 10:30 AM[cite: 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> Teardrop gel pad affixed behind 2nd–4th metatarsals; open lacing. Baseline carbs: 4.5 g/kg. Complete rest (0.0 km).</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to Crude; clock in 07:15 AM. Home by 10:30 AM. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Tuesday, Dec 08</span><span class="type">NEUROMUSCULAR PRIME <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:15 AM–05:55 AM:</span> <span class="run-tag">Prime Run (40 min):</span> 6.8 km [4x400m @ MP 4:36/km w/ 2m walk][cite: 1].</li>
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>; clock in 07:15 AM[cite: 2]. Evening complete rest[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:15 AM–05:55 AM:</span> <span class="run-tag">Prime Run (40 min):</span> 6.8 km [4x400m @ MP 4:36/km w/ 2m walk].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>; clock in 07:15 AM. Evening complete rest. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Wednesday, Dec 09</span><span class="type">REST &amp; MOBILITY <span class="cal-target">[1,900 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); 15-min light foot/hip mobility at 07:30 PM[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); 15-min light foot/hip mobility at 07:30 PM. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Thursday, Dec 10</span><span class="type">CARB LOAD DAY 1 + SHAKEOUT <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:15 AM–05:45 AM:</span> <span class="run-tag">Shakeout (30 min):</span> 5.1 km easy jog + 3x15s strides[cite: 1].</li>
-        <li><span class="time-slot">All Day:</span> Daily Carbs: 8.0–9.0 g/kg; 1.5 Gal water + electrolytes[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:15 AM–05:45 AM:</span> <span class="run-tag">Shakeout (30 min):</span> 5.1 km easy jog + 3x15s strides.</li>
+        <li><span class="time-slot">All Day:</span> Daily Carbs: 8.0–9.0 g/kg; 1.5 Gal water + electrolytes. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Friday, Dec 11</span><span class="type">CARB LOAD DAY 2 <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); Carbs: 8.0–9.0 g/kg; leg elevation 30 mins twice[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> Complete rest (0.0 km); Carbs: 8.0–9.0 g/kg; leg elevation 30 mins twice. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Saturday, Dec 12</span><span class="type">RACE EVE PRIME <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">07:00 AM–07:22 AM:</span> <span class="run-tag">Race Eve Prime (22 min):</span> 3.5 km light jog + 2x20s strides[cite: 1].</li>
-        <li><span class="time-slot">All Day:</span> Carbs: 6.0 g/kg; sips to thirst; lay out bib, shoes, gel pad; sleep by 09:30 PM[cite: 1].</li>
+        <li><span class="time-slot">07:00 AM–07:22 AM:</span> <span class="run-tag">Race Eve Prime (22 min):</span> 3.5 km light jog + 2x20s strides.</li>
+        <li><span class="time-slot">All Day:</span> Carbs: 6.0 g/kg; sips to thirst; lay out bib, shoes, gel pad; sleep by 09:30 PM.</li>
       </ul>
     </div>
     <div class="day-row race">
       <div class="day-header"><span class="name">Sunday, Dec 13</span><span class="type">🎯 TARGET: BMW DALLAS MARATHON <span class="cal-target">[1,600 kcal + race carbs]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">04:30 AM:</span> 150g fast carbs (bagel + honey + banana) + 500mg sodium[cite: 1]. Pad secured behind 2nd–4th metatarsals[cite: 1].</li>
+        <li><span class="time-slot">04:30 AM:</span> 150g fast carbs (bagel + honey + banana) + 500mg sodium. Pad secured behind 2nd–4th metatarsals.</li>
         <li><span class="time-slot">05:45 AM:</span> Transit to downtown Dallas start line.</li>
-        <li><span class="time-slot">07:00 AM–10:14:30 AM:</span> <strong>BMW DALLAS MARATHON (42.195 km):</strong> Lock pacing @ 4:36–4:37/km (7:25–7:26/mi)[cite: 1]. <strong>Target: 3:14:30</strong>[cite: 1]. Racing mass: 142.0 lbs[cite: 1].</li>
-        <li><span class="time-slot">11:30 AM–10:00 PM:</span> Celebration refuel, compression elevation, deep restorative sleep[cite: 1].</li>
+        <li><span class="time-slot">07:00 AM–10:14:30 AM:</span> <strong>BMW DALLAS MARATHON (42.195 km):</strong> Lock pacing @ 4:36–4:37/km (7:25–7:26/mi). <strong>Target: 3:14:30</strong>. Racing mass: 142.0 lbs.</li>
+        <li><span class="time-slot">11:30 AM–10:00 PM:</span> Celebration refuel, compression elevation, deep restorative sleep.</li>
       </ul>
     </div>
   </div>
@@ -1251,38 +1231,38 @@
     <div class="day-row rest">
       <div class="day-header"><span class="name">Monday, Dec 14</span><span class="type">REST &amp; ACTIVE FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Low-resistance bike spin to Crude; clock in 07:15 AM[cite: 1, 2].</li>
-        <li><span class="time-slot">All Day:</span> Complete running rest (0.0 km); hot/cold contrast baths; foot intrinsics[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Low-resistance bike spin to Crude; clock in 07:15 AM.</li>
+        <li><span class="time-slot">All Day:</span> Complete running rest (0.0 km); hot/cold contrast baths; foot intrinsics.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Tue–Wed (Dec 15–16)</span><span class="type">PASSIVE HEALING <span class="cal-target">[Tue 2,400 / Wed 1,900 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Complete passive healing; zero running; deep tissue and muscle remodeling[cite: 1].</li>
+        <li><span class="time-slot">All Day:</span> Complete passive healing; zero running; deep tissue and muscle remodeling.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Thursday, Dec 17</span><span class="type">AEROBIC SPIN / WALK <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:30 PM–05:50 PM:</span> 20-minute light flat neighborhood walk or Zone 1 spin + gentle foot drills[cite: 1].</li>
+        <li><span class="time-slot">05:30 PM–05:50 PM:</span> 20-minute light flat neighborhood walk or Zone 1 spin + gentle foot drills.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Friday, Dec 18</span><span class="type">AEROBIC FLUSH SPIN + PAYCHECK #9 <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:15 AM–05:35 AM:</span> 20-min light spin or flat walk + Bike Flush[cite: 1]. Paycheck #9 deposited. PM Rest[cite: 1].</li>
+        <li><span class="time-slot">05:15 AM–05:35 AM:</span> 20-min light spin or flat walk + Bike Flush. Paycheck #9 deposited. PM Rest.</li>
       </ul>
     </div>
     <div class="day-row race">
       <div class="day-header"><span class="name">Saturday, Dec 19</span><span class="type">A CHARLIE BROWN CHRISTMAS 5K <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">08:00 AM–08:45 AM:</span> <strong>5.0 km Fun Run (Dallas, TX):</strong> Active recovery jog, zero race effort[cite: 1].</li>
+        <li><span class="time-slot">08:00 AM–08:45 AM:</span> <strong>5.0 km Fun Run (Dallas, TX):</strong> Active recovery jog, zero race effort.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Sunday, Dec 20</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Complete rest[cite: 1]. Begin psychological transition to Cowtown 50K Ultra base track[cite: 1].</li>
+        <li><span class="time-slot">All Day:</span> Complete rest. Begin psychological transition to Cowtown 50K Ultra base track.</li>
       </ul>
     </div>
   </div>
@@ -1296,46 +1276,46 @@
     <div class="day-row rest">
       <div class="day-header"><span class="name">Monday, Dec 21</span><span class="type">REST &amp; ACTIVE FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Bike spin + foot intrinsics; complete running rest (0.0 km)[cite: 1].</li>
+        <li><span class="time-slot">All Day:</span> Bike spin + foot intrinsics; complete running rest (0.0 km).</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Tuesday, Dec 22</span><span class="type">SUB-3:00 LT INTERVALS <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:15 AM–06:15 AM:</span> <span class="run-tag">LT Intervals (60 min):</span> 8.0 km total [4x1000m @ new LT pace 3:45–3:55/km][cite: 1].</li>
-        <li><span class="time-slot">06:00 PM–06:45 PM:</span> <span class="strength-tag">Flat Split A:</span> Band-Resisted Box Squats, RDLs, Spanish Squats, Wall Sits[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:15 AM–06:15 AM:</span> <span class="run-tag">LT Intervals (60 min):</span> 8.0 km total [4x1000m @ new LT pace 3:45–3:55/km].</li>
+        <li><span class="time-slot">06:00 PM–06:45 PM:</span> <span class="strength-tag">Flat Split A:</span> Band-Resisted Box Squats, RDLs, Spanish Squats, Wall Sits. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Wednesday, Dec 23</span><span class="type">ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:15 AM–06:00 AM:</span> <span class="run-tag">Zone 2 Run (45 min):</span> 6.0 km @ 5:20–5:35/km[cite: 1]. Work flight; foot drills PM[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:15 AM–06:00 AM:</span> <span class="run-tag">Zone 2 Run (45 min):</span> 6.0 km @ 5:20–5:35/km. Work flight; foot drills PM. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Thursday, Dec 24</span><span class="type">SUB-3:00 TEMPO (CHRISTMAS EVE) <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:15 AM–06:15 AM:</span> <span class="run-tag">Sub-3:00 Tempo (60 min):</span> 8.0 km [4.0 km @ Sub-3:00 MP 4:15–4:16/km][cite: 1].</li>
-        <li><span class="time-slot">06:00 PM–06:45 PM:</span> <span class="strength-tag">Flat Split B:</span> Strict Pull-Ups, DB Push Press, Deficit Push-Ups[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:15 AM–06:15 AM:</span> <span class="run-tag">Sub-3:00 Tempo (60 min):</span> 8.0 km [4.0 km @ Sub-3:00 MP 4:15–4:16/km].</li>
+        <li><span class="time-slot">06:00 PM–06:45 PM:</span> <span class="strength-tag">Flat Split B:</span> Strict Pull-Ups, DB Push Press, Deficit Push-Ups. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Friday, Dec 25</span><span class="type">CHRISTMAS DAY AEROBIC FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:15 AM–05:55 AM:</span> <span class="run-tag">Aerobic Flush (40 min):</span> 5.0 km Easy Zone 2 @ 5:00–5:15/km[cite: 1]. Family meal, rest[cite: 1].</li>
+        <li><span class="time-slot">05:15 AM–05:55 AM:</span> <span class="run-tag">Aerobic Flush (40 min):</span> 5.0 km Easy Zone 2 @ 5:00–5:15/km. Family meal, rest.</li>
       </ul>
     </div>
     <div class="day-row long">
       <div class="day-header"><span class="name">Saturday, Dec 26</span><span class="type">ULTRA BASE LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">06:00 AM–07:30 AM:</span> <span class="run-tag">Ultra Long Run (90 min):</span> 14.0 km steady; track metatarsal comfort[cite: 1].</li>
-        <li><span class="time-slot">05:15 PM–06:00 PM:</span> Flat Split C (Shin planks, Pallof press, hanging knee raises)[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">06:00 AM–07:30 AM:</span> <span class="run-tag">Ultra Long Run (90 min):</span> 14.0 km steady; track metatarsal comfort.</li>
+        <li><span class="time-slot">05:15 PM–06:00 PM:</span> Flat Split C (Shin planks, Pallof press, hanging knee raises). Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row rest">
       <div class="day-header"><span class="name">Sunday, Dec 27</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Complete rest; deep systemic adaptation[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">All Day:</span> Complete rest; deep systemic adaptation. Sleep 10:00 PM.</li>
       </ul>
     </div>
   </div>
@@ -1349,31 +1329,33 @@
     <div class="day-row rest">
       <div class="day-header"><span class="name">Monday, Dec 28</span><span class="type">REST &amp; ACTIVE FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">All Day:</span> Bike spin + foot intrinsics; complete running rest (0.0 km)[cite: 1].</li>
+        <li><span class="time-slot">All Day:</span> Bike spin + foot intrinsics; complete running rest (0.0 km).</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Tuesday, Dec 29</span><span class="type">SUB-3:00 LT INTERVALS <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:15 AM–06:15 AM:</span> <span class="run-tag">LT Intervals (60 min):</span> 8.0 km total [4x1000m @ LT 3:45–3:55/km][cite: 1].</li>
-        <li><span class="time-slot">06:00 PM–06:45 PM:</span> <span class="strength-tag">Flat Split A:</span> Box Squats, RDLs, Spanish Squats, Wall Sits[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:15 AM–06:15 AM:</span> <span class="run-tag">LT Intervals (60 min):</span> 8.0 km total [4x1000m @ LT 3:45–3:55/km].</li>
+        <li><span class="time-slot">06:00 PM–06:45 PM:</span> <span class="strength-tag">Flat Split A:</span> Box Squats, RDLs, Spanish Squats, Wall Sits. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row">
       <div class="day-header"><span class="name">Wednesday, Dec 30</span><span class="type">ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:15 AM–06:00 AM:</span> <span class="run-tag">Zone 2 Base (45 min):</span> 6.0 km @ 5:20–5:35/km[cite: 1]. Paycheck #10 deposited. Foot drills PM[cite: 1]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:15 AM–06:00 AM:</span> <span class="run-tag">Zone 2 Base (45 min):</span> 6.0 km @ 5:20–5:35/km. Paycheck #10 deposited. Foot drills PM. Sleep 10:00 PM.</li>
       </ul>
     </div>
     <div class="day-row quality">
       <div class="day-header"><span class="name">Thursday, Dec 31</span><span class="type">SUB-3:00 TEMPO &amp; YEAR-END REALIZATION <span class="cal-target">[2,400 kcal]</span></span></div>
       <ul class="timeline">
-        <li><span class="time-slot">05:15 AM–06:15 AM:</span> <span class="run-tag">Sub-3:00 Tempo (60 min):</span> 8.0 km [5.0 km @ Sub-3:00 MP 4:15–4:16/km][cite: 1].</li>
-        <li><span class="time-slot">06:00 PM–06:45 PM:</span> <span class="strength-tag">Flat Split B:</span> Strict Pull-Ups, DB Push Press, Deficit Push-Ups[cite: 1].</li>
-        <li><span class="time-slot">08:00 PM–10:00 PM:</span> 🎯 <strong>Year-End Realization Audit:</strong> Sub-3:14:30 Dallas Marathon achieved[cite: 1, 2]; USAA health firewall secured at $5,500[cite: 2]; 142 lb racing mass locked[cite: 1, 2]; bed replacement confirmed for early Q1 2027[cite: 2]; and the Sub-3:00 Cowtown 50K Ultra base track fully primed[cite: 1, 2]. Sleep 10:00 PM[cite: 2].</li>
+        <li><span class="time-slot">05:15 AM–06:15 AM:</span> <span class="run-tag">Sub-3:00 Tempo (60 min):</span> 8.0 km [5.0 km @ Sub-3:00 MP 4:15–4:16/km].</li>
+        <li><span class="time-slot">06:00 PM–06:45 PM:</span> <span class="strength-tag">Flat Split B:</span> Strict Pull-Ups, DB Push Press, Deficit Push-Ups.</li>
+        <li><span class="time-slot">08:00 PM–10:00 PM:</span> 🎯 <strong>Year-End Realization Audit:</strong> Sub-3:14:30 Dallas Marathon achieved; USAA health firewall secured at $5,500; 142 lb racing mass locked; bed replacement confirmed for early Q1 2027; and the Sub-3:00 Cowtown 50K Ultra base track fully primed. Sleep 10:00 PM.</li>
       </ul>
     </div>
   </div>
 
 </body>
 </html>
+
+```
