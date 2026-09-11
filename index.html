@@ -4,23 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grant Recipients Allocation Flow Chart</title>
-    <!-- Include Highcharts and its Sankey diagram module -->
+    
+    <!-- Highcharts core dependencies in correct execution order -->
     <script src="https://highcharts.com"></script>
     <script src="https://highcharts.com"></script>
     <script src="https://highcharts.com"></script>
     <script src="https://highcharts.com"></script>
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #333333;
-            --card-bg: #f8f9fa;
-            --border-color: #e9ecef;
-        }
 
+    <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
             margin: 0;
             padding: 20px;
             display: flex;
@@ -30,8 +25,8 @@
         .chart-container {
             width: 100%;
             max-width: 1100px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
             border-radius: 12px;
             padding: 24px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -58,12 +53,6 @@
             width: 100%;
             height: 650px;
         }
-
-        /* Highcharts context menu styling tweak */
-        .highcharts-contextmenu {
-            border-radius: 6px !important;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
-        }
     </style>
 </head>
 <body>
@@ -74,7 +63,7 @@
         <p>Interactive Sankey mapping visualization illustrating how specific 2026 and 2027 press event grant recipients route into their respective downstream program cohorts.</p>
     </div>
     
-    <!-- This is the container where the interactive chart will render -->
+    <!-- Chart Target Container -->
     <div id="container"></div>
 </div>
 
@@ -83,11 +72,10 @@ document.addEventListener('DOMContentLoaded', function () {
     Highcharts.chart('container', {
         chart: {
             type: 'sankey',
-            backgroundColor: 'transparent',
-            styledMode: false
+            backgroundColor: 'transparent'
         },
         title: {
-            text: null // Handled in pure HTML header above
+            text: null
         },
         accessibility: {
             point: {
@@ -102,60 +90,46 @@ document.addEventListener('DOMContentLoaded', function () {
             pointFormat: '<span style="color:{point.color}">\u25A0</span> <b>{point.from}</b> \u2192 <b>{point.to}</b>: <b>{point.weight} recipients</b><br/>',
             nodeFormat: '{point.name}: <b>{point.sum} total recipients</b><br/>'
         },
-        /* Color declarations mapping custom palettes to keep themes distinct */
         colors: [
-            '#4f46e5', '#6366f1', '#818cf8', '#a5b4fc', // SIFP Nodes
-            '#059669', '#10b981', '#34d399',             // Specialty Funds
-            '#ea580c', '#f97316',                         // Secondary Specialty
-            '#111827', '#374151', '#4b5563', '#6b7280',   // Target Cohorts
+            '#4f46e5', '#6366f1', '#818cf8', '#a5b4fc', 
+            '#059669', '#10b981', '#34d399',             
+            '#ea580c', '#f97316',                         
+            '#111827', '#374151', '#4b5563', '#6b7280',   
             '#9ca3af', '#d1d5db', '#e5e7eb'
         ],
         series: [{
             keys: ['from', 'to', 'weight'],
             data: [
-                // ----------------------------------------------------
                 // 2026 GRANT EVENTS
-                // ----------------------------------------------------
-                // Sep 24, 2026 | Q3 2026 SIFP Event (8 recipients)
                 ['Sep 24, 2026: Q3 SIFP (8)', 'FastPath: Fall 2026 Cohort', 6],
                 ['Sep 24, 2026: Q3 SIFP (8)', 'Passport Premium (Open Enrollment)', 2],
 
-                // Nov 10, 2026 | Veterans 2026 Event (25 recipients)
                 ['Nov 10, 2026: Veterans (25)', 'MyBoss Program', 2],
                 ['Nov 10, 2026: Veterans (25)', 'Zebra: Winter 2026 Leadership', 9],
                 ['Nov 10, 2026: Veterans (25)', 'Masterclass 5: Marketing', 9],
                 ['Nov 10, 2026: Veterans (25)', 'Unassigned / Open Pool', 5],
 
-                // ----------------------------------------------------
                 // 2027 GRANT EVENTS
-                // ----------------------------------------------------
-                // Jan 21, 2027 | Q4 2026 SIFP Event (8 recipients)
                 ['Jan 21, 2027: Q4 SIFP (8)', 'FastPath: 2027 Cohort 1', 6],
                 ['Jan 21, 2027: Q4 SIFP (8)', 'Passport Premium (Open Enrollment)', 2],
 
-                // Apr 22, 2027 | Q1 2027 SIFP Event (8 recipients)
                 ['Apr 22, 2027: Q1 SIFP (8)', 'FastPath: 2027 Cohort 2', 6],
                 ['Apr 22, 2027: Q1 SIFP (8)', 'Passport Premium (Open Enrollment)', 2],
 
-                // May 6, 2027 | Kitty Fund 2027 Event (20 recipients)
                 ['May 6, 2027: Kitty Fund (20)', 'MyBoss Program', 2],
                 ['May 6, 2027: Kitty Fund (20)', 'Zebra: 2027 Cohort 1', 9],
                 ['May 6, 2027: Kitty Fund (20)', 'Masterclass 7', 9],
 
-                // Jun 29, 2027 | Pride Fund 2027 Event (20 recipients)
                 ['Jun 29, 2027: Pride Fund (20)', 'MyBoss Program', 2],
                 ['Jun 29, 2027: Pride Fund (20)', 'Zebra: 2027 Cohort 2', 9],
                 ['Jun 29, 2027: Pride Fund (20)', 'Masterclass 8', 9],
 
-                // Jul 22, 2027 | Q2 2027 SIFP Event (8 recipients)
                 ['Jul 22, 2027: Q2 SIFP (8)', 'FastPath: 2027 Cohort 3', 6],
                 ['Jul 22, 2027: Q2 SIFP (8)', 'Passport Premium (Open Enrollment)', 2],
 
-                // Oct 28, 2027 | Q3 2027 SIFP Event (8 recipients)
                 ['Oct 28, 2027: Q3 SIFP (8)', 'FastPath: 2027 Cohort 4', 6],
                 ['Oct 28, 2027: Q3 SIFP (8)', 'Passport Premium (Open Enrollment)', 2],
 
-                // Nov 29, 2027 | Veterans 2027 Event (20 recipients)
                 ['Nov 29, 2027: Veterans (20)', 'MyBoss Program', 2],
                 ['Nov 29, 2027: Veterans (20)', 'Zebra: 2028 Cohort 1 (Upcoming)', 9],
                 ['Nov 29, 2027: Veterans (20)', 'Masterclass 10', 9]
