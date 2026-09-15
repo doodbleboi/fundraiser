@@ -1,145 +1,839 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grant Recipients Allocation Flow Chart</title>
-    
-    <!-- Highcharts core dependencies in correct execution order -->
-    <script src="https://highcharts.com"></script>
-    <script src="https://highcharts.com"></script>
-    <script src="https://highcharts.com"></script>
-    <script src="https://highcharts.com"></script>
-
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background-color: #ffffff;
-            color: #333333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .chart-container {
-            width: 100%;
-            max-width: 1100px;
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        .chart-header {
-            margin-bottom: 20px;
-        }
-
-        .chart-header h2 {
-            margin: 0 0 8px 0;
-            font-size: 22px;
-            color: #1a1a1a;
-        }
-
-        .chart-header p {
-            margin: 0;
-            font-size: 14px;
-            color: #666666;
-            line-height: 1.5;
-        }
-
-        #container {
-            width: 100%;
-            height: 650px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>September 2026 Master Execution &amp; Habit Blueprint</title>
+  <style>
+    :root {
+      --bg-primary: #ffffff;
+      --bg-surface: #f8fafc;
+      --bg-card: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #cbd5e1;
+      --border-dark: #334155;
+      --accent-blue: #0284c7;
+      --accent-gold: #b45309;
+      --accent-green: #15803d;
+      --accent-red: #b91c1c;
+      --accent-purple: #7e22ce;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.45;
+      padding: 8px;
+      max-width: 1000px;
+      margin: 0 auto;
+      font-size: 13.5px;
+    }
+    header {
+      background: #f1f5f9;
+      border: 2px solid var(--border-dark);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      text-align: center;
+      line-height: 1.2;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 0.85rem;
+    }
+    .meta-item {
+      background: #ffffff;
+      padding: 8px 10px;
+      border-radius: 6px;
+      border-left: 4px solid var(--accent-blue);
+      border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .meta-item strong { color: var(--text-main); display: block; margin-bottom: 2px; }
+    .section-banner {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin: 16px 0 8px 0;
+      text-transform: uppercase;
+    }
+    .card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+    .card h2 {
+      font-size: 0.95rem;
+      color: #0f172a;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 4px;
+      font-weight: 800;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      margin: 6px 0 10px 0;
+      background: #ffffff;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background-color: #e2e8f0;
+      color: #0f172a;
+      font-weight: 800;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+    .week-card {
+      background-color: var(--bg-surface);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 14px;
+    }
+    .week-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 4px;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .week-title { font-size: 0.95rem; font-weight: 800; color: #0f172a; }
+    .week-badge {
+      font-size: 0.75rem;
+      background: #e2e8f0;
+      color: #0f172a;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 800;
+      text-transform: uppercase;
+      border: 1px solid var(--border-dark);
+    }
+    .day-row {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--accent-blue);
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin-bottom: 6px;
+      font-size: 0.82rem;
+    }
+    .day-row.quality { border-left-color: var(--accent-gold); background-color: #fffdfa; }
+    .day-row.long { border-left-color: var(--accent-blue); background-color: #f0f9ff; }
+    .day-row.rest { border-left-color: var(--text-muted); background-color: #f8fafc; }
+    .day-row.race { border-left-color: var(--accent-red); background-color: #fef2f2; }
+    .day-row.club { border-left-color: var(--accent-purple); background-color: #faf5ff; }
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+      font-weight: 800;
+    }
+    .day-header .name { color: #0f172a; font-size: 0.88rem; }
+    .day-header .type { font-size: 0.76rem; color: var(--accent-gold); }
+    .timeline { list-style: none; padding-left: 0; }
+    .timeline li { margin-bottom: 3px; }
+    .time-slot { font-weight: 700; color: #1e293b; display: inline-block; min-width: 135px; }
+    .audiobook-tag { color: var(--accent-purple); font-weight: 700; }
+    .strength-tag { color: var(--accent-green); font-weight: 700; }
+    .run-tag { color: var(--accent-blue); font-weight: 700; }
+    .fin-tag { color: var(--accent-gold); font-weight: 700; }
+    .work-tag { color: #d97706; font-weight: 700; }
+    .social-tag { color: #db2777; font-weight: 700; }
+    .theatre-tag { color: #0284c7; font-weight: 700; }
+    .cal-target { color: #b45309; font-weight: 800; font-size: 0.76rem; margin-left: 4px; }
+    ul.bullet-list { list-style-type: square; padding-left: 16px; font-size: 0.82rem; color: var(--text-main); }
+    ul.bullet-list li { margin-bottom: 4px; }
+  </style>
 </head>
 <body>
 
-<div class="chart-container">
-    <div class="chart-header">
-        <h2>Grant Tracking & Cohort Distribution Flow</h2>
-        <p>Interactive Sankey mapping visualization illustrating how specific 2026 and 2027 press event grant recipients route into their respective downstream program cohorts.</p>
+  <header>
+    <h1>September 2026 Master Execution &amp; Habit Blueprint</h1>
+    <div class="meta-grid">
+      <div class="meta-item">
+        <strong>Base Coordinates &amp; Commute Architecture</strong>
+        Base: 721 W Cannon St, Fort Worth, TX 76104[cite: 1, 7].<br>
+        Morning Transit: 10–20 min bicycle transit to rotating Fort Worth cafés[cite: 1]. Laptop booted &amp; clocked in by 07:15 AM sharp[cite: 1, 3].<br>
+        Café Loop: Mon: Crude | Tue: Avoca Foch/Buon Giorno/Cherry/Branch &amp; Bird/Avoca Magnolia | Wed: Roots | Thu: Avoca Foch/Buon Giorno/Cherry/Branch &amp; Bird/Avoca Magnolia | Fri: Chill Coffee or Crude (314 S Main St Ste 110)[cite: 1].<br>
+        Midday Transition: 10:00 AM bike departure; grocery errands; workstation live at Cannon St by 10:30 AM[cite: 1].
+      </div>
+      <div class="meta-item">
+        <strong>Book Club Protocol (4th Sunday: September 27)</strong>
+        Assignment: <em>Conclave</em> for both clubs (6 hours total @ 2x speed)[cite: 1].<br>
+        Listening Window: 60 min/night starting exactly 30 min post-run across the 12 days prior (Sep 15–Sep 26)[cite: 1]. Completed Saturday night Sep 26[cite: 1].
+      </div>
+      <div class="meta-item">
+        <strong>Hard Stops, Solar Curfews &amp; Parallel Life Action</strong>
+        Morning Indoor Strength: Concludes at 06:30 AM sharp[cite: 1].<br>
+        Evening Running: Starts at the calculated minute to finish exactly at Fort Worth Civil Dusk (7:45 PM–8:19 PM CDT)[cite: 1, 8].<br>
+        Parallel Life Directive: Zero waiting until 2027 to live[cite: 1]. Social titration, vocal/theatre projection, and professional assets run simultaneously right now[cite: 1].
+      </div>
     </div>
-    
-    <!-- Chart Target Container -->
-    <div id="container"></div>
-</div>
+  </header>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    Highcharts.chart('container', {
-        chart: {
-            type: 'sankey',
-            backgroundColor: 'transparent'
-        },
-        title: {
-            text: null
-        },
-        accessibility: {
-            point: {
-                valueDescriptionFormat: '{index}. {point.from} to {point.to}, {point.weight}.'
-            }
-        },
-        credits: {
-            enabled: false
-        },
-        tooltip: {
-            headerFormat: null,
-            pointFormat: '<span style="color:{point.color}">\u25A0</span> <b>{point.from}</b> \u2192 <b>{point.to}</b>: <b>{point.weight} recipients</b><br/>',
-            nodeFormat: '{point.name}: <b>{point.sum} total recipients</b><br/>'
-        },
-        colors: [
-            '#4f46e5', '#6366f1', '#818cf8', '#a5b4fc', 
-            '#059669', '#10b981', '#34d399',             
-            '#ea580c', '#f97316',                         
-            '#111827', '#374151', '#4b5563', '#6b7280',   
-            '#9ca3af', '#d1d5db', '#e5e7eb'
-        ],
-        series: [{
-            keys: ['from', 'to', 'weight'],
-            data: [
-                // 2026 GRANT EVENTS
-                ['Sep 24, 2026: Q3 SIFP (8)', 'FastPath: Fall 2026 Cohort', 6],
-                ['Sep 24, 2026: Q3 SIFP (8)', 'Passport Premium (Open Enrollment)', 2],
+  <div class="section-banner">Behavioral Neurobiology: Action Without Willpower Depletion</div>
+  <div class="card">
+    <h2>Empirical Neurobiology &amp; Workplace Choice Architecture</h2>
+    <ul class="bullet-list">
+      <li><strong>1. Possible Selves &amp; Behavioral Congruence (Dr. Hazel Markus / Stanford):</strong> Motivation operates by minimizing cognitive dissonance between current action and your "feared vs. ideal future self"[cite: 1]. You are not an anxious remote worker hoping things improve; you are an endurance specialist, debt-free operator, and expressive performer executing daily prerequisite duties[cite: 1]. Action precedes identity[cite: 1].</li>
+      <li><strong>2. Dopamine Pacing, Prediction Error &amp; Unstacking (Dr. Andrew Huberman / Dr. Anna Lembke):</strong>
+        <br>&bull; <em>Dopamine Unstacking:</em> Eliminate concurrent reward stimulation[cite: 1]. Never combine caffeine + high sugar/pastries + high-tempo audio + phone scrolling[cite: 1]. This spikes dopamine 2.5x above baseline, followed immediately by an equal plunge below baseline, manifesting as afternoon brain fog and depression[cite: 1].
+        <br>&bull; <em>Friction-Attached Dopamine:</em> Intentionally attach the dopamine reward to the effort itself[cite: 1]. Verbally acknowledge completing the cold shower, finishing rep 8 of Bulgarian split squats, or formatting slides before taking a sip of plain black coffee[cite: 1].
+        <br>&bull; <em>Dopamine Reset via 10-Minute Cold Exposures/Walks:</em> Step outside at 12:30 PM for a 10-minute screenless walk to trigger visual optic flow, down-regulating amygdala activation and resetting dopamine receptors for deep afternoon focus[cite: 1].</li>
+      <li><strong>3. Choice Architecture for Workplace Procrastination (Thaler &amp; Sunstein / BJ Fogg):</strong>
+        <br>&bull; <em>The Fastpath Slide Anchor (Starts Sep 28, Onboarding Nov 19-20):</em> Executive inertia stems from viewing slide remakes as an amorphous 10-hour hurdle[cite: 1]. Anchor the prompt: "At 07:20 AM at the café desk, I will open Google Slides and format exactly 2 slides before opening email or Slack."[cite: 1]
+        <br>&bull; <em>Friction Reversal:</em> Make distraction high-friction (log out of all social accounts, phone zipped in backpack until 10:00 AM) and action zero-friction (slides deck left open as the sole pinned tab on the laptop browser the night before)[cite: 1].</li>
+      <li><strong>4. Non-Negotiable Environmental Triggers:</strong> The setting sun dictates the run start; the 06:30 AM alarm ends the lift; the 07:15 AM clock-in eliminates negotiation[cite: 1].</li>
+    </ul>
+  </div>
 
-                ['Nov 10, 2026: Veterans (25)', 'MyBoss Program', 2],
-                ['Nov 10, 2026: Veterans (25)', 'Zebra: Winter 2026 Leadership', 9],
-                ['Nov 10, 2026: Veterans (25)', 'Masterclass 5: Marketing', 9],
-                ['Nov 10, 2026: Veterans (25)', 'Unassigned / Open Pool', 5],
+  <div class="section-banner">Execution Rules: What To Do, What Never To Do &amp; What Perfect Execution Looks Like</div>
+  <div class="card">
+    <h2>The Operational Standard</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.82rem; margin-bottom: 8px;">
+      <div style="background: #f0fdf4; border: 1px solid var(--accent-green); border-radius: 6px; padding: 8px;">
+        <strong style="color: var(--accent-green); display: block; margin-bottom: 4px;">DO (Non-Negotiable Catalysts):</strong>
+        <ul style="padding-left: 14px; list-style-type: square;">
+          <li>Hit the 07:20 AM Fastpath slide anchor every morning at the café desk without checking communications first[cite: 1].</li>
+          <li>Execute lateral raises with the 5-lb DBs to muscular failure with a 2-second pause at parallel[cite: 1].</li>
+          <li>Practice Micro-Conversational Titration: Ask baristas genuine questions, make brief observational small talk, and participate actively in book clubs[cite: 1].</li>
+          <li>Run 10 minutes of vocal warmups and monologue articulations weekly to build vocal resonance and projection for community theatre auditions[cite: 1].</li>
+          <li>Maintain 125–140g daily protein and drink 20 oz of electrolyte water within 10 minutes of waking[cite: 1, 8].</li>
+          <li>Pre-set all running clothes, work backpack, and shoes the night before[cite: 1].</li>
+        </ul>
+      </div>
+      <div style="background: #fef2f2; border: 1px solid var(--accent-red); border-radius: 6px; padding: 8px;">
+        <strong style="color: var(--accent-red); display: block; margin-bottom: 4px;">DO NOT (Sabotage Traps):</strong>
+        <ul style="padding-left: 14px; list-style-type: square;">
+          <li>Do NOT purchase bakery items or liquid sugar at cafés (preserves $480/month and cuts 540 empty calories daily)[cite: 4, 18].</li>
+          <li>Do NOT open email, Slack, or text threads before the 07:20 AM 2-slide Fastpath quota is met[cite: 1].</li>
+          <li>Do NOT delay living, vocal training, social contact, or dating conversations until a future debt-free date[cite: 1].</li>
+          <li>Do NOT compromise the 10:00 PM sleep curfew; sleep is the primary driver of testosterone, mood, and soft tissue repair[cite: 1, 10].</li>
+          <li>Do NOT skip the evening dusk cutoff; respect solar rhythms to protect recovery and safety[cite: 1, 8].</li>
+        </ul>
+      </div>
+    </div>
+    <div style="background: #eff6ff; border: 1px solid var(--accent-blue); border-radius: 6px; padding: 8px; font-size: 0.82rem;">
+      <strong style="color: var(--accent-blue); display: block; margin-bottom: 2px;">What Perfect Execution Looks Like:</strong>
+      Awakening without snooze alarm at 05:30 AM[cite: 1]; completing the strength circuit with crisp form by 06:30 AM[cite: 1]; rolling out on the bicycle by 06:55 AM with work bag packed[cite: 1]; clocking in at 07:15 AM with a clean black coffee[cite: 1, 18]; executing the 2-slide Fastpath sprint before email[cite: 1]; completing remote work with zero tab-switching by 05:00 PM[cite: 1]; hitting Trinity Trails so the run concludes precisely at Civil Dusk[cite: 1]; listening to 60 minutes of <em>Conclave</em> @ 2x speed[cite: 1]; eating a whole-food protein dinner[cite: 1]; executing vocal resonance drills[cite: 1]; and entering deep restorative sleep at 10:00 PM knowing every life vector moved forward today[cite: 1].
+    </div>
+  </div>
 
-                // 2027 GRANT EVENTS
-                ['Jan 21, 2027: Q4 SIFP (8)', 'FastPath: 2027 Cohort 1', 6],
-                ['Jan 21, 2027: Q4 SIFP (8)', 'Passport Premium (Open Enrollment)', 2],
+  <div class="section-banner">Pace Continuum &amp; Functional Hypertrophy Strength Protocols</div>
+  <div class="card">
+    <h2>Functional Home Strength Protocols (35-lb DB, 35-lb Med Ball, 5-lb DBs, Bands &amp; Pull-Up Bar)[cite: 8]</h2>
+    <div class="protocol-box">
+      <h4>Split A: Lower Body Force &amp; Tendons + Steinhoist (Tue AM — Ends 06:30 AM Sharp)[cite: 1, 8]</h4>
+      <ol>
+        <li>1. Full-Depth Goblet Squats: 4x8 (35 lb med ball or 35 lb DB held goblet-style; full knee flexion passing parallel)[cite: 8]</li>
+        <li>2. Single-Leg Dumbbell RDLs: 4x8/leg (35 lb DB; deep posterior chain hip hinge loading glute-hamstring complex)[cite: 8]</li>
+        <li>3. Loaded Standing Calf Deficit Raises: 4x15 (35 lb DB; full stretch below level into maximum plantarflexion)[cite: 1]</li>
+        <li>4. Banded Spanish Squats: 3x45s hold (Loop band anchored behind knees; vertical torso for patellar tendon stiffness)[cite: 1, 8]</li>
+        <li>5. Steinhoisting Extended Holds: 3x Max duration with 5 lb DB extended parallel to floor + 3x20 reps grip tool[cite: 8]</li>
+      </ol>
+    </div>
+    <div class="protocol-box">
+      <h4>Split B: Plyometric Power, Upper Force &amp; Deltoid Hypertrophy (Thu AM — Ends 06:30 AM Sharp)[cite: 1, 8]</h4>
+      <ol>
+        <li>1. Explosive Countermovement Jumps (CMJs): 3x5 (Performed 100% fresh after dynamic warmup; explosive vertical triple extension)[cite: 8]</li>
+        <li>2. Strict Dead-Hang Pull-Ups: 4x6–8 (Doorway bar; hollow-body position, full lat engagement for upper V-taper)[cite: 8]</li>
+        <li>3. Single-Arm DB Push Press: 3x8/arm (35 lb DB; athletic dip and drive to powerful overhead lockout)[cite: 1]</li>
+        <li>4. <strong>Hypertrophy Addition — DB Lateral Raise Burnout:</strong> 4x20–25 reps (Two 5 lb DBs; strict lateral plane abduction, 2-second isometric pause at shoulder height. Targets lateral deltoid head to widen the clavicular line and construct an athletic shoulder-to-waist ratio)[cite: 1]</li>
+        <li>5. Deficit Push-Ups: 3x12–15 (Hands elevated on 5 lb DB handles for full pectoral stretch)[cite: 1]</li>
+        <li>6. Steinhoisting Scapular Wall Drill: 3x60s hold (Posterior deltoid and lower trapezius recruitment against wall)[cite: 8]</li>
+      </ol>
+    </div>
+    <div class="protocol-box">
+      <h4>Split C: Unilateral Core &amp; Trunk Stability (Sat PM or Sun PM)[cite: 8]</h4>
+      <ol>
+        <li>1. Walking DB Lunges or Bulgarian Split Squats: 3x10/leg (35 lb DB or med ball; full unilateral drive)[cite: 1]</li>
+        <li>2. Hanging Knee/Leg Raises: 3x12–15 (Doorway pull-up bar; decompresses spine, complete abdominal compression)[cite: 8]</li>
+        <li>3. Full RKC Planks: 3x30s max tension (Toes and elbows digging toward center; maximal abdominal bracing)[cite: 1]</li>
+        <li>4. Banded Pallof Press: 3x12/side (Doorway anchored band; anti-rotational core lock)[cite: 8]</li>
+      </ol>
+    </div>
+    <p style="font-size: 0.78rem; color: var(--accent-blue); margin-top: 4px; font-weight: 700;">
+      *Physiological Rationale: Upper body pulling and lateral deltoid volume builds shoulder width and scapular endurance without adding heavy non-functional mass, stabilizing posture and arm swing mechanics during the late miles of a sub-3:15 marathon while building an athletic V-taper[cite: 8].
+    </p>
+  </div>
 
-                ['Apr 22, 2027: Q1 SIFP (8)', 'FastPath: 2027 Cohort 2', 6],
-                ['Apr 22, 2027: Q1 SIFP (8)', 'Passport Premium (Open Enrollment)', 2],
+  <div class="section-banner">September 2026 Daily Master Schedule</div>
 
-                ['May 6, 2027: Kitty Fund (20)', 'MyBoss Program', 2],
-                ['May 6, 2027: Kitty Fund (20)', 'Zebra: 2027 Cohort 1', 9],
-                ['May 6, 2027: Kitty Fund (20)', 'Masterclass 7', 9],
+  <!-- WEEK 1 -->
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 1 (Sep 01–Sep 06) | Base Build</span>
+      <span class="week-badge">Focus: Routine Lock-In</span>
+    </div>
 
-                ['Jun 29, 2027: Pride Fund (20)', 'MyBoss Program', 2],
-                ['Jun 29, 2027: Pride Fund (20)', 'Zebra: 2027 Cohort 2', 9],
-                ['Jun 29, 2027: Pride Fund (20)', 'Masterclass 8', 9],
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Sep 01</span><span class="type">VO2 TRACK + SPLIT A <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">05:30 AM–05:40 AM:</span> Wake, hydrate (20 oz water + electrolytes), dress[cite: 1].</li>
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A (Ends 06:30 AM Sharp):</span> Goblet Squats, DB RDLs, Deficit Calf Raises, Spanish Squats, Steinhoist holds[cite: 1].</li>
+        <li><span class="time-slot">06:30 AM–06:55 AM:</span> Floss, shower, brush teeth, dry off, dress in clean casual clothes, pack work bag[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bicycle commute to <strong>Avoca Coffee (Foch St)</strong>[cite: 1]. Lock bike, order black coffee/cortado ($3.50–$4.00, $0 pastry)[cite: 1, 18]. <span class="social-tag">Micro-Social:</span> Smile, make direct eye contact, ask barista how their morning started[cite: 1].</li>
+        <li><span class="time-slot">07:15 AM–10:00 AM:</span> Open laptop, clock in promptly at 07:15 AM[cite: 1]. <span class="work-tag">Fastpath Sprint:</span> Format/outline Modules 1-2 slides (07:20 AM–08:00 AM)[cite: 1]. Core deep work flight[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike commute to 721 W Cannon St (stop at Natural Grocers on 7th if pantry stock needed); setup home workstation by 10:30 AM sharp[cite: 1].</li>
+        <li><span class="time-slot">10:30 AM–05:00 PM:</span> Remote work execution (12:30 PM lunch break: protein + clean complex carbs)[cite: 1]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">05:00 PM–07:14 PM:</span> Personal transition, pre-run hydration, light carb snack[cite: 1].</li>
+        <li><span class="time-slot">07:14 PM–08:17 PM:</span> <span class="run-tag">Quality Run (63 min):</span> 11.3 km [3.0 km out + 5x800m @ 3:56/km w/ 2m jog + 3.0 km back][cite: 1]. Ends at Civil Dusk (8:17 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:17 PM–09:45 PM:</span> Post-run protein dinner, stretch, set out tomorrow's gear[cite: 1]. Screens off by 09:45 PM[cite: 1]. In bed by 10:00 PM[cite: 1].</li>
+      </ul>
+    </div>
 
-                ['Jul 22, 2027: Q2 SIFP (8)', 'FastPath: 2027 Cohort 3', 6],
-                ['Jul 22, 2027: Q2 SIFP (8)', 'Passport Premium (Open Enrollment)', 2],
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Sep 02</span><span class="type">ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:00 AM–06:30 AM:</span> Foot intrinsic drills, hip mobility, spine decompression[cite: 1].</li>
+        <li><span class="time-slot">06:30 AM–06:55 AM:</span> Floss, shower, brush teeth, dry off, dress, pack laptop bag[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike commute to <strong>Roots Coffeehouse</strong>[cite: 1]. Order coffee desk lease[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">07:15 AM–10:00 AM:</span> Deep administrative work block[cite: 1]. <span class="work-tag">Fastpath Sprint:</span> Review cohort metrics[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike commute to Cannon St; live at home desk by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">10:30 AM–05:00 PM:</span> Remote work blocks (Lunch 12:30 PM–01:30 PM)[cite: 1]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">07:17 PM–08:15 PM:</span> <span class="run-tag">Zone 2 Run (58 min):</span> 10.5 km @ 5:29/km[cite: 1]. Ends at Civil Dusk (8:15 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:15 PM–10:00 PM:</span> Dinner, hydration, night wind-down[cite: 1]. In bed by 10:00 PM[cite: 1].</li>
+      </ul>
+    </div>
 
-                ['Oct 28, 2027: Q3 SIFP (8)', 'FastPath: 2027 Cohort 4', 6],
-                ['Oct 28, 2027: Q3 SIFP (8)', 'Passport Premium (Open Enrollment)', 2],
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Thursday, Sep 03</span><span class="type">THRESHOLD + SPLIT B <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B (Ends 06:30 AM Sharp):</span> CM Jumps First, Pull-Ups, 35 lb DB Push Press, 5 lb DB Lateral Raises (4x20), Deficit Push-Ups, Steinhoist Drill[cite: 1].</li>
+        <li><span class="time-slot">06:30 AM–06:55 AM:</span> Floss, shower, brush teeth, dry off, dress, pack bag[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike commute to <strong>Buon Giorno Coffee</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">07:15 AM–10:00 AM:</span> High-focus work block[cite: 1]. <span class="work-tag">Fastpath Sprint:</span> Re-architect slide templates[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home to Cannon St; workstation live by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">10:30 AM–05:00 PM:</span> Afternoon work flight[cite: 1]. Clock out 05:00 PM[cite: 1]. Pre-run snack at 06:30 PM[cite: 1].</li>
+        <li><span class="time-slot">07:01 PM–08:14 PM:</span> <span class="run-tag">Threshold Run (73 min):</span> 12.9 km [3.0 km out + 6.9 km LT @ 4:16/km + 3.0 km back][cite: 1]. Ends at Civil Dusk (8:14 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:14 PM–10:00 PM:</span> Dinner, foam roll legs, sleep preparation[cite: 1]. In bed by 10:00 PM[cite: 1].</li>
+      </ul>
+    </div>
 
-                ['Nov 29, 2027: Veterans (20)', 'MyBoss Program', 2],
-                ['Nov 29, 2027: Veterans (20)', 'Zebra: 2028 Cohort 1 (Upcoming)', 9],
-                ['Nov 29, 2027: Veterans (20)', 'Masterclass 10', 9]
-            ],
-            type: 'sankey',
-            name: 'Recipient Allocation Flow'
-        }]
-    });
-});
-</script>
+    <div class="day-row">
+      <div class="day-header"><span class="name">Friday, Sep 04</span><span class="type">EASY AEROBIC FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:00 AM–06:30 AM:</span> Mobility &amp; core activation[cite: 1].</li>
+        <li><span class="time-slot">06:30 AM–06:55 AM:</span> Floss, shower, brush teeth, dry off, dress, pack bag[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike commute to <strong>Chill Coffee or Crude (314 S Main St Ste 110)</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">07:15 AM–10:00 AM:</span> End-of-week sprint tasks[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Direct return bike transit down Pennsylvania/Cannon to 721 W Cannon St; home by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">10:30 AM–05:00 PM:</span> Close weekly project tickets[cite: 1]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">07:25 PM–08:13 PM:</span> <span class="run-tag">Flush Run (48 min):</span> 8.4 km @ 5:42/km[cite: 1]. Ends at Civil Dusk (8:13 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:13 PM–10:00 PM:</span> Clean recovery dinner[cite: 1]. Layout Saturday long run nutrition[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row long">
+      <div class="day-header"><span class="name">Saturday, Sep 05</span><span class="type">KEY PROGRESSIVE LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:15 AM–06:45 AM:</span> Wake, pre-run fuel (toast + honey/banana), dynamic warmup[cite: 1].</li>
+        <li><span class="time-slot">06:45 AM–08:33 AM:</span> <span class="run-tag">Long Run (108 min):</span> 20.8 km progressive down to 4:55/km[cite: 1]. Daylight start post-civil dawn (06:41 AM)[cite: 1].</li>
+        <li><span class="time-slot">08:33 AM–04:30 PM:</span> High-protein recovery meal, hydrate, personal time, grocery prep[cite: 1].</li>
+        <li><span class="time-slot">04:30 PM–05:15 PM:</span> <span class="strength-tag">Home Split C (45 min):</span> Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press[cite: 1].</li>
+        <li><span class="time-slot">05:15 PM–10:00 PM:</span> Dinner, relax, foam roll, early sleep prep[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Sep 06</span><span class="type">FULL SYSTEM REST &amp; FINANCIAL SNAPSHOT <span class="cal-target">[1,600 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">All Day:</span> <span class="fin-tag">Financial Snapshot:</span> Checking float confirmed ~$2,077; USAA Savings confirmed $3,586[cite: 1, 7]. Rent prioritized[cite: 1, 7]. Zero running (0.0 km)[cite: 1]. Meal prep week's lunches[cite: 1].</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WEEK 2 -->
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 2 (Sep 07–Sep 13) | Labor Day &amp; Paycheck 2</span>
+      <span class="week-badge">Focus: Tempo Progression</span>
+    </div>
+
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Monday, Sep 07</span><span class="type">LABOR DAY HOLIDAY (NO RUN) <span class="cal-target">[1,700 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:30 AM–07:15 AM:</span> Floss, shower, brush, dress[cite: 1]. Leisure bike to <strong>Crude Craft Coffee Bar</strong>[cite: 1]. Slow cortado[cite: 1].</li>
+        <li><span class="time-slot">All Day:</span> Marked Out of Office[cite: 1, 6]. Absolute zero running (0.0 km)[cite: 1]. Deep neural restoration[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Sep 08</span><span class="type">SPLIT A + LT INTERVALS <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist[cite: 1].</li>
+        <li><span class="time-slot">06:30 AM–06:55 AM:</span> Groom, dress, pack backpack[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">07:15 AM–10:00 AM:</span> Deep work block[cite: 1]. <span class="work-tag">Fastpath Sprint:</span> Rebuild Module 1 slide deck graphics[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; live at desk by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">10:30 AM–05:00 PM:</span> Remote work execution[cite: 1]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">06:56 PM–08:08 PM:</span> <span class="run-tag">Quality Run (72 min):</span> 12.9 km [4x1600m LT @ 4:15/km][cite: 1]. Ends at Civil Dusk (8:08 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:08 PM–10:00 PM:</span> Dinner, hydrate, recover[cite: 1]. In bed by 10:00 PM[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Sep 09</span><span class="type">ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:00 AM–06:30 AM:</span> Mobility &amp; soft tissue work[cite: 1].</li>
+        <li><span class="time-slot">06:30 AM–06:55 AM:</span> Floss, shower, brush, dress, pack[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike commute to Cannon St; live at home desk by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">10:30 AM–05:00 PM:</span> Work flight (Multiple 1x1 operational check-ins)[cite: 1, 6]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">07:01 PM–08:06 PM:</span> <span class="run-tag">Zone 2 Run (65 min):</span> 11.6 km @ 5:29/km[cite: 1]. Ends at Civil Dusk (8:06 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:06 PM–10:00 PM:</span> Recovery nutrition, evening stretch[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Thursday, Sep 10</span><span class="type">SPLIT B + AEROBIC TEMPO <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B:</span> CM Jumps First, Pull-Ups, DB Push Press, 5 lb DB Lateral Raises (4x20), Deficit Push-Ups, Steinhoist[cite: 1].</li>
+        <li><span class="time-slot">06:30 AM–06:55 AM:</span> Floss, shower, brush, dress, pack[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Branch &amp; Bird</strong>[cite: 1]. Clock in 07:15 AM[cite: 1]. <span class="social-tag">Micro-Social:</span> Greet reception/barista clearly by name[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">10:30 AM–05:00 PM:</span> Operations &amp; grant syncs[cite: 1, 6]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">07:09 PM–08:05 PM:</span> <span class="run-tag">Tempo Run (56 min):</span> 10.0 km @ 5:35/km[cite: 1]. Ends at Civil Dusk (8:05 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:05 PM–10:00 PM:</span> Dinner, foam roll, layout gear[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row">
+      <div class="day-header"><span class="name">Friday, Sep 11</span><span class="type">EASY FLUSH + PAYCHECK #2 <span class="cal-target">[1,700 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">All Day:</span> <span class="fin-tag">Paycheck #2 Lands:</span> Net take-home ~$1,815 deposited into BofA checking[cite: 1, 5]. Confirm float safe above $1,500[cite: 1, 7].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (314 S Main St Ste 110)</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; live at desk by 10:30 AM[cite: 1]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">07:15 PM–08:03 PM:</span> <span class="run-tag">Flush Run (48 min):</span> 8.4 km @ 5:45/km[cite: 1]. Ends at Civil Dusk (8:03 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:03 PM–10:00 PM:</span> Dinner, carb load for 26.3 km morning long run[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row long">
+      <div class="day-header"><span class="name">Saturday, Sep 12</span><span class="type">OVERLOAD LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:50 AM–09:08 AM:</span> <span class="run-tag">Overload Long Run (138 min):</span> 26.3 km progressive (closing final 3.2 km @ 4:58/km)[cite: 1]. Daylight start[cite: 1].</li>
+        <li><span class="time-slot">04:30 PM–05:15 PM:</span> <span class="strength-tag">Home Split C:</span> Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press[cite: 1].</li>
+        <li><span class="time-slot">05:15 PM–10:00 PM:</span> High-protein recovery meal, hydrate, sleep early[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Sep 13</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">All Day:</span> Zero running (0.0 km)[cite: 1]. Meal prep for Deload Week[cite: 1]. Reset mentally[cite: 1].</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WEEK 3 -->
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 3 (Sep 14–Sep 20) | Scheduled Deload 1 &amp; Audiobooks Begin</span>
+      <span class="week-badge">Focus: Supercompensation</span>
+    </div>
+
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Monday, Sep 14</span><span class="type">DELOAD REST &amp; FLUSH <span class="cal-target">[1,700 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Crude Craft Coffee Bar</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; live at desk by 10:30 AM[cite: 1]. Clock out 05:00 PM[cite: 1]. Zero running (0.0 km)[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Sep 15</span><span class="type">DELOAD INTERVALS + BOOK 1 OPENS <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">05:50 AM–06:30 AM:</span> <span class="strength-tag">Split A Deload (40 min):</span> 2 sets only of Goblet Squats, DB RDLs, Spanish Squats, Steinhoist[cite: 1]. Ends 06:30 AM[cite: 1].</li>
+        <li><span class="time-slot">06:30 AM–06:55 AM:</span> Floss, shower, brush, dress, pack[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Avoca Coffee (Magnolia)</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">07:15 AM–10:00 AM:</span> <span class="work-tag">Fastpath Sprint:</span> Rebuild Module 2 slide deck graphics[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live by 10:30 AM[cite: 1]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">07:01 PM–07:58 PM:</span> <span class="run-tag">Deload Run (57 min):</span> 10.0 km [4x800m @ 3:59/km][cite: 1]. Ends at Civil Dusk (7:58 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:28 PM–09:28 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 1/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed[cite: 1]. (Starts 30 min post-run)[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Sep 16</span><span class="type">ZONE 2 DELOAD <span class="cal-target">[1,900 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; live at desk by 10:30 AM[cite: 1]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">07:09 PM–07:57 PM:</span> <span class="run-tag">Zone 2 Run (48 min):</span> 8.4 km @ 5:45/km[cite: 1]. Ends at Civil Dusk (7:57 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:27 PM–09:27 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 2/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Thursday, Sep 17</span><span class="type">MP TEMPO DELOAD <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">05:50 AM–06:30 AM:</span> <span class="strength-tag">Split B Deload (40 min):</span> 2 sets of Pull-Ups, Push Press, 5 lb DB Lateral Raises (3x20), Deficit Push-Ups, Steinhoist[cite: 1]. Ends 06:30 AM[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Avoca Coffee (Foch St)</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">07:15 AM–10:00 AM:</span> <span class="work-tag">Fastpath Sprint:</span> Review cohort pitch templates[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; desk live by 10:30 AM[cite: 1]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">07:04 PM–07:56 PM:</span> <span class="run-tag">Deload Tempo (52 min):</span> 10.0 km [4.0 km @ MP 4:36/km][cite: 1]. Ends at Civil Dusk (7:56 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:26 PM–09:26 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 3/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row">
+      <div class="day-header"><span class="name">Friday, Sep 18</span><span class="type">EASY BASE DELOAD <span class="cal-target">[1,700 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (314 S Main St Ste 110)</strong>[cite: 1]. Clock in 07:15 AM[cite: 1].</li>
+        <li><span class="time-slot">10:00 AM–10:30 AM:</span> Bike home; live at desk by 10:30 AM[cite: 1]. Clock out 05:00 PM[cite: 1].</li>
+        <li><span class="time-slot">07:15 PM–07:54 PM:</span> <span class="run-tag">Flush Run (39 min):</span> 6.8 km @ 5:45/km[cite: 1]. Ends at Civil Dusk (7:54 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:24 PM–09:24 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 4/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row long">
+      <div class="day-header"><span class="name">Saturday, Sep 19</span><span class="type">DELOAD LONG RUN <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:55 AM–08:28 AM:</span> <span class="run-tag">Deload Long Run (93 min):</span> 17.1 km @ 5:35/km[cite: 1]. Daylight morning run[cite: 1].</li>
+        <li><span class="time-slot">04:30 PM–05:15 PM:</span> <span class="strength-tag">Split C Deload:</span> Light core maintenance &amp; bodyweight lunges[cite: 1].</li>
+        <li><span class="time-slot">06:00 PM–07:00 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 5/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Sunday, Sep 20</span><span class="type">FULL SYSTEM REST <span class="cal-target">[1,600 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">07:00 PM–08:00 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 6/12):</span> 60 min listening to <em>Conclave</em> @ 2x speed[cite: 1]. (Book 1 fully completed!)[cite: 1]. Zero running (0.0 km)[cite: 1].</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WEEK 4 -->
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 4 (Sep 21–Sep 27) | Race Week 1 &amp; Book Club</span>
+      <span class="week-badge">Focus: Oktoberfest 5K &amp; Discussion</span>
+    </div>
+
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Monday, Sep 21</span><span class="type">REST &amp; WEIGHT CHECK <span class="cal-target">[1,700 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">All Day:</span> <span class="fin-tag">Weight Milestone:</span> Target 151.7 lbs (verify -3.3 lb drop from Aug baseline)[cite: 1]. Zero running (0.0 km)[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Crude Craft Coffee Bar</strong>[cite: 1]. Clock in 07:15 AM[cite: 1]. Home by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">07:00 PM–08:00 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 7/12):</span> 60 min listening to Book 2 review/re-listen @ 2x speed[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Sep 22</span><span class="type">VO2 TRACK + SPLIT A <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Buon Giorno Coffee</strong>[cite: 1]. Clock in 07:15 AM[cite: 1]. Home by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">06:34 PM–07:49 PM:</span> <span class="run-tag">VO2 Track (75 min):</span> 13.2 km [5x1000m @ 3:55/km][cite: 1]. Ends at Civil Dusk (7:49 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:19 PM–09:19 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 8/12):</span> 60 min listening @ 2x speed[cite: 1]. (Starts 30 min post-run)[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Sep 23</span><span class="type">ZONE 2 BASE <span class="cal-target">[1,900 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>[cite: 1]. Clock in 07:15 AM[cite: 1]. Home by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">06:45 PM–07:48 PM:</span> <span class="run-tag">Zone 2 Run (63 min):</span> 11.6 km @ 5:26/km[cite: 1]. Ends at Civil Dusk (7:48 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:18 PM–09:18 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 9/12):</span> 60 min listening @ 2x speed[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Thursday, Sep 24</span><span class="type">THRESHOLD + SPLIT B <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split B:</span> CM Jumps First, Pull-Ups, Push Press, 5 lb DB Lateral Raises (4x20), Deficit Push-Ups, Steinhoist[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Cherry Coffee</strong>[cite: 1]. Clock in 07:15 AM[cite: 1]. Home by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">06:19 PM–07:46 PM:</span> <span class="run-tag">Threshold Run (87 min):</span> 14.8 km [8.8 km LT @ 4:16/km][cite: 1]. Ends at Civil Dusk (7:46 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:16 PM–09:16 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 10/12):</span> 60 min listening @ 2x speed[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row">
+      <div class="day-header"><span class="name">Friday, Sep 25</span><span class="type">PRE-RACE SHAKEOUT + PAYCHECK #3 <span class="cal-target">[1,700 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">All Day:</span> <span class="fin-tag">Paycheck #3 Deposit (Surplus Engine):</span> ~$1,815 net lands in BofA checking[cite: 1, 5]. Hold in checking through Oct 1 rent[cite: 1, 7].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Chill Coffee or Crude (314 S Main St Ste 110)</strong>[cite: 1]. Clock in 07:15 AM[cite: 1]. Home by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">07:06 PM–07:45 PM:</span> <span class="run-tag">Shakeout Run (39 min):</span> 6.8 km easy + strides[cite: 1]. Ends at Civil Dusk (7:45 PM)[cite: 1, 8].</li>
+        <li><span class="time-slot">08:15 PM–09:15 PM:</span> <span class="audiobook-tag">Audiobook Block (Day 11/12):</span> 60 min listening @ 2x speed[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row race">
+      <div class="day-header"><span class="name">Saturday, Sep 26</span><span class="type">🎯 OKTOBERFEST 5K + STEINHOIST <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">07:00 AM–08:30 AM:</span> Bike to race staging; 1.5 km dynamic warm-up[cite: 1].</li>
+        <li><span class="time-slot">07:45 AM–08:05 AM:</span> <span class="run-tag">Race Start:</span> Fort Worth Oktoberfest 5K[cite: 1]. Goal: <strong>19:30 (3:54/km)</strong>[cite: 1, 7]. 1.5 km cooldown[cite: 1]. (8.0 km total)[cite: 1].</li>
+        <li><span class="time-slot">02:00 PM–04:00 PM:</span> <strong>Competitive Steinhoist Contest</strong> at Dr. Jeckyll's Beer Lab[cite: 1, 7]. Execute peak isometric hold[cite: 1]. <span class="social-tag">Micro-Social:</span> Congratulate competitors, engage naturally with local community[cite: 1].</li>
+        <li><span class="time-slot">07:30 PM–08:30 PM:</span> <span class="audiobook-tag">Final Audiobook Block (Day 12/12):</span> Final 60 min listening[cite: 1]. <strong>Both books 100% completed!</strong>[cite: 1]</li>
+      </ul>
+    </div>
+
+    <div class="day-row club">
+      <div class="day-header"><span class="name">Sunday, Sep 27</span><span class="type">RELOCATED LONG RUN + 4TH SUNDAY BOOK CLUBS <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">07:00 AM–08:52 AM:</span> <span class="run-tag">Relocated Long Run (112 min):</span> 20.0 km Progressive [3.0 km out + 14.0 km trail @ 5:23/km + 3.0 km back][cite: 1]. Morning daylight run[cite: 1].</li>
+        <li><span class="time-slot">01:00 PM–03:00 PM:</span> <span class="audiobook-tag">Book Club #1:</span> Group discussion on <em>Conclave</em>[cite: 1]. Active, confident, articulate participation[cite: 1]. Practice diaphragmatic projection[cite: 1].</li>
+        <li><span class="time-slot">04:00 PM–04:45 PM:</span> <span class="strength-tag">Home Split C:</span> Bulgarian Split Squats, Hanging Leg Raises, RKC Planks, Pallof Press[cite: 1].</li>
+        <li><span class="time-slot">06:00 PM–08:00 PM:</span> <span class="audiobook-tag">Book Club #2:</span> Second group discussion on <em>Conclave</em>[cite: 1]. Connect with peers naturally; share insights freely[cite: 1].</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WEEK 5 BRIDGE -->
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-title">Week 5 Bridge (Sep 28–Sep 30) | October Transition &amp; Fastpath Launch</span>
+      <span class="week-badge">Focus: Launch Execution</span>
+    </div>
+
+    <div class="day-row rest">
+      <div class="day-header"><span class="name">Monday, Sep 28</span><span class="type">FASTPATH COHORT ONBOARDING (NO RUN) <span class="cal-target">[1,700 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Crude Craft Coffee Bar</strong>[cite: 1]. Clock in 07:15 AM[cite: 1]. Home by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">All Day:</span> <span class="work-tag">Fastpath Cohort Launch:</span> Onboarding session live[cite: 1, 6]. Absolute zero running (0.0 km)[cite: 1]. Post-5K/long run recovery[cite: 1].</li>
+      </ul>
+    </div>
+
+    <div class="day-row quality">
+      <div class="day-header"><span class="name">Tuesday, Sep 29</span><span class="type">VO2 TRACK + SPLIT A <span class="cal-target">[2,400 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">05:40 AM–06:30 AM:</span> <span class="strength-tag">Home Split A:</span> Goblet Squats, DB RDLs, Calf Raises, Spanish Squats, Steinhoist[cite: 1].</li>
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Branch &amp; Bird</strong>[cite: 1]. Clock in 07:15 AM[cite: 1]. Home by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">06:26 PM–07:41 PM:</span> <span class="run-tag">VO2 Track (75 min):</span> 13.2 km [4x1200m @ 3:55/km][cite: 1]. Ends at Civil Dusk (7:41 PM)[cite: 1, 8].</li>
+      </ul>
+    </div>
+
+    <div class="day-row">
+      <div class="day-header"><span class="name">Wednesday, Sep 30</span><span class="type">ZONE 2 BASE &amp; MONTH-END AUDIT <span class="cal-target">[1,900 kcal]</span></span></div>
+      <ul class="timeline">
+        <li><span class="time-slot">06:55 AM–07:15 AM:</span> Bike to <strong>Roots Coffeehouse</strong>[cite: 1]. Clock in 07:15 AM[cite: 1]. Home by 10:30 AM[cite: 1].</li>
+        <li><span class="time-slot">04:00 PM–05:00 PM:</span> <span class="fin-tag">Month-End Financial Audit:</span> Verify $1,000 rent set to draft Oct 1 to George Howell[cite: 1, 7]. Prepare $600 USAA savings transfer for Oct 2[cite: 1, 7].</li>
+        <li><span class="time-slot">06:29 PM–07:39 PM:</span> <span class="run-tag">Zone 2 Run (70 min):</span> 12.9 km @ 5:26/km[cite: 1]. Ends at Civil Dusk (7:39 PM)[cite: 1, 8].</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-banner">Appendix: Milestones, Logistics &amp; 15-Month Realization</div>
+  <div class="card">
+    <h2>1. The 15-Month Strategic Target Ledger (Target: Dec 31, 2027)</h2>
+    <table style="font-size:0.8rem;">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Immediate Milestone (Fall 2026)</th>
+          <th>Medium Milestone (Mid-2027)</th>
+          <th>Hard Target (Dec 31, 2027)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Athletic / Mass</strong></td>
+          <td>Sub-3:14:30 at Dallas Marathon (12/13/26); weight @ 142 lbs[cite: 1, 7, 8]</td>
+          <td>Finish Cowtown 50K Ultra (02/28/27) as ultra-marathoner[cite: 1, 7]</td>
+          <td>Sub-3:00 marathon engine; maintain 140–142 lbs lean muscle mass[cite: 1, 7]</td>
+        </tr>
+        <tr>
+          <td><strong>Liquid Savings</strong></td>
+          <td>USAA Savings hits <strong>$5,500.00</strong> on Nov 2 (Medical Firewall)[cite: 1, 7]</td>
+          <td>Checking float anchored $1,500–$2,000[cite: 1, 7]; debt avalanche underway[cite: 1, 7]</td>
+          <td><strong>$11,000–$14,000 liquid emergency runway</strong> banked in USAA[cite: 1, 5]</td>
+        </tr>
+        <tr>
+          <td><strong>Consumer Debt</strong></td>
+          <td>Maintain minimums ($1,295/mo) without adding $1 of new debt[cite: 1, 7]</td>
+          <td><strong>$0.00 Credit Card Debt by June 30, 2027</strong> (Free cash flow +$1,962/mo)[cite: 1, 7]</td>
+          <td>100% consumer debt-free; Roth IRA automated at $580/month[cite: 1, 7]</td>
+        </tr>
+        <tr>
+          <td><strong>Living Space</strong></td>
+          <td>Spartan floor mat recovery during marathon/ultra blocks[cite: 1, 4]</td>
+          <td><strong>Retire floor mat (Q1 2027 accelerated):</strong> $450 hybrid queen mattress &amp; frame[cite: 1, 7]</td>
+          <td>Clean, dignified apartment; warm lighting, welcoming for romantic partner[cite: 1]</td>
+        </tr>
+        <tr>
+          <td><strong>Vehicle &amp; Safety</strong></td>
+          <td>Bicycle commuting only (0 vehicle debt, 0 insurance)[cite: 1]</td>
+          <td>Research secure 5x10 storage or gated ground-floor residence[cite: 1]</td>
+          <td>Reliable commuter transport secured (Subcompact car e.g. Fit/Yaris or locked scooter)[cite: 1]</td>
+        </tr>
+        <tr>
+          <td><strong>Career / KSAs</strong></td>
+          <td>Document current startup SOPs; master advanced Google Sheets/Zapier[cite: 1, 2]</td>
+          <td>Earn Google Project Management Certificate; resume pivot ready[cite: 1, 5]</td>
+          <td><strong>Land $75k–$85k remote Program/Operations role</strong> (triggering PSLF)[cite: 1, 5, 7]</td>
+        </tr>
+        <tr>
+          <td><strong>Dating &amp; Social</strong></td>
+          <td>Daily barista conversations &amp; active book club participation[cite: 1]</td>
+          <td>Join Fort Worth running club (e.g., Jeckylopes) or cycling group[cite: 1, 7]</td>
+          <td>Actively dating in 37–47 age bracket from a position of power and stability[cite: 1]</td>
+        </tr>
+        <tr>
+          <td><strong>Theatre &amp; Expression</strong></td>
+          <td>Join local community playhouse backstage crew / set-build container[cite: 1, 14]</td>
+          <td>Begin formal vocal resonance &amp; audition monologue preparation[cite: 1]</td>
+          <td><strong>Audition for local musical or play</strong> (Fort Worth / Arlington, TX)[cite: 1]</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-banner">Subgoal Resource &amp; Commitment Blueprint (Path to Dec 31, 2027)</div>
+  <div class="card">
+    <h2>Financial &amp; Time Allocations Across Core Life Vectors (No Delayed Life)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Vector / Goal</th>
+          <th>Financial Capital Allocation</th>
+          <th>Weekly Time Commitment</th>
+          <th>Specific Tactical Implementation (Parallel Tracking)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. New Career Pivot ($75k–$85k)</strong></td>
+          <td>$0–$300 (Certifications, Coursera, professional resume review)[cite: 1]</td>
+          <td><strong>4 hours / week</strong> (Sat/Sun 2-hr morning blocks)[cite: 1]</td>
+          <td>Build quantified 1-page impact portfolio from startup coordinator work[cite: 1]. Target remote 501(c)(3) / university Program Manager roles qualifying for 100% tax-exempt PSLF forgiveness[cite: 1, 7].</td>
+        </tr>
+        <tr>
+          <td><strong>2. Technical KSA Building</strong></td>
+          <td>$49/mo Coursera subscription (Q1 2027 only)[cite: 1]</td>
+          <td><strong>3 hours / week</strong> (Tues/Thu evenings 8:30-10 PM)[cite: 1]</td>
+          <td>Earn Google Project Management Professional Certificate; build functional fluency in Salesforce Admin basics and automated Make/Zapier data pipelines[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>3. Low-Friction Networking</strong></td>
+          <td>$0 (Leverage existing coffee desk lease)[cite: 1]</td>
+          <td><strong>1 hour / week</strong> (Integrated into work hours)[cite: 1]</td>
+          <td>Send 1 proactive message per week to existing 5-6 person colleague group[cite: 1]. Attend local Fort Worth professional webinars and alumni networks[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>4. Physical Sculpting &amp; Diet</strong></td>
+          <td>$320–$380 / month (Whole food groceries: eggs, sardines, bulk chicken, avocado, rice)[cite: 1]</td>
+          <td><strong>8–10 hours / week</strong> (Running + 3 strength splits + meal prep)[cite: 1]</td>
+          <td><strong>Diet:</strong> 1.8–2.0 g/kg protein (125–140g/day), eliminate pastries (-540 kcal/day), maintain 140–142 lb racing mass[cite: 1]. <strong>Sculpting:</strong> DB Bulgarian split squats, pull-ups (lat width/V-taper), overhead press, 5 lb DB lateral raises (lateral deltoid capping for shoulder-to-waist ratio), and hanging leg raises (core compression)[cite: 1]. Minimum effective running dose prevents emaciation[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>5. High-Impact Capsule Wardrobe</strong></td>
+          <td>$400–$500 total (Allocated post-card payoff in July 2027)[cite: 1]</td>
+          <td><strong>1 hour / month</strong> (Care &amp; tailoring)[cite: 1]</td>
+          <td>Buy only after stabilizing at 142 lbs: 3 tailored Oxford button-downs, 3 heavyweight neutral tees (black/gray/navy), 2 flat-front chinos (olive/navy), 1 dark raw denim, clean white leather minimalist sneakers[cite: 1]. Fit beats label[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>6. Living Space &amp; Bed Dignity</strong></td>
+          <td>$450 total (Accelerate to early Q1 2027 surplus)[cite: 1]</td>
+          <td><strong>One-time weekend setup</strong>[cite: 1]</td>
+          <td>Retire floor mat immediately in early 2027[cite: 1]. Buy queen hybrid mattress + minimalist platform frame + 100% washed cotton sheets + 2 memory foam pillows[cite: 1]. Add dimmable warm 2700K ambient lamps and 1 snake plant[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>7. Commuter Vehicle &amp; Security</strong></td>
+          <td>$2,500–$4,000 cash (Subcompact auto e.g. Fit/Yaris or secured scooter) in Q4 2027[cite: 1]</td>
+          <td><strong>30 min / week</strong> maintenance[cite: 1]</td>
+          <td>Acquire reliable, low-maintenance transport[cite: 1]. If scooter: ground-floor indoor wheel-in or locked 5x10 storage unit with Litelok X1[cite: 1]. If subcompact auto: climate-controlled, weather-proof, and date-ready[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>8. Relationship &amp; Dating Readiness</strong></td>
+          <td>$60–$100 / month (Low-stakes coffee/tea/walk dates)[cite: 1]</td>
+          <td><strong>2–3 hours / week</strong>[cite: 1]</td>
+          <td><strong>Zero Delayed Life:</strong> Do not postpone all social connection until late 2027[cite: 1]. Execute weekly micro-conversational titration now (baristas, book club peers, trail runners)[cite: 1]. Enter active low-stakes dating in early 2027 as health, teeth, and bed are stabilized[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>9. Theatre Audition &amp; Expressive Performance</strong></td>
+          <td>$0–$100 (Sheet music, script copies, community theatre season ticket)[cite: 1]</td>
+          <td><strong>1.5 hours / week</strong> (Integrated vocal warmups &amp; monologue work)[cite: 1]</td>
+          <td><strong>Fort Worth / Arlington Stage Track:</strong> Target local community companies (e.g., Theatre Arlington, Circle Theatre, Stage West, or Artisan Center Theater)[cite: 1]. <strong>Q4 2026–Q2 2027:</strong> Volunteer for backstage crew / set strike to build peer connections and demystify the audition room[cite: 1, 14]. <strong>Q3–Q4 2027:</strong> Prepare two contrasting 16-bar vocal cuts and one 60-second contemporary comedic/dramatic monologue[cite: 1]. Attend open general auditions by Dec 31, 2027[cite: 1].</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-banner">Horizon Architecture: Time-Horizons Execution Guide</div>
+  <div class="card">
+    <h2>Multi-Horizon Milestones, Priorities &amp; Operational Hacks (Next Week &rarr; 18 Months)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Horizon</th>
+          <th>Core Priorities &amp; Hard Targets</th>
+          <th>Necessary Steps to Execute Now</th>
+          <th>Actionable Hacks, Tips &amp; Best Practices</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Next Week<br>(Sep 07–13, 2026)</strong></td>
+          <td>• Complete 4 key training blocks (Split A/B, VO2 Track, 26.3 km Long Run)[cite: 1].<br>• Fastpath slide rebuild underway (Module 1 draft)[cite: 1].<br>• Absorb Paycheck #2 without lifestyle creep[cite: 1].</td>
+          <td>• Lay out training and work gear at 09:30 PM each night[cite: 1].<br>• Pin Google Slides tab before closing laptop[cite: 1].<br>• Order strictly black coffee or cortado ($3.50–$4.00, $0 pastry)[cite: 1, 18].</td>
+          <td><strong>The 2-Slide Coffee Rule:</strong> Take zero sips of coffee until exactly two slides are formatted at the café desk[cite: 1]. Attaches dopamine to friction[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>1 Month<br>(By Oct 06, 2026)</strong></td>
+          <td>• Execute Fort Worth Oktoberfest 5K (Target 19:30) &amp; Steinhoist on Sep 26[cite: 1, 7].<br>• Complete both book club discussions on <em>Conclave</em> (Sep 27)[cite: 1].<br>• Bodyweight verified at 151.7 lbs (-3.3 lbs)[cite: 1].<br>• Pay October 1 rent ($1,000) cleanly; transfer $600 to USAA on Oct 2[cite: 1, 7].</td>
+          <td>• Listen to 60 min/night of <em>Conclave</em> at 2x speed starting Sep 15 (30 min post-run)[cite: 1].<br>• Maintain 125–140g daily protein to prevent muscle wasting[cite: 1].</td>
+          <td><strong>The Post-Run Friction Gap:</strong> Cool down and shower immediately after the run so the 30-minute transition into the audiobook requires zero willpower[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>3 Months<br>(By Dec 06, 2026)</strong></td>
+          <td>• <strong>USAA Health Firewall hits $5,500.00</strong> on Nov 2 (FREEZE account)[cite: 1, 7].<br>• Execute Fort Worth Half Marathon MP Dress Rehearsal (Nov 08; 1:37:04)[cite: 1, 8].<br>• Execute Turkey Trot 10K at MP (Nov 26; 46:00)[cite: 1, 8].<br>• Taper volume down 40% while maintaining 35 lb DB intensity[cite: 1, 8].<br>• Triage bottom right molar clinical exam via cash-discount/FQHC clinic[cite: 1, 4, 18].</td>
+          <td>• Manage San Diego FastPath pitch trip travel (Nov 16–22) with 1.5 gal water/day and hotel bodyweight circuit[cite: 1, 7].<br>• Shift weekday runs to morning astronomical dawn or post-work dusk flushes as days shorten[cite: 1, 8].</td>
+          <td><strong>The Travel Anchor:</strong> Pack resistance loop bands and running flats in your carry-on; never check essential workout equipment[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>6 Months<br>(By Mar 06, 2027)</strong></td>
+          <td>• <strong>Finish BMW Dallas Marathon in sub-3:14:30</strong> (Dec 13, 2026) at 142 lbs[cite: 1, 7, 8].<br>• <strong>Complete The Cowtown 50K Ultramarathon</strong> (Feb 28, 2027)[cite: 1, 7, 8].<br>• <strong>Retire Floor Mat:</strong> Allocate $450 from Q1 surplus for hybrid queen bed &amp; frame[cite: 1, 7].<br>• Deploy first 3 months of direct-fire debt avalanche to revolving cards[cite: 1, 7].</td>
+          <td>• Enroll in Google Project Management Professional Certificate on Coursera ($49/mo)[cite: 1].<br>• Submit volunteer application for backstage crew / set-build at Theatre Arlington or Stage West[cite: 1, 14].</td>
+          <td><strong>Floor Mat Dignity Pivot:</strong> Do not treat sleeping off the floor as a luxury reward; treat it as an athletic recovery imperative for your spine and hips[cite: 1, 4].</td>
+        </tr>
+        <tr>
+          <td><strong>12 Months<br>(By Sep 06, 2027)</strong></td>
+          <td>• <strong>$0.00 Credit Card Debt Achieved (June 30, 2027)</strong>[cite: 1, 7].<br>• Reclaim +$1,295/mo debt service; monthly surplus expands to +$1,962–$2,216/mo[cite: 1, 5, 7].<br>• Complete Nelnet IDR Recertification on July 1 (lock payment &lt;$200/mo)[cite: 1, 7].<br>• Buy capsule wardrobe tailored to 142-lb physique ($400–$500)[cite: 1].<br>• USAA Savings builds to ~$11,000+ liquid cash[cite: 1, 5, 7].</td>
+          <td>• Build 1-page quantified operations portfolio from startup coordinator work[cite: 1].<br>• Prepare two contrasting 16-bar vocal cuts and one 60-second contemporary monologue[cite: 1].<br>• Engage in active low-stakes dating loops (37–47 age range)[cite: 1].</td>
+          <td><strong>The Fit-Over-Brand Wardrobe Rule:</strong> A $25 tailored Oxford button-down on an athletic 142-lb V-taper looks exponentially better than a $200 designer shirt on an unconditioned frame[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>18 Months<br>(By Mar 06, 2028 / Horizon: Dec 31, 2027)</strong></td>
+          <td>• <strong>Land $75,000–$85,000 remote Program/Operations role</strong> at a 501(c)(3)/university (qualifying for 100% tax-free PSLF)[cite: 1, 5, 7].<br>• Acquire reliable commuter vehicle (Honda Super Cub/ADV150 with Litelok X1 or subcompact auto e.g., Fit/Yaris) in cash[cite: 1].<br>• <strong>Attend open general auditions</strong> for local musical or play in Fort Worth / Arlington[cite: 1].<br>• Maintain 140–142 lb sculpted physique, sub-3:00 marathon engine, clean apartment, and active partnership readiness[cite: 1, 7].</td>
+          <td>• Execute 5 targeted, custom-tailored applications/week in Q3–Q4 2027[cite: 1, 5].<br>• If startup terminates Dec 31, 2027 without offer, submit zero-income administrative recalculation to Nelnet immediately ($0 payment safeguard)[cite: 1, 5, 7].</td>
+          <td><strong>The Sovereign Posture:</strong> You enter late 2027 with $0 consumer debt, $11k–$14k cash reserves, a sub-3:15 marathon engine, a repaired smile, and an athletic V-taper[cite: 1, 4, 5, 7]. You are not auditioning for life; you are selecting where to deploy your value[cite: 1].</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 </body>
 </html>
