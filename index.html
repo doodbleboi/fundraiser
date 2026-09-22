@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>State Fair of Texas - Master Schedule & Value Food Guide</title>
+<title>State Fair of Texas - Opening Day</title>
 <style>
   @page {
     size: letter portrait;
-    margin: 0.5in;
+    margin: 0.45in;
   }
   * {
     box-sizing: border-box;
@@ -17,9 +17,9 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: #1a1a1a;
     background-color: #fff;
-    line-height: 1.42;
-    font-size: 9pt;
-    padding: 24px;
+    line-height: 1.4;
+    font-size: 8.8pt;
+    padding: 20px;
   }
   .page {
     position: relative;
@@ -28,40 +28,51 @@
   }
   .page-break {
     page-break-before: always;
-    margin-top: 20px;
+    margin-top: 15px;
   }
-  .floating-thumb {
+
+  /* Round corner badges that link directly to shared photos */
+  .avatar-link {
     position: absolute;
-    width: 48px;
-    height: 48px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
-    object-fit: cover;
+    overflow: hidden;
     border: 2px solid #cbd5e1;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+    z-index: 20;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+  }
+  .avatar-link svg {
+    width: 100%;
+    height: 100%;
+    display: block;
   }
   .top-right { top: 0; right: 0; }
   .top-left { top: 0; left: 0; }
-  .bottom-right { bottom: 8px; right: 0; }
-  .bottom-left { bottom: 8px; left: 0; }
+  .bottom-right { bottom: 6px; right: 0; }
 
   header {
     border-bottom: 2px solid #0f172a;
-    padding-bottom: 10px;
-    margin-bottom: 16px;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     padding-right: 56px;
   }
   .title-area h1 {
-    font-size: 18pt;
+    font-size: 17pt;
     letter-spacing: -0.5px;
     font-weight: 700;
     color: #0f172a;
   }
   .title-area p {
-    font-size: 9.5pt;
+    font-size: 9pt;
     color: #475569;
     margin-top: 2px;
   }
@@ -72,7 +83,7 @@
     letter-spacing: 0.8px;
     background: #e2e8f0;
     color: #334155;
-    padding: 4px 8px;
+    padding: 4px 7px;
     border-radius: 4px;
     white-space: nowrap;
   }
@@ -81,34 +92,51 @@
     color: #065f46;
     border: 1px solid #a7f3d0;
   }
+
+  /* Weather & Sun Banner */
+  .solar-strip {
+    display: flex;
+    justify-content: space-between;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 5px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    font-size: 7.8pt;
+    color: #78350f;
+  }
+  .solar-strip div strong {
+    color: #92400e;
+  }
+
   .section-title {
-    font-size: 10pt;
+    font-size: 9.5pt;
     font-weight: 700;
     color: #0f172a;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin: 16px 0 8px;
+    margin: 14px 0 6px;
     padding-bottom: 3px;
     border-bottom: 1px solid #cbd5e1;
   }
   table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
   th {
     background-color: #f8fafc;
     color: #475569;
     font-weight: 600;
-    font-size: 7.5pt;
+    font-size: 7.2pt;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     text-align: left;
-    padding: 6px 8px;
+    padding: 5px 8px;
     border-bottom: 1px solid #cbd5e1;
   }
   td {
-    padding: 6px 8px;
+    padding: 5px 8px;
     border-bottom: 1px solid #f1f5f9;
     vertical-align: top;
   }
@@ -116,18 +144,18 @@
     background-color: #fcfcfd;
   }
   .time-col {
-    width: 15%;
+    width: 14%;
     font-weight: 700;
     color: #0f172a;
     font-variant-numeric: tabular-nums;
   }
   .zone-col {
-    width: 15%;
+    width: 14%;
     color: #475569;
-    font-size: 8pt;
+    font-size: 7.8pt;
   }
   .activity-col {
-    width: 48%;
+    width: 50%;
     font-weight: 600;
     color: #0f172a;
   }
@@ -143,13 +171,13 @@
     font-size: 7.5pt;
   }
   .price-col {
-    width: 16%;
+    width: 15%;
     font-weight: 700;
     color: #0f172a;
     font-variant-numeric: tabular-nums;
   }
   .vendor-col {
-    width: 28%;
+    width: 27%;
     font-weight: 600;
     color: #1e293b;
   }
@@ -160,7 +188,7 @@
     font-size: 7.5pt;
   }
   .item-col {
-    width: 38%;
+    width: 40%;
     color: #0f172a;
   }
   .badge {
@@ -168,7 +196,7 @@
     padding: 2px 5px;
     border-radius: 3px;
     font-weight: 600;
-    font-size: 7pt;
+    font-size: 6.8pt;
   }
   .badge-sun { background: #fef3c7; color: #92400e; }
   .badge-ac { background: #e0f2fe; color: #0369a1; }
@@ -183,35 +211,35 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
-    margin-top: 10px;
+    margin-top: 8px;
   }
   .card {
     border: 1px solid #e2e8f0;
-    border-radius: 6px;
-    padding: 10px;
+    border-radius: 5px;
+    padding: 8px 10px;
     background: #fafafa;
   }
   .card h3 {
-    font-size: 8.5pt;
+    font-size: 8.2pt;
     font-weight: 700;
     color: #0f172a;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 3px;
+    padding-bottom: 2px;
   }
   .card ul {
     list-style-type: none;
     padding-left: 0;
   }
   .card li {
-    font-size: 7.5pt;
+    font-size: 7.4pt;
     color: #334155;
-    margin-bottom: 4px;
-    line-height: 1.35;
+    margin-bottom: 3px;
+    line-height: 1.3;
   }
 
   @media print {
-    body { padding: 0; font-size: 8.5pt; }
+    body { padding: 0; font-size: 8.2pt; }
     .no-print { display: none; }
     .page { min-height: auto; }
     table { page-break-inside: auto; }
@@ -222,19 +250,39 @@
 </head>
 <body>
 
-<!-- PAGE 1: MORNING TRANSIT & DIRECT SUN SHOWS -->
+<!-- PAGE 1: MORNING TRANSIT, SUN SCHEDULE & OUTDOOR SHOWS -->
 <div class="page">
-  <img src="https://photos.app.goo.gl/LDApF6Pq2QPhR1vw9" alt="Thumb" class="floating-thumb top-right">
+  <a href="https://photos.app.goo.gl/LDApF6Pq2QPhR1vw9" target="_blank" title="View Shared Photo 1" class="avatar-link top-right">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#3b82f6" />
+          <stop offset="100%" stop-color="#1d4ed8" />
+        </linearGradient>
+      </defs>
+      <circle cx="50" cy="50" r="50" fill="url(#grad1)"/>
+      <path d="M30 65 L45 45 L58 58 L68 46 L80 65 Z" fill="#ffffff" opacity="0.9"/>
+      <circle cx="40" cy="36" r="7" fill="#fde047"/>
+    </svg>
+  </a>
   
   <header>
     <div class="title-area">
       <h1>State Fair of Texas — Opening Day</h1>
-      <p>Friday, September 25 • Full Day Route, Morning Transit & Outdoor Early Shows</p>
+      <p>Friday, September 25 • Schedule</p>
     </div>
     <div class="tag">Part 1: Morning Plan</div>
   </header>
 
-  <div class="section-title">Morning: Transit, Arrival & Outdoor Shows (Beating the Heat)</div>
+  <!-- Dallas 9/25 Solar Profile -->
+  <div class="solar-strip">
+    <div><strong>Sunrise:</strong> 7:16 AM CDT</div>
+    <div><strong>Sunset:</strong> 7:21 PM CDT</div>
+    <div><strong>Sunniest Window (Peak UV):</strong> 12:00 PM – 2:30 PM (Solar Meridian: 1:20 PM)</div>
+    <div><strong>Hottest Window:</strong> 3:00 PM – 5:30 PM (Thermal Peak)</div>
+  </div>
+
+  <div class="section-title">Morning: Transit, Arrival & Outdoor Shows (Beating the Sun)</div>
   <table>
     <thead>
       <tr>
@@ -278,7 +326,7 @@
       <tr>
         <td class="time-col">9:25 – 9:45 AM</td>
         <td>Noble Coyote</td>
-        <td>Quick walk to Noble Coyote Coffee Roasters (823 Exposition Ave). Grab pour-overs & cold brew.</td>
+        <td>Quick 3-min walk to Noble Coyote Coffee Roasters (823 Exposition Ave). Grab pour-overs & cold brew.</td>
         <td><span class="badge badge-ac">Morning Coffee</span></td>
       </tr>
       <tr>
@@ -316,7 +364,7 @@
 
   <div class="grid-2">
     <div class="card">
-      <h3>Morning Directives</h3>
+      <h3>Morning Transit & Entry Directives</h3>
       <ul>
         <li><strong>Bag Policy Check:</strong> Clear bags up to 12x12x6 inches or small clutch bags permitted. Empty refillable water bottles allowed through security.</li>
         <li><strong>Coupon Purchases:</strong> Skip midday kiosk lines by purchasing digital or paper coupons immediately after passing through the Front Gate.</li>
@@ -325,7 +373,7 @@
     <div class="card">
       <h3>Sun & Shade Management</h3>
       <ul>
-        <li><strong>Stunt Dogs & Pig Races:</strong> These two popular outdoor shows are knocked out before midday when open-air seating can get uncomfortable[cite: 19, 22].</li>
+        <li><strong>Outdoor Shows Strategy:</strong> Completing Stunt Dogs and Pig Races prior to 12:00 PM keeps you off open-air metal bleachers during the peak solar radiation window[cite: 19, 22].</li>
         <li><strong>Noble Coyote Timing:</strong> Only 350 feet from Fair Park Station platform; plenty of time to order and walk back to the queue before 10:00 AM.</li>
       </ul>
     </div>
@@ -334,7 +382,19 @@
 
 <!-- PAGE 2: INDOOR A/C AFTERNOON, AUTO SHOW & WINE GARDEN PARADE -->
 <div class="page page-break">
-  <img src="https://photos.app.goo.gl/UxPfKnNgtCwdxtuV6" alt="Thumb" class="floating-thumb top-right">
+  <a href="https://photos.app.goo.gl/UxPfKnNgtCwdxtuV6" target="_blank" title="View Shared Photo 2" class="avatar-link top-right">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#10b981" />
+          <stop offset="100%" stop-color="#047857" />
+        </linearGradient>
+      </defs>
+      <circle cx="50" cy="50" r="50" fill="url(#grad2)"/>
+      <path d="M28 68 L48 42 L62 56 L72 44 L84 68 Z" fill="#ffffff" opacity="0.9"/>
+      <circle cx="68" cy="32" r="7" fill="#fde047"/>
+    </svg>
+  </a>
   
   <header>
     <div class="title-area">
@@ -359,7 +419,7 @@
         <td class="time-col">12:30 – 2:15 PM</td>
         <td>Centennial & Auto Bldgs</td>
         <td><strong>Texas Auto Show (Full 105-minute run):</strong> Explore Automobile Building, Centennial Building, concept vehicles, luxury lineups, and interactive exhibits in continuous air-conditioning[cite: 3, 19, 43].</td>
-        <td><span class="badge badge-ac">Full A/C Break</span></td>
+        <td><span class="badge badge-ac">Full A/C Break (Max Sun)</span></td>
       </tr>
       <tr>
         <td class="time-col">2:15 – 3:15 PM</td>
@@ -371,7 +431,7 @@
         <td class="time-col">3:15 – 4:00 PM</td>
         <td>Hall of State</td>
         <td>Historic Texas murals, air-conditioned historical exhibits, and quiet resting hall[cite: 37, 49].</td>
-        <td><span class="badge badge-ac">Indoor A/C</span></td>
+        <td><span class="badge badge-ac">Indoor A/C (Peak Heat)</span></td>
       </tr>
       <tr>
         <td class="time-col">4:00 – 4:45 PM</td>
@@ -462,7 +522,19 @@
 
 <!-- PAGE 3: VALUE FOOD & CHEAP EATS GUIDE -->
 <div class="page page-break">
-  <img src="https://photos.app.goo.gl/1GpzW5ofgHpsNZpD8" alt="Thumb" class="floating-thumb top-right">
+  <a href="https://photos.app.goo.gl/1GpzW5ofgHpsNZpD8" target="_blank" title="View Shared Photo 3" class="avatar-link top-right">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f59e0b" />
+          <stop offset="100%" stop-color="#d97706" />
+        </linearGradient>
+      </defs>
+      <circle cx="50" cy="50" r="50" fill="url(#grad3)"/>
+      <path d="M25 65 L45 42 L58 55 L70 40 L82 65 Z" fill="#ffffff" opacity="0.9"/>
+      <circle cx="36" cy="32" r="7" fill="#ffffff"/>
+    </svg>
+  </a>
   
   <header>
     <div class="title-area">
