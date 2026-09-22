@@ -1,42 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>State Fair of Texas - Opening Day</title>
+<meta charset="UTF-8">
+<title>State Fair of Texas - Opening Day Master Schedule & Value Guide</title>
 
-  <!-- 1. Browser Tab Icon (Favicon) -->
-  <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg">
-  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg">
+<!-- Tab Favicon & Social Meta Tags -->
+<link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg">
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg">
+<meta property="og:title" content="State Fair of Texas - Opening Day Schedule">
+<meta property="og:description" content="Step-by-step timeline, transit guide, wine gardens, and Every Day Values dining guide.">
+<meta property="og:image" content="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg">
+<meta property="og:url" content="https://doodleydoodle.duckdns.org/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg">
 
-  <!-- 2. Main Thumbnail for Link Previews (Open Graph / iMessage / Discord / Facebook) -->
-  <meta property="og:title" content="State Fair of Texas - Opening Day Schedule">
-  <meta property="og:description" content="Step-by-step timeline, transit guide, wine gardens, and Every Day Values dining guide.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg">
-  <meta property="og:url" content="https://doodleydoodle.duckdns.org/">
-  <meta property="og:type" content="website">
-
-  <!-- 3. Main Thumbnail for Twitter / X Previews -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg">
+<style>
+  @page {
+    size: letter portrait;
+    margin: 0.4in;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a1a1a;
+    background-color: #fff;
+    line-height: 1.38;
+    font-size: 8.5pt;
+    padding: 16px;
+  }
   
-  <!-- (rest of your styles and script tags) -->
+  /* Distinct Page Wrapper with corner padding to avoid thumbnail collision */
+  .page {
+    position: relative;
+    padding: 44px 44px 40px 44px;
+    min-height: 980px;
+    clear: both;
+  }
+  .page-break {
+    page-break-before: always;
+    margin-top: 10px;
+  }
+
+  /* Unedited Full Width Hero Banner across the top of Page 1 */
+  .hero-banner-wrap {
+    width: 100%;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border-radius: 4px;
+    border: 1px solid #cbd5e1;
+  }
+  .hero-banner-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Circular Corner Badges (fair1.jpg on every corner of each page) */
+  .corner-thumb {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid #94a3b8;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+  }
+  .corner-tl { top: 0; left: 0; }
+  .corner-tr { top: 0; right: 0; }
+  .corner-bl { bottom: 0; left: 0; }
+  .corner-br { bottom: 0; right: 0; }
+
+  header {
+    border-bottom: 2px solid #0f172a;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-area h1 {
+    font-size: 16pt;
+    letter-spacing: -0.4px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .title-area p {
+    font-size: 8.5pt;
+    color: #475569;
+    margin-top: 1px;
+  }
+  .tag {
+    font-size: 7pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    background: #e2e8f0;
+    color: #334155;
+    padding: 3px 6px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .tag-green {
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+  }
+
+  /* Solar Info Strip */
+  .solar-strip {
+    display: flex;
+    justify-content: space-between;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    font-size: 7.4pt;
+    color: #78350f;
+  }
+  .solar-strip div strong {
+    color: #92400e;
+  }
+
+  .section-title {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 10px 0 5px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #cbd5e1;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+  }
+  th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    font-size: 7pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: left;
+    padding: 4px 6px;
+    border-bottom: 1px solid #cbd5e1;
+  }
+  td {
+    padding: 4px 6px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td {
+    background-color: #fcfcfd;
+  }
+
+  .time-col {
+    width: 15%;
+    font-weight: 700;
+    color: #0f172a;
+    font-variant-numeric: tabular-nums;
+  }
+  .zone-col {
+    width: 15%;
+    color: #475569;
+    font-size: 7.5pt;
+  }
+  .activity-col {
+    width: 48%;
+    font-weight: 600;
+    color: #0f172a;
+  }
+  .activity-col small {
+    display: block;
+    font-weight: 400;
+    color: #64748b;
+    font-size: 7.2pt;
+    margin-top: 1px;
+  }
+  .category-col {
+    width: 22%;
+    font-size: 7.2pt;
+  }
+  .price-col {
+    width: 16%;
+    font-weight: 700;
+    color: #0f172a;
+    font-variant-numeric: tabular-nums;
+  }
+  .vendor-col {
+    width: 28%;
+    font-weight: 600;
+    color: #1e293b;
+  }
+  .vendor-col small {
+    display: block;
+    font-weight: 400;
+    color: #64748b;
+    font-size: 7.2pt;
+  }
+  .item-col {
+    width: 38%;
+    color: #0f172a;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 6.5pt;
+  }
+  .badge-sun { background: #fef3c7; color: #92400e; }
+  .badge-ac { background: #e0f2fe; color: #0369a1; }
+  .badge-drinks { background: #fce7f3; color: #9d174d; }
+  .badge-transit { background: #f1f5f9; color: #475569; }
+  .badge-value { background: #dcfce7; color: #166534; }
+  .badge-icon { background: #fef3c7; color: #92400e; }
+  .badge-drink { background: #e0f2fe; color: #0369a1; }
+  .badge-sweet { background: #fce7f3; color: #9d174d; }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 6px;
+  }
+  .card {
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 6px 8px;
+    background: #fafafa;
+  }
+  .card h3 {
+    font-size: 7.8pt;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 3px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 2px;
+  }
+  .card ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  .card li {
+    font-size: 7.2pt;
+    color: #334155;
+    margin-bottom: 2px;
+    line-height: 1.25;
+  }
+
+  @media print {
+    body { padding: 0; font-size: 8pt; }
+    .no-print { display: none; }
+    .page { min-height: auto; padding: 36px 36px 32px 36px; }
+    table { page-break-inside: auto; }
+    tr { page-break-inside: avoid; page-break-after: auto; }
+    .page-break { page-break-before: always; }
+  }
+</style>
 </head>
 <body>
 
-<!-- PAGE 1: MORNING TRANSIT, SUN PROFILE & OUTDOOR SHOWS -->
+<!-- PAGE 1: FULL HERO BANNER, MORNING TRANSIT, SUN PROFILE & OUTDOOR SHOWS -->
 <div class="page">
-  <!-- Top Banner: fair3.png -->
-  <div class="hero-banner-container">
-    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair3.png" alt="State Fair Banner" class="hero-banner" onerror="this.src='fair3.png'">
-  </div>
+  <!-- 4 Corner Badges: fair1.jpg -->
+  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-tl" onerror="this.src='fair1.jpg'">
+  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-tr" onerror="this.src='fair1.jpg'">
+  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-bl" onerror="this.src='fair1.jpg'">
+  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-br" onerror="this.src='fair1.jpg'">
 
-  <!-- Round Corner Thumbnail 1: fair1.jpg -->
-  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="State Fair Photo 1" class="floating-thumb top-right" onerror="this.src='fair1.jpg'">
+  <!-- Unedited Entire Top Banner: fair3.png -->
+  <div class="hero-banner-wrap">
+    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair3.png" alt="State Fair of Texas Banner" onerror="this.src='fair3.png'">
+  </div>
 
   <header>
     <div class="title-area">
       <h1>State Fair of Texas — Opening Day</h1>
-      <p>Friday, September 25 • Full Day Step-by-Step Schedule & Solar Conditions[cite: 1, 3]</p>
+      <p>Friday, September 25 • Full Day Route, Morning Transit & Outdoor Early Shows[cite: 2, 7]</p>
     </div>
     <div class="tag">Part 1: Morning Plan</div>
   </header>
@@ -45,8 +296,8 @@
   <div class="solar-strip">
     <div><strong>Sunrise:</strong> 7:16 AM CDT</div>
     <div><strong>Sunset:</strong> 7:21 PM CDT</div>
-    <div><strong>Sunniest Window (Peak UV):</strong> 12:00 PM – 2:30 PM (Solar Meridian: 1:20 PM)</div>
-    <div><strong>Hottest Window:</strong> 3:00 PM – 5:30 PM (Thermal Lag Peak)</div>
+    <div><strong>Sunniest (Peak UV):</strong> 12:00 PM – 2:30 PM (Meridian: 1:20 PM)</div>
+    <div><strong>Hottest Part of Day:</strong> 3:00 PM – 5:30 PM (Thermal Lag)</div>
   </div>
 
   <div class="section-title">Morning: Transit, Arrival & Outdoor Shows (Beating the Sun)</div>
@@ -63,31 +314,31 @@
       <tr>
         <td class="time-col">7:45 – 8:05 AM</td>
         <td>2806 Sarah Dr</td>
-        <td>Depart home; drive to CentrePort/DFW Airport Station. Park in free commuter lot[cite: 1, 7].</td>
+        <td>Depart home; drive to CentrePort/DFW Airport Station. Park in free commuter lot[cite: 1, 9].</td>
         <td><span class="badge badge-transit">Drive / Park</span></td>
       </tr>
       <tr>
         <td class="time-col">8:05 – 8:28 AM</td>
         <td>CentrePort Lot</td>
-        <td>Purchase regional day passes ($12 DART/TRE Regional) in GoPass app[cite: 11]. Walk to platform[cite: 7].</td>
+        <td>Purchase regional day passes ($12 DART/TRE Regional) in GoPass app[cite: 1, 9]. Walk to platform.</td>
         <td><span class="badge badge-transit">GoPass Ready</span></td>
       </tr>
       <tr>
         <td class="time-col">8:29 – 8:56 AM</td>
         <td>TRE Eastbound</td>
-        <td>Board Eastbound TRE train; transfer at Victory Station[cite: 1, 7, 11].</td>
+        <td>Board Eastbound TRE train; transfer at Victory Station[cite: 1, 6, 9].</td>
         <td><span class="badge badge-transit">TRE Rail</span></td>
       </tr>
       <tr>
         <td class="time-col">8:56 – 9:05 AM</td>
         <td>Victory Station</td>
-        <td>Cross-platform transfer to DART Rail Green Line Southbound toward Buckner/Lawnview[cite: 1, 7, 11].</td>
+        <td>Cross-platform transfer to DART Rail Green Line Southbound toward Buckner/Lawnview[cite: 1, 6, 9].</td>
         <td><span class="badge badge-transit">DART Green Line</span></td>
       </tr>
       <tr>
         <td class="time-col">9:05 – 9:23 AM</td>
         <td>DART Rail</td>
-        <td>Green Line train to Fair Park Station on Parry Ave (historic Front Gate)[cite: 1, 2, 7, 8].</td>
+        <td>Green Line train to Fair Park Station on Parry Ave (historic Front Gate)[cite: 1, 2, 6, 7].</td>
         <td><span class="badge badge-transit">Arrive 9:23 AM</span></td>
       </tr>
       <tr>
@@ -99,31 +350,31 @@
       <tr>
         <td class="time-col">9:45 – 10:00 AM</td>
         <td>Parry Ave Gate</td>
-        <td>Walk to Front Gate[cite: 2, 8]. Scan digital admission, clear bag check, and enter right at 10:00 AM rope drop[cite: 8, 15].</td>
+        <td>Walk to Front Gate[cite: 2, 7]. Scan digital admission, clear bag check, enter right at 10:00 AM rope drop[cite: 2, 7, 43].</td>
         <td><span class="badge badge-sun">Gate Rope Drop</span></td>
       </tr>
       <tr>
         <td class="time-col">10:00 – 10:30 AM</td>
         <td>Esplanade / Big Tex</td>
-        <td>Stroll down Esplanade, grab photo with Big Tex before crowds build, load food coupons[cite: 9, 36].</td>
+        <td>Stroll down Esplanade, grab photo with Big Tex before crowds build, load food coupons[cite: 11, 22].</td>
         <td><span class="badge badge-sun">Morning Sun</span></td>
       </tr>
       <tr>
         <td class="time-col">10:30 – 11:15 AM</td>
         <td>Marine Corps Sq</td>
-        <td><strong>All-Star Stunt Dog Show</strong> (Near Women's Museum / Marine Corps Square)[cite: 36]. Catch early outdoor bleachers before peak noon sun.</td>
+        <td><strong>All-Star Stunt Dog Show</strong> (Near Nimitz & MLK / Marine Corps Square)[cite: 4, 11]. Catch early outdoor bleachers before noon heat.</td>
         <td><span class="badge badge-sun">Outdoor Bleachers</span></td>
       </tr>
       <tr>
         <td class="time-col">11:15 – 11:45 AM</td>
-        <td>Livestock Arena</td>
-        <td><strong>Statewide Remodeling Pig Races</strong> (11:30 AM heat)[cite: 36]. Outdoor covered track, early breeze.</td>
-        <td><span class="badge badge-sun">Outdoor Covered</span></td>
+        <td>Chevrolet Plaza</td>
+        <td><strong>Statewide Remodeling Pig Races</strong> (11:30 AM heat)[cite: 5, 11]. Outdoor track, early breeze.</td>
+        <td><span class="badge badge-sun">Outdoor Track</span></td>
       </tr>
       <tr>
         <td class="time-col">11:45 – 12:30 PM</td>
         <td>Tower Bldg Food</td>
-        <td>Early lunch: Fletcher's Original Corny Dog & Big Tex Choice Award Fried Food finalists[cite: 6, 36, 54].</td>
+        <td>Early lunch: Fletcher's Original Corny Dog & Big Tex Choice Award Fried Food finalists[cite: 5, 11, 15].</td>
         <td><span class="badge badge-ac">Covered / Seated</span></td>
       </tr>
     </tbody>
@@ -133,15 +384,15 @@
     <div class="card">
       <h3>Morning Transit & Entry Directives</h3>
       <ul>
-        <li><strong>Bag Policy Check:</strong> Clear bags up to 12x12x6 inches or small clutch bags permitted[cite: 15]. Empty refillable water bottles allowed through security.</li>
-        <li><strong>Coupon Purchases:</strong> Skip midday kiosk lines by purchasing digital or paper coupons immediately after passing through the Front Gate.</li>
+        <li><strong>Bag Policy Check:</strong> Clear bags up to 12x12x6 inches or small clutch bags permitted[cite: 43]. Empty refillable plastic water bottles allowed.</li>
+        <li><strong>Coupon Purchases:</strong> Buy digital or paper coupons immediately after passing the Front Gate to bypass midday lines[cite: 22].</li>
       </ul>
     </div>
     <div class="card">
       <h3>Sun & Shade Management</h3>
       <ul>
-        <li><strong>Outdoor Shows Strategy:</strong> Completing Stunt Dogs and Pig Races prior to 12:00 PM keeps you off open-air metal bleachers during the peak solar radiation window[cite: 36].</li>
-        <li><strong>Noble Coyote Timing:</strong> Only 350 feet from Fair Park Station platform; plenty of time to order and walk back to the queue before 10:00 AM[cite: 8].</li>
+        <li><strong>Outdoor Shows Strategy:</strong> Completing Stunt Dogs and Pig Races prior to 12:00 PM keeps you off metal bleachers during peak UV[cite: 4, 5].</li>
+        <li><strong>Noble Coyote Timing:</strong> Located 350 feet from the Fair Park Station platform; plenty of time to order and walk back before 10:00 AM[cite: 2].</li>
       </ul>
     </div>
   </div>
@@ -149,13 +400,16 @@
 
 <!-- PAGE 2: INDOOR A/C AFTERNOON, AUTO SHOW & WINE GARDEN PARADE -->
 <div class="page page-break">
-  <!-- Round Corner Thumbnail 2: fair2.jpeg -->
-  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair2.jpeg" alt="State Fair Photo 2" class="floating-thumb top-right" onerror="this.src='fair2.jpeg'">
+  <!-- 4 Corner Badges: fair1.jpg -->
+  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-tl" onerror="this.src='fair1.jpg'">
+  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-tr" onerror="this.src='fair1.jpg'">
+  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-bl" onerror="this.src='fair1.jpg'">
+  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-br" onerror="this.src='fair1.jpg'">
 
   <header>
     <div class="title-area">
       <h1>State Fair of Texas — Opening Day</h1>
-      <p>Friday, September 25 • Peak Heat A/C Retreats, Wine Gardens & Starlight Parade[cite: 3, 13, 23]</p>
+      <p>Friday, September 25 • Peak Heat A/C Retreats, Wine Gardens & Starlight Parade[cite: 2, 4, 16]</p>
     </div>
     <div class="tag">Part 2: Afternoon & Evening</div>
   </header>
@@ -174,31 +428,31 @@
       <tr>
         <td class="time-col">12:30 – 2:15 PM</td>
         <td>Centennial & Auto Bldgs</td>
-        <td><strong>Texas Auto Show (Full 105-minute run):</strong> Explore Automobile Building, Centennial Building, concept vehicles, luxury lineups, and interactive exhibits in continuous air-conditioning[cite: 9, 23, 36, 52].</td>
-        <td><span class="badge badge-ac">Full A/C Break (Max Sun)</span></td>
+        <td><strong>Texas Auto Show (Full 105-minute run):</strong> Explore Automobile Building, Centennial Building, concept vehicles, luxury lineups, and interactive exhibits in continuous air-conditioning[cite: 5, 11, 16].</td>
+        <td><span class="badge badge-ac">Full A/C (Max Sun)</span></td>
       </tr>
       <tr>
         <td class="time-col">2:15 – 3:15 PM</td>
         <td>Creative Arts Bldg</td>
-        <td>Butter sculpture, ribbon-winning culinary showcases, Cutco Kitchen demos, and handmade artisan crafts[cite: 5, 14, 18].</td>
+        <td>Butter sculpture, ribbon-winning culinary showcases, Cutco Kitchen demos, and handmade artisan crafts[cite: 11, 50].</td>
         <td><span class="badge badge-ac">Indoor A/C</span></td>
       </tr>
       <tr>
         <td class="time-col">3:15 – 4:00 PM</td>
         <td>Hall of State</td>
-        <td>Historic Texas murals, air-conditioned historical exhibits, and quiet resting hall[cite: 27, 36].</td>
+        <td>Historic Texas murals, air-conditioned historical exhibits, and quiet resting hall[cite: 3, 11].</td>
         <td><span class="badge badge-ac">Indoor A/C (Peak Heat)</span></td>
       </tr>
       <tr>
         <td class="time-col">4:00 – 4:45 PM</td>
         <td>Livestock Barns</td>
-        <td>Birthing Barn & Pan-Am livestock shows[cite: 9, 36]. High indoor fans, fully protected from direct overhead sun.</td>
+        <td>Birthing Barn & Pan-Am livestock shows[cite: 5, 11]. High indoor fans, fully protected from direct overhead sun.</td>
         <td><span class="badge badge-sun">Covered Pavilion</span></td>
       </tr>
       <tr>
         <td class="time-col">4:45 – 5:30 PM</td>
         <td>Go Texan Pavilion</td>
-        <td><strong>Texas Craft Beer Tasting / Spirit sampling</strong> inside Go Texan[cite: 36]. Sample local products and craft beer taps.</td>
+        <td><strong>Texas Craft Beer Tasting / Spirit sampling</strong> inside Go Texan[cite: 11]. Sample local products and craft beer taps.</td>
         <td><span class="badge badge-drinks">Beer / Tasting</span></td>
       </tr>
     </tbody>
@@ -218,43 +472,43 @@
       <tr>
         <td class="time-col">5:30 – 6:15 PM</td>
         <td>Wine Experience</td>
-        <td>State Fair Wine Garden: <strong>Texas Wine Hour (starts 6:00 PM)</strong>[cite: 57]. Sample Texas Hill Country & High Plains flight ribbons.</td>
+        <td>State Fair Wine Garden: <strong>Texas Wine Hour (starts 6:00 PM)</strong>[cite: 5]. Sample Texas Hill Country & High Plains flight ribbons.</td>
         <td><span class="badge badge-drinks">Wine Tasting</span></td>
       </tr>
       <tr>
         <td class="time-col">6:15 – 7:00 PM</td>
         <td>The Old Mill / Patio</td>
-        <td><strong>Rousso’s Wine Garden at The Old Mill:</strong> Grab patio tables on Grand Ave[cite: 9, 21, 36]. Order Texas reserve wines or frozen cocktails; listen to the ZiegenBock Stage band[cite: 21, 36].</td>
+        <td><strong>Rousso’s Wine Garden at The Old Mill:</strong> Grab patio tables on Grand Ave[cite: 23]. Order Texas reserve wines or cocktails; listen to the ZiegenBock Stage band[cite: 23, 27].</td>
         <td><span class="badge badge-drinks">Patio Wine Garden</span></td>
       </tr>
       <tr>
         <td class="time-col">7:00 – 7:35 PM</td>
         <td>Grand Ave / Big Tex</td>
-        <td><strong>Front-row viewing for kickoff of Kroger Starlight Parade (Starts 7:00 PM)[cite: 6, 13].</strong> Floats roll directly past your Old Mill patio vantage[cite: 9, 36]!</td>
+        <td><strong>Front-row viewing for kickoff of Kroger Starlight Parade (Starts 7:00 PM)[cite: 4, 5].</strong> Floats roll directly past your Old Mill patio vantage[cite: 11, 23]!</td>
         <td><span class="badge badge-drinks">Prime Parade View</span></td>
       </tr>
       <tr>
         <td class="time-col">7:35 – 8:15 PM</td>
         <td>Esplanade Lagoon</td>
-        <td><strong>Mattress Firm Illumination Sensation (7:45 PM):</strong> Fireworks, dancing waters, and laser light show over the lagoon[cite: 14, 27, 36].</td>
+        <td><strong>Mattress Firm Illumination Sensation (7:45 PM):</strong> Fireworks, dancing waters, and laser light show over the lagoon[cite: 5, 14].</td>
         <td><span class="badge badge-sun">Outdoor Spectacular</span></td>
       </tr>
       <tr>
         <td class="time-col">8:15 – 9:00 PM</td>
         <td>The Midway / Chevy Stage</td>
-        <td>Midway neon lights walk, funnel cake dessert, or check out headlining music at Chevrolet Main Stage[cite: 4, 8, 36].</td>
+        <td>Midway neon lights walk, funnel cake dessert, or check out headlining music at Chevrolet Main Stage[cite: 11, 37].</td>
         <td><span class="badge badge-sun">Evening Cooler</span></td>
       </tr>
       <tr>
         <td class="time-col">9:00 – 9:45 PM</td>
         <td>Parry Ave / DART</td>
-        <td>Walk to Fair Park DART Station on Parry Ave[cite: 2, 8, 11]; board Northbound Green Line train to Victory Station[cite: 1, 11].</td>
+        <td>Walk to Fair Park DART Station on Parry Ave[cite: 2, 7, 9]; board Northbound Green Line train to Victory Station[cite: 1, 9].</td>
         <td><span class="badge badge-transit">Exit Gate / Rail</span></td>
       </tr>
       <tr>
         <td class="time-col">9:50 – 10:20 PM</td>
         <td>TRE Westbound</td>
-        <td>Transfer to Westbound TRE train back to CentrePort Station; return to Sarah Dr parked car[cite: 7, 11].</td>
+        <td>Transfer to Westbound TRE train back to CentrePort Station; return to Sarah Dr parked car[cite: 1, 9].</td>
         <td><span class="badge badge-transit">TRE Rail</span></td>
       </tr>
     </tbody>
@@ -264,13 +518,13 @@
     <div class="card">
       <h3>Wine Garden Parade Strategy</h3>
       <ul>
-        <li><strong>Rousso’s Wine Garden at The Old Mill:</strong> Directly on Grand Ave facing Big Tex[cite: 9, 21, 36]. The Starlight Parade stages nearby and starts roll-out at 7:00 PM[cite: 6, 13, 36], making this patio the top spot to sip wine and watch without having to stand in dense street crowds.</li>
+        <li><strong>Rousso’s Wine Garden at The Old Mill:</strong> Directly on Grand Ave facing Big Tex[cite: 11, 23]. The Starlight Parade stages nearby and starts roll-out at 7:00 PM[cite: 4, 5], making this patio the top spot to sip wine and watch without having to stand in dense street crowds[cite: 23].</li>
       </ul>
     </div>
     <div class="card">
       <h3>Return Transit Window</h3>
       <ul>
-        <li>Departing Fair Park around 9:00–9:15 PM comfortably beats the 10:00 PM closing rush and provides an easy platform connection at Victory Station back to CentrePort[cite: 8, 11].</li>
+        <li>Departing Fair Park around 9:00–9:15 PM comfortably beats the 10:00 PM closing rush and provides an easy platform connection at Victory Station back to CentrePort[cite: 2, 9].</li>
       </ul>
     </div>
   </div>
@@ -278,18 +532,21 @@
 
 <!-- PAGE 3: VALUE FOOD & CHEAP EATS GUIDE -->
 <div class="page page-break">
-  <!-- Round Corner Thumbnail 3: fair1.jpg Accent -->
-  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="State Fair Photo 3" class="floating-thumb top-right" onerror="this.src='fair1.jpg'">
+  <!-- 4 Corner Badges: fair1.jpg -->
+  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-tl" onerror="this.src='fair1.jpg'">
+  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-tr" onerror="this.src='fair1.jpg'">
+  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-bl" onerror="this.src='fair1.jpg'">
+  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-br" onerror="this.src='fair1.jpg'">
 
   <header>
     <div class="title-area">
       <h1>State Fair of Texas — Value Food Guide</h1>
-      <p>BigTex Every Day Values • Options Under 10 Coupons ($10) & Universal Budget Picks[cite: 34, 35]</p>
+      <p>BigTex Every Day Values • Options Under 10 Coupons ($10) & Universal Budget Picks[cite: 11, 18, 55]</p>
     </div>
     <div class="tag tag-green">Every Day Values Program</div>
   </header>
 
-  <div class="section-title">Savory Bites & Fair Classics (10 Coupons / $10 or Less)[cite: 34]</div>
+  <div class="section-title">Savory Bites & Fair Classics (10 Coupons / $10 or Less)[cite: 18, 55]</div>
   <table>
     <thead>
       <tr>
@@ -302,8 +559,8 @@
     <tbody>
       <tr>
         <td class="price-col">8 Coupons ($8)</td>
-        <td class="vendor-col">Fletcher’s Original Corny Dogs<small>Multiple stands across grounds[cite: 6]</small></td>
-        <td class="item-col">Original Fletcher's Corny Dog (all-time iconic fair staple)[cite: 6]</td>
+        <td class="vendor-col">Fletcher’s Original Corny Dogs<small>Multiple stands across grounds[cite: 15]</small></td>
+        <td class="item-col">Original Fletcher's Corny Dog (all-time iconic fair staple)[cite: 15]</td>
         <td><span class="badge badge-icon">Fair Classic</span></td>
       </tr>
       <tr>
@@ -314,37 +571,37 @@
       </tr>
       <tr>
         <td class="price-col">4 – 8 Coupons</td>
-        <td class="vendor-col">Pedro’s Tamales<small>Tower Building Food Court[cite: 36]</small></td>
+        <td class="vendor-col">Pedro’s Tamales<small>Tower Building Food Court[cite: 11]</small></td>
         <td class="item-col">Pork Tamales, Tamale Boats, and Frito Burritos</td>
         <td><span class="badge badge-value">Tex-Mex Value</span></td>
       </tr>
       <tr>
         <td class="price-col">5 – 8 Coupons</td>
-        <td class="vendor-col">Pizza & Nachos / Jack's<small>Cotton Bowl Plaza[cite: 36]</small></td>
+        <td class="vendor-col">Pizza & Nachos / Jack's<small>Cotton Bowl Plaza[cite: 11]</small></td>
         <td class="item-col">Cheese Pizza Slice (5 cpn), Crispy Tacos (8 cpn), Elote in a cup</td>
         <td><span class="badge badge-value">Lunch Saver</span></td>
       </tr>
       <tr>
         <td class="price-col">7 – 8 Coupons</td>
-        <td class="vendor-col">Cheap Eats (Vandalay)<small>Nimitz & Funway[cite: 36]</small></td>
+        <td class="vendor-col">Cheap Eats (Vandalay)<small>Nimitz & Funway[cite: 11]</small></td>
         <td class="item-col">Cheeseburger Egg Rolls, Mini Corn Dogs, Garlic Parm Fries</td>
         <td><span class="badge badge-value">Value Stand</span></td>
       </tr>
       <tr>
         <td class="price-col">7 – 10 Coupons</td>
-        <td class="vendor-col">Darn Good Corn / Texas Steakout<small>Midway / Funway[cite: 36]</small></td>
+        <td class="vendor-col">Darn Good Corn / Texas Steakout<small>Midway / Funway[cite: 11]</small></td>
         <td class="item-col">Fresh Roasted Corn on the Cob (Butter/Spices), Tater Twisters</td>
         <td><span class="badge badge-icon">Produce Classic</span></td>
       </tr>
       <tr>
         <td class="price-col">8 Coupons ($8)</td>
-        <td class="vendor-col">Sweet Connie’s / Jacks<small>Midway / Cotton Bowl Plaza[cite: 36]</small></td>
+        <td class="vendor-col">Sweet Connie’s / Jacks<small>Midway / Cotton Bowl Plaza[cite: 11]</small></td>
         <td class="item-col">Tender Basket (2 chicken tenders w/ fries) / Classic Hamburger</td>
         <td><span class="badge badge-value">Filling Meal</span></td>
       </tr>
       <tr>
         <td class="price-col">8 Coupons ($8)</td>
-        <td class="vendor-col">Velasquez Concessions<small>Funway & MLK Blvd[cite: 36]</small></td>
+        <td class="vendor-col">Velasquez Concessions<small>Funway & MLK Blvd[cite: 11]</small></td>
         <td class="item-col">Churro Cheesecake Jalapeño Popper</td>
         <td><span class="badge badge-icon">Creative Bite</span></td>
       </tr>
@@ -364,7 +621,7 @@
     <tbody>
       <tr>
         <td class="price-col">FREE</td>
-        <td class="vendor-col">GO TEXAN® Pavilion<small>Near Pan Am Arena[cite: 36]</small></td>
+        <td class="vendor-col">GO TEXAN® Pavilion<small>Near Pan Am Arena[cite: 11]</small></td>
         <td class="item-col"><strong>Free Food Samples & Chocolate Milk:</strong> Complimentary Texas-made food samples (salsas, seasonings, pastries) and free mini cups of Oak Farms chocolate milk.</td>
         <td><span class="badge badge-value">Free Tasting</span></td>
       </tr>
@@ -376,31 +633,31 @@
       </tr>
       <tr>
         <td class="price-col">5 Coupons ($5)</td>
-        <td class="vendor-col">Pineapple Whip<small>Near Leonhardt Lagoon & Coliseum[cite: 9, 36]</small></td>
+        <td class="vendor-col">Pineapple Whip<small>Near Leonhardt Lagoon & Coliseum[cite: 11]</small></td>
         <td class="item-col">Dole Whip Fruit Cone (Pineapple dairy-free soft serve)</td>
         <td><span class="badge badge-sweet">A/C Cool Down</span></td>
       </tr>
       <tr>
         <td class="price-col">6 – 8 Coupons</td>
-        <td class="vendor-col">Highland Park Soda Fountain<small>Tower Building Food Court[cite: 36]</small></td>
+        <td class="vendor-col">Highland Park Soda Fountain<small>Tower Building Food Court[cite: 11]</small></td>
         <td class="item-col">Classic Hand-Dipped Malts, Shakes & Ice Cream Floats</td>
         <td><span class="badge badge-sweet">Vintage Treat</span></td>
       </tr>
       <tr>
         <td class="price-col">6 – 8 Coupons</td>
-        <td class="vendor-col">State Fair Cotton Candy / K&A<small>Midway / Funway[cite: 36]</small></td>
+        <td class="vendor-col">State Fair Cotton Candy / K&A<small>Midway / Funway[cite: 11]</small></td>
         <td class="item-col">Cotton Candy Cones (6 cpn) & Fried Pineapple Rings (8 cpn)</td>
         <td><span class="badge badge-sweet">Sweet Treat</span></td>
       </tr>
       <tr>
         <td class="price-col">7 – 8 Coupons</td>
-        <td class="vendor-col">Darn Good Corn / The Dock<small>Midway & Nimitz[cite: 36]</small></td>
+        <td class="vendor-col">Darn Good Corn / The Dock<small>Midway & Nimitz[cite: 11]</small></td>
         <td class="item-col">Frozen Arnold Palmer, Soft Frozen Sweet Tea, Fruit Coolers</td>
         <td><span class="badge badge-drink">Cool Beverage</span></td>
       </tr>
       <tr>
         <td class="price-col">10 Coupons ($10)</td>
-        <td class="vendor-col">Shug’s Cinnamon Rolls / Milton’s<small>Tower Building / Front Gate[cite: 9, 36]</small></td>
+        <td class="vendor-col">Shug’s Cinnamon Rolls / Milton’s<small>Tower Building / Front Gate[cite: 11]</small></td>
         <td class="item-col">OG Warm Giant Cinnamon Roll / Original Powdered Funnel Cake</td>
         <td><span class="badge badge-sweet">Shareable Dessert</span></td>
       </tr>
@@ -411,14 +668,14 @@
     <div class="card">
       <h3>Budget Decal System</h3>
       <ul>
-        <li><strong>Spot the Sticker:</strong> More than 200 items carry the official "Every Day Values" sticker on concession menu boards, certifying a cost under 10 coupons ($10)[cite: 34].</li>
-        <li><strong>Tower Building Value:</strong> Full air-conditioned seating with meals from standard tacos to BBQ sandwiches priced noticeably below deep-fried novelty stands.</li>
+        <li><strong>Spot the Sticker:</strong> More than 200 items carry the official "Every Day Values" sticker on concession menu boards, certifying a cost under 10 coupons ($10)[cite: 11, 18, 55].</li>
+        <li><strong>Tower Building Value:</strong> Full air-conditioned seating with meals from standard tacos to BBQ sandwiches priced noticeably below deep-fried novelty stands[cite: 11].</li>
       </ul>
     </div>
     <div class="card">
       <h3>Zero-Coupon Refreshments</h3>
       <ul>
-        <li><strong>GO TEXAN® Pavilion Hub:</strong> A dependable stop for complimentary snacks and Oak Farms chocolate milk samples, right in the air-conditioning[cite: 3, 36].</li>
+        <li><strong>GO TEXAN® Pavilion Hub:</strong> A dependable stop for complimentary snacks and Oak Farms chocolate milk samples, right in the air-conditioning[cite: 11].</li>
         <li><strong>$2 Water Cap:</strong> Concessionaires are required to supply bottled water for 2 coupons ($2). Avoid $6 canned sodas when purely hydrating.</li>
       </ul>
     </div>
