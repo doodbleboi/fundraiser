@@ -30,7 +30,7 @@
     color: #1a1a1a;
     background-color: #fff;
     line-height: 1.32;
-    font-size: 8.1pt;
+    font-size: 8pt;
     padding: 12px;
   }
   
@@ -85,13 +85,13 @@
     align-items: flex-end;
   }
   .title-area h1 {
-    font-size: 14.5pt;
+    font-size: 14pt;
     letter-spacing: -0.4px;
     font-weight: 700;
     color: #0f172a;
   }
   .title-area p {
-    font-size: 7.8pt;
+    font-size: 7.6pt;
     color: #475569;
     margin-top: 1px;
   }
@@ -139,7 +139,7 @@
   }
 
   .section-title {
-    font-size: 8.6pt;
+    font-size: 8.5pt;
     font-weight: 700;
     color: #0f172a;
     text-transform: uppercase;
@@ -157,7 +157,7 @@
     background-color: #f8fafc;
     color: #475569;
     font-weight: 600;
-    font-size: 6.7pt;
+    font-size: 6.6pt;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     text-align: left;
@@ -182,7 +182,7 @@
   .zone-col {
     width: 16%;
     color: #475569;
-    font-size: 7.3pt;
+    font-size: 7.2pt;
   }
   .activity-col {
     width: 48%;
@@ -193,33 +193,12 @@
     display: block;
     font-weight: 400;
     color: #64748b;
-    font-size: 6.9pt;
+    font-size: 6.8pt;
     margin-top: 1px;
   }
   .category-col {
     width: 21%;
-    font-size: 6.9pt;
-  }
-  .price-col {
-    width: 15%;
-    font-weight: 700;
-    color: #0f172a;
-    font-variant-numeric: tabular-nums;
-  }
-  .vendor-col {
-    width: 28%;
-    font-weight: 600;
-    color: #1e293b;
-  }
-  .vendor-col small {
-    display: block;
-    font-weight: 400;
-    color: #64748b;
-    font-size: 6.9pt;
-  }
-  .item-col {
-    width: 38%;
-    color: #0f172a;
+    font-size: 6.8pt;
   }
 
   .badge {
@@ -234,9 +213,7 @@
   .badge-drinks { background: #fce7f3; color: #9d174d; }
   .badge-transit { background: #f1f5f9; color: #475569; }
   .badge-value { background: #dcfce7; color: #166534; }
-  .badge-icon { background: #fef3c7; color: #92400e; }
-  .badge-drink { background: #e0f2fe; color: #0369a1; }
-  .badge-sweet { background: #fce7f3; color: #9d174d; }
+  .badge-star { background: #fef9c3; color: #854d0e; border: 1px solid #facc15; font-weight: 700; }
 
   .grid-2 {
     display: grid;
@@ -257,7 +234,7 @@
     background: #fafafa;
   }
   .card h3 {
-    font-size: 7.4pt;
+    font-size: 7.3pt;
     font-weight: 700;
     color: #0f172a;
     margin-bottom: 3px;
@@ -269,7 +246,7 @@
     padding-left: 0;
   }
   .card li {
-    font-size: 6.9pt;
+    font-size: 6.8pt;
     color: #334155;
     margin-bottom: 2px;
     line-height: 1.25;
@@ -281,15 +258,21 @@
     border-radius: 4px;
     padding: 5px 8px;
     margin-bottom: 8px;
-    font-size: 7.1pt;
+    font-size: 7pt;
     color: #1e40af;
   }
   .highlight-box strong {
     color: #1e3a8a;
   }
 
+  .satiety-star {
+    color: #eab308;
+    font-size: 9pt;
+    margin-right: 2px;
+  }
+
   @media print {
-    body { padding: 0; font-size: 7.7pt; }
+    body { padding: 0; font-size: 7.6pt; }
     .no-print { display: none; }
     .page { min-height: auto; padding: 56px 0 16px 0; }
     table { page-break-inside: auto; }
@@ -306,13 +289,13 @@
   <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-tr" onerror="this.src='fair1.jpg'">
 
   <div class="hero-banner-wrap">
-    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair3.jpg" alt="State Fair of Texas Banner" onerror="this.src='fair3.jpg'">
+    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair3.png" alt="State Fair of Texas Banner" onerror="this.src='fair3.png'">
   </div>
 
   <header>
     <div class="title-area">
       <h1>State Fair of Texas - Fri, Sep 25, 2026</h1>
-      <p>Transit, Noble Coyote at 9:30 AM, Noon Parade & Early Pig Races</p>
+      <p>Transit, Noble Coyote at 9:30 AM, Noon Parade & Early Pig Races[cite: 1, 2, 4]</p>
     </div>
     <div class="tag">Part 1: Morning & Noon Parade</div>
   </header>
@@ -338,31 +321,31 @@
       <tr>
         <td class="time-col">7:55 – 8:15 AM</td>
         <td>2806 Sarah Dr</td>
-        <td>Depart Pantego; drive to CentrePort/DFW Airport Station. Park in free commuter lot.</td>
+        <td>Depart Pantego; drive to CentrePort/DFW Airport Station[cite: 1, 9]. Park in free commuter lot[cite: 9].</td>
         <td><span class="badge badge-transit">Drive / Park</span></td>
       </tr>
       <tr>
         <td class="time-col">8:15 – 8:28 AM</td>
         <td>CentrePort Lot</td>
-        <td>Purchase regional day passes ($12 DART/TRE Regional) in GoPass app. Walk to platform.</td>
+        <td>Purchase regional day passes ($12 DART/TRE Regional) in GoPass app[cite: 9]. Walk to platform[cite: 9].</td>
         <td><span class="badge badge-transit">GoPass Ready</span></td>
       </tr>
       <tr>
         <td class="time-col">8:29 – 8:56 AM</td>
         <td>TRE Eastbound</td>
-        <td>Board Eastbound TRE train; arrive at Victory Station at 8:56 AM.</td>
+        <td>Board Eastbound TRE train; arrive at Victory Station at 8:56 AM[cite: 1, 10].</td>
         <td><span class="badge badge-transit">TRE Rail</span></td>
       </tr>
       <tr>
         <td class="time-col">8:56 – 9:05 AM</td>
         <td>Victory Station</td>
-        <td>Cross-platform transfer to DART Rail Green Line Southbound toward Buckner/Lawnview.</td>
+        <td>Cross-platform transfer to DART Rail Green Line Southbound toward Buckner/Lawnview[cite: 1, 9, 10].</td>
         <td><span class="badge badge-transit">DART Green Line</span></td>
       </tr>
       <tr>
         <td class="time-col">9:05 – 9:23 AM</td>
         <td>DART Rail</td>
-        <td>Green Line train to Fair Park Station platform on Parry Ave. Deboard at 9:23 AM.</td>
+        <td>Green Line train to Fair Park Station platform on Parry Ave[cite: 1, 9, 10]. Deboard at 9:23 AM[cite: 10].</td>
         <td><span class="badge badge-transit">Arrive 9:23 AM</span></td>
       </tr>
       <tr>
@@ -374,31 +357,31 @@
       <tr>
         <td class="time-col">9:48 – 10:00 AM</td>
         <td>Parry Ave Gate</td>
-        <td>Walk 300 ft back to Front Gate. Scan digital admission, clear bag check, enter right at 10:00 AM rope drop!</td>
+        <td>Walk 300 ft back to Front Gate. Scan digital admission, clear bag check, enter right at 10:00 AM rope drop[cite: 2, 26]!</td>
         <td><span class="badge badge-sun">Gate Rope Drop</span></td>
       </tr>
       <tr>
         <td class="time-col">10:00 – 10:45 AM</td>
         <td>Esplanade / Big Tex</td>
-        <td>Stroll down Esplanade, snap opening morning photo with Big Tex, load food coupons at kiosks before lines form.</td>
+        <td>Stroll down Esplanade, snap opening morning photo with Big Tex, load food coupons at kiosks before lines form[cite: 2, 5].</td>
         <td><span class="badge badge-sun">Morning Sun</span></td>
       </tr>
       <tr>
         <td class="time-col">10:45 – 11:25 AM</td>
         <td>Lagoon / Agriculture</td>
-        <td>Explore Big Tex Discovery Farm and Dinosaurs at the Lagoon along the shady waterside trail.</td>
+        <td>Explore Big Tex Discovery Farm and Dinosaurs at the Lagoon along the shady waterside trail[cite: 23, 73].</td>
         <td><span class="badge badge-sun">Lagoon Shade</span></td>
       </tr>
       <tr>
         <td class="time-col">11:25 – 11:45 AM</td>
         <td>Chevy Park Plaza</td>
-        <td><strong>Statewide Remodeling Pig Races (11:30 AM Heat):</strong> Sun at ~47° elevation. Bleachers have accumulated minimal sensible heat; lowest thermal stress window of the day.</td>
+        <td><strong>Statewide Remodeling Pig Races (11:30 AM Heat):</strong> Sun at ~47° elevation[cite: 23, 73]. Bleachers have accumulated minimal sensible heat; lowest thermal stress window of the day.</td>
         <td><span class="badge badge-sun">Outdoor Track</span></td>
       </tr>
       <tr>
         <td class="time-col">11:45 – 12:40 PM</td>
         <td>The Old Mill Patio</td>
-        <td><strong>Opening Day Parade (12:00 PM Kickoff):</strong> Settle down on the shaded patio at <strong>Rousso’s Wine Garden at The Old Mill</strong> on Grand Ave. Order Texas wine or frozen cocktails; watch marching bands & floats roll by right under Big Tex!</td>
+        <td><strong>Opening Day Parade (12:00 PM Kickoff):</strong> Settle down on the shaded patio at <strong>Rousso’s Wine Garden at The Old Mill</strong> on Grand Ave[cite: 4, 25]. Order Texas wine or frozen cocktails; watch marching bands & floats roll by right under Big Tex[cite: 4, 25]!</td>
         <td><span class="badge badge-drinks">Wine Garden & Parade</span></td>
       </tr>
     </tbody>
@@ -408,15 +391,15 @@
     <div class="card">
       <h3>Opening Day Noon Parade Strategy</h3>
       <ul>
-        <li><strong>Parade Kickoff at 12:00 PM:</strong> The Opening Day Parade processes down Grand Avenue and under Big Tex.</li>
-        <li><strong>Rousso’s Wine Garden at The Old Mill:</strong> Features an outdoor patio right along Grand Ave with dedicated beverage service and live acoustic music on the ZiegenBock Stage.</li>
+        <li><strong>Parade Kickoff at 12:00 PM:</strong> The Opening Day Parade processes down Grand Avenue and under Big Tex[cite: 50].</li>
+        <li><strong>Rousso’s Wine Garden at The Old Mill:</strong> Features an outdoor patio right along Grand Ave with dedicated beverage service and live acoustic music on the ZiegenBock Stage[cite: 4, 25].</li>
       </ul>
     </div>
     <div class="card">
       <h3>Morning Transit Precision</h3>
       <ul>
-        <li><strong>8:29 AM TRE Train:</strong> Guarantees a 9:23 AM arrival at Fair Park Station, allowing you to walk into Noble Coyote at 9:30 AM on the dot.</li>
-        <li><strong>Bag Policy:</strong> Clear bags up to 12x12x6 inches or small clutches permitted. Empty refillable plastic water bottles allowed.</li>
+        <li><strong>8:29 AM TRE Train:</strong> Guarantees a 9:23 AM arrival at Fair Park Station, allowing you to walk into Noble Coyote at 9:30 AM on the dot[cite: 10].</li>
+        <li><strong>Bag Policy:</strong> Clear bags up to 12x12x6 inches or small clutches permitted[cite: 8]. Empty refillable plastic water bottles allowed.</li>
       </ul>
     </div>
   </div>
@@ -430,13 +413,13 @@
   <header>
     <div class="title-area">
       <h1>State Fair of Texas - Fri, Sep 25, 2026</h1>
-      <p>Creative Arts Butter Sculpture, 120-Min Auto Show & 4:00 PM Dogs</p>
+      <p>Creative Arts Butter Sculpture, 120-Min Auto Show & 4:00 PM Dogs[cite: 2, 73]</p>
     </div>
     <div class="tag">Part 2: Peak Solar A/C & Return</div>
   </header>
 
   <div class="highlight-box">
-    <strong>Must-See Hidden Gem: The Butter Sculpture (Creative Arts Building):</strong> Tucked inside the refrigerated display in the Creative Arts Building, a local Texas master artist carves an entirely new butter sculpture each year honoring the theme. For 2026, marvel at the life-sized tribute to <em>“Stars, Stripes, and Howdies”</em> (marking Fair Park’s 140th year & America’s 250th birthday)!
+    <strong>Must-See Hidden Gem: The Butter Sculpture (Creative Arts Building):</strong> Tucked inside the refrigerated display in the Creative Arts Building, a local Texas master artist carves an entirely new butter sculpture each year honoring the theme. For 2026, marvel at the life-sized tribute to <em>“Stars, Stripes, and Howdies”</em> (marking Fair Park’s 140th year & America’s 250th birthday)[cite: 2, 23, 45]!
   </div>
 
   <div class="section-title">Afternoon: Butter Sculpture, Auto Show Sanctuary & 4:00 PM Stunt Dogs</div>
@@ -453,49 +436,49 @@
       <tr>
         <td class="time-col">12:40 – 1:15 PM</td>
         <td>Tower Bldg Food</td>
-        <td>Fair Food Lunch: Original Fletcher's Corny Dog and 2026 Big Tex Choice Award winners in the air-conditioned food court.</td>
+        <td>Fair Food Lunch: Original Fletcher's Corny Dog and 2026 Big Tex Choice Award winners in the air-conditioned food court[cite: 2, 58].</td>
         <td><span class="badge badge-ac">Covered / Seated</span></td>
       </tr>
       <tr>
         <td class="time-col">1:15 – 1:45 PM</td>
         <td>Creative Arts Bldg</td>
-        <td><strong>The Butter Sculpture & Cooking Demos:</strong> View the refrigerated <em>Stars, Stripes, and Howdies</em> Butter Sculpture, the "United We Can" canned-jar flag, and Cutco Kitchen cooking demo (1:30 PM). Escape the solar noon peak (1:18 PM CDT).</td>
+        <td><strong>The Butter Sculpture & Cooking Demos:</strong> View the refrigerated <em>Stars, Stripes, and Howdies</em> Butter Sculpture, the "United We Can" canned-jar flag, and Cutco Kitchen cooking demo (1:30 PM)[cite: 2, 23, 73]. Escape the solar noon peak (1:18 PM CDT).</td>
         <td><span class="badge badge-ac">Indoor A/C Gem</span></td>
       </tr>
       <tr>
         <td class="time-col">1:45 – 3:45 PM</td>
         <td>Centennial & Auto Bldgs</td>
-        <td><strong>Texas Auto Show (Full 120 Minutes in Continuous A/C):</strong> Maximum thermal defense. While outside temperatures and bleachers superheat, explore the Automobile Building, Centennial Building, concept cars, and truck zones in complete comfort.</td>
+        <td><strong>Texas Auto Show (Full 120 Minutes in Continuous A/C):</strong> Maximum thermal defense[cite: 2, 73]. While outside temperatures and bleachers superheat, explore the Automobile Building, Centennial Building, concept cars, and truck zones in complete comfort[cite: 2, 73].</td>
         <td><span class="badge badge-ac">Solar Defense Sanctuary</span></td>
       </tr>
       <tr>
         <td class="time-col">3:45 – 4:00 PM</td>
         <td>Walk to Marine Sq</td>
-        <td>Short shaded walk from Automobile Building over to Marine Corps Square.</td>
+        <td>Short shaded walk from Automobile Building over to Marine Corps Square[cite: 11, 73].</td>
         <td><span class="badge badge-sun">Short Walk</span></td>
       </tr>
       <tr>
         <td class="time-col">4:00 – 4:35 PM</td>
         <td>Marine Corps Sq</td>
-        <td><strong>All-Star Stunt Dog Show (4:00 PM Optimal Slot):</strong> Solar elevation drops to ~34°, slashing direct irradiance and crown radiation load. Rescued dogs perform trick agility and high frisbee catches.</td>
+        <td><strong>All-Star Stunt Dog Show (4:00 PM Optimal Slot):</strong> Solar elevation drops to ~34°, slashing direct irradiance and crown radiation load[cite: 11, 73]. Rescued dogs perform trick agility and high frisbee catches[cite: 73].</td>
         <td><span class="badge badge-sun">Least Miserable Outdoor</span></td>
       </tr>
       <tr>
         <td class="time-col">4:35 – 4:48 PM</td>
         <td>Parry Ave Front Gate</td>
-        <td>Walk through the Esplanade back to the historic Parry Ave Gate; step directly onto the Fair Park DART Station platform.</td>
+        <td>Walk through the Esplanade back to the historic Parry Ave Gate; step directly onto the Fair Park DART Station platform[cite: 9, 10].</td>
         <td><span class="badge badge-transit">Platform Ready</span></td>
       </tr>
       <tr>
         <td class="time-col">4:48 – 5:07 PM</td>
         <td>DART Green Line</td>
-        <td>Board Northbound Green Line train back to Victory Station.</td>
+        <td>Board Northbound Green Line train back to Victory Station[cite: 1, 9, 10].</td>
         <td><span class="badge badge-transit">DART Rail</span></td>
       </tr>
       <tr>
         <td class="time-col">5:15 – 5:43 PM</td>
         <td>TRE Westbound</td>
-        <td>Transfer to Westbound TRE Train at Victory Station. Deboard at CentrePort/DFW Airport Station at 5:43 PM.</td>
+        <td>Transfer to Westbound TRE Train at Victory Station[cite: 9]. Deboard at CentrePort/DFW Airport Station at 5:43 PM[cite: 9].</td>
         <td><span class="badge badge-transit">TRE Rail</span></td>
       </tr>
       <tr>
@@ -511,14 +494,14 @@
     <div class="card">
       <h3>Thermal Misery Defense Framework</h3>
       <ul>
-        <li><strong>Why 4:00 PM for Stunt Dogs:</strong> The 2:00 PM show hits 42 min after solar noon, creating an elevated Mean Radiant Temperature that feels 15°F hotter on bare skin. At 4:00 PM, the optical air mass is thicker, dramatically reducing direct solar burning.</li>
-        <li><strong>120-Min Auto Show:</strong> Positioned from 1:45 PM to 3:45 PM, providing two hours of climate-controlled retreat during peak afternoon solar heat.</li>
+        <li><strong>Why 4:00 PM for Stunt Dogs:</strong> The 2:00 PM show hits 42 min after solar noon, creating an elevated Mean Radiant Temperature that feels 15°F hotter on bare skin[cite: 73]. At 4:00 PM, the optical air mass is thicker, dramatically reducing direct solar burning.</li>
+        <li><strong>120-Min Auto Show:</strong> Positioned from 1:45 PM to 3:45 PM, providing two hours of climate-controlled retreat during peak afternoon solar heat[cite: 2, 73].</li>
       </ul>
     </div>
     <div class="card">
       <h3>Creative Arts & Butter Sculpture Details</h3>
       <ul>
-        <li><strong>Location:</strong> Creative Arts Building (across from Embarcadero).</li>
+        <li><strong>Location:</strong> Creative Arts Building (across from Embarcadero)[cite: 3].</li>
         <li><strong>Display Details:</strong> Carved inside a temperature-controlled refrigerated glass booth. Free admission, intense air conditioning, and seamlessly fills the gap before the Auto Show.</li>
       </ul>
     </div>
@@ -533,7 +516,7 @@
   <header>
     <div class="title-area">
       <h1>State Fair of Texas - Fri, Sep 25, 2026</h1>
-      <p>Curated Directory of Shaded Beer Gardens, Wine Patios & A/C Lounges</p>
+      <p>Curated Directory of Shaded Beer Gardens, Wine Patios & A/C Lounges[cite: 4]</p>
     </div>
     <div class="tag tag-amber">Drinking Patios Directory</div>
   </header>
@@ -551,50 +534,50 @@
     <tbody>
       <tr>
         <td><strong>Rousso’s Wine Garden at The Old Mill</strong></td>
-        <td>Grand Ave (near Big Tex Circle)</td>
-        <td>Spacious outdoor patio directly in the shadow of Big Tex. Serves Texas wines, frozen cocktails, and features live acts on the ZiegenBock Stage. Prime parade viewing spot!</td>
+        <td>Grand Ave (near Big Tex Circle)[cite: 4, 25]</td>
+        <td>Spacious outdoor patio directly in the shadow of Big Tex[cite: 4, 25]. Serves Texas wines, frozen cocktails, and features live acts on the ZiegenBock Stage[cite: 2, 4, 25]. Prime parade viewing spot[cite: 4]!</td>
         <td><span class="badge badge-drinks">Patio / Shade Trees</span></td>
       </tr>
       <tr>
         <td><strong>Magnolia Beer Garden</strong></td>
-        <td>Courtyard of Magnolia Lounge</td>
-        <td>Destination for beer connoisseurs featuring Texas crafts, IPAs, and imports under a peaceful garden arbor. Shiner Beer sampling nearby.</td>
+        <td>Courtyard of Magnolia Lounge[cite: 4]</td>
+        <td>Destination for beer connoisseurs featuring Texas crafts, IPAs, and imports under a peaceful garden arbor[cite: 4]. Shiner Beer sampling nearby[cite: 4].</td>
         <td><span class="badge badge-drinks">Shaded Courtyard</span></td>
       </tr>
       <tr>
         <td><strong>The Grove</strong></td>
-        <td>Nimitz Dr (near GO TEXAN Pavilion)</td>
-        <td>Showcases Texas wineries daily with tastings by the glass or bottle. Live music on the White Claw Spotlight Stage and shaded relaxation.</td>
+        <td>Nimitz Dr (near GO TEXAN Pavilion)[cite: 4, 20]</td>
+        <td>Showcases Texas wineries daily with tastings by the glass or bottle[cite: 4]. Live music on the White Claw Spotlight Stage and shaded relaxation[cite: 4, 20].</td>
         <td><span class="badge badge-drinks">Wine Patio / Shaded</span></td>
       </tr>
       <tr>
         <td><strong>Trio on the Green</strong></td>
-        <td>Under 3 oak trees outside Coliseum</td>
-        <td>"Bites & flights" concept serving trios of sliders, fries, and flights of craft beer, wine, or cocktails in mason jars. BeatBox sampling nearby.</td>
+        <td>Under 3 oak trees outside Coliseum[cite: 4, 11]</td>
+        <td>"Bites & flights" concept serving trios of sliders, fries, and flights of craft beer, wine, or cocktails in mason jars[cite: 4, 11]. BeatBox sampling nearby[cite: 4].</td>
         <td><span class="badge badge-drinks">Oak Tree Canopy</span></td>
       </tr>
       <tr>
         <td><strong>Fernie’s Skyway Porch</strong></td>
-        <td>Beneath Texas Skyway behind Big Tex</td>
-        <td>Rocking-chair retreat serving hard sodas, cotton candy cocktails, light bites, and cold beer on tap with views of the park.</td>
+        <td>Beneath Texas Skyway behind Big Tex[cite: 4, 11]</td>
+        <td>Rocking-chair retreat serving hard sodas, cotton candy cocktails, light bites, and cold beer on tap with views of the park[cite: 4, 11].</td>
         <td><span class="badge badge-drinks">Covered Porch</span></td>
       </tr>
       <tr>
         <td><strong>Bluebonnet Roadhouse</strong></td>
-        <td>Nimitz & Keating Dr</td>
-        <td>Sports-fan oasis with indoor and outdoor beer bars, large covered patio, multiple TVs, wine-based frozen spirits, and craft beers.</td>
+        <td>Nimitz & Keating Dr[cite: 4]</td>
+        <td>Sports-fan oasis with indoor and outdoor beer bars, large covered patio, multiple TVs, wine-based frozen spirits, and craft beers[cite: 4].</td>
         <td><span class="badge badge-ac">Indoor A/C + Patio</span></td>
       </tr>
       <tr>
         <td><strong>Texas Craft Beer Garden</strong></td>
-        <td>Beside Children's Aquarium / 1st Ave</td>
-        <td>Huge selection of Lone Star craft brews paired with Rousso’s Fat Bacon eats. Big screens for games and shaded tables.</td>
+        <td>Beside Children's Aquarium / 1st Ave[cite: 4]</td>
+        <td>Huge selection of Lone Star craft brews paired with Rousso’s Fat Bacon eats[cite: 4]. Big screens for games and shaded tables[cite: 4].</td>
         <td><span class="badge badge-drinks">Covered Seating</span></td>
       </tr>
       <tr>
         <td><strong>Backyard Steak-Out & Pizzeria</strong></td>
-        <td>Nimitz Ave near Coliseum</td>
-        <td>Wood-fired pizzas, traditional fair fare, live music, and deep shade. Excellent views of evening parades.</td>
+        <td>Nimitz Ave near Coliseum[cite: 4]</td>
+        <td>Wood-fired pizzas, traditional fair fare, live music, and deep shade[cite: 4]. Excellent views of evening parades[cite: 4].</td>
         <td><span class="badge badge-drinks">Shaded Dining Oasis</span></td>
       </tr>
     </tbody>
@@ -605,25 +588,25 @@
     <div class="card">
       <h3>Casual Outdoor Patios & Cantinas</h3>
       <ul>
-        <li><strong>Cano-Saurus Cantina:</strong> Hidden within the Dinosaurs at the Lagoon exhibit; refreshing drinks and prehistoric shaded seating.</li>
-        <li><strong>Cavalcade of Texas:</strong> Located near Neon Big Tex; bacon-wrapped eats, sundaes, and Corona beer sampling right next door.</li>
-        <li><strong>Dickel’s Smokehouse:</strong> Cotton Bowl Plaza corner; rustic wooden accents, slow-cooked Texas BBQ, and cold beers.</li>
-        <li><strong>Juicy’s Tailgate:</strong> Sports-themed beer patio directly beside the iconic 212-ft Texas Star Ferris Wheel.</li>
+        <li><strong>Cano-Saurus Cantina:</strong> Hidden within the Dinosaurs at the Lagoon exhibit; refreshing drinks and prehistoric shaded seating[cite: 4].</li>
+        <li><strong>Cavalcade of Texas:</strong> Located near Neon Big Tex; bacon-wrapped eats, sundaes, and Corona beer sampling right next door[cite: 4].</li>
+        <li><strong>Dickel’s Smokehouse:</strong> Cotton Bowl Plaza corner; rustic wooden accents, slow-cooked Texas BBQ, and cold beers[cite: 4].</li>
+        <li><strong>Juicy’s Tailgate:</strong> Sports-themed beer patio directly beside the iconic 212-ft Texas Star Ferris Wheel[cite: 4].</li>
       </ul>
     </div>
     <div class="card">
       <h3>Air-Conditioned & Covered Rest Stops</h3>
       <ul>
-        <li><strong>GO TEXAN Pavilion:</strong> Air-conditioned building featuring award-winning Texas winery flight bars and craft beer taps alongside free food tastings.</li>
+        <li><strong>GO TEXAN Pavilion:</strong> Air-conditioned building featuring award-winning Texas winery flight bars and craft beer taps alongside free food tastings[cite: 4].</li>
         <li><strong>TBAAL Membership Lounge:</strong> Inside the Women’s Museum; fully air-conditioned relaxation lounge and cultural gift shop.</li>
-        <li><strong>Farm Pac Tavern:</strong> Shaded tavern with ample seating right across from the Livestock Birthing Barn.</li>
-        <li><strong>Smirnoff Ice Party Pavilion:</strong> Relaxed shaded patio near Bluebonnet Roadhouse serving specialty canned malt beverages.</li>
+        <li><strong>Farm Pac Tavern:</strong> Shaded tavern with ample seating right across from the Livestock Birthing Barn[cite: 4].</li>
+        <li><strong>Smirnoff Ice Party Pavilion:</strong> Relaxed shaded patio near Bluebonnet Roadhouse serving specialty canned malt beverages[cite: 4, 13].</li>
       </ul>
     </div>
   </div>
 </div>
 
-<!-- PAGE 4: VALUE FOOD & CHEAP EATS GUIDE -->
+<!-- PAGE 4: MASTER GUIDE TO HIDDEN GEMS & TIMED ACTIVITIES -->
 <div class="page page-break">
   <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-tl" onerror="this.src='fair1.jpg'">
   <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-tr" onerror="this.src='fair1.jpg'">
@@ -631,156 +614,7 @@
   <header>
     <div class="title-area">
       <h1>State Fair of Texas - Fri, Sep 25, 2026</h1>
-      <p>BigTex Every Day Values • Options Under 10 Coupons ($10) & Universal Budget Picks</p>
-    </div>
-    <div class="tag tag-green">Every Day Values Program</div>
-  </header>
-
-  <div class="section-title">Savory Bites & Fair Classics (10 Coupons / $10 or Less)</div>
-  <table>
-    <thead>
-      <tr>
-        <th class="price-col">Price (Coupons)</th>
-        <th class="vendor-col">Vendor & Location</th>
-        <th class="item-col">Menu Item Description</th>
-        <th class="category-col">Category</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="price-col">8 Coupons ($8)</td>
-        <td class="vendor-col">Fletcher’s Original Corny Dogs<small>Multiple stands across grounds</small></td>
-        <td class="item-col">Original Fletcher's Corny Dog (all-time iconic fair staple)</td>
-        <td><span class="badge badge-icon">Fair Classic</span></td>
-      </tr>
-      <tr>
-        <td class="price-col">9 Coupons ($9)</td>
-        <td class="vendor-col">Fletcher’s Original Corny Dogs<small>Multiple stands across grounds</small></td>
-        <td class="item-col">Jalapeño & Cheese Corny Dog / Veggie Corny Dog</td>
-        <td><span class="badge badge-icon">Fair Classic</span></td>
-      </tr>
-      <tr>
-        <td class="price-col">4 – 8 Coupons</td>
-        <td class="vendor-col">Pedro’s Tamales<small>Tower Building Food Court</small></td>
-        <td class="item-col">Pork Tamales, Tamale Boats, and Frito Burritos</td>
-        <td><span class="badge badge-value">Tex-Mex Value</span></td>
-      </tr>
-      <tr>
-        <td class="price-col">5 – 8 Coupons</td>
-        <td class="vendor-col">Pizza & Nachos / Jack's<small>Cotton Bowl Plaza</small></td>
-        <td class="item-col">Cheese Pizza Slice (5 cpn), Crispy Tacos (8 cpn), Elote in a cup</td>
-        <td><span class="badge badge-value">Lunch Saver</span></td>
-      </tr>
-      <tr>
-        <td class="price-col">7 – 8 Coupons</td>
-        <td class="vendor-col">Cheap Eats (Vandalay)<small>Nimitz & Funway</small></td>
-        <td class="item-col">Cheeseburger Egg Rolls, Mini Corn Dogs, Garlic Parm Fries</td>
-        <td><span class="badge badge-value">Value Stand</span></td>
-      </tr>
-      <tr>
-        <td class="price-col">7 – 10 Coupons</td>
-        <td class="vendor-col">Darn Good Corn / Texas Steakout<small>Midway / Funway</small></td>
-        <td class="item-col">Fresh Roasted Corn on the Cob (Butter/Spices), Tater Twisters</td>
-        <td><span class="badge badge-icon">Produce Classic</span></td>
-      </tr>
-      <tr>
-        <td class="price-col">8 Coupons ($8)</td>
-        <td class="vendor-col">Sweet Connie’s / Jacks<small>Midway / Cotton Bowl Plaza</small></td>
-        <td class="item-col">Tender Basket (2 chicken tenders w/ fries) / Classic Hamburger</td>
-        <td><span class="badge badge-value">Filling Meal</span></td>
-      </tr>
-      <tr>
-        <td class="price-col">8 Coupons ($8)</td>
-        <td class="vendor-col">Velasquez Concessions<small>Funway & MLK Blvd</small></td>
-        <td class="item-col">Churro Cheesecake Jalapeño Popper</td>
-        <td><span class="badge badge-icon">Creative Bite</span></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="section-title">Drinks, Sweet Treats & Free Samples (0 – 10 Coupons)</div>
-  <table>
-    <thead>
-      <tr>
-        <th class="price-col">Price (Coupons)</th>
-        <th class="vendor-col">Vendor & Location</th>
-        <th class="item-col">Menu Item Description</th>
-        <th class="category-col">Category</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="price-col">FREE</td>
-        <td class="vendor-col">GO TEXAN® Pavilion<small>Near Pan Am Arena</small></td>
-        <td class="item-col"><strong>Free Food Samples & Chocolate Milk:</strong> Complimentary Texas-made food samples (salsas, seasonings, pastries) and free mini cups of Oak Farms chocolate milk.</td>
-        <td><span class="badge badge-value">Free Tasting</span></td>
-      </tr>
-      <tr>
-        <td class="price-col">2 Coupons ($2)</td>
-        <td class="vendor-col">Official Booths Across Grounds<small>All concession hubs</small></td>
-        <td class="item-col">Official Fair Bottled Water (Fixed price guarantee across all stands)</td>
-        <td><span class="badge badge-drink">Hydration Value</span></td>
-      </tr>
-      <tr>
-        <td class="price-col">5 Coupons ($5)</td>
-        <td class="vendor-col">Pineapple Whip<small>Near Leonhardt Lagoon & Coliseum</small></td>
-        <td class="item-col">Dole Whip Fruit Cone (Pineapple dairy-free soft serve)</td>
-        <td><span class="badge badge-sweet">A/C Cool Down</span></td>
-      </tr>
-      <tr>
-        <td class="price-col">6 – 8 Coupons</td>
-        <td class="vendor-col">Highland Park Soda Fountain<small>Tower Building Food Court</small></td>
-        <td class="item-col">Classic Hand-Dipped Malts, Shakes & Ice Cream Floats</td>
-        <td><span class="badge badge-sweet">Vintage Treat</span></td>
-      </tr>
-      <tr>
-        <td class="price-col">6 – 8 Coupons</td>
-        <td class="vendor-col">State Fair Cotton Candy / K&A<small>Midway / Funway</small></td>
-        <td class="item-col">Cotton Candy Cones (6 cpn) & Fried Pineapple Rings (8 cpn)</td>
-        <td><span class="badge badge-sweet">Sweet Treat</span></td>
-      </tr>
-      <tr>
-        <td class="price-col">7 – 8 Coupons</td>
-        <td class="vendor-col">Darn Good Corn / The Dock<small>Midway & Nimitz</small></td>
-        <td class="item-col">Frozen Arnold Palmer, Soft Frozen Sweet Tea, Fruit Coolers</td>
-        <td><span class="badge badge-drink">Cool Beverage</span></td>
-      </tr>
-      <tr>
-        <td class="price-col">10 Coupons ($10)</td>
-        <td class="vendor-col">Shug’s Cinnamon Rolls / Milton’s<small>Tower Building / Front Gate</small></td>
-        <td class="item-col">OG Warm Giant Cinnamon Roll / Original Powdered Funnel Cake</td>
-        <td><span class="badge badge-sweet">Shareable Dessert</span></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="grid-2">
-    <div class="card">
-      <h3>Budget Decal System</h3>
-      <ul>
-        <li><strong>Spot the Sticker:</strong> More than 200 items carry the official "Every Day Values" sticker on concession menu boards, certifying a cost under 10 coupons ($10).</li>
-        <li><strong>Tower Building Value:</strong> Full air-conditioned seating with meals from standard tacos to BBQ sandwiches priced noticeably below deep-fried novelty stands.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Zero-Coupon Refreshments</h3>
-      <ul>
-        <li><strong>GO TEXAN® Pavilion Hub:</strong> A dependable stop for complimentary snacks and Oak Farms chocolate milk samples, right in the air-conditioning.</li>
-        <li><strong>$2 Water Cap:</strong> Concessionaires are required to supply bottled water for 2 coupons ($2). Avoid $6 canned sodas when purely hydrating.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- PAGE 5: MASTER GUIDE TO HIDDEN GEMS & TIMED ACTIVITIES -->
-<div class="page page-break">
-  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-tl" onerror="this.src='fair1.jpg'">
-  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-tr" onerror="this.src='fair1.jpg'">
-
-  <header>
-    <div class="title-area">
-      <h1>State Fair of Texas - Fri, Sep 25, 2026</h1>
-      <p>Master Guide to Hidden Gems, Curated Cultural Exhibits & Timed Experiences</p>
+      <p>Master Guide to Hidden Gems, Curated Cultural Exhibits & Timed Experiences[cite: 73]</p>
     </div>
     <div class="tag tag-purple">Curated Activities & Gems</div>
   </header>
@@ -798,37 +632,37 @@
     <tbody>
       <tr>
         <td><strong>Hall of State Architecture & Murals</strong></td>
-        <td>Center of Esplanade</td>
+        <td>Center of Esplanade[cite: 51]</td>
         <td>12:30 – 1:30 PM (Peak Solar)</td>
-        <td>1936 Texas Centennial masterpiece with gold Tejas Warrior statue, inlaid marble floors, and majestic 3-story historical murals. Features <em>Unquiet Legacies: Dynamic Dallas Women</em> and <em>Blazing New Trails: 125 Years of TWU</em>. Blissfully cold air-conditioning with quiet benches.</td>
+        <td>1936 Texas Centennial masterpiece with gold Tejas Warrior statue, inlaid marble floors, and majestic 3-story historical murals[cite: 51]. Features <em>Unquiet Legacies: Dynamic Dallas Women</em> and <em>Blazing New Trails: 125 Years of TWU</em>. Blissfully cold air-conditioning with quiet benches.</td>
       </tr>
       <tr>
         <td><strong>Mundo Latino: Día de los Muertos</strong></td>
-        <td>Inside Hall of State</td>
+        <td>Inside Hall of State[cite: 73]</td>
         <td>1:00 – 1:45 PM</td>
         <td>Massive artisan ofrendas, skull sculptures, and folk art. Includes the Dallas International Coffee Art exhibit showcasing coffee-painted art from 15 nations.</td>
       </tr>
       <tr>
         <td><strong>Errol McKoy Greenhouse (Big Tex Urban Farms)</strong></td>
-        <td>Along the Midway</td>
+        <td>Along the Midway[cite: 3]</td>
         <td>10:45 AM or 3:30 PM</td>
-        <td>Peaceful oasis of modern hydroponic and aeroponic vertical farming that produces hundreds of pounds of fresh greens for South Dallas communities. Ample shade and fascinating DIY home indoor farming displays.</td>
+        <td>Peaceful oasis of modern hydroponic and aeroponic vertical farming that produces hundreds of pounds of fresh greens for South Dallas communities[cite: 3]. Ample shade and fascinating DIY home indoor farming displays.</td>
       </tr>
       <tr>
         <td><strong>Texas Discovery Gardens & Butterfly House</strong></td>
-        <td>Gate 6 / Robert B. Cullum Blvd</td>
+        <td>Gate 6 / Robert B. Cullum Blvd[cite: 73]</td>
         <td>11:45 AM – 12:30 PM</td>
         <td>7.5 acres of native organic botanicals. Features the 2-story Rosine Smith Sammons Butterfly House with the famous daily <strong>12:00 PM Butterfly Release</strong>, model train layout, and Snakes of Texas exhibit.</td>
       </tr>
       <tr>
         <td><strong>African American Museum</strong></td>
-        <td>Historic Core near Gate 5</td>
+        <td>Historic Core near Gate 5[cite: 73]</td>
         <td>2:00 – 3:30 PM</td>
         <td>Free with fair admission; only museum of its kind in the Southwest. Houses over 150 shared treasures and this year's featured <em>Mandela: The Official Exhibition</em>. Intense A/C and zero crowds.</td>
       </tr>
       <tr>
         <td><strong>Texas Skyway Gondola Ride</strong></td>
-        <td>Behind Big Tex to Midway</td>
+        <td>Behind Big Tex to Midway[cite: 4]</td>
         <td>10:15 AM or 4:15 PM</td>
         <td>A gentle 12-minute aerial glide 65 feet above Fair Park. Fits comfortably, offers panoramic photo angles of the Dallas skyline, and bypasses Midway ground congestion.</td>
       </tr>
@@ -840,28 +674,332 @@
     <div class="card">
       <h3>Family Fun & Unique Acts</h3>
       <ul>
-        <li><strong>¡Fiestas de Marionetas!</strong> (McDonald’s Amphitheater): 11:00 AM, 1:00 PM, 3:00 PM, 5:00 PM. Over 85 handmade marionettes with post-show backstage craft tours.</li>
-        <li><strong>World of Magic</strong> (Creative Arts Building): 12:00, 1:00, 3:00, 4:30 PM. Lasers, neon illusions, and a floating robot inside a fully cooled theater.</li>
-        <li><strong>Mighty Mike Show</strong> (Fringe Stage / Little Lone Stars): 2:00, 4:00, 6:00 PM. 1920s-style strongman bobsledder bending horseshoes and juggling bowling balls.</li>
-        <li><strong>Wacky Chad Stunt Comedy</strong> (Fringe Stage): 1:00, 3:00, 5:00 PM. Extreme unicycles, pogo stick tricks, and comic acrobatics.</li>
+        <li><strong>¡Fiestas de Marionetas!</strong> (McDonald’s Amphitheater): 11:00 AM, 1:00 PM, 3:00 PM, 5:00 PM[cite: 73]. Over 85 handmade marionettes with post-show backstage craft tours[cite: 23].</li>
+        <li><strong>World of Magic</strong> (Creative Arts Building): 12:00, 1:00, 3:00, 4:30 PM[cite: 73]. Lasers, neon illusions, and a floating robot inside a fully cooled theater[cite: 23].</li>
+        <li><strong>Mighty Mike Show</strong> (Fringe Stage / Little Lone Stars): 2:00, 4:00, 6:00 PM[cite: 73]. 1920s-style strongman bending horseshoes and juggling bowling balls.</li>
+        <li><strong>Wacky Chad Stunt Comedy</strong> (Fringe Stage): 1:00, 3:00, 5:00 PM[cite: 66, 73]. Extreme unicycles, pogo stick tricks, and comic acrobatics[cite: 66].</li>
       </ul>
     </div>
     <div class="card">
       <h3>Culinary & Living Agriculture</h3>
       <ul>
-        <li><strong>Cutco Celebrity Kitchen Demos</strong> (Creative Arts): 11:30 AM, 1:30 PM, 3:30 PM. Watch Texas master chefs whip up gourmet bites with recipe cards.</li>
-        <li><strong>Milking Parlor Demonstrations</strong> (Band Shell Lagoon): 10:30, 11:30 AM, 1:30, 2:30, 3:30, 4:30 PM. Modern dairy cow milking demos by Southwest Dairy Farmers.</li>
-        <li><strong>Livestock Birthing Barn</strong> (Nimitz & MLK): Open 10:00 AM – 7:00 PM. Live births, newborn calves, piglets, and hatching chicks under large cooling fans.</li>
-        <li><strong>Farm & Fork University</strong> (Ranch Arena): 11:30 AM, 1:00, 2:30, 4:00, 5:30 PM. Entertaining exploration of modern field-to-table food production.</li>
+        <li><strong>Cutco Celebrity Kitchen Demos</strong> (Creative Arts): 11:30 AM, 1:30 PM, 3:30 PM[cite: 73]. Watch Texas master chefs whip up gourmet bites with recipe cards[cite: 23].</li>
+        <li><strong>Milking Parlor Demonstrations</strong> (Band Shell Lagoon): 10:30, 11:30 AM, 1:30, 2:30, 3:30, 4:30 PM[cite: 73]. Modern dairy cow milking demos by Southwest Dairy Farmers[cite: 23, 73].</li>
+        <li><strong>Livestock Birthing Barn</strong> (Nimitz & MLK): Open 10:00 AM – 7:00 PM[cite: 73]. Live births, newborn calves, piglets, and hatching chicks under large cooling fans[cite: 73].</li>
+        <li><strong>Farm & Fork University</strong> (Ranch Arena): 11:30 AM, 1:00, 2:30, 4:00, 5:30 PM[cite: 73]. Entertaining exploration of modern field-to-table food production[cite: 73].</li>
       </ul>
     </div>
     <div class="card">
       <h3>Live Music & History Trails</h3>
       <ul>
-        <li><strong>Bud Light Stage</strong> (Cotton Bowl Plaza): 1:00, 3:00, 5:00, 7:30 PM. Regional country, roots, and rock acts performing continuously.</li>
-        <li><strong>White Claw Spotlight Stage</strong> (The Grove): 1:30, 3:30, 5:30, 7:30 PM. Acoustic singers and Texas singer-songwriters in tree shade.</li>
+        <li><strong>Bud Light Stage</strong> (Cotton Bowl Plaza): 1:00, 3:00, 5:00, 7:30 PM[cite: 20, 73]. Regional country, roots, and rock acts performing continuously[cite: 20].</li>
+        <li><strong>White Claw Spotlight Stage</strong> (The Grove): 1:30, 3:30, 5:30, 7:30 PM[cite: 20, 73]. Acoustic singers and Texas singer-songwriters in tree shade[cite: 20].</li>
         <li><strong>Whitman on Walls!</strong> (Music Hall): Screenings 10:00 AM – 6:30 PM. Broadway Dallas presentation of 50 artists interpreting Walt Whitman's "Song of Myself".</li>
-        <li><strong>DAR House</strong> (Next to Women’s Museum): 11:00 AM – 5:30 PM. Relics and stories of women and girls during the American Revolution.</li>
+        <li><strong>DAR House</strong> (Next to Women’s Museum): 11:00 AM – 5:00 PM[cite: 73]. Relics and stories of women and girls during the American Revolution.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 5: COMPLETE UNABRIDGED VALUE FOOD DIRECTORY (SAVORY & MEALS) -->
+<div class="page page-break">
+  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-tl" onerror="this.src='fair1.jpg'">
+  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-tr" onerror="this.src='fair1.jpg'">
+
+  <header>
+    <div class="title-area">
+      <h1>State Fair of Texas - Fri, Sep 25, 2026</h1>
+      <p>Unabridged Every Day Values Directory: Hearty Savory Meals, Proteins & Starches[cite: 19, 74]</p>
+    </div>
+    <div class="tag tag-green">Every Day Values: Part 1</div>
+  </header>
+
+  <div class="highlight-box">
+    <strong>Science-Backed Satiety Protocol:</strong> Based on the Holt Satiety Index, foods rich in complete protein, dietary fiber, and complex starches with high water/moisture content score highest in delaying gastric emptying. The <strong>Gold Stars (<span class="satiety-star">★</span>)</strong> highlight the top 5 most filling values under $10 across the entire fair[cite: 74]!
+  </div>
+
+  <div class="section-title">Savory Entrees, Meats, Poultry & Seafood</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 25%;">Vendor Name</th>
+        <th style="width: 50%;">All Items $10 or Under ($ / Coupons)</th>
+        <th style="width: 25%;">Value & Satiety Profile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Fletcher's Corny Dogs</strong></td>
+        <td><span class="satiety-star">★</span> Original Corny Dog (8 cpn), Jalapeño & Cheese Corny Dog, Bird Dog Corny Dog, Veggie Corny Dog, Cheezy Pup Corny Dogs, Chocolate Corny Dog</td>
+        <td><span class="badge badge-star">TOP 1: DENSE PROTEIN</span> High-density beef/pork sausage with cornmeal batter provides sustained satiety[cite: 2].</td>
+      </tr>
+      <tr>
+        <td><strong>Catfish Floyds</strong></td>
+        <td><span class="satiety-star">★</span> Daily Special: 5-Piece Fish Fillet Nuggets, French Fries, Dill Pickles, Kool-Aid Pickles</td>
+        <td><span class="badge badge-star">TOP 2: LEAN PROTEIN</span> Solid lean whitefish protein with high satiety score per dollar[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Katie's Cafe</strong></td>
+        <td><span class="satiety-star">★</span> Chicken Tender Basket (2 tenders w/ fries), Breakfast Sandwich, BLT, Curly Fries, Fresh Cut Fries, Fried Hostess Twinkie, Cheese & bacon bits w/ ranch (jalapeños optional)</td>
+        <td><span class="badge badge-star">TOP 3: FULL COMBO MEAL</span> Complete protein plus potato starch combo under $10[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>The Dock</strong></td>
+        <td><span class="satiety-star">★</span> Red Beans & Cornbread, Sausage Gravy & Biscuits, Chicken & Biscuits, Pork Roast Sandwich, Fried Grilled Sandwich, Funnel Cake Chicken Sandwich, Nachitos, Taco Salads, Frozen Dr Pepper</td>
+        <td><span class="badge badge-star">TOP 4: HIGH FIBER/PROTEIN</span> Red beans & cornbread provide high resistant starch & satiety[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Pedro's Tamales</strong></td>
+        <td><span class="satiety-star">★</span> 3 Pork Tamales, Frito Burrito, Frito Pie, Bowl of Chili with cheese and chips, Queso and Chips</td>
+        <td><span class="badge badge-star">TOP 5: SLOW-DIGESTING</span> 3 dense pork tamales offer slow-release masa starches & pork lipids[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Doc's Street Grill</strong></td>
+        <td>Jamaican Beef Patty, Jamaican Veggie Patty, Island Fried Rice, Fruit Cup, Smoothie (regular), Yogurt Parfait</td>
+        <td>Spiced meat/veggie turnovers with seasoned rice[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Jacks Breakfast/Lunch</strong></td>
+        <td>Chicken Fried Steak Sandwich, Chicken Tenders, Breakfast Burrito, Biscuits with Gravy, Pancakes, Waffles, Cowboy Quesadilla</td>
+        <td>High-calorie southern staple sandwiches and platters[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Southside Steaks & Cakes</strong></td>
+        <td>Pre-Rolled Cheesesteak Rolls, 8 Balls (Cheesesteak Ball), Cheesesteak Waffle on a Stick, Hood Tacos, Deep Fried Honey Bun, Onion Rings</td>
+        <td>Steak and cheese stuffed specialty comfort bites[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Sweet Connie's Midway Grill</strong></td>
+        <td>Foot Long Corn Dogs, Crispy Chicken Sandwich, Chicken Tenders, French Fries, Corn on the Cob, Corn in a Cup</td>
+        <td>Midway volume values with solid poultry portions[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Pound Cake Experts</strong></td>
+        <td>So Eggciting Deviled Eggs (2 per order): Smoked Salmon, Texas BBQ Rib, Birria Taco, Hot Honey Chicken, Seafood Boil, Traditional Deviled Egg</td>
+        <td>Pure whole-egg protein fat matrices with gourmet toppings[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Chan's Chicken on a Stick</strong></td>
+        <td>Korean Corn Dogs, Egg Roll, Boba Drinks</td>
+        <td>Crispy battered dogs and fried appetizers[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Stuffed Wings</strong></td>
+        <td>Fried Chicken Dumplings, Boba Teas, Boba Milk Teas</td>
+        <td>Savory poultry dumplings and tea pairings[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Eataly</strong></td>
+        <td>Focaccia alla Porchetta e Salsa Verde, Gelato, Tiramisu Classico, Cremespresso</td>
+        <td>Authentic Italian roast pork on artisan foccacia[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Lobster Lounge</strong></td>
+        <td>Mac & Cheese Bowl (Value Size), Cajun Elotes (Value), Strawberry Crunch Banana Pudding</td>
+        <td>Creamy slow-digesting pasta bowls[cite: 74].</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-title">Tex-Mex, Tacos, Pierogies & Savory Doughs</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 25%;">Vendor Name</th>
+        <th style="width: 50%;">All Items $10 or Under ($ / Coupons)</th>
+        <th style="width: 25%;">Category & Serving Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Milagro Tacos</strong></td>
+        <td>Pollo al Chipotle Empanada, Spicy Beef Empanada, Bone Marrow Elote Cups</td>
+        <td>Stuffed masa pastries and rich savory corn cups[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Pierogizilla</strong></td>
+        <td>OG Zilla, Dill-Lightful Zilla, Elote Zilla</td>
+        <td>Dense potato and cheese filled dumplings[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Jacks Mexican Food</strong></td>
+        <td>Classic Taco, Burrito, Chalupa, Quesadilla, Nachos, Elote</td>
+        <td>Full lineup of traditional Tex-Mex value picks[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Cactus Cantina</strong></td>
+        <td>Street Tacos, Frito Pie, Chili & Rice, Tamales with Chili</td>
+        <td>Chili-topped Texas staples with high satiety[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Lupitas Gorditas</strong></td>
+        <td>Regular Taco, Cheese Quesadilla, Nachos</td>
+        <td>Handcrafted street tacos and melted cheese pockets[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Tommy G's</strong></td>
+        <td>Tater Tot Burger Chop Tacos (Value Size), Flamin’ Hot Cheetos Pizza (Value), Wings, Quesadilla, Loaded Nachos, Loaded Fries, Fries, Fresh Cut Chips, Loaded Fresh Cut Chips</td>
+        <td>Creative value sizes of award-winning taco items[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Chow</strong></td>
+        <td>Biscuit Egg Cheese Meat, Pizza by the Giant Slice</td>
+        <td>Breakfast protein biscuit sandwiches[cite: 74].</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PAGE 6: COMPLETE UNABRIDGED VALUE FOOD DIRECTORY (PIZZA, SNACKS, SWEETS & DRINKS) -->
+<div class="page page-break">
+  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-tl" onerror="this.src='fair1.jpg'">
+  <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb corner-tr" onerror="this.src='fair1.jpg'">
+
+  <header>
+    <div class="title-area">
+      <h1>State Fair of Texas - Fri, Sep 25, 2026</h1>
+      <p>Unabridged Every Day Values Directory: Pizza, Potatoes, Sweets & Beverages[cite: 19, 74]</p>
+    </div>
+    <div class="tag tag-green">Every Day Values: Part 2</div>
+  </header>
+
+  <div class="section-title">Pizza by the Slice, Fried Sides & Loaded Potatoes</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 25%;">Vendor Name</th>
+        <th style="width: 52%;">All Items $10 or Under ($ / Coupons)</th>
+        <th style="width: 23%;">Item Description & Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Pizza & Nachos</strong></td>
+        <td>Cheese Pizza, Sausage Pizza, Pepperoni Pizza, Nachos, Nachos with Chili, Elote (Corn-in-a-Cup), Chee-Lote, Wild Corn Wheels (2 flavors)</td>
+        <td>Cotton Bowl Plaza location with multiple pizza slices[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Backyard Steakout</strong></td>
+        <td>Cheese Pizza by the Slice, Pepperoni Pizza by the Slice, Roasted Corn on the Cob, Tornado Taters, Fried Apple Pie, Fried Pork Skins</td>
+        <td>Pizza slices, skewered spiral taters & fresh pork rinds[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Pizza By the Giant Slice</strong></td>
+        <td>Pizza by the Giant Slice (Locations across grounds)</td>
+        <td>High-calorie giant single slice value[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Pizza & Funnel Cakes</strong></td>
+        <td>Pizza by the Giant Slice, Funnel Cake</td>
+        <td>Dual savory & dessert booth staple[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Wine Garden-Pizza</strong></td>
+        <td>Pizza Value Meal, Pizza by the Slice</td>
+        <td>Grand Ave patio pizza pairing[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Cheap Eats</strong></td>
+        <td>Hot Dog, French Fries, Pizza Fries, Chili Cheese Fries, Fried Pizza</td>
+        <td>Nimitz & Funway budget station[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Palmer's Hot Chicken</strong></td>
+        <td>Smothered Queso Tots</td>
+        <td>Crispy potato tots drenched in hot cheese[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Gulf Coast Grill</strong></td>
+        <td>Bacon Cheddar Ranch Fries (Value Size)</td>
+        <td>Loaded potato fries topped with real bacon[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Thee Kitchen Beast</strong></td>
+        <td>Crispy Spiral Fries</td>
+        <td>Seasoned spiral potato cuts[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Johnson's</strong></td>
+        <td>Curley Fries w/ Chili and/or Cheese, Fritos Pie, Fried Corn on Cobb, Buttered Corn on Cobb, Fried Mac & Cheese Bites</td>
+        <td>Comfort potato and deep-fried pasta snacks[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Texas Steakout</strong></td>
+        <td>Roasted Corn on the Cob, Tater Twister, Nachos</td>
+        <td>Whole buttered ears and skewered fried spuds[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Darn Good Corn</strong></td>
+        <td>Roasted Corn on a Cob, Roasted Corn Cup</td>
+        <td>Fire-roasted sweet corn with authentic seasonings[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Golden Chick</strong></td>
+        <td>Large Battered Fries, 4 Yeast Rolls, 10 Corn Nuggets, Chocolate Chunk Brownie</td>
+        <td>Fresh-baked hot yeast rolls & sweet corn fritters[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Velasquez Catering</strong></td>
+        <td>Flamin’ Hot Cheeto Nachos, Kettle Corn, Churro Cheesecake Jalapeño Popper</td>
+        <td>Creative spiced appetizers[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Mac Loaded</strong></td>
+        <td>Classic Mac, Praline Cheesecake Eggroll, Cookie Butter Crush</td>
+        <td>Individual mac bowls and dessert spring rolls[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Fernie's Skyway Porch</strong></td>
+        <td>Uncle Bubba’s Pickle Dip, Cheeseburger in Paradise Dip</td>
+        <td>Savory shareable snack dips served with dippers[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Smith Spot BBQ</strong></td>
+        <td>Hot Honey Sweet Potato</td>
+        <td>Whole roasted nutrient-dense sweet potato[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>Ranchero Deep Fried Love</strong></td>
+        <td>Fried Ranch Bombs, Fried Pickles, Churro Fries, Fried Brownies with Ice Cream Cup, Churro Sundae</td>
+        <td>Deep-fried comfort bites and savory dips[cite: 74].</td>
+      </tr>
+      <tr>
+        <td><strong>A Taste of New Orleans</strong></td>
+        <td>Fried Pickles, Swamp Punch, Swampade</td>
+        <td>Crisp battered pickle chips and drinks[cite: 74].</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-title">Desserts, Sweet Treats, Ice Cream & Beverages</div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>Ice Cream, Soft Serve & Frozen Sweets</h3>
+      <ul>
+        <li><strong>Once Upon a Cone:</strong> Soft serve in cake cone, cup, gluten-free cone, waffle cone; dipped in chocolate, cherry, or butterscotch; sundaes with Oreos/M&Ms; blended milkshakes (20 oz); soda floats (24 oz)[cite: 74].</li>
+        <li><strong>Highland Park Soda Fountain:</strong> Homemade milkshakes and malts (Strawberry, Chocolate, Mint, Orange, Vanilla, Butterscotch, Cherry); Ice cream floats, jumbo cookies, ice cream cones, grilled cheese[cite: 74].</li>
+        <li><strong>Pineapple Whip / Dots & Dole:</strong> Dole Whip Cone, Dole Whip Cup, Dole Whip Tajin Twist Sundae; Dippin' Dots (small & regular cup); Icee Freeze cup[cite: 74].</li>
+        <li><strong>Rita's Italian Ice:</strong> Italian Ice (6 oz), Cool Combo (6 oz), Frozen Custard (3 scoops)[cite: 74].</li>
+        <li><strong>Pineappleman:</strong> Fresh Pineapple Ice Cream served on the cone[cite: 74].</li>
+        <li><strong>Funnel Cake Factory / Jacks:</strong> Original Funnel Cake, Build-Your-Own Walking Sundae[cite: 74].</li>
+        <li><strong>Shugr’s Cinnamon Rolls:</strong> OG Handmade Giant Cinnamon Roll[cite: 74].</li>
+        <li><strong>Sweet Connie’s Candy Apple:</strong> Candy Apples, Caramel Apples, Chocolate Dipped Strawberries, Ice Cream Soft Serve Nut Bars[cite: 74].</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Beverages, Teas, Juices & Fruit Snacks</h3>
+      <ul>
+        <li><strong>Oak Farms:</strong> TruMoo Whole Chocolate Milk, TruMoo Strawberry, Whole Milk, 2% Milk, Lactose Free Milk, Red Diamond Sweet Tea, Sweet Tea/Lemonade, Unsweet Tea[cite: 74].</li>
+        <li><strong>Free in GO TEXAN Pavilion:</strong> Free Oak Farms chocolate milk mini cups and rotating food samples[cite: 74]!</li>
+        <li><strong>Universal Water Price Cap:</strong> Official Fair Bottled Water is 2 coupons ($2) at every booth[cite: 74].</li>
+        <li><strong>Tony's Taco Shop:</strong> Midnight Ruby Rush (24 oz hibiscus, mint, chamoy signature sipper)[cite: 74].</li>
+        <li><strong>Sandoitchi:</strong> Yuzu Arnold Palmer, Horchata Matcha, Strawberry Matcha Latte, Blueberry Matcha Latte[cite: 74].</li>
+        <li><strong>Fruteria Cano:</strong> Fresh Fruit Drinks (24 oz & 32 oz), Mangonada Smoothie, Mango on a Stick, Strawberry Chocolate Stick, Strawberries & Cream, Rusa[cite: 74].</li>
+        <li><strong>Darn Good Corn:</strong> Soft Frozen Sweet Tea, Soft Frozen Lemonade, Frozen Arnold Palmer, Frozen Limeades[cite: 74].</li>
+        <li><strong>Crepes & Co / Mac Loaded:</strong> Tropical Tango Lemonade, Very Berry Twist, Watermelon Lemonade, Cucumber Mint Lemonade, Peach Hibiscus Tea[cite: 74].</li>
+        <li><strong>The Dumpling Experience:</strong> Fresh Strawberry Tea, Hibiscus Tea[cite: 74].</li>
+        <li><strong>Frozen Dr Pepper:</strong> Available at Fernie's Skyway Porch, The Dock, and Lone Star Lounge[cite: 74].</li>
+        <li><strong>Candy Pickles / Chamoy Treats:</strong> Whole pickles (spicy, sour, dill), Chamoy Gushers, Chamoy Pickle Bowls, Kool-Aid Crunch Pickle, Candy Grapes Kabob[cite: 74].</li>
       </ul>
     </div>
   </div>
