@@ -5,9 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>State Fair of Texas - Fri, Sep 25, 2026</title>
 
-<!-- Tab Favicon & Social Meta Tags -->
-<link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg">
-<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg">
+<!-- Tab Favicon -->
+<link rel="icon" type="image/jpeg" href="fair1.jpg">
+<link rel="apple-touch-icon" href="fair1.jpg">
+
+<!-- Social / Link Preview Meta Tags -->
 <meta property="og:title" content="State Fair of Texas - Fri, Sep 25, 2026">
 <meta property="og:description" content="Step-by-step timeline, Butter Sculpture, transit guide, Patios in the Park, Every Day Values, and 2026 New Foods.">
 <meta property="og:image" content="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg">
@@ -70,6 +72,7 @@
     border: 2px solid #94a3b8;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
     flex-shrink: 0;
+    background-color: #e2e8f0;
   }
 
   .header-text {
@@ -97,11 +100,13 @@
     margin-top: 6px;
   }
 
+  /* Robust Hero Banner */
   .hero-banner-wrap {
     width: 100%;
     margin-bottom: 16px;
     display: flex;
     justify-content: center;
+    min-height: 40px;
   }
 
   .hero-banner-wrap img {
@@ -109,6 +114,21 @@
     height: auto;
     border-radius: 6px;
     object-fit: contain;
+    display: block;
+  }
+
+  .hero-banner-fallback {
+    width: 100%;
+    padding: 20px 10px;
+    text-align: center;
+    background: linear-gradient(135deg, #b91c1c 0%, #1e3a8a 100%);
+    color: #ffffff;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
   }
 
   .tag {
@@ -307,18 +327,6 @@
     border: 1px solid #d97706;
   }
 
-  .ocr-verbatim {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 11px;
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    padding: 8px 12px;
-    border-radius: 4px;
-    margin-top: 6px;
-    color: #0f172a;
-    line-height: 1.4;
-  }
-
   @media (max-width: 640px) {
     body { padding: 6px; }
     .page { padding: 16px 12px; margin-bottom: 14px; }
@@ -347,7 +355,7 @@
     .table-responsive { overflow: visible; }
     table { font-size: 8pt; min-width: 100%; }
     th, td { padding: 4px 6px; }
-    .corner-thumb { width: 48px; height: 48px; }
+    .corner-thumb { width: 68px; height: 68px; }
     .header-text h1 { font-size: 14pt; }
     .card li { font-size: 7.5pt; }
     .solar-strip, .highlight-box { font-size: 7.5pt; padding: 6px 8px; }
@@ -359,17 +367,17 @@
 <!-- PAGE 1: HERO BANNER, MORNING TRANSIT, NOON PARADE & PIG RACES -->
 <div class="page">
   <div class="header-container">
-    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='fair1.jpg'">
+    <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
     <div class="header-text">
       <h1>State Fair of Texas - Fri, Sep 25, 2026</h1>
       <p>Transit, Noble Coyote at 9:30 AM, Noon Parade & Early Pig Races</p>
       <div class="header-tag-wrap"><span class="tag">Part 1: Morning & Noon Parade</span></div>
     </div>
-    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='fair1.jpg'">
+    <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
   </div>
 
-  <div class="hero-banner-wrap">
-    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair3.png" alt="State Fair of Texas Banner" onerror="this.src='fair3.png'">
+  <div class="hero-banner-wrap" id="bannerContainer">
+    <img src="fair3.png" alt="State Fair of Texas Banner" id="mainBanner" onerror="handleBannerError(this)">
   </div>
 
   <div class="solar-strip">
@@ -424,8 +432,8 @@
         <tr>
           <td class="time-col">9:25 – 9:48 AM</td>
           <td class="zone-col">Noble Coyote</td>
-          <td class="activity-col"><strong>Arrive 9:30 AM sharp</strong> at Noble Coyote Coffee Roasters (819 Exposition Ave). Savor <span class="coffee-highlight">★ Specialty Pour-Overs & Cold Brew ★</span> and fresh morning pastries.</td>
-          <td class="category-col"><span class="badge badge-coffee">★ Specialty Coffee ★</span></td>
+          <td class="activity-col"><strong>Arrive 9:30 AM sharp</strong> at Noble Coyote Coffee Roasters (819 Exposition Ave). Savor pour-overs, iced espresso, and fresh pastries.</td>
+          <td class="category-col"><span class="badge badge-ac">Morning Coffee</span></td>
         </tr>
         <tr>
           <td class="time-col">9:48 – 10:00 AM</td>
@@ -482,13 +490,13 @@
 <!-- PAGE 2: BUTTER SCULPTURE, AUTO SHOW, 4 PM STUNT DOGS & RETURN TIMELINE -->
 <div class="page page-break">
   <div class="header-container">
-    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='fair1.jpg'">
+    <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
     <div class="header-text">
       <h1>State Fair of Texas - Fri, Sep 25, 2026</h1>
       <p>Creative Arts Butter Sculpture, 120-Min Auto Show & 4:00 PM Dogs</p>
       <div class="header-tag-wrap"><span class="tag">Part 2: Peak Solar A/C & Return</span></div>
     </div>
-    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='fair1.jpg'">
+    <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
   </div>
 
   <div class="highlight-box">
@@ -586,13 +594,13 @@
 <!-- PAGE 3: PATIOS IN THE PARK (SHADED & A/C DRINKING GUIDE) -->
 <div class="page page-break">
   <div class="header-container">
-    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='fair1.jpg'">
+    <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
     <div class="header-text">
       <h1>State Fair of Texas - Fri, Sep 25, 2026</h1>
       <p>Curated Directory of Shaded Beer Gardens, Wine Patios & A/C Lounges</p>
       <div class="header-tag-wrap"><span class="tag tag-amber">Drinking Patios Directory</span></div>
     </div>
-    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='fair1.jpg'">
+    <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
   </div>
 
   <div class="section-title">Primary Wine, Craft Beer & Shaded Cocktail Retreats</div>
@@ -685,13 +693,13 @@
 <!-- PAGE 4: MASTER GUIDE TO HIDDEN GEMS & TIMED ACTIVITIES -->
 <div class="page page-break">
   <div class="header-container">
-    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='fair1.jpg'">
+    <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
     <div class="header-text">
       <h1>State Fair of Texas - Fri, Sep 25, 2026</h1>
       <p>Master Guide to Hidden Gems, Curated Cultural Exhibits & Timed Experiences</p>
       <div class="header-tag-wrap"><span class="tag tag-purple">Curated Activities & Gems</span></div>
     </div>
-    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='fair1.jpg'">
+    <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
   </div>
 
   <div class="section-title">Essential Hidden Gems & Air-Conditioned Architectural Sanctuaries</div>
@@ -781,13 +789,13 @@
 <!-- PAGE 5: COMPLETE UNABRIDGED VALUE FOOD DIRECTORY (SAVORY & MEALS) -->
 <div class="page page-break">
   <div class="header-container">
-    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='fair1.jpg'">
+    <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
     <div class="header-text">
       <h1>State Fair of Texas - Fri, Sep 25, 2026</h1>
       <p>Unabridged Every Day Values Directory: Hearty Savory Meals, Proteins & Starches</p>
       <div class="header-tag-wrap"><span class="tag tag-green">Every Day Values: Part 1</span></div>
     </div>
-    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='fair1.jpg'">
+    <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
   </div>
 
   <div class="highlight-box">
@@ -949,13 +957,13 @@
 <!-- PAGE 6: COMPLETE UNABRIDGED VALUE FOOD DIRECTORY (PIZZA, SNACKS, SWEETS & DRINKS) -->
 <div class="page page-break">
   <div class="header-container">
-    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='fair1.jpg'">
+    <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
     <div class="header-text">
       <h1>State Fair of Texas - Fri, Sep 25, 2026</h1>
       <p>Unabridged Every Day Values Directory: Pizza, Potatoes, Sweets & Beverages</p>
       <div class="header-tag-wrap"><span class="tag tag-green">Every Day Values: Part 2</span></div>
     </div>
-    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='fair1.jpg'">
+    <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
   </div>
 
   <div class="section-title">Pizza by the Slice, Fried Sides & Loaded Potatoes</div>
@@ -1114,13 +1122,13 @@
 <!-- PAGE 7: 2026 NEW FOODS & BIG TEX CHOICE AWARDS DIRECTORY (SAVORY) -->
 <div class="page page-break">
   <div class="header-container">
-    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='fair1.jpg'">
+    <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
     <div class="header-text">
       <h1>State Fair of Texas - Fri, Sep 25, 2026</h1>
       <p>New Foods Guide: Savory Entrees, Sandwiches, Tacos & Big Tex Finalists</p>
       <div class="header-tag-wrap"><span class="tag tag-red">2026 New Foods: Part 1</span></div>
     </div>
-    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='fair1.jpg'">
+    <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
   </div>
 
   <div class="highlight-box">
@@ -1271,13 +1279,13 @@
 <!-- PAGE 8: 2026 NEW FOODS & BIG TEX CHOICE AWARDS (SWEET & SIPPERS) -->
 <div class="page page-break">
   <div class="header-container">
-    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='fair1.jpg'">
+    <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
     <div class="header-text">
       <h1>State Fair of Texas - Fri, Sep 25, 2026</h1>
       <p>New Foods Guide: Desserts, Pastries, Shakes & Award-Winning Sippers</p>
       <div class="header-tag-wrap"><span class="tag tag-red">2026 New Foods: Part 2</span></div>
     </div>
-    <img src="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='fair1.jpg'">
+    <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
   </div>
 
   <div class="section-title">2026 New Sweet Delicacies & Dessert Finalists</div>
@@ -1455,6 +1463,17 @@
     </table>
   </div>
 </div>
+
+<script>
+  // Non-blocking, single-attempt fallback to ensure page load stops spinning immediately
+  function handleBannerError(img) {
+    img.onerror = null;
+    var container = document.getElementById('bannerContainer');
+    if (container) {
+      container.innerHTML = '<div class="hero-banner-fallback">State Fair of Texas • Dallas</div>';
+    }
+  }
+</script>
 
 </body>
 </html>
