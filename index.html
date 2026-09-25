@@ -9,7 +9,7 @@
 <link rel="icon" type="image/jpeg" href="fair1.jpg">
 <link rel="apple-touch-icon" href="fair1.jpg">
 <meta property="og:title" content="State Fair of Texas - Fri, Sep 25, 2026">
-<meta property="og:description" content="Glanceable walking timeline, 1936 Art Deco history, trivia, Patios in the Park, and 2026 Value & New Foods.">
+<meta property="og:description" content="Glanceable walking timeline, Auto Show concept vehicles, 1936 Art Deco history, photo spots, Patios in the Park, Every Day Values, and 2026 New Foods.">
 <meta property="og:image" content="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg">
 <meta property="og:url" content="https://doodleydoodle.duckdns.org/">
 <meta property="og:type" content="website">
@@ -24,7 +24,6 @@
     --border: #e2e8f0;
     --card-bg: #ffffff;
     --bg-page: #f8fafc;
-    --highlight-yellow: #fef08a;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,7 +39,7 @@
   }
 
   .container {
-    max-width: 820px;
+    max-width: 840px;
     margin: 0 auto;
   }
 
@@ -81,12 +80,12 @@
     margin-bottom: 12px;
   }
   .corner-thumb {
-    width: 60px;
-    height: 60px;
+    width: 68px;
+    height: 68px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #94a3b8;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   }
   .hero-card h1 {
     font-size: 21px;
@@ -202,6 +201,18 @@
   }
   .fact-box strong { color: #115e59; font-weight: 800; }
 
+  .highlight-box {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    font-size: 12.5px;
+    color: #1e40af;
+    line-height: 1.4;
+  }
+  .highlight-box strong { color: #1e3a8a; }
+
   .badge {
     display: inline-block;
     padding: 2px 7px;
@@ -216,9 +227,10 @@
   .badge-drink { background: #fce7f3; color: #9d174d; }
   .badge-food { background: #dcfce7; color: #166534; }
   .badge-star { background: #fef9c3; color: #854d0e; border: 1px solid #facc15; }
-  .coffee-star { color: #b45309; font-weight: 800; }
+  .badge-new { background: #ffedd5; color: #9a3412; border: 1px solid #fed7aa; }
+  .badge-auto { background: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; font-weight: 800; }
+  .badge-coffee { background: #fef3c7; color: #78350f; border: 1px solid #d97706; font-weight: 800; }
 
-  /* Collapsible / Directory Sections */
   .section-heading {
     font-size: 16px;
     font-weight: 900;
@@ -253,6 +265,12 @@
     gap: 12px;
     margin-top: 10px;
   }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+  }
   .card {
     background: #ffffff;
     border: 1px solid var(--border);
@@ -265,10 +283,13 @@
   .card li { font-size: 12px; color: #334155; margin-bottom: 6px; line-height: 1.4; }
   .card li strong { color: var(--primary); }
 
+  .satiety-star { color: #eab308; font-size: 14px; }
+  .coffee-highlight { background-color: #fef3c7; color: #78350f; font-weight: 800; padding: 1px 5px; border-radius: 4px; border: 1px solid #d97706; }
+
   @media (max-width: 600px) {
     body { padding: 4px; font-size: 14px; }
     .hero-card h1 { font-size: 18px; }
-    .corner-thumb { width: 48px; height: 48px; }
+    .corner-thumb { width: 52px; height: 52px; }
     .step-card { padding: 12px; }
     .step-title { font-size: 14.5px; }
   }
@@ -299,8 +320,8 @@
     <div class="header-avatars">
       <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
       <div>
-        <h1>State Fair of Texas</h1>
-        <p>Friday, September 25, 2026 • Walking Guide & Field Companion</p>
+        <h1>State Fair of Texas - Fri, Sep 25, 2026</h1>
+        <p>Walking Guide, Auto Show Concepts, Architecture & Dining Companion</p>
       </div>
       <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
     </div>
@@ -437,6 +458,84 @@
     <div class="step-title">Drive Home via I-30 West</div>
     <div class="step-desc">
       Pull out onto 2nd Ave, merge onto I-30 West toward Fort Worth/Arlington, and drive back to 2806 Sarah Drive in Pantego, arriving right around 6:00 PM.
+    </div>
+  </div>
+
+  <!-- HIGH-BUZZ & CONCEPT VEHICLES SHOWCASE GUIDE -->
+  <div class="section-heading">
+    <span>Automobile Building & High-Buzz Concepts</span>
+    <span class="badge badge-auto">Texas Auto Show</span>
+  </div>
+
+  <div class="highlight-box">
+    <strong>The Truck Capital of the World:</strong> Texas accounts for 1 out of every 6 full-size pickup trucks sold in the United States. Because of this massive market share, major domestic and global manufacturers debut special Texas-exclusive trims, heavy-duty concept rigs, and prototype powertrains specifically inside the Automobile Building and Centennial Building. Here are the must-see vehicles and interactive attractions!
+  </div>
+
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">Vehicle / Exhibit</th>
+          <th style="width: 22%;">Hall Location</th>
+          <th style="width: 38%;">Engineering Specs & High-Buzz Features</th>
+          <th style="width: 15%;">Why See It</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Ram 1500 TRX / RHO Thrill Ride</strong></td>
+          <td>Outdoor Track near Gate 5 (across from African American Museum)</td>
+          <td>High-output twin-turbo Hurricane I6 engine generating 540 horsepower and 521 lb-ft of torque with Bilstein Black Hawk e2 adaptive performance shocks. The live in-vehicle experience blasts passengers over artificial rolling hills and a 35-degree high-banked turn.</td>
+          <td><span class="badge badge-auto">Live Thrill Ride</span></td>
+        </tr>
+        <tr>
+          <td><strong>Camp Jeep Indoor Off-Road Course</strong></td>
+          <td>Centennial Building</td>
+          <td>Full indoor, climate-controlled obstacle course inside the historic hall. Features a 28-foot tall, 35-degree "mountain" climb, articulated log crawl, and 30-degree side-tilt wedges testing Wrangler Rubicon and Gladiator 4xe rock-crawling articulation.</td>
+          <td><span class="badge badge-ac">Indoor 4x4 Ride</span></td>
+        </tr>
+        <tr>
+          <td><strong>Chevrolet Concept & Heavy Duty Displays</strong></td>
+          <td>Automobile Building & Chevy Park Plaza</td>
+          <td>Full lineup of Silverado 2500/3500 HD High Country Duallys pushing 975 lb-ft of Duramax turbo-diesel torque, alongside the Corvette E-Ray all-wheel-drive electrified hybrid supercar and Corvette Z06 with its flat-plane crank 5.5L LT6 V8 engine.</td>
+          <td><span class="badge badge-auto">Supercar & HD Rigs</span></td>
+        </tr>
+        <tr>
+          <td><strong>Ford F-Series "King Ranch" & Super Duty</strong></td>
+          <td>Automobile Building</td>
+          <td>The birthplace of the Texas-themed luxury truck. Features authentic Del Rio saddle leather interiors, 1,200 lb-ft high-output 6.7L Power Stroke diesels, onboard Pro Power 2.4kW generator systems, and fully active onboard payload scales.</td>
+          <td><span class="badge badge-auto">Texas Luxury King</span></td>
+        </tr>
+        <tr>
+          <td><strong>Toyota Tundra "1794 Edition"</strong></td>
+          <td>Automobile Building & Truck Zone</td>
+          <td>Named after the year the JLC Ranch was founded in San Antonio (where every full-size Tundra is assembled). Features i-FORCE MAX hybrid powertrains (437 hp / 583 lb-ft torque) with saddle-brown leather and real American walnut wood trim.</td>
+          <td><span class="badge badge-auto">Texas-Built Pride</span></td>
+        </tr>
+        <tr>
+          <td><strong>Nissan Frontier & Titan Custom Builds</strong></td>
+          <td>Nissan Truck Zone (near Auto Bldg)</td>
+          <td>Custom ruggedized overland builds featuring NISMO off-road suspension lift kits, rooftop tents, beadlock wheels, and rock sliders engineered specifically for Texas backcountry trails.</td>
+          <td><span class="badge badge-auto">Overland Concepts</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>Auto Show Architectural Setting</h3>
+      <ul>
+        <li><strong>Automobile Building (1948):</strong> Rebuilt following a devastating 1942 fire, the hall features soaring steel trusses and exterior bas-relief sculptures celebrating the mechanical power of Texas petroleum and agriculture.</li>
+        <li><strong>Centennial Building (1936):</strong> Designed by George Dahl for Chrysler and Ford exhibits during the 1936 Centennial, featuring soaring porticos and statues symbolizing the sovereign flags of Texas history.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Auto Enthusiast Pro Tips</h3>
+      <ul>
+        <li><strong>Early Morning Walkthrough:</strong> Visiting between 10:00 AM and 11:00 AM lets you sit inside high-end trims and sports cars without waiting in line.</li>
+        <li><strong>Ride & Drive Registration:</strong> If you want to drive Chevrolet models in Chevy Park Plaza or ride the Ram Thrill Ride, register at their kiosks right at 10:00 AM before driving slots fill for the day.</li>
+      </ul>
     </div>
   </div>
 
