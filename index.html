@@ -457,7 +457,7 @@
     </div>
     <div class="step-title">Drive Home via I-30 West</div>
     <div class="step-desc">
-      Pull out onto 2nd Ave, merge onto I-30 West toward Fort Worth/Arlington, and drive back to 2806 Sarah Drive in Pantego, arriving right around 6:00 PM.
+      Pull out onto 2nd Ave, merge onto I-30 West toward Fort Worth/Arlington, and drive back to 2806 Sarah Drive in Pantego, arriving right at ~6:00 PM.
     </div>
   </div>
 
@@ -871,6 +871,16 @@
   </div>
 
 </div>
+
+<script>
+  function handleBannerError(img) {
+    img.onerror = null;
+    var container = document.getElementById('bannerContainer');
+    if (container) {
+      container.innerHTML = '<div class="hero-banner-fallback">State Fair of Texas • Dallas</div>';
+    }
+  }
+</script>
 
 </body>
 </html>
