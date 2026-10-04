@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<title>State Fair of Texas - Fri, Sep 25, 2026</title>
+<title>The Official Shenanigans of Jimothy the Raccoon</title>
 
 <!-- Tab Favicon & Social Meta Tags -->
 <link rel="icon" type="image/jpeg" href="fair1.jpg">
 <link rel="apple-touch-icon" href="fair1.jpg">
-<meta property="og:title" content="State Fair of Texas - Fri, Sep 25, 2026">
-<meta property="og:description" content="Glanceable walking timeline, Auto Show concept vehicles, 1936 Art Deco history, photo spots, Patios in the Park, Every Day Values, and 2026 New Foods.">
+<meta property="og:title" content="Jimothy the Raccoon - Professional Trash Goblin">
+<meta property="og:description" content="Hourly heist timelines, dumpster diving analytics, tactical stealth techniques, snack rating charts, and neighborhood mischief guides.">
 <meta property="og:image" content="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg">
 <meta property="og:url" content="https://doodleydoodle.duckdns.org/">
 <meta property="og:type" content="website">
 
 <style>
   :root {
-    --primary: #0f172a;
-    --primary-blue: #1d4ed8;
-    --accent-red: #b91c1c;
-    --text: #0f172a;
-    --text-muted: #475569;
-    --border: #cbd5e1;
+    --primary: #1e1b4b;
+    --primary-purple: #6366f1;
+    --accent-coral: #f43f5e;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
     --card-bg: #ffffff;
     --bg-page: #f8fafc;
   }
@@ -43,12 +43,12 @@
     margin: 0 auto;
   }
 
-  /* Sticky Top Bar for Walking */
+  /* Sticky Top Bar for Walking & Sneaking */
   .top-hud {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(15, 23, 42, 0.95);
+    background: rgba(30, 27, 75, 0.95);
     backdrop-filter: blur(8px);
     color: #ffffff;
     border-radius: 8px;
@@ -59,9 +59,9 @@
     align-items: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
-  .hud-title { font-weight: 800; font-size: 13px; letter-spacing: 0.3px; text-transform: uppercase; color: #93c5fd; }
+  .hud-title { font-weight: 800; font-size: 13px; letter-spacing: 0.3px; text-transform: uppercase; color: #a5b4fc; }
   .hud-sub { font-size: 11px; color: #cbd5e1; }
-  .hud-status { background: #b91c1c; color: #fff; font-size: 10px; font-weight: 800; padding: 3px 7px; border-radius: 4px; text-transform: uppercase; }
+  .hud-status { background: var(--accent-coral); color: #fff; font-size: 10px; font-weight: 800; padding: 3px 7px; border-radius: 4px; text-transform: uppercase; }
 
   /* Hero Section */
   .hero-card {
@@ -84,7 +84,7 @@
     height: 68px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #94a3b8;
+    border: 3px solid #818cf8;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   }
   .hero-card h1 {
@@ -115,7 +115,7 @@
     width: 100%;
     padding: 18px;
     text-align: center;
-    background: linear-gradient(135deg, #b91c1c 0%, #1e3a8a 100%);
+    background: linear-gradient(135deg, #4338ca 0%, #be123c 100%);
     color: #fff;
     border-radius: 8px;
     font-weight: 900;
@@ -128,15 +128,15 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 8px;
-    background: #fffbeb;
-    border: 1px solid #fde68a;
+    background: #fdf2f8;
+    border: 1px solid #fbcfe8;
     border-radius: 8px;
     padding: 10px 12px;
     margin-bottom: 16px;
     font-size: 11.5px;
-    color: #78350f;
+    color: #831843;
   }
-  .quick-strip strong { color: #92400e; font-weight: 800; }
+  .quick-strip strong { color: #9d174d; font-weight: 800; }
 
   /* Walking Step Cards */
   .step-card {
@@ -149,9 +149,9 @@
     position: relative;
     border-left: 5px solid #94a3b8;
   }
-  .step-card.active { border-left-color: var(--accent-red); background: #ffffff; }
-  .step-card.ac-haven { border-left-color: #0284c7; }
-  .step-card.drinks { border-left-color: #db2777; }
+  .step-card.active { border-left-color: var(--accent-coral); background: #ffffff; }
+  .step-card.ac-haven { border-left-color: #06b6d4; }
+  .step-card.drinks { border-left-color: #a855f7; }
 
   .step-header {
     display: flex;
@@ -189,16 +189,16 @@
   }
 
   .fact-box {
-    background: #f0fdfa;
-    border: 1px solid #99f6e4;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
     border-radius: 6px;
     padding: 8px 10px;
     margin-top: 8px;
     font-size: 12px;
-    color: #0f766e;
+    color: #166534;
     line-height: 1.4;
   }
-  .fact-box strong { color: #115e59; font-weight: 800; }
+  .fact-box strong { color: #14532d; font-weight: 800; }
 
   .highlight-box {
     background: #eff6ff;
@@ -227,7 +227,7 @@
   .badge-food { background: #dcfce7; color: #166534; }
   .badge-star { background: #fef9c3; color: #854d0e; border: 1px solid #facc15; }
   .badge-new { background: #ffedd5; color: #9a3412; border: 1px solid #fed7aa; }
-  .badge-auto { background: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; font-weight: 800; }
+  .badge-auto { background: #ede9fe; color: #5b21b6; border: 1px solid #ddd6fe; font-weight: 800; }
   .badge-coffee { background: #fef3c7; color: #78350f; border: 1px solid #d97706; font-weight: 800; }
   .badge-alt { background: #fae8ff; color: #86198f; border: 1px solid #f0abfc; font-weight: 800; }
 
@@ -309,10 +309,10 @@
   <!-- Walking Mode Quick-Glance Top HUD -->
   <div class="top-hud">
     <div>
-      <div class="hud-title">State Fair Live Guide</div>
-      <div class="hud-sub">Parked: 816 S 2nd Ave | Return: ~6:00 PM</div>
+      <div class="hud-title">Jimothy's Trash Radar</div>
+      <div class="hud-sub">Den: Hollow Elm Tree | Status: Looking for Marshmallows</div>
     </div>
-    <div class="hud-status">Opening Day</div>
+    <div class="hud-status">High Mischief</div>
   </div>
 
   <!-- Hero Card with Avatars & Scaled Banner -->
@@ -320,209 +320,209 @@
     <div class="header-avatars">
       <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
       <div>
-        <h1>State Fair of Texas - Fri, Sep 25, 2026</h1>
-        <p>Walking Guide, Auto Show Concepts, Architecture & Dining Companion</p>
+        <h1>Jimothy the Raccoon - Certified Mastermind</h1>
+        <p>Tactical Trash Logistics, Paw Dexterity Benchmarks, Snacking Strategies & Napping Guides</p>
       </div>
       <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
     </div>
 
     <div class="hero-banner-wrap" id="bannerContainer">
-      <img src="fair3.png" alt="State Fair of Texas Banner" id="mainBanner" onerror="this.onerror=null; document.getElementById('bannerContainer').innerHTML='<div class=\'banner-fallback\'>State Fair of Texas • Dallas</div>';">
+      <img src="fair3.png" alt="Jimothy Banner" id="mainBanner" onerror="this.onerror=null; document.getElementById('bannerContainer').innerHTML='<div class=\'banner-fallback\'>Jimothy • Neighborhood Legend</div>';">
     </div>
 
     <div class="quick-strip">
-      <div><strong>Sunrise:</strong> 7:16 AM CDT</div>
-      <div><strong>Sunset:</strong> 7:21 PM CDT</div>
-      <div><strong>Solar Noon (Peak UV):</strong> 1:18 PM CDT</div>
-      <div><strong>Peak Thermal Lag:</strong> 3:30 – 5:00 PM</div>
+      <div><strong>Sunrise (Bedtime):</strong> 7:16 AM CDT</div>
+      <div><strong>Sunset (Breakfast):</strong> 7:21 PM CDT</div>
+      <div><strong>Peak Human Asleep Time:</strong> 2:30 AM CDT</div>
+      <div><strong>Optimal Snack Heist Window:</strong> 11:30 PM – 3:00 AM</div>
     </div>
   </div>
 
   <!-- TIMELINE CARDS DESIGNED FOR WALKING ON PHONES -->
   <div class="section-heading">
-    <span>Today's Walking Timeline</span>
-    <span class="badge badge-sun">Morning To 6 PM</span>
+    <span>Jimothy's 24-Hour Schedule</span>
+    <span class="badge badge-sun">Dusk Till Dawn</span>
   </div>
 
-  <!-- STEP 1: PARKING & COFFEE -->
+  <!-- STEP 1 -->
   <div class="step-card active">
     <div class="step-header">
-      <span class="step-time">8:48 – 9:48 AM</span>
-      <span class="step-location">816 S 2nd &rarr; Exposition</span>
+      <span class="step-time">7:30 – 8:30 PM</span>
+      <span class="step-location">The Oak Tree &rarr; Mrs. Gable's Deck</span>
     </div>
-    <div class="step-title">Parking Systems Lot & Noble Coyote Coffee</div>
+    <div class="step-title">Morning Wake-Up Stretch & Cat Food Reconnaissance</div>
     <div class="step-desc">
-      Parked at Parking Systems of America ($40 paid). Walk 0.3 miles north to arrive at <strong>Noble Coyote Coffee Roasters (819 Exposition Ave)</strong> at 9:30 AM sharp. Enjoy pour-overs, iced espresso, and scratch pastries before fair crowds form.
+      Awaken from an 11-hour power nap in the fork of the hollow elm. Perform mandatory toe grooming, check the perimeter for the neighbor's golden retriever, and scurry down the trellis to inspect Mrs. Gable's back porch for leftover kibble.
     </div>
     <div class="fact-box">
-      <strong>Neighborhood Context:</strong> Exposition Park is Dallas’ historic streetcar suburb hub. The DART Green Line tracks along Parry Avenue follow the exact route of the original 1890s electric streetcars that ferried fairgoers to the front gates.
+      <strong>Anatomical Advantage:</strong> Raccoons possess rotating hind feet that can turn 180 degrees, permitting head-first descent down vertical tree trunks—essential when executing hasty tactical escapes from angry chihuahuas.
     </div>
   </div>
 
-  <!-- STEP 2: ROPE DROP & AUTO SHOW (60 MIN FIRST) -->
+  <!-- STEP 2 -->
   <div class="step-card ac-haven">
     <div class="step-header">
-      <span class="step-time">9:48 – 11:00 AM</span>
-      <span class="step-location">Front Gate &rarr; Auto Building</span>
+      <span class="step-time">8:30 – 10:00 PM</span>
+      <span class="step-location">The Green Bins &rarr; Corner Alley</span>
     </div>
-    <div class="step-title">10:00 AM Gate Rope Drop & Texas Auto Show (60 Minutes)</div>
+    <div class="step-title">Primary Dumpster Audit (The Bungee Cord Challenge)</div>
     <div class="step-desc">
-      Walk 300 feet to Parry Ave Front Gate; scan digital passes at 10:00 AM. Walk straight across the Esplanade into the <strong>Automobile Building & Centennial Building</strong> for 60 minutes of uninterrupted, empty-hall air conditioning.
+      Confront the high-security green municipal bins behind the local bakery. Utilize opposing digit leverage to loosen elastic bungee latches, tip the bin precisely 45 degrees, and harvest fresh baguette ends and sourdough crusts.
     </div>
     <div class="fact-box">
-      <strong>Auto Show History:</strong> The Texas Auto Show has operated inside the State Fair since 1913, making it older than the Detroit Auto Show. In 1936, the Centennial Building housed Chrysler’s futuristic exhibits, while the Automobile Building burned down in 1942 and was rebuilt in 1948 with Pierre Bourdelle’s murals celebrating Texas oil wildcatters.
+      <strong>Dexterity Science:</strong> A raccoon's forepaws possess hyper-dense tactile mechanoreceptors. Over 65% of the sensory cortex in their brains is dedicated to interpreting paw touch—essentially seeing the world through finger pads.
     </div>
   </div>
 
-  <!-- STEP 3: BIG TEX & PIG RACES -->
+  <!-- STEP 3 -->
   <div class="step-card">
     <div class="step-header">
-      <span class="step-time">11:00 – 11:45 AM</span>
-      <span class="step-location">Big Tex Circle &rarr; Chevy Plaza</span>
+      <span class="step-time">10:00 – 11:30 PM</span>
+      <span class="step-location">Bird Feeder Row &rarr; Johnson Garage</span>
     </div>
-    <div class="step-title">Big Tex Morning Photo & 11:30 AM Pig Races</div>
+    <div class="step-title">Acrobatic Seed Plunder & Dog Toy Relocation</div>
     <div class="step-desc">
-      Snap opening morning photos in front of Big Tex before the crowds pack the circle, load food/ride coupons at kiosks, and walk to Chevrolet Park Plaza for the 11:30 AM Statewide Remodeling Pig Races.
+      Traverse the telephone wire tightrope over to the Johnson yard. Hang upside down by two toes to spin the squirrel-proof bird feeder until sunflower seeds cascade like golden confetti. Borrow a squeaky hedgehog toy for moral support.
     </div>
     <div class="fact-box">
-      <strong>Big Tex Trivia:</strong> Big Tex debuted in 1952. He was originally built in 1949 as a giant paper-mâché Santa Claus in the small town of Kerens, Texas, before Dallas fair directors bought his 52-foot steel frame for $750 and added his iconic cowboy hat and vocal drawl.
+      <strong>Jimothy Lore:</strong> Jimothy has hoarded approximately 14 squeaky rubber toys inside his hollow tree hollow. He does not chew them; he arranges them alphabetically by pitch.
     </div>
   </div>
 
-  <!-- STEP 4: 12 PM NOON PARADE & WINE GARDEN -->
+  <!-- STEP 4 -->
   <div class="step-card drinks">
     <div class="step-header">
-      <span class="step-time">11:45 AM – 12:45 PM</span>
-      <span class="step-location">Grand Ave &rarr; Old Mill</span>
+      <span class="step-time">11:30 PM – 1:00 AM</span>
+      <span class="step-location">Garden Birdbath &rarr; Creek Edge</span>
     </div>
-    <div class="step-title">Opening Day Parade (12:00 PM) at Rousso's Wine Garden</div>
+    <div class="step-title">Culinary Food Washing & Puddle Hydration Protocol</div>
     <div class="step-desc">
-      Claim a shaded outdoor patio table at <strong>Rousso’s Wine Garden at The Old Mill</strong> on Grand Ave. Order Texas reserve wine, a frozen wine cocktail, or a cold ZiegenBock. Watch the marching bands and floats roll right past your table.
+      Carry acquired pretzel nuggets and berry clusters to the stone birdbath. Methodically submerge each morsel in fresh rainwater, rolling it between paws like a tiny chef preparing five-star cuisine before consumption.
     </div>
     <div class="fact-box">
-      <strong>Old Mill History:</strong> Built for the 1936 Texas Centennial Exposition as the Morten Milling Industry Building, this rough-stone structure originally operated as a real working experimental flour mill with full-scale grain milling machinery inside.
+      <strong>The "Dousing" Myth:</strong> Raccoons do not wash food because they care about table manners or germs; wetting their paws softens the calloused skin and dramatically heightens nerve sensitivity, allowing them to feel the food structure clearer.
     </div>
   </div>
 
-  <!-- STEP 5: BUTTER SCULPTURE & A/C LUNCH -->
+  <!-- STEP 5 -->
   <div class="step-card ac-haven">
     <div class="step-header">
-      <span class="step-time">12:45 – 2:00 PM</span>
-      <span class="step-location">Tower Food &rarr; Creative Arts</span>
+      <span class="step-time">1:00 – 2:30 AM</span>
+      <span class="step-location">Neighborhood Sheds &rarr; Patio Couches</span>
     </div>
-    <div class="step-title">Tower Lunch, The Butter Sculpture & Cooking Demos</div>
+    <div class="step-title">Mid-Shift Under-Deck Siesta & Cushion Testing</div>
     <div class="step-desc">
-      Enjoy an air-conditioned lunch inside the Tower Building (Fletcher’s Original Corny Dog & Big Tex Choice winners). Walk into Creative Arts to view the refrigerated <strong>Stars, Stripes, and Howdies Butter Sculpture</strong> and the 1:30 PM Cutco Kitchen cooking demo.
+      Retire under the Miller family's cedar patio deck. Curl into a tight spherical fluff-ball on a stray outdoor sofa cushion to digest carbohydrates and calculate optimal return paths.
     </div>
     <div class="fact-box">
-      <strong>Butter Sculpture Lore:</strong> Begun in the 1990s inside a custom glass-walled refrigerated booth held at 38°F, the sculptor spends over 150 hours hand-carving more than 1,000 pounds of Texas salted butter. This year’s sculpture celebrates both the Fair's 140th anniversary and America's 250th birthday.
+      <strong>Nap Architecture:</strong> A raccoon's core resting body temperature is preserved through an underfur layer comprising nearly 90% of their coat, insulated by long water-resistant guard hairs that shed rain and morning dew.
     </div>
   </div>
 
-  <!-- STEP 6: PEAK HEAT HISTORIC HAVEN -->
+  <!-- STEP 6 -->
   <div class="step-card ac-haven">
     <div class="step-header">
-      <span class="step-time">2:00 – 3:45 PM</span>
-      <span class="step-location">Hall of State &rarr; Go Texan</span>
+      <span class="step-time">2:30 – 4:30 AM</span>
+      <span class="step-location">Suburban Perimeter &rarr; Koi Pond</span>
     </div>
-    <div class="step-title">Hall of State Centennial Murals & GO TEXAN Tastings</div>
+    <div class="step-title">The Shiny Object Heist & Fish Pond Staring Contest</div>
     <div class="step-desc">
-      Escape peak solar heat inside the limestone-encased Hall of State. Walk the Great Hall to view 3-story murals and <em>Mundo Latino: Día de los Muertos</em>. Continue into the GO TEXAN Pavilion for free food samples, chocolate milk, and a cold beer tasting.
+      Inspect patio tables for discarded aluminum foil candy wrappers, silver keys, and glass marbles. Sit at the edge of the koi pond for 45 minutes making contemplative eye contact with an orange carp named Bartholomew.
     </div>
     <div class="fact-box">
-      <strong>Hall of State Architecture:</strong> Completed in 1936 at a cost of $1.2 million, it was the crowning jewel of the Texas Centennial. The bronze statue outside is the gold-leafed <em>Tejas Warrior</em> by Allie Victoria Tennant, while Eugene Savage's murals inside were the largest continuous historical indoor murals in the world when unveiled.
+      <strong>Mask Mystery:</strong> The distinctive black bandit mask across Jimothy's eyes serves an optical function similar to athlete eye-black: it absorbs glare and enhances contrast perception in dim moonlight.
     </div>
   </div>
 
-  <!-- STEP 7: 4 PM STUNT DOGS & LOT DEPARTURE -->
+  <!-- STEP 7 -->
   <div class="step-card">
     <div class="step-header">
-      <span class="step-time">3:45 – 5:00 PM</span>
-      <span class="step-location">Marine Corps Sq &rarr; 816 S 2nd</span>
+      <span class="step-time">4:30 – 6:00 AM</span>
+      <span class="step-location">Storm Drains &rarr; Garage Roof</span>
     </div>
-    <div class="step-title">All-Star Stunt Dog Show (4:00 PM) & Walk to Car</div>
+    <div class="step-title">The Early Morning Scramble & Newspaper Sniffing</div>
     <div class="step-desc">
-      Catch the 4:00 PM Stunt Dog Show at Marine Corps Square as the sun angle drops to ~34°, eliminating direct crown solar radiation. Walk through Gate 3 (Grand Ave) down 2nd Ave back to your parked car at 816 S 2nd Ave by 5:00 PM.
+      Navigate the municipal storm runoff system to avoid early-morning joggers. Jump onto the garage roof, observe the neighborhood delivery truck dropping newspapers, and steal an unattended glazed donut crumb.
     </div>
     <div class="fact-box">
-      <strong>Woofus Myth:</strong> On your walk toward Marine Corps Square, spot <em>The Woofus</em> at United Ag Plaza—a 1936 Art Deco statue with the head of a sheep, mane of a horse, wings of a duck, tail of a turkey, body of a pig, and horns of a Texas Longhorn.
+      <strong>Vocal Repertoire:</strong> Raccoons communicate with over 200 distinct acoustic signals, ranging from gentle purrs when eating watermelon to bird-like chitters when coordinating garden escapes.
     </div>
   </div>
 
-  <!-- STEP 8: DRIVE HOME -->
+  <!-- STEP 8 -->
   <div class="step-card">
     <div class="step-header">
-      <span class="step-time">5:05 – 5:55 PM</span>
-      <span class="step-location">I-30 West &rarr; Pantego</span>
+      <span class="step-time">6:00 – 7:15 AM</span>
+      <span class="step-location">Elm Canopy &rarr; Deep Slumber</span>
     </div>
-    <div class="step-title">Drive Home via I-30 West</div>
+    <div class="step-title">Return to Tree Base & Full Daylight Shutdown</div>
     <div class="step-desc">
-      Pull out onto 2nd Ave, merge onto I-30 West toward Fort Worth/Arlington, and drive back to 2806 Sarah Drive in Pantego, arriving right around 6:00 PM.
+      Ascend the bark ladder back into the tree trunk hollow. Tuck bushy tail over nose, let out a deep contented sigh, and fall fast asleep just as the sun breaks over the rooftops.
     </div>
   </div>
 
   <!-- HIGH-BUZZ VEHICLES & CONCEPT CARS SHOWCASE GUIDE -->
   <div class="section-heading">
-    <span>Automobile Building & High-Buzz Concepts</span>
-    <span class="badge badge-auto">Texas Auto Show</span>
+    <span>Jimothy's High-Tech Gear & Paw Specs</span>
+    <span class="badge badge-auto">Biological Engineering</span>
   </div>
 
   <div class="highlight-box">
-    <strong>Official 2026 Texas Auto Show Debuts & Engineering Realities:</strong> Texas is the premier truck and performance market in the nation. Stellantis, Toyota, General Motors, and Ford use the Automobile Building, Centennial Building, and Truck Zone to premiere their most significant production powertrains and concept builds. Below are the verified technical highlights and comparative engineering profiles.
+    <strong>Tactical Specifications & Locomotion Performance:</strong> Jimothy is built with evolutionary adaptations that outclass suburban obstacles. Below are his verified biological specs, paws-on performance ratings, and mechanical movement characteristics.
   </div>
 
   <div class="table-responsive">
     <table>
       <thead>
         <tr>
-          <th style="width: 24%;">Vehicle / Concept</th>
+          <th style="width: 24%;">Feature / Mechanism</th>
           <th style="width: 20%;">Location</th>
-          <th style="width: 38%;">Verified Powertrain Specs & Features</th>
+          <th style="width: 38%;">Verified Specifications & Capabilities</th>
           <th style="width: 18%;">Real-World Context</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>2026 Dodge Charger Scat Pack</strong></td>
-          <td>Dodge Display<small>Automobile Building</small></td>
-          <td>Official Texas Debut: Replaces the classic naturally aspirated HEMI V8 with the 3.0-liter twin-turbo SIXPACK High-Output (H.O.) inline-six. Generates 550 hp and 531 lb-ft of torque. Standard all-wheel drive delivers a 0–60 mph time of 3.9 seconds and 12.2s quarter-mile.</td>
-          <td>Delivers peak torque much earlier in the RPM band than traditional V8s. Selectable rear-wheel drive mode retains classic burnout capability while AWD provides wet-weather grip.</td>
+          <td><strong>Front Paw Actuators (5 Digits)</strong></td>
+          <td>Forelimbs<small>Primary Tools</small></td>
+          <td>Non-retractable curved claws paired with five long, dexterous fingers capable of untying knots, turning round doorknobs, and unlatching complex metal carabiners in total darkness.</td>
+          <td>Operates with independent fingertip precision, allowing Jimothy to open sealed peanut butter jars in under 45 seconds.</td>
         </tr>
         <tr>
-          <td><strong>2026 Dodge Charger Daytona EV</strong></td>
-          <td>Dodge Display<small>Automobile Building</small></td>
-          <td>All-electric four-door muscle car on a 93.9-kWh usable battery pack. Dual motors generate 670 horsepower, accelerating 0–60 mph in 3.3 seconds with an 11.5s quarter-mile. Priced at $59,995 MSRP with Fratzonic Chambered Exhaust.</td>
-          <td>Unlike quiet commuter EVs like the Tesla Model 3, this is engineered strictly for aggressive mechanical muscle attitude, instant torque delivery, and wider rear passenger entry.</td>
+          <td><strong>Anti-Glare Face Mask</strong></td>
+          <td>Cranial Region<small>Perception Array</small></td>
+          <td>Dense melanin-pigmented fur band across the orbital zone. Reduces night-time light reflection from street lamps and garden floodlights by up to 80%.</td>
+          <td>Provides high-contrast night vision, eliminating the glare from security spotlights while picking locks.</td>
         </tr>
         <tr>
-          <td><strong>2026 Jeep Cherokee Hybrid</strong></td>
-          <td>Jeep Display<small>Centennial Building</small></td>
-          <td>Regional Reveal: 1.6-liter turbocharged four-cylinder engine paired with a two-motor hybrid system producing 210 hp and 230 lb-ft of torque. Delivers an estimated 37 mpg combined (42 city / 33 highway) and over 500 miles on a single gas tank.</td>
-          <td>Eliminates the compromise between off-road capability and commuter economy. Nearly 5 inches longer than prior generations with over 30 cu. ft. cargo volume and 3,500-lb towing.</td>
+          <td><strong>Torque Tail Counterbalance</strong></td>
+          <td>Posterior Assembly<small>5–7 Dark Rings</small></td>
+          <td>Thick, muscular 12-inch tail serving as a dynamic gyro-stabilizer during high-wire fence scurries, roof jumps, and vertical pipe climbs.</td>
+          <td>Acts as a third contact point during limb transitions across shaky clotheslines and thin telephone wires.</td>
         </tr>
         <tr>
-          <td><strong>Chrysler Pacifica Grizzly Peak Concept</strong></td>
-          <td>Chrysler Display<small>Automobile Building</small></td>
-          <td>Centennial Celebration Concept: Commemorates 100 years of the brand. Re-engineers the Pacifica minivan into an overlanding off-grid camper with lifted suspension, all-wheel drive, and all-terrain tires.</td>
-          <td>Replaces the third-row seating with a full flat-surface sleeping and cargo deck, proving minivan interior volume rivals large overland SUVs for base-camp wilderness travel.</td>
+          <td><strong>Sub-Bark Acoustic Ears</strong></td>
+          <td>Auditory Core<small>Dual Swivel Cones</small></td>
+          <td>Can rotate independently up to 120 degrees, catching acoustic frequencies up to 50–85 kHz (ultrasonic spectrum).</td>
+          <td>Can detect earthworms wriggling 2 inches underground and human footsteps approaching through thick carpet.</td>
         </tr>
         <tr>
-          <td><strong>2026 Ram 1500 (5.7L HEMI V8 Return)</strong></td>
-          <td>Ram Truck Display<small>Automobile Building</small></td>
-          <td>Return of the legendary 5.7-liter HEMI V8 with standard eTorque mild-hybrid assist. Pushes 395 hp and 410 lb-ft of torque through a factory GT performance dual exhaust. Offered alongside the new Ram 2500 Warlock and Black Express Heavy Duty packages.</td>
-          <td>Pairs with an optional 33-gallon fuel tank for nearly 600 miles of highway range. The belt-driven eTorque generator smooths low-speed acceleration while towing.</td>
+          <td><strong>Undercoat Thermal Shield</strong></td>
+          <td>Torso / Flank<small>Dual-Layer Mesh</small></td>
+          <td>Dense, wavy underfur trapping a continuous air barrier, topped by stiff water-repellent guard hairs. Rated for sub-freezing Texas winters and unexpected sprinkler blasts.</td>
+          <td>Maintains core body heat even when fishing for crayfish in near-freezing rain puddles.</td>
         </tr>
         <tr>
-          <td><strong>Toyota Trailhunter & Custom Builds</strong></td>
-          <td>Toyota Display<small>Automobile Building & Truck Zone</small></td>
-          <td>Factory-engineered overlanding setups on Tacoma and Tundra platforms with Old Man Emu forged shocks and high-clearance bumpers. Highlights a custom Dallas Stars hockey team build and the San Antonio-assembled Sequoia 1794 Edition.</td>
-          <td>Turnkey off-road warranty rigs designed to conquer rugged Texas ranch land and remote public lands without aftermarket fabrication.</td>
+          <td><strong>All-Terrain Rear Swivel Joint</strong></td>
+          <td>Pelvic Assembly<small>180° Rotators</small></td>
+          <td>Specialized ankle bone configuration that pivots backwards, allowing downward grip on tree bark without slips.</td>
+          <td>Enables fast head-first descents from roofs when garden sprinklers unexpectedly activate.</td>
         </tr>
         <tr>
-          <td><strong>Dodge Durango SRT Hellcat Jailbreak</strong></td>
-          <td>Dodge Display<small>Automobile Building</small></td>
-          <td>Supercharged 6.2-liter HEMI Hellcat V8 engine pushing 710 hp. Display highlights over 6 million custom factory combinations (6 wheel options, 6 badge finishes, 5 racing stripes, 4 caliper colors).</td>
-          <td>Three-row family utility vehicle engineered with track-ready launch control and sports-car braking dynamics.</td>
+          <td><strong>Whiskers & Spatial Sensor Grid</strong></td>
+          <td>Muzzle & Forearms<small>Vibrissae Nodes</small></td>
+          <td>High-sensitivity tactile bristles located on the snout and just above the front paws for measuring fence openings before squeezing through.</td>
+          <td>If his whiskers clear the fence opening without bending, his entire flexible rib cage can compress to fit through.</td>
         </tr>
       </tbody>
     </table>
@@ -530,76 +530,76 @@
 
   <div class="grid-2">
     <div class="card">
-      <h3>Interactive Auto Show Thrill Rides</h3>
+      <h3>Interactive Obstacle Courses</h3>
       <ul>
-        <li><strong>Camp Jeep (Centennial Building):</strong> Indoor off-road ride-along where professional drivers tackle a 28-foot 35-degree mountain climb, timber logs, and 30-degree side wedges testing Wrangler Rubicon and Gladiator 4xe articulation in freezing A/C.</li>
-        <li><strong>Ram 1500 RHO Thrill Ride (Gate 5 Track):</strong> High-speed outdoor acceleration course demonstrating the 540-hp twin-turbo Hurricane engine over dirt rollers and high-banked curves.</li>
-        <li><strong>Chevrolet Ride & Drive (Chevy Park Plaza):</strong> Complimentary test-drive course (10 AM – 7 PM). Licensed drivers over 18 can get behind the wheel of a Silverado HD, Colorado, or Corvette Grand Sport.</li>
-        <li><strong>Kids Drive Zone (Centennial Building):</strong> Safe indoor mini-track where children pilot battery-powered electric versions of Ram trucks and Jeep Wranglers.</li>
+        <li><strong>The Fence Sprint:</strong> 150 feet of slick cedar picket fencing conquered at full gallop in under 6 seconds flat.</li>
+        <li><strong>Lattice Ascender:</strong> Rapid vertical scampering up white vinyl garden trellises with zero creaking sounds.</li>
+        <li><strong>Bird-Feeder Pendulum:</strong> Dynamic body-weight swing maneuver designed to dump high-grade thistle seed onto the patio floor.</li>
+        <li><strong>Downspout Chimney Slide:</strong> Controlled friction slide inside copper gutter spouts for silent escapes.</li>
       </ul>
     </div>
     <div class="card">
-      <h3>Auto Show History & Architectural Context</h3>
+      <h3>Trash Raider History & Anecdotes</h3>
       <ul>
-        <li><strong>113-Year Tradition:</strong> Founded in 1913, the Texas Auto Show inside the State Fair predates almost all major metropolitan auto shows, reflecting the sheer purchasing power of Lone Star drivers.</li>
-        <li><strong>1936 Exposition Halls:</strong> The Centennial Building originally showcased Art Deco styling for Chrysler’s luxury models. Look up at the soaring ceiling trusses designed to permit massive clear-span exhibit floors.</li>
-        <li><strong>Bourdelle Frescoes:</strong> The Automobile Building's exterior features relief sculptures and murals created by Pierre Bourdelle during the post-WWII reconstruction, celebrating locomotives, turbines, and drilling rigs.</li>
+        <li><strong>The Great Cheese Heist of '24:</strong> Jimothy once liberated an entire 2-pound block of mild cheddar from a garage mini-fridge by working the latch with a bent paperclip.</li>
+        <li><strong>The Pool Float Incident:</strong> Spotted floating peacefully on an inflatable flamingo at 3:15 AM while eating dry cereal directly from the box.</li>
+        <li><strong>Neighborhood Treaty:</strong> Locals agreed that keeping trash lids tight was useless and simply began leaving out occasional apple slices to negotiate peace.</li>
       </ul>
     </div>
   </div>
 
   <!-- 1936 ART DECO PHOTO SPOTS & ARCHITECTURE DIRECTORY -->
   <div class="section-heading">
-    <span>Fair Park Architecture & Photo Spots</span>
-    <span class="badge badge-sun">1936 Centennial</span>
+    <span>Jimothy's Favorite Photo Spots</span>
+    <span class="badge badge-sun">Scenic Vistas</span>
   </div>
 
   <div class="table-responsive">
     <table>
       <thead>
         <tr>
-          <th style="width: 25%;">Iconic Landmark</th>
-          <th style="width: 22%;">Park Location</th>
+          <th style="width: 25%;">Iconic Perch</th>
+          <th style="width: 22%;">Neighborhood Spot</th>
           <th style="width: 18%;">Best Light Time</th>
-          <th style="width: 35%;">Architecture Story & Photo Angle</th>
+          <th style="width: 35%;">Scenic Story & Ideal Angle</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>The Esplanade of State</strong></td>
-          <td>Inside Parry Ave Gate</td>
-          <td>10:00 AM & 11:00 AM</td>
-          <td>700-foot-long pool flanked by pylons and fountains. <em>Photo Tip:</em> Shoot down the central axis toward the Hall of State to capture the water fountains dancing against George Dahl's limestone vistas.</td>
+          <td><strong>The Apex of the Gazebo</strong></td>
+          <td>Henderson Backyard</td>
+          <td>Dusk (7:30 PM)</td>
+          <td>High cedar cupola looking down across the lawn. <em>Photo Tip:</em> Silhouette against the purple sunset sky while his fluffy ears twitch in the breeze.</td>
         </tr>
         <tr>
-          <td><strong>Tenor & Contralto Pylons</strong></td>
-          <td>Esplanade reflecting pool</td>
-          <td>10:05 AM or 4:35 PM</td>
-          <td>Silver-finished Art Deco bronzes by Lawrence Tenney Stevens. <em>Photo Tip:</em> Shoot low-angle upward framing the soaring male and female figures against the open sky.</td>
+          <td><strong>The Stone Birdbath Edge</strong></td>
+          <td>Corner Rose Garden</td>
+          <td>11:00 PM (Under Moonlight)</td>
+          <td>Classic marble basin filled with calm water. <em>Photo Tip:</em> Shoot close-up catching the water droplets glistening on his front paws as he washes a grape.</td>
         </tr>
         <tr>
-          <td><strong>Centennial & Auto Porticos</strong></td>
-          <td>Colonnades flanking pool</td>
-          <td>10:00 – 11:00 AM</td>
-          <td>Murals by Carlo Ciampaglia (Centennial) and Pierre Bourdelle (Auto Building) depicting trains, planes, and rocketry guided by angels. <em>Photo Tip:</em> Long perspective shot walking down the shaded porticos.</td>
+          <td><strong>Brick Chimney Lookout</strong></td>
+          <td>The Split-Level Ranch Roof</td>
+          <td>2:00 AM</td>
+          <td>Warm clay bricks that hold afternoon heat all night. <em>Photo Tip:</em> Low-angle shot showing Jimothy standing upright on hind legs scouting for open bins.</td>
         </tr>
         <tr>
-          <td><strong>Tejas Warrior & Hall of State</strong></td>
-          <td>Terminus of Esplanade</td>
-          <td>2:00 – 3:00 PM</td>
-          <td>Allie Victoria Tennant's gold-leaf warrior holding a bow. <em>Photo Tip:</em> Shoot from the limestone steps to catch the golden figure reflecting sunlight, then step inside the Great Hall for wide-angle ceiling shots.</td>
+          <td><strong>Hollow Tree Portal</strong></td>
+          <td>The Great Elm Trunk</td>
+          <td>7:00 AM (Golden Hour)</td>
+          <td>Natural circular wooden knot forming the den entrance. <em>Photo Tip:</em> Capture just his masked face and sleepy eyes peeking out before daytime shut-eye.</td>
         </tr>
         <tr>
-          <td><strong>The Woofus Beast</strong></td>
-          <td>United Ag & Turf Plaza</td>
-          <td>11:20 AM</td>
-          <td>Whimsical Art Deco mythological beast combining all major Texas livestock. <em>Photo Tip:</em> Capture a side profile showing the duck wings and massive Longhorns simultaneously.</td>
+          <td><strong>The Fence Post Crown</strong></td>
+          <td>Alley Boundary Line</td>
+          <td>10:15 PM</td>
+          <td>Solid 6x6 wooden corner post overlooking the compost heaps. <em>Photo Tip:</em> Capture his ringed tail curled gracefully around the wooden post.</td>
         </tr>
         <tr>
-          <td><strong>Leonhardt Lagoon Sculptures</strong></td>
-          <td>Leonhardt Lagoon</td>
-          <td>10:45 AM or 3:30 PM</td>
-          <td>Patricia Johanson's 1986 organic terra cotta bridges (Delta Duck-Potato & Texas Fern). <em>Photo Tip:</em> Stand at the bridge curves looking over the water with weeping willows in the background.</td>
+          <td><strong>Koi Pond Stepping Stones</strong></td>
+          <td>Zen Rock Garden</td>
+          <td>3:45 AM</td>
+          <td>Flat river stones surrounded by lilies. <em>Photo Tip:</em> Mirror reflection shot in the glassy water as he investigates a friendly garden toad.</td>
         </tr>
       </tbody>
     </table>
@@ -607,62 +607,62 @@
 
   <!-- PATIOS IN THE PARK (SHADED & A/C RETREATS) -->
   <div class="section-heading">
-    <span>Patios in the Park Guide</span>
-    <span class="badge badge-drink">Shaded & A/C</span>
+    <span>Daytime Nap Havens & Shaded Dens</span>
+    <span class="badge badge-drink">Cozy & Hidden</span>
   </div>
 
   <div class="table-responsive">
     <table>
       <thead>
         <tr>
-          <th style="width: 25%;">Patio / Garden</th>
+          <th style="width: 25%;">Sanctuary Name</th>
           <th style="width: 22%;">Location</th>
-          <th style="width: 38%;">Atmosphere, Beverages & Highlights</th>
+          <th style="width: 38%;">Atmosphere, Comforts & Nesting Highlights</th>
           <th style="width: 15%;">Environment</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Rousso’s Wine Garden at The Old Mill</strong></td>
-          <td>Grand Ave (near Big Tex Circle)</td>
-          <td>Spacious outdoor patio under the shadow of Big Tex. Texas wines, frozen cocktails, and live acoustic sets on the ZiegenBock Stage. Best parade view!</td>
-          <td><span class="badge badge-drink">Shaded Patio</span></td>
+          <td><strong>The Hollow Elm Penthouse</strong></td>
+          <td>Central Yard Tree (20 ft up)</td>
+          <td>Natural cavity lined with dry oak leaves, cedar shavings, and stolen dryer sheets. 100% predator-proof and weather-tight.</td>
+          <td><span class="badge badge-ac">5-Star Den</span></td>
         </tr>
         <tr>
-          <td><strong>Magnolia Beer Garden</strong></td>
-          <td>Courtyard of Magnolia Lounge</td>
-          <td>Peaceful arbor for beer connoisseurs featuring Texas crafts, IPAs, and imports. Shiner Beer sampling nearby.</td>
-          <td><span class="badge badge-drink">Shaded Courtyard</span></td>
+          <td><strong>Under-Porch Hammock</strong></td>
+          <td>The Gable Estate</td>
+          <td>Cool sandy soil under deep wooden decking. Always 15 degrees cooler than the ambient air with zero direct sun exposure.</td>
+          <td><span class="badge badge-drink">Cool Earth</span></td>
         </tr>
         <tr>
-          <td><strong>The Grove</strong></td>
-          <td>Nimitz Dr (near GO TEXAN)</td>
-          <td>Texas wineries showcased daily with tastings by glass or bottle. Live acoustic music on White Claw Spotlight Stage.</td>
-          <td><span class="badge badge-drink">Wine Patio</span></td>
+          <td><strong>The Garden Tool Shed Rafters</strong></td>
+          <td>End of Baker Alley</td>
+          <td>Suspended wooden joists above stored lawnmowers. Smells like dry hay and motor oil; entirely free of neighborhood dogs.</td>
+          <td><span class="badge badge-drink">High Rafters</span></td>
         </tr>
         <tr>
-          <td><strong>Trio on the Green</strong></td>
-          <td>Under oak trees outside Coliseum</td>
-          <td>"Bites & flights" serving trios of sliders and flights of craft beer, wine, or cocktails in mason jars. BeatBox sampling nearby.</td>
-          <td><span class="badge badge-drink">Oak Canopy</span></td>
+          <td><strong>Culvert Tunnel Suite</strong></td>
+          <td>Creek Drainage Path</td>
+          <td>Smooth concrete pipe with a trickling natural spring. Ideal for cooling down belly fur on sweltering summer afternoons.</td>
+          <td><span class="badge badge-ac">Natural Chilled</span></td>
         </tr>
         <tr>
-          <td><strong>Fernie’s Skyway Porch</strong></td>
-          <td>Behind Big Tex under Skyway</td>
-          <td>Rocking-chair retreat serving hard sodas, cotton candy cocktails, light bites, and cold draft beer.</td>
-          <td><span class="badge badge-drink">Covered Porch</span></td>
+          <td><strong>Compost Heap Perimeter</strong></td>
+          <td>Community Garden Corner</td>
+          <td>Gentle ambient geothermal warmth generated by decomposing leaf mulch. Luxurious winter afternoon basking zone.</td>
+          <td><span class="badge badge-sun">Warm Mulch</span></td>
         </tr>
         <tr>
-          <td><strong>Bluebonnet Roadhouse</strong></td>
-          <td>Nimitz & Keating Dr</td>
-          <td>Sports-fan oasis with indoor and outdoor beer bars, covered patio, TVs, and frozen spirits.</td>
-          <td><span class="badge badge-ac">Indoor A/C + Patio</span></td>
+          <td><strong>Old Boat Tarp Hideout</strong></td>
+          <td>Driveway Behind No. 42</td>
+          <td>Crinkly blue waterproof fabric sheltering a carpeted cockpit seat. Peak softness with water-bowl proximity.</td>
+          <td><span class="badge badge-ac">Covered Cabin</span></td>
         </tr>
         <tr>
-          <td><strong>GO TEXAN Pavilion</strong></td>
-          <td>Near Pan Am Arena</td>
-          <td>Air-conditioned building featuring award-winning Texas winery flight bars and craft beer taps alongside free food tastings.</td>
-          <td><span class="badge badge-ac">Full Indoor A/C</span></td>
+          <td><strong>The Attic Breezeway</strong></td>
+          <td>Loose Gable Vent on Elm St</td>
+          <td>Drafty attic louvers with panoramic neighborhood surveillance points and stray insulation nesting material.</td>
+          <td><span class="badge badge-drink">High Perch</span></td>
         </tr>
       </tbody>
     </table>
@@ -670,7 +670,7 @@
 
   <!-- VALUE FOOD DIRECTORY -->
   <div class="section-heading">
-    <span>Every Day Values ($10 & Under)</span>
+    <span>Jimothy's Top Value Snacks ($0 & Delicious)</span>
     <span class="badge badge-food">Satiety Starred</span>
   </div>
 
@@ -678,142 +678,75 @@
     <table>
       <thead>
         <tr>
-          <th style="width: 24%;">Vendor Name</th>
-          <th style="width: 52%;">Verbatim Menu Items & Verified Coupons</th>
-          <th style="width: 24%;">Value & Satiety Profile</th>
+          <th style="width: 24%;">Foraged Delicacy</th>
+          <th style="width: 52%;">Discovered Location & Description</th>
+          <th style="width: 24%;">Jimothy's Satiety Rating</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Fletcher's</strong></td>
+          <td><strong>Leftover Pizza Crusts</strong></td>
           <td>
-            <span class="satiety-star">★</span> <strong>{8}</strong> ORIGINAL CORNY DOGS<br>
-            <strong>{9}</strong> JALAPEÑO & CHEESE CORNY DOG<br>
-            <strong>{8}</strong> BIRD DOG CORNY DOG<br>
-            <strong>{9}</strong> VEGGIE CORNY DOG<br>
-            <strong>{6}</strong> CHEEZY PUP CORNY DOGS<br>
-            <strong>{7}</strong> CHOCOLATE CORNY DOG
+            <span class="satiety-star">★</span> <strong>{FREE}</strong> CARD BOARD BOX DISCOVERIES<br>
+            Wood-fired dough remnants with caramelized garlic butter and scorched mozzarella edges.
           </td>
-          <td><span class="badge badge-star">TOP 1: DENSE PROTEIN</span> High-density beef/pork sausage with cornmeal batter. Sustained satiety.</td>
+          <td><span class="badge badge-star">TOP 1: DENSE CARBS</span> 10/10 fuel rating. Provides sustained sprint energy across roof shingles.</td>
         </tr>
         <tr>
-          <td><strong>Catfish Floyds</strong></td>
+          <td><strong>Marshmallow Loot</strong></td>
           <td>
-            <span class="satiety-star">★</span> <strong>{9}</strong> DAILY SPECIAL - 5 PIECE FISH FILLET NUGGETS<br>
-            <strong>{5}</strong> FRENCH FRIES<br>
-            <strong>{5}</strong> DILL PICKLES / KOOL-AID PICKLES
+            <span class="satiety-star">★</span> <strong>{FREE}</strong> CAMPFIRE PIT LEFTOVERS<br>
+            Fluffy, powdery white sugar pillows discarded near suburban fire pits.
           </td>
-          <td><span class="badge badge-star">TOP 2: LEAN PROTEIN</span> Pure fried whitefish fillet nuggets deliver outstanding protein volume per coupon.</td>
+          <td><span class="badge badge-star">TOP 2: INSTANT JOY</span> 12/10 happiness score. Melts instantly in paw pads; highly prized currency.</td>
         </tr>
         <tr>
-          <td><strong>Katie's Cafe</strong></td>
+          <td><strong>Peanut Butter Jar Bottoms</strong></td>
           <td>
-            <span class="satiety-star">★</span> <strong>{10}</strong> CHICKEN TENDER BASKET - 2 CHICKEN TENDERS W/FRYS<br>
-            <strong>{8}</strong> BREAKFAST SANDWICH<br>
-            <strong>{8}</strong> BLT<br>
-            <strong>{10}</strong> CURLY FRIES<br>
-            <strong>{8}</strong> FRESH CUT FRIES<br>
-            <strong>{6}</strong> FRIED HOSTESS TWINKIE<br>
-            <strong>{10}</strong> CHEESE, BACON BITS W/ RANCH JALAPEÑOS OPTIONAL
+            <span class="satiety-star">★</span> <strong>{FREE}</strong> RECYCLING BIN SCOOPS<br>
+            Glass and plastic jars retaining thick roasted peanut paste in bottom crevices.
           </td>
-          <td><span class="badge badge-star">TOP 3: FULL COMBO MEAL</span> Complete protein plus potato starch basket under $10.</td>
+          <td><span class="badge badge-star">TOP 3: HEALTHY FATS</span> High calorie density; requires advanced tongue gymnastics to scrape.</td>
         </tr>
         <tr>
-          <td><strong>The Dock</strong></td>
+          <td><strong>Sweet Corn Cobs</strong></td>
           <td>
-            <span class="satiety-star">★</span> <strong>{6}</strong> RED BEANS & CORNBREAD<br>
-            <strong>{4}</strong> SAUSAGE GRAVY & BISCUITS<br>
-            <strong>{5}</strong> CHICKEN & BISCUITS<br>
-            <strong>{5}</strong> NACHITOS<br>
-            <strong>{9}</strong> TACO SALADS<br>
-            <strong>{5}</strong> PORK ROAST SANDWICH<br>
-            <strong>{9}</strong> FRIED GRILLED SANDWICH<br>
-            <strong>{9}</strong> FUNNEL CAKE CHICKEN SANDWICH<br>
-            <strong>{7}</strong> FROZEN DR PEPPER®
+            <span class="satiety-star">★</span> <strong>{FREE}</strong> BACKYARD BBQ CANS<br>
+            Buttered sweet corn remains with residual kernel crunch and salty seasoning.
           </td>
-          <td><span class="badge badge-star">TOP 4: HIGH FIBER/PROTEIN</span> Red beans & cornbread provide high resistant starch and prolonged gastric satiety.</td>
+          <td><span class="badge badge-star">TOP 4: HIGH FIBER</span> Satisfying tactile chewing experience; keeps teeth sharpened.</td>
         </tr>
         <tr>
-          <td><strong>Pedro's Tamales</strong></td>
+          <td><strong>Wild Ripe Blackberries</strong></td>
           <td>
-            <span class="satiety-star">★</span> <strong>{8}</strong> 3 PORK TAMALES<br>
-            <strong>{10}</strong> FRITO BURRITO<br>
-            <strong>{8}</strong> FRITO PIE<br>
-            <strong>{9}</strong> BOWL OF CHILI WITH CHEESE AND CHIPS<br>
-            <strong>{8}</strong> QUESO AND CHIPS
+            <span class="satiety-star">★</span> <strong>{FREE}</strong> CREEK CANAL BRAMBLES<br>
+            Juicy sun-ripened berry clusters plucked straight from thorny branches.
           </td>
-          <td><span class="badge badge-star">TOP 5: SLOW-DIGESTING</span> 3 whole pork tamales with dense masa carbohydrates and slow-metabolizing fats.</td>
+          <td><span class="badge badge-star">TOP 5: ANTIOXIDANTS</span> Natural midnight vitamin boost with zero packaging required.</td>
         </tr>
         <tr>
-          <td><strong>Eataly</strong></td>
+          <td><strong>Stolen Cat Kibble</strong></td>
           <td>
-            <strong>{7}</strong> FOCACCIA ALLA PORCHETTA E SALSA VERDE<br>
-            <strong>{9}</strong> GELATO<br>
-            <strong>{8}</strong> TIRAMISU CLASSICO<br>
-            <span class="coffee-highlight">★ {8} CREMESPRESSO ★</span>
+            <strong>{FREE}</strong> PORCH DISH ASSORTMENT<br>
+            Crunchy salmon-and-tuna pellets placed outdoors for pampered house felines.
           </td>
-          <td>Italian roast pork on house focaccia plus <span class="coffee-highlight">★ Cremespresso ★</span> rich chilled espresso cream.</td>
+          <td>Quick protein grab-and-dash when running low on foraging time.</td>
         </tr>
         <tr>
-          <td><strong>Pizza & Nachos</strong></td>
+          <td><strong>Stale Glazed Donuts</strong></td>
           <td>
-            <strong>{5}</strong> CHEESE PIZZA<br>
-            <strong>{6}</strong> SAUSAGE PIZZA<br>
-            <strong>{6}</strong> PEPPERONI PIZZA<br>
-            <strong>{7}</strong> NACHOS<br>
-            <strong>{9}</strong> NACHOS WITH CHILI<br>
-            <strong>{8}</strong> ELOTE (CORN-IN-A-CUP)<br>
-            <strong>{9}</strong> CHEE-LOTE<br>
-            <strong>{8}</strong> WILD CORN WHEELS (2 NEW FLAVORS)
+            <strong>{FREE}</strong> BAKERY BOX SURPLUS<br>
+            Sugar-glazed rings softened by morning dew; irresistible pastry goodness.
           </td>
-          <td>Cotton Bowl Plaza location with huge multi-slice savings.</td>
+          <td>Pure sugar burst that causes spontaneous backflips on soft lawns.</td>
         </tr>
         <tr>
-          <td><strong>Doc's Street Grill</strong></td>
+          <td><strong>Watermelon Rind Scrapings</strong></td>
           <td>
-            <strong>{9}</strong> ISLAND FRIED RICE<br>
-            <strong>{8}</strong> JAMAICAN BEEF PATTY<br>
-            <strong>{8}</strong> JAMAICAN VEGGIE PATTY<br>
-            <strong>{5}</strong> FRUIT CUP<br>
-            <strong>{6}</strong> SMOOTHIE (REGULAR)<br>
-            <strong>{10}</strong> YOGURT PARFAIT
+            <strong>{FREE}</strong> PICNIC TABLE TROVES<br>
+            Sweet pink residual fruit clinging to refreshing crisp green rind bowls.
           </td>
-          <td>Authentic Caribbean spiced meat turnovers and seasoned rice.</td>
-        </tr>
-        <tr>
-          <td><strong>Texas Steakout</strong></td>
-          <td>
-            <strong>{10}</strong> ROASTED CORN ON THE COB<br>
-            <strong>{10}</strong> TATER TWISTER<br>
-            <strong>{9}</strong> NACHOS
-          </td>
-          <td>Whole buttered sweet corn and spiraled potato skewers.</td>
-        </tr>
-        <tr>
-          <td><strong>Jacks Mexican Food</strong></td>
-          <td>
-            <strong>{5}</strong> CLASSIC TACO<br>
-            <strong>{10}</strong> BURRITO<br>
-            <strong>{8}</strong> CHALUPA<br>
-            <strong>{10}</strong> QUESADILLA<br>
-            <strong>{8}</strong> NACHOS<br>
-            <strong>{8}</strong> ELOTE
-          </td>
-          <td>Classic Tex-Mex staples with hearty beans, beef, and melted cheese.</td>
-        </tr>
-        <tr>
-          <td><strong>Fernie's Skyway Porch</strong></td>
-          <td>
-            <strong>{7}</strong> FROZEN DR PEPPER®<br>
-            <strong>{8}</strong> UNCLE BUBBA’S PICKLE DIP<br>
-            <strong>{9}</strong> CHEESEBURGER IN PARADISE DIP
-          </td>
-          <td>Shareable savory dips served with crispy dipping chips.</td>
-        </tr>
-        <tr>
-          <td><strong>Universal Water</strong></td>
-          <td><strong>{2}</strong> BOTTLED WATER ACROSS THE FAIRGROUNDS</td>
-          <td>Mandatory $2 cap across all official concessions.</td>
+          <td>Simultaneous hydration and crisp snacking during humid July nights.</td>
         </tr>
       </tbody>
     </table>
@@ -821,7 +754,7 @@
 
   <!-- 2026 NEW FOODS & BIG TEX HIGHLIGHTS -->
   <div class="section-heading">
-    <span>2026 New Foods Highlights</span>
+    <span>2026 New Snack Innovations</span>
     <span class="badge badge-new">New for 2026</span>
   </div>
 
@@ -829,51 +762,36 @@
     <table>
       <thead>
         <tr>
-          <th style="width: 26%;">New Food Item</th>
-          <th style="width: 24%;">Vendor & Location</th>
-          <th style="width: 50%;">Flavor Profile, Ingredients & Description</th>
+          <th style="width: 26%;">Snack Item</th>
+          <th style="width: 24%;">Source Location</th>
+          <th style="width: 50%;">Flavor Profile, Paw Texture & Review</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Burger Chop Tater Tacos</strong></td>
-          <td>Tom Grace<small>Across Grounds</small></td>
-          <td><span class="badge badge-star">SAVORY FINALIST</span> Seared burger chopped with onions and jalapeños in a cheddar tater tot shell with buffalo ranch slaw.</td>
+          <td><strong>Artisanal Sourdough Ends</strong></td>
+          <td>Alleyway Bistro Bin</td>
+          <td><span class="badge badge-star">CRUST FINALIST</span> Chewy fermented crust with blistering bubbles; holds structural integrity even after full river wash.</td>
         </tr>
         <tr>
-          <td><strong>Dickel's Texas Two Step Tacos</strong></td>
-          <td>Dickel’s Smokehouse<small>Cotton Bowl Plaza</small></td>
-          <td><span class="badge badge-star">SAVORY FINALIST</span> Blue corn sausage taco paired with yellow corn brisket-wrapped jalapeño taco.</td>
+          <td><strong>Nacho Cheese Dip Cups</strong></td>
+          <td>Friday Night Football Trash</td>
+          <td><span class="badge badge-star">SAVORY FINALIST</span> Thick yellow liquid gold; perfectly sized for single-finger dipping maneuvers.</td>
         </tr>
         <tr>
-          <td><strong>Flamin’ Crunch Pizza</strong></td>
-          <td>Tom Grace<small>Across Grounds</small></td>
-          <td><span class="badge badge-star">SAVORY FINALIST</span> Queso-base pizza topped with Flamin’ Hot Cheetos, queso blanco, and buffalo ranch.</td>
+          <td><strong>Churro Sugar Crumbs</strong></td>
+          <td>Carnival Food Truck Parking</td>
+          <td><span class="badge badge-star">SWEET FINALIST</span> Cinnamon sugar crystal blend collected carefully from waxed paper wrappers.</td>
         </tr>
         <tr>
-          <td><strong>Fernie’s Frozen Espresso-tini Bar</strong></td>
-          <td>Christi Erpillo & Johnna McKee</td>
-          <td><span class="badge badge-star">SWEET FINALIST</span> <span class="coffee-highlight">★ COFFEE COCKTAIL POPSICLE ★</span> Cold-brew espresso blended with Fernie’s Funnel Cake Cream Cocktail in chocolate shell.</td>
+          <td><strong>Espresso-Dunked Biscotti</strong></td>
+          <td>Coffee Shop Patio Trash</td>
+          <td><span class="badge badge-star">CAFFEINE SHOCK</span> <span class="coffee-highlight">★ ZOOMIE CATALYST ★</span> Half a chocolate almond biscotti that grants Jimothy supersonic speed for two hours.</td>
         </tr>
         <tr>
-          <td><strong>Fletcher’s Chocolate Corny Dog</strong></td>
-          <td>Beck Fletcher<small>Across Grounds</small></td>
-          <td><span class="badge badge-star">SWEET FINALIST</span> Milk chocolate fudge dipped in famous cornmeal batter, fried golden with vanilla icing and raspberry compote.</td>
-        </tr>
-        <tr>
-          <td><strong>Corn Flake Shappé</strong></td>
-          <td>Milton & Gracie Whitley</td>
-          <td><span class="badge badge-star">SIPPER FINALIST</span> Toasted corn flakes blended with dulce de leche, Texas pecans, warm spices, and strawberry crumble.</td>
-        </tr>
-        <tr>
-          <td><strong>Dirty Dr Pepper® Float</strong></td>
-          <td>Former Log Ride<small>The Funway</small></td>
-          <td><span class="badge badge-new">SEMI-FINALIST</span> Coconut syrup, cold Dr Pepper, Dr Pepper Dippin' Dots, fresh lime, whipped cream, and sprinkles.</td>
-        </tr>
-        <tr>
-          <td><strong>Chicken Fried Steak Biscuit</strong></td>
-          <td>Rousso’s Fat Bacon / Holy Biscuit / Old Mill</td>
-          <td>Chicken-fried steak patty inside a buttery biscuit, smothered in homemade bacon gravy.</td>
+          <td><strong>Gourmet Salted French Fries</strong></td>
+          <td>Drive-Thru Bag Residue</td>
+          <td>Warm potato slivers dusted in fine salt crystals; devoured immediately without washing.</td>
         </tr>
       </tbody>
     </table>
@@ -881,96 +799,48 @@
 
   <!-- COMPREHENSIVE DIRECTORY OF ALTERNATIVE ATTRACTIONS & SITES -->
   <div class="section-heading">
-    <span>Alternative Attractions, Hidden Gems & Sites</span>
-    <span class="badge badge-alt">Official 2026 Guide</span>
+    <span>Neighborhood Mischief & Side Quests</span>
+    <span class="badge badge-alt">Official Guide</span>
   </div>
 
   <div class="highlight-box">
-    <strong>Explore Beyond the Midway:</strong> Fair Park spans 277 acres packed with cultural museums, interactive animal exhibitions, live stages, and shaded rest sanctuaries included with your admission ticket. If you need a backup activity or want to explore off the beaten path, here are the real, specific highlights organized by category.
+    <strong>Explore Beyond the Garbage Cans:</strong> Jimothy's territory encompasses three full suburban blocks crammed with utility poles, ornamental water features, and resting trees. Here are the top side quests to attempt throughout the season.
   </div>
 
   <div class="table-responsive">
     <table>
       <thead>
         <tr>
-          <th style="width: 25%;">Activity / Attraction</th>
-          <th style="width: 24%;">Park Location & Schedule</th>
-          <th style="width: 36%;">Verified Details & What to Experience</th>
-          <th style="width: 15%;">Category</th>
+          <th style="width: 25%;">Mischief Operation</th>
+          <th style="width: 24%;">Location & Timing</th>
+          <th style="width: 36%;">Mission Briefing & Objective</th>
+          <th style="width: 15%;">Difficulty</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>African American Museum</strong></td>
-          <td>Historic Core near Gate 5<br><strong>Open 10:00 AM – 7:00 PM</strong></td>
-          <td>The only museum of its kind in the Southwest. Houses more than 150 shared cultural treasures and the featured <em>Mandela: The Official Exhibition</em>. Free admission, freezing air-conditioning, and very quiet galleries.</td>
-          <td><span class="badge badge-ac">Museum & Art</span></td>
+          <td><strong>Operation Windchime Chaos</strong></td>
+          <td>The Miller Back Patio<br><strong>Best Time: 1:30 AM</strong></td>
+          <td>Climb onto the suspended metal copper chimes and strike them with rapid paw taps to create a midnight suburban concert.</td>
+          <td><span class="badge badge-ac">Easy / Fun</span></td>
         </tr>
         <tr>
-          <td><strong>Mundo Latino: Día de los Muertos</strong></td>
-          <td>Inside the Hall of State<br><strong>Open 10:00 AM – 7:00 PM</strong></td>
-          <td>Awe-inspiring celebration of the Day of the Dead featuring giant handcrafted ofrendas, skull installations, face painting, and the international Coffee Art Exhibit displaying works painted entirely in coffee from 15 nations.</td>
-          <td><span class="badge badge-ac">Cultural Exhibit</span></td>
+          <td><strong>Sprinkler Dodging Derby</strong></td>
+          <td>Front Lawn of No. 18<br><strong>Automated: 3:00 AM Sharp</strong></td>
+          <td>Sprint between rotating oscillating water jets without getting bushy tail fur saturated. High agility training.</td>
+          <td><span class="badge badge-sun">Moderate</span></td>
         </tr>
         <tr>
-          <td><strong>Texas Discovery Gardens & Butterfly House</strong></td>
-          <td>Gate 6 / Robert B. Cullum Blvd<br><strong>Open 10:00 AM – 7:00 PM</strong></td>
-          <td>7.5 acres of native organic botanicals. Features the 2-story glass Rosine Smith Sammons Butterfly House with a famous daily <strong>12:00 PM Butterfly Release</strong>, model trains, and Snakes of Texas exhibit (half-price during fair).</td>
-          <td><span class="badge badge-sun">Nature Sanctuary</span></td>
+          <td><strong>Security Cam Screen Debut</strong></td>
+          <td>Ring Doorbells Across Ground<br><strong>Random Midnight Passes</strong></td>
+          <td>Climb up the door frame and press black nose directly against the camera lens to trigger nighttime motion alert notifications.</td>
+          <td><span class="badge badge-sun">Expert Trolling</span></td>
         </tr>
         <tr>
-          <td><strong>D.A.R. House (Daughters of American Revolution)</strong></td>
-          <td>DAR House next to Women's Museum<br><strong>Open 11:00 AM – 5:00 PM</strong></td>
-          <td>Exhibits artifacts and historical display panels revealing the overlooked roles of women and young girls during the American Revolution. Free genealogy assistance table on-site to help locate Revolutionary War ancestors.</td>
-          <td><span class="badge badge-ac">Living History</span></td>
-        </tr>
-        <tr>
-          <td><strong>The Black Academy of Arts and Letters (TBAAL)</strong></td>
-          <td>Women's Museum Building<br><strong>Open 9:00 AM – 5:30 PM</strong></td>
-          <td>Celebrating its 50th Anniversary Season. Features the <em>Eminence Rising: 150 Years of Prairie View A&M University</em> exhibition, the Eva Jessye Gift Shop, and a plush air-conditioned relaxation lounge.</td>
-          <td><span class="badge badge-ac">A/C Lounge & Art</span></td>
-        </tr>
-        <tr>
-          <td><strong>Whitman on Walls! at the Music Hall</strong></td>
-          <td>Music Hall at Fair Park<br><strong>Open 10:00 AM – 9:00 PM</strong></td>
-          <td>Broadway Dallas presents free daily screenings of Compagnia de’ Colombari’s film series featuring 50 artists performing Walt Whitman’s <em>Song of Myself</em> with live indoor performances by local Texas artists.</td>
-          <td><span class="badge badge-ac">Cinema & Music</span></td>
-        </tr>
-        <tr>
-          <td><strong>Livestock Birthing Barn</strong></td>
-          <td>Nimitz Ave & MLK Jr. Blvd<br><strong>Open 10:00 AM – 7:00 PM</strong></td>
-          <td>Live educational showcase of animal incubation and live births. Watch newborn calves, piglets, and goat kids with veterinary students and agricultural educators under massive cooling fans.</td>
-          <td><span class="badge badge-sun">Live Animals</span></td>
-        </tr>
-        <tr>
-          <td><strong>Milking Parlor Demonstrations</strong></td>
-          <td>Near Band Shell and Lagoon<br><strong>10:30, 11:30 AM, 1:30, 2:30, 3:30, 4:30, 5:30 PM</strong></td>
-          <td>Southwest Dairy Farmers bring live dairy cows for entertaining, step-by-step demonstrations of modern sanitary milking machine procedures with agricultural trivia.</td>
-          <td><span class="badge badge-sun">Dairy Demo</span></td>
-        </tr>
-        <tr>
-          <td><strong>Farm and Fork University</strong></td>
-          <td>Ranch Arena<br><strong>11:30 AM, 1:00, 2:30, 4:00, 5:30 PM</strong></td>
-          <td>A lively, 30-minute talk-show-style presentation exploring how modern agricultural science, ranching, and logistics bring fresh food to grocery shelves. High covered shade.</td>
-          <td><span class="badge badge-sun">Covered Arena</span></td>
-        </tr>
-        <tr>
-          <td><strong>Errol McKoy Greenhouse & Big Tex Urban Farms</strong></td>
-          <td>Along the Midway<br><strong>Open 10:00 AM – 7:00 PM</strong></td>
-          <td>Explore high-tech indoor hydroponic and vertical nutrient-film farming systems growing fresh produce for Dallas food pantries. Free agricultural demonstrations at 11:00 AM, 2:00 PM, and 5:00 PM.</td>
-          <td><span class="badge badge-sun">Indoor Farming</span></td>
-        </tr>
-        <tr>
-          <td><strong>Texas Vietnam Veterans Memorial</strong></td>
-          <td>Next to Automobile Building & Truck Zone<br><strong>Open Daily 10:00 AM – 7:00 PM</strong></td>
-          <td>Five massive tablets of polished Texas granite inscribed with the names of all Texans killed or missing in action during the Vietnam War, honoring nine Medal of Honor recipients. Visitors may place memorial flags.</td>
-          <td><span class="badge badge-sun">Memorial Site</span></td>
-        </tr>
-        <tr>
-          <td><strong>Texas Skyway Aerial Gondola</strong></td>
-          <td>Skyway Stations near Big Tex and Funway<br><strong>Open 10:00 AM – 10:00 PM</strong></td>
-          <td>Glide 65 feet in the air along a 1,800-foot cable across the fairgrounds in an enclosed gondola cabin. Provides 360-degree skyline views of Downtown Dallas and Fair Park Art Deco vistas without walking fatigue.</td>
-          <td><span class="badge badge-sun">Aerial Transit</span></td>
+          <td><strong>Bungee Cord Puzzle Box</strong></td>
+          <td>Reinforced Steel Trash Cans<br><strong>Tuesdays (Trash Night)</strong></td>
+          <td>Unhook twin industrial elastic cords without letting them snap back against paws. Requires steady two-paw coordination.</td>
+          <td><span class="badge badge-star">Master Class</span></td>
         </tr>
       </tbody>
     </table>
@@ -978,29 +848,29 @@
 
   <div class="grid-3">
     <div class="card">
-      <h3>Unique Live Entertainment</h3>
+      <h3>Favorite Playmates & Rivals</h3>
       <ul>
-        <li><strong>¡Fiestas de Marionetas!</strong> (McDonald’s Amphitheater on 1st Ave): Shows at 11:00 AM, 1:00 PM, 3:00 PM, 5:00 PM, and 6:00 PM. 85+ marionettes dancing to folkloric music with backstage craft tours.</li>
-        <li><strong>World of Magic</strong> (Creative Arts Building): 12:00, 1:00, 3:00, 4:30 PM. Neon illusions, laser displays, and a floating robot in a dark, cold theater.</li>
-        <li><strong>Wacky Chad Stunt Comedy</strong> (Fringe Stage in Little Lone Stars Land): 1:00, 3:00, 5:00 PM. Extreme pogo stick aerials, tall-unicycle balancing, and comedic juggling.</li>
-        <li><strong>Mighty Mike Strongman</strong> (Fringe Stage): 2:00, 4:00, 6:00 PM. 1920s-style comedic strongman bending heavy horseshoes and juggling steel sledgehammers.</li>
+        <li><strong>Barnaby the Owl:</strong> Perches on telephone poles and offers solemn nods of mutual nocturnal respect.</li>
+        <li><strong>Sir Reginald (Golden Retriever):</strong> Barks enthusiastically from behind picture windows while Jimothy cleans paws on the porch rail.</li>
+        <li><strong>The Local Skunk Squad:</strong> Friendly comrades who share territory rights; absolute masters of bug grubs and beetle harvesting.</li>
+        <li><strong>Gary the Possum:</strong> Hangs upside down on the trellis, occasionally drops by to trade grapes for apple slices.</li>
       </ul>
     </div>
     <div class="card">
-      <h3>Free Live Music Stages</h3>
+      <h3>Jimothy's Golden Rules</h3>
       <ul>
-        <li><strong>Bud Light Stage</strong> (Cotton Bowl Plaza): Performances at 1:00, 3:00, 5:00, and 7:30 PM. Showcases local and regional Texas country, roots, and rock talent.</li>
-        <li><strong>White Claw Spotlight Stage</strong> (The Grove on Nimitz): 1:30, 3:30, 5:30, and 7:30 PM. Shaded acoustic singer-songwriters curated by the Dallas Music Office.</li>
-        <li><strong>ZiegenBock Stage at The Old Mill</strong> (Grand Ave): Sets at 2:00, 4:00, 6:00, and 8:00 PM. Upbeat regional artists performing right by the shaded outdoor wine patio.</li>
-        <li><strong>Chevrolet Main Stage</strong> (Inside Coliseum): Headlining national touring concerts included free with fair admission.</li>
+        <li><strong>Wash First, Ask Later:</strong> If it's sticky, dunk it in water. If it dissolves (cotton candy), mourn for 10 seconds and move on.</li>
+        <li><strong>Always Leave an Exit:</strong> Never enter a shed without verifying the window screen has an unfastened corner.</li>
+        <li><strong>Shiny Means Mine:</strong> If it glitters in the moonlight, it belongs inside the hollow tree hollow.</li>
+        <li><strong>Take Pride in the Tail:</strong> Brush out burrs and twigs daily to maintain peak fluffy magnificence.</li>
       </ul>
     </div>
     <div class="card">
-      <h3>Evening Shows (If Staying Late)</h3>
+      <h3>Daylight Warning Signs</h3>
       <ul>
-        <li><strong>Kroger Starlight Parade</strong> (Nightly at 7:00 PM): Spectacular illuminated rolling floats created by Kern Studios of New Orleans, life-sized puppets, and stilt-walkers winding through the fairgrounds.</li>
-        <li><strong>Mattress Firm Illumination Sensation</strong> (Nightly at 7:45 PM): Dramatic pyrotechnics, dancing fountain waters, high-energy pop music, and acrobats along the Esplanade reflecting pool.</li>
-        <li><strong>Texas Wine Hour</strong> (State Fair Wine Garden): Daily at 6:00 PM. Sommelier-guided tastings of award-winning Texas Hill Country and High Plains vintages.</li>
+        <li><strong>The Morning Rooster / Alarm Clock:</strong> The sound of human coffee makers grinding signals it is time to scurry to the treetops.</li>
+        <li><strong>The Yellow Bus Fleet:</strong> When large yellow vehicles begin rumbling, all smart trash goblins are already fast asleep.</li>
+        <li><strong>Sunbeams on the Nose:</strong> If the sun hits your eyes, roll over and pull your tail over your face immediately.</li>
       </ul>
     </div>
   </div>
@@ -1012,7 +882,7 @@
     img.onerror = null;
     var container = document.getElementById('bannerContainer');
     if (container) {
-      container.innerHTML = '<div class="banner-fallback">State Fair of Texas • Dallas</div>';
+      container.innerHTML = '<div class="banner-fallback">Jimothy • Neighborhood Legend</div>';
     }
   }
 </script>
