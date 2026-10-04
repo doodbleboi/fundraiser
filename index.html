@@ -5,239 +5,569 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JIMOTHY'S RACCOON LAIR</title>
 
-<link rel="icon" type="image/jpeg" href="fair1.jpg">
-<link rel="apple-touch-icon" href="fair1.jpg">
-
 <style>
-  body {
-    background-color: #000080;
-    color: #ffff00;
-    font-family: "Comic Sans MS", "Courier New", monospace;
-    font-size: 13px;
-    margin: 8px;
+  :root {
+    --bg-navy: #000080;
+    --box-navy: #000033;
+    --text-yellow: #ffff00;
+    --cyan: #00ffff;
+    --magenta: #ff00ff;
+    --lime: #00ff00;
+    --win95-gray: #c0c0c0;
+    --win95-light: #ffffff;
+    --win95-dark: #808080;
+    --win95-shadow: #404040;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
     padding: 0;
   }
-  .page-box {
-    max-width: 720px;
+
+  body {
+    background-color: var(--bg-navy);
+    /* Classic tile pattern simulated via CSS gradients */
+    background-image: 
+      radial-gradient(#0000a0 15%, transparent 16%),
+      radial-gradient(#000055 15%, transparent 16%);
+    background-size: 16px 16px;
+    background-position: 0 0, 8px 8px;
+    color: var(--text-yellow);
+    font-family: "Comic Sans MS", "Comic Sans", "Courier New", monospace, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 16px 8px 40px 8px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Centered Retro Container with 3D Bevel Window Styling */
+  .lair-container {
+    max-width: 750px;
     margin: 0 auto;
-    border: 4px ridge #c0c0c0;
-    background-color: #000033;
-    padding: 10px;
+    background-color: var(--box-navy);
+    border: 4px ridge var(--win95-gray);
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.6);
+    padding: 16px;
   }
-  marquee {
-    background-color: #ff0000;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 12px;
-    border: 2px solid #ffffff;
-    padding: 3px;
-    margin-bottom: 8px;
-  }
-  .header-table {
+
+  /* 60fps CSS Marquee */
+  .marquee-viewport {
     width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 8px;
+    overflow: hidden;
+    background: #ff0000;
+    border: 2px inset var(--win95-gray);
+    white-space: nowrap;
+    padding: 6px 0;
+    margin-bottom: 16px;
+    box-shadow: inset 2px 2px 0px #000;
   }
-  .header-table td {
-    vertical-align: middle;
-    text-align: center;
-  }
-  .avatar {
-    width: 58px;
-    height: 58px;
-    border: 3px dashed #00ff00;
-  }
-  .banner-img {
-    max-width: 100%;
-    height: auto;
-    max-height: 90px;
-    border: 3px ridge #ffff00;
-    display: block;
-    margin: 6px auto;
-  }
-  h1 {
-    font-size: 17px;
-    color: #00ffff;
-    text-shadow: 2px 2px #ff00ff;
-    margin: 0;
+
+  .marquee-track {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee-run 18s linear infinite;
+    font-weight: 900;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #ffffff;
     text-transform: uppercase;
   }
-  .blink-text {
-    animation: blinker 1s linear infinite;
-    color: #ff00ff;
+
+  @keyframes marquee-run {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* Blinking Text */
+  .blink {
+    animation: retro-blink 1s steps(1, start) infinite;
+    color: var(--magenta);
     font-weight: bold;
   }
-  @keyframes blinker {
+
+  @keyframes retro-blink {
     50% { opacity: 0; }
   }
-  hr {
-    border: 0;
-    height: 4px;
-    background: linear-gradient(to right, #ff0000, #ffff00, #00ff00, #00ffff, #ff00ff);
-    margin: 8px 0;
+
+  /* Header Structure */
+  .lair-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+    text-align: center;
   }
-  table.retro-table {
+
+  .avatar-frame {
+    flex: 0 0 84px;
+    margin: 0 auto;
+    background: #000;
+    border: 3px dashed var(--lime);
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-titles {
+    flex: 1 1 300px;
+  }
+
+  .header-titles h1 {
+    font-size: clamp(22px, 5vw, 32px);
+    color: var(--cyan);
+    text-shadow: 3px 3px var(--magenta);
+    letter-spacing: 1px;
+    line-height: 1.1;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .status-pill {
+    display: inline-block;
+    background: #000000;
+    border: 1px solid var(--cyan);
+    color: #fff;
+    padding: 4px 10px;
+    font-size: 12px;
+    margin-top: 6px;
+    border-radius: 2px;
+  }
+
+  /* Rainbow Separator */
+  hr.rainbow-rule {
+    border: 0;
+    height: 6px;
+    background: linear-gradient(to right, 
+      #ff0000 0%, #ff7f00 16.6%, #ffff00 33.3%, 
+      #00ff00 50%, #00ffff 66.6%, #0000ff 83.3%, #ff00ff 100%);
+    margin: 16px 0;
+  }
+
+  /* Under Construction Badge */
+  .construction-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: repeating-linear-gradient(
+      -45deg,
+      #000,
+      #000 12px,
+      #ffd700 12px,
+      #ffd700 24px
+    );
+    border: 3px ridge var(--win95-gray);
+    padding: 8px;
+    margin-bottom: 16px;
+  }
+
+  .construction-inner {
+    background: #000;
+    padding: 4px 14px;
+    border: 1px solid #fff;
+    color: #fff;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+
+  /* Section Title Panes */
+  .section-caption {
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--magenta);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Retro Data Tables & Panels */
+  .retro-panel {
+    background: #001122;
+    border: 2px inset var(--win95-gray);
+    margin-bottom: 16px;
+    overflow-x: auto;
+  }
+
+  table.retro-grid {
     width: 100%;
     border-collapse: collapse;
-    border: 2px solid #00ff00;
-    margin-bottom: 8px;
-    font-size: 11px;
-    color: #ffffff;
+    min-width: 480px;
   }
-  table.retro-table th {
-    background-color: #ff0055;
-    color: #ffff00;
+
+  table.retro-grid th {
+    background: linear-gradient(180deg, #ff007f 0%, #aa0055 100%);
+    color: var(--text-yellow);
     border: 1px solid #ffffff;
-    padding: 3px 5px;
-    text-align: left;
-  }
-  table.retro-table td {
-    border: 1px solid #005500;
-    padding: 3px 5px;
-    background-color: #001a00;
-  }
-  .tag {
-    background-color: #ff0000;
-    color: #ffffff;
-    padding: 1px 4px;
-    font-size: 9px;
-    font-weight: bold;
-  }
-  .counter {
-    background-color: #000000;
-    color: #00ff00;
-    border: 2px inset #c0c0c0;
-    padding: 2px 6px;
-    font-family: monospace;
+    padding: 6px 10px;
     font-size: 12px;
-    display: inline-block;
+    text-align: left;
+    text-transform: uppercase;
   }
-  .footer-bar {
-    text-align: center;
+
+  table.retro-grid td {
+    border: 1px solid #004466;
+    padding: 6px 10px;
+    font-size: 12.5px;
+    color: #ffffff;
+    vertical-align: middle;
+  }
+
+  table.retro-grid tr:nth-child(even) td {
+    background-color: rgba(0, 255, 255, 0.04);
+  }
+
+  /* Tactical Badges */
+  .tag {
+    display: inline-block;
+    padding: 2px 6px;
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: 1px solid #000;
+  }
+  .tag-power { background: #ff0000; color: #fff; }
+  .tag-stealth { background: var(--lime); color: #000; }
+  .tag-agility { background: var(--cyan); color: #000; }
+  .tag-free { background: var(--text-yellow); color: #000; }
+
+  /* 90s Web Buttons */
+  .btn-web95 {
+    display: inline-block;
+    background: var(--win95-gray);
+    color: #000000;
+    border-top: 2px solid var(--win95-light);
+    border-left: 2px solid var(--win95-light);
+    border-right: 2px solid var(--win95-shadow);
+    border-bottom: 2px solid var(--win95-shadow);
+    padding: 6px 12px;
     font-size: 11px;
-    color: #00ffff;
-    margin-top: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: sans-serif;
+  }
+  .btn-web95:active {
+    border-top: 2px solid var(--win95-shadow);
+    border-left: 2px solid var(--win95-shadow);
+    border-right: 2px solid var(--win95-light);
+    border-bottom: 2px solid var(--win95-light);
+  }
+
+  /* Odometer Counter Box */
+  .odometer-wrap {
+    display: inline-flex;
+    background: #000000;
+    border: 3px inset var(--win95-gray);
+    padding: 2px 4px;
+    margin: 4px 0;
+  }
+  .odometer-digit {
+    background: #111;
+    color: var(--lime);
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 0 4px;
+    border-right: 1px solid #333;
+    text-shadow: 0 0 4px var(--lime);
+  }
+  .odometer-digit:last-child { border-right: none; }
+
+  /* Footer Section */
+  footer {
+    text-align: center;
+    margin-top: 16px;
+    padding-top: 8px;
+    font-size: 11.5px;
+    color: var(--cyan);
+  }
+  .footer-links {
+    margin: 8px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 540px) {
+    body { padding: 4px 4px 20px 4px; }
+    .lair-container { padding: 10px; }
+    .avatar-frame { flex: 0 0 68px; }
   }
 </style>
 </head>
 <body>
 
-<div class="page-box">
+<main class="lair-container">
 
-  <marquee scrollamount="4">
-    *** WELCOME! SITE UNDER CONSTRUCTION! BEST VIEWED AT 800x600 IN NETSCAPE NAVIGATOR! ***
-  </marquee>
-
-  <table class="header-table">
-    <tr>
-      <td style="width: 70px;">
-        <img src="fair1.jpg" alt="Jimothy Left" class="avatar" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg';">
-      </td>
-      <td>
-        <h1>Jimothy The Raccoon</h1>
-        <div class="blink-text">*** TOP SECRET TRASH LAIR ***</div>
-        <div style="color: #ffffff; font-size: 11px;">Status: Searching yard. Seeking treats. Very hungry.</div>
-      </td>
-      <td style="width: 70px;">
-        <img src="fair1.jpg" alt="Jimothy Right" class="avatar" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg';">
-      </td>
-    </tr>
-  </table>
-
-  <img src="fair3.png" alt="Jimothy Banner" class="banner-img" onerror="this.style.display='none';">
-
-  <hr>
-
-  <table class="retro-table">
-    <tr>
-      <th style="width: 25%;">TIME</th>
-      <th style="width: 35%;">MISSION</th>
-      <th style="width: 40%;">LOG</th>
-    </tr>
-    <tr>
-      <td>8:00 PM</td>
-      <td>WAKE UP</td>
-      <td>Exit hollow log. Stretch four paws. Shake fur.</td>
-    </tr>
-    <tr>
-      <td>10:00 PM</td>
-      <td>GREEN BIN</td>
-      <td>Twist metal latch. Tip bin over. Grab pizza crust.</td>
-    </tr>
-    <tr>
-      <td>1:00 AM</td>
-      <td>BIRD BATH</td>
-      <td>Dip found grape in puddle. Roll between claws. Feast.</td>
-    </tr>
-    <tr>
-      <td>3:00 AM</td>
-      <td>ROOF SPRINT</td>
-      <td>Scamper across cedar shakes. Tap chimney brick. Spy dog.</td>
-    </tr>
-    <tr>
-      <td>6:00 AM</td>
-      <td>BEDTIME</td>
-      <td>Climb tree high. Wrap ringed tail over eyes. Sleep.</td>
-    </tr>
-  </table>
-
-  <table class="retro-table">
-    <tr>
-      <th style="width: 30%;">GEAR ITEM</th>
-      <th style="width: 45%;">POWER</th>
-      <th style="width: 25%;">RATING</th>
-    </tr>
-    <tr>
-      <td>Front Claws</td>
-      <td>Five fingers. Unlatches box clips fast. Zero keys needed.</td>
-      <td><span class="tag">MAX POWER</span></td>
-    </tr>
-    <tr>
-      <td>Eye Mask</td>
-      <td>Black fur circles. Cuts flashlight glare. Looks cool.</td>
-      <td><span class="tag">STEALTH 10</span></td>
-    </tr>
-    <tr>
-      <td>Rotary Back Feet</td>
-      <td>Ankles spin backwards. Slides down bark head-first. Fast.</td>
-      <td><span class="tag">RADICAL</span></td>
-    </tr>
-  </table>
-
-  <table class="retro-table">
-    <tr>
-      <th style="width: 35%;">SNACK TARGET</th>
-      <th style="width: 45%;">NOTES</th>
-      <th style="width: 20%;">COST</th>
-    </tr>
-    <tr>
-      <td>Cold French Fries</td>
-      <td>Salty grease treat. Devoured instantly on curb.</td>
-      <td>FREE!</td>
-    </tr>
-    <tr>
-      <td>Puff Marshmallow</td>
-      <td>Sticky sugar pillow. Carried home like treasure.</td>
-      <td>FREE!</td>
-    </tr>
-    <tr>
-      <td>Peanut Butter Tub</td>
-      <td>Cleaned out with long tongue sweeps. Great energy.</td>
-      <td>FREE!</td>
-    </tr>
-  </table>
-
-  <hr>
-
-  <div class="footer-bar">
-    [UNDER CONSTRUCTION: GIFS COMING SOON]
-    <br>
-    HITS: <span class="counter">004218</span>
-    <br>
-    EMAIL WEBMASTER: JIMOTHY@TRASHNET.COM
+  <!-- Custom 60fps CSS Marquee -->
+  <div class="marquee-viewport" role="region" aria-label="Important Announcement">
+    <div class="marquee-track">
+      🚨 HELLO NET SURFER! WELCOME TO JIMOTHY'S RACCOON LAIR! *** BEST VIEWED IN NETSCAPE NAVIGATOR 3.0 OR INTERNET EXPLORER AT 800x600 RESOLUTION! *** NO SQUIRRELS ALLOWED! 🚨
+    </div>
   </div>
 
-</div>
+  <!-- Header Area with Inline SVG Raccoon Avatars -->
+  <header class="lair-header">
+    <div class="avatar-frame">
+      <!-- Inline SVG Avatar Left -->
+      <svg width="68" height="68" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Jimothy Pixel Face">
+        <rect width="100" height="100" fill="#000000"/>
+        <!-- Ears -->
+        <polygon points="15,10 40,35 10,40" fill="#606060"/>
+        <polygon points="20,18 35,32 15,35" fill="#ffffff"/>
+        <polygon points="85,10 60,35 90,40" fill="#606060"/>
+        <polygon points="80,18 65,32 85,35" fill="#ffffff"/>
+        <!-- Head -->
+        <ellipse cx="50" cy="55" rx="38" ry="32" fill="#757575"/>
+        <path d="M 20 65 Q 50 92 80 65 Q 50 78 20 65" fill="#f0f0f0"/>
+        <!-- Bandit Mask -->
+        <path d="M 16 46 Q 34 38 50 48 Q 66 38 84 46 Q 88 64 74 65 Q 50 56 26 65 Q 12 64 16 46" fill="#151515"/>
+        <!-- Eyes -->
+        <ellipse cx="34" cy="51" rx="5" ry="6" fill="#ffffff"/>
+        <circle cx="35" cy="51" r="2.5" fill="#000000"/>
+        <circle cx="36" cy="49" r="1" fill="#ffff00"/>
+        <ellipse cx="66" cy="51" rx="5" ry="6" fill="#ffffff"/>
+        <circle cx="65" cy="51" r="2.5" fill="#000000"/>
+        <circle cx="64" cy="49" r="1" fill="#ffff00"/>
+        <!-- Snout & Nose -->
+        <polygon points="46,62 54,62 50,67" fill="#000000"/>
+        <!-- Whiskers -->
+        <line x1="12" y1="62" x2="30" y2="60" stroke="#ffffff" stroke-width="1.5"/>
+        <line x1="10" y1="68" x2="28" y2="65" stroke="#ffffff" stroke-width="1.5"/>
+        <line x1="88" y1="62" x2="70" y2="60" stroke="#ffffff" stroke-width="1.5"/>
+        <line x1="90" y1="68" x2="72" y2="65" stroke="#ffffff" stroke-width="1.5"/>
+      </svg>
+    </div>
+
+    <div class="header-titles">
+      <h1>Jimothy The Raccoon</h1>
+      <div class="blink">★ OFFICIAL HOMEPAGE & HEIST ARCHIVE ★</div>
+      <div>
+        <span class="status-pill">CURRENT STATUS: Searching yard. Seeking treats. Very hungry.</span>
+      </div>
+    </div>
+
+    <div class="avatar-frame">
+      <!-- Inline SVG Avatar Right (Mirrored) -->
+      <svg width="68" height="68" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Jimothy Pixel Face Mirrored">
+        <rect width="100" height="100" fill="#000000"/>
+        <polygon points="15,10 40,35 10,40" fill="#606060"/>
+        <polygon points="20,18 35,32 15,35" fill="#ffffff"/>
+        <polygon points="85,10 60,35 90,40" fill="#606060"/>
+        <polygon points="80,18 65,32 85,35" fill="#ffffff"/>
+        <ellipse cx="50" cy="55" rx="38" ry="32" fill="#757575"/>
+        <path d="M 20 65 Q 50 92 80 65 Q 50 78 20 65" fill="#f0f0f0"/>
+        <path d="M 16 46 Q 34 38 50 48 Q 66 38 84 46 Q 88 64 74 65 Q 50 56 26 65 Q 12 64 16 46" fill="#151515"/>
+        <ellipse cx="34" cy="51" rx="5" ry="6" fill="#ffffff"/>
+        <circle cx="35" cy="51" r="2.5" fill="#000000"/>
+        <circle cx="36" cy="49" r="1" fill="#ffff00"/>
+        <ellipse cx="66" cy="51" rx="5" ry="6" fill="#ffffff"/>
+        <circle cx="65" cy="51" r="2.5" fill="#000000"/>
+        <circle cx="64" cy="49" r="1" fill="#ffff00"/>
+        <polygon points="46,62 54,62 50,67" fill="#000000"/>
+        <line x1="12" y1="62" x2="30" y2="60" stroke="#ffffff" stroke-width="1.5"/>
+        <line x1="10" y1="68" x2="28" y2="65" stroke="#ffffff" stroke-width="1.5"/>
+        <line x1="88" y1="62" x2="70" y2="60" stroke="#ffffff" stroke-width="1.5"/>
+        <line x1="90" y1="68" x2="72" y2="65" stroke="#ffffff" stroke-width="1.5"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- Animated Hazard Strip Construction Sign -->
+  <div class="construction-strip" role="note">
+    <div class="construction-inner">
+      ⚠️ SITE UNDER CONSTRUCTION ⚠️ NEW HEISTS ADDED WEEKLY!
+    </div>
+  </div>
+
+  <hr class="rainbow-rule">
+
+  <!-- Component 1: Daily Mission Log -->
+  <section aria-labelledby="heading-log">
+    <div class="section-caption" id="heading-log">
+      <span>🐾</span> Nightly Mission Log (Verified Heists)
+    </div>
+    <div class="retro-panel">
+      <table class="retro-grid">
+        <thead>
+          <tr>
+            <th style="width: 22%;">Time Window</th>
+            <th style="width: 38%;">Target Location</th>
+            <th style="width: 40%;">Mission Debrief & Tactical Outcome</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>08:30 PM</strong></td>
+            <td>Hollow Elm Tree Base</td>
+            <td>Woke up. Performed compulsory paw stretches. Inspected ground for roaming neighborhood cats.</td>
+          </tr>
+          <tr>
+            <td><strong>10:15 PM</strong></td>
+            <td>Municipal Green Bins</td>
+            <td>Unlatched dual rubber bungees. Leveraged bin to 45 degrees. Harvested cold garlic bread crusts.</td>
+          </tr>
+          <tr>
+            <td><strong>01:00 AM</strong></td>
+            <td>Granite Bird Bath Basin</td>
+            <td>Submerged grape cluster in rainwater pool. Methodically rolled between digits prior to eating.</td>
+          </tr>
+          <tr>
+            <td><strong>03:15 AM</strong></td>
+            <td>Miller House Cedar Roof</td>
+            <td>Executed silent diagonal shingles scamper. Successfully tapped brick chimney to confuse garage dog.</td>
+          </tr>
+          <tr>
+            <td><strong>05:45 AM</strong></td>
+            <td>High Elm Tree Hollow</td>
+            <td>Full daylight abort maneuver. Curled ringed tail over eyes. Commenced heavy eight-hour nap.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Component 2: Gear & Power Ratings -->
+  <section aria-labelledby="heading-gear">
+    <div class="section-caption" id="heading-gear">
+      <span>⚡</span> Biological Gear & Tactical Specs
+    </div>
+    <div class="retro-panel">
+      <table class="retro-grid">
+        <thead>
+          <tr>
+            <th style="width: 28%;">Gear Asset</th>
+            <th style="width: 52%;">Operational Capability</th>
+            <th style="width: 20%;">Combat Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Dexterous Front Paws</strong></td>
+            <td>Five independent fingers. Opens sealed peanut butter jars and spring-loaded bin latches.</td>
+            <td><span class="tag tag-power">STRENGTH: 99</span></td>
+          </tr>
+          <tr>
+            <td><strong>Anti-Glare Mask</strong></td>
+            <td>Melanin orbital band. Eliminates security halogen glare during midnight backyard operations.</td>
+            <td><span class="tag tag-stealth">STEALTH: 100</span></td>
+          </tr>
+          <tr>
+            <td><strong>180° Swivel Ankles</strong></td>
+            <td>Rear paws rotate completely backwards. Enables high-speed head-first vertical tree descents.</td>
+            <td><span class="tag tag-agility">AGILITY: 95</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Component 3: Snack Targets Tier List -->
+  <section aria-labelledby="heading-snacks">
+    <div class="section-caption" id="heading-snacks">
+      <span>🍟</span> Priority Snack Targets (Tier List)
+    </div>
+    <div class="retro-panel">
+      <table class="retro-grid">
+        <thead>
+          <tr>
+            <th style="width: 30%;">Delicacy</th>
+            <th style="width: 52%;">Flavor & Texture Profile</th>
+            <th style="width: 18%;">Acquisition Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Cold French Fries</strong></td>
+            <td>High sodium content. Crispy oil residue. Consumed instantly directly off the sidewalk.</td>
+            <td><span class="tag tag-free">100% FREE</span></td>
+          </tr>
+          <tr>
+            <td><strong>Campfire Marshmallows</strong></td>
+            <td>Ultra-plush sugar cylinders. Melts onto paw pads. Transported back to base camp as high currency.</td>
+            <td><span class="tag tag-free">100% FREE</span></td>
+          </tr>
+          <tr>
+            <td><strong>Empty Peanut Butter Tub</strong></td>
+            <td>Dense protein residue. Requires high-dexterity tongue scraping maneuvers. Peak satiety.</td>
+            <td><span class="tag tag-free">100% FREE</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr class="rainbow-rule">
+
+  <!-- Footer with Interactive Hit Counter and 90s Web Buttons -->
+  <footer>
+    <div>
+      VISITOR HIT COUNTER:
+      <div class="odometer-wrap" id="counterBox" title="Visitor Odometer">
+        <span class="odometer-digit">0</span>
+        <span class="odometer-digit">0</span>
+        <span class="odometer-digit">4</span>
+        <span class="odometer-digit">2</span>
+        <span class="odometer-digit">1</span>
+        <span class="odometer-digit" id="liveDigit">9</span>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <button class="btn-web95" onclick="alert('THANK YOU FOR SIGNING JIMOTHY\'S GUESTBOOK! [STAMP: PAW PRINT APPROVED]')">
+        📝 SIGN GUESTBOOK
+      </button>
+      <a class="btn-web95" href="mailto:JIMOTHY@TRASHNET.COM">
+        ✉️ EMAIL WEBMASTER
+      </a>
+      <button class="btn-web95" onclick="document.body.style.filter = document.body.style.filter ? '' : 'hue-rotate(90deg)'">
+        🌈 PARTY MODE
+      </button>
+    </div>
+
+    <p style="margin-top: 10px; font-size: 11px; color: #a0aec0;">
+      JIMOTHY'S RACCOON LAIR &copy; 1995-2026. ALL TRASH RESERVED. 
+      <br>
+      HOSTED WITH PRIDE ON GITHUB PAGES. BEST VIEWED WITH A SCREEN RESOLUTION OF 800x600.
+    </p>
+  </footer>
+
+</main>
+
+<script>
+  // Simple local storage simulated hit counter increment
+  (function() {
+    try {
+      let count = localStorage.getItem('jimothy_hits') || 4219;
+      count = parseInt(count, 10) + 1;
+      localStorage.setItem('jimothy_hits', count);
+      
+      const digitStr = count.toString().padStart(6, '0');
+      const container = document.getElementById('counterBox');
+      if (container) {
+        container.innerHTML = '';
+        for (let char of digitStr) {
+          const span = document.createElement('span');
+          span.className = 'odometer-digit';
+          span.textContent = char;
+          container.appendChild(span);
+        }
+      }
+    } catch(e) {
+      // Graceful fallback for strict privacy mode
+    }
+  })();
+</script>
 
 </body>
 </html>
