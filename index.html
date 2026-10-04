@@ -2,890 +2,242 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<title>The Official Shenanigans of Jimothy the Raccoon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JIMOTHY'S RACCOON LAIR</title>
 
-<!-- Tab Favicon & Social Meta Tags -->
 <link rel="icon" type="image/jpeg" href="fair1.jpg">
 <link rel="apple-touch-icon" href="fair1.jpg">
-<meta property="og:title" content="Jimothy the Raccoon - Professional Trash Goblin">
-<meta property="og:description" content="Hourly heist timelines, dumpster diving analytics, tactical stealth techniques, snack rating charts, and neighborhood mischief guides.">
-<meta property="og:image" content="https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg">
-<meta property="og:url" content="https://doodleydoodle.duckdns.org/">
-<meta property="og:type" content="website">
 
 <style>
-  :root {
-    --primary: #1e1b4b;
-    --primary-purple: #6366f1;
-    --accent-coral: #f43f5e;
-    --text: #1e293b;
-    --text-muted: #64748b;
-    --border: #e2e8f0;
-    --card-bg: #ffffff;
-    --bg-page: #f8fafc;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: var(--text);
-    background-color: var(--bg-page);
-    line-height: 1.5;
-    font-size: 15px;
-    padding: 8px 8px 40px 8px;
-    -webkit-font-smoothing: antialiased;
+    background-color: #000080;
+    color: #ffff00;
+    font-family: "Comic Sans MS", "Courier New", monospace;
+    font-size: 13px;
+    margin: 8px;
+    padding: 0;
   }
-
-  .container {
-    max-width: 860px;
+  .page-box {
+    max-width: 720px;
     margin: 0 auto;
+    border: 4px ridge #c0c0c0;
+    background-color: #000033;
+    padding: 10px;
   }
-
-  /* Sticky Top Bar for Walking & Sneaking */
-  .top-hud {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(30, 27, 75, 0.95);
-    backdrop-filter: blur(8px);
+  marquee {
+    background-color: #ff0000;
     color: #ffffff;
-    border-radius: 8px;
-    padding: 10px 14px;
-    margin-bottom: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-  .hud-title { font-weight: 800; font-size: 13px; letter-spacing: 0.3px; text-transform: uppercase; color: #a5b4fc; }
-  .hud-sub { font-size: 11px; color: #cbd5e1; }
-  .hud-status { background: var(--accent-coral); color: #fff; font-size: 10px; font-weight: 800; padding: 3px 7px; border-radius: 4px; text-transform: uppercase; }
-
-  /* Hero Section */
-  .hero-card {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    border: 1px solid var(--border);
-    text-align: center;
-  }
-  .header-avatars {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-  }
-  .corner-thumb {
-    width: 68px;
-    height: 68px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #818cf8;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  }
-  .hero-card h1 {
-    font-size: 21px;
-    font-weight: 900;
-    color: var(--primary);
-    line-height: 1.2;
-    letter-spacing: -0.5px;
-  }
-  .hero-card p {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-top: 4px;
-  }
-  .hero-banner-wrap {
-    width: 100%;
-    margin: 14px 0 6px 0;
-    display: flex;
-    justify-content: center;
-  }
-  .hero-banner-wrap img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: contain;
-  }
-  .banner-fallback {
-    width: 100%;
-    padding: 18px;
-    text-align: center;
-    background: linear-gradient(135deg, #4338ca 0%, #be123c 100%);
-    color: #fff;
-    border-radius: 8px;
-    font-weight: 900;
-    font-size: 18px;
-    text-transform: uppercase;
-  }
-
-  /* Weather & Satiety Chips */
-  .quick-strip {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 8px;
-    background: #fdf2f8;
-    border: 1px solid #fbcfe8;
-    border-radius: 8px;
-    padding: 10px 12px;
-    margin-bottom: 16px;
-    font-size: 11.5px;
-    color: #831843;
-  }
-  .quick-strip strong { color: #9d174d; font-weight: 800; }
-
-  /* Walking Step Cards */
-  .step-card {
-    background: var(--card-bg);
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    padding: 14px 16px;
-    margin-bottom: 12px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
-    position: relative;
-    border-left: 5px solid #94a3b8;
-  }
-  .step-card.active { border-left-color: var(--accent-coral); background: #ffffff; }
-  .step-card.ac-haven { border-left-color: #06b6d4; }
-  .step-card.drinks { border-left-color: #a855f7; }
-
-  .step-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 6px;
-  }
-  .step-time {
-    font-size: 13.5px;
-    font-weight: 900;
-    color: var(--primary);
-    background: #f1f5f9;
-    padding: 3px 8px;
-    border-radius: 5px;
-    display: inline-block;
-  }
-  .step-location {
+    font-weight: bold;
     font-size: 12px;
-    font-weight: 700;
-    color: var(--text-muted);
-    text-align: right;
-  }
-  .step-title {
-    font-size: 15.5px;
-    font-weight: 800;
-    color: var(--primary);
-    line-height: 1.3;
-    margin-bottom: 6px;
-  }
-  .step-desc {
-    font-size: 13px;
-    color: #334155;
+    border: 2px solid #ffffff;
+    padding: 3px;
     margin-bottom: 8px;
   }
-
-  .fact-box {
-    background: #f0fdf4;
-    border: 1px solid #bbf7d0;
-    border-radius: 6px;
-    padding: 8px 10px;
-    margin-top: 8px;
-    font-size: 12px;
-    color: #166534;
-    line-height: 1.4;
-  }
-  .fact-box strong { color: #14532d; font-weight: 800; }
-
-  .highlight-box {
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
-    border-radius: 6px;
-    padding: 10px 14px;
-    margin-bottom: 16px;
-    font-size: 12.5px;
-    color: #1e40af;
-    line-height: 1.4;
-  }
-  .highlight-box strong { color: #1e3a8a; }
-
-  .badge {
-    display: inline-block;
-    padding: 2px 7px;
-    border-radius: 4px;
-    font-weight: 800;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-  }
-  .badge-ac { background: #e0f2fe; color: #0369a1; }
-  .badge-sun { background: #fef3c7; color: #92400e; }
-  .badge-drink { background: #fce7f3; color: #9d174d; }
-  .badge-food { background: #dcfce7; color: #166534; }
-  .badge-star { background: #fef9c3; color: #854d0e; border: 1px solid #facc15; }
-  .badge-new { background: #ffedd5; color: #9a3412; border: 1px solid #fed7aa; }
-  .badge-auto { background: #ede9fe; color: #5b21b6; border: 1px solid #ddd6fe; font-weight: 800; }
-  .badge-coffee { background: #fef3c7; color: #78350f; border: 1px solid #d97706; font-weight: 800; }
-  .badge-alt { background: #fae8ff; color: #86198f; border: 1px solid #f0abfc; font-weight: 800; }
-
-  .section-heading {
-    font-size: 16px;
-    font-weight: 900;
-    color: var(--primary);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 24px 0 10px 0;
-    padding-bottom: 6px;
-    border-bottom: 2px solid var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .table-responsive {
+  .header-table {
     width: 100%;
-    overflow-x: auto;
-    background: #fff;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    margin-bottom: 16px;
-    -webkit-overflow-scrolling: touch;
+    border-collapse: collapse;
+    margin-bottom: 8px;
   }
-  table { width: 100%; border-collapse: collapse; font-size: 12.5px; min-width: 560px; }
-  th { background: #f8fafc; color: var(--text-muted); font-weight: 800; font-size: 11px; text-transform: uppercase; padding: 9px 11px; text-align: left; border-bottom: 1px solid var(--border); }
-  td { padding: 9px 11px; border-bottom: 1px solid #f1f5f9; vertical-align: top; }
-  tr:nth-child(even) td { background: #fafbfc; }
-
-  .grid-2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 12px;
-    margin-top: 10px;
+  .header-table td {
+    vertical-align: middle;
+    text-align: center;
   }
-  .grid-3 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 12px;
-    margin-top: 10px;
+  .avatar {
+    width: 58px;
+    height: 58px;
+    border: 3px dashed #00ff00;
   }
-  .card {
-    background: #ffffff;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 12px 14px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  .banner-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 90px;
+    border: 3px ridge #ffff00;
+    display: block;
+    margin: 6px auto;
   }
-  .card h3 { font-size: 13px; font-weight: 800; color: var(--primary); margin-bottom: 6px; border-bottom: 1px solid var(--border); padding-bottom: 4px; }
-  .card ul { list-style: none; }
-  .card li { font-size: 12px; color: #334155; margin-bottom: 6px; line-height: 1.4; }
-  .card li strong { color: var(--primary); }
-
-  .satiety-star { color: #eab308; font-size: 14px; }
-  .coffee-highlight { background-color: #fef3c7; color: #78350f; font-weight: 800; padding: 1px 5px; border-radius: 4px; border: 1px solid #d97706; }
-
-  @media (max-width: 600px) {
-    body { padding: 4px; font-size: 14px; }
-    .hero-card h1 { font-size: 18px; }
-    .corner-thumb { width: 52px; height: 52px; }
-    .step-card { padding: 12px; }
-    .step-title { font-size: 14.5px; }
+  h1 {
+    font-size: 17px;
+    color: #00ffff;
+    text-shadow: 2px 2px #ff00ff;
+    margin: 0;
+    text-transform: uppercase;
   }
-
-  @media print {
-    body { background: #fff; padding: 0; font-size: 9pt; }
-    .top-hud { display: none; }
-    .step-card { box-shadow: none; border: 1px solid #cbd5e1; page-break-inside: avoid; }
-    .page-break { page-break-before: always; }
+  .blink-text {
+    animation: blinker 1s linear infinite;
+    color: #ff00ff;
+    font-weight: bold;
+  }
+  @keyframes blinker {
+    50% { opacity: 0; }
+  }
+  hr {
+    border: 0;
+    height: 4px;
+    background: linear-gradient(to right, #ff0000, #ffff00, #00ff00, #00ffff, #ff00ff);
+    margin: 8px 0;
+  }
+  table.retro-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #00ff00;
+    margin-bottom: 8px;
+    font-size: 11px;
+    color: #ffffff;
+  }
+  table.retro-table th {
+    background-color: #ff0055;
+    color: #ffff00;
+    border: 1px solid #ffffff;
+    padding: 3px 5px;
+    text-align: left;
+  }
+  table.retro-table td {
+    border: 1px solid #005500;
+    padding: 3px 5px;
+    background-color: #001a00;
+  }
+  .tag {
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 1px 4px;
+    font-size: 9px;
+    font-weight: bold;
+  }
+  .counter {
+    background-color: #000000;
+    color: #00ff00;
+    border: 2px inset #c0c0c0;
+    padding: 2px 6px;
+    font-family: monospace;
+    font-size: 12px;
+    display: inline-block;
+  }
+  .footer-bar {
+    text-align: center;
+    font-size: 11px;
+    color: #00ffff;
+    margin-top: 6px;
   }
 </style>
 </head>
 <body>
 
-<div class="container">
+<div class="page-box">
 
-  <!-- Walking Mode Quick-Glance Top HUD -->
-  <div class="top-hud">
-    <div>
-      <div class="hud-title">Jimothy's Trash Radar</div>
-      <div class="hud-sub">Den: Hollow Elm Tree | Status: Looking for Marshmallows</div>
-    </div>
-    <div class="hud-status">High Mischief</div>
-  </div>
+  <marquee scrollamount="4">
+    *** WELCOME! SITE UNDER CONSTRUCTION! BEST VIEWED AT 800x600 IN NETSCAPE NAVIGATOR! ***
+  </marquee>
 
-  <!-- Hero Card with Avatars & Scaled Banner -->
-  <div class="hero-card">
-    <div class="header-avatars">
-      <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
-      <div>
-        <h1>Jimothy the Raccoon - Certified Mastermind</h1>
-        <p>Tactical Trash Logistics, Paw Dexterity Benchmarks, Snacking Strategies & Napping Guides</p>
-      </div>
-      <img src="fair1.jpg" alt="fair1" class="corner-thumb" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg'; this.onerror=null;">
-    </div>
+  <table class="header-table">
+    <tr>
+      <td style="width: 70px;">
+        <img src="fair1.jpg" alt="Jimothy Left" class="avatar" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg';">
+      </td>
+      <td>
+        <h1>Jimothy The Raccoon</h1>
+        <div class="blink-text">*** TOP SECRET TRASH LAIR ***</div>
+        <div style="color: #ffffff; font-size: 11px;">Status: Searching yard. Seeking treats. Very hungry.</div>
+      </td>
+      <td style="width: 70px;">
+        <img src="fair1.jpg" alt="Jimothy Right" class="avatar" onerror="this.src='https://raw.githubusercontent.com/doodbleboi/fundraiser/main/fair1.jpg';">
+      </td>
+    </tr>
+  </table>
 
-    <div class="hero-banner-wrap" id="bannerContainer">
-      <img src="fair3.png" alt="Jimothy Banner" id="mainBanner" onerror="this.onerror=null; document.getElementById('bannerContainer').innerHTML='<div class=\'banner-fallback\'>Jimothy • Neighborhood Legend</div>';">
-    </div>
+  <img src="fair3.png" alt="Jimothy Banner" class="banner-img" onerror="this.style.display='none';">
 
-    <div class="quick-strip">
-      <div><strong>Sunrise (Bedtime):</strong> 7:16 AM CDT</div>
-      <div><strong>Sunset (Breakfast):</strong> 7:21 PM CDT</div>
-      <div><strong>Peak Human Asleep Time:</strong> 2:30 AM CDT</div>
-      <div><strong>Optimal Snack Heist Window:</strong> 11:30 PM – 3:00 AM</div>
-    </div>
-  </div>
+  <hr>
 
-  <!-- TIMELINE CARDS DESIGNED FOR WALKING ON PHONES -->
-  <div class="section-heading">
-    <span>Jimothy's 24-Hour Schedule</span>
-    <span class="badge badge-sun">Dusk Till Dawn</span>
-  </div>
+  <table class="retro-table">
+    <tr>
+      <th style="width: 25%;">TIME</th>
+      <th style="width: 35%;">MISSION</th>
+      <th style="width: 40%;">LOG</th>
+    </tr>
+    <tr>
+      <td>8:00 PM</td>
+      <td>WAKE UP</td>
+      <td>Exit hollow log. Stretch four paws. Shake fur.</td>
+    </tr>
+    <tr>
+      <td>10:00 PM</td>
+      <td>GREEN BIN</td>
+      <td>Twist metal latch. Tip bin over. Grab pizza crust.</td>
+    </tr>
+    <tr>
+      <td>1:00 AM</td>
+      <td>BIRD BATH</td>
+      <td>Dip found grape in puddle. Roll between claws. Feast.</td>
+    </tr>
+    <tr>
+      <td>3:00 AM</td>
+      <td>ROOF SPRINT</td>
+      <td>Scamper across cedar shakes. Tap chimney brick. Spy dog.</td>
+    </tr>
+    <tr>
+      <td>6:00 AM</td>
+      <td>BEDTIME</td>
+      <td>Climb tree high. Wrap ringed tail over eyes. Sleep.</td>
+    </tr>
+  </table>
 
-  <!-- STEP 1 -->
-  <div class="step-card active">
-    <div class="step-header">
-      <span class="step-time">7:30 – 8:30 PM</span>
-      <span class="step-location">The Oak Tree &rarr; Mrs. Gable's Deck</span>
-    </div>
-    <div class="step-title">Morning Wake-Up Stretch & Cat Food Reconnaissance</div>
-    <div class="step-desc">
-      Awaken from an 11-hour power nap in the fork of the hollow elm. Perform mandatory toe grooming, check the perimeter for the neighbor's golden retriever, and scurry down the trellis to inspect Mrs. Gable's back porch for leftover kibble.
-    </div>
-    <div class="fact-box">
-      <strong>Anatomical Advantage:</strong> Raccoons possess rotating hind feet that can turn 180 degrees, permitting head-first descent down vertical tree trunks—essential when executing hasty tactical escapes from angry chihuahuas.
-    </div>
-  </div>
+  <table class="retro-table">
+    <tr>
+      <th style="width: 30%;">GEAR ITEM</th>
+      <th style="width: 45%;">POWER</th>
+      <th style="width: 25%;">RATING</th>
+    </tr>
+    <tr>
+      <td>Front Claws</td>
+      <td>Five fingers. Unlatches box clips fast. Zero keys needed.</td>
+      <td><span class="tag">MAX POWER</span></td>
+    </tr>
+    <tr>
+      <td>Eye Mask</td>
+      <td>Black fur circles. Cuts flashlight glare. Looks cool.</td>
+      <td><span class="tag">STEALTH 10</span></td>
+    </tr>
+    <tr>
+      <td>Rotary Back Feet</td>
+      <td>Ankles spin backwards. Slides down bark head-first. Fast.</td>
+      <td><span class="tag">RADICAL</span></td>
+    </tr>
+  </table>
 
-  <!-- STEP 2 -->
-  <div class="step-card ac-haven">
-    <div class="step-header">
-      <span class="step-time">8:30 – 10:00 PM</span>
-      <span class="step-location">The Green Bins &rarr; Corner Alley</span>
-    </div>
-    <div class="step-title">Primary Dumpster Audit (The Bungee Cord Challenge)</div>
-    <div class="step-desc">
-      Confront the high-security green municipal bins behind the local bakery. Utilize opposing digit leverage to loosen elastic bungee latches, tip the bin precisely 45 degrees, and harvest fresh baguette ends and sourdough crusts.
-    </div>
-    <div class="fact-box">
-      <strong>Dexterity Science:</strong> A raccoon's forepaws possess hyper-dense tactile mechanoreceptors. Over 65% of the sensory cortex in their brains is dedicated to interpreting paw touch—essentially seeing the world through finger pads.
-    </div>
-  </div>
+  <table class="retro-table">
+    <tr>
+      <th style="width: 35%;">SNACK TARGET</th>
+      <th style="width: 45%;">NOTES</th>
+      <th style="width: 20%;">COST</th>
+    </tr>
+    <tr>
+      <td>Cold French Fries</td>
+      <td>Salty grease treat. Devoured instantly on curb.</td>
+      <td>FREE!</td>
+    </tr>
+    <tr>
+      <td>Puff Marshmallow</td>
+      <td>Sticky sugar pillow. Carried home like treasure.</td>
+      <td>FREE!</td>
+    </tr>
+    <tr>
+      <td>Peanut Butter Tub</td>
+      <td>Cleaned out with long tongue sweeps. Great energy.</td>
+      <td>FREE!</td>
+    </tr>
+  </table>
 
-  <!-- STEP 3 -->
-  <div class="step-card">
-    <div class="step-header">
-      <span class="step-time">10:00 – 11:30 PM</span>
-      <span class="step-location">Bird Feeder Row &rarr; Johnson Garage</span>
-    </div>
-    <div class="step-title">Acrobatic Seed Plunder & Dog Toy Relocation</div>
-    <div class="step-desc">
-      Traverse the telephone wire tightrope over to the Johnson yard. Hang upside down by two toes to spin the squirrel-proof bird feeder until sunflower seeds cascade like golden confetti. Borrow a squeaky hedgehog toy for moral support.
-    </div>
-    <div class="fact-box">
-      <strong>Jimothy Lore:</strong> Jimothy has hoarded approximately 14 squeaky rubber toys inside his hollow tree hollow. He does not chew them; he arranges them alphabetically by pitch.
-    </div>
-  </div>
+  <hr>
 
-  <!-- STEP 4 -->
-  <div class="step-card drinks">
-    <div class="step-header">
-      <span class="step-time">11:30 PM – 1:00 AM</span>
-      <span class="step-location">Garden Birdbath &rarr; Creek Edge</span>
-    </div>
-    <div class="step-title">Culinary Food Washing & Puddle Hydration Protocol</div>
-    <div class="step-desc">
-      Carry acquired pretzel nuggets and berry clusters to the stone birdbath. Methodically submerge each morsel in fresh rainwater, rolling it between paws like a tiny chef preparing five-star cuisine before consumption.
-    </div>
-    <div class="fact-box">
-      <strong>The "Dousing" Myth:</strong> Raccoons do not wash food because they care about table manners or germs; wetting their paws softens the calloused skin and dramatically heightens nerve sensitivity, allowing them to feel the food structure clearer.
-    </div>
-  </div>
-
-  <!-- STEP 5 -->
-  <div class="step-card ac-haven">
-    <div class="step-header">
-      <span class="step-time">1:00 – 2:30 AM</span>
-      <span class="step-location">Neighborhood Sheds &rarr; Patio Couches</span>
-    </div>
-    <div class="step-title">Mid-Shift Under-Deck Siesta & Cushion Testing</div>
-    <div class="step-desc">
-      Retire under the Miller family's cedar patio deck. Curl into a tight spherical fluff-ball on a stray outdoor sofa cushion to digest carbohydrates and calculate optimal return paths.
-    </div>
-    <div class="fact-box">
-      <strong>Nap Architecture:</strong> A raccoon's core resting body temperature is preserved through an underfur layer comprising nearly 90% of their coat, insulated by long water-resistant guard hairs that shed rain and morning dew.
-    </div>
-  </div>
-
-  <!-- STEP 6 -->
-  <div class="step-card ac-haven">
-    <div class="step-header">
-      <span class="step-time">2:30 – 4:30 AM</span>
-      <span class="step-location">Suburban Perimeter &rarr; Koi Pond</span>
-    </div>
-    <div class="step-title">The Shiny Object Heist & Fish Pond Staring Contest</div>
-    <div class="step-desc">
-      Inspect patio tables for discarded aluminum foil candy wrappers, silver keys, and glass marbles. Sit at the edge of the koi pond for 45 minutes making contemplative eye contact with an orange carp named Bartholomew.
-    </div>
-    <div class="fact-box">
-      <strong>Mask Mystery:</strong> The distinctive black bandit mask across Jimothy's eyes serves an optical function similar to athlete eye-black: it absorbs glare and enhances contrast perception in dim moonlight.
-    </div>
-  </div>
-
-  <!-- STEP 7 -->
-  <div class="step-card">
-    <div class="step-header">
-      <span class="step-time">4:30 – 6:00 AM</span>
-      <span class="step-location">Storm Drains &rarr; Garage Roof</span>
-    </div>
-    <div class="step-title">The Early Morning Scramble & Newspaper Sniffing</div>
-    <div class="step-desc">
-      Navigate the municipal storm runoff system to avoid early-morning joggers. Jump onto the garage roof, observe the neighborhood delivery truck dropping newspapers, and steal an unattended glazed donut crumb.
-    </div>
-    <div class="fact-box">
-      <strong>Vocal Repertoire:</strong> Raccoons communicate with over 200 distinct acoustic signals, ranging from gentle purrs when eating watermelon to bird-like chitters when coordinating garden escapes.
-    </div>
-  </div>
-
-  <!-- STEP 8 -->
-  <div class="step-card">
-    <div class="step-header">
-      <span class="step-time">6:00 – 7:15 AM</span>
-      <span class="step-location">Elm Canopy &rarr; Deep Slumber</span>
-    </div>
-    <div class="step-title">Return to Tree Base & Full Daylight Shutdown</div>
-    <div class="step-desc">
-      Ascend the bark ladder back into the tree trunk hollow. Tuck bushy tail over nose, let out a deep contented sigh, and fall fast asleep just as the sun breaks over the rooftops.
-    </div>
-  </div>
-
-  <!-- HIGH-BUZZ VEHICLES & CONCEPT CARS SHOWCASE GUIDE -->
-  <div class="section-heading">
-    <span>Jimothy's High-Tech Gear & Paw Specs</span>
-    <span class="badge badge-auto">Biological Engineering</span>
-  </div>
-
-  <div class="highlight-box">
-    <strong>Tactical Specifications & Locomotion Performance:</strong> Jimothy is built with evolutionary adaptations that outclass suburban obstacles. Below are his verified biological specs, paws-on performance ratings, and mechanical movement characteristics.
-  </div>
-
-  <div class="table-responsive">
-    <table>
-      <thead>
-        <tr>
-          <th style="width: 24%;">Feature / Mechanism</th>
-          <th style="width: 20%;">Location</th>
-          <th style="width: 38%;">Verified Specifications & Capabilities</th>
-          <th style="width: 18%;">Real-World Context</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Front Paw Actuators (5 Digits)</strong></td>
-          <td>Forelimbs<small>Primary Tools</small></td>
-          <td>Non-retractable curved claws paired with five long, dexterous fingers capable of untying knots, turning round doorknobs, and unlatching complex metal carabiners in total darkness.</td>
-          <td>Operates with independent fingertip precision, allowing Jimothy to open sealed peanut butter jars in under 45 seconds.</td>
-        </tr>
-        <tr>
-          <td><strong>Anti-Glare Face Mask</strong></td>
-          <td>Cranial Region<small>Perception Array</small></td>
-          <td>Dense melanin-pigmented fur band across the orbital zone. Reduces night-time light reflection from street lamps and garden floodlights by up to 80%.</td>
-          <td>Provides high-contrast night vision, eliminating the glare from security spotlights while picking locks.</td>
-        </tr>
-        <tr>
-          <td><strong>Torque Tail Counterbalance</strong></td>
-          <td>Posterior Assembly<small>5–7 Dark Rings</small></td>
-          <td>Thick, muscular 12-inch tail serving as a dynamic gyro-stabilizer during high-wire fence scurries, roof jumps, and vertical pipe climbs.</td>
-          <td>Acts as a third contact point during limb transitions across shaky clotheslines and thin telephone wires.</td>
-        </tr>
-        <tr>
-          <td><strong>Sub-Bark Acoustic Ears</strong></td>
-          <td>Auditory Core<small>Dual Swivel Cones</small></td>
-          <td>Can rotate independently up to 120 degrees, catching acoustic frequencies up to 50–85 kHz (ultrasonic spectrum).</td>
-          <td>Can detect earthworms wriggling 2 inches underground and human footsteps approaching through thick carpet.</td>
-        </tr>
-        <tr>
-          <td><strong>Undercoat Thermal Shield</strong></td>
-          <td>Torso / Flank<small>Dual-Layer Mesh</small></td>
-          <td>Dense, wavy underfur trapping a continuous air barrier, topped by stiff water-repellent guard hairs. Rated for sub-freezing Texas winters and unexpected sprinkler blasts.</td>
-          <td>Maintains core body heat even when fishing for crayfish in near-freezing rain puddles.</td>
-        </tr>
-        <tr>
-          <td><strong>All-Terrain Rear Swivel Joint</strong></td>
-          <td>Pelvic Assembly<small>180° Rotators</small></td>
-          <td>Specialized ankle bone configuration that pivots backwards, allowing downward grip on tree bark without slips.</td>
-          <td>Enables fast head-first descents from roofs when garden sprinklers unexpectedly activate.</td>
-        </tr>
-        <tr>
-          <td><strong>Whiskers & Spatial Sensor Grid</strong></td>
-          <td>Muzzle & Forearms<small>Vibrissae Nodes</small></td>
-          <td>High-sensitivity tactile bristles located on the snout and just above the front paws for measuring fence openings before squeezing through.</td>
-          <td>If his whiskers clear the fence opening without bending, his entire flexible rib cage can compress to fit through.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="grid-2">
-    <div class="card">
-      <h3>Interactive Obstacle Courses</h3>
-      <ul>
-        <li><strong>The Fence Sprint:</strong> 150 feet of slick cedar picket fencing conquered at full gallop in under 6 seconds flat.</li>
-        <li><strong>Lattice Ascender:</strong> Rapid vertical scampering up white vinyl garden trellises with zero creaking sounds.</li>
-        <li><strong>Bird-Feeder Pendulum:</strong> Dynamic body-weight swing maneuver designed to dump high-grade thistle seed onto the patio floor.</li>
-        <li><strong>Downspout Chimney Slide:</strong> Controlled friction slide inside copper gutter spouts for silent escapes.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Trash Raider History & Anecdotes</h3>
-      <ul>
-        <li><strong>The Great Cheese Heist of '24:</strong> Jimothy once liberated an entire 2-pound block of mild cheddar from a garage mini-fridge by working the latch with a bent paperclip.</li>
-        <li><strong>The Pool Float Incident:</strong> Spotted floating peacefully on an inflatable flamingo at 3:15 AM while eating dry cereal directly from the box.</li>
-        <li><strong>Neighborhood Treaty:</strong> Locals agreed that keeping trash lids tight was useless and simply began leaving out occasional apple slices to negotiate peace.</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- 1936 ART DECO PHOTO SPOTS & ARCHITECTURE DIRECTORY -->
-  <div class="section-heading">
-    <span>Jimothy's Favorite Photo Spots</span>
-    <span class="badge badge-sun">Scenic Vistas</span>
-  </div>
-
-  <div class="table-responsive">
-    <table>
-      <thead>
-        <tr>
-          <th style="width: 25%;">Iconic Perch</th>
-          <th style="width: 22%;">Neighborhood Spot</th>
-          <th style="width: 18%;">Best Light Time</th>
-          <th style="width: 35%;">Scenic Story & Ideal Angle</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>The Apex of the Gazebo</strong></td>
-          <td>Henderson Backyard</td>
-          <td>Dusk (7:30 PM)</td>
-          <td>High cedar cupola looking down across the lawn. <em>Photo Tip:</em> Silhouette against the purple sunset sky while his fluffy ears twitch in the breeze.</td>
-        </tr>
-        <tr>
-          <td><strong>The Stone Birdbath Edge</strong></td>
-          <td>Corner Rose Garden</td>
-          <td>11:00 PM (Under Moonlight)</td>
-          <td>Classic marble basin filled with calm water. <em>Photo Tip:</em> Shoot close-up catching the water droplets glistening on his front paws as he washes a grape.</td>
-        </tr>
-        <tr>
-          <td><strong>Brick Chimney Lookout</strong></td>
-          <td>The Split-Level Ranch Roof</td>
-          <td>2:00 AM</td>
-          <td>Warm clay bricks that hold afternoon heat all night. <em>Photo Tip:</em> Low-angle shot showing Jimothy standing upright on hind legs scouting for open bins.</td>
-        </tr>
-        <tr>
-          <td><strong>Hollow Tree Portal</strong></td>
-          <td>The Great Elm Trunk</td>
-          <td>7:00 AM (Golden Hour)</td>
-          <td>Natural circular wooden knot forming the den entrance. <em>Photo Tip:</em> Capture just his masked face and sleepy eyes peeking out before daytime shut-eye.</td>
-        </tr>
-        <tr>
-          <td><strong>The Fence Post Crown</strong></td>
-          <td>Alley Boundary Line</td>
-          <td>10:15 PM</td>
-          <td>Solid 6x6 wooden corner post overlooking the compost heaps. <em>Photo Tip:</em> Capture his ringed tail curled gracefully around the wooden post.</td>
-        </tr>
-        <tr>
-          <td><strong>Koi Pond Stepping Stones</strong></td>
-          <td>Zen Rock Garden</td>
-          <td>3:45 AM</td>
-          <td>Flat river stones surrounded by lilies. <em>Photo Tip:</em> Mirror reflection shot in the glassy water as he investigates a friendly garden toad.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- PATIOS IN THE PARK (SHADED & A/C RETREATS) -->
-  <div class="section-heading">
-    <span>Daytime Nap Havens & Shaded Dens</span>
-    <span class="badge badge-drink">Cozy & Hidden</span>
-  </div>
-
-  <div class="table-responsive">
-    <table>
-      <thead>
-        <tr>
-          <th style="width: 25%;">Sanctuary Name</th>
-          <th style="width: 22%;">Location</th>
-          <th style="width: 38%;">Atmosphere, Comforts & Nesting Highlights</th>
-          <th style="width: 15%;">Environment</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>The Hollow Elm Penthouse</strong></td>
-          <td>Central Yard Tree (20 ft up)</td>
-          <td>Natural cavity lined with dry oak leaves, cedar shavings, and stolen dryer sheets. 100% predator-proof and weather-tight.</td>
-          <td><span class="badge badge-ac">5-Star Den</span></td>
-        </tr>
-        <tr>
-          <td><strong>Under-Porch Hammock</strong></td>
-          <td>The Gable Estate</td>
-          <td>Cool sandy soil under deep wooden decking. Always 15 degrees cooler than the ambient air with zero direct sun exposure.</td>
-          <td><span class="badge badge-drink">Cool Earth</span></td>
-        </tr>
-        <tr>
-          <td><strong>The Garden Tool Shed Rafters</strong></td>
-          <td>End of Baker Alley</td>
-          <td>Suspended wooden joists above stored lawnmowers. Smells like dry hay and motor oil; entirely free of neighborhood dogs.</td>
-          <td><span class="badge badge-drink">High Rafters</span></td>
-        </tr>
-        <tr>
-          <td><strong>Culvert Tunnel Suite</strong></td>
-          <td>Creek Drainage Path</td>
-          <td>Smooth concrete pipe with a trickling natural spring. Ideal for cooling down belly fur on sweltering summer afternoons.</td>
-          <td><span class="badge badge-ac">Natural Chilled</span></td>
-        </tr>
-        <tr>
-          <td><strong>Compost Heap Perimeter</strong></td>
-          <td>Community Garden Corner</td>
-          <td>Gentle ambient geothermal warmth generated by decomposing leaf mulch. Luxurious winter afternoon basking zone.</td>
-          <td><span class="badge badge-sun">Warm Mulch</span></td>
-        </tr>
-        <tr>
-          <td><strong>Old Boat Tarp Hideout</strong></td>
-          <td>Driveway Behind No. 42</td>
-          <td>Crinkly blue waterproof fabric sheltering a carpeted cockpit seat. Peak softness with water-bowl proximity.</td>
-          <td><span class="badge badge-ac">Covered Cabin</span></td>
-        </tr>
-        <tr>
-          <td><strong>The Attic Breezeway</strong></td>
-          <td>Loose Gable Vent on Elm St</td>
-          <td>Drafty attic louvers with panoramic neighborhood surveillance points and stray insulation nesting material.</td>
-          <td><span class="badge badge-drink">High Perch</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- VALUE FOOD DIRECTORY -->
-  <div class="section-heading">
-    <span>Jimothy's Top Value Snacks ($0 & Delicious)</span>
-    <span class="badge badge-food">Satiety Starred</span>
-  </div>
-
-  <div class="table-responsive">
-    <table>
-      <thead>
-        <tr>
-          <th style="width: 24%;">Foraged Delicacy</th>
-          <th style="width: 52%;">Discovered Location & Description</th>
-          <th style="width: 24%;">Jimothy's Satiety Rating</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Leftover Pizza Crusts</strong></td>
-          <td>
-            <span class="satiety-star">★</span> <strong>{FREE}</strong> CARD BOARD BOX DISCOVERIES<br>
-            Wood-fired dough remnants with caramelized garlic butter and scorched mozzarella edges.
-          </td>
-          <td><span class="badge badge-star">TOP 1: DENSE CARBS</span> 10/10 fuel rating. Provides sustained sprint energy across roof shingles.</td>
-        </tr>
-        <tr>
-          <td><strong>Marshmallow Loot</strong></td>
-          <td>
-            <span class="satiety-star">★</span> <strong>{FREE}</strong> CAMPFIRE PIT LEFTOVERS<br>
-            Fluffy, powdery white sugar pillows discarded near suburban fire pits.
-          </td>
-          <td><span class="badge badge-star">TOP 2: INSTANT JOY</span> 12/10 happiness score. Melts instantly in paw pads; highly prized currency.</td>
-        </tr>
-        <tr>
-          <td><strong>Peanut Butter Jar Bottoms</strong></td>
-          <td>
-            <span class="satiety-star">★</span> <strong>{FREE}</strong> RECYCLING BIN SCOOPS<br>
-            Glass and plastic jars retaining thick roasted peanut paste in bottom crevices.
-          </td>
-          <td><span class="badge badge-star">TOP 3: HEALTHY FATS</span> High calorie density; requires advanced tongue gymnastics to scrape.</td>
-        </tr>
-        <tr>
-          <td><strong>Sweet Corn Cobs</strong></td>
-          <td>
-            <span class="satiety-star">★</span> <strong>{FREE}</strong> BACKYARD BBQ CANS<br>
-            Buttered sweet corn remains with residual kernel crunch and salty seasoning.
-          </td>
-          <td><span class="badge badge-star">TOP 4: HIGH FIBER</span> Satisfying tactile chewing experience; keeps teeth sharpened.</td>
-        </tr>
-        <tr>
-          <td><strong>Wild Ripe Blackberries</strong></td>
-          <td>
-            <span class="satiety-star">★</span> <strong>{FREE}</strong> CREEK CANAL BRAMBLES<br>
-            Juicy sun-ripened berry clusters plucked straight from thorny branches.
-          </td>
-          <td><span class="badge badge-star">TOP 5: ANTIOXIDANTS</span> Natural midnight vitamin boost with zero packaging required.</td>
-        </tr>
-        <tr>
-          <td><strong>Stolen Cat Kibble</strong></td>
-          <td>
-            <strong>{FREE}</strong> PORCH DISH ASSORTMENT<br>
-            Crunchy salmon-and-tuna pellets placed outdoors for pampered house felines.
-          </td>
-          <td>Quick protein grab-and-dash when running low on foraging time.</td>
-        </tr>
-        <tr>
-          <td><strong>Stale Glazed Donuts</strong></td>
-          <td>
-            <strong>{FREE}</strong> BAKERY BOX SURPLUS<br>
-            Sugar-glazed rings softened by morning dew; irresistible pastry goodness.
-          </td>
-          <td>Pure sugar burst that causes spontaneous backflips on soft lawns.</td>
-        </tr>
-        <tr>
-          <td><strong>Watermelon Rind Scrapings</strong></td>
-          <td>
-            <strong>{FREE}</strong> PICNIC TABLE TROVES<br>
-            Sweet pink residual fruit clinging to refreshing crisp green rind bowls.
-          </td>
-          <td>Simultaneous hydration and crisp snacking during humid July nights.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- 2026 NEW FOODS & BIG TEX HIGHLIGHTS -->
-  <div class="section-heading">
-    <span>2026 New Snack Innovations</span>
-    <span class="badge badge-new">New for 2026</span>
-  </div>
-
-  <div class="table-responsive">
-    <table>
-      <thead>
-        <tr>
-          <th style="width: 26%;">Snack Item</th>
-          <th style="width: 24%;">Source Location</th>
-          <th style="width: 50%;">Flavor Profile, Paw Texture & Review</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Artisanal Sourdough Ends</strong></td>
-          <td>Alleyway Bistro Bin</td>
-          <td><span class="badge badge-star">CRUST FINALIST</span> Chewy fermented crust with blistering bubbles; holds structural integrity even after full river wash.</td>
-        </tr>
-        <tr>
-          <td><strong>Nacho Cheese Dip Cups</strong></td>
-          <td>Friday Night Football Trash</td>
-          <td><span class="badge badge-star">SAVORY FINALIST</span> Thick yellow liquid gold; perfectly sized for single-finger dipping maneuvers.</td>
-        </tr>
-        <tr>
-          <td><strong>Churro Sugar Crumbs</strong></td>
-          <td>Carnival Food Truck Parking</td>
-          <td><span class="badge badge-star">SWEET FINALIST</span> Cinnamon sugar crystal blend collected carefully from waxed paper wrappers.</td>
-        </tr>
-        <tr>
-          <td><strong>Espresso-Dunked Biscotti</strong></td>
-          <td>Coffee Shop Patio Trash</td>
-          <td><span class="badge badge-star">CAFFEINE SHOCK</span> <span class="coffee-highlight">★ ZOOMIE CATALYST ★</span> Half a chocolate almond biscotti that grants Jimothy supersonic speed for two hours.</td>
-        </tr>
-        <tr>
-          <td><strong>Gourmet Salted French Fries</strong></td>
-          <td>Drive-Thru Bag Residue</td>
-          <td>Warm potato slivers dusted in fine salt crystals; devoured immediately without washing.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- COMPREHENSIVE DIRECTORY OF ALTERNATIVE ATTRACTIONS & SITES -->
-  <div class="section-heading">
-    <span>Neighborhood Mischief & Side Quests</span>
-    <span class="badge badge-alt">Official Guide</span>
-  </div>
-
-  <div class="highlight-box">
-    <strong>Explore Beyond the Garbage Cans:</strong> Jimothy's territory encompasses three full suburban blocks crammed with utility poles, ornamental water features, and resting trees. Here are the top side quests to attempt throughout the season.
-  </div>
-
-  <div class="table-responsive">
-    <table>
-      <thead>
-        <tr>
-          <th style="width: 25%;">Mischief Operation</th>
-          <th style="width: 24%;">Location & Timing</th>
-          <th style="width: 36%;">Mission Briefing & Objective</th>
-          <th style="width: 15%;">Difficulty</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Operation Windchime Chaos</strong></td>
-          <td>The Miller Back Patio<br><strong>Best Time: 1:30 AM</strong></td>
-          <td>Climb onto the suspended metal copper chimes and strike them with rapid paw taps to create a midnight suburban concert.</td>
-          <td><span class="badge badge-ac">Easy / Fun</span></td>
-        </tr>
-        <tr>
-          <td><strong>Sprinkler Dodging Derby</strong></td>
-          <td>Front Lawn of No. 18<br><strong>Automated: 3:00 AM Sharp</strong></td>
-          <td>Sprint between rotating oscillating water jets without getting bushy tail fur saturated. High agility training.</td>
-          <td><span class="badge badge-sun">Moderate</span></td>
-        </tr>
-        <tr>
-          <td><strong>Security Cam Screen Debut</strong></td>
-          <td>Ring Doorbells Across Ground<br><strong>Random Midnight Passes</strong></td>
-          <td>Climb up the door frame and press black nose directly against the camera lens to trigger nighttime motion alert notifications.</td>
-          <td><span class="badge badge-sun">Expert Trolling</span></td>
-        </tr>
-        <tr>
-          <td><strong>Bungee Cord Puzzle Box</strong></td>
-          <td>Reinforced Steel Trash Cans<br><strong>Tuesdays (Trash Night)</strong></td>
-          <td>Unhook twin industrial elastic cords without letting them snap back against paws. Requires steady two-paw coordination.</td>
-          <td><span class="badge badge-star">Master Class</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="grid-3">
-    <div class="card">
-      <h3>Favorite Playmates & Rivals</h3>
-      <ul>
-        <li><strong>Barnaby the Owl:</strong> Perches on telephone poles and offers solemn nods of mutual nocturnal respect.</li>
-        <li><strong>Sir Reginald (Golden Retriever):</strong> Barks enthusiastically from behind picture windows while Jimothy cleans paws on the porch rail.</li>
-        <li><strong>The Local Skunk Squad:</strong> Friendly comrades who share territory rights; absolute masters of bug grubs and beetle harvesting.</li>
-        <li><strong>Gary the Possum:</strong> Hangs upside down on the trellis, occasionally drops by to trade grapes for apple slices.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Jimothy's Golden Rules</h3>
-      <ul>
-        <li><strong>Wash First, Ask Later:</strong> If it's sticky, dunk it in water. If it dissolves (cotton candy), mourn for 10 seconds and move on.</li>
-        <li><strong>Always Leave an Exit:</strong> Never enter a shed without verifying the window screen has an unfastened corner.</li>
-        <li><strong>Shiny Means Mine:</strong> If it glitters in the moonlight, it belongs inside the hollow tree hollow.</li>
-        <li><strong>Take Pride in the Tail:</strong> Brush out burrs and twigs daily to maintain peak fluffy magnificence.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Daylight Warning Signs</h3>
-      <ul>
-        <li><strong>The Morning Rooster / Alarm Clock:</strong> The sound of human coffee makers grinding signals it is time to scurry to the treetops.</li>
-        <li><strong>The Yellow Bus Fleet:</strong> When large yellow vehicles begin rumbling, all smart trash goblins are already fast asleep.</li>
-        <li><strong>Sunbeams on the Nose:</strong> If the sun hits your eyes, roll over and pull your tail over your face immediately.</li>
-      </ul>
-    </div>
+  <div class="footer-bar">
+    [UNDER CONSTRUCTION: GIFS COMING SOON]
+    <br>
+    HITS: <span class="counter">004218</span>
+    <br>
+    EMAIL WEBMASTER: JIMOTHY@TRASHNET.COM
   </div>
 
 </div>
-
-<script>
-  function handleBannerError(img) {
-    img.onerror = null;
-    var container = document.getElementById('bannerContainer');
-    if (container) {
-      container.innerHTML = '<div class="banner-fallback">Jimothy • Neighborhood Legend</div>';
-    }
-  }
-</script>
 
 </body>
 </html>
