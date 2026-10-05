@@ -1,443 +1,630 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JIMOTHY'S RACCOON LAIR</title>
-
-<style>
-  :root {
-    --bg-navy: #000080;
-    --box-navy: #000033;
-    --text-yellow: #ffff00;
-    --cyan: #00ffff;
-    --magenta: #ff00ff;
-    --lime: #00ff00;
-    --win95-gray: #c0c0c0;
-    --win95-light: #ffffff;
-    --win95-dark: #808080;
-    --win95-shadow: #404040;
-  }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    background-color: var(--bg-navy);
-    background-image: 
-      radial-gradient(#0000a0 15%, transparent 16%),
-      radial-gradient(#000055 15%, transparent 16%);
-    background-size: 16px 16px;
-    background-position: 0 0, 8px 8px;
-    color: var(--text-yellow);
-    font-family: "Comic Sans MS", "Comic Sans", "Courier New", monospace, sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-    padding: 16px 8px 40px 8px;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .lair-container {
-    max-width: 750px;
-    margin: 0 auto;
-    background-color: var(--box-navy);
-    border: 4px ridge var(--win95-gray);
-    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.6);
-    padding: 16px;
-  }
-
-  /* 60fps CSS Marquee */
-  .marquee-viewport {
-    width: 100%;
-    overflow: hidden;
-    background: #ff0000;
-    border: 2px inset var(--win95-gray);
-    white-space: nowrap;
-    padding: 6px 0;
-    margin-bottom: 16px;
-    box-shadow: inset 2px 2px 0px #000;
-  }
-
-  .marquee-track {
-    display: inline-block;
-    padding-left: 100%;
-    animation: marquee-run 18s linear infinite;
-    font-weight: 900;
-    font-size: 13px;
-    letter-spacing: 1px;
-    color: #ffffff;
-    text-transform: uppercase;
-  }
-
-  @keyframes marquee-run {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-  }
-
-  /* Blinking Text */
-  .blink {
-    animation: retro-blink 1s steps(1, start) infinite;
-    color: var(--magenta);
-    font-weight: bold;
-  }
-
-  @keyframes retro-blink {
-    50% { opacity: 0; }
-  }
-
-  /* Header Structure */
-  .lair-header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    margin-bottom: 12px;
-    text-align: center;
-  }
-
-  .avatar-frame {
-    flex: 0 0 84px;
-    margin: 0 auto;
-    background: #000;
-    border: 3px dashed var(--lime);
-    padding: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .header-titles {
-    flex: 1 1 300px;
-  }
-
-  .header-titles h1 {
-    font-size: clamp(22px, 5vw, 32px);
-    color: var(--cyan);
-    text-shadow: 3px 3px var(--magenta);
-    letter-spacing: 1px;
-    line-height: 1.1;
-    margin-bottom: 6px;
-    text-transform: uppercase;
-  }
-
-  .status-pill {
-    display: inline-block;
-    background: #000000;
-    border: 1px solid var(--cyan);
-    color: #fff;
-    padding: 4px 10px;
-    font-size: 12px;
-    margin-top: 6px;
-    border-radius: 2px;
-  }
-
-  /* Rainbow Separator */
-  hr.rainbow-rule {
-    border: 0;
-    height: 6px;
-    background: linear-gradient(to right, 
-      #ff0000 0%, #ff7f00 16.6%, #ffff00 33.3%, 
-      #00ff00 50%, #00ffff 66.6%, #0000ff 83.3%, #ff00ff 100%);
-    margin: 16px 0;
-  }
-
-  /* Under Construction Badge */
-  .construction-strip {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    background: repeating-linear-gradient(
-      -45deg,
-      #000,
-      #000 12px,
-      #ffd700 12px,
-      #ffd700 24px
-    );
-    border: 3px ridge var(--win95-gray);
-    padding: 8px;
-    margin-bottom: 16px;
-  }
-
-  .construction-inner {
-    background: #000;
-    padding: 4px 14px;
-    border: 1px solid #fff;
-    color: #fff;
-    font-weight: 900;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    text-align: center;
-  }
-
-  /* Centerpiece Circular Image Presentation */
-  .circle-showcase-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 8px;
-    text-align: center;
-  }
-
-  .circle-frame {
-    width: 320px;
-    height: 320px;
-    max-width: 82vw;
-    max-height: 82vw;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 6px ridge var(--lime);
-    outline: 4px dashed var(--magenta);
-    outline-offset: 4px;
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.45), 8px 8px 0px rgba(0, 0, 0, 0.7);
-    background-color: #000000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px auto;
-  }
-
-  .circle-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .showcase-caption {
-    margin-top: 14px;
-    font-size: 13px;
-    font-weight: bold;
-    color: var(--cyan);
-    background: #000000;
-    border: 1px solid var(--win95-gray);
-    padding: 4px 12px;
-    display: inline-block;
-  }
-
-  /* 90s Web Buttons */
-  .btn-web95 {
-    display: inline-block;
-    background: var(--win95-gray);
-    color: #000000;
-    border-top: 2px solid var(--win95-light);
-    border-left: 2px solid var(--win95-light);
-    border-right: 2px solid var(--win95-shadow);
-    border-bottom: 2px solid var(--win95-shadow);
-    padding: 6px 12px;
-    font-size: 11px;
-    font-weight: 700;
-    text-decoration: none;
-    cursor: pointer;
-    font-family: sans-serif;
-  }
-  .btn-web95:active {
-    border-top: 2px solid var(--win95-shadow);
-    border-left: 2px solid var(--win95-shadow);
-    border-right: 2px solid var(--win95-light);
-    border-bottom: 2px solid var(--win95-light);
-  }
-
-  /* Odometer Counter Box */
-  .odometer-wrap {
-    display: inline-flex;
-    background: #000000;
-    border: 3px inset var(--win95-gray);
-    padding: 2px 4px;
-    margin: 4px 0;
-  }
-  .odometer-digit {
-    background: #111;
-    color: var(--lime);
-    font-family: "Courier New", monospace;
-    font-size: 16px;
-    font-weight: 900;
-    padding: 0 4px;
-    border-right: 1px solid #333;
-    text-shadow: 0 0 4px var(--lime);
-  }
-  .odometer-digit:last-child { border-right: none; }
-
-  /* Footer Section */
-  footer {
-    text-align: center;
-    margin-top: 16px;
-    padding-top: 8px;
-    font-size: 11.5px;
-    color: var(--cyan);
-  }
-  .footer-links {
-    margin: 8px 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  @media (max-width: 540px) {
-    body { padding: 4px 4px 20px 4px; }
-    .lair-container { padding: 10px; }
-    .avatar-frame { flex: 0 0 68px; }
-    .circle-frame { width: 250px; height: 250px; }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Marathon Plan: Sub-3:15 Execution</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --border-color: #e2e8f0;
+            --primary-blue: #0284c7;
+            --race-red: #dc2626;
+            --tempo-gold: #d97706;
+            --easy-green: #16a34a;
+            --long-purple: #7c3aed;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        h1 {
+            text-align: center;
+            font-weight: 900;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            text-align: center;
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        .zones {
+            display: flex;
+            justify-content: space-between;
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+        .zone-item strong {
+            display: block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        th {
+            background-color: #f1f5f9;
+            font-weight: 700;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            color: #475569;
+        }
+        .week-header {
+            background-color: #1e293b;
+            color: #ffffff;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .race-row {
+            background-color: #fef2f2;
+            border-left: 4px solid var(--race-red);
+        }
+        .long-row {
+            border-left: 4px solid var(--long-purple);
+        }
+        .quality-row {
+            border-left: 4px solid var(--tempo-gold);
+        }
+        .easy-row {
+            border-left: 4px solid var(--easy-green);
+        }
+        .rest-row {
+            color: #64748b;
+            background-color: #f8fafc;
+        }
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: bold;
+            color: #fff;
+            margin-right: 8px;
+        }
+        .bg-red { background-color: var(--race-red); }
+        .bg-purple { background-color: var(--long-purple); }
+        .bg-gold { background-color: var(--tempo-gold); }
+        .bg-green { background-color: var(--easy-green); }
+    </style>
 </head>
 <body>
 
-<main class="lair-container">
+    <h1>BMW Dallas Marathon Blueprint</h1>
+    <div class="subtitle">Target: 3:14:00 | Base Pace: 4:36 min/km (7:24 min/mi)</div>
 
-  <!-- Custom 60fps CSS Marquee -->
-  <div class="marquee-viewport" role="region" aria-label="Important Announcement">
-    <div class="marquee-track">
-      🚨 HELLO NET SURFER! WELCOME TO JIMOTHY'S RACCOON LAIR! *** BEST VIEWED IN NETSCAPE NAVIGATOR 3.0 *** NO SQUIRRELS! 🚨
-    </div>
-  </div>
-
-  <!-- Header Area with Inline SVG Raccoon Avatars -->
-  <header class="lair-header">
-    <div class="avatar-frame">
-      <svg width="68" height="68" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Jimothy Pixel Face">
-        <rect width="100" height="100" fill="#000000"/>
-        <polygon points="15,10 40,35 10,40" fill="#606060"/>
-        <polygon points="20,18 35,32 15,35" fill="#ffffff"/>
-        <polygon points="85,10 60,35 90,40" fill="#606060"/>
-        <polygon points="80,18 65,32 85,35" fill="#ffffff"/>
-        <ellipse cx="50" cy="55" rx="38" ry="32" fill="#757575"/>
-        <path d="M 20 65 Q 50 92 80 65 Q 50 78 20 65" fill="#f0f0f0"/>
-        <path d="M 16 46 Q 34 38 50 48 Q 66 38 84 46 Q 88 64 74 65 Q 50 56 26 65 Q 12 64 16 46" fill="#151515"/>
-        <ellipse cx="34" cy="51" rx="5" ry="6" fill="#ffffff"/>
-        <circle cx="35" cy="51" r="2.5" fill="#000000"/>
-        <circle cx="36" cy="49" r="1" fill="#ffff00"/>
-        <ellipse cx="66" cy="51" rx="5" ry="6" fill="#ffffff"/>
-        <circle cx="65" cy="51" r="2.5" fill="#000000"/>
-        <circle cx="64" cy="49" r="1" fill="#ffff00"/>
-        <polygon points="46,62 54,62 50,67" fill="#000000"/>
-        <line x1="12" y1="62" x2="30" y2="60" stroke="#ffffff" stroke-width="1.5"/>
-        <line x1="10" y1="68" x2="28" y2="65" stroke="#ffffff" stroke-width="1.5"/>
-        <line x1="88" y1="62" x2="70" y2="60" stroke="#ffffff" stroke-width="1.5"/>
-        <line x1="90" y1="68" x2="72" y2="65" stroke="#ffffff" stroke-width="1.5"/>
-      </svg>
+    <div class="zones">
+        <div class="zone-item">
+            <strong>Recovery / Easy</strong>
+            5:15–5:30 min/km <br> (8:27–8:51 min/mi)
+        </div>
+        <div class="zone-item">
+            <strong>Marathon Pace (MP)</strong>
+            4:36 min/km <br> (7:24 min/mi)
+        </div>
+        <div class="zone-item">
+            <strong>Threshold / Tempo</strong>
+            4:15–4:20 min/km <br> (6:50–6:58 min/mi)
+        </div>
+        <div class="zone-item">
+            <strong>Speed / VO2</strong>
+            3:50–3:55 min/km <br> (6:10–6:18 min/mi)
+        </div>
     </div>
 
-    <div class="header-titles">
-      <h1>Jimothy The Raccoon</h1>
-      <div class="blink">★ OFFICIAL HOMEPAGE ★</div>
-      <div>
-        <span class="status-pill">CURRENT STATUS: Seeking treats. Forever hungry.</span>
-      </div>
-    </div>
+    <table>
+        <thead>
+            <tr>
+                <th width="15%">Date</th>
+                <th width="20%">Focus</th>
+                <th width="15%">Distance</th>
+                <th width="50%">Execution & Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- WEEK 1 -->
+            <tr><td colspan="4" class="week-header">Week 1: Aerobic Re-Entry (Oct 5 – Oct 11)</td></tr>
+            <tr class="rest-row">
+                <td>Mon, Oct 5</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Complete rest to absorb the Rahr 5k effort. Hydrate and foam roll.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Tue, Oct 6</td>
+                <td><span class="badge bg-green">Base</span>Easy + Strides</td>
+                <td>8 km (5.0 mi)</td>
+                <td>Easy aerobic flush @ 5:20 min/km (8:35 min/mi) + 4x100m strides.</td>
+            </tr>
+            <tr class="quality-row">
+                <td>Wed, Oct 7</td>
+                <td><span class="badge bg-gold">Threshold</span>Intervals</td>
+                <td>10 km (6.2 mi)</td>
+                <td>2 km (1.2 mi) WU. 4 x 1000m @ 4:15 min/km (6:50 min/mi) w/ 90s jog. 2 km (1.2 mi) CD.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Thu, Oct 8</td>
+                <td><span class="badge bg-green">Base</span>Easy</td>
+                <td>8 km (5.0 mi)</td>
+                <td>Conversational pace @ 5:30 min/km (8:51 min/mi).</td>
+            </tr>
+            <tr class="rest-row">
+                <td>Fri, Oct 9</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Mobility and core stability work.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Sat, Oct 10</td>
+                <td><span class="badge bg-green">Base</span>Shakeout</td>
+                <td>6 km (3.7 mi)</td>
+                <td>Light jogging @ 5:30 min/km (8:51 min/mi) to prep for Sunday.</td>
+            </tr>
+            <tr class="long-row">
+                <td>Sun, Oct 11</td>
+                <td><span class="badge bg-purple">Long</span>Progressive</td>
+                <td>22 km (13.7 mi)</td>
+                <td>Rebuild distance safely. Start @ 5:20 min/km (8:35 min/mi), close final 5 km (3.1 mi) @ MP 4:36 min/km (7:24 min/mi).</td>
+            </tr>
 
-    <div class="avatar-frame">
-      <svg width="68" height="68" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Jimothy Pixel Face Mirrored">
-        <rect width="100" height="100" fill="#000000"/>
-        <polygon points="15,10 40,35 10,40" fill="#606060"/>
-        <polygon points="20,18 35,32 15,35" fill="#ffffff"/>
-        <polygon points="85,10 60,35 90,40" fill="#606060"/>
-        <polygon points="80,18 65,32 85,35" fill="#ffffff"/>
-        <ellipse cx="50" cy="55" rx="38" ry="32" fill="#757575"/>
-        <path d="M 20 65 Q 50 92 80 65 Q 50 78 20 65" fill="#f0f0f0"/>
-        <path d="M 16 46 Q 34 38 50 48 Q 66 38 84 46 Q 88 64 74 65 Q 50 56 26 65 Q 12 64 16 46" fill="#151515"/>
-        <ellipse cx="34" cy="51" rx="5" ry="6" fill="#ffffff"/>
-        <circle cx="35" cy="51" r="2.5" fill="#000000"/>
-        <circle cx="36" cy="49" r="1" fill="#ffff00"/>
-        <ellipse cx="66" cy="51" rx="5" ry="6" fill="#ffffff"/>
-        <circle cx="65" cy="51" r="2.5" fill="#000000"/>
-        <circle cx="64" cy="49" r="1" fill="#ffff00"/>
-        <polygon points="46,62 54,62 50,67" fill="#000000"/>
-        <line x1="12" y1="62" x2="30" y2="60" stroke="#ffffff" stroke-width="1.5"/>
-        <line x1="10" y1="68" x2="28" y2="65" stroke="#ffffff" stroke-width="1.5"/>
-        <line x1="88" y1="62" x2="70" y2="60" stroke="#ffffff" stroke-width="1.5"/>
-        <line x1="90" y1="68" x2="72" y2="65" stroke="#ffffff" stroke-width="1.5"/>
-      </svg>
-    </div>
-  </header>
+            <!-- WEEK 2 -->
+            <tr><td colspan="4" class="week-header">Week 2: 15K Tune-Up (Oct 12 – Oct 18)</td></tr>
+            <tr class="rest-row">
+                <td>Mon, Oct 12</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Complete structural rest.</td>
+            </tr>
+            <tr class="quality-row">
+                <td>Tue, Oct 13</td>
+                <td><span class="badge bg-gold">Speed</span>VO2 Max</td>
+                <td>10 km (6.2 mi)</td>
+                <td>2 km (1.2 mi) WU. 6 x 400m @ 3:50 min/km (6:10 min/mi) w/ 60s walk rest. 2 km (1.2 mi) CD.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Wed, Oct 14</td>
+                <td><span class="badge bg-green">Base</span>Easy</td>
+                <td>8 km (5.0 mi)</td>
+                <td>Conversational pace @ 5:30 min/km (8:51 min/mi).</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Thu, Oct 15</td>
+                <td><span class="badge bg-green">Base</span>Shakeout</td>
+                <td>6 km (3.7 mi)</td>
+                <td>Light jogging + 3x15s strides.</td>
+            </tr>
+            <tr class="rest-row">
+                <td>Fri, Oct 16</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Pre-race hydration and glycogen load.</td>
+            </tr>
+            <tr class="race-row">
+                <td>Sat, Oct 17</td>
+                <td><span class="badge bg-red">Race</span>Big Texas 15K</td>
+                <td>18 km (11.2 mi)</td>
+                <td><strong>Big Texas Run 15K (Arlington).</strong> Run as a sub-max threshold effort. 1.5 km (0.9 mi) WU. 15 km (9.3 mi) Race @ 4:25 min/km (7:06 min/mi). 1.5 km (0.9 mi) CD.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Sun, Oct 18</td>
+                <td><span class="badge bg-green">Base</span>Recovery</td>
+                <td>8 km (5.0 mi)</td>
+                <td>Strict recovery flush @ 5:45 min/km (9:15 min/mi) to clear lactic acid.</td>
+            </tr>
 
-  <!-- Construction Strip -->
-  <div class="construction-strip" role="note">
-    <div class="construction-inner">
-      ⚠️ SITE UNDER CONSTRUCTION ⚠️!
-    </div>
-  </div>
+            <!-- WEEK 3 -->
+            <tr><td colspan="4" class="week-header">Week 3: Volume Escalation (Oct 19 – Oct 25)</td></tr>
+            <tr class="rest-row">
+                <td>Mon, Oct 19</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Complete rest.</td>
+            </tr>
+            <tr class="quality-row">
+                <td>Tue, Oct 20</td>
+                <td><span class="badge bg-gold">Threshold</span>Tempo</td>
+                <td>12 km (7.5 mi)</td>
+                <td>2 km (1.2 mi) WU. 2 x 3 km (1.8 mi) @ 4:15 min/km (6:50 min/mi) w/ 3 min jog rest. 2 km (1.2 mi) CD.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Wed, Oct 21</td>
+                <td><span class="badge bg-green">Base</span>Easy</td>
+                <td>10 km (6.2 mi)</td>
+                <td>Conversational pace @ 5:20 min/km (8:35 min/mi).</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Thu, Oct 22</td>
+                <td><span class="badge bg-green">Base</span>Easy</td>
+                <td>8 km (5.0 mi)</td>
+                <td>Conversational pace @ 5:30 min/km (8:51 min/mi).</td>
+            </tr>
+            <tr class="rest-row">
+                <td>Fri, Oct 23</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Mobility and core.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Sat, Oct 24</td>
+                <td><span class="badge bg-green">Base</span>Shakeout</td>
+                <td>5 km (3.1 mi)</td>
+                <td>Light jogging @ 5:30 min/km (8:51 min/mi).</td>
+            </tr>
+            <tr class="long-row">
+                <td>Sun, Oct 25</td>
+                <td><span class="badge bg-purple">Long</span>Endurance</td>
+                <td>26 km (16.1 mi)</td>
+                <td>Steady aerobic run. Lock in @ 5:15 min/km (8:27 min/mi). Practice race-day nutrition (60-90g carbs/hr).</td>
+            </tr>
 
-  <hr class="rainbow-rule">
+            <!-- WEEK 4 -->
+            <tr><td colspan="4" class="week-header">Week 4: Peak Entry (Oct 26 – Nov 1)</td></tr>
+            <tr class="rest-row">
+                <td>Mon, Oct 26</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Complete structural rest.</td>
+            </tr>
+            <tr class="quality-row">
+                <td>Tue, Oct 27</td>
+                <td><span class="badge bg-gold">Speed</span>VO2 Max</td>
+                <td>12 km (7.5 mi)</td>
+                <td>2 km (1.2 mi) WU. 5 x 1000m @ 3:55 min/km (6:18 min/mi) w/ 90s walk rest. 2 km (1.2 mi) CD.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Wed, Oct 28</td>
+                <td><span class="badge bg-green">Base</span>Easy</td>
+                <td>10 km (6.2 mi)</td>
+                <td>Conversational pace @ 5:30 min/km (8:51 min/mi).</td>
+            </tr>
+            <tr class="quality-row">
+                <td>Thu, Oct 29</td>
+                <td><span class="badge bg-gold">MP</span>Simulation</td>
+                <td>12 km (7.5 mi)</td>
+                <td>2 km (1.2 mi) WU. 8 km (5.0 mi) locked exactly at MP 4:36 min/km (7:24 min/mi). 2 km (1.2 mi) CD.</td>
+            </tr>
+            <tr class="rest-row">
+                <td>Fri, Oct 30</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Mobility.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Sat, Oct 31</td>
+                <td><span class="badge bg-green">Base</span>Shakeout</td>
+                <td>5 km (3.1 mi)</td>
+                <td>Light jogging @ 5:30 min/km (8:51 min/mi).</td>
+            </tr>
+            <tr class="long-row">
+                <td>Sun, Nov 1</td>
+                <td><span class="badge bg-purple">Long</span>Overload</td>
+                <td>29 km (18.0 mi)</td>
+                <td>Heavy aerobic overload. Hold @ 5:20 min/km (8:35 min/mi) for pure time-on-feet conditioning.</td>
+            </tr>
 
-  <!-- Large Circular Image Showcase -->
-  <section class="circle-showcase-section" aria-label="Jimothy Portrait Gallery">
-    <div class="circle-frame">
-      <img 
-        src="https://raw.githubusercontent.com/doodbleboi/fundraiser/52ece10be86a0c109a984062c90248b844cf0a42/Image_20261004_122109_421.png" 
-        alt="Jimothy the Raccoon - Image_20261004_122109_421.png"
-        onerror="this.onerror=null; this.src='Image_20261004_122109_421.png';"
-      >
-    </div>
-    <div class="showcase-caption">
-      [TARGET IDENTIFIED]
-    </div>
-  </section>
+            <!-- WEEK 5 -->
+            <tr><td colspan="4" class="week-header">Week 5: Half Marathon Dress Rehearsal (Nov 2 – Nov 8)</td></tr>
+            <tr class="rest-row">
+                <td>Mon, Nov 2</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Foam roll and recover from 29km.</td>
+            </tr>
+            <tr class="quality-row">
+                <td>Tue, Nov 3</td>
+                <td><span class="badge bg-gold">Speed</span>Primer</td>
+                <td>8 km (5.0 mi)</td>
+                <td>2 km (1.2 mi) WU. 4 x 400m @ 3:55 min/km (6:18 min/mi) to keep CNS sharp. 2 km (1.2 mi) CD.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Wed, Nov 4</td>
+                <td><span class="badge bg-green">Base</span>Easy</td>
+                <td>8 km (5.0 mi)</td>
+                <td>Strict recovery @ 5:30 min/km (8:51 min/mi).</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Thu, Nov 5</td>
+                <td><span class="badge bg-green">Base</span>Shakeout</td>
+                <td>6 km (3.7 mi)</td>
+                <td>Light jogging.</td>
+            </tr>
+            <tr class="rest-row">
+                <td>Fri, Nov 6</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Hydrate.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Sat, Nov 7</td>
+                <td><span class="badge bg-green">Base</span>Pre-Race</td>
+                <td>4 km (2.5 mi)</td>
+                <td>Very light jog + 2x15s strides.</td>
+            </tr>
+            <tr class="race-row">
+                <td>Sun, Nov 8</td>
+                <td><span class="badge bg-red">Race</span>FW Half Marathon</td>
+                <td>25.1 km (15.6 mi)</td>
+                <td><strong>Fort Worth Half Marathon.</strong> Treat as the ultimate MP practice. 2 km (1.2 mi) WU. 21.1 km (13.1 mi) locked precisely at MP 4:36 min/km (7:24 min/mi). Do not sprint. 2 km (1.2 mi) CD.</td>
+            </tr>
 
-  <hr class="rainbow-rule">
+            <!-- WEEK 6 -->
+            <tr><td colspan="4" class="week-header">Week 6: The Ultimate Endurance Test (Nov 9 – Nov 15)</td></tr>
+            <tr class="rest-row">
+                <td>Mon, Nov 9</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Complete structural rest. High protein intake.</td>
+            </tr>
+            <tr class="quality-row">
+                <td>Tue, Nov 10</td>
+                <td><span class="badge bg-gold">Threshold</span>Clearance</td>
+                <td>10 km (6.2 mi)</td>
+                <td>2 km (1.2 mi) WU. 4 x 1500m @ 4:15 min/km (6:50 min/mi) w/ 2 min jog. 2 km (1.2 mi) CD.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Wed, Nov 11</td>
+                <td><span class="badge bg-green">Base</span>Easy</td>
+                <td>10 km (6.2 mi)</td>
+                <td>Conversational @ 5:30 min/km (8:51 min/mi).</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Thu, Nov 12</td>
+                <td><span class="badge bg-green">Base</span>Easy</td>
+                <td>8 km (5.0 mi)</td>
+                <td>Conversational @ 5:30 min/km (8:51 min/mi).</td>
+            </tr>
+            <tr class="rest-row">
+                <td>Fri, Nov 13</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Mobility.</td>
+            </tr>
+            <tr class="race-row">
+                <td>Sat, Nov 14</td>
+                <td><span class="badge bg-red">Race</span>UTA 5K</td>
+                <td>8 km (5.0 mi)</td>
+                <td><strong>UTA Homecoming 5K.</strong> Run as a brisk tempo effort @ 4:20 min/km (6:58 min/mi), not an all-out PR attempt. Save legs for Sunday. Include 1.5 km (0.9 mi) WU/CD.</td>
+            </tr>
+            <tr class="long-row">
+                <td>Sun, Nov 15</td>
+                <td><span class="badge bg-purple">Long</span>Overload</td>
+                <td>32 km (19.9 mi)</td>
+                <td>Slow, steady time-on-feet conditioning @ 5:25 min/km (8:43 min/mi).</td>
+            </tr>
 
-  <!-- Footer with Interactive Hit Counter and 90s Web Buttons -->
-  <footer>
-    <div>
-      VISITOR HIT COUNTER:
-      <div class="odometer-wrap" id="counterBox" title="Visitor Odometer">
-        <span class="odometer-digit">0</span>
-        <span class="odometer-digit">0</span>
-        <span class="odometer-digit">4</span>
-        <span class="odometer-digit">2</span>
-        <span class="odometer-digit">1</span>
-        <span class="odometer-digit" id="liveDigit">9</span>
-      </div>
-    </div>
+            <!-- WEEK 7 -->
+            <tr><td colspan="4" class="week-header">Week 7: Peak Mileage (Nov 16 – Nov 22)</td></tr>
+            <tr class="rest-row">
+                <td>Mon, Nov 16</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Complete rest.</td>
+            </tr>
+            <tr class="quality-row">
+                <td>Tue, Nov 17</td>
+                <td><span class="badge bg-gold">Threshold</span>Tempo</td>
+                <td>14 km (8.7 mi)</td>
+                <td>3 km (1.8 mi) WU. 8 km (5.0 mi) @ 4:20 min/km (6:58 min/mi). 3 km (1.8 mi) CD.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Wed, Nov 18</td>
+                <td><span class="badge bg-green">Base</span>Easy</td>
+                <td>12 km (7.5 mi)</td>
+                <td>Conversational @ 5:20 min/km (8:35 min/mi).</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Thu, Nov 19</td>
+                <td><span class="badge bg-green">Base</span>Easy</td>
+                <td>10 km (6.2 mi)</td>
+                <td>Conversational @ 5:30 min/km (8:51 min/mi).</td>
+            </tr>
+            <tr class="rest-row">
+                <td>Fri, Nov 20</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Mobility.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Sat, Nov 21</td>
+                <td><span class="badge bg-green">Base</span>Shakeout</td>
+                <td>6 km (3.7 mi)</td>
+                <td>Light jogging @ 5:30 min/km (8:51 min/mi).</td>
+            </tr>
+            <tr class="long-row">
+                <td>Sun, Nov 22</td>
+                <td><span class="badge bg-purple">Long</span>Final Monster</td>
+                <td>34 km (21.1 mi)</td>
+                <td>Absolute Peak Volume. 26 km (16.1 mi) @ 5:20 min/km (8:35 min/mi), close final 8 km (5.0 mi) locked at MP 4:36 min/km (7:24 min/mi).</td>
+            </tr>
 
-    <div class="footer-links">
-      <button class="btn-web95" onclick="alert('THANK YOU FOR SIGNING JIMOTHY\'S GUESTBOOK! [STAMP: PAW PRINT APPROVED]')">
-        📝 SIGN GUESTBOOK
-      </button>
-      <a class="btn-web95"">
-        ✉️ EMAIL WEBMASTER
-      </a>
-      <button class="btn-web95" onclick="document.body.style.filter = document.body.style.filter ? '' : 'hue-rotate(90deg)'">
-        🌈 PARTY MODE
-      </button>
-    </div>
+            <!-- WEEK 8 -->
+            <tr><td colspan="4" class="week-header">Week 8: Taper Phase 1 & Turkey Trot (Nov 23 – Nov 29)</td></tr>
+            <tr class="rest-row">
+                <td>Mon, Nov 23</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Complete structural rest to begin exponential taper.</td>
+            </tr>
+            <tr class="quality-row">
+                <td>Tue, Nov 24</td>
+                <td><span class="badge bg-gold">Speed</span>Sharpness</td>
+                <td>8 km (5.0 mi)</td>
+                <td>2 km (1.2 mi) WU. 6 x 400m @ 3:50 min/km (6:10 min/mi) to keep CNS activated. 2 km (1.2 mi) CD.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Wed, Nov 25</td>
+                <td><span class="badge bg-green">Base</span>Easy</td>
+                <td>6 km (3.7 mi)</td>
+                <td>Very light jog prior to race day.</td>
+            </tr>
+            <tr class="race-row">
+                <td>Thu, Nov 26</td>
+                <td><span class="badge bg-red">Race</span>Turkey Trot 8K</td>
+                <td>11 km (6.8 mi)</td>
+                <td><strong>Fort Worth YMCA Turkey Trot 8k.</strong> 1.5 km (0.9 mi) WU. 8 km (5.0 mi) Race @ 4:25 min/km (7:06 min/mi). 1.5 km (0.9 mi) CD.</td>
+            </tr>
+            <tr class="rest-row">
+                <td>Fri, Nov 27</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Recover.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Sat, Nov 28</td>
+                <td><span class="badge bg-green">Base</span>Shakeout</td>
+                <td>5 km (3.1 mi)</td>
+                <td>Light jogging @ 5:30 min/km (8:51 min/mi).</td>
+            </tr>
+            <tr class="long-row">
+                <td>Sun, Nov 29</td>
+                <td><span class="badge bg-purple">Long</span>Taper Run</td>
+                <td>22 km (13.7 mi)</td>
+                <td>Controlled cruising @ 5:15 min/km (8:27 min/mi) to shed systemic fatigue.</td>
+            </tr>
 
-    <p style="margin-top: 10px; font-size: 11px; color: #a0aec0;">
-      JIMOTHY'S RACCOON LAIR &copy; 1995-2026. ALL TRASH RESERVED. 
-      <br>
-      HOSTED ON GITHUB. BEST VIEWED WITH A SCREEN RESOLUTION OF 800x600.
-    </p>
-  </footer>
+            <!-- WEEK 9 -->
+            <tr><td colspan="4" class="week-header">Week 9: Taper Phase 2 (Nov 30 – Dec 6)</td></tr>
+            <tr class="rest-row">
+                <td>Mon, Nov 30</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Complete rest.</td>
+            </tr>
+            <tr class="quality-row">
+                <td>Tue, Dec 1</td>
+                <td><span class="badge bg-gold">MP</span>Lock</td>
+                <td>8 km (5.0 mi)</td>
+                <td>1.5 km (0.9 mi) WU. 3 x 1 mile (1.6 km) exactly at MP 4:36 min/km (7:24 min/mi) w/ 90s walk. 1.5 km (0.9 mi) CD.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Wed, Dec 2</td>
+                <td><span class="badge bg-green">Base</span>Easy</td>
+                <td>8 km (5.0 mi)</td>
+                <td>Strict recovery @ 5:30 min/km (8:51 min/mi).</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Thu, Dec 3</td>
+                <td><span class="badge bg-green">Base</span>Easy</td>
+                <td>6 km (3.7 mi)</td>
+                <td>Conversational pace.</td>
+            </tr>
+            <tr class="rest-row">
+                <td>Fri, Dec 4</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Mobility.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Sat, Dec 5</td>
+                <td><span class="badge bg-green">Base</span>Shakeout</td>
+                <td>5 km (3.1 mi)</td>
+                <td>Light jogging + 3x15s strides.</td>
+            </tr>
+            <tr class="long-row">
+                <td>Sun, Dec 6</td>
+                <td><span class="badge bg-purple">Long</span>Taper Run</td>
+                <td>16 km (10.0 mi)</td>
+                <td>Zero MP fatigue. Relaxed Zone 2 @ 5:30 min/km (8:51 min/mi).</td>
+            </tr>
 
-</main>
+            <!-- WEEK 10 -->
+            <tr><td colspan="4" class="week-header">Week 10: RACE WEEK (Dec 7 – Dec 13)</td></tr>
+            <tr class="rest-row">
+                <td>Mon, Dec 7</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Begin carbohydrate loading protocols.</td>
+            </tr>
+            <tr class="quality-row">
+                <td>Tue, Dec 8</td>
+                <td><span class="badge bg-gold">Speed</span>Primer</td>
+                <td>6 km (3.7 mi)</td>
+                <td>2 km (1.2 mi) WU. 4 x 400m @ MP 4:36 min/km (7:24 min/mi) simply to memorize cadence. 2 km (1.2 mi) CD.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Wed, Dec 9</td>
+                <td><span class="badge bg-green">Base</span>Easy</td>
+                <td>5 km (3.1 mi)</td>
+                <td>Very light jog @ 5:30 min/km (8:51 min/mi).</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Thu, Dec 10</td>
+                <td><span class="badge bg-green">Base</span>Easy</td>
+                <td>4 km (2.5 mi)</td>
+                <td>Light movement + 2x15s strides.</td>
+            </tr>
+            <tr class="rest-row">
+                <td>Fri, Dec 11</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Complete rest. Elevate legs. Hydrate.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Sat, Dec 12</td>
+                <td><span class="badge bg-green">Base</span>Pre-Race</td>
+                <td>3 km (1.8 mi)</td>
+                <td>15 min easy shakeout walk/jog. Organize race-day gear.</td>
+            </tr>
+            <tr class="race-row">
+                <td>Sun, Dec 13</td>
+                <td><span class="badge bg-red">RACE</span>BMW DALLAS</td>
+                <td>42.2 km (26.2 mi)</td>
+                <td><strong>BMW Dallas Marathon.</strong> Target Finish: 3:14:00. Lock into 4:36 min/km (7:24 min/mi) from the gun. Trust the taper and execute your fueling strategy.</td>
+            </tr>
 
-<script>
-  (function() {
-    try {
-      let count = localStorage.getItem('jimothy_hits') || 4219;
-      count = parseInt(count, 10) + 1;
-      localStorage.setItem('jimothy_hits', count);
-      
-      const digitStr = count.toString().padStart(6, '0');
-      const container = document.getElementById('counterBox');
-      if (container) {
-        container.innerHTML = '';
-        for (let char of digitStr) {
-          const span = document.createElement('span');
-          span.className = 'odometer-digit';
-          span.textContent = char;
-          container.appendChild(span);
-        }
-      }
-    } catch(e) {}
-  })();
-</script>
+            <!-- WEEK 11 -->
+            <tr><td colspan="4" class="week-header">Week 11: Post-Race Recovery & Charlie Brown 10K (Dec 14 – Dec 20)</td></tr>
+            <tr class="rest-row">
+                <td>Mon - Thu</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Complete structural rest, contrast baths, high protein, and passive mobility walks.</td>
+            </tr>
+            <tr class="easy-row">
+                <td>Fri, Dec 18</td>
+                <td><span class="badge bg-green">Base</span>Shakeout</td>
+                <td>3 km (1.8 mi)</td>
+                <td>Very light recovery spin or walk/jog.</td>
+            </tr>
+            <tr class="race-row">
+                <td>Sat, Dec 19</td>
+                <td><span class="badge bg-red">Race</span>Charlie Brown</td>
+                <td>10 km (6.2 mi)</td>
+                <td><strong>Charlie Brown Christmas 10k.</strong> Treat this as a pure celebratory active recovery flush. Do not look at the watch. Run @ 5:30+ min/km (8:51+ min/mi).</td>
+            </tr>
+            <tr class="rest-row">
+                <td>Sun, Dec 20</td>
+                <td>Rest</td>
+                <td>0 km (0 mi)</td>
+                <td>Celebrate the macrocycle completion.</td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 </html>
