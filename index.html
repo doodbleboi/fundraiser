@@ -7,7 +7,7 @@
   <style>
     @page {
       size: letter portrait;
-      margin: 0.45in;
+      margin: 0.5in;
     }
 
     *, *::before, *::after {
@@ -17,18 +17,18 @@
     }
 
     html, body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      font-size: 8.25pt;
-      line-height: 1.25;
-      color: #333333;
       background-color: #f8fafc;
+      color: #333333;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.3;
       -webkit-font-smoothing: antialiased;
     }
 
-    .resume-canvas {
+    .resume-container {
       width: 8.5in;
       margin: 20px auto;
-      padding: 0.45in 0.5in;
+      padding: 0.5in;
       background: #ffffff;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     }
@@ -37,7 +37,7 @@
       body {
         background: #ffffff;
       }
-      .resume-canvas {
+      .resume-container {
         margin: 0;
         padding: 0;
         width: 100%;
@@ -45,191 +45,114 @@
       }
     }
 
-    /* Header Component */
+    /* Header */
     header {
-      text-align: center;
-      margin-bottom: 7px;
-      padding-bottom: 6px;
+      width: 100%;
+      padding-bottom: 12px;
+      margin-bottom: 18px;
       border-bottom: 2px solid #4a69bd;
     }
 
     h1 {
-      font-size: 19pt;
+      font-size: 24pt;
       font-weight: 800;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
       color: #1a252f;
       line-height: 1.1;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
-    .contact-row {
-      font-size: 8.25pt;
-      color: #4a5568;
-      font-weight: 500;
+    .contact-details {
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-wrap: wrap;
-      gap: 8px;
+      align-items: center;
+      gap: 10px;
+      font-size: 9.5pt;
+      color: #555555;
+      font-weight: 500;
     }
 
-    .contact-row a {
+    .contact-details a {
       color: inherit;
       text-decoration: none;
     }
 
-    .contact-row a:hover {
+    .contact-details a:hover {
       text-decoration: underline;
       color: #4a69bd;
     }
 
-    .divider {
+    .pipe {
       color: #cbd5e1;
       font-weight: 400;
     }
 
-    /* Section Component */
-    .section-title {
-      font-size: 8.5pt;
+    /* Asymmetric 2-Column Grid Layout */
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 2.3in 1fr;
+      column-gap: 0.35in;
+      align-items: start;
+    }
+
+    /* Typography & Structural Elements */
+    .sidebar-heading {
+      font-size: 10pt;
       font-weight: 700;
-      letter-spacing: 1.1px;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
       color: #1a252f;
-      border-bottom: 1px solid #4a69bd;
-      padding-bottom: 1.5px;
-      margin-top: 7px;
-      margin-bottom: 5px;
+      border-bottom: 1.5px solid #4a69bd;
+      padding-bottom: 3px;
+      margin-bottom: 8px;
     }
 
-    /* Summary */
-    .summary-text {
-      color: #333333;
-      font-size: 8.25pt;
-      line-height: 1.25;
-      text-align: justify;
-    }
-
-    /* Technical Expertise Horizontal Layout */
-    .skills-row {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5px;
-      background: #fafbfc;
-      border-left: 2px solid #4a69bd;
-      padding: 3.5px 0 3.5px 8px;
-    }
-
-    .skill-line {
-      font-size: 8.15pt;
-      line-height: 1.25;
-      color: #333333;
-    }
-
-    .skill-line strong {
-      color: #1a252f;
+    .main-heading {
+      font-size: 10.5pt;
       font-weight: 700;
-    }
-
-    /* Experience Sequence */
-    .experience-list {
-      display: flex;
-      flex-direction: column;
-      gap: 5.5px;
-    }
-
-    .job-block {
-      page-break-inside: avoid;
-    }
-
-    .job-meta-line {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 1.5px;
-    }
-
-    .job-title-company {
-      font-size: 8.5pt;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
       color: #1a252f;
+      border-bottom: 1.5px solid #4a69bd;
+      padding-bottom: 3px;
+      margin-bottom: 10px;
     }
 
-    .job-role {
-      font-weight: 700;
+    .sidebar-block {
+      margin-bottom: 20px;
     }
 
-    .job-company {
-      font-weight: 600;
-      color: #2c3e50;
+    .sidebar-block:last-child {
+      margin-bottom: 0;
     }
 
-    .job-location {
-      font-weight: 400;
-      color: #718096;
-      font-size: 7.75pt;
-    }
-
-    .job-period {
-      font-size: 7.85pt;
-      font-weight: 600;
-      color: #4a5568;
-      white-space: nowrap;
-    }
-
-    ul.bullet-list {
+    /* Sidebar Lists */
+    ul.sidebar-list {
       list-style-type: none;
       padding-left: 0;
     }
 
-    ul.bullet-list li {
+    ul.sidebar-list li {
       position: relative;
-      padding-left: 11px;
-      font-size: 8.15pt;
-      line-height: 1.25;
+      padding-left: 13px;
+      font-size: 9.25pt;
       color: #333333;
-      margin-bottom: 1.5px;
+      margin-bottom: 5px;
+      line-height: 1.3;
     }
 
-    ul.bullet-list li:last-child {
-      margin-bottom: 0;
-    }
-
-    ul.bullet-list li::before {
+    ul.sidebar-list li::before {
       content: "▪";
       position: absolute;
       left: 0;
-      top: -0.5px;
+      top: -1px;
       color: #4a69bd;
-      font-size: 7pt;
-    }
-
-    .metric-cue {
-      color: #4a69bd;
-      font-style: italic;
-      font-weight: 500;
-    }
-
-    /* Lower Section: Education & Languages Grid */
-    .bottom-layout {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 20px;
-      margin-top: 1px;
-    }
-
-    .bottom-col-edu {
-      flex: 3;
-    }
-
-    .bottom-col-lang {
-      flex: 1;
+      font-size: 8pt;
     }
 
     .edu-entry {
-      font-size: 8.15pt;
-      line-height: 1.25;
-      margin-bottom: 1.5px;
+      margin-bottom: 10px;
     }
 
     .edu-entry:last-child {
@@ -239,170 +162,267 @@
     .edu-degree {
       font-weight: 700;
       color: #1a252f;
+      font-size: 9.25pt;
+      line-height: 1.25;
     }
 
-    .edu-inst {
-      color: #4a5568;
-      font-size: 7.85pt;
+    .edu-school {
+      color: #555555;
+      font-size: 8.75pt;
+      line-height: 1.25;
+      margin-top: 1px;
     }
 
     .lang-item {
-      font-size: 8.15pt;
-      line-height: 1.25;
+      font-size: 9.25pt;
       color: #333333;
+    }
+
+    /* Main Content (Right Column) */
+    .summary-section {
+      margin-bottom: 18px;
+    }
+
+    .summary-text {
+      font-size: 9.5pt;
+      color: #333333;
+      line-height: 1.35;
+      text-align: justify;
+    }
+
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .job-entry {
+      page-break-inside: avoid;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+
+    .job-title-company {
+      font-size: 9.75pt;
+      color: #1a252f;
+    }
+
+    .job-role {
+      font-weight: 700;
+    }
+
+    .job-company {
+      font-weight: 700;
+      color: #2c3e50;
+    }
+
+    .job-location {
+      font-weight: 400;
+      color: #64748b;
+      font-size: 9pt;
+    }
+
+    .job-date {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #4a5568;
+      white-space: nowrap;
+    }
+
+    ul.job-bullets {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul.job-bullets li {
+      position: relative;
+      padding-left: 13px;
+      font-size: 9.25pt;
+      line-height: 1.3;
+      color: #333333;
+      margin-bottom: 3.5px;
+    }
+
+    ul.job-bullets li:last-child {
+      margin-bottom: 0;
+    }
+
+    ul.job-bullets li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      top: -1px;
+      color: #4a69bd;
+      font-size: 8pt;
+    }
+
+    .metric-placeholder {
+      color: #4a69bd;
+      font-style: italic;
+      font-weight: 500;
     }
   </style>
 </head>
 <body>
-  <div class="resume-canvas">
-
-    <!-- Header Section -->
+  <div class="resume-container">
+    <!-- Header spanning full width -->
     <header>
       <h1>STEPHANIE WENK</h1>
-      <div class="contact-row">
+      <div class="contact-details">
         <span>Pantego, Texas</span>
-        <span class="divider">|</span>
+        <span class="pipe">|</span>
         <span>469.387.8204</span>
-        <span class="divider">|</span>
+        <span class="pipe">|</span>
         <span><a href="mailto:stephwenk@gmail.com">stephwenk@gmail.com</a></span>
-        <span class="divider">|</span>
+        <span class="pipe">|</span>
         <span><a href="https://linkedin.com/in/stephanie-wenk" target="_blank" rel="noopener noreferrer">linkedin.com/in/stephanie-wenk</a></span>
       </div>
     </header>
 
-    <!-- Executive Summary -->
-    <section>
-      <div class="section-title">EXECUTIVE PROFILE</div>
-      <p class="summary-text">
-        Detail-oriented Accounting Manager and financial operations specialist with 10+ years of comprehensive experience orchestrating complex accounting operations, sustainable practices, and system optimizations. Proven track record leading full-cycle financial management, GAAP-compliant monthly closes, and multi-entity reconciliations. Adept in enterprise ERP environments, advanced payroll processing, and multi-state tax compliance, with demonstrated success aligning financial workflows with executive leadership priorities.
-      </p>
-    </section>
-
-    <!-- Technical Expertise & Core Competencies -->
-    <section>
-      <div class="section-title">TECHNICAL EXPERTISE &amp; CORE COMPETENCIES</div>
-      <div class="skills-row">
-        <div class="skill-line">
-          <strong>Software &amp; Systems:</strong> QuickBooks, SAP, Microsoft Dynamics NAV, JD Edwards, Microsoft Excel
+    <div class="layout-grid">
+      <!-- Left Sidebar: Skills, Education, Languages -->
+      <aside>
+        <div class="sidebar-block">
+          <div class="sidebar-heading">SKILLS</div>
+          <ul class="sidebar-list">
+            <li>ERP Software Proficiency: Quickbooks, SAP, NAV, JD Edwards</li>
+            <li>Microsoft Excel</li>
+            <li>Payroll Processing</li>
+            <li>Accounts Payable/Receivable Management</li>
+            <li>Financial Reporting</li>
+            <li>Experience in audit</li>
+            <li>Budgeting &amp; Forecasting</li>
+          </ul>
         </div>
-        <div class="skill-line">
-          <strong>Core Competencies:</strong> Accounts Payable/Receivable Management, Payroll Processing, Financial Reporting, Experience in Audit, Budgeting &amp; Forecasting
+
+        <div class="sidebar-block">
+          <div class="sidebar-heading">EDUCATION</div>
+          <div class="edu-entry">
+            <div class="edu-degree">Bachelor's Degree Accounting</div>
+            <div class="edu-school">University of North Texas, January 2007</div>
+          </div>
+          <div class="edu-entry">
+            <div class="edu-degree">Minor Degree English / Technical Writing</div>
+            <div class="edu-school">University of North Texas, January 2007</div>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Professional Experience -->
-    <section>
-      <div class="section-title">PROFESSIONAL EXPERIENCE</div>
-      <div class="experience-list">
-
-        <!-- Role 1: Good Operator -->
-        <article class="job-block">
-          <div class="job-meta-line">
-            <div class="job-title-company">
-              <span class="job-role">ACCOUNTING MANAGER</span> | <span class="job-company">Good Operator</span> <span class="job-location">| Remote</span>
-            </div>
-            <div class="job-period">March 2026 - Present</div>
-          </div>
-          <ul class="bullet-list">
-            <li>Lead an accounting pod overseeing full-cycle bookkeeping, reconciliations, payroll, and GAAP-compliant monthly closes for a diverse client portfolio <span class="metric-cue">[Insert portfolio size / # of accounts managed]</span>.</li>
-            <li>Prepare and deliver monthly financial packages, variance analyses, and KPI dashboards directly to founders and executive stakeholders.</li>
-            <li>Build and refine internal controls, scalable workflows, and standard operating templates to improve team efficiency and accuracy <span class="metric-cue">[Insert % efficiency gained or hours saved]</span>.</li>
-            <li>Supervise and mentor offshore bookkeepers <span class="metric-cue">[Insert team size]</span>, reviewing work quality and ensuring timely milestone delivery.</li>
-          </ul>
-        </article>
-
-        <!-- Role 2: Dairy Farmers of America -->
-        <article class="job-block">
-          <div class="job-meta-line">
-            <div class="job-title-company">
-              <span class="job-role">SENIOR ACCOUNTANT</span> | <span class="job-company">Dairy Farmers of America</span> <span class="job-location">| Fort Worth, TX</span>
-            </div>
-            <div class="job-period">April 2025 - March 2026</div>
-          </div>
-          <ul class="bullet-list">
-            <li>Direct monthly close procedures, prepare journal entries, and close operational warehouse systems and subsystems.</li>
-            <li>Maintain general ledger (GL) account reconciliations and comprehensive financial reports.</li>
-            <li>Analyze financials for trends and anomalies, effectively communicating key analytical findings to leadership.</li>
-            <li>Collaborate with field teams on operational budgeting, forecasting, and miscellaneous financial projects.</li>
-            <li>Support formal audits, maintain internal controls, and assist with institutional financial reporting.</li>
-          </ul>
-        </article>
-
-        <!-- Role 3: Skyline Displays -->
-        <article class="job-block">
-          <div class="job-meta-line">
-            <div class="job-title-company">
-              <span class="job-role">SHARED SERVICES ADMINISTRATOR - ACCOUNTING</span> | <span class="job-company">SKYLINE DISPLAYS</span>
-            </div>
-            <div class="job-period">March 2015 - April 2025</div>
-          </div>
-          <ul class="bullet-list">
-            <li>Successfully manage monthly close process and corporate financial reporting across QuickBooks and SAP.</li>
-            <li>Process semi-monthly payroll for 30+ employees, including complete 401(k) administration and tax compliance.</li>
-            <li>Lead accounting system transitions and continuous process improvements to support organizational growth <span class="metric-cue">[Insert quantifiable process outcome]</span>.</li>
-            <li>Prepare and reconcile quarterly payroll tax reports filed directly with the IRS.</li>
-            <li>Process accounts payable invoices and systematically manage weekly payment schedules.</li>
-            <li>Maintain detailed balance sheet reconciliations across bank statements, general accounts, and corporate credit cards.</li>
-            <li>Calculate and report monthly commissions for sales staff.</li>
-            <li>Led the transition from paper-based to paperless records, eliminating physical file dependencies.</li>
-            <li>Supervise 4 team members and serve on the executive advisory council for strategic initiatives.</li>
-          </ul>
-        </article>
-
-        <!-- Role 4: Traxxas -->
-        <article class="job-block">
-          <div class="job-meta-line">
-            <div class="job-title-company">
-              <span class="job-role">SENIOR ACCOUNTANT</span> | <span class="job-company">TRAXXAS</span>
-            </div>
-            <div class="job-period">May 2011 - March 2015</div>
-          </div>
-          <ul class="bullet-list">
-            <li>Managed full-cycle accounting operations across eight business entities using QuickBooks and Microsoft Dynamics NAV.</li>
-            <li>Administered multi-state tax compliance and reporting mandates, including full 1099 preparation.</li>
-            <li>Maintained accurate financial controls, ledger integrity, and documentation across multiple business units.</li>
-            <li>Developed streamlined processes for accounts payable operations and vendor relationship management.</li>
-          </ul>
-        </article>
-
-        <!-- Role 5: Woot.com -->
-        <article class="job-block">
-          <div class="job-meta-line">
-            <div class="job-title-company">
-              <span class="job-role">ACCOUNTING ANALYST</span> | <span class="job-company">WOOT.COM</span>
-            </div>
-            <div class="job-period">February 2010 - May 2011</div>
-          </div>
-          <ul class="bullet-list">
-            <li>Managed daily accounts payable operations and fostered vendor relationships.</li>
-            <li>Reconciled general ledger (G/L) accounts for monthly financial close procedures.</li>
-            <li>Created detailed financial reports for cross-functional stakeholder review.</li>
-            <li>Achievement: Automated reporting systems, improving data accuracy and accessibility <span class="metric-cue">[Insert time saved or reduction in error rate]</span>.</li>
-          </ul>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- Education & Languages Lower Grid -->
-    <div class="bottom-layout">
-      <div class="bottom-col-edu">
-        <div class="section-title">EDUCATION</div>
-        <div class="edu-entry">
-          <span class="edu-degree">Bachelor's Degree Accounting</span> &mdash; <span class="edu-inst">University of North Texas, January 2007</span>
+        <div class="sidebar-block">
+          <div class="sidebar-heading">LANGUAGES</div>
+          <div class="lang-item">English</div>
         </div>
-        <div class="edu-entry">
-          <span class="edu-degree">Minor Degree English / Technical Writing</span> &mdash; <span class="edu-inst">University of North Texas, January 2007</span>
-        </div>
-      </div>
+      </aside>
 
-      <div class="bottom-col-lang">
-        <div class="section-title">LANGUAGES</div>
-        <div class="lang-item">English</div>
-      </div>
+      <!-- Right Column: Summary & Experience -->
+      <main>
+        <!-- Professional Summary -->
+        <section class="summary-section">
+          <div class="main-heading">PROFESSIONAL SUMMARY</div>
+          <p class="summary-text">
+            Detail-oriented Accountant and financial operations leader with 10+ years of experience in financial management, full-cycle GAAP compliance, and team leadership. Demonstrated expertise in managing complex accounting operations, sustainable practices, and scalable financial systems. Highly skilled across tier-one ERP platforms, comprehensive payroll management, internal controls, and corporate tax compliance.
+          </p>
+        </section>
+
+        <!-- Professional Experience -->
+        <section>
+          <div class="main-heading">EXPERIENCE</div>
+          <div class="experience-list">
+
+            <!-- Role 1: Good Operator -->
+            <article class="job-entry">
+              <div class="job-header">
+                <div class="job-title-company">
+                  <span class="job-role">ACCOUNTING MANAGER</span> | <span class="job-company">Good Operator</span> <span class="job-location">| Remote</span>
+                </div>
+                <div class="job-date">March 2026 - Present</div>
+              </div>
+              <ul class="job-bullets">
+                <li>Direct an accounting pod overseeing full-cycle bookkeeping, reconciliations, payroll, and GAAP-compliant monthly closes for a diverse client portfolio <span class="metric-placeholder">[Insert portfolio size / # of accounts managed]</span>.</li>
+                <li>Prepare and deliver monthly financial packages, variance analyses, and KPI dashboards directly to founders and executive stakeholders.</li>
+                <li>Build and refine internal controls, scalable workflows, and standard operating templates to improve team efficiency and accuracy <span class="metric-placeholder">[Insert % efficiency gained or time saved]</span>.</li>
+                <li>Supervise and mentor offshore bookkeepers <span class="metric-placeholder">[Insert team size]</span>, reviewing work quality and ensuring timely milestone delivery.</li>
+              </ul>
+            </article>
+
+            <!-- Role 2: Dairy Farmers of America -->
+            <article class="job-entry">
+              <div class="job-header">
+                <div class="job-title-company">
+                  <span class="job-role">SENIOR ACCOUNTANT</span> | <span class="job-company">Dairy Farmers of America</span> <span class="job-location">| Fort Worth, TX</span>
+                </div>
+                <div class="job-date">April 2025 - March 2026</div>
+              </div>
+              <ul class="job-bullets">
+                <li>Lead monthly close procedures, prepare journal entries, and close operational warehouse systems and subsystems.</li>
+                <li>Maintain general ledger (GL) account reconciliations and comprehensive financial reports.</li>
+                <li>Analyze financials for trends and anomalies, effectively communicating key analytical findings to leadership.</li>
+                <li>Collaborate with field teams on operational budgeting, forecasting, and miscellaneous financial projects.</li>
+                <li>Support formal audits, maintain internal controls, and assist with institutional financial reporting.</li>
+              </ul>
+            </article>
+
+            <!-- Role 3: Skyline Displays -->
+            <article class="job-entry">
+              <div class="job-header">
+                <div class="job-title-company">
+                  <span class="job-role">SHARED SERVICES ADMINISTRATOR - ACCOUNTING</span> | <span class="job-company">SKYLINE DISPLAYS</span>
+                </div>
+                <div class="job-date">March 2015 - April 2025</div>
+              </div>
+              <ul class="job-bullets">
+                <li>Successfully manage monthly close process and financial reporting in Quickbooks and SAP.</li>
+                <li>Process semi-monthly payroll for 30+ employees, including 401(k) administration and tax compliance.</li>
+                <li>Lead accounting system transitions and process improvements to support organizational growth <span class="metric-placeholder">[Insert % time saved or efficiency metric]</span>.</li>
+                <li>Prepare and reconcile quarterly payroll reports filed with IRS.</li>
+                <li>Process accounts payable invoices and manage weekly payment schedules.</li>
+                <li>Maintain detailed reconciliations for balance sheet accounts, bank statements, and credit cards.</li>
+                <li>Calculate and report commissions for sales staff.</li>
+                <li>Led transition from paper-based to paperless records.</li>
+                <li>Supervise 4 team members and serve on executive advisory council for strategic initiatives.</li>
+              </ul>
+            </article>
+
+            <!-- Role 4: Traxxas -->
+            <article class="job-entry">
+              <div class="job-header">
+                <div class="job-title-company">
+                  <span class="job-role">SENIOR ACCOUNTANT</span> | <span class="job-company">TRAXXAS</span>
+                </div>
+                <div class="job-date">May 2011 - March 2015</div>
+              </div>
+              <ul class="job-bullets">
+                <li>Managed full-cycle accounting for eight business entities using Quickbooks and Microsoft Dynamics NAV.</li>
+                <li>Administered multi-state tax compliance and reporting, including 1099 preparation.</li>
+                <li>Maintained accurate financial controls and documentation across multiple business units.</li>
+                <li>Developed streamlined processes for accounts payable and vendor management.</li>
+              </ul>
+            </article>
+
+            <!-- Role 5: Woot.com -->
+            <article class="job-entry">
+              <div class="job-header">
+                <div class="job-title-company">
+                  <span class="job-role">ACCOUNTING ANALYST</span> | <span class="job-company">WOOT.COM</span>
+                </div>
+                <div class="job-date">February 2010 - May 2011</div>
+              </div>
+              <ul class="job-bullets">
+                <li>Managed accounts payable operations and vendor relationships.</li>
+                <li>Reconciled G/L accounts for month-end procedures.</li>
+                <li>Created detailed financial reports for stakeholder review.</li>
+                <li>Achievement: Automated reporting systems improving data accuracy and accessibility <span class="metric-placeholder">[Insert hours saved per week/month]</span>.</li>
+              </ul>
+            </article>
+
+          </div>
+        </section>
+      </main>
     </div>
-
   </div>
 </body>
 </html>
