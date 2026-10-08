@@ -7,7 +7,7 @@
   <style>
     @page {
       size: letter portrait;
-      margin: 0.45in;
+      margin: 0.35in;
     }
 
     *, *::before, *::after {
@@ -16,63 +16,72 @@
       padding: 0;
     }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      font-size: 8.75pt;
-      line-height: 1.33;
-      color: #1e293b;
+    html, body {
+      height: 100%;
       background: #f1f5f9;
+      color: #0f172a;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 8pt;
+      line-height: 1.25;
       -webkit-font-smoothing: antialiased;
     }
 
     .page {
       width: 8.5in;
-      min-height: 11in;
-      margin: 20px auto;
-      padding: 0.45in;
+      height: 11in;
+      max-height: 11in;
+      margin: 15px auto;
+      padding: 0.35in 0.4in;
       background: #ffffff;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
       display: flex;
       flex-direction: column;
+      overflow: hidden;
     }
 
     @media print {
-      body {
+      html, body {
         background: #ffffff;
+        height: 100%;
+        overflow: hidden;
       }
       .page {
         margin: 0;
         padding: 0;
         width: 100%;
-        min-height: auto;
+        height: 100%;
+        max-height: 100%;
         box-shadow: none;
+        overflow: hidden;
+        page-break-after: avoid;
+        page-break-inside: avoid;
       }
     }
 
     /* Header */
     header {
       border-bottom: 1.5px solid #0f172a;
-      padding-bottom: 7px;
-      margin-bottom: 9px;
+      padding-bottom: 5px;
+      margin-bottom: 6px;
     }
 
     h1 {
-      font-size: 20pt;
+      font-size: 18pt;
       font-weight: 800;
       letter-spacing: 0.8px;
       text-transform: uppercase;
       color: #0f172a;
-      line-height: 1.1;
-      margin-bottom: 4px;
+      line-height: 1;
+      margin-bottom: 3px;
     }
 
     .contact-bar {
-      font-size: 8.25pt;
+      font-size: 8pt;
       color: #475569;
       font-weight: 500;
       display: flex;
       flex-wrap: wrap;
-      gap: 5px 8px;
+      gap: 3px 6px;
     }
 
     .contact-bar span {
@@ -82,55 +91,56 @@
 
     .contact-bar span:not(:last-child)::after {
       content: "•";
-      margin-left: 8px;
+      margin-left: 6px;
       color: #94a3b8;
     }
 
-    /* Summary */
+    /* Professional Summary */
     .summary-section {
-      margin-bottom: 9px;
-      padding-bottom: 7px;
+      margin-bottom: 7px;
+      padding-bottom: 5px;
       border-bottom: 1px solid #e2e8f0;
     }
 
     .summary-heading {
-      font-size: 8.5pt;
+      font-size: 7.75pt;
       font-weight: 700;
-      letter-spacing: 0.7px;
+      letter-spacing: 0.6px;
       text-transform: uppercase;
       color: #0f172a;
-      margin-bottom: 2px;
+      margin-bottom: 1.5px;
     }
 
     .summary-text {
       color: #334155;
-      font-size: 8.5pt;
-      line-height: 1.35;
+      font-size: 7.85pt;
+      line-height: 1.25;
     }
 
     /* Layout Columns */
     .columns {
       display: grid;
       grid-template-columns: 2.1in 1fr;
-      gap: 0.3in;
+      gap: 0.25in;
       flex: 1;
+      overflow: hidden;
     }
 
     /* Section Headings */
     .section-title {
-      font-size: 8.5pt;
+      font-size: 7.85pt;
       font-weight: 700;
-      letter-spacing: 0.7px;
+      letter-spacing: 0.6px;
       text-transform: uppercase;
       color: #0f172a;
       border-bottom: 1px solid #cbd5e1;
-      padding-bottom: 2px;
-      margin-bottom: 6px;
+      padding-bottom: 1.5px;
+      margin-bottom: 4px;
     }
 
-    /* Left Sidebar */
+    /* Left Column Elements */
     .sidebar-block {
-      margin-bottom: 11px;
+      margin-bottom: 8px;
     }
 
     .sidebar-block:last-child {
@@ -143,12 +153,12 @@
     }
 
     ul.clean-list li {
-      font-size: 8.25pt;
+      font-size: 7.65pt;
       color: #334155;
       position: relative;
-      padding-left: 10px;
-      margin-bottom: 3.5px;
-      line-height: 1.28;
+      padding-left: 9px;
+      margin-bottom: 2px;
+      line-height: 1.2;
     }
 
     ul.clean-list li::before {
@@ -161,25 +171,29 @@
     }
 
     .edu-entry {
-      margin-bottom: 6px;
-      font-size: 8.25pt;
+      margin-bottom: 4px;
+      font-size: 7.65pt;
+    }
+
+    .edu-entry:last-child {
+      margin-bottom: 0;
     }
 
     .edu-degree {
       font-weight: 700;
       color: #0f172a;
-      line-height: 1.25;
+      line-height: 1.15;
     }
 
     .edu-school {
       color: #475569;
-      font-size: 7.75pt;
-      line-height: 1.25;
+      font-size: 7.25pt;
+      line-height: 1.15;
     }
 
-    /* Experience Entries */
+    /* Right Column / Jobs */
     .job-entry {
-      margin-bottom: 8px;
+      margin-bottom: 5.5px;
     }
 
     .job-entry:last-child {
@@ -190,14 +204,14 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 1.5px;
+      margin-bottom: 1px;
     }
 
     .job-title-company {
-      font-size: 8.5pt;
+      font-size: 7.85pt;
       font-weight: 700;
       color: #0f172a;
-      letter-spacing: 0.15px;
+      letter-spacing: 0.1px;
     }
 
     .job-company {
@@ -208,11 +222,11 @@
     .job-location {
       font-weight: 400;
       color: #64748b;
-      font-size: 8pt;
+      font-size: 7.5pt;
     }
 
     .job-date {
-      font-size: 7.75pt;
+      font-size: 7.35pt;
       font-weight: 600;
       color: #475569;
       white-space: nowrap;
@@ -221,16 +235,16 @@
     ul.job-bullets {
       list-style-type: none;
       padding-left: 0;
-      margin-top: 2px;
+      margin-top: 1px;
     }
 
     ul.job-bullets li {
       position: relative;
-      padding-left: 10px;
-      font-size: 8.15pt;
+      padding-left: 9px;
+      font-size: 7.55pt;
       color: #334155;
-      line-height: 1.3;
-      margin-bottom: 2.2px;
+      line-height: 1.22;
+      margin-bottom: 1px;
     }
 
     ul.job-bullets li::before {
@@ -326,4 +340,76 @@
             <div>
               <span class="job-title-company">SENIOR ACCOUNTANT</span>
               <span class="job-company"> | Dairy Farmers of America</span>
-              
+              <span class="job-location"> | Fort Worth, TX</span>
+            </div>
+            <div class="job-date">April 2025 - March 2026</div>
+          </div>
+          <ul class="job-bullets">
+            <li>Manage monthly close, prepare journal entries, close warehouse systems and subsystems</li>
+            <li>Maintain GL account reconciliations and financial reports</li>
+            <li>Analyze financials for trends and anomalies, and communicate findings to leadership</li>
+            <li>Collaborate with field teams on budgeting, forecasting, and miscellaneous financial projects</li>
+            <li>Support audits, maintain internal controls, and assist with reporting</li>
+          </ul>
+        </article>
+
+        <!-- Role 3 -->
+        <article class="job-entry">
+          <div class="job-header">
+            <div>
+              <span class="job-title-company">SHARED SERVICES ADMINISTRATOR - ACCOUNTING</span>
+              <span class="job-company"> | SKYLINE DISPLAYS</span>
+            </div>
+            <div class="job-date">March 2015 - April 2025</div>
+          </div>
+          <ul class="job-bullets">
+            <li>Successfully manage monthly close process and financial reporting in Quickbooks and SAP</li>
+            <li>Process semi-monthly payroll for 30+ employees, including 401(k) administration and tax compliance</li>
+            <li>Lead accounting system transitions and process improvements to support organizational growth</li>
+            <li>Prepare and reconcile quarterly payroll reports filed with IRS</li>
+            <li>Process accounts payable invoices and manage weekly payment schedules</li>
+            <li>Maintain detailed reconciliations for balance sheet accounts, bank statements, and credit cards</li>
+            <li>Calculate and report commissions for sales staff</li>
+            <li>Led transition from paper-based to paperless records</li>
+            <li>Supervise 4 team members and serve on executive advisory council for strategic initiatives</li>
+          </ul>
+        </article>
+
+        <!-- Role 4 -->
+        <article class="job-entry">
+          <div class="job-header">
+            <div>
+              <span class="job-title-company">SENIOR ACCOUNTANT</span>
+              <span class="job-company"> | TRAXXAS</span>
+            </div>
+            <div class="job-date">May 2011 - March 2015</div>
+          </div>
+          <ul class="job-bullets">
+            <li>Managed full-cycle accounting for eight business entities using Quickbooks and Microsoft Dynamics NAV</li>
+            <li>Administered multi-state tax compliance and reporting, including 1099 preparation</li>
+            <li>Maintained accurate financial controls and documentation across multiple business units</li>
+            <li>Developed streamlined processes for accounts payable and vendor management</li>
+          </ul>
+        </article>
+
+        <!-- Role 5 -->
+        <article class="job-entry">
+          <div class="job-header">
+            <div>
+              <span class="job-title-company">ACCOUNTING ANALYST</span>
+              <span class="job-company"> | WOOT.COM</span>
+            </div>
+            <div class="job-date">February 2010 - May 2011</div>
+          </div>
+          <ul class="job-bullets">
+            <li>Managed accounts payable operations and vendor relationships</li>
+            <li>Reconciled G/L accounts for month-end procedures</li>
+            <li>Created detailed financial reports for stakeholder review</li>
+            <li>Achievement: Automated reporting systems improving data accuracy and accessibility</li>
+          </ul>
+        </article>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
