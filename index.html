@@ -1,630 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Marathon Plan: Sub-3:15 Execution</title>
-    <style>
-        :root {
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #0f172a;
-            --border-color: #e2e8f0;
-            --primary-blue: #0284c7;
-            --race-red: #dc2626;
-            --tempo-gold: #d97706;
-            --easy-green: #16a34a;
-            --long-purple: #7c3aed;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.5;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        h1, h2 {
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        h1 {
-            text-align: center;
-            font-weight: 900;
-            margin-bottom: 5px;
-        }
-        .subtitle {
-            text-align: center;
-            color: var(--primary-blue);
-            font-weight: 600;
-            margin-bottom: 30px;
-        }
-        .zones {
-            display: flex;
-            justify-content: space-between;
-            background: var(--card-bg);
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            margin-bottom: 30px;
-            font-size: 0.9em;
-        }
-        .zone-item strong {
-            display: block;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--card-bg);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
-        }
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-        }
-        th {
-            background-color: #f1f5f9;
-            font-weight: 700;
-            font-size: 0.85em;
-            text-transform: uppercase;
-            color: #475569;
-        }
-        .week-header {
-            background-color: #1e293b;
-            color: #ffffff;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 1.1em;
-        }
-        .race-row {
-            background-color: #fef2f2;
-            border-left: 4px solid var(--race-red);
-        }
-        .long-row {
-            border-left: 4px solid var(--long-purple);
-        }
-        .quality-row {
-            border-left: 4px solid var(--tempo-gold);
-        }
-        .easy-row {
-            border-left: 4px solid var(--easy-green);
-        }
-        .rest-row {
-            color: #64748b;
-            background-color: #f8fafc;
-        }
-        .badge {
-            display: inline-block;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.75em;
-            font-weight: bold;
-            color: #fff;
-            margin-right: 8px;
-        }
-        .bg-red { background-color: var(--race-red); }
-        .bg-purple { background-color: var(--long-purple); }
-        .bg-gold { background-color: var(--tempo-gold); }
-        .bg-green { background-color: var(--easy-green); }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stephanie Wenk - Resume</title>
+  <style>
+    @page {
+      size: letter portrait;
+      margin: 0.45in;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 8.75pt;
+      line-height: 1.33;
+      color: #1e293b;
+      background: #f1f5f9;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      margin: 20px auto;
+      padding: 0.45in;
+      background: #ffffff;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+      .page {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: auto;
+        box-shadow: none;
+      }
+    }
+
+    /* Header */
+    header {
+      border-bottom: 1.5px solid #0f172a;
+      padding-bottom: 7px;
+      margin-bottom: 9px;
+    }
+
+    h1 {
+      font-size: 20pt;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #0f172a;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .contact-bar {
+      font-size: 8.25pt;
+      color: #475569;
+      font-weight: 500;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px 8px;
+    }
+
+    .contact-bar span {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .contact-bar span:not(:last-child)::after {
+      content: "•";
+      margin-left: 8px;
+      color: #94a3b8;
+    }
+
+    /* Summary */
+    .summary-section {
+      margin-bottom: 9px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .summary-heading {
+      font-size: 8.5pt;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      color: #0f172a;
+      margin-bottom: 2px;
+    }
+
+    .summary-text {
+      color: #334155;
+      font-size: 8.5pt;
+      line-height: 1.35;
+    }
+
+    /* Layout Columns */
+    .columns {
+      display: grid;
+      grid-template-columns: 2.1in 1fr;
+      gap: 0.3in;
+      flex: 1;
+    }
+
+    /* Section Headings */
+    .section-title {
+      font-size: 8.5pt;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      color: #0f172a;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 2px;
+      margin-bottom: 6px;
+    }
+
+    /* Left Sidebar */
+    .sidebar-block {
+      margin-bottom: 11px;
+    }
+
+    .sidebar-block:last-child {
+      margin-bottom: 0;
+    }
+
+    ul.clean-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul.clean-list li {
+      font-size: 8.25pt;
+      color: #334155;
+      position: relative;
+      padding-left: 10px;
+      margin-bottom: 3.5px;
+      line-height: 1.28;
+    }
+
+    ul.clean-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #64748b;
+      font-weight: bold;
+    }
+
+    .edu-entry {
+      margin-bottom: 6px;
+      font-size: 8.25pt;
+    }
+
+    .edu-degree {
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.25;
+    }
+
+    .edu-school {
+      color: #475569;
+      font-size: 7.75pt;
+      line-height: 1.25;
+    }
+
+    /* Experience Entries */
+    .job-entry {
+      margin-bottom: 8px;
+    }
+
+    .job-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.5px;
+    }
+
+    .job-title-company {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: 0.15px;
+    }
+
+    .job-company {
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .job-location {
+      font-weight: 400;
+      color: #64748b;
+      font-size: 8pt;
+    }
+
+    .job-date {
+      font-size: 7.75pt;
+      font-weight: 600;
+      color: #475569;
+      white-space: nowrap;
+    }
+
+    ul.job-bullets {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 2px;
+    }
+
+    ul.job-bullets li {
+      position: relative;
+      padding-left: 10px;
+      font-size: 8.15pt;
+      color: #334155;
+      line-height: 1.3;
+      margin-bottom: 2.2px;
+    }
+
+    ul.job-bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #64748b;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
+  <div class="page">
+    <header>
+      <h1>STEPHANIE WENK</h1>
+      <div class="contact-bar">
+        <span>Pantego, Texas</span>
+        <span>469.387.8204</span>
+        <span>stephwenk@gmail.com</span>
+        <span>LinkedIn.com/stephanie-wenk</span>
+      </div>
+    </header>
 
-    <h1>BMW Dallas Marathon Blueprint</h1>
-    <div class="subtitle">Target: 3:14:00 | Base Pace: 4:36 min/km (7:24 min/mi)</div>
+    <section class="summary-section">
+      <div class="summary-heading">PROFESSIONAL SUMMARY</div>
+      <p class="summary-text">
+        Detail-oriented Accountant with 10+ years of experience in financial management. Expertise in complex accounting operations, sustainable practices, and efficient systems. Skilled in ERP systems, payroll management, and tax compliance.
+      </p>
+    </section>
 
-    <div class="zones">
-        <div class="zone-item">
-            <strong>Recovery / Easy</strong>
-            5:15–5:30 min/km <br> (8:27–8:51 min/mi)
+    <div class="columns">
+      <!-- Left Column: Skills, Education, Languages -->
+      <aside>
+        <div class="sidebar-block">
+          <div class="section-title">SKILLS</div>
+          <ul class="clean-list">
+            <li>ERP Software Proficiency: Quickbooks, SAP, NAV, JD Edwards</li>
+            <li>Microsoft Excel</li>
+            <li>Payroll Processing</li>
+            <li>Accounts Payable/Receivable Management</li>
+            <li>Financial Reporting</li>
+            <li>Experience in audit</li>
+            <li>Budgeting &amp; Forecasting</li>
+          </ul>
         </div>
-        <div class="zone-item">
-            <strong>Marathon Pace (MP)</strong>
-            4:36 min/km <br> (7:24 min/mi)
+
+        <div class="sidebar-block">
+          <div class="section-title">EDUCATION</div>
+          <div class="edu-entry">
+            <div class="edu-degree">Bachelor's Degree Accounting</div>
+            <div class="edu-school">University of North Texas, January 2007</div>
+          </div>
+          <div class="edu-entry">
+            <div class="edu-degree">Minor Degree English / Technical Writing</div>
+            <div class="edu-school">University of North Texas, January 2007</div>
+          </div>
         </div>
-        <div class="zone-item">
-            <strong>Threshold / Tempo</strong>
-            4:15–4:20 min/km <br> (6:50–6:58 min/mi)
+
+        <div class="sidebar-block">
+          <div class="section-title">LANGUAGES</div>
+          <ul class="clean-list">
+            <li>English</li>
+          </ul>
         </div>
-        <div class="zone-item">
-            <strong>Speed / VO2</strong>
-            3:50–3:55 min/km <br> (6:10–6:18 min/mi)
-        </div>
-    </div>
+      </aside>
 
-    <table>
-        <thead>
-            <tr>
-                <th width="15%">Date</th>
-                <th width="20%">Focus</th>
-                <th width="15%">Distance</th>
-                <th width="50%">Execution & Details</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- WEEK 1 -->
-            <tr><td colspan="4" class="week-header">Week 1: Aerobic Re-Entry (Oct 5 – Oct 11)</td></tr>
-            <tr class="rest-row">
-                <td>Mon, Oct 5</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Complete rest to absorb the Rahr 5k effort. Hydrate and foam roll.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Tue, Oct 6</td>
-                <td><span class="badge bg-green">Base</span>Easy + Strides</td>
-                <td>8 km (5.0 mi)</td>
-                <td>Easy aerobic flush @ 5:20 min/km (8:35 min/mi) + 4x100m strides.</td>
-            </tr>
-            <tr class="quality-row">
-                <td>Wed, Oct 7</td>
-                <td><span class="badge bg-gold">Threshold</span>Intervals</td>
-                <td>10 km (6.2 mi)</td>
-                <td>2 km (1.2 mi) WU. 4 x 1000m @ 4:15 min/km (6:50 min/mi) w/ 90s jog. 2 km (1.2 mi) CD.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Thu, Oct 8</td>
-                <td><span class="badge bg-green">Base</span>Easy</td>
-                <td>8 km (5.0 mi)</td>
-                <td>Conversational pace @ 5:30 min/km (8:51 min/mi).</td>
-            </tr>
-            <tr class="rest-row">
-                <td>Fri, Oct 9</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Mobility and core stability work.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Sat, Oct 10</td>
-                <td><span class="badge bg-green">Base</span>Shakeout</td>
-                <td>6 km (3.7 mi)</td>
-                <td>Light jogging @ 5:30 min/km (8:51 min/mi) to prep for Sunday.</td>
-            </tr>
-            <tr class="long-row">
-                <td>Sun, Oct 11</td>
-                <td><span class="badge bg-purple">Long</span>Progressive</td>
-                <td>22 km (13.7 mi)</td>
-                <td>Rebuild distance safely. Start @ 5:20 min/km (8:35 min/mi), close final 5 km (3.1 mi) @ MP 4:36 min/km (7:24 min/mi).</td>
-            </tr>
+      <!-- Right Column: Experience -->
+      <main>
+        <div class="section-title">EXPERIENCE</div>
 
-            <!-- WEEK 2 -->
-            <tr><td colspan="4" class="week-header">Week 2: 15K Tune-Up (Oct 12 – Oct 18)</td></tr>
-            <tr class="rest-row">
-                <td>Mon, Oct 12</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Complete structural rest.</td>
-            </tr>
-            <tr class="quality-row">
-                <td>Tue, Oct 13</td>
-                <td><span class="badge bg-gold">Speed</span>VO2 Max</td>
-                <td>10 km (6.2 mi)</td>
-                <td>2 km (1.2 mi) WU. 6 x 400m @ 3:50 min/km (6:10 min/mi) w/ 60s walk rest. 2 km (1.2 mi) CD.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Wed, Oct 14</td>
-                <td><span class="badge bg-green">Base</span>Easy</td>
-                <td>8 km (5.0 mi)</td>
-                <td>Conversational pace @ 5:30 min/km (8:51 min/mi).</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Thu, Oct 15</td>
-                <td><span class="badge bg-green">Base</span>Shakeout</td>
-                <td>6 km (3.7 mi)</td>
-                <td>Light jogging + 3x15s strides.</td>
-            </tr>
-            <tr class="rest-row">
-                <td>Fri, Oct 16</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Pre-race hydration and glycogen load.</td>
-            </tr>
-            <tr class="race-row">
-                <td>Sat, Oct 17</td>
-                <td><span class="badge bg-red">Race</span>Big Texas 15K</td>
-                <td>18 km (11.2 mi)</td>
-                <td><strong>Big Texas Run 15K (Arlington).</strong> Run as a sub-max threshold effort. 1.5 km (0.9 mi) WU. 15 km (9.3 mi) Race @ 4:25 min/km (7:06 min/mi). 1.5 km (0.9 mi) CD.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Sun, Oct 18</td>
-                <td><span class="badge bg-green">Base</span>Recovery</td>
-                <td>8 km (5.0 mi)</td>
-                <td>Strict recovery flush @ 5:45 min/km (9:15 min/mi) to clear lactic acid.</td>
-            </tr>
+        <!-- Role 1 -->
+        <article class="job-entry">
+          <div class="job-header">
+            <div>
+              <span class="job-title-company">ACCOUNTING MANAGER</span>
+              <span class="job-company"> | Good Operator</span>
+              <span class="job-location"> | Remote</span>
+            </div>
+            <div class="job-date">March 2026 - Present</div>
+          </div>
+          <ul class="job-bullets">
+            <li>Lead an accounting pod overseeing full-cycle bookkeeping, reconciliations, payroll, and GAAP-compliant monthly closes for a diverse client portfolio</li>
+            <li>Prepare and deliver monthly financial packages, variance analyses, and KPI dashboards directly to founders and executive stakeholders</li>
+            <li>Build and refine internal controls, scalable workflows, and standard operating templates to improve team efficiency and accuracy</li>
+            <li>Supervise and mentor offshore bookkeepers, reviewing work quality and ensuring timely milestone delivery</li>
+          </ul>
+        </article>
 
-            <!-- WEEK 3 -->
-            <tr><td colspan="4" class="week-header">Week 3: Volume Escalation (Oct 19 – Oct 25)</td></tr>
-            <tr class="rest-row">
-                <td>Mon, Oct 19</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Complete rest.</td>
-            </tr>
-            <tr class="quality-row">
-                <td>Tue, Oct 20</td>
-                <td><span class="badge bg-gold">Threshold</span>Tempo</td>
-                <td>12 km (7.5 mi)</td>
-                <td>2 km (1.2 mi) WU. 2 x 3 km (1.8 mi) @ 4:15 min/km (6:50 min/mi) w/ 3 min jog rest. 2 km (1.2 mi) CD.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Wed, Oct 21</td>
-                <td><span class="badge bg-green">Base</span>Easy</td>
-                <td>10 km (6.2 mi)</td>
-                <td>Conversational pace @ 5:20 min/km (8:35 min/mi).</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Thu, Oct 22</td>
-                <td><span class="badge bg-green">Base</span>Easy</td>
-                <td>8 km (5.0 mi)</td>
-                <td>Conversational pace @ 5:30 min/km (8:51 min/mi).</td>
-            </tr>
-            <tr class="rest-row">
-                <td>Fri, Oct 23</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Mobility and core.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Sat, Oct 24</td>
-                <td><span class="badge bg-green">Base</span>Shakeout</td>
-                <td>5 km (3.1 mi)</td>
-                <td>Light jogging @ 5:30 min/km (8:51 min/mi).</td>
-            </tr>
-            <tr class="long-row">
-                <td>Sun, Oct 25</td>
-                <td><span class="badge bg-purple">Long</span>Endurance</td>
-                <td>26 km (16.1 mi)</td>
-                <td>Steady aerobic run. Lock in @ 5:15 min/km (8:27 min/mi). Practice race-day nutrition (60-90g carbs/hr).</td>
-            </tr>
-
-            <!-- WEEK 4 -->
-            <tr><td colspan="4" class="week-header">Week 4: Peak Entry (Oct 26 – Nov 1)</td></tr>
-            <tr class="rest-row">
-                <td>Mon, Oct 26</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Complete structural rest.</td>
-            </tr>
-            <tr class="quality-row">
-                <td>Tue, Oct 27</td>
-                <td><span class="badge bg-gold">Speed</span>VO2 Max</td>
-                <td>12 km (7.5 mi)</td>
-                <td>2 km (1.2 mi) WU. 5 x 1000m @ 3:55 min/km (6:18 min/mi) w/ 90s walk rest. 2 km (1.2 mi) CD.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Wed, Oct 28</td>
-                <td><span class="badge bg-green">Base</span>Easy</td>
-                <td>10 km (6.2 mi)</td>
-                <td>Conversational pace @ 5:30 min/km (8:51 min/mi).</td>
-            </tr>
-            <tr class="quality-row">
-                <td>Thu, Oct 29</td>
-                <td><span class="badge bg-gold">MP</span>Simulation</td>
-                <td>12 km (7.5 mi)</td>
-                <td>2 km (1.2 mi) WU. 8 km (5.0 mi) locked exactly at MP 4:36 min/km (7:24 min/mi). 2 km (1.2 mi) CD.</td>
-            </tr>
-            <tr class="rest-row">
-                <td>Fri, Oct 30</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Mobility.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Sat, Oct 31</td>
-                <td><span class="badge bg-green">Base</span>Shakeout</td>
-                <td>5 km (3.1 mi)</td>
-                <td>Light jogging @ 5:30 min/km (8:51 min/mi).</td>
-            </tr>
-            <tr class="long-row">
-                <td>Sun, Nov 1</td>
-                <td><span class="badge bg-purple">Long</span>Overload</td>
-                <td>29 km (18.0 mi)</td>
-                <td>Heavy aerobic overload. Hold @ 5:20 min/km (8:35 min/mi) for pure time-on-feet conditioning.</td>
-            </tr>
-
-            <!-- WEEK 5 -->
-            <tr><td colspan="4" class="week-header">Week 5: Half Marathon Dress Rehearsal (Nov 2 – Nov 8)</td></tr>
-            <tr class="rest-row">
-                <td>Mon, Nov 2</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Foam roll and recover from 29km.</td>
-            </tr>
-            <tr class="quality-row">
-                <td>Tue, Nov 3</td>
-                <td><span class="badge bg-gold">Speed</span>Primer</td>
-                <td>8 km (5.0 mi)</td>
-                <td>2 km (1.2 mi) WU. 4 x 400m @ 3:55 min/km (6:18 min/mi) to keep CNS sharp. 2 km (1.2 mi) CD.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Wed, Nov 4</td>
-                <td><span class="badge bg-green">Base</span>Easy</td>
-                <td>8 km (5.0 mi)</td>
-                <td>Strict recovery @ 5:30 min/km (8:51 min/mi).</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Thu, Nov 5</td>
-                <td><span class="badge bg-green">Base</span>Shakeout</td>
-                <td>6 km (3.7 mi)</td>
-                <td>Light jogging.</td>
-            </tr>
-            <tr class="rest-row">
-                <td>Fri, Nov 6</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Hydrate.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Sat, Nov 7</td>
-                <td><span class="badge bg-green">Base</span>Pre-Race</td>
-                <td>4 km (2.5 mi)</td>
-                <td>Very light jog + 2x15s strides.</td>
-            </tr>
-            <tr class="race-row">
-                <td>Sun, Nov 8</td>
-                <td><span class="badge bg-red">Race</span>FW Half Marathon</td>
-                <td>25.1 km (15.6 mi)</td>
-                <td><strong>Fort Worth Half Marathon.</strong> Treat as the ultimate MP practice. 2 km (1.2 mi) WU. 21.1 km (13.1 mi) locked precisely at MP 4:36 min/km (7:24 min/mi). Do not sprint. 2 km (1.2 mi) CD.</td>
-            </tr>
-
-            <!-- WEEK 6 -->
-            <tr><td colspan="4" class="week-header">Week 6: The Ultimate Endurance Test (Nov 9 – Nov 15)</td></tr>
-            <tr class="rest-row">
-                <td>Mon, Nov 9</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Complete structural rest. High protein intake.</td>
-            </tr>
-            <tr class="quality-row">
-                <td>Tue, Nov 10</td>
-                <td><span class="badge bg-gold">Threshold</span>Clearance</td>
-                <td>10 km (6.2 mi)</td>
-                <td>2 km (1.2 mi) WU. 4 x 1500m @ 4:15 min/km (6:50 min/mi) w/ 2 min jog. 2 km (1.2 mi) CD.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Wed, Nov 11</td>
-                <td><span class="badge bg-green">Base</span>Easy</td>
-                <td>10 km (6.2 mi)</td>
-                <td>Conversational @ 5:30 min/km (8:51 min/mi).</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Thu, Nov 12</td>
-                <td><span class="badge bg-green">Base</span>Easy</td>
-                <td>8 km (5.0 mi)</td>
-                <td>Conversational @ 5:30 min/km (8:51 min/mi).</td>
-            </tr>
-            <tr class="rest-row">
-                <td>Fri, Nov 13</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Mobility.</td>
-            </tr>
-            <tr class="race-row">
-                <td>Sat, Nov 14</td>
-                <td><span class="badge bg-red">Race</span>UTA 5K</td>
-                <td>8 km (5.0 mi)</td>
-                <td><strong>UTA Homecoming 5K.</strong> Run as a brisk tempo effort @ 4:20 min/km (6:58 min/mi), not an all-out PR attempt. Save legs for Sunday. Include 1.5 km (0.9 mi) WU/CD.</td>
-            </tr>
-            <tr class="long-row">
-                <td>Sun, Nov 15</td>
-                <td><span class="badge bg-purple">Long</span>Overload</td>
-                <td>32 km (19.9 mi)</td>
-                <td>Slow, steady time-on-feet conditioning @ 5:25 min/km (8:43 min/mi).</td>
-            </tr>
-
-            <!-- WEEK 7 -->
-            <tr><td colspan="4" class="week-header">Week 7: Peak Mileage (Nov 16 – Nov 22)</td></tr>
-            <tr class="rest-row">
-                <td>Mon, Nov 16</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Complete rest.</td>
-            </tr>
-            <tr class="quality-row">
-                <td>Tue, Nov 17</td>
-                <td><span class="badge bg-gold">Threshold</span>Tempo</td>
-                <td>14 km (8.7 mi)</td>
-                <td>3 km (1.8 mi) WU. 8 km (5.0 mi) @ 4:20 min/km (6:58 min/mi). 3 km (1.8 mi) CD.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Wed, Nov 18</td>
-                <td><span class="badge bg-green">Base</span>Easy</td>
-                <td>12 km (7.5 mi)</td>
-                <td>Conversational @ 5:20 min/km (8:35 min/mi).</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Thu, Nov 19</td>
-                <td><span class="badge bg-green">Base</span>Easy</td>
-                <td>10 km (6.2 mi)</td>
-                <td>Conversational @ 5:30 min/km (8:51 min/mi).</td>
-            </tr>
-            <tr class="rest-row">
-                <td>Fri, Nov 20</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Mobility.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Sat, Nov 21</td>
-                <td><span class="badge bg-green">Base</span>Shakeout</td>
-                <td>6 km (3.7 mi)</td>
-                <td>Light jogging @ 5:30 min/km (8:51 min/mi).</td>
-            </tr>
-            <tr class="long-row">
-                <td>Sun, Nov 22</td>
-                <td><span class="badge bg-purple">Long</span>Final Monster</td>
-                <td>34 km (21.1 mi)</td>
-                <td>Absolute Peak Volume. 26 km (16.1 mi) @ 5:20 min/km (8:35 min/mi), close final 8 km (5.0 mi) locked at MP 4:36 min/km (7:24 min/mi).</td>
-            </tr>
-
-            <!-- WEEK 8 -->
-            <tr><td colspan="4" class="week-header">Week 8: Taper Phase 1 & Turkey Trot (Nov 23 – Nov 29)</td></tr>
-            <tr class="rest-row">
-                <td>Mon, Nov 23</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Complete structural rest to begin exponential taper.</td>
-            </tr>
-            <tr class="quality-row">
-                <td>Tue, Nov 24</td>
-                <td><span class="badge bg-gold">Speed</span>Sharpness</td>
-                <td>8 km (5.0 mi)</td>
-                <td>2 km (1.2 mi) WU. 6 x 400m @ 3:50 min/km (6:10 min/mi) to keep CNS activated. 2 km (1.2 mi) CD.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Wed, Nov 25</td>
-                <td><span class="badge bg-green">Base</span>Easy</td>
-                <td>6 km (3.7 mi)</td>
-                <td>Very light jog prior to race day.</td>
-            </tr>
-            <tr class="race-row">
-                <td>Thu, Nov 26</td>
-                <td><span class="badge bg-red">Race</span>Turkey Trot 8K</td>
-                <td>11 km (6.8 mi)</td>
-                <td><strong>Fort Worth YMCA Turkey Trot 8k.</strong> 1.5 km (0.9 mi) WU. 8 km (5.0 mi) Race @ 4:25 min/km (7:06 min/mi). 1.5 km (0.9 mi) CD.</td>
-            </tr>
-            <tr class="rest-row">
-                <td>Fri, Nov 27</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Recover.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Sat, Nov 28</td>
-                <td><span class="badge bg-green">Base</span>Shakeout</td>
-                <td>5 km (3.1 mi)</td>
-                <td>Light jogging @ 5:30 min/km (8:51 min/mi).</td>
-            </tr>
-            <tr class="long-row">
-                <td>Sun, Nov 29</td>
-                <td><span class="badge bg-purple">Long</span>Taper Run</td>
-                <td>22 km (13.7 mi)</td>
-                <td>Controlled cruising @ 5:15 min/km (8:27 min/mi) to shed systemic fatigue.</td>
-            </tr>
-
-            <!-- WEEK 9 -->
-            <tr><td colspan="4" class="week-header">Week 9: Taper Phase 2 (Nov 30 – Dec 6)</td></tr>
-            <tr class="rest-row">
-                <td>Mon, Nov 30</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Complete rest.</td>
-            </tr>
-            <tr class="quality-row">
-                <td>Tue, Dec 1</td>
-                <td><span class="badge bg-gold">MP</span>Lock</td>
-                <td>8 km (5.0 mi)</td>
-                <td>1.5 km (0.9 mi) WU. 3 x 1 mile (1.6 km) exactly at MP 4:36 min/km (7:24 min/mi) w/ 90s walk. 1.5 km (0.9 mi) CD.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Wed, Dec 2</td>
-                <td><span class="badge bg-green">Base</span>Easy</td>
-                <td>8 km (5.0 mi)</td>
-                <td>Strict recovery @ 5:30 min/km (8:51 min/mi).</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Thu, Dec 3</td>
-                <td><span class="badge bg-green">Base</span>Easy</td>
-                <td>6 km (3.7 mi)</td>
-                <td>Conversational pace.</td>
-            </tr>
-            <tr class="rest-row">
-                <td>Fri, Dec 4</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Mobility.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Sat, Dec 5</td>
-                <td><span class="badge bg-green">Base</span>Shakeout</td>
-                <td>5 km (3.1 mi)</td>
-                <td>Light jogging + 3x15s strides.</td>
-            </tr>
-            <tr class="long-row">
-                <td>Sun, Dec 6</td>
-                <td><span class="badge bg-purple">Long</span>Taper Run</td>
-                <td>16 km (10.0 mi)</td>
-                <td>Zero MP fatigue. Relaxed Zone 2 @ 5:30 min/km (8:51 min/mi).</td>
-            </tr>
-
-            <!-- WEEK 10 -->
-            <tr><td colspan="4" class="week-header">Week 10: RACE WEEK (Dec 7 – Dec 13)</td></tr>
-            <tr class="rest-row">
-                <td>Mon, Dec 7</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Begin carbohydrate loading protocols.</td>
-            </tr>
-            <tr class="quality-row">
-                <td>Tue, Dec 8</td>
-                <td><span class="badge bg-gold">Speed</span>Primer</td>
-                <td>6 km (3.7 mi)</td>
-                <td>2 km (1.2 mi) WU. 4 x 400m @ MP 4:36 min/km (7:24 min/mi) simply to memorize cadence. 2 km (1.2 mi) CD.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Wed, Dec 9</td>
-                <td><span class="badge bg-green">Base</span>Easy</td>
-                <td>5 km (3.1 mi)</td>
-                <td>Very light jog @ 5:30 min/km (8:51 min/mi).</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Thu, Dec 10</td>
-                <td><span class="badge bg-green">Base</span>Easy</td>
-                <td>4 km (2.5 mi)</td>
-                <td>Light movement + 2x15s strides.</td>
-            </tr>
-            <tr class="rest-row">
-                <td>Fri, Dec 11</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Complete rest. Elevate legs. Hydrate.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Sat, Dec 12</td>
-                <td><span class="badge bg-green">Base</span>Pre-Race</td>
-                <td>3 km (1.8 mi)</td>
-                <td>15 min easy shakeout walk/jog. Organize race-day gear.</td>
-            </tr>
-            <tr class="race-row">
-                <td>Sun, Dec 13</td>
-                <td><span class="badge bg-red">RACE</span>BMW DALLAS</td>
-                <td>42.2 km (26.2 mi)</td>
-                <td><strong>BMW Dallas Marathon.</strong> Target Finish: 3:14:00. Lock into 4:36 min/km (7:24 min/mi) from the gun. Trust the taper and execute your fueling strategy.</td>
-            </tr>
-
-            <!-- WEEK 11 -->
-            <tr><td colspan="4" class="week-header">Week 11: Post-Race Recovery & Charlie Brown 10K (Dec 14 – Dec 20)</td></tr>
-            <tr class="rest-row">
-                <td>Mon - Thu</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Complete structural rest, contrast baths, high protein, and passive mobility walks.</td>
-            </tr>
-            <tr class="easy-row">
-                <td>Fri, Dec 18</td>
-                <td><span class="badge bg-green">Base</span>Shakeout</td>
-                <td>3 km (1.8 mi)</td>
-                <td>Very light recovery spin or walk/jog.</td>
-            </tr>
-            <tr class="race-row">
-                <td>Sat, Dec 19</td>
-                <td><span class="badge bg-red">Race</span>Charlie Brown</td>
-                <td>10 km (6.2 mi)</td>
-                <td><strong>Charlie Brown Christmas 10k.</strong> Treat this as a pure celebratory active recovery flush. Do not look at the watch. Run @ 5:30+ min/km (8:51+ min/mi).</td>
-            </tr>
-            <tr class="rest-row">
-                <td>Sun, Dec 20</td>
-                <td>Rest</td>
-                <td>0 km (0 mi)</td>
-                <td>Celebrate the macrocycle completion.</td>
-            </tr>
-        </tbody>
-    </table>
-
-</body>
-</html>
+        <!-- Role 2 -->
+        <article class="job-entry">
+          <div class="job-header">
+            <div>
+              <span class="job-title-company">SENIOR ACCOUNTANT</span>
+              <span class="job-company"> | Dairy Farmers of America</span>
+              
