@@ -27,7 +27,7 @@
 
     html, body {
       font-family: var(--font-stack);
-      font-size: 8.15pt;
+      font-size: 8pt;
       line-height: 1.25;
       color: var(--text-main);
       background-color: #ffffff;
@@ -37,7 +37,6 @@
     .resume-canvas {
       width: 8.5in;
       max-width: 8.5in;
-      min-height: 11in;
       margin: 15px auto;
       padding: 0.35in 0.45in;
       background: #ffffff;
@@ -52,7 +51,6 @@
         margin: 0;
         padding: 0;
         width: 100%;
-        min-height: auto;
         box-shadow: none;
       }
     }
@@ -61,8 +59,8 @@
     header {
       border-bottom: 2px solid var(--primary-color);
       padding-bottom: 5px;
-      margin-bottom: 6px;
-      text-align: center;
+      margin-bottom: 7px;
+      text-align: left;
     }
 
     h1 {
@@ -78,7 +76,7 @@
     .headline {
       font-size: 8.5pt;
       font-weight: 700;
-      letter-spacing: 0.6px;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
       color: var(--secondary-color);
       margin-bottom: 3px;
@@ -86,11 +84,10 @@
 
     .contact-details {
       display: flex;
-      justify-content: center;
       align-items: center;
       flex-wrap: wrap;
       gap: 6px;
-      font-size: 7.9pt;
+      font-size: 7.85pt;
       color: var(--text-muted);
       font-weight: 500;
     }
@@ -109,60 +106,120 @@
       color: #cbd5e1;
     }
 
-    /* Section Styling */
-    section {
-      margin-bottom: 6px;
+    /* Two-Column Grid */
+    .two-column-layout {
+      display: grid;
+      grid-template-columns: 2.15in 1fr;
+      column-gap: 0.3in;
+      align-items: start;
     }
 
-    section:last-of-type {
-      margin-bottom: 0;
-    }
-
+    /* Section Headings */
     h2 {
       font-size: 8.35pt;
       font-weight: 700;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.7px;
       text-transform: uppercase;
       color: var(--primary-color);
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--secondary-color);
       padding-bottom: 1.5px;
-      margin-bottom: 3.5px;
+      margin-bottom: 5px;
     }
 
-    /* Executive Summary */
+    /* Left Sidebar Styling */
+    aside {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sidebar-block {
+      background: #f8fafc;
+      border-left: 2px solid var(--secondary-color);
+      padding: 5px 6px 6px 7px;
+    }
+
+    .sidebar-block h3 {
+      font-size: 7.75pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--primary-color);
+      margin-bottom: 2px;
+    }
+
+    ul.sidebar-list {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 5px;
+    }
+
+    ul.sidebar-list:last-child {
+      margin-bottom: 0;
+    }
+
+    ul.sidebar-list li {
+      position: relative;
+      padding-left: 9px;
+      font-size: 7.65pt;
+      line-height: 1.22;
+      color: var(--text-main);
+      margin-bottom: 1.5px;
+    }
+
+    ul.sidebar-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      top: -0.5px;
+      color: var(--secondary-color);
+      font-size: 6.8pt;
+    }
+
+    .edu-entry {
+      font-size: 7.75pt;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .edu-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-degree {
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+
+    .edu-school {
+      color: var(--text-muted);
+      font-size: 7.4pt;
+    }
+
+    .edu-note {
+      font-size: 7.1pt;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: 1px;
+    }
+
+    /* Right Main Content */
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
     .summary-text {
-      font-size: 7.95pt;
+      font-size: 7.85pt;
       line-height: 1.25;
       color: var(--text-main);
       text-align: left;
     }
 
-    /* Skills Grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 16px;
-      row-gap: 2.5px;
-      background: #f8fafc;
-      border-left: 2.5px solid var(--secondary-color);
-      padding: 3px 0 3px 7px;
-    }
-
-    .skill-category {
-      font-size: 7.75pt;
-      line-height: 1.23;
-    }
-
-    .skill-category strong {
-      color: var(--primary-color);
-      font-weight: 700;
-    }
-
-    /* Experience List */
     .experience-list {
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 5.5px;
     }
 
     .job-item {
@@ -173,11 +230,11 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 1px;
+      margin-bottom: 1.5px;
     }
 
     .job-title-group {
-      font-size: 8.2pt;
+      font-size: 8.15pt;
       color: var(--primary-color);
     }
 
@@ -197,7 +254,7 @@
     }
 
     .job-date {
-      font-size: 7.6pt;
+      font-size: 7.5pt;
       font-weight: 600;
       color: var(--text-muted);
       white-space: nowrap;
@@ -210,8 +267,8 @@
 
     ul.bullet-list li {
       position: relative;
-      padding-left: 10px;
-      font-size: 7.85pt;
+      padding-left: 9px;
+      font-size: 7.75pt;
       line-height: 1.23;
       color: var(--text-main);
       margin-bottom: 1.2px;
@@ -229,33 +286,6 @@
       top: -0.5px;
       color: var(--secondary-color);
       font-size: 6.8pt;
-    }
-
-    /* Education Block */
-    .edu-item {
-      font-size: 7.9pt;
-      line-height: 1.22;
-      margin-bottom: 2px;
-    }
-
-    .edu-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .edu-degree {
-      font-weight: 700;
-      color: var(--primary-color);
-    }
-
-    .edu-institution {
-      color: var(--text-muted);
-      font-size: 7.6pt;
-    }
-
-    .edu-note {
-      font-size: 7.35pt;
-      color: var(--text-muted);
-      font-style: italic;
     }
   </style>
 </head>
@@ -276,136 +306,165 @@
       </div>
     </header>
 
-    <main>
-      <!-- Summary -->
-      <section id="professional-summary">
-        <h2>Professional Summary</h2>
-        <p class="summary-text">
-          Strategic, tech-forward Accountant and financial operations leader with over 10 years of experience managing complex multi-entity portfolios, full-cycle GAAP compliance, and cross-functional teams. Proven expertise in scaling cloud-accounting ecosystems and driving financial process automation for rapid-growth organizations. Combines strong technical accounting rigor with an English/Technical Writing background to author comprehensive financial SOPs and manage high-impact, asynchronous communications for executive stakeholders and venture-backed founders.
-        </p>
-      </section>
+    <div class="two-column-layout">
+      <!-- Left Sidebar: Skills, Education, Languages -->
+      <aside>
+        <section id="skills">
+          <h2>Expertise &amp; Tech Stack</h2>
+          <div class="sidebar-block">
+            <h3>Cloud ERP &amp; Platforms</h3>
+            <ul class="sidebar-list">
+              <li>QuickBooks Online</li>
+              <li>NetSuite</li>
+              <li>Xero</li>
+              <li>SAP &amp; Dynamics NAV</li>
+              <li>JD Edwards</li>
+            </ul>
 
-      <!-- Technical Stack & Expertise -->
-      <section id="skills">
-        <h2>Expertise &amp; Tech Stack</h2>
-        <div class="skills-grid">
-          <div class="skill-category">
-            <strong>Cloud Accounting &amp; ERP Platforms:</strong> QuickBooks Online, NetSuite, Xero, SAP, Microsoft Dynamics NAV, JD Edwards
+            <h3>SaaS &amp; Operations</h3>
+            <ul class="sidebar-list">
+              <li>Stripe &amp; Bill.com</li>
+              <li>Gusto &amp; Rippling</li>
+              <li>Expensify</li>
+              <li>Advanced MS Excel</li>
+            </ul>
+
+            <h3>Core Competencies</h3>
+            <ul class="sidebar-list">
+              <li>Fractional CFO Delivery</li>
+              <li>SaaS Metrics (MRR, Burn)</li>
+              <li>Multi-Entity Consolidations</li>
+              <li>Full-Cycle GAAP Closes</li>
+              <li>Internal Controls Design</li>
+              <li>Audit Preparedness</li>
+            </ul>
           </div>
-          <div class="skill-category">
-            <strong>SaaS &amp; Tech Ecosystems:</strong> Stripe, Gusto, Rippling, Bill.com, Expensify, Advanced Microsoft Excel
+        </section>
+
+        <section id="education">
+          <h2>Education</h2>
+          <div class="sidebar-block">
+            <div class="edu-entry">
+              <div class="edu-degree">B.B.A. in Accounting</div>
+              <div class="edu-school">University of North Texas (2007)</div>
+            </div>
+            <div class="edu-entry">
+              <div class="edu-degree">Minor in English / Technical Writing</div>
+              <div class="edu-school">University of North Texas (2007)</div>
+              <div class="edu-note">Asynchronous Communication, Financial SOPs &amp; Documentation</div>
+            </div>
           </div>
-          <div class="skill-category">
-            <strong>Financial Operations:</strong> Fractional Client Service Delivery, SaaS Metrics (MRR, Burn Rate, Runway), Multi-Entity Financial Reporting
+        </section>
+
+        <section id="languages">
+          <h2>Languages</h2>
+          <div class="sidebar-block">
+            <ul class="sidebar-list">
+              <li>English (Native / Professional)</li>
+            </ul>
           </div>
-          <div class="skill-category">
-            <strong>Compliance &amp; Governance:</strong> Full-Cycle GAAP Compliance, Internal Controls Frameworks, Multi-State Tax &amp; Payroll, Audit Preparedness
+        </section>
+      </aside>
+
+      <!-- Right Column: Summary & Experience -->
+      <main>
+        <section id="professional-summary">
+          <h2>Professional Summary</h2>
+          <p class="summary-text">
+            Strategic, tech-forward Accountant and financial operations leader with over 10 years of experience managing complex multi-entity portfolios, full-cycle GAAP compliance, and cross-functional teams. Proven expertise in scaling cloud-accounting ecosystems and driving financial process automation for rapid-growth organizations. Combines strong technical accounting rigor with an English/Technical Writing background to author comprehensive financial SOPs and manage high-impact, asynchronous communications for executive stakeholders and venture-backed founders.
+          </p>
+        </section>
+
+        <section id="experience">
+          <h2>Professional Experience</h2>
+          <div class="experience-list">
+
+            <!-- Good Operator -->
+            <article class="job-item">
+              <div class="job-header">
+                <div class="job-title-group">
+                  <span class="job-role">Accounting Manager</span> | <span class="job-company">Good Operator</span> <span class="job-location">| Remote</span>
+                </div>
+                <div class="job-date">March 2026 – Present</div>
+              </div>
+              <ul class="bullet-list">
+                <li>Direct a remote, client-facing fractional accounting pod overseeing full-cycle bookkeeping, complex balance sheet reconciliations, and GAAP-compliant monthly closes for a diverse portfolio of 12+ high-growth client accounts.</li>
+                <li>Prepare and deliver investor-ready monthly financial packages, runway evaluations, burn-rate analyses, and custom SaaS KPI dashboards directly to founders and venture-backed stakeholders.</li>
+                <li>Architect and refine scalable workflows, automated accounting internal controls, and cloud-based standard operating templates, capturing a 25% optimization in month-end close velocity.</li>
+                <li>Supervise, mentor, and audit the daily output of a team of 4 offshore bookkeepers to guarantee work quality and accurate milestone execution under aggressive schedules.</li>
+              </ul>
+            </article>
+
+            <!-- Dairy Farmers of America -->
+            <article class="job-item">
+              <div class="job-header">
+                <div class="job-title-group">
+                  <span class="job-role">Senior Accountant</span> | <span class="job-company">Dairy Farmers of America</span> <span class="job-location">| Fort Worth, TX</span>
+                </div>
+                <div class="job-date">April 2025 – March 2026</div>
+              </div>
+              <ul class="bullet-list">
+                <li>Led strict monthly close procedures, formulated complex journal entries, and audited operational warehouse data subsystems to maintain core reporting alignment.</li>
+                <li>Maintained complete oversight of general ledger (GL) account reconciliations, corporate balance sheets, and comprehensive variance analyses.</li>
+                <li>Analyzed financial statements for systemic trends or operational anomalies, translating dense financial data into actionable, executive-ready analytical briefs.</li>
+                <li>Collaborated cross-functionally with field leadership teams on regional budgeting, financial projections, and custom forecast modeling.</li>
+                <li>Supported formal financial audits, maintained internal controls documentation, and assisted with institutional regulatory compliance.</li>
+              </ul>
+            </article>
+
+            <!-- Skyline Displays -->
+            <article class="job-item">
+              <div class="job-header">
+                <div class="job-title-group">
+                  <span class="job-role">Shared Services Administrator – Accounting</span> | <span class="job-company">Skyline Displays</span>
+                </div>
+                <div class="job-date">March 2015 – April 2025</div>
+              </div>
+              <ul class="bullet-list">
+                <li>Managed the multi-entity financial reporting environment and monthly close infrastructure utilizing specialized configurations within QuickBooks and SAP.</li>
+                <li>Processed semi-monthly payroll cycles for 30+ corporate employees, overseeing 401(k) plan administration and stringent tax compliance.</li>
+                <li>Led a comprehensive cloud accounting migration that transitioned legacy, paper-based records to digital infrastructure, eliminating manual workflows and decreasing processing times by 40%.</li>
+                <li>Prepared, verified, and reconciled quarterly federal payroll documentation directly with the IRS.</li>
+                <li>Managed accounts payable processes, structured vendor payment schedules, and computed accurate commission payouts for regional sales divisions.</li>
+                <li>Supervised 4 accounting team members and served on the Executive Advisory Council to steer corporate digital transformation initiatives.</li>
+              </ul>
+            </article>
+
+            <!-- Traxxas -->
+            <article class="job-item">
+              <div class="job-header">
+                <div class="job-title-group">
+                  <span class="job-role">Senior Accountant</span> | <span class="job-company">Traxxas</span>
+                </div>
+                <div class="job-date">May 2011 – March 2015</div>
+              </div>
+              <ul class="bullet-list">
+                <li>Orchestrated full-cycle corporate accounting for 8 separate business entities simultaneously utilizing QuickBooks and Microsoft Dynamics NAV.</li>
+                <li>Administered complex multi-state sales tax compliance, regional regulatory reporting, and thorough annual 1099 preparations.</li>
+                <li>Maintained robust internal financial controls and auditable transaction records across diverse operational subsidiaries.</li>
+                <li>Developed streamlined processes for accounts payable operations and vendor management.</li>
+              </ul>
+            </article>
+
+            <!-- Woot.com -->
+            <article class="job-item">
+              <div class="job-header">
+                <div class="job-title-group">
+                  <span class="job-role">Accounting Analyst</span> | <span class="job-company">Woot.com (An Amazon Company)</span>
+                </div>
+                <div class="job-date">February 2010 – May 2011</div>
+              </div>
+              <ul class="bullet-list">
+                <li>Managed high-volume accounts payable processes and negotiated core e-commerce vendor relationships.</li>
+                <li>Reconciled general ledger accounts for month-end close procedures and compiled stakeholder financial reports.</li>
+                <li>Automated data compilation reporting engines for month-end close procedures, saving the department 15 hours per month while improving ledger precision.</li>
+              </ul>
+            </article>
+
           </div>
-        </div>
-      </section>
-
-      <!-- Professional Experience -->
-      <section id="experience">
-        <h2>Professional Experience</h2>
-        <div class="experience-list">
-
-          <!-- Good Operator -->
-          <article class="job-item">
-            <div class="job-header">
-              <div class="job-title-group">
-                <span class="job-role">Accounting Manager</span> | <span class="job-company">Good Operator</span> <span class="job-location">| Remote</span>
-              </div>
-              <div class="job-date">March 2026 – Present</div>
-            </div>
-            <ul class="bullet-list">
-              <li>Direct a remote, client-facing fractional accounting pod overseeing full-cycle bookkeeping, complex balance sheet reconciliations, and GAAP-compliant monthly closes for a diverse portfolio of 12+ high-growth client accounts.</li>
-              <li>Prepare and deliver investor-ready monthly financial packages, runway evaluations, burn-rate analyses, and custom SaaS KPI dashboards directly to founders and venture-backed stakeholders.</li>
-              <li>Architect and refine scalable workflows, automated accounting internal controls, and cloud-based standard operating templates, capturing a 25% optimization in month-end close velocity.</li>
-              <li>Supervise, mentor, and audit the daily output of a team of 4 offshore bookkeepers to guarantee work quality and accurate milestone execution under aggressive schedules.</li>
-            </ul>
-          </article>
-
-          <!-- Dairy Farmers of America -->
-          <article class="job-item">
-            <div class="job-header">
-              <div class="job-title-group">
-                <span class="job-role">Senior Accountant</span> | <span class="job-company">Dairy Farmers of America</span> <span class="job-location">| Fort Worth, TX</span>
-              </div>
-              <div class="job-date">April 2025 – March 2026</div>
-            </div>
-            <ul class="bullet-list">
-              <li>Led strict monthly close procedures, formulated complex journal entries, and audited operational warehouse data subsystems to maintain core reporting alignment.</li>
-              <li>Maintained complete oversight of general ledger (GL) account reconciliations, corporate balance sheets, and comprehensive variance analyses.</li>
-              <li>Analyzed financial statements for systemic trends or operational anomalies, translating dense financial data into actionable, executive-ready analytical briefs.</li>
-              <li>Collaborated cross-functionally with field leadership teams on regional budgeting, financial projections, and custom forecast modeling.</li>
-              <li>Supported formal financial audits, maintained internal controls documentation, and assisted with institutional regulatory compliance.</li>
-            </ul>
-          </article>
-
-          <!-- Skyline Displays -->
-          <article class="job-item">
-            <div class="job-header">
-              <div class="job-title-group">
-                <span class="job-role">Shared Services Administrator – Accounting</span> | <span class="job-company">Skyline Displays</span>
-              </div>
-              <div class="job-date">March 2015 – April 2025</div>
-            </div>
-            <ul class="bullet-list">
-              <li>Managed the multi-entity financial reporting environment and monthly close infrastructure utilizing specialized configurations within QuickBooks and SAP.</li>
-              <li>Processed semi-monthly payroll cycles for 30+ corporate employees, overseeing 401(k) plan administration and stringent tax compliance.</li>
-              <li>Led a comprehensive cloud accounting migration that transitioned legacy, paper-based records to digital infrastructure, eliminating manual workflows and decreasing processing times by 40%.</li>
-              <li>Prepared, verified, and reconciled quarterly federal payroll documentation directly with the IRS.</li>
-              <li>Managed accounts payable processes, structured vendor payment schedules, and computed accurate commission payouts for regional sales divisions.</li>
-              <li>Supervised 4 accounting team members and served on the Executive Advisory Council to steer corporate digital transformation initiatives.</li>
-            </ul>
-          </article>
-
-          <!-- Traxxas -->
-          <article class="job-item">
-            <div class="job-header">
-              <div class="job-title-group">
-                <span class="job-role">Senior Accountant</span> | <span class="job-company">Traxxas</span>
-              </div>
-              <div class="job-date">May 2011 – March 2015</div>
-            </div>
-            <ul class="bullet-list">
-              <li>Orchestrated full-cycle corporate accounting for 8 separate business entities simultaneously utilizing QuickBooks and Microsoft Dynamics NAV.</li>
-              <li>Administered complex multi-state sales tax compliance, regional regulatory reporting, and thorough annual 1099 preparations.</li>
-              <li>Maintained robust internal financial controls and auditable transaction records across diverse operational subsidiaries.</li>
-              <li>Developed streamlined processes for accounts payable operations and vendor management.</li>
-            </ul>
-          </article>
-
-          <!-- Woot.com -->
-          <article class="job-item">
-            <div class="job-header">
-              <div class="job-title-group">
-                <span class="job-role">Accounting Analyst</span> | <span class="job-company">Woot.com (An Amazon Company)</span>
-              </div>
-              <div class="job-date">February 2010 – May 2011</div>
-            </div>
-            <ul class="bullet-list">
-              <li>Managed high-volume accounts payable processes and negotiated core e-commerce vendor relationships.</li>
-              <li>Reconciled general ledger accounts for month-end close procedures and compiled stakeholder financial reports.</li>
-              <li>Automated data compilation reporting engines for month-end close procedures, saving the department 15 hours per month while improving ledger precision.</li>
-            </ul>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- Education -->
-      <section id="education">
-        <h2>Education &amp; Professional Foundation</h2>
-        <div class="edu-item">
-          <span class="edu-degree">Bachelor of Business Administration in Accounting</span> <span class="pipe">|</span> <span class="edu-institution">University of North Texas (January 2007)</span>
-        </div>
-        <div class="edu-item">
-          <span class="edu-degree">Minor in English / Technical Writing</span> <span class="pipe">|</span> <span class="edu-institution">University of North Texas (January 2007)</span>
-          <div class="edu-note">Focus: Advanced Asynchronous Communication, Process Documentation, and Corporate SOP Design.</div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </div>
   </div>
 </body>
 </html>
