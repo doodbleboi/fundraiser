@@ -1,478 +1,735 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stephanie Wenk - Resume</title>
-  <style>
-    :root {
-      --primary-color: #0f172a;
-      --secondary-color: #0284c7;
-      --text-main: #1e293b;
-      --text-muted: #475569;
-      --border-color: #cbd5e1;
-      --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sub-3:15 Elite Marathon & 15K/Half Microcycle Dashboard</title>
+<style>
+  :root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-blue: #38bdf8;
+    --accent-emerald: #34d399;
+    --accent-amber: #fbbf24;
+    --accent-rose: #f43f5e;
+    --accent-purple: #c084fc;
+    --border: #475569;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  body { background: var(--bg-primary); color: var(--text-primary); line-height: 1.5; padding: 20px; }
+  .header { max-width: 1400px; margin: 0 auto 20px auto; background: var(--bg-secondary); padding: 24px; border-radius: 12px; border: 1px solid var(--border); }
+  .header h1 { font-size: 1.8rem; color: var(--accent-blue); margin-bottom: 6px; }
+  .header p { color: var(--text-muted); font-size: 0.95rem; }
+  .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+  .badge { background: var(--bg-tertiary); padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  .badge.marathon { color: var(--accent-blue); border: 1px solid var(--accent-blue); }
+  .badge.half { color: var(--accent-purple); border: 1px solid var(--accent-purple); }
+  .badge.race15k { color: var(--accent-amber); border: 1px solid var(--accent-amber); }
+  .badge.physio { color: var(--accent-emerald); border: 1px solid var(--accent-emerald); }
 
-    @page {
-      size: letter portrait;
-      margin: 0.28in 0.35in;
-    }
+  .nav-container { max-width: 1400px; margin: 0 auto 20px auto; }
+  .week-selector { display: flex; overflow-x: auto; gap: 8px; padding-bottom: 8px; margin-bottom: 12px; }
+  .week-btn { background: var(--bg-secondary); border: 1px solid var(--border); color: var(--text-muted); padding: 8px 16px; border-radius: 8px; cursor: pointer; white-space: nowrap; font-size: 0.85rem; font-weight: 600; transition: all 0.2s; }
+  .week-btn.active, .week-btn:hover { background: var(--accent-blue); color: var(--bg-primary); border-color: var(--accent-blue); }
+  
+  .day-selector { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+  .day-btn { background: var(--bg-secondary); border: 1px solid var(--border); color: var(--text-muted); padding: 10px 6px; border-radius: 8px; cursor: pointer; text-align: center; font-size: 0.85rem; transition: all 0.2s; }
+  .day-btn.active { background: var(--accent-emerald); color: var(--bg-primary); border-color: var(--accent-emerald); font-weight: bold; }
+  .day-btn.race-day { border-color: var(--accent-rose); color: var(--accent-rose); font-weight: bold; }
+  .day-btn.race-day.active { background: var(--accent-rose); color: #fff; }
 
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  .content-container { max-width: 1400px; margin: 0 auto; }
+  .day-view { display: none; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+  .day-view.active { display: block; }
+  
+  .day-summary-banner { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; background: var(--bg-tertiary); padding: 16px; border-radius: 8px; margin-bottom: 24px; }
+  .metric-item { display: flex; flex-direction: column; }
+  .metric-label { font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px; }
+  .metric-val { font-size: 1.15rem; font-weight: bold; color: var(--text-primary); margin-top: 2px; }
+  .metric-val.alert { color: var(--accent-rose); }
+  .metric-val.highlight { color: var(--accent-blue); }
 
-    html, body {
-      font-family: var(--font-stack);
-      font-size: 8.4pt;
-      line-height: 1.27;
-      color: var(--text-main);
-      background-color: #ffffff;
-      -webkit-font-smoothing: antialiased;
-    }
+  .timeline { position: relative; border-left: 2px solid var(--border); margin-left: 20px; padding-left: 20px; }
+  .timeline-entry { position: relative; margin-bottom: 24px; }
+  .timeline-entry::before { content: ""; position: absolute; left: -27px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--border); }
+  .timeline-entry.run::before { background: var(--accent-blue); }
+  .timeline-entry.strength::before { background: var(--accent-purple); }
+  .timeline-entry.nutrition::before { background: var(--accent-emerald); }
+  .timeline-entry.work::before { background: var(--accent-amber); }
+  .timeline-entry.race::before { background: var(--accent-rose); box-shadow: 0 0 8px var(--accent-rose); }
 
-    .resume-canvas {
-      width: 8.5in;
-      max-width: 8.5in;
-      height: 11in;
-      max-height: 11in;
-      margin: 0 auto;
-      padding: 0.28in 0.4in;
-      background: #ffffff;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      overflow: hidden;
-    }
+  .time-stamp { font-size: 0.85rem; font-weight: bold; color: var(--text-muted); margin-bottom: 4px; }
+  .entry-card { background: var(--bg-primary); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; }
+  .entry-title { font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; display: flex; align-items: center; justify-content: space-between; }
+  .entry-tag { font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; font-weight: 700; }
+  .tag-run { background: rgba(56, 189, 248, 0.2); color: var(--accent-blue); }
+  .tag-strength { background: rgba(192, 132, 252, 0.2); color: var(--accent-purple); }
+  .tag-nutrition { background: rgba(52, 211, 153, 0.2); color: var(--accent-emerald); }
+  .tag-desk { background: rgba(251, 191, 36, 0.2); color: var(--accent-amber); }
+  .tag-race { background: rgba(244, 63, 94, 0.2); color: var(--accent-rose); }
 
-    @media print {
-      html, body {
-        height: 100%;
-        overflow: hidden;
-        background: #ffffff;
-      }
-      .resume-canvas {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        max-height: 100%;
-        box-shadow: none;
-        overflow: hidden;
-        page-break-after: avoid;
-        page-break-inside: avoid;
-      }
-    }
+  .entry-body { font-size: 0.9rem; color: #cbd5e1; }
+  .entry-body ul { margin-left: 20px; margin-top: 6px; }
+  .entry-body li { margin-bottom: 4px; }
+  .protocol-box { margin-top: 8px; padding: 8px 12px; background: var(--bg-secondary); border-left: 3px solid var(--accent-blue); border-radius: 4px; font-size: 0.85rem; color: var(--text-muted); }
 
-    /* Header */
-    header {
-      border-bottom: 2.5px solid var(--primary-color);
-      padding-bottom: 6px;
-      margin-bottom: 10px;
-      text-align: left;
-    }
-
-    h1 {
-      font-size: 20pt;
-      font-weight: 800;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      color: var(--primary-color);
-      line-height: 1.05;
-      margin-bottom: 2px;
-    }
-
-    .headline {
-      font-size: 9pt;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      color: var(--secondary-color);
-      margin-bottom: 4px;
-    }
-
-    .contact-details {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 8.3pt;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .contact-details a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .contact-details a:hover {
-      text-decoration: underline;
-      color: var(--secondary-color);
-    }
-
-    .pipe {
-      color: #94a3b8;
-    }
-
-    /* Layout */
-    .two-column-layout {
-      display: grid;
-      grid-template-columns: 2.15in 1fr;
-      column-gap: 0.32in;
-      align-items: start;
-      flex: 1;
-    }
-
-    /* Section Headings */
-    h2 {
-      font-size: 9.25pt;
-      font-weight: 700;
-      letter-spacing: 0.7px;
-      text-transform: uppercase;
-      color: var(--primary-color);
-      border-bottom: 1.5px solid var(--secondary-color);
-      padding-bottom: 2px;
-      margin-bottom: 6px;
-    }
-
-    /* Left Sidebar */
-    aside {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .sidebar-block {
-      background: #f8fafc;
-      border-left: 2.5px solid var(--secondary-color);
-      padding: 7px 7px 7px 9px;
-    }
-
-    .sidebar-block h3 {
-      font-size: 8.2pt;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--primary-color);
-      margin-bottom: 3px;
-    }
-
-    ul.sidebar-list {
-      list-style-type: none;
-      padding-left: 0;
-      margin-bottom: 8px;
-    }
-
-    ul.sidebar-list:last-child {
-      margin-bottom: 0;
-    }
-
-    ul.sidebar-list li {
-      position: relative;
-      padding-left: 10px;
-      font-size: 8.1pt;
-      line-height: 1.25;
-      color: var(--text-main);
-      margin-bottom: 1.5px;
-    }
-
-    ul.sidebar-list li::before {
-      content: "▪";
-      position: absolute;
-      left: 0;
-      top: -0.5px;
-      color: var(--secondary-color);
-      font-size: 7pt;
-    }
-
-    .edu-entry {
-      font-size: 8.2pt;
-      line-height: 1.25;
-      margin-bottom: 6px;
-    }
-
-    .edu-entry:last-child {
-      margin-bottom: 0;
-    }
-
-    .edu-degree {
-      font-weight: 700;
-      color: var(--primary-color);
-    }
-
-    .edu-school {
-      color: var(--text-muted);
-      font-size: 7.8pt;
-    }
-
-    .edu-note {
-      font-size: 7.5pt;
-      color: var(--text-muted);
-      font-style: italic;
-      margin-top: 1px;
-    }
-
-    /* Right Column */
-    main {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .summary-text {
-      font-size: 8.3pt;
-      line-height: 1.3;
-      color: var(--text-main);
-      text-align: left;
-    }
-
-    .experience-list {
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
-
-    .job-item {
-      page-break-inside: avoid;
-    }
-
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 2px;
-    }
-
-    .job-title-group {
-      font-size: 8.65pt;
-      color: var(--primary-color);
-    }
-
-    .job-role {
-      font-weight: 700;
-    }
-
-    .job-company {
-      font-weight: 700;
-      color: var(--secondary-color);
-    }
-
-    .job-location {
-      font-weight: 400;
-      color: var(--text-muted);
-      font-size: 8pt;
-    }
-
-    .job-date {
-      font-size: 8pt;
-      font-weight: 600;
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
-
-    ul.bullet-list {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    ul.bullet-list li {
-      position: relative;
-      padding-left: 10px;
-      font-size: 8.1pt;
-      line-height: 1.25;
-      color: var(--text-main);
-      margin-bottom: 1.5px;
-      text-align: left;
-    }
-
-    ul.bullet-list li:last-child {
-      margin-bottom: 0;
-    }
-
-    ul.bullet-list li::before {
-      content: "▪";
-      position: absolute;
-      left: 0;
-      top: -0.5px;
-      color: var(--secondary-color);
-      font-size: 7pt;
-    }
-  </style>
+  @media(max-width: 768px) {
+    .day-selector { grid-template-columns: repeat(4, 1fr); }
+    .timeline { margin-left: 10px; padding-left: 14px; }
+    .timeline-entry::before { left: -21px; }
+  }
+</style>
 </head>
 <body>
-  <div class="resume-canvas">
-    <!-- Header -->
-    <header>
-      <h1>Stephanie Wenk</h1>
-      <p class="headline">Accounting Manager | Virtual CFO, Client Operations Specialist</p>
-      <div class="contact-details">
-        <span>Pantego, Texas</span>
-        <span class="pipe">|</span>
-        <span>469.387.8204</span>
-        <span class="pipe">|</span>
-        <span><a href="mailto:stephwenk@gmail.com">stephwenk@gmail.com</a></span>
-        <span class="pipe">|</span>
-        <span><a href="https://linkedin.com/in/stephanie-wenk" target="_blank" rel="noopener noreferrer">linkedin.com/in/stephanie-wenk</a></span>
-      </div>
-    </header>
 
-    <div class="two-column-layout">
-      <!-- Left Sidebar: Skills and Education -->
-      <aside>
-        <section id="skills">
-          <h2>Expertise</h2>
-          <div class="sidebar-block">
-            <h3>Cloud ERP, Platforms</h3>
-            <ul class="sidebar-list">
-              <li>QuickBooks Online</li>
-              <li>NetSuite</li>
-              <li>Xero</li>
-              <li>SAP, Dynamics NAV</li>
-              <li>JD Edwards</li>
-            </ul>
-
-            <h3>SaaS, Operations</h3>
-            <ul class="sidebar-list">
-              <li>Stripe, Bill.com</li>
-              <li>Gusto, Rippling</li>
-              <li>Expensify</li>
-              <li>Advanced MS Excel</li>
-            </ul>
-
-            <h3>Core Competencies</h3>
-            <ul class="sidebar-list">
-              <li>Fractional CFO Delivery</li>
-              <li>SaaS Metrics (MRR, Burn)</li>
-              <li>Multi-Entity Consolidations</li>
-              <li>Full-Cycle GAAP Closes</li>
-              <li>Internal Controls Design</li>
-              <li>Audit Preparedness</li>
-            </ul>
-          </div>
-        </section>
-
-        <section id="education">
-          <h2>Education</h2>
-          <div class="sidebar-block">
-            <div class="edu-entry">
-              <div class="edu-degree">B.B.A. in Accounting</div>
-              <div class="edu-school">University of North Texas (2007)</div>
-            </div>
-            <div class="edu-entry">
-              <div class="edu-degree">Minor in English, Technical Writing</div>
-              <div class="edu-school">University of North Texas (2007)</div>
-              <div class="edu-note">Financial SOPs, Documentation</div>
-            </div>
-          </div>
-        </section>
-      </aside>
-
-      <!-- Right Column: Summary and Experience -->
-      <main>
-        <section id="professional-summary">
-          <h2>Professional Summary</h2>
-          <p class="summary-text">
-            Strategic accountant with over 10 years of financial operations leadership experience. Proven expertise in multi-entity portfolio management, full-cycle GAAP compliance, cross-functional team direction. Proven record scaling cloud-accounting ecosystems, automating financial processes. Technical Writing background applied directly to authoring financial SOPs, delivering clear communications to executive stakeholders.
-          </p>
-        </section>
-
-        <section id="experience">
-          <h2>Professional Experience</h2>
-          <div class="experience-list">
-
-            <!-- Good Operator -->
-            <article class="job-item">
-              <div class="job-header">
-                <div class="job-title-group">
-                  <span class="job-role">Accounting Manager</span> | <span class="job-company">Good Operator</span> <span class="job-location">| Remote</span>
-                </div>
-                <div class="job-date">March 2026 – Present</div>
-              </div>
-              <ul class="bullet-list">
-                <li>Direct a remote, client-facing fractional accounting pod overseeing full-cycle bookkeeping for 12+ client accounts.</li>
-                <li>Execute complex balance sheet reconciliations, GAAP-compliant monthly closes.</li>
-                <li>Deliver investor-ready monthly financial packages, runway evaluations, burn-rate analyses, custom SaaS KPI dashboards.</li>
-                <li>Refine scalable workflows, automated accounting internal controls, standard operating templates.</li>
-                <li>Cut monthly close turnaround time by 25%.</li>
-                <li>Supervise, mentor, audit the daily output of 4 offshore bookkeepers to ensure milestone execution.</li>
-              </ul>
-            </article>
-
-            <!-- Dairy Farmers of America -->
-            <article class="job-item">
-              <div class="job-header">
-                <div class="job-title-group">
-                  <span class="job-role">Senior Accountant</span> | <span class="job-company">Dairy Farmers of America</span> <span class="job-location">| Fort Worth, TX</span>
-                </div>
-                <div class="job-date">April 2025 – March 2026</div>
-              </div>
-              <ul class="bullet-list">
-                <li>Led monthly close procedures, journal entry preparation, operational warehouse subsystem reconciliations.</li>
-                <li>Maintained general ledger account reconciliations, corporate balance sheets, comprehensive variance analyses.</li>
-                <li>Analyzed financial statements for systemic trends, delivering actionable executive analytical briefs.</li>
-                <li>Partnered with field leadership teams on regional budgeting, financial projections, custom forecast modeling.</li>
-                <li>Supported formal financial audits, internal controls documentation, regulatory compliance.</li>
-              </ul>
-            </article>
-
-            <!-- Skyline Displays -->
-            <article class="job-item">
-              <div class="job-header">
-                <div class="job-title-group">
-                  <span class="job-role">Shared Services Administrator – Accounting</span> | <span class="job-company">Skyline Displays</span>
-                </div>
-                <div class="job-date">March 2015 – April 2025</div>
-              </div>
-              <ul class="bullet-list">
-                <li>Managed multi-entity financial reporting, monthly close infrastructure in QuickBooks, SAP.</li>
-                <li>Processed semi-monthly payroll cycles for 30+ corporate employees.</li>
-                <li>Managed 401(k) plan administration, stringent tax compliance.</li>
-                <li>Led cloud accounting migration from legacy paper records to digital infrastructure, decreasing processing times by 40%.</li>
-                <li>Prepared, verified, reconciled quarterly federal payroll documentation filed with the IRS.</li>
-                <li>Managed accounts payable processes, vendor payment schedules, commission payouts.</li>
-                <li>Supervised 4 accounting team members, serving on the Executive Advisory Council.</li>
-              </ul>
-            </article>
-
-            <!-- Traxxas -->
-            <article class="job-item">
-              <div class="job-header">
-                <div class="job-title-group">
-                  <span class="job-role">Senior Accountant</span> | <span class="job-company">Traxxas</span>
-                </div>
-                <div class="job-date">May 2011 – March 2015</div>
-              </div>
-              <ul class="bullet-list">
-                <li>Orchestrated full-cycle corporate accounting for 8 separate business entities using QuickBooks, Microsoft Dynamics NAV.</li>
-                <li>Administered multi-state sales tax compliance, regional regulatory reporting, annual 1099 filings.</li>
-                <li>Maintained internal financial controls, auditable transaction records across operating subsidiaries.</li>
-                <li>Standardized accounts payable operations, vendor management workflows.</li>
-              </ul>
-            </article>
-
-            <!-- Woot.com -->
-            <article class="job-item">
-              <div class="job-header">
-                <div class="job-title-group">
-                  <span class="job-role">Accounting Analyst</span> | <span class="job-company">Woot.com (An Amazon Company)</span>
-                </div>
-                <div class="job-date">February 2010 – May 2011</div>
-              </div>
-              <ul class="bullet-list">
-                <li>Managed accounts payable processes, maintained core e-commerce vendor relationships.</li>
-                <li>Reconciled general ledger accounts for month-end close procedures.</li>
-                <li>Compiled financial reports for cross-functional stakeholder review.</li>
-                <li>Automated data compilation reporting engines, saving 15 hours monthly while improving ledger precision.</li>
-              </ul>
-            </article>
-
-          </div>
-        </section>
-      </main>
-    </div>
+<div class="header">
+  <h1>Sub-3:15 Elite Marathon & Multi-Race Master Blueprint</h1>
+  <p>David Resetar | 42M | 155 lbs | 5'5" | Remote Architecture (7:15 AM – 5:30 PM CT) | Civil Twilight Capped (~7:00 PM)</p>
+  <div class="badges">
+    <span class="badge race15k">Oct 17: Big Texas 15K (Arlington)</span>
+    <span class="badge half">Nov 8: Fort Worth Half Marathon</span>
+    <span class="badge race15k">Nov 26: FW Turkey Trot 10K</span>
+    <span class="badge marathon">Dec 13: BMW Dallas Marathon (Sub-3:15)</span>
+    <span class="badge physio">Home Gear: 35lb DB | 30lb KB | 35lb Med Ball | 5lb DBs | Pull-up Bar</span>
   </div>
+</div>
+
+<div class="nav-container">
+  <div class="week-selector" id="weekSelector"></div>
+  <div class="day-selector" id="daySelector"></div>
+</div>
+
+<div class="content-container" id="dayViewContainer"></div>
+
+<script>
+// Data structure for the entire 9-week period (Oct 12 to Dec 13)
+const weeksData = [
+  {
+    weekNum: 1,
+    title: "Week 1: 15K Race Week (Oct 12 – Oct 18)",
+    theme: "Taper Volume Drop & Supercompensation for Arlington Big Texas 15K",
+    days: [
+      {
+        date: "Mon, Oct 12",
+        type: "Absorb Long Run & Tissue Flush",
+        runDist: "14.23 mi Completed (AM)",
+        strength: "Pull-up hangs, Med Ball Wall-Sits (Zero failure)",
+        carbTarget: "320g",
+        civilTwilight: "Ends 7:24 PM CT",
+        timeline: [
+          { time: "05:17 AM – 07:24 AM", type: "run", tag: "RUN", title: "Key Long Run Completed", body: "14.23 mi logged at 8:58/mi (2h 07m). Week distance goal unlocked early." },
+          { time: "07:25 AM – 08:00 AM", type: "nutrition", tag: "NUTRITION", title: "Immediate Glycogen & Anabolic Flush", body: "35g Whey Isolate + 5g Creatine in water. Quick contrast shower (2m hot / 30s cold)." },
+          { time: "08:00 AM – 12:00 PM", type: "work", tag: "DESK METABOLISM", title: "Remote Work & SPU Protocol", body: "Execute Soleus Pushups (SPU) 3x20m blocks while seated. 750 mL water + 500mg sodium." },
+          { time: "12:00 PM – 01:00 PM", type: "nutrition", tag: "NUTRITION", title: "High-Satiety Whole Food Lunch", body: "170g grilled chicken, 1.5 cups jasmine rice, zucchini, 1 tbsp olive oil. (~720 kcal)." },
+          { time: "01:00 PM – 05:30 PM", type: "work", tag: "WORK & BET", title: "Work & Cognitive Endurance", body: "Desk posture checks every 90m. 750 mL water. Strict 12:00 PM caffeine cutoff preserved." },
+          { time: "05:50 PM – 06:30 PM", type: "strength", tag: "STRENGTH & RECOVERY", title: "Spinal Decompression & Med Ball Wall-Sit", body: "Pull-Up Bar Dead Hangs (3x30s); 35-lb Med Ball Wall-Sit (2x30s isometric quad armor); 5-lb DB rear delt flyes (2x20). Concludes well before Civil Twilight (7:24 PM)." },
+          { time: "06:45 PM – 07:30 PM", type: "nutrition", tag: "NUTRITION", title: "Anti-Inflammatory Dinner", body: "200g baked salmon, 1 large sweet potato, spinach salad with avocado. 12 oz Tart Cherry Juice." },
+          { time: "08:30 PM – 09:30 PM", type: "work", tag: "RECOVERY & SLEEP", title: "Tissue Rolling & Sleep Architecture", body: "Foam roll TFL/glute medius. 200mg Magnesium Glycinate. Sleep by 09:30 PM." }
+        ]
+      },
+      {
+        date: "Tue, Oct 13",
+        type: "Turnover Primer & Deload Strength",
+        runDist: "5.5 mi (inc. 4x800m)",
+        strength: "Split A Deload: 35lb DB Split Squats, 30lb KB RDLs",
+        carbTarget: "340g",
+        civilTwilight: "Ends 7:23 PM CT",
+        timeline: [
+          { time: "05:00 AM – 05:30 AM", type: "nutrition", tag: "PRIMER", title: "Pre-Run Nitrate & Fast Carb Primer", body: "300 mL water + 150mg sodium. 1 banana. Concentrated Beetroot juice shot (6-12 mmol nitrate)." },
+          { time: "05:30 AM – 06:15 AM", type: "run", tag: "RUN", title: "Neuromuscular Speed Primer", body: "1.5 mi easy warmup → 4 x 800m @ 15K goal effort (7:05–7:15/mi, 4:25–4:30/km) w/ 2m walking rest → 3x100m strides → 1.0 mi cool. Cadence 178–182 spm." },
+          { time: "06:15 AM – 07:15 AM", type: "nutrition", tag: "NUTRITION", title: "Whey Isolate + Work Prep", body: "35g Whey + 5g Creatine. Shower, transition to remote desk." },
+          { time: "07:15 AM – 12:00 PM", type: "work", tag: "DESK & COMMUTE", title: "Work & Active Flushing", body: "High cadence Zone 1 bike spin to coffee shop (85–90 RPM). Soleus pushups while working. 1L water." },
+          { time: "12:00 PM – 01:00 PM", type: "nutrition", tag: "NUTRITION", title: "Lunch", body: "170g lean turkey breast, 1.5 cups quinoa, steamed broccoli. (~680 kcal)." },
+          { time: "01:00 PM – 05:30 PM", type: "work", tag: "WORK", title: "Work Window", body: "Hydration: 750 mL water. Light shoulder mobility." },
+          { time: "05:50 PM – 06:25 PM", type: "strength", tag: "STRENGTH", title: "Strength Split A Deload", body: "Bulgarian Split Squats (35-lb DB, 2x6/leg, 3s down); Single-Leg KB RDL (30-lb KB, 2x6/leg); Strict Pull-Ups (3x5 reps); 5-lb DB Deltoid Matrix (2x15). Concludes before 7:00 PM." },
+          { time: "06:45 PM – 09:30 PM", type: "nutrition", tag: "RECOVERY", title: "Dinner, Visualization & Sleep", body: "200g flank steak, 2 cups roasted red potatoes. Review Arlington 15K map. Magnesium at 9:15 PM; asleep by 09:30 PM." }
+        ]
+      },
+      {
+        date: "Wed, Oct 14",
+        type: "Aerobic Maintenance & Med Ball Carries",
+        runDist: "4.5 mi Zone 2",
+        strength: "35-lb Med Ball High-Chest Carries, RKC Planks",
+        carbTarget: "320g",
+        civilTwilight: "Ends 7:22 PM CT",
+        timeline: [
+          { time: "05:15 AM – 05:35 AM", type: "nutrition", tag: "PRIMER", title: "Hydration Primer", body: "300 mL water + 1 slice sourdough with 1 tbsp honey." },
+          { time: "05:35 AM – 06:15 AM", type: "run", tag: "RUN", title: "Conversational Zone 2 Base Run", body: "4.5 mi @ 8:50–9:10/mi (5:30–5:40/km). Soft turf/pavement. Keep HR strictly capped below 145 bpm." },
+          { time: "07:15 AM – 05:30 PM", type: "work", tag: "WORK & DESK", title: "Desk Operating Window", body: "1 cup rolled oats w/ protein at 7:30 AM. SPU sets throughout workday. Lunch at 12:00 PM (180g cod, 1.5c brown rice). 1.75L water total." },
+          { time: "05:50 PM – 06:25 PM", type: "strength", tag: "STRENGTH", title: "Core Integrity & Med Ball Carry", body: "35-lb Med Ball Bear-Hug Carry (3x40s continuous upright walks); Hanging Knee Raises (3x10); Heavy RKC Planks (3x30s max intra-abdominal pressure). Concludes well before dusk." },
+          { time: "06:45 PM – 09:30 PM", type: "nutrition", tag: "RECOVERY", title: "Dinner & Sleep", body: "180g chicken, 1.5c whole grain pasta. Tart cherry juice. Hamstring/hip mobility. Asleep by 09:30 PM." }
+        ]
+      },
+      {
+        date: "Thu, Oct 15",
+        type: "Marathon Pace Calibration & Glycogen Pre-Load",
+        runDist: "4.5 mi (inc. 2 mi MP)",
+        strength: "30lb KB Seated Soleus Raises, Dead Hangs",
+        carbTarget: "420g (Glycogen Shift)",
+        civilTwilight: "Ends 7:20 PM CT",
+        timeline: [
+          { time: "05:15 AM – 05:35 AM", type: "nutrition", tag: "PRIMER", title: "Pre-Run Fuel", body: "300 mL water + electrolytes. 1 ripe banana." },
+          { time: "05:35 AM – 06:20 AM", type: "run", tag: "RUN", title: "Pace Calibration Run", body: "1.5 mi warmup → 2.0 mi continuous locked at target race pace (7:20–7:25/mi / 4:33–4:36/km) → 1.0 mi cool. Memorize 178 spm turnover." },
+          { time: "07:15 AM – 05:30 PM", type: "work", tag: "WORK & NUTRITION", title: "Work & Shift to Smooth Carbs", body: "2 slices sourdough + 2 poached eggs. Lunch: 180g chicken + 2 cups white jasmine rice (lowering fiber). Desk SPU cycles. 1.75L water." },
+          { time: "05:50 PM – 06:15 PM", type: "strength", tag: "STRENGTH", title: "Tendon Armor & Decompression", body: "Seated Soleus Calf Raises (30-lb KB across knees, 3x8 reps, 2s bottom pause); Pull-Up Bar Dead Hangs (3x30s); 5-lb DB lateral raises (2x15). Concludes before 6:15 PM." },
+          { time: "06:30 PM – 09:30 PM", type: "nutrition", tag: "RECOVERY", title: "Race Eve-1 Dinner & Gear Checklist", body: "170g salmon, 1.5c mashed peeled potatoes. Lay out racing singlet, anti-chafing balm, GPS watch. Magnesium at 9:15 PM; asleep by 09:30 PM." }
+        ]
+      },
+      {
+        date: "Fri, Oct 16",
+        type: "Pre-Race Shakeout & Low-Fiber Carb Load",
+        runDist: "2.5 mi Shakeout + 3 Strides",
+        strength: "Total Rest (Legs-up-the-wall only)",
+        carbTarget: "550g (Low-Fiber Loading)",
+        civilTwilight: "Ends 7:19 PM CT",
+        timeline: [
+          { time: "05:45 AM – 06:15 AM", type: "run", tag: "RUN", title: "Neuromuscular Shakeout", body: "2.0 mi extremely easy conversational jog (9:15–9:30/mi) + 3 x 60m relaxed strides. Wake up the CNS spring stiffness without fatiguing glycogen." },
+          { time: "07:15 AM – 12:00 PM", type: "work", tag: "CARB LOAD BLOCK 1", title: "Natural Grocers Low-Residue Carbs", body: "Plain bagel w/ 2 tbsp jam + 1 banana + apple juice (~120g carbs). Work seated; maintain low energy expenditure." },
+          { time: "12:00 PM – 01:00 PM", type: "nutrition", tag: "CARB LOAD LUNCH", title: "White Jasmine Rice Feast", body: "180g lean chicken breast, 2.5 cups cooked white jasmine rice with liquid aminos. Zero high-fiber veggies (~125g carbs)." },
+          { time: "01:00 PM – 05:30 PM", type: "work", tag: "WORK & HYDRATION", title: "Work & Fluid Retention", body: "Sip 1L water with electrolyte powder. 4 organic white rice cakes with raw honey (~65g carbs) at 3:30 PM." },
+          { time: "05:50 PM – 06:20 PM", type: "strength", tag: "RECOVERY", title: "Parasympathetic Activation", body: "Legs-Up-The-Wall Pose (10 mins). 5 mins deep diaphragmatic box breathing. Zero lifting." },
+          { time: "06:20 PM – 07:00 PM", type: "nutrition", tag: "EARLY DINNER", title: "Smooth Starch Realization Dinner", body: "2 large peeled baked russet potatoes with pinch of salt, 150g cod/chicken breast, 1 slice white sourdough w/ honey (~120g carbs). Under 10g fat/fiber." },
+          { time: "07:00 PM – 09:00 PM", type: "work", tag: "RACE PREP & SLEEP", title: "Bib Pinned & Early Lights Out", body: "Pin bib to singlet. Sip 300 mL electrolyte water. Magnesium at 8:45 PM. Asleep by 09:00 PM (8.5-hr sleep bank)." }
+        ]
+      },
+      {
+        date: "Sat, Oct 17",
+        type: "PAID RACE: Big Texas Run 15K",
+        runDist: "15.0 km Race + 2 mi Warmup/Cooldown",
+        strength: "Post-race active walking only",
+        carbTarget: "380g",
+        civilTwilight: "Ends 7:18 PM CT",
+        timeline: [
+          { time: "05:30 AM – 06:00 AM", type: "nutrition", tag: "RACE BREAKFAST", title: "Race Morning Fueling Protocol", body: "1 plain bagel w/ 2 tbsp honey + 1 ripe banana + 400 mL water with 500mg sodium. Black coffee for GI clearance (~100g fast carbs)." },
+          { time: "06:20 AM – 06:55 AM", type: "race", tag: "LOGISTICS", title: "Transit to Texas Live! Arlington", body: "Drive to Globe Life Field. Park in Lot B (General Parking via Stadium Dr)." },
+          { time: "07:25 AM – 07:45 AM", type: "run", tag: "WARMUP", title: "15K Dynamic Warmup", body: "1.0 mi easy jog (9:30/mi) → dynamic leg swings & skips → 3x60m accelerations ending at 7:15/mi. Consume 1 energy gel at 7:46 AM." },
+          { time: "08:00 AM – 09:10 AM", type: "race", tag: "15K RACE", title: "Race Execution: Arlington 15K", body: "Miles 1-3: 7:22–7:26/mi (controlled start). Miles 3-6: 7:18–7:22/mi (metronomic pace). Miles 6-8: 7:16–7:20/mi. Miles 8-9.32: 7:05–7:12/mi kick. Projected Finish: 1:07:45–1:08:30." },
+          { time: "09:10 AM – 09:30 AM", type: "nutrition", tag: "POST RACE", title: "Immediate Glycogen & Protein Window", body: "Collect medal & water. 40g Whey Isolate + electrolyte beverage. Walk 10 mins continuously." },
+          { time: "11:30 AM – 05:00 PM", type: "work", tag: "REST & CELEBRATION", title: "Post-Race Feast & Power Nap", body: "3 eggs, sourdough, berries, sweet potato hash. 45-min power nap. Casual afternoon with partner/pets." },
+          { time: "05:00 PM – 05:30 PM", type: "strength", tag: "FLUSH", title: "Barefoot Grass Walk", body: "15 mins barefoot walking on soft grass to restore foot intrinsic mechanics before dusk. Asleep by 09:30 PM." }
+        ]
+      },
+      {
+        date: "Sun, Oct 18",
+        type: "Aerobic Flush & Deload Reset",
+        runDist: "4.5 mi Easy Flush",
+        strength: "Foam rolling & hip mobility",
+        carbTarget: "300g",
+        civilTwilight: "Ends 7:17 PM CT",
+        timeline: [
+          { time: "07:00 AM – 07:30 AM", type: "nutrition", tag: "PRIMER", title: "Morning Hydration", body: "300 mL water + electrolytes + 1 banana." },
+          { time: "07:30 AM – 08:15 AM", type: "run", tag: "RUN", title: "Post-15K Regenerative Flush", body: "4.5 mi @ 9:15–9:35/mi on soft Trinity Trails gravel. Keep effort strictly in Zone 1/2 to clear acute race waste." },
+          { time: "09:00 AM – 06:00 PM", type: "work", tag: "WEEKLY RESET", title: "Nutrition, Meal Prep & Mental Audit", body: "Weekly grocery haul from Natural Grocers. High protein, hydration. 20-min foam roll. Full sleep by 09:30 PM." }
+        ]
+      }
+    ]
+  },
+  {
+    weekNum: 2,
+    title: "Week 2: Aerobic Expansion (Oct 19 – Oct 25)",
+    theme: "Resuming Marathon Specificity & Heavy Posterior Consolidations",
+    days: [
+      {
+        date: "Mon, Oct 19",
+        type: "Autonomic Reset & Desk Metabolism",
+        runDist: "0.0 mi (Full Rest)",
+        strength: "Foam rolling, SPU desk protocols",
+        carbTarget: "280g",
+        civilTwilight: "Ends 7:16 PM CT",
+        timeline: [
+          { time: "07:15 AM – 05:30 PM", type: "work", tag: "WORK & SPU", title: "Remote Work & Active Recovery", body: "Soleus Pushups (SPU) during seated work. 2L water. Clean balanced nutrition." },
+          { time: "05:50 PM – 06:30 PM", type: "strength", tag: "MOBILITY", title: "Evening Hip Opening Flow", body: "Couch stretch (2x60s/side), pigeon pose, 5-lb DB rear delt flyes (3x20). Bed by 09:30 PM." }
+        ]
+      },
+      {
+        date: "Tue, Oct 20",
+        type: "Lactate Threshold Intervals & Strength Split A",
+        runDist: "6.5 mi (inc. 5x1000m @ LT)",
+        strength: "Split A: 35lb DB Split Squats, 30lb KB RDLs, Pull-ups",
+        carbTarget: "350g",
+        civilTwilight: "Ends 7:15 PM CT",
+        timeline: [
+          { time: "05:15 AM – 06:20 AM", type: "run", tag: "RUN", title: "LT Interval Session", body: "1.5 mi warmup → 5 x 1000m @ 6:50–7:00/mi (4:15–4:20/km) w/ 90s walk → 1.0 mi cool." },
+          { time: "07:15 AM – 05:30 PM", type: "work", tag: "WORK", title: "Work Window & SPU", body: "High protein recovery, desk soleus pushups, hydration 1.5L." },
+          { time: "05:50 PM – 06:25 PM", type: "strength", tag: "STRENGTH", title: "Strength Split A (Hard Day Consolidation)", body: "DB Bulgarian Split Squats (35-lb DB, 3x8/leg); Single-Leg KB RDLs (30-lb KB, 3x8/leg); Pull-Ups (3x6 reps). Ends before dusk." }
+        ]
+      },
+      {
+        date: "Wed, Oct 21",
+        type: "Zone 2 Aerobic Base",
+        runDist: "5.5 mi Conversational",
+        strength: "35-lb Med Ball Wall-Sits",
+        carbTarget: "320g",
+        civilTwilight: "Ends 7:14 PM CT",
+        timeline: [
+          { time: "05:30 AM – 06:20 AM", type: "run", tag: "RUN", title: "Steady Zone 2 Base Run", body: "5.5 mi @ 8:50–9:05/mi. Smooth aerobic volume." },
+          { time: "07:15 AM – 05:30 PM", type: "work", tag: "WORK", title: "Work & Commute", body: "Zone 1 bike commute to coffee shop. SPU blocks at desk." },
+          { time: "05:50 PM – 06:20 PM", type: "strength", tag: "STRENGTH", title: "Core & Tendon Maintenance", body: "35-lb Med Ball Wall-Sits (3x45s); RKC Planks (3x30s); Pull-Up Bar Dead Hangs (3x40s)." }
+        ]
+      },
+      {
+        date: "Thu, Oct 22",
+        type: "Marathon Pace (MP) Progression",
+        runDist: "7.0 mi (inc. 4 mi @ MP)",
+        strength: "30lb KB Soleus Raises, Med Ball Carries",
+        carbTarget: "360g",
+        civilTwilight: "Ends 7:13 PM CT",
+        timeline: [
+          { time: "05:15 AM – 06:25 AM", type: "run", tag: "RUN", title: "Marathon Pace Progression", body: "1.5 mi warmup → 4.0 mi continuous locked @ 7:25–7:27/mi (4:36–4:37/km) → 1.5 mi cool." },
+          { time: "07:15 AM – 05:30 PM", type: "work", tag: "WORK", title: "Desk Work & SPU", body: "Hydration 2L water. 15-min Brain Endurance Training puzzle pre-lunch." },
+          { time: "05:50 PM – 06:20 PM", type: "strength", tag: "STRENGTH", title: "Tendon Power & Loaded Carries", body: "Seated Soleus Calf Raises (30-lb KB, 3x10); 35-lb Med Ball Bear-Hug Carry (3x45s). Concludes before dark." }
+        ]
+      },
+      {
+        date: "Fri, Oct 23",
+        type: "Aerobic Flush & Strides",
+        runDist: "4.0 mi Easy + 4 Strides",
+        strength: "Total Rest",
+        carbTarget: "340g",
+        civilTwilight: "Ends 7:12 PM CT",
+        timeline: [
+          { time: "05:35 AM – 06:15 AM", type: "run", tag: "RUN", title: "Easy Shakeout & Strides", body: "4.0 mi conversational jog (9:10/mi) + 4 x 100m strides to prime neuromuscular turn." },
+          { time: "07:15 AM – 05:30 PM", type: "work", tag: "WORK", title: "Remote Work", body: "Pre-long run glycogen priming with sweet potatoes and rice at lunch/dinner." }
+        ]
+      },
+      {
+        date: "Sat, Oct 24",
+        type: "Key Long Run: Trinity Trails Simulation",
+        runDist: "16.0 mi Progressive (Last 3 mi @ MP)",
+        strength: "Full rest & Tart Cherry loading",
+        carbTarget: "420g",
+        civilTwilight: "Ends 7:11 PM CT",
+        timeline: [
+          { time: "06:00 AM – 08:30 AM", type: "run", tag: "RUN", title: "Key Long Run: 16 Miles", body: "Miles 1-13 @ 8:45–9:00/mi → Miles 13-16 locked at target MP (7:25–7:27/mi). Practice 60g CHO/hr hydrogels." },
+          { time: "09:00 AM – 05:00 PM", type: "nutrition", tag: "RECOVERY", title: "Post-Long Run Anabolic Recovery", body: "40g Whey Isolate, 12 oz Tart Cherry Juice, high carb meals, 1 hour nap." }
+        ]
+      },
+      {
+        date: "Sun, Oct 25",
+        type: "Active Recovery Flush",
+        runDist: "3.5 mi Conversational",
+        strength: "Foam rolling & stretching",
+        carbTarget: "300g",
+        civilTwilight: "Ends 7:10 PM CT",
+        timeline: [
+          { time: "07:30 AM – 08:05 AM", type: "run", tag: "RUN", title: "Zone 1 Aerobic Flush", body: "3.5 mi @ 9:20–9:40/mi on grass/turf. Restores blood flow and clears peripheral fatigue." }
+        ]
+      }
+    ]
+  },
+  {
+    weekNum: 3,
+    title: "Week 3: Peak Pre-Half Build (Oct 26 – Nov 01)",
+    theme: "Lactate Tolerance Overload & High-Economy Strides",
+    days: [
+      {
+        date: "Mon, Oct 26", type: "Full Rest", runDist: "0.0 mi", strength: "Mobility & SPU", carbTarget: "280g", civilTwilight: "Ends 7:09 PM CT",
+        timeline: [{ time: "07:15 AM – 05:30 PM", type: "work", tag: "WORK & SPU", title: "Desk SPU & Passive Restoration", body: "Seated soleus pushups; hip flexor stretches; 2L hydration." }]
+      },
+      {
+        date: "Tue, Oct 27", type: "VO2 Max Ladder & Strength Split A", runDist: "7.0 mi (inc. 6x800m @ 6:20/mi)", strength: "35lb DB Split Squats & 30lb KB RDLs", carbTarget: "360g", civilTwilight: "Ends 7:08 PM CT",
+        timeline: [
+          { time: "05:15 AM – 06:25 AM", type: "run", tag: "RUN", title: "Track Intervals: 6x800m", body: "1.5 mi warmup → 6 x 800m @ 3:56/km (6:20/mi) w/ 2m walk recovery → 1.0 mi cool." },
+          { time: "05:50 PM – 06:25 PM", type: "strength", tag: "STRENGTH", title: "Strength Split A", body: "Bulgarian Split Squats (35-lb DB, 3x6/leg); Single-Leg KB RDL (30-lb KB, 3x6/leg); Pull-Ups (3x6)." }
+        ]
+      },
+      {
+        date: "Wed, Oct 28", type: "Zone 2 Base", runDist: "6.0 mi Aerobic", strength: "Med Ball Carries & Planks", carbTarget: "320g", civilTwilight: "Ends 7:07 PM CT",
+        timeline: [{ time: "05:30 AM – 06:25 AM", type: "run", tag: "RUN", title: "Trinity Trails Zone 2 Run", body: "6.0 mi @ 8:50–9:05/mi. Cadence 178 spm." }]
+      },
+      {
+        date: "Thu, Oct 29", type: "Threshold Tempo & Tendon Work", runDist: "7.5 mi (inc. 5 mi @ 7:00/mi)", strength: "30lb KB Soleus Raises", carbTarget: "380g", civilTwilight: "Ends 7:06 PM CT",
+        timeline: [
+          { time: "05:15 AM – 06:30 AM", type: "run", tag: "RUN", title: "Lactate Threshold Tempo", body: "1.5 mi warmup → 5.0 mi continuous @ 6:58–7:02/mi → 1.0 mi cool." },
+          { time: "05:50 PM – 06:20 PM", type: "strength", tag: "STRENGTH", title: "Tendon Loading", body: "Seated Soleus Raises (30-lb KB, 3x10); Pull-Up Bar Dead Hangs (3x45s)." }
+        ]
+      },
+      {
+        date: "Fri, Oct 30", type: "Easy Flush", runDist: "4.0 mi Easy", strength: "Rest", carbTarget: "320g", civilTwilight: "Ends 7:05 PM CT",
+        timeline: [{ time: "05:40 AM – 06:20 AM", type: "run", tag: "RUN", title: "Conversational Recovery", body: "4.0 mi @ 9:15/mi + 4x100m strides." }]
+      },
+      {
+        date: "Sat, Oct 31", type: "Overload Long Run", runDist: "18.0 mi Progressive", strength: "Tart Cherry Loading", carbTarget: "440g", civilTwilight: "Ends 7:04 PM CT",
+        timeline: [{ time: "06:00 AM – 08:45 AM", type: "run", tag: "RUN", title: "18-Mile Long Run", body: "13 mi @ 8:45/mi → 5 mi locked @ MP (7:25/mi). Test 75g CHO/hr hydrogels." }]
+      },
+      {
+        date: "Sun, Nov 01", type: "Active Recovery", runDist: "4.0 mi Flush", strength: "Mobility", carbTarget: "300g", civilTwilight: "Ends 6:03 PM CST (Standard Time Shift)",
+        timeline: [{ time: "07:30 AM – 08:10 AM", type: "run", tag: "RUN", title: "Recovery Jog", body: "4.0 mi @ 9:25/mi on soft turf. Full rest the rest of day." }]
+      }
+    ]
+  },
+  {
+    weekNum: 4,
+    title: "Week 4: Fort Worth Half Race Week (Nov 02 – Nov 08)",
+    theme: "Taper & Supercompensation for Fort Worth Half Marathon (1501 University Dr)",
+    days: [
+      {
+        date: "Mon, Nov 02", type: "Full Rest", runDist: "0.0 mi", strength: "Passive hangs, SPU", carbTarget: "280g", civilTwilight: "Ends 6:02 PM CST",
+        timeline: [{ time: "07:15 AM – 05:30 PM", type: "work", tag: "WORK & SPU", title: "Rest & Desk Metabolism", body: "SPU cycles at desk. Contrast shower in evening." }]
+      },
+      {
+        date: "Tue, Nov 03", type: "Half-Marathon Pace Tune-Up", runDist: "5.0 mi (inc. 3x1 mi @ HMP)", strength: "Deload Split A (Bodyweight & 5lb DBs)", carbTarget: "340g", civilTwilight: "Ends 6:01 PM CST",
+        timeline: [
+          { time: "05:25 AM – 06:15 AM", type: "run", tag: "RUN", title: "HMP Sharpening Run", body: "1.5 mi warmup → 3 x 1-mile @ 6:55–7:00/mi w/ 2m walk recovery → 0.5 mi cool." },
+          { time: "05:45 PM – 06:10 PM", type: "strength", tag: "STRENGTH", title: "Deload Strength", body: "Bodyweight split squats (2x8/leg); 5-lb DB rear delt flyes (2x15); Pull-Up hangs (2x30s)." }
+        ]
+      },
+      {
+        date: "Wed, Nov 04", type: "Zone 2 Base", runDist: "4.0 mi Conversational", strength: "Rest", carbTarget: "320g", civilTwilight: "Ends 6:01 PM CST",
+        timeline: [{ time: "05:35 AM – 06:15 AM", type: "run", tag: "RUN", title: "Easy Jog", body: "4.0 mi @ 9:00/mi. SPU blocks during remote workday." }]
+      },
+      {
+        date: "Thu, Nov 05", type: "Pace Lock & Tendon Prime", runDist: "4.0 mi (inc. 2 mi MP)", strength: "30lb KB Soleus (1 set)", carbTarget: "380g", civilTwilight: "Ends 6:00 PM CST",
+        timeline: [
+          { time: "05:35 AM – 06:15 AM", type: "run", tag: "RUN", title: "MP Calibration", body: "1.0 mi warmup → 2.0 mi @ 7:25/mi → 1.0 mi cool." },
+          { time: "05:45 PM – 06:05 PM", type: "strength", tag: "STRENGTH", title: "Tendon Priming", body: "Seated Soleus (30-lb KB, 2x8); Dead hangs (2x30s)." }
+        ]
+      },
+      {
+        date: "Fri, Nov 06", type: "Pre-Race Shakeout", runDist: "2.5 mi + 3 Strides", strength: "Legs-up-the-wall", carbTarget: "500g (Carb Load)", civilTwilight: "Ends 5:59 PM CST",
+        timeline: [
+          { time: "05:45 AM – 06:10 AM", type: "run", tag: "RUN", title: "Shakeout Run", body: "2.5 mi very easy @ 9:20/mi + 3 strides." },
+          { time: "07:15 AM – 05:30 PM", type: "work", tag: "NUTRITION", title: "Low-Residue Carb Load", body: "White rice, applesauce, bagels, coconut water. Sip electrolytes." }
+        ]
+      },
+      {
+        date: "Sat, Nov 07", type: "Rest & Realization", runDist: "0.0 mi (Full Rest)", strength: "Zero lifting", carbTarget: "550g (Low-Fiber Feast)", civilTwilight: "Ends 5:59 PM CST",
+        timeline: [
+          { time: "08:00 AM – 06:00 PM", type: "nutrition", tag: "CARB LOAD", title: "Final Glycogen Saturation", body: "Peeled potatoes, cream of rice cereal, tart cherry juice. Lay out bib & half tights. Bed by 09:00 PM." }
+        ]
+      },
+      {
+        date: "Sun, Nov 08", type: "PAID RACE: Fort Worth Half Marathon", runDist: "13.1 mi Race (1501 University Dr)", strength: "Post-race active walking", carbTarget: "380g", civilTwilight: "Ends 5:58 PM CST",
+        timeline: [
+          { time: "05:30 AM – 06:30 AM", type: "nutrition", tag: "RACE BREAKFAST", title: "Pre-Race Fuel & Transit", body: "Bagel w/ honey + banana + 400 mL electrolyte water. Drive to 1501 University Dr, Fort Worth." },
+          { time: "07:30 AM – 09:15 AM", type: "race", tag: "HALF MARATHON", title: "Race Execution: Fort Worth Half", body: "Target Pace: 6:55–7:02/mi (Sub-1:32:00 target). Lock cadence at 178–182 spm along Trinity Trails. Hydrogel at Mile 6.5." },
+          { time: "09:30 AM – 05:00 PM", type: "nutrition", tag: "RECOVERY", title: "Post-Race Feast & Celebration", body: "Recovery shake, hot-cold shower, feast, nap. Full mental decompression." }
+        ]
+      }
+    ]
+  },
+  {
+    weekNum: 5,
+    title: "Week 5: Post-Half Recovery & Volume Re-Entry (Nov 09 – Nov 15)",
+    theme: "Tissue Remodeling & Structural Durability",
+    days: [
+      {
+        date: "Mon, Nov 09", type: "Full Rest", runDist: "0.0 mi", strength: "Spinal decompression", carbTarget: "280g", civilTwilight: "Ends 5:57 PM CST",
+        timeline: [{ time: "07:15 AM – 05:30 PM", type: "work", tag: "WORK & SPU", title: "Absorb Half Marathon Effort", body: "SPU cycles at desk. Focus on high protein (1.8g/kg) and anti-inflammatory whole foods." }]
+      },
+      {
+        date: "Tue, Nov 10", type: "Aerobic Flush Run", runDist: "4.5 mi Conversational", strength: "Split A: 35lb DB RDLs (2 sets)", carbTarget: "320g", civilTwilight: "Ends 5:57 PM CST",
+        timeline: [
+          { time: "05:35 AM – 06:15 AM", type: "run", tag: "RUN", title: "Recovery Base Jog", body: "4.5 mi @ 9:10/mi. Ensure zero joint strain." },
+          { time: "05:45 PM – 06:15 PM", type: "strength", tag: "STRENGTH", title: "Posterior Chain Maintenance", body: "Single-Leg KB RDLs (30-lb KB, 2x8/leg); Strict Pull-Ups (3x5); 5-lb DB raises (2x15)." }
+        ]
+      },
+      {
+        date: "Wed, Nov 11", type: "Zone 2 Base", runDist: "6.0 mi Aerobic", strength: "Med Ball Wall-Sits", carbTarget: "340g", civilTwilight: "Ends 5:56 PM CST",
+        timeline: [{ time: "05:25 AM – 06:20 AM", type: "run", tag: "RUN", title: "Steady Base Mileage", body: "6.0 mi @ 8:50/mi. Steady rhythmic breathing." }]
+      },
+      {
+        date: "Thu, Nov 12", type: "Threshold Intervals", runDist: "7.0 mi (inc. 4x1.5 mi @ MP)", strength: "30lb KB Soleus Raises", carbTarget: "360g", civilTwilight: "Ends 5:56 PM CST",
+        timeline: [
+          { time: "05:15 AM – 06:25 AM", type: "run", tag: "RUN", title: "Marathon Pace Intervals", body: "1.0 mi warmup → 4 x 1.5 mi @ 7:25/mi w/ 90s jog → 1.0 mi cool." },
+          { time: "05:45 PM – 06:15 PM", type: "strength", tag: "STRENGTH", title: "Tendon Loading", body: "Seated Soleus Raises (30-lb KB, 3x10); Pull-Up Bar Dead Hangs (3x45s)." }
+        ]
+      },
+      {
+        date: "Fri, Nov 13", type: "Easy Shakeout", runDist: "4.0 mi + Strides", strength: "Rest", carbTarget: "320g", civilTwilight: "Ends 5:55 PM CST",
+        timeline: [{ time: "05:35 AM – 06:15 AM", type: "run", tag: "RUN", title: "Conversational Run", body: "4.0 mi @ 9:05/mi + 4x100m strides." }]
+      },
+      {
+        date: "Sat, Nov 14", type: "Key Long Run: 20-Mile Overload", runDist: "20.0 mi Progressive", strength: "Full Rest", carbTarget: "440g", civilTwilight: "Ends 5:55 PM CST",
+        timeline: [{ time: "06:00 AM – 09:00 AM", type: "run", tag: "RUN", title: "20-Mile Peak Long Run", body: "15 mi @ 8:45/mi → 5 mi locked @ MP (7:25/mi). Full fueling test: 80g CHO/hr hydrogels." }]
+      },
+      {
+        date: "Sun, Nov 15", type: "Active Recovery", runDist: "4.0 mi Turf Jog", strength: "Foam rolling", carbTarget: "300g", civilTwilight: "Ends 5:54 PM CST",
+        timeline: [{ time: "07:30 AM – 08:10 AM", type: "run", tag: "RUN", title: "Grass Flush Run", body: "4.0 mi @ 9:25/mi. Restores mobility after 20-miler." }]
+      }
+    ]
+  },
+  {
+    weekNum: 6,
+    title: "Week 6: Absolute Peak Specificity (Nov 16 – Nov 22)",
+    theme: "Peak Volume (55+ Miles) & Final Downhill Resilience Simulation",
+    days: [
+      {
+        date: "Mon, Nov 16", type: "Full Rest", runDist: "0.0 mi", strength: "Mobility & SPU", carbTarget: "280g", civilTwilight: "Ends 5:54 PM CST",
+        timeline: [{ time: "07:15 AM – 05:30 PM", type: "work", tag: "WORK & SPU", title: "Desk Operating Window", body: "Soleus Pushups; 2L hydration; 8 hrs sleep." }]
+      },
+      {
+        date: "Tue, Nov 17", type: "Threshold Monster Reps & Strength Split A", runDist: "8.0 mi (inc. 3x2 mi @ LT)", strength: "35lb DB Split Squats, 30lb KB RDLs", carbTarget: "380g", civilTwilight: "Ends 5:53 PM CST",
+        timeline: [
+          { time: "05:10 AM – 06:25 AM", type: "run", tag: "RUN", title: "3 x 2-Mile Threshold", body: "1.0 mi warmup → 3 x 2.0 mi @ 6:50–6:55/mi w/ 2m walk recovery → 1.0 mi cool." },
+          { time: "05:45 PM – 06:20 PM", type: "strength", tag: "STRENGTH", title: "Strength Split A", body: "Bulgarian Split Squats (35-lb DB, 3x6/leg); Single-Leg KB RDLs (30-lb KB, 3x6/leg); Pull-Ups (3x6)." }
+        ]
+      },
+      {
+        date: "Wed, Nov 18", type: "Mid-Week Long Base", runDist: "8.0 mi Zone 2", strength: "Med Ball Carries", carbTarget: "350g", civilTwilight: "Ends 5:53 PM CST",
+        timeline: [{ time: "05:15 AM – 06:25 AM", type: "run", tag: "RUN", title: "Steady Mid-Week Long Run", body: "8.0 mi @ 8:45–9:00/mi on Trinity Trails." }]
+      },
+      {
+        date: "Thu, Nov 19", type: "Marathon Pace Sustained Block", runDist: "9.0 mi (inc. 6 mi @ MP)", strength: "30lb KB Soleus Raises", carbTarget: "380g", civilTwilight: "Ends 5:53 PM CST",
+        timeline: [
+          { time: "05:10 AM – 06:25 AM", type: "run", tag: "RUN", title: "Sustained MP Tempo", body: "1.5 mi warmup → 6.0 mi continuous locked @ 7:25/mi → 1.5 mi cool." },
+          { time: "05:45 PM – 06:15 PM", type: "strength", tag: "STRENGTH", title: "Tendon Power", body: "Seated Soleus Raises (30-lb KB, 3x10); Pull-Up Bar Dead Hangs (3x45s)." }
+        ]
+      },
+      {
+        date: "Fri, Nov 20", type: "Easy Flush", runDist: "4.5 mi Easy + Strides", strength: "Rest", carbTarget: "320g", civilTwilight: "Ends 5:52 PM CST",
+        timeline: [{ time: "05:30 AM – 06:15 AM", type: "run", tag: "RUN", title: "Regenerative Jog", body: "4.5 mi @ 9:10/mi + 4 strides." }]
+      },
+      {
+        date: "Sat, Nov 21", type: "Final Peak Long Run: 22 Miles", runDist: "22.0 mi Peak Long Run", strength: "Tart Cherry Juicing", carbTarget: "460g", civilTwilight: "Ends 5:52 PM CST",
+        timeline: [{ time: "05:45 AM – 09:00 AM", type: "run", tag: "RUN", title: "22-Mile Absolute Peak Run", body: "16 mi @ 8:45/mi → 6 mi locked @ MP (7:25/mi). Full marathon simulation. 85g CHO/hr hydrogels." }]
+      },
+      {
+        date: "Sun, Nov 22", type: "Active Recovery", runDist: "4.0 mi Flush", strength: "Foam rolling", carbTarget: "300g", civilTwilight: "Ends 5:52 PM CST",
+        timeline: [{ time: "07:30 AM – 08:10 AM", type: "run", tag: "RUN", title: "Turf Recovery Jog", body: "4.0 mi @ 9:25/mi. Paves the way for the 3-week Mujika Taper." }]
+      }
+    ]
+  },
+  {
+    weekNum: 7,
+    title: "Week 7: Mujika Taper Phase 1 & Turkey Trot (Nov 23 – Nov 29)",
+    theme: "Volume Drop -25% | Cognitive Shift & Fort Worth Turkey Trot 10K",
+    days: [
+      {
+        date: "Mon, Nov 23", type: "Full Rest", runDist: "0.0 mi", strength: "Mobility & SPU", carbTarget: "280g", civilTwilight: "Ends 5:51 PM CST",
+        timeline: [{ time: "07:15 AM – 05:30 PM", type: "work", tag: "TAPER BRAIN", title: "Reframe the Volume Drop", body: "Consciously acknowledge that resting is mandatory biological investment. SPU cycles at desk." }]
+      },
+      {
+        date: "Tue, Nov 24", type: "Threshold Taper Sharpening", runDist: "5.5 mi (inc. 4x800m @ LT)", strength: "Deload Split A (2 sets, light)", carbTarget: "340g", civilTwilight: "Ends 5:51 PM CST",
+        timeline: [
+          { time: "05:25 AM – 06:15 AM", type: "run", tag: "RUN", title: "LT Taper Intervals", body: "1.5 mi warmup → 4 x 800m @ 6:50/mi w/ 2m walk recovery → 1.0 mi cool." },
+          { time: "05:45 PM – 06:10 PM", type: "strength", tag: "STRENGTH", title: "Deload Strength", body: "Bodyweight split squats (2x6/leg); 30-lb KB RDL (2x6); Pull-Ups (2x5)." }
+        ]
+      },
+      {
+        date: "Wed, Nov 25", type: "Zone 2 Base", runDist: "4.5 mi Easy", strength: "Rest", carbTarget: "320g", civilTwilight: "Ends 5:51 PM CST",
+        timeline: [{ time: "05:35 AM – 06:15 AM", type: "run", tag: "RUN", title: "Conversational Base", body: "4.5 mi @ 9:00/mi. SPU blocks during workday." }]
+      },
+      {
+        date: "Thu, Nov 26", type: "PAID RACE: Fort Worth Turkey Trot 10K", runDist: "10.0 km Race (Camp Bowie Blvd)", strength: "Post-race family celebration", carbTarget: "380g", civilTwilight: "Ends 5:51 PM CST",
+        timeline: [
+          { time: "06:45 AM – 07:45 AM", type: "race", tag: "10K RACE", title: "Camp Bowie Turkey Trot 10K", body: "Run locked strictly at target Marathon Pace (7:25–7:26/mi / 4:36/km). Practice effortless race cadence in pack." },
+          { time: "08:30 AM – 05:00 PM", type: "nutrition", tag: "THANKSGIVING", title: "Thanksgiving Meal Management", body: "Enjoy Thanksgiving dinner. Focus on lean turkey, sweet potatoes, and moderate stuffing. Avoid extreme overeating." }
+        ]
+      },
+      {
+        date: "Fri, Nov 27", type: "Flush Jog", runDist: "3.5 mi Easy + Strides", strength: "Rest", carbTarget: "300g", civilTwilight: "Ends 5:51 PM CST",
+        timeline: [{ time: "07:30 AM – 08:05 AM", type: "run", tag: "RUN", title: "Easy Post-Trot Shakeout", body: "3.5 mi @ 9:15/mi + 3 strides." }]
+      },
+      {
+        date: "Sat, Nov 28", type: "Taper Long Run: 13 Miles", runDist: "13.0 mi (inc. 4 mi @ MP)", strength: "Tart cherry juicing", carbTarget: "360g", civilTwilight: "Ends 5:51 PM CST",
+        timeline: [{ time: "06:30 AM – 08:30 AM", type: "run", tag: "RUN", title: "Taper Long Run", body: "9.0 mi @ 8:45/mi → 4.0 mi locked @ MP (7:25/mi). Notice energy surplus banking." }]
+      },
+      {
+        date: "Sun, Nov 29", type: "Active Recovery", runDist: "3.0 mi Turf Jog", strength: "Foam rolling", carbTarget: "280g", civilTwilight: "Ends 5:50 PM CST",
+        timeline: [{ time: "07:30 AM – 08:00 AM", type: "run", tag: "RUN", title: "Turf Flush", body: "3.0 mi @ 9:30/mi. Supercompensation phase-in." }]
+      }
+    ]
+  },
+  {
+    weekNum: 8,
+    title: "Week 8: Mujika Taper Phase 2 (Nov 30 – Dec 06)",
+    theme: "Volume Drop -40% | Sensory Management & RPE Calibration",
+    days: [
+      {
+        date: "Mon, Nov 30", type: "Full Rest", runDist: "0.0 mi", strength: "Mobility & SPU", carbTarget: "280g", civilTwilight: "Ends 5:50 PM CST",
+        timeline: [{ time: "07:15 AM – 05:30 PM", type: "work", tag: "TAPER BRAIN", title: "Accept Heavy Legs & Sluggishness", body: "Acknowledge that sluggishness reflects loaded glycogen tanks. SPU cycles at desk." }]
+      },
+      {
+        date: "Tue, Dec 01", type: "Neuromuscular Sharpness Primer", runDist: "4.5 mi (inc. 4x400m @ 6:00/mi)", strength: "Dead hangs only", carbTarget: "320g", civilTwilight: "Ends 5:50 PM CST",
+        timeline: [
+          { time: "05:30 AM – 06:15 AM", type: "run", tag: "RUN", title: "Fast Strides & Turnover", body: "1.5 mi warmup → 4 x 400m @ 3:45/km w/ 2m walk recovery → 1.0 mi cool." },
+          { time: "05:45 PM – 06:05 PM", type: "strength", tag: "STRENGTH", title: "Spinal Hangs", body: "Pull-Up Bar Dead Hangs (3x30s); light foam rolling." }
+        ]
+      },
+      {
+        date: "Wed, Dec 02", type: "Zone 2 Base", runDist: "3.5 mi Conversational", strength: "Rest", carbTarget: "300g", civilTwilight: "Ends 5:50 PM CST",
+        timeline: [{ time: "05:35 AM – 06:10 AM", type: "run", tag: "RUN", title: "Easy Jog", body: "3.5 mi @ 9:05/mi. Rest legs during remote workday." }]
+      },
+      {
+        date: "Thu, Dec 03", type: "Marathon Pace Lock", runDist: "4.0 mi (inc. 2 mi MP)", strength: "Rest", carbTarget: "320g", civilTwilight: "Ends 5:50 PM CST",
+        timeline: [{ time: "05:35 AM – 06:15 AM", type: "run", tag: "RUN", title: "Cadence Memory Run", body: "1.0 mi warmup → 2.0 mi continuous @ 7:25/mi → 1.0 mi cool." }]
+      },
+      {
+        date: "Fri, Dec 04", type: "Shakeout", runDist: "2.5 mi Easy + 2 Strides", strength: "Rest", carbTarget: "300g", civilTwilight: "Ends 5:50 PM CST",
+        timeline: [{ time: "05:45 AM – 06:10 AM", type: "run", tag: "RUN", title: "Light Shakeout", body: "2.5 mi @ 9:20/mi + 2 strides." }]
+      },
+      {
+        date: "Sat, Dec 05", type: "Relaxed Taper Run", runDist: "8.0 mi Zone 2", strength: "Leg elevation", carbTarget: "340g", civilTwilight: "Ends 5:50 PM CST",
+        timeline: [{ time: "06:30 AM – 07:45 AM", type: "run", tag: "RUN", title: "8-Mile Aerobic Maintenance", body: "8.0 mi @ 8:50/mi. Zero marathon pace fatigue. Enjoy effortless rhythm." }]
+      },
+      {
+        date: "Sun, Dec 06", type: "Active Recovery", runDist: "2.5 mi Flush", strength: "Mobility", carbTarget: "280g", civilTwilight: "Ends 5:50 PM CST",
+        timeline: [{ time: "07:30 AM – 07:55 AM", type: "run", tag: "RUN", title: "Light Grass Flush", body: "2.5 mi @ 9:30/mi. 7 days until BMW Dallas Marathon." }]
+      }
+    ]
+  },
+  {
+    weekNum: 9,
+    title: "Week 9: BMW Dallas Marathon Race Week (Dec 07 – Dec 13)",
+    theme: "Volume Drop -60% | 600g–650g Natural Grocers Carb Load & Sub-3:15 Realization",
+    days: [
+      {
+        date: "Mon, Dec 07", type: "Full Rest", runDist: "0.0 mi", strength: "Mobility only", carbTarget: "320g (Baseline)", civilTwilight: "Ends 5:51 PM CST",
+        timeline: [{ time: "07:15 AM – 05:30 PM", type: "work", tag: "RACE WEEK", title: "Remote Work & SPU", body: "Eliminate outside cognitive stress. Desk SPU cycles. 2L water. Bed by 09:15 PM." }]
+      },
+      {
+        date: "Tue, Dec 08", type: "Turnover Primer", runDist: "3.5 mi (inc. 3x400m MP)", strength: "Dead hangs (2x30s)", carbTarget: "340g", civilTwilight: "Ends 5:51 PM CST",
+        timeline: [{ time: "05:40 AM – 06:15 AM", type: "run", tag: "RUN", title: "Pace Calibration Strides", body: "1.5 mi warmup → 3 x 400m @ 7:25/mi w/ 2m walk recovery → 1.0 mi cool." }]
+      },
+      {
+        date: "Wed, Dec 09", type: "Zone 2 Shakeout", runDist: "3.0 mi Conversational", strength: "Rest", carbTarget: "340g", civilTwilight: "Ends 5:51 PM CST",
+        timeline: [{ time: "05:40 AM – 06:10 AM", type: "run", tag: "RUN", title: "Easy Jog", body: "3.0 mi @ 9:15/mi. Visit Natural Grocers for carb-loading supplies in afternoon." }]
+      },
+      {
+        date: "Thu, Dec 10", type: "CARB LOAD DAY 1", runDist: "2.0 mi + 2 Strides", strength: "Zero lifting", carbTarget: "600g (High Glycemic / Low Fiber)", civilTwilight: "Ends 5:51 PM CST",
+        timeline: [
+          { time: "05:45 AM – 06:05 AM", type: "run", tag: "RUN", title: "Final CNS Primer", body: "2.0 mi easy jog + 2 x 15s strides. Done with running until Sunday." },
+          { time: "07:00 AM – 09:00 PM", type: "nutrition", tag: "CARB LOAD D1", title: "Natural Grocers Protocol Day 1", body: "Cream of rice w/ maple syrup & bananas; rice cakes w/ honey; white jasmine rice w/ chicken & liquid aminos; tart cherry juice. Total ~600g carbs, <40g fat, <15g fiber." }
+        ]
+      },
+      {
+        date: "Fri, Dec 11", type: "CARB LOAD DAY 2 & EXPO", runDist: "0.0 mi (Full Rest)", strength: "Zero lifting", carbTarget: "600g (Low Fiber)", civilTwilight: "Ends 5:51 PM CST",
+        timeline: [
+          { time: "07:00 AM – 05:30 PM", type: "nutrition", tag: "CARB LOAD D2", title: "Carb Load Day 2 & Remote Work", body: "Jasmine rice, sourdough toast w/ maple syrup, baked peeled sweet potatoes, coconut water. 1.5L electrolyte fluid." },
+          { time: "05:45 PM – 07:00 PM", type: "work", tag: "LOGISTICS", title: "Dallas Expo Packet Pickup", body: "Pick up race bib & packet in Downtown Dallas. Minimize walking on feet. Back home and off feet by 7:30 PM." }
+        ]
+      },
+      {
+        date: "Sat, Dec 12", type: "RACE EVE: Total Physical Rest", runDist: "0.0 mi (Zero Run)", strength: "Zero lifting", carbTarget: "650g (Smooth Realization)", civilTwilight: "Ends 5:52 PM CST",
+        timeline: [
+          { time: "07:30 AM – 02:00 PM", type: "nutrition", tag: "CARB LOAD EVE", title: "Smooth Starches & Liquid Load", body: "White rice pasta w/ aminos; cream of rice cereal; apple juice & coconut water. Scale back protein & fat." },
+          { time: "05:00 PM – 06:30 PM", type: "nutrition", tag: "EARLY DINNER", title: "Light Starch-Based Dinner", body: "Bowl of Cream of Rice cereal w/ banana & honey. Prevents waking up heavy or bloated." },
+          { time: "07:00 PM – 09:00 PM", type: "race", tag: "LOGISTICS & SLEEP", title: "Final Gear Checklist & Lights Out", body: "Lay out racing singlet, Vaporflys/Alphaflys, 6 Maurten/hydrogels, anti-chafing balm. In bed by 09:00 PM." }
+        ]
+      },
+      {
+        date: "Sun, Dec 13", type: "MAIN EVENT: BMW Dallas Marathon", runDist: "42.195 km (26.22 Miles)", strength: "Sub-3:15:00 PR Celebration", carbTarget: "Race Fueling (80g CHO/hr)", civilTwilight: "Ends 5:52 PM CST",
+        timeline: [
+          { time: "05:15 AM – 06:15 AM", type: "nutrition", tag: "RACE MORNING", title: "Pre-Race Fuel & Electrolytes", body: "1 plain bagel w/ 2 tbsp honey + 1 banana + 100g fast carbs + 500mg sodium in water. 1 cup black coffee." },
+          { time: "06:45 AM – 07:30 AM", type: "race", tag: "TRANSIT", title: "Arrival at Dallas City Hall Plaza", body: "Arrive at City Hall Plaza. Use restrooms. 5-min light dynamic swings. 1 gel at 08:15 AM." },
+          { time: "08:30 AM – 11:44 AM", type: "race", tag: "RACE EXECUTION", title: "BMW Dallas Marathon: 3:14:30 Target", body: "Miles 1-3: 7:30–7:35/mi (avoid downtown drop trap). Miles 4-8: 7:32–7:37/mi (Highland Park climb). Miles 8-11: 7:18–7:22/mi (M-Streets gravity assist). Miles 11-20: 7:24–7:27/mi (White Rock Lake metronome). Miles 20.5: Winsted Dr climb (survive, shorten stride). Miles 21-26.2: 7:20–7:25/mi (Swiss Ave & Deep Ellum home stretch). Fuel 75-80g CHO/hr (gels at km 6, 12, 18, 24, 30, 36)." },
+          { time: "11:45 AM – 06:00 PM", type: "nutrition", tag: "CELEBRATION", title: "Finish Line & Sub-3:15 PR Feast", body: "Collect Sub-3:15 medal. 40g Whey Isolate. Return home to Fort Worth for post-race celebration!" }
+        ]
+      }
+    ]
+  }
+];
+
+let currentWeekIdx = 0;
+let currentDayIdx = 0;
+
+function renderWeekSelector() {
+  const container = document.getElementById('weekSelector');
+  container.innerHTML = '';
+  weeksData.forEach((week, idx) => {
+    const btn = document.createElement('button');
+    btn.className = `week-btn ${idx === currentWeekIdx ? 'active' : ''}`;
+    btn.innerText = `Week ${week.weekNum}`;
+    btn.onclick = () => {
+      currentWeekIdx = idx;
+      currentDayIdx = 0;
+      renderAll();
+    };
+    container.appendChild(btn);
+  });
+}
+
+function renderDaySelector() {
+  const container = document.getElementById('daySelector');
+  container.innerHTML = '';
+  const currentWeek = weeksData[currentWeekIdx];
+  currentWeek.days.forEach((day, idx) => {
+    const btn = document.createElement('button');
+    const isRace = day.type.includes('RACE') || day.type.includes('Big Texas') || day.type.includes('Marathon');
+    btn.className = `day-btn ${idx === currentDayIdx ? 'active' : ''} ${isRace ? 'race-day' : ''}`;
+    btn.innerHTML = `<div>${day.date.split(',')[0]}</div><div style="font-size:0.7rem;margin-top:2px;">${day.date.split(',')[1]}</div>`;
+    btn.onclick = () => {
+      currentDayIdx = idx;
+      renderAll();
+    };
+    container.appendChild(btn);
+  });
+}
+
+function renderDayView() {
+  const container = document.getElementById('dayViewContainer');
+  const day = weeksData[currentWeekIdx].days[currentDayIdx];
+  
+  let html = `
+    <div class="day-view active">
+      <div style="margin-bottom: 16px;">
+        <h2 style="font-size: 1.4rem; color: var(--accent-blue);">${day.date} — ${day.type}</h2>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">${weeksData[currentWeekIdx].title} | ${weeksData[currentWeekIdx].theme}</p>
+      </div>
+
+      <div class="day-summary-banner">
+        <div class="metric-item">
+          <span class="metric-label">Running Demand</span>
+          <span class="metric-val highlight">${day.runDist}</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">Strength / Mobility</span>
+          <span class="metric-val">${day.strength}</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">Carb Target (70.3 kg)</span>
+          <span class="metric-val">${day.carbTarget}</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">Daylight Firewall</span>
+          <span class="metric-val alert">${day.civilTwilight}</span>
+        </div>
+      </div>
+
+      <div class="timeline">
+  `;
+
+  day.timeline.forEach(item => {
+    let tagClass = 'tag-run';
+    if(item.type === 'strength') tagClass = 'tag-strength';
+    if(item.type === 'nutrition') tagClass = 'tag-nutrition';
+    if(item.type === 'work') tagClass = 'tag-desk';
+    if(item.type === 'race') tagClass = 'tag-race';
+
+    html += `
+      <div class="timeline-entry ${item.type}">
+        <div class="time-stamp">${item.time}</div>
+        <div class="entry-card">
+          <div class="entry-title">
+            <span>${item.title}</span>
+            <span class="entry-tag ${tagClass}">${item.tag}</span>
+          </div>
+          <div class="entry-body">${item.body}</div>
+        </div>
+      </div>
+    `;
+  });
+
+  html += `
+      </div>
+    </div>
+  `;
+  container.innerHTML = html;
+}
+
+function renderAll() {
+  renderWeekSelector();
+  renderDaySelector();
+  renderDayView();
+}
+
+// Initial render
+renderAll();
+</script>
+
 </body>
 </html>
