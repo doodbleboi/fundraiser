@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sub-3:15 MED Execution</title>
+<title>Sub-3:15 Master Execution</title>
 <style>
   :root {
     --bg-primary: #0a0f1d;
@@ -22,13 +22,14 @@
   * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
   body { background: var(--bg-primary); color: var(--text-primary); line-height: 1.5; padding: 20px; }
   .header { max-width: 1400px; margin: 0 auto 20px auto; background: var(--bg-secondary); padding: 24px; border-radius: 12px; border: 1px solid var(--border); }
-  .header h1 { font-size: 1.8rem; color: var(--accent-rose); margin-bottom: 6px; }
+  .header h1 { font-size: 1.8rem; color: var(--accent-blue); margin-bottom: 6px; }
   .header p { color: var(--text-muted); font-size: 0.95rem; }
   .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
   .badge { background: var(--bg-tertiary); padding: 4px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
   .badge.marathon { color: var(--accent-blue); border: 1px solid var(--accent-blue); }
+  .badge.race15k { color: var(--accent-amber); border: 1px solid var(--accent-amber); }
   .badge.physio { color: var(--accent-emerald); border: 1px solid var(--accent-emerald); }
-  .badge.alert { color: var(--accent-rose); border: 1px solid var(--accent-rose); }
+  .badge.transit { color: var(--accent-cyan); border: 1px solid var(--accent-cyan); }
 
   .nav-container { max-width: 1400px; margin: 0 auto 20px auto; }
   .week-selector { display: flex; overflow-x: auto; gap: 8px; padding-bottom: 8px; margin-bottom: 12px; }
@@ -51,6 +52,7 @@
   .metric-val { font-size: 1.05rem; font-weight: bold; color: var(--text-primary); margin-top: 2px; }
   .metric-val.alert { color: var(--accent-rose); }
   .metric-val.highlight { color: var(--accent-blue); }
+  .metric-val.transit-highlight { color: var(--accent-cyan); }
 
   .timeline { position: relative; border-left: 2px solid var(--border); margin-left: 20px; padding-left: 20px; }
   .timeline-entry { position: relative; margin-bottom: 22px; }
@@ -58,6 +60,8 @@
   .timeline-entry.run::before { background: var(--accent-blue); box-shadow: 0 0 6px var(--accent-blue); }
   .timeline-entry.strength::before { background: var(--accent-purple); }
   .timeline-entry.nutrition::before { background: var(--accent-emerald); }
+  .timeline-entry.work::before { background: var(--accent-amber); }
+  .timeline-entry.transit::before { background: var(--accent-cyan); box-shadow: 0 0 6px var(--accent-cyan); }
   .timeline-entry.race::before { background: var(--accent-rose); box-shadow: 0 0 10px var(--accent-rose); }
 
   .time-stamp { font-size: 0.82rem; font-weight: bold; color: var(--text-muted); margin-bottom: 4px; }
@@ -67,6 +71,8 @@
   .tag-run { background: rgba(56, 189, 248, 0.2); color: var(--accent-blue); }
   .tag-strength { background: rgba(192, 132, 252, 0.2); color: var(--accent-purple); }
   .tag-nutrition { background: rgba(52, 211, 153, 0.2); color: var(--accent-emerald); }
+  .tag-desk { background: rgba(251, 191, 36, 0.2); color: var(--accent-amber); }
+  .tag-transit { background: rgba(34, 211, 238, 0.2); color: var(--accent-cyan); }
   .tag-race { background: rgba(244, 63, 94, 0.2); color: var(--accent-rose); }
 
   .entry-body { font-size: 0.88rem; color: #cbd5e1; }
@@ -81,12 +87,13 @@
 <body>
 
 <div class="header">
-  <h1>Minimum Effective Dose (MED) Dashboard</h1>
-  <p>David Resetar | Target: 3:14:00 | Work Window: 7:15 AM – 5:30 PM CT | Nov 16 to Dec 13</p>
+  <h1>Sub-3:15 Final Phase Dashboard</h1>
+  <p>David Resetar | Target: 3:14:00 | Work Window: 7:15 AM – 5:30 PM CT | Nov 16 to Dec 20</p>
   <div class="badges">
-    <span class="badge alert">160+ lbs Protocol: Drop Junk Miles, Maximize Protein</span>
-    <span class="badge marathon">Dec 13: BMW Dallas Marathon</span>
-    <span class="badge physio">130g+ Protein/Day MANDATORY</span>
+    <span class="badge race15k">Nov 26: FW Turkey Trot 8K</span>
+    <span class="badge marathon">Dec 13: BMW Dallas Marathon (Sub-3:15)</span>
+    <span class="badge transit">San Diego ICU Deload (Nov 18-20)</span>
+    <span class="badge physio">140g Protein Target + Mg Bisglycinate</span>
   </div>
 </div>
 
@@ -100,87 +107,161 @@
 <script>
 const masterRawData = [
   {
-    weekNum: 7, title: "Week 7: 32k Shift & Structural Protection (Nov 16 – Nov 22)", theme: "Absorb the 32km, Drop Mid-Week Volume, Execute 34km Peak",
+    weekNum: 7, title: "Week 7: The Double-Peak Squeeze & SD Travel (Nov 16 – Nov 22)", theme: "Absorbing the Shifted 32km, Hotel ICU Maintenance & The 34km Peak",
     daysBlueprint: [
-      { dayName: "Mon, Nov 16", type: "Shifted Peak Long Run", run: "32.0 km (19.9 mi) @ 5:25/km", strength: "Foam Roll, Legs-up-the-wall", carbs: "135g Protein MINIMUM", dusk: "Ends 5:26 PM CT" },
-      { dayName: "Tue, Nov 17", type: "Total Rest (System Flush)", run: "0.0 mi (Complete Rest - Cut to save joints)", strength: "Zero Lifting. Epsom salt bath.", carbs: "Hydration Flush: 1 Gal Water", dusk: "Ends 5:48 PM CT" },
-      { dayName: "Wed, Nov 18", type: "Travel & CNS Deload", run: "0.0 mi (Complete Rest)", strength: "Airport Walking Only", carbs: "135g Protein MINIMUM", dusk: "Ends 5:07 PM PST" },
-      { dayName: "Thu, Nov 19", type: "Hotel Tension Maintenance", run: "0.0 mi (Complete Rest)", strength: "Bodyweight Circuit (No Lunges)", carbs: "135g Protein MINIMUM", dusk: "Ends 5:06 PM PST" },
-      { dayName: "Fri, Nov 20", type: "Return Travel & Pre-Fueling", run: "0.0 mi (Complete Rest)", strength: "Legs-up-the-wall (10m)", carbs: "Clean Carbs Only (Rice/Potatoes)", dusk: "Ends 5:46 PM CT" },
-      { dayName: "Sat, Nov 21", type: "Post-Travel Shakeout", run: "5.0 km (3.1 mi) @ 5:30/km", strength: "Zero lifting", carbs: "450g Clean Carbs", dusk: "Ends 5:46 PM CT" },
-      { dayName: "Sun, Nov 22", type: "The Final Monster: 34 km Peak", run: "34.0 km (21.1 mi): 26 km Easy, 8 km @ MP 4:36/km", strength: "Full Rest, Nap", carbs: "135g Protein / 80g CHO/hr during run", dusk: "Ends 5:45 PM CT" }
+      { dayName: "Mon, Nov 16", type: "Shifted Peak Long Run", run: "32.0 km (19.9 mi) @ 5:25/km", ruck: "Zero transit (Save legs)", strength: "Passive Recovery & Foam Roll", carbs: "140g Protein MANDATORY", dusk: "Ends 5:26 PM CT" },
+      { dayName: "Tue, Nov 17", type: "Strict Lactic Flush", run: "8.0 km (5.0 mi) @ 5:45/km", ruck: "Travel Prep & Packing", strength: "Zero Lifting (Protect CNS)", carbs: "140g Protein MANDATORY", dusk: "Ends 5:48 PM CT" },
+      { dayName: "Wed, Nov 18", type: "Travel & CNS Deload", run: "0.0 mi (Complete Rest)", ruck: "Flight to San Diego", strength: "Airport Walking Only", carbs: "140g Protein MANDATORY", dusk: "Ends 5:07 PM PST" },
+      { dayName: "Thu, Nov 19", type: "Hotel Isometric Maintenance", run: "0.0 mi (Complete Rest)", ruck: "Zero (Hotel bounds)", strength: "Bodyweight Circuit (ISOMETRICS ONLY - No Lunges/Squats)", carbs: "140g Protein MANDATORY", dusk: "Ends 5:06 PM PST" },
+      { dayName: "Fri, Nov 20", type: "Return Travel & Pre-Fueling", run: "0.0 mi (Complete Rest)", ruck: "Flight to Fort Worth", strength: "Legs-up-the-wall (10m)", carbs: "400g (Glycogen Primer)", dusk: "Ends 5:46 PM CT" },
+      { dayName: "Sat, Nov 21", type: "Post-Travel Shakeout", run: "6.0 km (3.7 mi) @ 5:30/km", ruck: "Zero transit", strength: "Zero lifting, Tart Cherry", carbs: "450g", dusk: "Ends 5:46 PM CT" },
+      { dayName: "Sun, Nov 22", type: "The Final Monster: 34 km Peak", run: "34.0 km (21.1 mi): 26 km @ 5:20/km, 8 km locked @ MP 4:36/km", ruck: "Zero transit", strength: "Full Rest, Nap, Tart Cherry", carbs: "500g", dusk: "Ends 5:45 PM CT" }
     ]
   },
   {
-    weekNum: 8, title: "Week 8: Taper Phase 1 (Nov 23 – Nov 29)", theme: "Aggressive Volume Drop | Focus on Protein Synthesis & Tendon Repair",
+    weekNum: 8, title: "Week 8: Mujika Taper Phase 1 & Turkey Trot 8K (Nov 23 – Nov 29)", theme: "Volume Drop -25% | Restore Speed Primer & Execute Fort Worth YMCA 8K",
     daysBlueprint: [
-      { dayName: "Mon, Nov 23", type: "Full Rest & Recovery", run: "0.0 mi (Full Rest)", strength: "Contrast shower, foam roll", carbs: "135g Protein MINIMUM", dusk: "Ends 5:45 PM CT" },
-      { dayName: "Tue, Nov 24", type: "MP Tempo Lock", run: "8.0 km (5.0 mi) @ MP 4:36/km (No VO2 Max)", strength: "Pull-ups, Planks (No lower body lifting)", carbs: "135g Protein MINIMUM", dusk: "Ends 5:44 PM CT" },
-      { dayName: "Wed, Nov 25", type: "Full Rest (Volume Cut)", run: "0.0 mi (Complete Rest)", strength: "Mobility", carbs: "135g Protein MINIMUM", dusk: "Ends 5:44 PM CT" },
-      { dayName: "Thu, Nov 26", type: "Fort Worth Turkey Trot 8K", run: "8.0 km Race @ MP 4:36/km (Do NOT Sprint)", strength: "Thanksgiving Meal Management", carbs: "Avoid heavy salt/junk sides", dusk: "Ends 5:44 PM CT" },
-      { dayName: "Fri, Nov 27", type: "Full Rest & Recovery", run: "0.0 mi (Complete Rest)", strength: "Light stretching", carbs: "135g Protein MINIMUM", dusk: "Ends 5:44 PM CT" },
-      { dayName: "Sat, Nov 28", type: "Aerobic Shakeout", run: "5.0 km (3.1 mi) Light Jogging @ 5:30/km", strength: "Legs-up-the-wall", carbs: "Clean Carbs", dusk: "Ends 5:44 PM CT" },
-      { dayName: "Sun, Nov 29", type: "Taper Long Run: 22 km", run: "22.0 km (13.7 mi) @ 5:25/km", strength: "Nap, Tart Cherry", carbs: "135g Protein MINIMUM", dusk: "Ends 5:44 PM CT" }
+      { dayName: "Mon, Nov 23", type: "Full Rest & Cognitive Shift (Taper -25%)", run: "0.0 mi (Full Rest)", ruck: "15-lb Ruck Walk (20m)", strength: "Contrast shower, foam roll calves/glutes", carbs: "140g Protein", dusk: "Ends 5:45 PM CT" },
+      { dayName: "Tue, Nov 24", type: "Speed Sharpness Primer", run: "8.0 km (5.0 mi): 2k WU + 6x400m @ 3:50/km (6:10/mi) w/ 60s rest + 2k CD", ruck: "Zone 2 Bike Spin (20m)", strength: "Bodyweight Split Squats (2x6/leg), Pull-ups (2x5)", carbs: "340g", dusk: "Ends 5:44 PM CT" },
+      { dayName: "Wed, Nov 25", type: "Pre-Race Shakeout", run: "6.0 km (3.7 mi) Light Jogging @ 5:30/km", ruck: "15-lb Ruck Errand (20m)", strength: "Gentle mobility, lay out race kit", carbs: "340g", dusk: "Ends 5:44 PM CT" },
+      { dayName: "Thu, Nov 26", type: "PAID RACE: Fort Worth Turkey Trot 8K", run: "11.0 km Total: 1.5k WU + 8.0 km Race @ 4:25/km (7:06/mi) + 1.5k CD", ruck: "Transit to General Worth Square", strength: "Post-race active walking (10m)", carbs: "380g", dusk: "Ends 5:44 PM CT" },
+      { dayName: "Fri, Nov 27", type: "Full Rest & Recovery", run: "0.0 mi (Complete Rest)", ruck: "Public Transit Slicing (20m)", strength: "Light stretching, hydrate, relax", carbs: "140g Protein", dusk: "Ends 5:44 PM CT" },
+      { dayName: "Sat, Nov 28", type: "Aerobic Shakeout", run: "5.0 km (3.1 mi) Light Jogging @ 5:30/km", ruck: "Zero transit", strength: "Legs-up-the-wall (10m), Tart cherry juice", carbs: "380g", dusk: "Ends 5:44 PM CT" },
+      { dayName: "Sun, Nov 29", type: "Taper Long Run: 22 km", run: "22.0 km (13.7 mi) Controlled Cruising @ 5:15/km (8:27/mi)", ruck: "15-lb Ruck Walk (20m)", strength: "Full Rest, 40g Whey Isolate, 1-hr Nap", carbs: "360g", dusk: "Ends 5:44 PM CT" }
     ]
   },
   {
-    weekNum: 9, title: "Week 9: Taper Phase 2 (Nov 30 – Dec 06)", theme: "Volume Drop -40% | MP Memorization & Joint Preservation",
+    weekNum: 9, title: "Week 9: Mujika Taper Phase 2 (Nov 30 – Dec 06)", theme: "Volume Drop -40% | MP Lock & 16 km Relaxed Taper Run",
     daysBlueprint: [
-      { dayName: "Mon, Nov 30", type: "Full Rest", run: "0.0 mi (Full Rest)", strength: "Foam roll", carbs: "135g Protein MINIMUM", dusk: "Ends 5:43 PM CT" },
-      { dayName: "Tue, Dec 01", type: "Marathon Pace Lock Reps", run: "3x1 mile @ MP 4:36/km (7:24/mi) w/ 90s walk", strength: "Dead Hangs", carbs: "135g Protein MINIMUM", dusk: "Ends 5:43 PM CT" },
-      { dayName: "Wed, Dec 02", type: "Full Rest (Volume Cut)", run: "0.0 mi (Complete Rest)", strength: "Gentle mobility", carbs: "135g Protein MINIMUM", dusk: "Ends 5:43 PM CT" },
-      { dayName: "Thu, Dec 03", type: "Conversational Base", run: "6.0 km (3.7 mi) @ 5:30/km", strength: "Dead Hangs", carbs: "135g Protein MINIMUM", dusk: "Ends 5:43 PM CT" },
-      { dayName: "Fri, Dec 04", type: "Full Rest", run: "0.0 mi (Complete Rest)", strength: "Legs-up-the-wall", carbs: "135g Protein MINIMUM", dusk: "Ends 5:43 PM CT" },
-      { dayName: "Sat, Dec 05", type: "Shakeout", run: "5.0 km (3.1 mi) Light Jogging", strength: "Zero lifting", carbs: "135g Protein MINIMUM", dusk: "Ends 5:43 PM CT" },
-      { dayName: "Sun, Dec 06", type: "Relaxed Taper Run: 16 km", run: "16.0 km (10.0 mi) Relaxed Zone 2 @ 5:30/km", strength: "Nap, Tart Cherry", carbs: "135g Protein MINIMUM", dusk: "Ends 5:43 PM CT" }
+      { dayName: "Mon, Nov 30", type: "Full Rest & Sensory Management (Taper -40%)", run: "0.0 mi (Full Rest)", ruck: "15-lb Ruck Walk (20m)", strength: "Contrast shower, foam roll", carbs: "140g Protein", dusk: "Ends 5:43 PM CT" },
+      { dayName: "Tue, Dec 01", type: "Marathon Pace Lock Reps", run: "8.0 km (5.0 mi): 1.5k WU + 3x1 mile @ MP 4:36/km w/ 90s walk + 1.5k CD", ruck: "Zone 2 Bike Spin (20m)", strength: "Pull-Up Bar Dead Hangs (3x30s)", carbs: "340g", dusk: "Ends 5:43 PM CT" },
+      { dayName: "Wed, Dec 02", type: "Zone 2 Base Flush", run: "8.0 km (5.0 mi) Conversational Easy @ 5:30/km", ruck: "Public Transit Slicing (20m)", strength: "Gentle mobility, soleus foam roll", carbs: "320g", dusk: "Ends 5:43 PM CT" },
+      { dayName: "Thu, Dec 03", type: "Conversational Base", run: "6.0 km (3.7 mi) @ 5:30/km Easy Aerobic", ruck: "15-lb Ruck Walk (15m)", strength: "Pull-Up Bar Dead Hangs (2x30s)", carbs: "320g", dusk: "Ends 5:43 PM CT" },
+      { dayName: "Fri, Dec 04", type: "Full Rest & Deep Regeneration", run: "0.0 mi (Complete Rest)", ruck: "Passive transit only", strength: "Legs-up-the-wall (10m)", carbs: "140g Protein", dusk: "Ends 5:43 PM CT" },
+      { dayName: "Sat, Dec 05", type: "Shakeout + Strides", run: "5.0 km (3.1 mi) Light Jogging @ 5:30/km + 3x15s Strides", ruck: "Zero transit", strength: "Zero lifting, Tart cherry juice", carbs: "340g", dusk: "Ends 5:43 PM CT" },
+      { dayName: "Sun, Dec 06", type: "Relaxed Taper Run: 16 km", run: "16.0 km (10.0 mi) Relaxed Zone 2 @ 5:30/km (Zero MP fatigue)", ruck: "15-lb Ruck Walk (15m)", strength: "Full Rest, 40g Whey Isolate, 1-hr Nap", carbs: "340g", dusk: "Ends 5:43 PM CT" }
     ]
   },
   {
-    weekNum: 10, title: "Week 10: BMW Dallas Marathon Race Week (Dec 07 – Dec 13)", theme: "Maximum Freshness | Low-Fiber Carb Load & Sub-3:15 Execution",
+    weekNum: 10, title: "Week 10: BMW Dallas Marathon Race Week (Dec 07 – Dec 13)", theme: "Volume Drop -60% | 600g Carb Load & Sub-3:15 Realization",
     daysBlueprint: [
-      { dayName: "Mon, Dec 07", type: "Full Rest", run: "0.0 mi (Full Rest)", strength: "Light mobility", carbs: "135g Protein MINIMUM", dusk: "Ends 5:43 PM CT" },
-      { dayName: "Tue, Dec 08", type: "Cadence Primer", run: "4x400m @ MP 4:36/km w/ 90s walk (NO SPRINTING)", strength: "Dead Hangs", carbs: "135g Protein MINIMUM", dusk: "Ends 5:43 PM CT" },
-      { dayName: "Wed, Dec 09", type: "Full Rest", run: "0.0 mi (Complete Rest)", strength: "Grocery Shopping", carbs: "135g Protein MINIMUM", dusk: "Ends 5:43 PM CT" },
-      { dayName: "Thu, Dec 10", type: "Final CNS Strides & CARB LOAD", run: "4.0 km (2.5 mi) Easy Jog + 2x15s Strides", strength: "Zero lifting", carbs: "600g Low-Fiber Carbs", dusk: "Ends 5:44 PM CT" },
-      { dayName: "Fri, Dec 11", type: "CARB LOAD DAY 2", run: "0.0 mi (Full Rest)", strength: "Dallas Expo Packet Pickup", carbs: "600g Low-Fiber Carbs", dusk: "Ends 5:44 PM CT" },
-      { dayName: "Sat, Dec 12", type: "RACE EVE: Shakeout", run: "3.0 km (1.8 mi) 15-Min Easy Walk/Jog", strength: "Lay out gear, sleep by 9 PM", carbs: "650g Low-Fiber Carbs", dusk: "Ends 5:44 PM CT" },
-      { dayName: "Sun, Dec 13", type: "MAIN EVENT: BMW Dallas Marathon", run: "42.195 km (26.22 mi) Locked @ 4:36/km | Target: 3:14:00", strength: "Collect Medal", carbs: "80g CHO/hr during race", dusk: "Ends 5:44 PM CT" }
+      { dayName: "Mon, Dec 07", type: "Full Rest (Taper -60%)", run: "0.0 mi (Full Rest)", ruck: "15-lb Ruck Walk (15m)", strength: "Shield anterior cingulate cortex from stress", carbs: "320g", dusk: "Ends 5:43 PM CT" },
+      { dayName: "Tue, Dec 08", type: "Cadence Primer & CNS Memory", run: "6.0 km (3.7 mi): 2k WU + 4x400m @ MP 4:36/km w/ 90s walk + 2k CD", ruck: "Zone 2 Bike Spin (15m)", strength: "Pull-Up Bar Dead Hangs (2x30s)", carbs: "340g", dusk: "Ends 5:43 PM CT" },
+      { dayName: "Wed, Dec 09", type: "Easy Shakeout", run: "5.0 km (3.1 mi) Very Light Jogging @ 5:30/km", ruck: "15-lb Ruck Walk for Groceries", strength: "Zero lifting, shop for carb-loading supplies", carbs: "340g", dusk: "Ends 5:43 PM CT" },
+      { dayName: "Thu, Dec 10", type: "Final CNS Strides & CARB LOAD DAY 1", run: "4.0 km (2.5 mi) Easy Jog + 2x15s Strides", ruck: "Passive transit only (Save legs)", strength: "600g Carb Load Protocol Day 1", carbs: "600g", dusk: "Ends 5:44 PM CT" },
+      { dayName: "Fri, Dec 11", type: "CARB LOAD DAY 2 & Dallas Expo", run: "0.0 mi (Full Rest)", ruck: "Transit to Dallas Expo", strength: "Zero lifting, pick up race packet in Downtown Dallas", carbs: "600g", dusk: "Ends 5:44 PM CT" },
+      { dayName: "Sat, Dec 12", type: "RACE EVE: 15-Min Shakeout", run: "3.0 km (1.8 mi) 15-Min Easy Shakeout Walk/Jog @ 5:45/km", ruck: "Zero transit", strength: "Zero lifting, lay out singlet/shoes/6 gels, bed by 09:00 PM", carbs: "650g", dusk: "Ends 5:44 PM CT" },
+      { dayName: "Sun, Dec 13", type: "MAIN EVENT: BMW Dallas Marathon", run: "42.195 km (26.22 mi) Locked @ 4:36/km (7:24/mi) | Target: 3:14:00", ruck: "Transit to Dallas City Hall", strength: "Collect Sub-3:15 medal, 40g Whey Isolate, Post-Race Feast!", carbs: "80g CHO/hr", dusk: "Ends 5:44 PM CT" }
+    ]
+  },
+  {
+    weekNum: 11, title: "Week 11: Post-Race Recovery & Charlie Brown 10K (Dec 14 – Dec 20)", theme: "Active Structural Restoration & Celebratory Charlie Brown 10K Run",
+    daysBlueprint: [
+      { dayName: "Mon, Dec 14", type: "Post-Marathon Total Rest", run: "0.0 mi (Complete Rest)", ruck: "Zero transit (rest legs)", strength: "Contrast baths, elevate legs, high protein", carbs: "140g Protein", dusk: "Ends 5:45 PM CT" },
+      { dayName: "Tue, Dec 15", type: "Active Recovery", run: "0.0 mi (Complete Rest)", ruck: "15-min Barefoot Turf Walk", strength: "Passive spinal hangs (2x30s)", carbs: "140g Protein", dusk: "Ends 5:45 PM CT" },
+      { dayName: "Wed, Dec 16", type: "Passive Mobility", run: "0.0 mi (Complete Rest)", ruck: "Public Transit Slicing (20m)", strength: "Pull-Up Bar Dead Hangs (3x30s), hip flexor stretch", carbs: "140g Protein", dusk: "Ends 5:45 PM CT" },
+      { dayName: "Thu, Dec 17", type: "Regenerative Spin", run: "0.0 mi (No Running)", ruck: "Zone 1 Light Bike Spin (20m)", strength: "Light foam rolling, joint mobility", carbs: "140g Protein", dusk: "Ends 5:46 PM CT" },
+      { dayName: "Fri, Dec 18", type: "Post-Marathon Re-Entry", run: "3.0 km (1.8 mi) Very Light Jog/Walk @ 6:00/km (Check joint integrity)", ruck: "Save legs", strength: "Zero lifting", carbs: "300g", dusk: "Ends 5:46 PM CT" },
+      { dayName: "Sat, Dec 19", type: "PAID RACE: Charlie Brown Christmas 10K", run: "10.0 km Celebratory Active Recovery Flush @ >5:30/km", ruck: "Transit to Dallas", strength: "Post-race holiday brunch & celebration!", carbs: "350g", dusk: "Ends 5:47 PM CT" },
+      { dayName: "Sun, Dec 20", type: "Macrocycle Complete", run: "0.0 mi (Full Rest)", ruck: "Casual walking only", strength: "Review 10-week macrocycle, plan 2027 ultra!", carbs: "280g", dusk: "Ends 5:47 PM CT" }
     ]
   }
 ];
 
 function generateDetailedTimeline(day) {
-  const isHardRun = day.run.includes("@ MP") || day.run.includes("32.0 km") || day.run.includes("34.0 km");
-  const isRest = day.run.includes("0.0 mi");
+  const isSunday = day.dayName.startsWith("Sun");
+  const isSaturday = day.dayName.startsWith("Sat");
+  const isWeekend = isSunday || isSaturday;
+  const isRest = day.run.startsWith("0.0 mi");
 
   if (day.dayName.includes("Dec 13")) {
     return [
-      { time: "05:15 AM", type: "nutrition", tag: "RACE MORNING", title: "Pre-Race Fuel", body: "Bagel w/ honey + banana + 500mg sodium in water." },
-      { time: "08:30 AM", type: "race", tag: "RACE", title: "BMW Dallas Marathon: 3:14:00 Target", body: "Lock into 4:36/km (7:24/mi). Listen to your heart rate. If 160 lbs pushes you into Zone 4 early, back off 5 sec/km. Do not fight cardiac drift." },
-      { time: "11:45 AM", type: "nutrition", tag: "RECOVERY", title: "Immediate Protein Triage", body: "40g Whey Isolate immediately to stop muscle breakdown." }
+      { time: "05:15 AM – 06:15 AM", type: "nutrition", tag: "RACE MORNING", title: "Pre-Race Fuel & Electrolytes", body: "1 plain bagel w/ 2 tbsp honey + 1 banana + 100g fast carbs + 500mg sodium in 400 mL water. 1 cup black coffee for GI clearance." },
+      { time: "06:45 AM – 07:30 AM", type: "race", tag: "TRANSIT", title: "Arrival at Dallas City Hall Plaza", body: "Arrive at City Hall Plaza. Gear check, use restrooms. 5-min light dynamic swings. 1 Maurten gel at 08:15 AM." },
+      { time: "08:30 AM – 11:44 AM", type: "race", tag: "RACE EXECUTION", title: "BMW Dallas Marathon: 3:14:00 Target", body: "Lock into 4:36/km (7:24/mi). Miles 1-3: 7:30-7:35/mi (protect quads). Miles 4-8: 7:32-7:37/mi (Highland Park climb). Miles 8-11: 7:18-7:22/mi (M-Streets descent). Miles 11-20: 7:24-7:27/mi (White Rock Lake metronome). Mile 20.5: Winsted Dr climb (survive, shorten stride). Miles 21-26.2: 7:20-7:25/mi (Swiss Ave & Deep Ellum kick). Fuel 75-80g CHO/hr (gels at km 6, 12, 18, 24, 30, 36)." },
+      { time: "11:45 AM – 01:00 PM", type: "nutrition", tag: "CELEBRATION", title: "Finish Line & Immediate Recovery", body: "Collect Sub-3:15 medal. 40g Whey Isolate. Return to Fort Worth." },
+      { time: "01:00 PM – 06:00 PM", type: "work", tag: "CELEBRATION", title: "Post-Race Feast & Celebration", body: "Celebration feast, hot-cold contrast bath, relax with loved ones." },
+      { time: "08:30 PM – 09:30 PM", type: "nutrition", tag: "SLEEP", title: "Restorative Sleep Banking", body: "200mg Magnesium Bisglycinate (100% chelated, unbuffered). Asleep by 09:30 PM." }
     ];
   }
 
   if (day.dayName.includes("Nov 16")) {
     return [
+      { time: "07:15 AM – 12:00 PM", type: "work", tag: "DESK METABOLISM", title: "Remote Work Block", body: "Focus on desk work. Hydrate progressively with 1.5L of electrolyte water." },
+      { time: "12:00 PM – 12:45 PM", type: "nutrition", tag: "NUTRITION", title: "Pre-Run Carb Load", body: "1 plain bagel w/ 2 tbsp raw honey + 1 banana. Strict 2-hour digestion window before run." },
       { time: "01:30 PM", type: "nutrition", tag: "PROTEIN TRIAGE", title: "Pre-Run Amino Acid Saturation", body: "Consume 30-40g Whey Isolate NOW. Your muscles need amino acids circulating before you tear them down for 3 hours." },
-      { time: "02:33 PM – 05:26 PM", type: "run", tag: "LONG RUN", title: "32 km (19.9 mi) Steady Endurance", body: "Hold 5:25/km. Respect the extra weight. Hydrate constantly. Ends exactly at 5:26 PM sunset." },
-      { time: "05:30 PM", type: "nutrition", tag: "RECOVERY", title: "Post-Run Protein", body: "Another 40g Whey Isolate. You must hit 140g total today to repair this damage." }
+      { time: "02:33 PM – 05:26 PM", type: "run", tag: "RUN", title: "Shifted Monster Long Run (32.0 km / 19.9 mi)", body: "Steady time-on-feet conditioning @ 5:25 min/km (8:43 min/mi). Requires exactly 173 minutes. Timed perfectly to step back through the front door at exactly 5:26 PM (Fort Worth Sunset)." },
+      { time: "05:30 PM – 06:00 PM", type: "nutrition", tag: "RECOVERY", title: "Immediate Anabolic Window", body: "40g Whey Isolate + 5g Creatine in water. Hot-cold contrast shower." },
+      { time: "06:30 PM – 07:30 PM", type: "nutrition", tag: "DINNER", title: "Iron-Optimized Dinner & Omega-3s", body: "200g lean flank steak, sweet potatoes, green salad w/ lemon. 2 softgels NOW Molecularly Distilled Omega-3 Fish Oil." },
+      { time: "09:00 PM – 09:30 PM", type: "nutrition", tag: "SLEEP", title: "Nocturnal Anabolism", body: "175g cottage cheese (casein) + 200mg Magnesium Bisglycinate. Asleep by 09:30 PM." }
     ];
   }
-
-  if (isRest) {
+  
+  if (day.dayName.includes("Nov 19")) {
     return [
-      { time: "All Day", type: "nutrition", tag: "HYDRATION & PROTEIN", title: "The Inflammation Flush", body: "Drink 1 gallon of water with potassium-rich electrolytes to shed junk food water retention. Hit 135g protein minimum." },
-      { time: "05:00 PM", type: "strength", tag: "RECOVERY", title: "Structural Preservation", body: day.strength }
+      { time: "07:15 AM – 05:00 PM", type: "work", tag: "REMOTE WORK", title: "San Diego Operations", body: "Standard workday on PST. Hydrate with 2.0L water. Maintain 140g protein target." },
+      { time: "06:00 PM – 06:30 PM", type: "strength", tag: "STRENGTH", title: "Hotel Room Isometric Protocol", body: "3 Rounds: 15 Push-ups, 45s Wall Sit, 45s Plank. ZERO lunges or air squats. Protect the legs for Sunday." },
+      { time: "07:00 PM – 08:00 PM", type: "nutrition", tag: "DINNER", title: "Dinner & Recovery", body: "High protein meal. 12 oz Tart Cherry juice equivalent (if available)." },
+      { time: "09:00 PM – 09:30 PM", type: "nutrition", tag: "SLEEP", title: "Sleep Protocol", body: "200mg Magnesium Bisglycinate. Asleep by 9:30 PM PST." }
     ];
   }
 
-  return [
-    { time: "All Day", type: "nutrition", tag: "MACROS", title: "Protein Priority", body: "Hit 135g protein. Eliminate empty calories (pastries/sugar) to drop water weight safely." },
-    { time: "04:30 PM – 05:45 PM", type: "run", tag: "RUN", title: "Minimum Effective Dose Run", body: day.run + `. Ends by civil twilight: ${day.dusk}` },
-    { time: "06:00 PM", type: "strength", tag: "STRENGTH", title: "Maintenance", body: day.strength }
-  ];
+  if (day.dayName.includes("Nov 26")) {
+    return [
+      { time: "05:45 AM – 06:30 AM", type: "nutrition", tag: "BREAKFAST", title: "Pre-Race Fuel & Transit", body: "1 plain bagel w/ honey + banana + 400 mL electrolyte water. Drive/transit to General Worth Square." },
+      { time: "06:45 AM – 07:15 AM", type: "run", tag: "WARMUP", title: "Warm-up (1.5 km Total)", body: "1.5 km easy jog → dynamic leg swings → 2 strides." },
+      { time: "07:30 AM – 08:15 AM", type: "race", tag: "8K RACE", title: "Fort Worth Turkey Trot 8K (8.0 km)", body: "Run @ 4:25/km (7:06/mi) around Downtown Fort Worth. Sharp aerobic stimulus. Target: 35:20." },
+      { time: "08:15 AM – 08:35 AM", type: "run", tag: "COOLDOWN", title: "Cooldown (1.5 km Total)", body: "1.5 km light jogging flush. 40g Whey Isolate." },
+      { time: "09:30 AM – 05:00 PM", type: "nutrition", tag: "THANKSGIVING", title: "Thanksgiving Meal Management", body: "Enjoy Thanksgiving dinner. Prioritize lean turkey breast, sweet potatoes, and moderate sides. 2 softgels NOW Omega-3 Fish Oil." },
+      { time: "08:30 PM – 09:30 PM", type: "nutrition", tag: "SLEEP", title: "Restoration & Sleep", body: "200mg Magnesium Bisglycinate. Bed by 09:30 PM." }
+    ];
+  }
+
+  if (day.dayName.includes("Dec 19")) {
+    return [
+      { time: "06:30 AM – 07:15 AM", type: "nutrition", tag: "BREAKFAST", title: "Pre-Race Fuel & Transit", body: "Bagel w/ honey + banana + 400 mL water. Drive/transit to Dallas start line." },
+      { time: "08:30 AM – 09:30 AM", type: "race", tag: "10K RACE", title: "Charlie Brown Christmas 10K", body: "Run purely as a celebratory active recovery flush @ >5:30/km (8:51+/mi). Enjoy the holiday atmosphere." },
+      { time: "10:00 AM – 05:00 PM", type: "work", tag: "CELEBRATION", title: "Holiday Brunch & Celebration", body: "Celebratory brunch with family/friends. Complete cognitive relaxation." },
+      { time: "06:00 PM – 07:30 PM", type: "nutrition", tag: "DINNER", title: "Holiday Dinner & Omega-3s", body: "Wholesome holiday dinner. 2 softgels NOW Omega-3 Fish Oil." },
+      { time: "08:30 PM – 09:30 PM", type: "nutrition", tag: "RECOVERY", title: "Sleep Protocol", body: "200mg Magnesium Bisglycinate. Bed by 09:30 PM." }
+    ];
+  }
+
+  if (isWeekend) {
+    const isLongRunSunday = isSunday && !isRest;
+    return [
+      { time: "05:30 AM – 06:00 AM", type: "nutrition", tag: "PRIMER", title: "Morning Fuel & Hydration", body: "300 mL water + electrolytes + 1 banana or bagel w/ honey." },
+      { time: "06:00 AM – 08:45 AM", type: "run", tag: "RUN", title: isSunday ? "Key Weekend Long Run Session" : "Aerobic Shakeout / Easy Run", body: day.run },
+      { time: "08:45 AM – 09:30 AM", type: "nutrition", tag: "NUTRITION", title: "Post-Run Anabolic Window", body: "35g-40g Whey Isolate + 5g Creatine in water. Hot-cold contrast shower." },
+      { time: "09:30 AM – 12:30 PM", type: "work", tag: "RECOVERY", title: "Post-Run Feast & Hydration", body: "Eggs, sweet potato hash, fresh fruit, sourdough. Hydration: 1L electrolyte water." },
+      { time: "12:30 PM – 02:00 PM", type: "work", tag: "REST", title: "Restorative Power Nap", body: "45–60 minute power nap to accelerate muscle protein synthesis and reset the CNS." },
+      { time: "02:30 PM – 03:00 PM", type: "nutrition", tag: isLongRunSunday ? "GLYCOGEN REALIZATION" : "SNACK", title: isLongRunSunday ? "Post-Nap Glycogen Realization (+500 kcal)" : "Midday Nutrient Window", body: isLongRunSunday ? "3 white rice cakes w/ 2 tbsp raw honey + 16 oz organic apple juice (92g fast carbs, +380 kcal). Fully bridges long run energy expenditure." : "Greek yogurt or rice cakes w/ fruit. Sip water." },
+      { time: "03:00 PM – 05:00 PM", type: "transit", tag: "TRANSIT & ERRANDS", title: "Active Transit & Errands", body: day.ruck.includes("Zero") ? "Horizontal recovery; minimize foot fatigue." : `Active walking/errands: ${day.ruck}.` },
+      { time: "05:00 PM – 05:35 PM", type: "strength", tag: "RECOVERY", title: "Mobility & Tissue Care", body: `${day.strength}. Concludes before civil twilight (${day.civilTwilight}).` },
+      { time: "06:00 PM – 07:30 PM", type: "nutrition", tag: "NUTRITION", title: "Iron-Optimized Dinner & Omega-3s", body: "200g lean flank steak or salmon, sweet potatoes, green salad w/ lemon/bell peppers (Vitamin C optimizes iron absorption). 2 softgels NOW Molecularly Distilled Omega-3 Fish Oil (360mg EPA / 240mg DHA) taken with meal fats." },
+      { time: "07:30 PM – 08:30 PM", type: "work", tag: "DECOMPRESSION", title: "Reading & Cognitive Down-Regulation", body: "Fiction reading or relaxing with pets. Screen off by 08:30 PM." },
+      { time: "08:30 PM – 09:00 PM", type: "nutrition", tag: "TART CHERRY", title: "Anti-Inflammatory Tart Cherry", body: "12 oz Montmorency Tart Cherry Juice (taken separated from red meat dinner)." },
+      { time: "09:00 PM – 09:30 PM", type: "nutrition", tag: "NOCTURNAL ANABOLISM", title: "Casein Anchor & Magnesium Bisglycinate", body: "175g low-fat cottage cheese (24g slow-release casein) + 200mg Magnesium Bisglycinate (100% pure chelated, unbuffered). Asleep by 09:30 PM." }
+    ];
+  } else {
+    const isHardDay = day.type.includes("Threshold") || day.type.includes("VO2 Max") || day.type.includes("MP") || day.type.includes("Lock Reps");
+    return [
+      { time: "04:30 AM – 05:00 AM", type: "nutrition", tag: "NITRATE SATURATION", title: "Pre-Run Nitrate Window", body: isHardDay ? "Beetroot juice shot (6-12 mmol nitrate) taken 2.5-3 hrs pre-run to hit peak plasma nitrite. (Or consumed evening prior at 8:30 PM)." : "Hydration sip: 200 mL water." },
+      { time: "05:00 AM – 05:30 AM", type: "nutrition", tag: "PRIMER", title: "Pre-Workout Primer & Fast Carbs", body: "300 mL water + 150mg sodium + 1 banana. Sourdough w/ honey on quality mornings." },
+      { time: "05:30 AM – 06:30 AM", type: "run", tag: isRest ? "REST / MOBILITY" : "RUN", title: isRest ? "Morning Passive Mobility" : "Morning Running Session", body: isRest ? "Zero running. 15-min light yoga, hip openers, and ankle circles." : "Morning Run / Shakeout (if shifted AM)" },
+      { time: "06:30 AM – 07:00 AM", type: "nutrition", tag: "NUTRITION", title: "Post-Workout Nutrition & Shower", body: "35g Whey Isolate + 5g Creatine in water. Contrast shower (2m hot / 30s cold)." },
+      { time: "07:00 AM – 07:15 AM", type: "transit", tag: "ACTIVE COMMUTE", title: "Morning Commute", body: `${day.ruck}. 85-90 RPM Zone 2 cadence if cycling; practice panoramic gaze.` },
+      { time: "07:15 AM – 12:00 PM", type: "work", tag: "WORK", title: "Work Block 1", body: "Remote work. 1L water. Monitor 140g protein target." },
+      { time: "12:00 PM – 01:00 PM", type: "nutrition", tag: "LUNCH & RUCK", title: "Lunch & Midday Active Reset", body: "170g lean turkey/chicken, 1.5 cups jasmine rice/quinoa, steamed greens (~680 kcal). 15-min walk." },
+      { time: "01:00 PM – 04:30 PM", type: "work", tag: "WORK", title: "Work Block 2", body: "Strict 12:00 PM caffeine cutoff. 750 mL water." },
+      { time: "04:30 PM – 05:00 PM", type: "nutrition", tag: "TART CHERRY", title: "Afternoon Tart Cherry Dose", body: "12 oz Montmorency Tart Cherry Juice. Separated from dinner to avoid iron/polyphenol binding." },
+      { time: "05:00 PM – 06:30 PM", type: "run", tag: "RUN", title: "Evening Run / Commute", body: isRest ? "Commute home. No running." : day.run + `. Finishes exactly by civil twilight: ${day.civilTwilight}` },
+      { time: "06:30 PM – 07:30 PM", type: "nutrition", tag: "DINNER", title: "Iron-Optimized Dinner & Omega-3s", body: "200g flank steak/salmon, roasted potatoes, greens w/ citrus dressing (Vitamin C enhances iron absorption). 2 softgels NOW Molecularly Distilled Omega-3 Fish Oil (360mg EPA / 240mg DHA) taken with meal fats." },
+      { time: "07:30 PM – 08:30 PM", type: "work", tag: "DECOMPRESSION", title: "Cognitive Decompression", body: "Social connection, audiobooks, or fiction reading. Screens off by 08:30 PM." },
+      { time: "08:30 PM – 09:00 PM", type: "strength", tag: "STRENGTH", title: "Evening Strength / Tissue Work", body: day.strength },
+      { time: "09:00 PM – 09:30 PM", type: "nutrition", tag: "NOCTURNAL ANABOLISM", title: "Casein Anchor & Bedtime Sleep", body: isHardDay ? "175g low-fat cottage cheese (24g casein) + 200mg Magnesium Bisglycinate (100% pure chelated, unbuffered). Asleep by 09:30 PM." : "200mg Magnesium Bisglycinate (100% pure chelated, unbuffered). Asleep by 09:30 PM." }
+    ];
+  }
 }
 
 const weeksData = masterRawData.map(w => ({
@@ -191,6 +272,7 @@ const weeksData = masterRawData.map(w => ({
     date: d.dayName,
     type: d.type,
     runDist: d.run,
+    transitLoad: d.ruck,
     strength: d.strength,
     carbTarget: d.carbs,
     civilTwilight: d.dusk,
@@ -223,7 +305,7 @@ function renderDaySelector() {
   const currentWeek = weeksData[currentWeekIdx];
   currentWeek.days.forEach((day, idx) => {
     const btn = document.createElement('button');
-    const isRace = day.type.includes('RACE') || day.type.includes('Marathon') || day.type.includes('Turkey Trot');
+    const isRace = day.type.includes('RACE') || day.type.includes('Marathon') || day.type.includes('Turkey Trot') || day.type.includes('Charlie Brown');
     btn.className = `day-btn ${idx === currentDayIdx ? 'active' : ''} ${isRace ? 'race-day' : ''}`;
     btn.innerHTML = `<div>${day.date.split(',')[0]}</div><div style="font-size:0.7rem;margin-top:2px;">${day.date.split(',')[1]}</div>`;
     btn.onclick = () => {
@@ -241,26 +323,30 @@ function renderDayView() {
   let html = `
     <div class="day-view active">
       <div style="margin-bottom: 16px;">
-        <h2 style="font-size: 1.4rem; color: var(--accent-rose);">${day.date} — ${day.type}</h2>
+        <h2 style="font-size: 1.4rem; color: var(--accent-blue);">${day.date} — ${day.type}</h2>
         <p style="color: var(--text-muted); font-size: 0.9rem;">${weeksData[currentWeekIdx].title} | ${weeksData[currentWeekIdx].theme}</p>
       </div>
 
       <div class="day-summary-banner">
         <div class="metric-item">
-          <span class="metric-label">Running Demand (MED)</span>
+          <span class="metric-label">Running Demand</span>
           <span class="metric-val highlight">${day.runDist}</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">Transit / Longevity</span>
+          <span class="metric-val transit-highlight">${day.transitLoad}</span>
         </div>
         <div class="metric-item">
           <span class="metric-label">Strength / Mobility</span>
           <span class="metric-val">${day.strength}</span>
         </div>
         <div class="metric-item">
-          <span class="metric-label">Nutrition Target</span>
+          <span class="metric-label">Nutrition</span>
           <span class="metric-val alert">${day.carbTarget}</span>
         </div>
         <div class="metric-item">
           <span class="metric-label">Civil Twilight Horizon</span>
-          <span class="metric-val">${day.civilTwilight}</span>
+          <span class="metric-val alert">${day.civilTwilight}</span>
         </div>
       </div>
 
@@ -271,6 +357,8 @@ function renderDayView() {
     let tagClass = 'tag-run';
     if(item.type === 'strength') tagClass = 'tag-strength';
     if(item.type === 'nutrition') tagClass = 'tag-nutrition';
+    if(item.type === 'work') tagClass = 'tag-desk';
+    if(item.type === 'transit') tagClass = 'tag-transit';
     if(item.type === 'race') tagClass = 'tag-race';
 
     html += `
