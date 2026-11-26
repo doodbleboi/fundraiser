@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sub-3:15 Final 3 Weeks | BMW Dallas Marathon</title>
+<title>Sub-3:15 Final 3 Weeks & KM Pacing Guide | 2026 BMW Dallas Marathon</title>
 <style>
   :root {
     --bg-primary: #0a0f1d;
@@ -35,7 +35,7 @@
   }
 
   .container {
-    max-width: 1180px;
+    max-width: 1240px;
     margin: 0 auto;
   }
 
@@ -54,14 +54,14 @@
   }
 
   .header h1 {
-    font-size: 1.6rem;
+    font-size: 1.55rem;
     color: var(--accent-blue);
     margin-bottom: 4px;
   }
 
   .header p {
     color: var(--text-muted);
-    font-size: 0.92rem;
+    font-size: 0.9rem;
   }
 
   .badges {
@@ -84,6 +84,7 @@
   .badge.rose { color: var(--accent-rose); border: 1px solid rgba(244, 63, 94, 0.45); }
   .badge.amber { color: var(--accent-amber); border: 1px solid rgba(251, 191, 36, 0.4); }
   .badge.emerald { color: var(--accent-emerald); border: 1px solid rgba(52, 211, 153, 0.4); }
+  .badge.purple { color: var(--accent-purple); border: 1px solid rgba(192, 132, 252, 0.4); }
 
   /* Top View Tabs */
   .view-tabs {
@@ -138,9 +139,7 @@
     transition: all 0.15s ease;
   }
 
-  .week-btn:hover {
-    border-color: var(--accent-blue);
-  }
+  .week-btn:hover { border-color: var(--accent-blue); }
 
   .week-btn.active {
     background: rgba(56, 189, 248, 0.14);
@@ -178,9 +177,7 @@
     transition: all 0.15s ease;
   }
 
-  .day-btn:hover {
-    border-color: var(--accent-emerald);
-  }
+  .day-btn:hover { border-color: var(--accent-emerald); }
 
   .day-btn.active {
     background: var(--accent-emerald);
@@ -193,29 +190,17 @@
     font-weight: 600;
   }
 
-  .day-btn.race-day {
-    border-color: var(--accent-rose);
+  .day-btn.completed-day {
+    border-color: rgba(52, 211, 153, 0.55);
   }
 
-  .day-btn.race-day .day-name {
-    color: var(--accent-rose);
-  }
-
-  .day-btn.race-day.active {
-    background: var(--accent-rose);
-    color: #fff;
-  }
-
+  .day-btn.race-day { border-color: var(--accent-rose); }
+  .day-btn.race-day .day-name { color: var(--accent-rose); }
+  .day-btn.race-day.active { background: var(--accent-rose); color: #fff; }
   .day-btn.race-day.active .day-name,
-  .day-btn.race-day.active .day-meta {
-    color: #fff;
-  }
+  .day-btn.race-day.active .day-meta { color: #fff; }
 
-  .day-name {
-    font-size: 0.82rem;
-    font-weight: 700;
-  }
-
+  .day-name { font-size: 0.82rem; font-weight: 700; }
   .day-meta {
     font-size: 0.7rem;
     color: var(--text-muted);
@@ -225,7 +210,7 @@
     text-overflow: ellipsis;
   }
 
-  /* Day Detail Card */
+  /* Cards & Summaries */
   .card {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
@@ -243,16 +228,8 @@
     margin-bottom: 16px;
   }
 
-  .day-header h2 {
-    font-size: 1.35rem;
-    color: var(--text-primary);
-  }
-
-  .day-header .subtitle {
-    color: var(--text-muted);
-    font-size: 0.88rem;
-    margin-top: 2px;
-  }
+  .day-header h2 { font-size: 1.32rem; color: var(--text-primary); }
+  .day-header .subtitle { color: var(--text-muted); font-size: 0.88rem; margin-top: 2px; }
 
   .day-summary {
     display: grid;
@@ -273,16 +250,12 @@
     margin-bottom: 4px;
   }
 
-  .metric-val {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--text-primary);
-  }
-
+  .metric-val { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
   .metric-val.blue { color: var(--accent-blue); }
   .metric-val.emerald { color: var(--accent-emerald); }
   .metric-val.amber { color: var(--accent-amber); }
   .metric-val.rose { color: var(--accent-rose); }
+  .metric-val.purple { color: var(--accent-purple); }
 
   .guardrail-box {
     background: rgba(251, 191, 36, 0.1);
@@ -294,9 +267,13 @@
     color: var(--text-primary);
   }
 
-  .guardrail-box strong {
-    color: var(--accent-amber);
+  .guardrail-box strong { color: var(--accent-amber); }
+
+  .guardrail-box.emerald-box {
+    background: rgba(52, 211, 153, 0.1);
+    border-left-color: var(--accent-emerald);
   }
+  .guardrail-box.emerald-box strong { color: var(--accent-emerald); }
 
   /* Timeline */
   .timeline {
@@ -306,14 +283,8 @@
     padding-left: 20px;
   }
 
-  .timeline-item {
-    position: relative;
-    margin-bottom: 16px;
-  }
-
-  .timeline-item:last-child {
-    margin-bottom: 0;
-  }
+  .timeline-item { position: relative; margin-bottom: 16px; }
+  .timeline-item:last-child { margin-bottom: 0; }
 
   .timeline-item::before {
     content: "";
@@ -332,12 +303,7 @@
   .timeline-item.recovery::before { background: var(--accent-purple); }
   .timeline-item.work::before { background: var(--accent-amber); }
 
-  .time-label {
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    margin-bottom: 4px;
-  }
+  .time-label { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); margin-bottom: 4px; }
 
   .entry-box {
     background: var(--bg-primary);
@@ -354,11 +320,7 @@
     margin-bottom: 4px;
   }
 
-  .entry-title {
-    font-size: 0.94rem;
-    font-weight: 700;
-    color: var(--text-primary);
-  }
+  .entry-title { font-size: 0.94rem; font-weight: 700; color: var(--text-primary); }
 
   .tag {
     font-size: 0.66rem;
@@ -375,49 +337,40 @@
   .tag.recovery { background: rgba(192, 132, 252, 0.18); color: var(--accent-purple); }
   .tag.work { background: rgba(251, 191, 36, 0.18); color: var(--accent-amber); }
 
-  .entry-body {
-    font-size: 0.87rem;
-    color: var(--text-secondary);
-  }
+  .entry-body { font-size: 0.87rem; color: var(--text-secondary); }
 
-  /* Tables (Overview & Pace Zones) */
-  .table-wrap {
-    overflow-x: auto;
-  }
+  /* Tables */
+  .table-wrap { overflow-x: auto; }
 
   table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.87rem;
+    font-size: 0.85rem;
   }
 
   th, td {
     text-align: left;
-    padding: 11px 12px;
+    padding: 10px 11px;
     border-bottom: 1px solid var(--border);
-    vertical-align: top;
+    vertical-align: middle;
   }
 
   th {
-    font-size: 0.73rem;
+    font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: var(--text-muted);
     background: var(--bg-tertiary);
+    position: sticky;
+    top: 0;
   }
 
-  tr.clickable {
-    cursor: pointer;
-    transition: background 0.12s ease;
-  }
-
-  tr.clickable:hover {
-    background: rgba(56, 189, 248, 0.08);
-  }
-
-  tr.race-row {
-    background: rgba(244, 63, 94, 0.1);
-  }
+  tr.clickable { cursor: pointer; transition: background 0.12s ease; }
+  tr.clickable:hover { background: rgba(56, 189, 248, 0.08); }
+  tr.race-row { background: rgba(244, 63, 94, 0.1); }
+  tr.milestone-row { background: rgba(56, 189, 248, 0.08); }
+  tr.split-row { background: rgba(251, 191, 36, 0.13); border-top: 1px solid rgba(251, 191, 36, 0.45); border-bottom: 1px solid rgba(251, 191, 36, 0.45); }
+  tr.half-row { background: rgba(52, 211, 153, 0.12); }
 
   tr.week-divider td {
     background: var(--bg-tertiary);
@@ -427,6 +380,45 @@
     text-transform: uppercase;
     letter-spacing: 0.4px;
     padding: 8px 12px;
+  }
+
+  .phase-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .p-anchor { background: rgba(192, 132, 252, 0.18); color: var(--accent-purple); }
+  .p-split { background: rgba(251, 191, 36, 0.22); color: var(--accent-amber); }
+  .p-cruise { background: rgba(56, 189, 248, 0.18); color: var(--accent-blue); }
+  .p-climb { background: rgba(244, 63, 94, 0.18); color: var(--accent-rose); }
+  .p-kick { background: rgba(52, 211, 153, 0.2); color: var(--accent-emerald); }
+
+  /* Filter Pills for KM table */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .filter-btn {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .filter-btn.active {
+    background: var(--accent-emerald);
+    color: var(--bg-primary);
+    border-color: var(--accent-emerald);
   }
 
   /* Reference Grid */
@@ -450,23 +442,11 @@
     margin-bottom: 10px;
   }
 
-  .strategy-item:last-child {
-    margin-bottom: 0;
-  }
+  .strategy-item:last-child { margin-bottom: 0; }
+  .strategy-title { font-size: 0.9rem; font-weight: 700; color: var(--accent-emerald); margin-bottom: 4px; }
+  .strategy-text { font-size: 0.85rem; color: var(--text-secondary); }
 
-  .strategy-title {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--accent-emerald);
-    margin-bottom: 4px;
-  }
-
-  .strategy-text {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-  }
-
-  @media (max-width: 820px) {
+  @media (max-width: 860px) {
     .week-selector { grid-template-columns: 1fr; }
     .day-selector { grid-template-columns: repeat(4, 1fr); }
     .ref-grid { grid-template-columns: 1fr; }
@@ -478,20 +458,21 @@
 <div class="container">
   <div class="header">
     <div>
-      <h1>Sub-3:15 Final 3 Weeks</h1>
-      <p>Nov 23 – Dec 13, 2026 &middot; BMW Dallas Marathon Target: &le; 3:14:59 (Watch: 4:35–4:37/km (7:22–7:25/mi))</p>
+      <h1>Sub-3:15 Final 3 Weeks &amp; KM Race Blueprint</h1>
+      <p>Nov 23 – Dec 13, 2026 &middot; 2026 BMW Dallas Marathon &middot; Corral B (8:10 AM Wave) &middot; Target: <strong>3:14:03</strong> (&le; 3:14:59)</p>
       <div class="badges">
-        <span class="badge amber">Nov 26: FW Turkey Trot 8.0 km (4.97 mi) All-Out</span>
-        <span class="badge rose">Dec 13: BMW Dallas Marathon 42.2 km (26.2 mi)</span>
-        <span class="badge emerald">140g Protein/Day &middot; Mg Bisglycinate</span>
-        <span class="badge blue">Work: 7:15 AM – 5:30 PM CT</span>
+        <span class="badge emerald">Nov 26 Completed: 8.01 km (4.98 mi) in 32:36 (4:04/km)</span>
+        <span class="badge purple">km 1–11: Ride 1:40 Half Pacer (4:44/km)</span>
+        <span class="badge amber">km 12 (Greenville &rarr; Richmond): Half Split &amp; Ramp</span>
+        <span class="badge rose">Dec 13: Corral B 8:10 AM &middot; Negative Split 1:38:07 / 1:35:56</span>
       </div>
     </div>
 
     <div class="view-tabs">
       <button class="tab-btn active" onclick="switchPanel('daily', this)">Daily Plan</button>
       <button class="tab-btn" onclick="switchPanel('overview', this)">21-Day Overview</button>
-      <button class="tab-btn" onclick="switchPanel('reference', this)">Paces &amp; Course Plan</button>
+      <button class="tab-btn" onclick="switchPanel('kmpacing', this)">KM-by-KM Pacing Guide</button>
+      <button class="tab-btn" onclick="switchPanel('reference', this)">Paces &amp; Anti-Bonk Rules</button>
     </div>
   </div>
 
@@ -507,8 +488,8 @@
     <div class="card">
       <div class="day-header">
         <div>
-          <h2>Full 21-Day Schedule (Nov 23 – Dec 13)</h2>
-          <p class="subtitle">Click any day to open its full timeline and execution notes.</p>
+          <h2>Full 21-Day Schedule (Nov 23 – Dec 13, 2026)</h2>
+          <p class="subtitle">Updated with your Nov 26 Turkey Trot 8K result (32:36) and evidence-based taper volume reduction (40–60% drop). Click any row for full timeline.</p>
         </div>
       </div>
       <div class="table-wrap">
@@ -527,11 +508,73 @@
     </div>
   </div>
 
-  <!-- PANEL 3: PACES & COURSE EXECUTION -->
+  <!-- PANEL 3: KM-BY-KM PACING GUIDE -->
+  <div id="panel-kmpacing" class="panel">
+    <div class="card">
+      <div class="day-header">
+        <div>
+          <h2>2026 BMW Dallas Marathon &mdash; KM-by-KM Race Execution Guide</h2>
+          <p class="subtitle">Mapped directly to the official 2026 BMW Dallas Marathon course map &amp; elevation profile (Corral B, 8:10 AM start, Runna 1 km / 0.5 km audio cues).</p>
+        </div>
+      </div>
+
+      <div class="day-summary">
+        <div>
+          <div class="metric-label">Projected Chip Finish</div>
+          <div class="metric-val emerald">3:14:03 (56s buffer &le; 3:14:59)</div>
+        </div>
+        <div>
+          <div class="metric-label">km 1–11 (Miles 1–6.8): 1:40 Half Pacer</div>
+          <div class="metric-val purple">4:44/km (7:38/mi) &middot; 52:05 at 11K</div>
+        </div>
+        <div>
+          <div class="metric-label">Half Split (21.1 km / 13.1 mi)</div>
+          <div class="metric-val blue">1:38:07 (4:39.0/km avg)</div>
+        </div>
+        <div>
+          <div class="metric-label">Second Half (21.1 km &rarr; 42.2 km)</div>
+          <div class="metric-val rose">1:35:56 (4:32.8/km avg &middot; -2:11 neg split)</div>
+        </div>
+      </div>
+
+      <div class="guardrail-box emerald-box">
+        <strong>How the 1:40 Half Pacer + Split Strategy Works on the Official Dallas Course:</strong> From the start on Young/Marilla through Downtown, Turtle Creek, Fitzhugh, Cole, and Monticello up to the course high point (~580 ft at Mile 7 / km 11 on Greenville Ave), the Half Marathon and Full Marathon share the exact same roads. Tuck right behind the <strong>1:40 Half Marathon Pacer (4:44/km / 7:38/mi)</strong> in Corral B so you do not burn glycogen climbing to 580 ft. Just past Mile 7 (~km 12.1), the Half Marathon continues straight down Greenville/Ross while the Marathon turns <strong>LEFT onto Richmond Ave</strong>. That turn is your clean release cue: smoothly drop to <strong>4:31–4:34/km (7:16–7:21/mi)</strong> down Richmond/Gaston into White Rock Lake, run effort-controlled up the Mile 19–21 Gaston/Abrams climb (km 29–33), and close strong down Ross Ave to City Hall.
+      </div>
+
+      <div class="filter-bar" id="kmFilterBar">
+        <button class="filter-btn active" onclick="filterKmTable('all', this)">All 42 Kilometers</button>
+        <button class="filter-btn" onclick="filterKmTable('anchor', this)">km 1–11: 1:40 Half Pacer</button>
+        <button class="filter-btn" onclick="filterKmTable('split', this)">km 12–15: Half Split &amp; Descent</button>
+        <button class="filter-btn" onclick="filterKmTable('lake', this)">km 16–28: White Rock Cruise</button>
+        <button class="filter-btn" onclick="filterKmTable('climb', this)">km 29–33: Gaston Climb Defense</button>
+        <button class="filter-btn" onclick="filterKmTable('kick', this)">km 34–42.2: Ross Ave Surge &amp; Kick</button>
+        <button class="filter-btn" onclick="filterKmTable('milestones', this)">5K Mats &amp; Fuel Checkpoints Only</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>KM (Mile)</th>
+              <th>Phase</th>
+              <th>Exact Course Street / Landmark</th>
+              <th>Elevation &amp; Terrain</th>
+              <th>Target Split /km (/mi)</th>
+              <th>Cum. Chip Time</th>
+              <th>Execution &amp; Fueling Cue</th>
+            </tr>
+          </thead>
+          <tbody id="kmTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 4: PACES & ANTI-BONK RULES -->
   <div id="panel-reference" class="panel">
     <div class="ref-grid">
       <div class="card ref-card">
-        <h3>Custom Pace Zones (Sub-3:15 Target)</h3>
+        <h3>Calibrated Pace Zones (Post-32:36 8K)</h3>
         <div class="table-wrap">
           <table>
             <thead>
@@ -539,51 +582,63 @@
                 <th>Zone</th>
                 <th>min/km</th>
                 <th>(min/mi)</th>
-                <th>Effort</th>
+                <th>Role in Final 17 Days &amp; Race</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><strong>Easy / Recovery</strong></td>
-                <td>5:17–5:45</td>
-                <td>(8:30–9:15)</td>
-                <td>Strictly conversational</td>
+                <td>5:25–5:55</td>
+                <td>(8:43–9:31)</td>
+                <td>Strictly conversational taper runs; keeps HR low</td>
               </tr>
               <tr>
-                <td><strong>Aerobic</strong></td>
-                <td>4:58–5:11</td>
-                <td>(8:00–8:20)</td>
-                <td>Steady moderate</td>
+                <td><strong>Aerobic Steady</strong></td>
+                <td>5:05–5:20</td>
+                <td>(8:11–8:35)</td>
+                <td>Controlled aerobic flow</td>
               </tr>
               <tr>
-                <td><strong>Marathon (MP)</strong></td>
-                <td>4:35–4:37</td>
-                <td>(7:22–7:25)</td>
-                <td>4:37.3/km (7:26.2/mi) exact cutoff</td>
+                <td><strong>1:40 Half Pacer (km 1–11)</strong></td>
+                <td>4:43–4:45</td>
+                <td>(7:35–7:39)</td>
+                <td>Corral B opening anchor up Highland Park climb</td>
               </tr>
               <tr>
-                <td><strong>Half Marathon (HMP)</strong></td>
-                <td>4:18–4:21</td>
-                <td>(6:55–7:00)</td>
-                <td>Controlled threshold</td>
+                <td><strong>Sub-3:15 Avg Cutoff</strong></td>
+                <td>4:37.3</td>
+                <td>(7:26.2)</td>
+                <td>Exact 42.195 km average for 3:14:59</td>
               </tr>
               <tr>
-                <td><strong>10K Pace</strong></td>
-                <td>4:05–4:10</td>
-                <td>(6:35–6:42)</td>
-                <td>Hard aerobic</td>
+                <td><strong>Post-Split Cruise (km 13–28)</strong></td>
+                <td>4:32–4:34</td>
+                <td>(7:18–7:21)</td>
+                <td>Flat White Rock Lake rhythm after Half split</td>
               </tr>
               <tr>
-                <td><strong>8K Race Target</strong></td>
-                <td>3:59–4:04</td>
-                <td>(6:25–6:32)</td>
-                <td>Turkey Trot all-out</td>
+                <td><strong>Downtown Finish (km 34–42.2)</strong></td>
+                <td>4:29–4:32</td>
+                <td>(7:13–7:18)</td>
+                <td>Net downhill Ross Ave negative-split close</td>
               </tr>
               <tr>
-                <td><strong>5K Pace</strong></td>
-                <td>3:53–3:57</td>
-                <td>(6:15–6:22)</td>
-                <td>Strides &amp; short reps</td>
+                <td><strong>Half Marathon / Threshold</strong></td>
+                <td>4:15–4:20</td>
+                <td>(6:50–6:58)</td>
+                <td>Dec 7 race-week 1200m rhythm reps</td>
+              </tr>
+              <tr>
+                <td><strong>8K Proven Result (Nov 26)</strong></td>
+                <td>4:04</td>
+                <td>(6:33)</td>
+                <td>32:36 controlled above-threshold tune-up</td>
+              </tr>
+              <tr>
+                <td><strong>5K Strides / 400m Reps</strong></td>
+                <td>3:53–3:58</td>
+                <td>(6:15–6:23)</td>
+                <td>Short neuromuscular pop (never strained)</td>
               </tr>
             </tbody>
           </table>
@@ -591,22 +646,22 @@
       </div>
 
       <div class="card ref-card">
-        <h3>Dallas Marathon Course Execution</h3>
+        <h3>Masters (40+) Anti-Bonk &amp; Taper Rules</h3>
         <div class="strategy-item">
-          <div class="strategy-title">km 1–21 (Miles 1–13): First Half Discipline</div>
-          <div class="strategy-text">Go out controlled at <strong>4:37–4:38/km (7:25–7:28/mi)</strong> through downtown and Highland Park. Do not bank time early—save your quads for the back half.</div>
+          <div class="strategy-title">1. Why Riding the 1:40 Half Pacer (km 1–11) Prevents the Mile 20 Bonk</div>
+          <div class="strategy-text">Data from 78,912 marathon finishers shows opening &gt;5% faster than average increases bonking from <strong>1.5% to 26.6%</strong>. Because $\dot{V}\text{O}_{2\max}$ narrows slightly in your 40s while fuel economy stays high, climbing from ~420 ft to ~580 ft in Miles 1–7 at <strong>4:44/km</strong> instead of surging keeps you safely below lactate threshold, saving liver and muscle glycogen for Miles 19–26.</div>
         </div>
         <div class="strategy-item">
-          <div class="strategy-title">km 22.5–35.4 (Miles 14–22): White Rock Lake &amp; The Hills</div>
-          <div class="strategy-text">Expect rolling climbs around the lake and the steady climb up Dolly Parton / Lawther toward Greenville Ave. Run by effort uphill (allow drift to <strong>~4:43/km (~7:35/mi)</strong>) and let the downhills bring you back to <strong>4:33–4:36/km (7:20–7:24/mi)</strong>.</div>
+          <div class="strategy-title">2. Never Chase the 3:15 Pacer in Corral A</div>
+          <div class="strategy-text">Corral A starts at <strong>8:00 AM</strong> and Corral B starts at <strong>8:10 AM</strong>. Confirm exact pacer corrals at the Expo on Friday Dec 11, but never sprint early to bridge a 10-minute wave gap—your chip time starts when you cross the mat at 8:10 AM.</div>
         </div>
         <div class="strategy-item">
-          <div class="strategy-title">km 35.4–42.2 (Miles 22–26.2): Final Push to Downtown</div>
-          <div class="strategy-text">Once you crest the final rollers heading back toward downtown, lock into <strong>4:30–4:33/km (7:15–7:20/mi)</strong> to clear 3:14:59 with room to spare.</div>
+          <div class="strategy-title">3. Exogenous Fueling: 65–80 g Carbs/Hr + Sodium</div>
+          <div class="strategy-text">Take <strong>1 Gu gel (~22–25g carbs) 15 min pre-gun (7:55 AM)</strong>, then take <strong>1 Gu gel every ~6 km (approx. km 6, 12, 18, 24, 30, 35)</strong> washed down with water at aid stations. Take caffeinated Gu gels at <strong>km 24 and km 30</strong> right before the Gaston/Abrams climb.</div>
         </div>
         <div class="strategy-item">
-          <div class="strategy-title">Key Fueling &amp; Supplement Anchors</div>
-          <div class="strategy-text">Race fueling: <strong>75–80g carbs/hr</strong> (gels every ~6 km (~3.7 mi)). Daily baseline: <strong>140g protein</strong>, 2 softgels NOW Omega-3 w/ dinner, <strong>355 mL (12 oz)</strong> Tart Cherry (separated from iron-rich dinner), <strong>200mg Magnesium Bisglycinate</strong> at 9:00 PM.</div>
+          <div class="strategy-title">4. Taper Discipline &amp; Daily Supplement Stack</div>
+          <div class="strategy-text">After today's 32:36 8K, your fitness is built. Cut weekly volume by 40–60% over the next 16 days and stop all lower-body strength work after Dec 6. Maintain <strong>140g protein/day</strong>, <strong>5g creatine</strong> through Dec 12, 2 softgels NOW Omega-3 w/ dinner, <strong>355 mL (12 oz)</strong> Tart Cherry (separated from iron-rich meals), and <strong>200mg Magnesium Bisglycinate</strong> at 9:00 PM.</div>
         </div>
       </div>
     </div>
@@ -614,109 +669,147 @@
 </div>
 
 <script>
+const kmSplits = [
+  { km: 1,  mi: "0.62", phase: "anchor", phaseLabel: "1:40 Half Pacer", street: "Young St → Riverfront Blvd", terrain: "Flat (~420 ft) · Corral B Start (8:10 AM)", paceKm: "4:45", paceMi: "7:39", cum: "0:04:45", cue: "Controlled Corral B start; locate 1:40 Half Pacer flag/singlet ahead." },
+  { km: 2,  mi: "1.24", phase: "anchor", phaseLabel: "1:40 Half Pacer", street: "Riverfront → Continental → Houston", terrain: "Flat (~425 ft) · Settling into pack", paceKm: "4:44", paceMi: "7:37", cum: "0:09:29", cue: "Tuck behind 1:40 Half Pacer; let group block wind and restrain early adrenaline." },
+  { km: 3,  mi: "1.86", phase: "anchor", phaseLabel: "1:40 Half Pacer", street: "Houston St → Cedar Springs Rd", terrain: "Gentle rise (~440 ft)", paceKm: "4:44", paceMi: "7:37", cum: "0:14:13", cue: "Conversational breathing; shoulders loose, cadence ~176–180 spm." },
+  { km: 4,  mi: "2.49", phase: "anchor", phaseLabel: "1:40 Half Pacer", street: "Cedar Springs → Turtle Creek Blvd", terrain: "Rolling (~455 ft)", paceKm: "4:44", paceMi: "7:37", cum: "0:18:57", cue: "Smooth shaded rollers through Turtle Creek; drink water at aid station." },
+  { km: 5,  mi: "3.11", phase: "anchor", phaseLabel: "1:40 Half Pacer", street: "Turtle Creek Blvd (5K Timing Mat)", terrain: "Rolling (~460 ft) · 5K Checkpoint", paceKm: "4:44", paceMi: "7:37", cum: "0:23:41", cue: "5K MAT (~23:41): Right on 1:40 Half schedule (~33s behind even 3:15 pace—intentional).", milestone: true },
+  { km: 6,  mi: "3.73", phase: "anchor", phaseLabel: "1:40 Half Pacer", street: "Turtle Creek → Fitzhugh Ave", terrain: "Gradual climb begins (~475 ft)", paceKm: "4:45", paceMi: "7:39", cum: "0:28:26", cue: "FUEL #1: Take Gu Gel #1 + water (~28 min in) as Highland Park climb starts." },
+  { km: 7,  mi: "4.35", phase: "anchor", phaseLabel: "1:40 Half Pacer", street: "Fitzhugh Ave → Cole Ave", terrain: "Steady climb (~510 ft)", paceKm: "4:45", paceMi: "7:39", cum: "0:33:11", cue: "Shorten stride slightly uphill; stay tucked with 1:40 Half group—do not surge." },
+  { km: 8,  mi: "4.97", phase: "anchor", phaseLabel: "1:40 Half Pacer", street: "Cole Ave (Northbound)", terrain: "Sustained climb (~545 ft)", paceKm: "4:45", paceMi: "7:39", cum: "0:37:56", cue: "Keep HR/breathing below threshold; legs stay fresh while others overcook the hill." },
+  { km: 9,  mi: "5.59", phase: "anchor", phaseLabel: "1:40 Half Pacer", street: "Cole Ave → Monticello Ave", terrain: "Approaching high point (~570 ft)", paceKm: "4:45", paceMi: "7:39", cum: "0:42:41", cue: "Turn right onto Monticello; cresting Highland Park." },
+  { km: 10, mi: "6.21", phase: "anchor", phaseLabel: "1:40 Half Pacer", street: "Monticello → Greenville Ave (10K Mat)", terrain: "Course crest (~580 ft) · 10K Checkpoint", paceKm: "4:43", paceMi: "7:35", cum: "0:47:24", cue: "10K MAT (~47:24): High point reached (~580 ft). You are ~71s back of even 3:15 with fresh legs.", milestone: true },
+  { km: 11, mi: "6.84", phase: "anchor", phaseLabel: "1:40 Half Pacer", street: "Greenville Ave (Southbound)", terrain: "High plateau (~575 ft)", paceKm: "4:41", paceMi: "7:32", cum: "0:52:05", cue: "Final kilometer with 1:40 Half Pacer; prepare mentally for the course split ahead." },
+  { km: 12, mi: "7.46", phase: "split",  phaseLabel: "HALF SPLIT / RAMP", street: "Greenville Ave → LEFT onto Richmond Ave", terrain: "Slight drop (~565 ft) · HALF/FULL SPLIT", paceKm: "4:37", paceMi: "7:26", cum: "0:56:42", cue: "KEY MOVE: Half goes straight down Ross; you turn LEFT onto Richmond and smoothly step up to 4:33–4:37/km.", isSplit: true },
+  { km: 13, mi: "8.08", phase: "split",  phaseLabel: "Split & Descent", street: "Richmond Ave (Eastbound)", terrain: "Net downhill (~550 ft)", paceKm: "4:34", paceMi: "7:21", cum: "1:01:16", cue: "FUEL #2: Take Gu Gel #2 + water (~61 min). Settle into smooth sub-3:15 cruise." },
+  { km: 14, mi: "8.70", phase: "split",  phaseLabel: "Split & Descent", street: "Richmond Ave → Gaston Ave", terrain: "Net downhill (~520 ft)", paceKm: "4:32", paceMi: "7:18", cum: "1:05:48", cue: "Let gravity carry you down Gaston toward White Rock Lake without braking." },
+  { km: 15, mi: "9.32", phase: "split",  phaseLabel: "Split & Descent", street: "Gaston → White Rock / W Lawther (15K)", terrain: "Descent to lake (~485 ft) · 15K Checkpoint", paceKm: "4:31", paceMi: "7:16", cum: "1:10:19", cue: "15K MARK (~1:10:19): Entering White Rock Lake; already recovered ~21s of the opening hill cushion.", milestone: true },
+  { km: 16, mi: "9.94", phase: "lake",   phaseLabel: "White Rock Cruise", street: "W Lawther Dr (Entering West Shore)", terrain: "Flat lakeside (~470 ft)", paceKm: "4:33", paceMi: "7:20", cum: "1:14:52", cue: "Lock cruise metronome at 4:33/km; find a marathon runner/pack moving at ~4:33/km to share wind." },
+  { km: 17, mi: "10.56", phase: "lake",  phaseLabel: "White Rock Cruise", street: "W Lawther Dr (West Shore)", terrain: "Flat (~470 ft)", paceKm: "4:33", paceMi: "7:20", cum: "1:19:25", cue: "Steady aerobic rhythm; verify Runna 1 km audio alerts match effort." },
+  { km: 18, mi: "11.18", phase: "lake",  phaseLabel: "White Rock Cruise", street: "W Lawther Dr (Mid-West Shore)", terrain: "Flat (~475 ft)", paceKm: "4:33", paceMi: "7:20", cum: "1:23:58", cue: "FUEL #3: Take Gu Gel #3 + water (~84 min). Keep sodium/fluid intake steady." },
+  { km: 19, mi: "11.81", phase: "lake",  phaseLabel: "White Rock Cruise", street: "W Lawther → Dalgreen / Fisher", terrain: "Minor lakeside roller (~495 ft)", paceKm: "4:35", paceMi: "7:23", cum: "1:28:33", cue: "Relax over the small West Lawther roller; don't spike effort." },
+  { km: 20, mi: "12.43", phase: "lake",  phaseLabel: "White Rock Cruise", street: "W Lawther Dr (North End Approach, 20K)", terrain: "Flat/rolling (~485 ft) · 20K Checkpoint", paceKm: "4:34", paceMi: "7:21", cum: "1:33:07", cue: "20K MARK (~1:33:07): Smooth, controlled, strong aerobic posture.", milestone: true },
+  { km: 21, mi: "13.05", phase: "lake",  phaseLabel: "HALF MARATHON MAT", street: "North Tip of White Rock Lake (21.1K)", terrain: "Flat (~480 ft) · HALFWAY TIMING MAT", paceKm: "4:33", paceMi: "7:20", cum: "1:37:40", cue: "HALF MARATHON MAT: 1:38:07 at 21.0975 km! Need 1:36:52 in 2nd half (on pace for 3:14:03).", isHalf: true },
+  { km: 22, mi: "13.67", phase: "lake",  phaseLabel: "White Rock Cruise", street: "E Lawther Dr (Northeast Shore)", terrain: "Flat (~485 ft)", paceKm: "4:33", paceMi: "7:20", cum: "1:42:13", cue: "Cross onto East Lawther; stay patient—the real marathon starts at 30K." },
+  { km: 23, mi: "14.29", phase: "lake",  phaseLabel: "White Rock Cruise", street: "E Lawther Dr (Emerald Isle Loop Entry)", terrain: "Gentle roller (~500 ft)", paceKm: "4:34", paceMi: "7:21", cum: "1:46:47", cue: "Maintain cadence through the East Lawther neighborhood loop." },
+  { km: 24, mi: "14.91", phase: "lake",  phaseLabel: "White Rock Cruise", street: "E Lawther Loop (East Side)", terrain: "Rolling (~505 ft)", paceKm: "4:35", paceMi: "7:23", cum: "1:51:22", cue: "FUEL #4 (CAFFEINE): Take Caffeinated Gu Gel #4 + water (~111 min) to prime CNS for late miles." },
+  { km: 25, mi: "15.53", phase: "lake",  phaseLabel: "White Rock Cruise", street: "E Lawther Dr (25K Timing Mat)", terrain: "Drop back to shore (~480 ft) · 25K Checkpoint", paceKm: "4:33", paceMi: "7:20", cum: "1:55:55", cue: "25K MAT (~1:55:55): Banked ~20 seconds ahead of even 3:14:59 pace.", milestone: true },
+  { km: 26, mi: "16.16", phase: "lake",  phaseLabel: "White Rock Cruise", street: "E Lawther / White Rock Lake Trail", terrain: "Flat (~475 ft)", paceKm: "4:33", paceMi: "7:20", cum: "2:00:28", cue: "Cruising along the southeast shore; keep shoulders dropped and jaw relaxed." },
+  { km: 27, mi: "16.78", phase: "lake",  phaseLabel: "White Rock Cruise", street: "White Rock Lake Trail (Southeast Shore)", terrain: "Flat (~475 ft)", paceKm: "4:33", paceMi: "7:20", cum: "2:05:01", cue: "Prepare mentally for exiting the lake onto Winsted/Gaston." },
+  { km: 28, mi: "17.40", phase: "lake",  phaseLabel: "White Rock Cruise", street: "White Rock Lake Trail → Winsted Dr", terrain: "Flat (~475 ft)", paceKm: "4:33", paceMi: "7:20", cum: "2:09:34", cue: "Final flat kilometer before the Mile 19–21 climb out of the lake basin." },
+  { km: 29, mi: "18.02", phase: "climb", phaseLabel: "Gaston Climb Defense", street: "Winsted Dr → Gaston Ave", terrain: "Climb begins (~490 ft)", paceKm: "4:36", paceMi: "7:24", cum: "2:14:10", cue: "FUEL #5 (CAFFEINE): Take Caffeinated Gu Gel #5 + water (~134 min) right as Gaston climb starts." },
+  { km: 30, mi: "18.64", phase: "climb", phaseLabel: "Gaston Climb Defense", street: "Gaston Ave approaching Abrams (30K Mat)", terrain: "Steady climb (~520 ft) · 30K Checkpoint", paceKm: "4:38", paceMi: "7:27", cum: "2:18:48", cue: "30K MAT (~2:18:48): Run by effort uphill—accept 4:38–4:39/km rather than redlining quads.", milestone: true },
+  { km: 31, mi: "19.26", phase: "climb", phaseLabel: "Gaston Climb Defense", street: "Gaston Ave past Abrams Rd", terrain: "Sustained grade (~545 ft)", paceKm: "4:39", paceMi: "7:29", cum: "2:23:27", cue: "Quick, light steps; pump arms slightly to carry legs up the steepest section." },
+  { km: 32, mi: "19.88", phase: "climb", phaseLabel: "Gaston Climb Defense", street: "Gaston Ave → Greenville Ave", terrain: "Approaching second crest (~560 ft)", paceKm: "4:38", paceMi: "7:27", cum: "2:28:05", cue: "Almost at the top! You still hold a ~35-second cushion under 3:14:59." },
+  { km: 33, mi: "20.51", phase: "climb", phaseLabel: "Gaston Climb Defense", street: "Greenville Ave (Southbound)", terrain: "Crest (~565 ft) · Top of climb", paceKm: "4:35", paceMi: "7:23", cum: "2:32:40", cue: "Crested ~565 ft! From here to City Hall is net downhill—shift into racing gear." },
+  { km: 34, mi: "21.13", phase: "kick",  phaseLabel: "Ross Ave Surge", street: "Greenville Ave → Ross Ave", terrain: "Net downhill begins (~545 ft)", paceKm: "4:32", paceMi: "7:18", cum: "2:37:12", cue: "Turn onto Ross Ave; open stride naturally down the gradual grade." },
+  { km: 35, mi: "21.75", phase: "kick",  phaseLabel: "Ross Ave Surge", street: "Ross Ave (35K Timing Mat)", terrain: "Gentle downhill (~525 ft) · 35K Checkpoint", paceKm: "4:31", paceMi: "7:16", cum: "2:41:43", cue: "35K MAT (~2:41:43) + FUEL #6: Optional final Gu Gel #6 (or sips of water/electrolyte); 7.2 km left!", milestone: true },
+  { km: 36, mi: "22.37", phase: "kick",  phaseLabel: "Ross Ave Surge", street: "Ross Ave past Live Oak St", terrain: "Net drop (~505 ft)", paceKm: "4:31", paceMi: "7:16", cum: "2:46:14", cue: "Pass runners who went out too hot in Miles 1–7; stay locked on 4:30–4:31/km." },
+  { km: 37, mi: "22.99", phase: "kick",  phaseLabel: "Ross Ave Surge", street: "Ross Ave past Fitzhugh Ave", terrain: "Gradual descent (~490 ft)", paceKm: "4:30", paceMi: "7:15", cum: "2:50:44", cue: "5.2 km to go—every kilometer banks another 7 seconds under 3:14:59." },
+  { km: 38, mi: "23.61", phase: "kick",  phaseLabel: "Ross Ave Surge", street: "Ross Ave past Haskell Ave", terrain: "Net drop (~475 ft)", paceKm: "4:30", paceMi: "7:15", cum: "2:55:14", cue: "Keep cadence crisp; focus only on the runner 20 meters ahead of you." },
+  { km: 39, mi: "24.23", phase: "kick",  phaseLabel: "Ross Ave Surge", street: "Ross Ave → Field / San Jacinto", terrain: "Flat/slight drop (~455 ft)", paceKm: "4:30", paceMi: "7:15", cum: "2:59:44", cue: "Entering Downtown Dallas! Crowd energy builds—hold form." },
+  { km: 40, mi: "24.85", phase: "kick",  phaseLabel: "Final Kick", street: "Downtown Loop → Commerce St (40K Mat)", terrain: "Flat (~440 ft) · 40K Checkpoint", paceKm: "4:30", paceMi: "7:15", cum: "3:04:14", cue: "40K MAT (~3:04:14): Just 2.195 km (1.36 mi) left—you have 10:45 to break 3:14:59!", milestone: true },
+  { km: 41, mi: "25.48", phase: "kick",  phaseLabel: "Final Kick", street: "Commerce St → Ervay St", terrain: "Flat (~435 ft)", paceKm: "4:29", paceMi: "7:13", cum: "3:08:43", cue: "Final full kilometer—drive arms, stay tall, empty the tank." },
+  { km: 42, mi: "26.22", phase: "kick",  phaseLabel: "FINISH LINE", street: "Young / Marilla St → City Hall Finish (+195m)", terrain: "Flat (~430 ft) · 42.195 km Total", paceKm: "4:28", paceMi: "7:11", cum: "3:14:03", cue: "SUB-3:15 ACHIEVED (~3:14:03)! Cross the mat strong and stop your watch.", isFinish: true }
+];
+
 const planWeeks = [
   {
     id: 18,
     label: "Week 18: Peak & Turkey Trot",
     dates: "Nov 23 – Nov 29",
-    theme: "All-out 8.0 km (4.97 mi) replaces midweek speedwork; final MP long run on Sunday.",
+    theme: "Nov 26 Turkey Trot 8.01 km (4.98 mi) executed in 32:36 (4:04/km); controlled taper begins.",
     days: [
       {
-        shortDay: "Mon", date: "Nov 23", shortMeta: "Off / 5-6 km (3-4 mi)",
-        title: "Recovery / Off Day",
-        workout: "Off Day (or optional 4.8–6.4 km (3–4 mi) Easy)",
-        pace: "5:26–5:45/km (8:45–9:15/mi)",
+        shortDay: "Mon", date: "Nov 23", shortMeta: "Off Day",
+        title: "Recovery / Off Day (Completed)",
+        workout: "Off Day",
+        pace: "No Running",
         focus: "Full recovery from Sunday's 21.2 km (13.2 mi) @ 4:58/km (8:00/mi).",
         nutrition: "140g protein target · Normal carbs",
         isRest: true,
         timeline: [
-          { time: "07:15 AM – 05:30 PM", type: "work", tag: "WORK", title: "Remote Work Block", body: "Hydrate steadily (2 L (68 oz) water). Take a 15-min midday walk to keep hips loose." },
-          { time: "05:30 PM – 06:00 PM", type: "recovery", tag: "RECOVERY", title: "Full Rest or Optional 4.8–6.4 km (3–4 mi) Flush", body: "Default to full rest. Only jog 4.8–6.4 km (3–4 mi) @ 5:26–5:45/km (8:45–9:15/mi) if legs feel genuinely bouncy. Foam roll calves and glutes." },
-          { time: "06:30 PM – 09:30 PM", type: "nutrition", tag: "NUTRITION", title: "Dinner & Sleep Protocol", body: "High-protein dinner + 2 softgels Omega-3. 355 mL (12 oz) Tart Cherry separated from dinner. 200mg Magnesium Bisglycinate at 9:00 PM." }
+          { time: "07:15 AM – 05:30 PM", type: "work", tag: "WORK", title: "Remote Work Block", body: "Hydrated steadily (2 L (68 oz) water) with midday mobility." },
+          { time: "06:30 PM – 09:30 PM", type: "nutrition", tag: "NUTRITION", title: "Dinner & Sleep Protocol", body: "High-protein dinner + 2 softgels Omega-3. 355 mL (12 oz) Tart Cherry + 200mg Magnesium Bisglycinate at 9:00 PM." }
         ]
       },
       {
         shortDay: "Tue", date: "Nov 24", shortMeta: "8 km (5 mi) + Strides",
-        title: "Easy Run + Strides",
+        title: "Easy Run + Strides (Completed)",
         workout: "8.0 km (5 mi) Easy + 4 x 20s strides",
-        pace: "Easy: 5:17–5:36/km (8:30–9:00/mi) · Strides: ~3:53/km (~6:15/mi)",
-        focus: "Wake up leg turnover with full walk-back recovery between strides.",
+        pace: "Easy: 5:25–5:45/km (8:43–9:15/mi) · Strides: ~3:55/km (~6:18/mi)",
+        focus: "Primed leg turnover ahead of Thursday's Turkey Trot 8K.",
         nutrition: "140g protein · Pre-run banana/honey",
         timeline: [
-          { time: "07:15 AM – 05:00 PM", type: "work", tag: "WORK", title: "Remote Work Block", body: "12:00 PM caffeine cutoff. Keep hydration steady ahead of evening run." },
-          { time: "05:00 PM – 05:50 PM", type: "run", tag: "RUN", title: "8.0 km (5 mi) Easy + 4 x 20s Strides", body: "Run 8.0 km (5 mi) strictly conversational (5:17–5:36/km (8:30–9:00/mi)). Finish with 4 x 20-second strides at ~5K effort (3:53/km (6:15/mi)) with full walk-back rest." },
-          { time: "06:00 PM – 09:30 PM", type: "nutrition", tag: "RECOVERY", title: "Post-Run Fuel & Sleep", body: "35–40g Whey + 5g Creatine post-run. Iron-rich dinner + Omega-3s. 200mg Magnesium Bisglycinate before 9:30 PM." }
+          { time: "05:00 PM – 05:50 PM", type: "run", tag: "RUN", title: "8.0 km (5 mi) Easy + 4 x 20s Strides", body: "Conversational aerobic run finished with 4 x 20s smooth strides." },
+          { time: "06:00 PM – 09:30 PM", type: "nutrition", tag: "RECOVERY", title: "Post-Run Fuel & Sleep", body: "Whey + 5g Creatine post-run, iron-rich dinner + Omega-3s, 200mg Mg Bisglycinate." }
         ]
       },
       {
-        shortDay: "Wed", date: "Nov 25", shortMeta: "5-6 km (3-4 mi) Easy",
-        title: "Pre-Race Shakeout",
-        workout: "4.8–6.4 km (3–4 mi) Easy Shakeout",
-        pace: "5:26–5:45/km (8:45–9:15/mi)",
-        focus: "Keep legs maximally fresh for Thursday morning's 8.0 km (4.97 mi) race.",
-        nutrition: "Carb-focused dinner · Hydrate w/ electrolytes",
+        shortDay: "Wed", date: "Nov 25", shortMeta: "5 km (3.1 mi) Easy",
+        title: "Pre-Race Shakeout (Completed)",
+        workout: "5.0 km (3.1 mi) Easy Shakeout",
+        pace: "5:35–5:55/km (8:59–9:31/mi)",
+        focus: "Kept legs fresh for Thursday morning's 8K.",
+        nutrition: "Carb-focused dinner · Electrolytes",
         timeline: [
-          { time: "07:15 AM – 05:00 PM", type: "work", tag: "WORK", title: "Remote Work Block", body: "Sip electrolyte water throughout the day." },
-          { time: "05:00 PM – 05:35 PM", type: "run", tag: "RUN", title: "4.8–6.4 km (3–4 mi) Easy Shakeout", body: "Very relaxed 5:26–5:45/km (8:45–9:15/mi). Zero pushing—just get blood flowing." },
-          { time: "06:30 PM – 09:30 PM", type: "recovery", tag: "RACE PREP", title: "Kit Prep & Early Sleep", body: "Lay out Turkey Trot kit, race shoes, and pin bib. Familiar carb-rich dinner. 200mg Mg Bisglycinate; asleep by 9:30 PM." }
+          { time: "05:00 PM – 05:30 PM", type: "run", tag: "RUN", title: "5.0 km (3.1 mi) Easy Shakeout", body: "Relaxed blood-flow jog in Near Southside." },
+          { time: "06:30 PM – 09:30 PM", type: "recovery", tag: "RACE PREP", title: "Kit Prep & Sleep", body: "Prepped Turkey Trot gear, carb-rich dinner, 200mg Mg Bisglycinate." }
         ]
       },
       {
-        shortDay: "Thu", date: "Nov 26", shortMeta: "RACE: 8 km (5 mi)",
-        title: "RACE: Fort Worth Turkey Trot 8K",
-        workout: "2.4 km (1.5 mi) WU + 8.0 km (4.97 mi) All-Out + 1.6 km (1 mi) WD (~12.1 km (7.5 mi) total)",
-        pace: "3:59–4:04/km (6:25–6:32/mi)",
-        focus: "All-out effort replaces midweek speedwork. Sharp VO2/threshold stimulus.",
-        nutrition: "Pre-race bagel/banana · Enjoy Thanksgiving!",
-        isRace: true,
+        shortDay: "Thu", date: "Nov 26", shortMeta: "DONE: 8.01 km 32:36",
+        title: "COMPLETED: Fort Worth Turkey Trot 8K (32:36)",
+        workout: "8.01 km (4.98 mi) Controlled Above-Threshold Race — 32:36",
+        pace: "4:04/km (6:33/mi) avg · Splits: 3:40, 3:58, 4:00, 4:03, 4:09, 4:17, 4:09, 4:09",
+        focus: "Strong legs, 49m gain, second wind in km 8 without emptying the tank. Confirms ~3:12–3:15 marathon fitness.",
+        guardrail: "Key Takeaway Applied to Dec 13: You opened km 1 in 3:40/km and felt lungs working on hills before stabilizing at 4:09/km. Riding the 1:40 Half Pacer (4:44/km) in Corral B for km 1–11 on Dec 13 prevents an early glycolytic spike up the Highland Park climb.",
+        nutrition: "Thanksgiving recovery · 140g protein · Hydrate",
+        isCompleted: true,
         timeline: [
-          { time: "05:45 AM – 06:30 AM", type: "nutrition", tag: "PRE-RACE", title: "Breakfast & Transit", body: "Plain bagel w/ honey + banana + 400 mL (13.5 oz) electrolyte water. Head to start area." },
-          { time: "06:50 AM – 07:15 AM", type: "run", tag: "WARMUP", title: "2.4 km (1.5 mi) Warm Up", body: "Easy jog + dynamic leg swings + 2–3 quick strides to prime legs." },
-          { time: "07:30 AM – 08:15 AM", type: "race", tag: "8K RACE", title: "Fort Worth Turkey Trot 8.0 km (4.97 mi) All-Out", body: "Target 3:59–4:04/km (6:25–6:32/mi). Run controlled through km 1.6 (mile 1), lock in through km 4.8 (mile 3), empty the tank to the finish." },
-          { time: "08:15 AM – 08:30 AM", type: "run", tag: "COOLDOWN", title: "1.6 km (1 mi) Cooldown + Protein", body: "Easy 1.6 km (1 mi) flush jog. 40g Whey + 5g Creatine + electrolytes." },
-          { time: "12:00 PM – 09:30 PM", type: "nutrition", tag: "THANKSGIVING", title: "Thanksgiving Feast & Recovery", body: "Enjoy the meal—lean turkey, sweet potatoes, carbs for recovery. Omega-3s w/ dinner, 355 mL (12 oz) Tart Cherry evening, Mg Bisglycinate at 9:00 PM." }
+          { time: "Morning (Completed)", type: "race", tag: "8K RESULT", title: "2026 Fort Worth Turkey Trot 8K — 32:36 (4:04/km)", body: "Ran 8.01 km with 49m elevation gain in 32:36 (6:33/mi). Faster than threshold with strong legs and a late surge—ideal final sharpening stimulus 17 days out from Dallas." },
+          { time: "Afternoon / Evening", type: "nutrition", tag: "RECOVERY", title: "Glycogen Replenishment & Anti-Inflammatory Stack", body: "Enjoy Thanksgiving meal with balanced carbs + lean turkey (hit 140g protein). Take 5g Creatine, 2 softgels Omega-3 w/ dinner, 355 mL (12 oz) Tart Cherry evening, and 200mg Mg Bisglycinate at 9:00 PM." }
         ]
       },
       {
-        shortDay: "Fri", date: "Nov 27", shortMeta: "Off Day",
-        title: "Post-Race Full Rest",
-        workout: "Off Day (Complete Rest)",
-        pace: "No Running",
-        focus: "Essential CNS and muscular recovery after an all-out 8.0 km (4.97 mi).",
+        shortDay: "Fri", date: "Nov 27", shortMeta: "Off / 5 km (3.1 mi)",
+        title: "Post-8K Recovery Day",
+        workout: "Off Day (or optional 5.0 km (3.1 mi) ultra-easy flush)",
+        pace: "5:50–6:10/km (9:23–9:49/mi) if jogging",
+        focus: "Clear residual lactate and let calves/quads absorb Thursday's 4:04/km effort.",
         nutrition: "140g protein · High hydration",
         isRest: true,
         timeline: [
-          { time: "All Day", type: "recovery", tag: "REST", title: "Complete Running Rest", body: "Keep feet up as much as possible. Gentle mobility or a casual 15-min walk only." },
+          { time: "06:30 AM – 07:00 AM", type: "recovery", tag: "RECOVERY", title: "Full Rest (Default) or 5.0 km (3.1 mi) Shakeout", body: "Default to full running rest. Only jog 5.0 km (3.1 mi) @ 5:50–6:10/km (9:23–9:49/mi) if legs feel completely springy with zero soreness." },
           { time: "Evening", type: "nutrition", tag: "RECOVERY", title: "Anti-Inflammatory Stack", body: "140g protein across the day, Omega-3s w/ dinner, 355 mL (12 oz) Tart Cherry, 200mg Mg Bisglycinate at 9:00 PM." }
         ]
       },
       {
-        shortDay: "Sat", date: "Nov 28", shortMeta: "6-8 km (4-5 mi) Easy",
-        title: "Recovery Run",
-        workout: "6.4–8.0 km (4–5 mi) Recovery",
-        pace: "5:26–5:45/km (8:45–9:15/mi)",
-        focus: "Keep heart rate low; prep legs for Sunday's MP long run.",
-        nutrition: "Extra carbs in evening for Sunday's 24.1–25.7 km (15–16 mi)",
+        shortDay: "Sat", date: "Nov 28", shortMeta: "6.4 km (4 mi) Easy",
+        title: "Easy Aerobic Shakeout",
+        workout: "6.4 km (4.0 mi) Easy",
+        pace: "5:35–5:55/km (8:59–9:31/mi)",
+        focus: "Keep HR strictly Zone 2; prep legs for Sunday's final taper long run.",
+        nutrition: "Extra carbs at dinner for Sunday's 19.3–21.1 km (12–13.1 mi)",
         timeline: [
-          { time: "07:00 AM – 07:45 AM", type: "run", tag: "RUN", title: "6.4–8.0 km (4–5 mi) Recovery", body: "Strictly easy 5:26–5:45/km (8:45–9:15/mi). Check how legs feel 48h post-8K." },
-          { time: "Afternoon", type: "recovery", tag: "PREP", title: "Legs-Up & Fuel Prep", body: "10 min legs-up-the-wall. Prep gels/hydration for Sunday's MP block." },
-          { time: "Evening", type: "nutrition", tag: "DINNER", title: "Pre-Long Run Carb Dinner", body: "Lean protein + rice/potatoes + Omega-3s. 355 mL (12 oz) Tart Cherry + 200mg Mg Bisglycinate." }
+          { time: "07:00 AM – 07:40 AM", type: "run", tag: "RUN", title: "6.4 km (4.0 mi) Easy on Near Southside / Trinity Trails", body: "Strictly conversational 5:35–5:55/km (8:59–9:31/mi). Confirm legs feel bounced back 48h post-8K." },
+          { time: "Evening", type: "nutrition", tag: "DINNER", title: "Pre-Long Run Carb Dinner", body: "Lean protein + white rice/potatoes + Omega-3s. 355 mL (12 oz) Tart Cherry + 200mg Mg Bisglycinate." }
         ]
       },
       {
-        shortDay: "Sun", date: "Nov 29", shortMeta: "24-26 km (15-16 mi)",
-        title: "Final Peak Long Run (MP Stimulus)",
-        workout: "24.1–25.7 km (15–16 mi): 4.8–6.4 km (3–4 mi) WU → 12.9–16.1 km (8–10 mi) @ MP → 3.2 km (2 mi) WD",
-        pace: "WU/WD: 5:17/km (8:30/mi) · MP: 4:35–4:37/km (7:22–7:25/mi)",
-        focus: "Flipped WU/WD puts extra distance up front so you hold MP on pre-fatigued legs.",
-        guardrail: "Fatigue Guardrail (72h post-8K): If your legs still feel flat during the warmup or early MP kilometers, cap the MP block at 12.9 km (8 mi) rather than forcing 16.1 km (10 mi). Arriving fresh at 14 days out beats 3.2 km (2 mi) of extra tempo.",
-        nutrition: "Practice race-day breakfast & gels (75g CHO/hr)",
+        shortDay: "Sun", date: "Nov 29", shortMeta: "20 km (12.4 mi) MP",
+        title: "Final Taper Long Run (Race-Specific Simulation)",
+        workout: "20.0 km (12.4 mi): 12.0 km (7.5 mi) Easy → 6.4 km (4.0 mi) @ Race Pace → 1.6 km (1.0 mi) WD",
+        pace: "Easy: 5:30–5:45/km (8:51–9:15/mi) · Race Block: 4:33–4:36/km (7:20–7:24/mi)",
+        focus: "Updated volume (20 km instead of 25.7 km) protects post-8K freshness while rehearsing the exact km 12 transition to 4:34/km.",
+        guardrail: "Evidence-Based Volume Adjustment: Because you already logged a 20-miler (11/16), a 13.2-miler (11/22), and a fast 8K (11/26), capping Sunday at 20.0 km (12.4 mi) with 6.4 km (4 mi) at 4:33–4:36/km gives full glycogen/neuromuscular stimulus without digging a fatigue hole 14 days before Dec 13.",
+        nutrition: "Rehearse race-morning bagel/honey + 2 Gu gels",
         timeline: [
-          { time: "05:30 AM – 06:00 AM", type: "nutrition", tag: "PRE-RUN", title: "Race-Rehearsal Breakfast", body: "Bagel w/ honey + banana + 400 mL (13.5 oz) electrolyte water." },
-          { time: "06:15 AM – 08:30 AM", type: "run", tag: "KEY WORKOUT", title: "24.1–25.7 km (15–16 mi) Peak Long Run", body: "4.8–6.4 km (3–4 mi) Warm Up @ 5:17/km (8:30/mi) → 12.9–16.1 km (8–10 mi) locked @ MP (4:35–4:37/km (7:22–7:25/mi)) → 3.2 km (2 mi) Warm Down @ 5:17/km (8:30/mi). Fuel with gels every ~6 km (~3.7 mi)." },
-          { time: "08:35 AM – 09:30 AM", type: "nutrition", tag: "ANABOLIC WINDOW", title: "Immediate Recovery", body: "40g Whey + 5g Creatine + contrast shower, followed by a high-carb/high-protein brunch." },
-          { time: "12:30 PM – 02:00 PM", type: "recovery", tag: "NAP", title: "Restorative Power Nap", body: "45–60 min nap. Follow with fast carbs (rice cakes/honey or fruit)." },
-          { time: "06:00 PM – 09:30 PM", type: "nutrition", tag: "DINNER & SLEEP", title: "Recovery Dinner & Sleep", body: "Iron-rich dinner + Omega-3s. 355 mL (12 oz) Tart Cherry at 8:30 PM. Cottage cheese + 200mg Mg Bisglycinate at 9:00 PM." }
+          { time: "06:00 AM – 06:30 AM", type: "nutrition", tag: "PRE-RUN", title: "Race-Rehearsal Breakfast", body: "Plain bagel w/ 30 mL (2 tbsp) honey + banana + 500mg sodium in 400 mL (13.5 oz) water." },
+          { time: "06:45 AM – 08:35 AM", type: "run", tag: "KEY WORKOUT", title: "20.0 km (12.4 mi) on Trinity Trails", body: "Run 12.0 km (7.5 mi) easy @ 5:30–5:45/km (simulating patient early miles), then smoothly shift into 6.4 km (4.0 mi) locked @ 4:33–4:36/km (7:20–7:24/mi) (simulating the post-Half-split cruise), plus 1.6 km (1.0 mi) easy cooldown. Take 1 Gu at 35 min and 1 Gu at 70 min." },
+          { time: "08:45 AM – 09:30 AM", type: "nutrition", tag: "RECOVERY", title: "Immediate Recovery", body: "40g Whey + 5g Creatine + high-carb brunch." },
+          { time: "06:30 PM – 09:30 PM", type: "nutrition", tag: "DINNER & SLEEP", title: "Dinner & Sleep Protocol", body: "Iron-rich dinner + Omega-3s. 355 mL (12 oz) Tart Cherry at 8:30 PM; 200mg Mg Bisglycinate at 9:00 PM." }
         ]
       }
     ]
@@ -725,98 +818,98 @@ const planWeeks = [
     id: 19,
     label: "Week 19: Taper Week 1",
     dates: "Nov 30 – Dec 6",
-    theme: "Drop volume, keep legs sharp with one midweek speed session and a hilly 14.5–16.1 km (9–10 mi) easy run.",
+    theme: "Cut volume ~45% while preserving neuromuscular sharpness; stop heavy lower-body work by Dec 6.",
     days: [
       {
         shortDay: "Mon", date: "Nov 30", shortMeta: "Off Day",
-        title: "Post-Long Run Recovery",
+        title: "Post-Long Run Complete Rest",
         workout: "Off Day",
         pace: "No Running",
-        focus: "Absorb Sunday's MP block as taper begins.",
+        focus: "Absorb Sunday's 20.0 km (12.4 mi) session as main taper begins.",
         nutrition: "140g protein · Normal carbs",
         isRest: true,
         timeline: [
-          { time: "07:15 AM – 05:30 PM", type: "work", tag: "WORK", title: "Remote Work Block", body: "Standard workday. Hydrate well." },
-          { time: "05:30 PM – 06:00 PM", type: "recovery", tag: "RECOVERY", title: "Tissue Care", body: "Contrast shower + gentle foam rolling for calves/quads. No running." },
+          { time: "07:15 AM – 05:30 PM", type: "work", tag: "WORK", title: "Remote Work Block", body: "Hydrate steadily (2 L (68 oz) water)." },
+          { time: "05:30 PM – 06:00 PM", type: "recovery", tag: "RECOVERY", title: "Tissue Care & Mobility", body: "Gentle foam rolling and calf/hip mobility. Zero running." },
           { time: "06:30 PM – 09:30 PM", type: "nutrition", tag: "NUTRITION", title: "Dinner & Sleep", body: "Protein-rich dinner + Omega-3s. 355 mL (12 oz) Tart Cherry + 200mg Mg Bisglycinate." }
         ]
       },
       {
-        shortDay: "Tue", date: "Dec 1", shortMeta: "6-8 km (4-5 mi) Easy",
-        title: "Easy Aerobic Run",
-        workout: "6.4–8.0 km (4–5 mi) Easy",
-        pace: "5:17–5:36/km (8:30–9:00/mi)",
-        focus: "Loose, relaxed turnover.",
+        shortDay: "Tue", date: "Dec 1", shortMeta: "8 km (5 mi) + Strides",
+        title: "Easy Aerobic Run + Strides",
+        workout: "8.0 km (5.0 mi) Easy + 4 x 100m strides",
+        pace: "Easy: 5:30–5:50/km (8:51–9:23/mi) · Strides: ~3:55/km (~6:18/mi)",
+        focus: "Keep legs light and crisp ahead of Wednesday's threshold/10K touch.",
         nutrition: "140g protein · Moderate carbs",
         timeline: [
           { time: "07:15 AM – 05:00 PM", type: "work", tag: "WORK", title: "Remote Work Block", body: "12:00 PM caffeine cutoff." },
-          { time: "05:00 PM – 05:45 PM", type: "run", tag: "RUN", title: "6.4–8.0 km (4–5 mi) Easy", body: "Relaxed conversational pace (5:17–5:36/km (8:30–9:00/mi)). Prep legs for Wednesday's intervals." },
-          { time: "06:00 PM – 09:30 PM", type: "nutrition", tag: "RECOVERY", title: "Dinner & Sleep", body: "Whey + Creatine post-run. Dinner + Omega-3s. 200mg Mg Bisglycinate." }
+          { time: "05:00 PM – 05:50 PM", type: "run", tag: "RUN", title: "8.0 km (5.0 mi) Easy + 4 x 100m Strides", body: "Conversational 5:30–5:50/km (8:51–9:23/mi), then 4 x 100m smooth strides with 60s walk/jog rest." },
+          { time: "06:00 PM – 09:30 PM", type: "nutrition", tag: "RECOVERY", title: "Dinner & Sleep", body: "Whey + 5g Creatine post-run. Dinner + Omega-3s. 200mg Mg Bisglycinate." }
         ]
       },
       {
-        shortDay: "Wed", date: "Dec 2", shortMeta: "12.1 km (7.5 mi) Spd",
-        title: "Speed Sharpening",
-        workout: "12.1 km (7.5 mi): 3.2 km (2 mi) WU → 5 x 1.0 km (0.62 mi) @ 10K (2m rest) → 4 x 200m (0.12 mi) @ 5K (30s rest) → 3.2 km (2 mi) WD",
-        pace: "1k: 4:05–4:10/km (6:35–6:42/mi) · 200m: 3:53/km (6:15/mi)",
-        focus: "Maintain VO2 max and running economy without heavy volume.",
+        shortDay: "Wed", date: "Dec 2", shortMeta: "10 km (6.2 mi) Sharp",
+        title: "Taper Sharpening Intervals",
+        workout: "10.0 km (6.2 mi): 2.8 km WU → 4 x 1.0 km @ 4:10–4:15/km (90s rest) → 3 x 200m @ 3:55/km (45s rest) → 2.6 km WD",
+        pace: "1k: 4:10–4:15/km (6:42–6:50/mi) · 200m: 3:55/km (6:18/mi)",
+        focus: "Tightened from 5x1k to 4x1k so you maintain lactate clearance and VO2 without accumulating fatigue.",
         nutrition: "Pre-run carbs · Post-run 40g Whey + Creatine",
         timeline: [
-          { time: "07:15 AM – 04:45 PM", type: "work", tag: "WORK", title: "Remote Work Block", body: "Solid lunch w/ carbs at noon. Light carb snack (banana/honey) at 3:30 PM." },
-          { time: "05:00 PM – 06:05 PM", type: "run", tag: "KEY WORKOUT", title: "12.1 km (7.5 mi) Speed Sharpening", body: "3.2 km (2 mi) WU → 5 x 1.0 km (0.62 mi) @ 4:05–4:10/km (6:35–6:42/mi) w/ 2 min rest → 4 x 200m (0.12 mi) @ 3:53/km (6:15/mi) w/ 30s rest → 3.2 km (2 mi) WD. Crisp, controlled form." },
-          { time: "06:15 PM – 09:30 PM", type: "nutrition", tag: "RECOVERY", title: "Post-Workout Fuel & Sleep", body: "40g Whey + 5g Creatine immediately. High-protein dinner + Omega-3s. 355 mL (12 oz) Tart Cherry + Cottage Cheese + 200mg Mg Bisglycinate." }
+          { time: "07:15 AM – 04:45 PM", type: "work", tag: "WORK", title: "Remote Work Block", body: "Balanced lunch at noon; light carb snack (banana/honey) at 3:30 PM." },
+          { time: "05:00 PM – 05:55 PM", type: "run", tag: "KEY WORKOUT", title: "10.0 km (6.2 mi) Taper Sharpening on Trinity Trails", body: "2.8 km (1.75 mi) WU → 4 x 1.0 km (0.62 mi) @ 4:10–4:15/km (6:42–6:50/mi) w/ 90s easy jog → 3 x 200m @ 3:55/km (6:18/mi) w/ 45s rest → 2.6 km (1.6 mi) WD. Finish feeling like you could easily do 2 more." },
+          { time: "06:05 PM – 09:30 PM", type: "nutrition", tag: "RECOVERY", title: "Post-Workout Fuel & Sleep", body: "40g Whey + 5g Creatine immediately. High-protein dinner + Omega-3s. 355 mL (12 oz) Tart Cherry + 200mg Mg Bisglycinate." }
         ]
       },
       {
         shortDay: "Thu", date: "Dec 3", shortMeta: "6.4 km (4 mi) Easy",
-        title: "Easy Flush Run",
-        workout: "6.4 km (4 mi) Easy",
-        pace: "5:17–5:36/km (8:30–9:00/mi)",
-        focus: "Flush out legs from Wednesday's track/road intervals.",
+        title: "Easy Recovery Flush",
+        workout: "6.4 km (4.0 mi) Easy",
+        pace: "5:35–5:55/km (8:59–9:31/mi)",
+        focus: "Strictly Zone 2 blood flow; expect normal 'taper heavy legs'—do not test pace.",
         nutrition: "140g protein · Hydrate",
         timeline: [
           { time: "07:15 AM – 05:00 PM", type: "work", tag: "WORK", title: "Remote Work Block", body: "Standard workday." },
-          { time: "05:00 PM – 05:35 PM", type: "run", tag: "RUN", title: "6.4 km (4 mi) Easy", body: "Easy 5:17–5:36/km (8:30–9:00/mi) flush. Keep effort low." },
+          { time: "05:00 PM – 05:40 PM", type: "run", tag: "RUN", title: "6.4 km (4.0 mi) Easy", body: "Relaxed 5:35–5:55/km (8:59–9:31/mi) flush." },
           { time: "06:30 PM – 09:30 PM", type: "nutrition", tag: "RECOVERY", title: "Dinner & Sleep", body: "Dinner + Omega-3s. 200mg Mg Bisglycinate by 9:00 PM." }
         ]
       },
       {
-        shortDay: "Fri", date: "Dec 4", shortMeta: "5-6 km (3-4 mi) Easy",
-        title: "Light Aerobic Maintenance",
-        workout: "4.8–6.4 km (3–4 mi) Easy",
-        pace: "5:26–5:45/km (8:45–9:15/mi)",
-        focus: "Short, effortless aerobic maintenance.",
+        shortDay: "Fri", date: "Dec 4", shortMeta: "Off / 5 km (3.1 mi)",
+        title: "Light Aerobic or Rest Day",
+        workout: "5.0 km (3.1 mi) Easy (or Off Day if fatigued)",
+        pace: "5:40–6:00/km (9:07–9:39/mi)",
+        focus: "Keep effort effortless; save energy for Saturday's rolling-hills rehearsal.",
         nutrition: "140g protein",
         timeline: [
           { time: "07:15 AM – 05:00 PM", type: "work", tag: "WORK", title: "Remote Work Block", body: "Standard workday." },
-          { time: "05:00 PM – 05:35 PM", type: "run", tag: "RUN", title: "4.8–6.4 km (3–4 mi) Easy", body: "Relaxed 5:26–5:45/km (8:45–9:15/mi). Zero straining." },
+          { time: "05:00 PM – 05:30 PM", type: "run", tag: "RUN", title: "5.0 km (3.1 mi) Easy", body: "Easy 5:40–6:00/km (9:07–9:39/mi) jog in Near Southside." },
           { time: "06:30 PM – 09:30 PM", type: "nutrition", tag: "RECOVERY", title: "Dinner & Sleep", body: "Balanced dinner + Omega-3s. 200mg Mg Bisglycinate." }
         ]
       },
       {
-        shortDay: "Sat", date: "Dec 5", shortMeta: "14.5-16 km (9-10 mi)",
-        title: "Taper Long Run (Rolling Hills)",
-        workout: "14.5–16.1 km (9–10 mi) Easy Long Run",
-        pace: "5:11–5:29/km (8:20–8:50/mi)",
-        focus: "Run on rolling hills to simulate Dallas terrain (Dolly Parton / White Rock).",
-        nutrition: "Normal pre-run fuel · Post-run 40g Whey",
+        shortDay: "Sat", date: "Dec 5", shortMeta: "13 km (8 mi) Hills/MP",
+        title: "Rolling Hills & Split Rehearsal (8 Days Out)",
+        workout: "13.0 km (8.1 mi): 5.0 km (3.1 mi) @ 4:44/km (1:40 Pacer) → 5.0 km (3.1 mi) @ 4:33/km (Cruise) → 3.0 km (1.9 mi) Easy",
+        pace: "Block 1: 4:44/km (7:37/mi) · Block 2: 4:33/km (7:20/mi) · WD: 5:35/km (8:59/mi)",
+        focus: "Rehearses your exact Dallas race gear-shift (4:44/km pacer pace → 4:33/km post-split pace) on rolling Near Southside/Trinity hills.",
+        nutrition: "Pre-run bagel/honey · Post-run 40g Whey + Creatine",
         timeline: [
-          { time: "06:30 AM – 08:00 AM", type: "run", tag: "RUN", title: "14.5–16.1 km (9–10 mi) Easy on Rolling Hills", body: "5:11–5:29/km (8:20–8:50/mi) effort. Stay smooth up the rollers and relaxed on descents." },
-          { time: "08:15 AM – 10:00 AM", type: "nutrition", tag: "RECOVERY", title: "Post-Run Recovery & Brunch", body: "40g Whey + 5g Creatine + hearty breakfast." },
+          { time: "06:45 AM – 08:00 AM", type: "run", tag: "KEY WORKOUT", title: "13.0 km (8.1 mi) Race-Gear Rehearsal", body: "Run 5.0 km (3.1 mi) at your 1:40 Half Pacer pace (4:44/km / 7:37/mi) over rolling hills, then smoothly shift to 5.0 km (3.1 mi) at your post-split cruise pace (4:33/km / 7:20/mi), followed by 3.0 km (1.9 mi) easy cooldown (~66 min total)." },
+          { time: "08:15 AM – 09:30 AM", type: "nutrition", tag: "RECOVERY", title: "Post-Run Recovery & Brunch", body: "40g Whey + 5g Creatine + hearty breakfast." },
           { time: "Evening", type: "nutrition", tag: "SLEEP", title: "Dinner & Sleep", body: "Dinner + Omega-3s. 355 mL (12 oz) Tart Cherry + 200mg Mg Bisglycinate." }
         ]
       },
       {
-        shortDay: "Sun", date: "Dec 6", shortMeta: "Off Day",
-        title: "Complete Rest (1 Week Out)",
-        workout: "Off Day (Complete Rest)",
+        shortDay: "Sun", date: "Dec 6", shortMeta: "Off Day (1 Wk Out)",
+        title: "Complete Rest (Exactly 7 Days Out)",
+        workout: "Off Day (Complete Rest — Stop All Lower-Body Strength Work)",
         pace: "No Running",
-        focus: "Total physical and mental reset heading into Race Week.",
+        focus: "Total CNS reset entering Race Week; zero dumbbell/leg exercises from today through Dec 13.",
         nutrition: "140g protein · Hydrate well",
         isRest: true,
         timeline: [
-          { time: "All Day", type: "recovery", tag: "REST", title: "Complete Rest & Relaxation", body: "Zero running. Enjoy your afternoon (The Nutcracker at 3:00 PM). Keep stress low and feet comfortable." },
-          { time: "09:00 PM", type: "nutrition", tag: "SLEEP", title: "Sleep Banking", body: "200mg Mg Bisglycinate. Aim for 8+ hours of sleep all race week." }
+          { time: "All Day", type: "recovery", tag: "REST", title: "Complete Rest & Relaxation", body: "Zero running and final cutoff for any lower-body strength/wall-sit exercises. Enjoy your afternoon (The Nutcracker at 3:00 PM) and keep feet comfortable." },
+          { time: "09:00 PM", type: "nutrition", tag: "SLEEP", title: "Sleep Banking Begins", body: "200mg Mg Bisglycinate. Target 8–9 hours of sleep every night this week." }
         ]
       }
     ]
@@ -825,102 +918,102 @@ const planWeeks = [
     id: 20,
     label: "Week 20: Race Week",
     dates: "Dec 7 – Dec 13",
-    theme: "Sharp tune-up, carb load, maximize freshness, execute Sub-3:15.",
+    theme: "Sharp 8 km tune-up, 3-day carb load (8–10g/kg), Expo pacer check, execute 3:14:03.",
     days: [
       {
-        shortDay: "Mon", date: "Dec 7", shortMeta: "11.3 km (7 mi) Tune",
-        title: "Race-Week Tune-Up",
-        workout: "11.3 km (7 mi): 3.2 km (2 mi) WU → 3 x 1200m (0.75 mi) @ HMP (2m rest) → 4 x 400m (0.25 mi) @ 5K (2m rest) → 3.2 km (2 mi) WD",
-        pace: "1200m: 4:18–4:21/km (6:55–7:00/mi) · 400m: 3:53–3:56/km (6:15–6:20/mi)",
-        focus: "Lock in rhythm and neuromuscular pop 6 days out.",
-        guardrail: "Keep the 4 x 400m (0.25 mi) smooth, not all-out: Six days before the marathon, these reps are purely for turnover. Finish each rep feeling like you could easily run two more.",
+        shortDay: "Mon", date: "Dec 7", shortMeta: "8.5 km (5.3 mi) Tune",
+        title: "Race-Week Rhythm Tune-Up",
+        workout: "8.5 km (5.3 mi): 2.5 km WU → 3 x 1.0 km @ 4:25–4:30/km (90s rest) → 3 x 200m @ 3:55/km (60s rest) → 2.4 km WD",
+        pace: "1k: 4:25–4:30/km (7:06–7:15/mi) · 200m: 3:55/km (6:18/mi)",
+        focus: "Trimmed from 11.3 km to 8.5 km so you lock in sub-3:15 rhythm with zero residual soreness 6 days out.",
+        guardrail: "Keep Reps Controlled: Finish every 1.0 km rep feeling smooth and springy—this is a neuromuscular reminder, not a fitness test.",
         nutrition: "140g protein · Post-run Whey + Creatine",
         timeline: [
           { time: "07:15 AM – 04:45 PM", type: "work", tag: "WORK", title: "Remote Work Block", body: "Hydrate steadily. Light carb snack at 3:30 PM." },
-          { time: "05:00 PM – 06:00 PM", type: "run", tag: "KEY WORKOUT", title: "11.3 km (7 mi) Race-Week Tune-Up", body: "3.2 km (2 mi) WU → 3 x 1200m (0.75 mi) @ 4:18–4:21/km (6:55–7:00/mi) w/ 2 min rest → 4 x 400m (0.25 mi) @ 3:53–3:56/km (6:15–6:20/mi) w/ 2 min rest (smooth & controlled) → 3.2 km (2 mi) WD." },
-          { time: "06:15 PM – 09:30 PM", type: "nutrition", tag: "RECOVERY", title: "Recovery & Sleep", body: "40g Whey + 5g Creatine. Dinner + Omega-3s. 200mg Mg Bisglycinate; asleep by 9:30 PM." }
+          { time: "05:00 PM – 05:45 PM", type: "run", tag: "KEY WORKOUT", title: "8.5 km (5.3 mi) Race-Week Tune-Up", body: "2.5 km (1.55 mi) WU → 3 x 1.0 km (0.62 mi) @ 4:25–4:30/km (7:06–7:15/mi) w/ 90s easy jog → 3 x 200m @ 3:55/km (6:18/mi) w/ 60s walk/jog → 2.4 km (1.5 mi) WD." },
+          { time: "06:00 PM – 09:30 PM", type: "nutrition", tag: "RECOVERY", title: "Recovery & Sleep", body: "40g Whey + 5g Creatine. Dinner + Omega-3s. 200mg Mg Bisglycinate; asleep by 9:30 PM." }
         ]
       },
       {
-        shortDay: "Tue", date: "Dec 8", shortMeta: "4.8 km (3 mi) Easy",
-        title: "Light Easy Run",
-        workout: "4.8 km (3 mi) Easy",
-        pace: "5:26–5:45/km (8:45–9:15/mi)",
-        focus: "Very light effort—protect freshness.",
+        shortDay: "Tue", date: "Dec 8", shortMeta: "5 km (3.1 mi) Easy",
+        title: "Light Aerobic Shakeout",
+        workout: "5.0 km (3.1 mi) Easy",
+        pace: "5:40–6:00/km (9:07–9:39/mi)",
+        focus: "Effortless blood flow; protect freshness.",
         nutrition: "140g protein · Hydrate",
         timeline: [
           { time: "07:15 AM – 05:00 PM", type: "work", tag: "WORK", title: "Remote Work Block", body: "Standard workday." },
-          { time: "05:00 PM – 05:30 PM", type: "run", tag: "RUN", title: "4.8 km (3 mi) Easy", body: "Effortless 5:26–5:45/km (8:45–9:15/mi) jog." },
+          { time: "05:00 PM – 05:30 PM", type: "run", tag: "RUN", title: "5.0 km (3.1 mi) Easy", body: "Effortless 5:40–6:00/km (9:07–9:39/mi) jog." },
           { time: "06:30 PM – 09:30 PM", type: "nutrition", tag: "RECOVERY", title: "Dinner & Sleep", body: "Dinner + Omega-3s. 200mg Mg Bisglycinate." }
         ]
       },
       {
-        shortDay: "Wed", date: "Dec 9", shortMeta: "4.8 km (3 mi) Easy",
-        title: "Easy Run & Carb Ramp",
-        workout: "4.8 km (3 mi) Easy",
-        pace: "5:26–5:45/km (8:45–9:15/mi)",
-        focus: "Begin increasing carbohydrate and electrolyte intake.",
-        nutrition: "Start ramping carbs & sodium · Shop for carb-load foods",
+        shortDay: "Wed", date: "Dec 9", shortMeta: "5 km (3.1 mi) Easy",
+        title: "Easy Run & Carb/Sodium Ramp",
+        workout: "5.0 km (3.1 mi) Easy",
+        pace: "5:40–6:00/km (9:07–9:39/mi)",
+        focus: "Increase fluids/electrolytes and stage carb-load foods.",
+        nutrition: "Ramp carbs & sodium · Prep carb-load groceries",
         timeline: [
-          { time: "07:15 AM – 05:00 PM", type: "work", tag: "WORK", title: "Remote Work Block", body: "Add electrolyte mix to water." },
-          { time: "05:00 PM – 05:30 PM", type: "run", tag: "RUN", title: "4.8 km (3 mi) Easy", body: "Relaxed 5:26–5:45/km (8:45–9:15/mi)." },
-          { time: "06:00 PM – 09:30 PM", type: "nutrition", tag: "CARB RAMP", title: "Carb Ramp & Early Bed", body: "Increase rice/potatoes/bread at dinner. Pick up carb-load staples (bagels, rice, bananas, juice, pretzels). Mg Bisglycinate at 9:00 PM." }
+          { time: "07:15 AM – 05:00 PM", type: "work", tag: "WORK", title: "Remote Work Block", body: "Add sodium electrolyte packet to water." },
+          { time: "05:00 PM – 05:30 PM", type: "run", tag: "RUN", title: "5.0 km (3.1 mi) Easy", body: "Relaxed 5:40–6:00/km (9:07–9:39/mi)." },
+          { time: "06:00 PM – 09:30 PM", type: "nutrition", tag: "CARB RAMP", title: "Carb Ramp & Early Bed", body: "Extra white rice/potatoes at dinner. Stage carb-load staples (bagels, white jasmine rice, honey, bananas, pretzels, juice). 200mg Mg Bisglycinate at 9:00 PM." }
         ]
       },
       {
-        shortDay: "Thu", date: "Dec 10", shortMeta: "9.7 km (6 mi) MP",
-        title: "MP Dress Rehearsal & Carb Load Day 1",
-        workout: "9.7 km (6 mi): 3.2 km (2 mi) WU → 4.8 km (3 mi) @ MP → 1.6 km (1 mi) WD",
-        pace: "MP: 4:35–4:37/km (7:22–7:25/mi)",
-        focus: "Dial in marathon rhythm (skip the 1.0 km (0.62 mi) @ 10K pace to keep legs maximally fresh).",
-        nutrition: "CARB LOAD DAY 1: High carb, lower fiber/fat, steady sodium",
+        shortDay: "Thu", date: "Dec 10", shortMeta: "6.4 km (4 mi) Dress",
+        title: "Race-Gear Dress Rehearsal & Carb Load Day 1",
+        workout: "6.4 km (4.0 mi): 2.4 km (1.5 mi) Easy → 2.4 km (1.5 mi) @ 4:33/km → 1.6 km (1.0 mi) Easy",
+        pace: "Cruise Touch: 4:33/km (7:20/mi) · Easy: 5:40/km (9:07/mi)",
+        focus: "Shortened from 9.7 km to 6.4 km so you test race shoes/singlet and feel 4:33/km without draining glycogen on Carb Load Day 1.",
+        nutrition: "CARB LOAD DAY 1: ~580–680g carbs (8–9g/kg), low fiber/fat",
         timeline: [
-          { time: "07:15 AM – 04:45 PM", type: "work", tag: "WORK", title: "Remote Work + Carb Load Day 1", body: "Eat carb-dense, low-fiber meals and snacks throughout the day (bagels, white rice, honey, fruit, electrolyte drinks)." },
-          { time: "05:00 PM – 05:50 PM", type: "run", tag: "KEY WORKOUT", title: "9.7 km (6 mi) MP Dress Rehearsal", body: "3.2 km (2 mi) WU → 4.8 km (3 mi) locked @ 4:35–4:37/km (7:22–7:25/mi) → 1.6 km (1 mi) WD. Wear your race shoes to confirm fit and feel." },
-          { time: "06:30 PM – 09:30 PM", type: "nutrition", tag: "CARB LOAD", title: "High-Carb Dinner & Sleep", body: "White rice/pasta + lean protein. Hydrate w/ electrolytes. 200mg Mg Bisglycinate; asleep by 9:30 PM." }
+          { time: "07:15 AM – 04:45 PM", type: "work", tag: "CARB LOAD DAY 1", title: "Remote Work + Carb Load Day 1", body: "Hit 580–680g carbs via low-fiber foods (bagels w/ honey, white rice, bananas, pretzels, electrolyte drinks). Expect normal 2–4 lb water/glycogen weight gain." },
+          { time: "05:00 PM – 05:35 PM", type: "run", tag: "KEY WORKOUT", title: "6.4 km (4.0 mi) Full Race-Kit Dress Rehearsal", body: "2.4 km (1.5 mi) easy → 2.4 km (1.5 mi) locked @ 4:33/km (7:20/mi) → 1.6 km (1.0 mi) easy. Wear exact race shoes, socks, shorts, singlet, and Runna audio setup." },
+          { time: "06:30 PM – 09:30 PM", type: "nutrition", tag: "CARB LOAD", title: "High-Carb Dinner & Sleep", body: "White jasmine rice + lean protein + Omega-3s. 200mg Mg Bisglycinate; asleep by 9:30 PM." }
         ]
       },
       {
-        shortDay: "Fri", date: "Dec 11", shortMeta: "Off / Expo",
-        title: "Full Rest, Expo & Carb Load Day 2",
+        shortDay: "Fri", date: "Dec 11", shortMeta: "Off / Expo Pickup",
+        title: "Complete Rest, Expo Pacer Check & Carb Load Day 2",
         workout: "Off Day (Complete Rest)",
         pace: "No Running",
-        focus: "Rest, hydrate, pick up race packet, finalize gear.",
-        nutrition: "CARB LOAD DAY 2: High carb, low fiber, high hydration",
+        focus: "Pick up bib early at Kay Bailey Hutchison Convention Center (11 AM–6 PM), meet 1:40 Half Pacer, stay off feet.",
+        nutrition: "CARB LOAD DAY 2: ~600–700g carbs, low fiber, steady sodium",
         isRest: true,
         timeline: [
-          { time: "07:15 AM – 05:00 PM", type: "work", tag: "CARB LOAD", title: "Work & Carb Load Day 2", body: "Hit peak carbohydrate intake with easy-to-digest foods (bagels, white rice, juice, pretzels, bananas). Minimize time standing." },
-          { time: "Afternoon / Eve", type: "recovery", tag: "EXPO", title: "Dallas Expo Packet Pickup", body: "Pick up bib and packet without wandering the expo floor for hours—save your legs." },
-          { time: "08:30 PM – 09:30 PM", type: "recovery", tag: "SLEEP", title: "Key Sleep Night (2 Nights Out)", body: "This is the most important night of sleep for race performance. 200mg Mg Bisglycinate; asleep early." }
+          { time: "07:15 AM – 05:00 PM", type: "work", tag: "CARB LOAD DAY 2", title: "Work & Peak Carb Load Day 2", body: "Continue easy-to-digest carbs every 2–3 hours (bagels, white rice, juice, pretzels, bananas) + 5g Creatine." },
+          { time: "Afternoon (11 AM – 6 PM)", type: "recovery", tag: "EXPO", title: "Dallas Expo Bib Pickup & DRC Pacer Booth", body: "Pick up bib at Kay Bailey Hutchison Convention Center (no race-day pickup). Stop by the Dallas Running Club (DRC) Pacer Booth to confirm the 1:40 Half Pacer is in Corral B (8:10 AM) and check their singlet/flag color. Leave immediately—do not walk around." },
+          { time: "08:30 PM – 09:30 PM", type: "recovery", tag: "KEY SLEEP", title: "Key Sleep Night (2 Nights Out)", body: "Most important sleep night before Sunday. 200mg Mg Bisglycinate; lights out early." }
         ]
       },
       {
-        shortDay: "Sat", date: "Dec 12", shortMeta: "3-5 km (2-3 mi) Easy",
-        title: "Race Eve Shakeout & Final Prep",
-        workout: "3.2–4.8 km (2–3 mi) Shakeout + 3 x 15s strides @ 4:33/km (7:20/mi)",
-        pace: "5:26–5:45/km (8:45–9:15/mi) · Strides: 4:33/km (7:20/mi)",
-        focus: "Lock in race rhythm, prep flat-lay gear, relax.",
-        nutrition: "CARB LOAD DAY 3: Familiar, low-fiber carbs · Early dinner",
+        shortDay: "Sat", date: "Dec 12", shortMeta: "3.2 km (2 mi) Shakeout",
+        title: "Pre-Race Shakeout & Carb Load Day 3",
+        workout: "3.2 km (2.0 mi) Easy + 3 x 80m relaxed strides @ 4:30/km (7:15/mi)",
+        pace: "Easy: 5:45–6:00/km (9:15–9:39/mi) · Strides: 4:30/km (7:15/mi)",
+        focus: "Make lunch your biggest carb meal; eat a small, low-fiber dinner by 6:00 PM; lay out 6 Gu gels & kit.",
+        nutrition: "CARB LOAD DAY 3: Biggest meal at lunch · Early light dinner by 6 PM",
         timeline: [
-          { time: "08:00 AM – 08:30 AM", type: "run", tag: "SHAKEOUT", title: "3.2–4.8 km (2–3 mi) Shakeout + Strides", body: "Easy 5:26–5:45/km (8:45–9:15/mi) jog with 3 x 15s strides @ 4:33/km (7:20/mi) to feel race pace effortlessly." },
-          { time: "10:00 AM – 05:00 PM", type: "recovery", tag: "REST", title: "Horizontal Recovery & Gear Lay-Out", body: "Stay off your feet. Lay out singlet, shorts, socks, race shoes, pinned bib, watch (charged), and 6–7 race gels." },
-          { time: "05:30 PM – 06:30 PM", type: "nutrition", tag: "PRE-RACE DINNER", title: "Early Low-Fiber Carb Dinner", body: "Simple, familiar dinner (white rice/pasta + lean chicken/fish). Avoid heavy fats, spice, or high fiber." },
-          { time: "08:30 PM – 09:00 PM", type: "recovery", tag: "SLEEP", title: "Lights Out Early", body: "200mg Mg Bisglycinate. Set dual alarms. Don't stress if pre-race nerves lighten sleep—Friday night banked it." }
+          { time: "07:30 AM – 07:55 AM", type: "run", tag: "SHAKEOUT", title: "3.2 km (2.0 mi) Shakeout + 3 x 80m Strides", body: "Easy 5:45–6:00/km (9:15–9:39/mi) jog with 3 x 80m smooth strides @ 4:30/km (7:15/mi)." },
+          { time: "12:00 PM – 05:00 PM", type: "recovery", tag: "REST & GEAR", title: "Big Carb Lunch, Horizontal Rest & Gear Lay-Out", body: "Eat largest carb meal at lunch. Stay off your feet all afternoon. Lay out singlet w/ pinned bib, shorts, socks, race shoes, charged Samsung phone (Runna set to 1 km / 0.5 km cues), and 6 Gu gels (including 2 caffeinated for km 24 & km 29)." },
+          { time: "05:30 PM – 06:00 PM", type: "nutrition", tag: "PRE-RACE DINNER", title: "Light, Early Low-Fiber Dinner", body: "Simple white rice/pasta + lean chicken/fish. Zero heavy fat, spice, or high fiber." },
+          { time: "08:30 PM – 09:00 PM", type: "recovery", tag: "SLEEP", title: "Lights Out Early", body: "200mg Mg Bisglycinate. Set dual alarms for 4:45 AM." }
         ]
       },
       {
-        shortDay: "Sun", date: "Dec 13", shortMeta: "42.2 km (26.2 mi)",
-        title: "2026 BMW DALLAS MARATHON",
-        workout: "42.2 km (26.2 mi) — Goal: Sub-3:15:00",
-        pace: "4:35–4:37/km (7:22–7:25/mi) · Cutoff: 4:37.3/km (7:26.2/mi)",
-        focus: "Patient first half, effort-based on White Rock/Lawther hills, strong final 6.8 km (4.2 mi).",
-        nutrition: "Pre-race: Bagel + honey + banana + 500mg Na · Race: 75–80g CHO/hr",
+        shortDay: "Sun", date: "Dec 13", shortMeta: "42.2 km: 3:14:03",
+        title: "2026 BMW DALLAS MARATHON — CORRAL B (8:10 AM)",
+        workout: "42.195 km (26.2 mi) — Target: 3:14:03 (≤ 3:14:59)",
+        pace: "km 1–11: 4:44/km (1:40 Half Pacer) → km 12–42.2: 4:32.8/km avg",
+        focus: "Ride 1:40 Half Pacer up Highland Park climb (km 1–11), break away at Richmond Ave split (km 12), negative-split 1:38:07 / 1:35:56.",
+        nutrition: "Pre-race: Bagel + honey + banana + 500mg Na · Race: 1 Gu pre-gun + 6 Gu gels (~75g CHO/hr)",
         isRace: true,
         timeline: [
-          { time: "05:15 AM – 06:15 AM", type: "nutrition", tag: "RACE MORNING", title: "Pre-Race Fuel & Hydration", body: "1 plain bagel w/ 30 mL (2 tbsp) honey + 1 banana + 500mg sodium in 400 mL (13.5 oz) water + black coffee." },
-          { time: "06:45 AM – 08:15 AM", type: "race", tag: "START LINE", title: "Arrival at Dallas City Hall Plaza", body: "Gear check, restrooms, light dynamic swings. Take 1 gel 15 min before the gun." },
-          { time: "08:30 AM – 11:44 AM", type: "race", tag: "RACE EXECUTION", title: "Execute Sub-3:15 — 42.2 km (26.2 mi)", body: "km 1–21 (Miles 1–13): Controlled 4:37–4:38/km (7:25–7:28/mi) through downtown & Highland Park. km 22.5–35.4 (Miles 14–22): Run White Rock Lake & Dolly Parton/Lawther climbs by effort (~4:43/km (~7:35/mi) uphill, 4:33–4:36/km (7:20–7:24/mi) downhill). km 35.4–42.2 (Miles 22–26.2): Lock into 4:30–4:33/km (7:15–7:20/mi) back to downtown. Gel every ~6 km (~3.7 mi) for 75–80g CHO/hr." },
-          { time: "11:45 AM – Evening", type: "nutrition", tag: "CELEBRATION", title: "Finish, Recover & Celebrate", body: "Collect your Sub-3:15 medal! 40g Whey + electrolytes immediately, then enjoy a well-earned post-race feast." }
+          { time: "04:45 AM – 05:45 AM", type: "nutrition", tag: "RACE MORNING", title: "Pre-Race Fuel & Hydration", body: "Wake 4:45 AM. Eat plain bagel w/ 30 mL (2 tbsp) honey + 1 banana + 500mg sodium in 400 mL (13.5 oz) water + black coffee by 5:30 AM." },
+          { time: "06:45 AM – 08:05 AM", type: "race", tag: "CORRAL B", title: "Dallas City Hall Plaza & Corral B Entry", body: "Arrive downtown by 7:00 AM. Restrooms, dynamic leg swings, take Gu Gel #0 (pre-race) at 7:55 AM. Enter Corral B before 8:05 AM close and spot the 1:40 Half Pacer." },
+          { time: "08:10 AM – 11:24 AM", type: "race", tag: "RACE EXECUTION", title: "Execute 3:14:03 Sub-3:15 Blueprint (See KM-by-KM Tab)", body: "km 1–11 (8:10 AM gun): Tuck behind 1:40 Half Pacer at 4:44/km (7:37/mi) up Turtle Creek/Cole/Monticello to the ~580 ft high point (10K in 47:24). km 12 (Greenville → Richmond): Half goes straight; turn LEFT onto Richmond and ramp to 4:32–4:34/km down into White Rock Lake (Half mat in 1:38:07). km 29–33 (Gaston/Abrams climb): Run by effort (4:36–4:39/km) after caffeinated Gu #4 & #5. km 34–42.2 (Ross Ave downhill to City Hall): Surge at 4:29–4:31/km to cross in ~3:14:03!" },
+          { time: "11:25 AM – Evening", type: "nutrition", tag: "CELEBRATION", title: "Sub-3:15 Finish & Recovery", body: "Collect your medal! 40g Whey + electrolytes immediately, followed by a celebratory post-race feast." }
         ]
       }
     ]
@@ -928,7 +1021,7 @@ const planWeeks = [
 ];
 
 let currentWeekIdx = 0;
-let currentDayIdx = 0;
+let currentDayIdx = 3; // Default to Thu Nov 26 (Today's 8K result)
 
 function switchPanel(panelName, btn) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
@@ -959,7 +1052,7 @@ function renderDaySelector() {
   const el = document.getElementById('daySelector');
   const week = planWeeks[currentWeekIdx];
   el.innerHTML = week.days.map((d, idx) => `
-    <button class="day-btn ${idx === currentDayIdx ? 'active' : ''} ${d.isRace ? 'race-day' : ''}" onclick="selectDay(${idx})">
+    <button class="day-btn ${idx === currentDayIdx ? 'active' : ''} ${d.isRace ? 'race-day' : ''} ${d.isCompleted ? 'completed-day' : ''}" onclick="selectDay(${idx})">
       <div class="day-name">${d.shortDay}, ${d.date}</div>
       <div class="day-meta">${d.shortMeta}</div>
     </button>
@@ -1000,7 +1093,7 @@ function renderDayDetail() {
       <div class="day-summary">
         <div>
           <div class="metric-label">Workout</div>
-          <div class="metric-val ${d.isRace ? 'rose' : 'blue'}">${d.workout}</div>
+          <div class="metric-val ${d.isRace ? 'rose' : (d.isCompleted ? 'emerald' : 'blue')}">${d.workout}</div>
         </div>
         <div>
           <div class="metric-label">Target Pace</div>
@@ -1044,6 +1137,49 @@ function renderOverview() {
   tbody.innerHTML = rows;
 }
 
+function getPhaseClass(phase) {
+  if (phase === 'anchor') return 'p-anchor';
+  if (phase === 'split') return 'p-split';
+  if (phase === 'lake') return 'p-cruise';
+  if (phase === 'climb') return 'p-climb';
+  return 'p-kick';
+}
+
+function renderKmTable(filter = 'all') {
+  const tbody = document.getElementById('kmTableBody');
+  const filtered = kmSplits.filter(row => {
+    if (filter === 'all') return true;
+    if (filter === 'milestones') return row.milestone || row.isSplit || row.isHalf || row.isFinish || row.cue.includes('FUEL');
+    return row.phase === filter;
+  });
+
+  tbody.innerHTML = filtered.map(r => {
+    let rowClass = '';
+    if (r.isSplit) rowClass = 'split-row';
+    else if (r.isHalf) rowClass = 'half-row';
+    else if (r.isFinish) rowClass = 'race-row';
+    else if (r.milestone) rowClass = 'milestone-row';
+
+    return `
+      <tr class="${rowClass}">
+        <td><strong>${r.km === 42 ? '42.2' : r.km} km</strong> <span style="color:var(--text-muted);font-size:0.78rem;">(${r.mi} mi)</span></td>
+        <td><span class="phase-pill ${getPhaseClass(r.phase)}">${r.phaseLabel}</span></td>
+        <td><strong>${r.street}</strong></td>
+        <td style="color:var(--text-secondary);font-size:0.81rem;">${r.terrain}</td>
+        <td><strong style="color:var(--accent-emerald);">${r.paceKm}/km</strong> <span style="color:var(--text-muted);font-size:0.78rem;">(${r.paceMi}/mi)</span></td>
+        <td><strong>${r.cum}</strong></td>
+        <td style="font-size:0.82rem;color:var(--text-secondary);">${r.cue}</td>
+      </tr>
+    `;
+  }).join('');
+}
+
+function filterKmTable(filter, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  renderKmTable(filter);
+}
+
 function selectWeek(idx) {
   currentWeekIdx = idx;
   currentDayIdx = 0;
@@ -1063,6 +1199,7 @@ function renderDaily() {
 
 renderDaily();
 renderOverview();
+renderKmTable('all');
 </script>
 
 </body>
